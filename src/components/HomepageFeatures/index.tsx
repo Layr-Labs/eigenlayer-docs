@@ -10,35 +10,36 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
+    title: 'Docs and Specs Unite!',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        We can combine technical documentation (aka protoocl specs) and docs.eigenlayer.xyz into one content repository.
       </>
     ),
   },
+  {
+    title: 'Easy for Eng team to Use',
+    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    description: (
+      <>
+        Docusaurus leverages native markdown fordocs, git version control for better clarity and collaboration, and versioning of our docs.
+      </>
+    ),
+  },
+  {
+    title: 'All the cool kids are doing it',
+    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    description: (
+      <>
+        Most of&nbsp; 
+        <a href="https://docs.google.com/document/d/1iGDJd-f8Cc0SG0XHcfRu17vleAm8_l-nsZK--5bKf0g/edit#bookmark=kix.6kzc8y4y16t4">
+    our peers use docusaurus.
+    </a>
+      </>
+    ),
+  }
+  
 ];
 
 function Feature({title, Svg, description}: FeatureItem) {
