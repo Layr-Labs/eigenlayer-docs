@@ -137,9 +137,14 @@ In case you want the binary in your PATH (or if you used the [Go](https://github
 
 ## Create and List Keys
 
+ECDSA keypair corresponds to the operator Ethereum address and key for interacting with Eigenlayer. The BLS key is used for attestation purposes within the EigenLayer protocol. Only 1 BLS key can be registered per Operator entity in EigenLayer. Only 1 BLS key should be paired with only 1 ECDSA key and vice versa.
+
+There is a fixed 1 to 1 relationship between the ECDSA key and the BLS key. You can't re-use any kind of key with any other kind of key. Once registered you can't change the BLS key associated with ECDSA key.\
+
+
 ### Create Keys
 
-You can generate encrypted ECDSA and BLS keys using the CLI, which will be required for operator registration and other on-chain operations.
+Generate encrypted ECDSA and BLS keys using the CLI:
 
 ```
 eigenlayer operator keys create --key-type ecdsa [keyname]
@@ -223,6 +228,16 @@ eigenlayer operator keys list
 When you run the Eigenlayer operator keys list command, it will display a list of all the keys that were generated using this specific command, along with their corresponding public keys.&#x20;
 
 This information can be useful for managing and identifying the keys you've created. Public keys are typically used for encryption, authentication, and verifying digital signatures.
+
+
+
+***
+
+## Fund ECDSA Wallet
+
+Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with Goerli ETH. Send at least 1 Goerli ETH to the “address” field referenced in your operator-config.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
+
+
 
 ***
 
