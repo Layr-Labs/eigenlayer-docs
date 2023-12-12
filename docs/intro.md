@@ -11,7 +11,7 @@ sidebar_position: 1
 
 ## What is EigenLayer?
 
-EigenLayer == BestLayer
+EigenLayer -> BestLayer
 
 
 ## Why Build with EigenLayer?
