@@ -6,4 +6,4 @@ Learn about the [Evolution of the EigenLayer protocol here](https://www.blog.eig
 
 To get in touch with our team and discuss onboarding your project, please contact us via [this AVS Questionnaire](https://forms.gle/9tGCWXTp2AsR9hSZ8).
 
-Stay up to date with our [AVS Research blog](https://www.blog.eigenlayer.xyz/tag/avs-research/).\
+Stay up to date with our [AVS Research blog](https://www.blog.eigenlayer.xyz/tag/avs-research/).

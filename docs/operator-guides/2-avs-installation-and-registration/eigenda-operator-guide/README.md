@@ -43,7 +43,7 @@ When a new operator wants to register but EigenDA has reached its operator cap, 
 
 1. Check the Churn Approver’s signature
 2. Perform checks against the stake of the newly-registering and (to-be-ejected) current lowest-stake operator
-3. Eject the current lowest-stake operator&#x20;
+3. Eject the current lowest-stake operator
 4. Proceed with registering the new operator, as normal
 
 The parameters for the checks in governance-configurable parameters. At the time of writing, these are:

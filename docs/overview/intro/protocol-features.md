@@ -1,6 +1,6 @@
 # Protocol Features
 
-## Custom Decentralization&#x20;
+## Custom Decentralization
 
 The number of native ETH restakers is expected to grow exponentially over time. With EigenLayer, native stakers can opt in to securing services that specifically want high decentralization, such as by specifying that only native stakers can participate. Examples of services that may optimize for decentralization are those that enable censorship resistance via multilateral ordering and secret sharing, and MPC over several nodes.
 
@@ -8,7 +8,7 @@ To maximize opt in from native Ethereum stakers, it is important that services t
 
 ## Custom Slashing
 
-EigenLayer provisions cryptoeconomic security through various slashing mechanisms, which levy a high cost of corruption. The terms and conditions of slashing are all specified in the slashing contract deployed by each service. By opting to restake with a particular service, stakers accept the risk of being subjected to slashing according to the rules in the slashing contract. Restakers who opt in to EigenLayer earn additional rewards on their staked ETH, while validators who participate gain additional revenue from the services that benefit from their validation operations. Whenever a dispute arises, EigenLayer uses the service’s slashing contract to verify whether the staker behaved maliciously, and then slashes the staker.&#x20;
+EigenLayer provisions cryptoeconomic security through various slashing mechanisms, which levy a high cost of corruption. The terms and conditions of slashing are all specified in the slashing contract deployed by each service. By opting to restake with a particular service, stakers accept the risk of being subjected to slashing according to the rules in the slashing contract. Restakers who opt in to EigenLayer earn additional rewards on their staked ETH, while validators who participate gain additional revenue from the services that benefit from their validation operations. Whenever a dispute arises, EigenLayer uses the service’s slashing contract to verify whether the staker behaved maliciously, and then slashes the staker.
 
 ## Operator Delegation
 

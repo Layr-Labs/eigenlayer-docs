@@ -10,7 +10,7 @@ ethdo is a CLI developed by independent Ethereum contributors. It abstracts a lo
 
 1. Install [ethdo](https://github.com/wealdtech/ethdo)
 2. Copy your **EigenPod address** from the EigenLayer app
-3. Follow the [basic](https://github.com/wealdtech/ethdo/blob/master/docs/changingwithdrawalcredentials.md#basic-operation) or [advanced](https://github.com/wealdtech/ethdo/blob/master/docs/changingwithdrawalcredentials.md#advanced-operation) guide for changing your validator's withdrawal credentials.&#x20;
+3. Follow the [basic](https://github.com/wealdtech/ethdo/blob/master/docs/changingwithdrawalcredentials.md#basic-operation) or [advanced](https://github.com/wealdtech/ethdo/blob/master/docs/changingwithdrawalcredentials.md#advanced-operation) guide for changing your validator's withdrawal credentials.
 
 :::info
 **I**nput the address copied in **step 2** as the **`--withdrawal-address`** flag.
@@ -42,12 +42,12 @@ Input the **EigenPod address** copied as the withdrawal address.
 - [Lodestar](https://chainsafe.github.io/lodestar/reference/cli/#validator-bls-to-execution-change)
 
 :::info
-For further information, please refer to the [notes](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-How-do-I-fully-withdraw-exit-my-validator) from the Ethereum organization &#x20;
+For further information, please refer to the [notes](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-How-do-I-fully-withdraw-exit-my-validator) from the Ethereum organization
 :::
 
 ### Option 3: DAppNode, Avado, etc.
 
-1. Use this tool: [https://github.com/stake-house/wagyu-key-gen/releases](https://github.com/stake-house/wagyu-key-gen/releases)&#x20;
+1. Use this tool: [https://github.com/stake-house/wagyu-key-gen/releases](https://github.com/stake-house/wagyu-key-gen/releases)
    - Click on "use existing recovery phrase" and generate BLS signature, which lets you unstake from the beacon chain and receive staking funds back in the execution layer.
    - We encourage airgapping (disconnect from the internet) while typing in your seed phrase.
 2. Locate your validator ID in the Beacon chain explorer ([beaconcha.in](https://beaconcha.in/))

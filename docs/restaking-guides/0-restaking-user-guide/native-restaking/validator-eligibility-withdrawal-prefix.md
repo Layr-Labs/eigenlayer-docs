@@ -6,7 +6,7 @@ description: Need to clarify your withdrawal prefix?
 
 Beacon chain validators contain a field known as **withdrawal credentials,** a commitment to a private key that may be used later to withdraw funds from the validator's balance on the beacon chain. The first two bytes of these credentials are known as the [**withdrawal prefix**](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-0x00-and-0x01-withdrawal-credentials-prefixes).
 
-The prefix can either be `0x00` or `0x01`:&#x20;
+The prefix can either be `0x00` or `0x01`:
 
 - Validators with `0x00` prefix: These are specific to BLS-style withdrawal credentials, common to early ETH stakers. Validators with this prefix can easily restake on EigenLayer, by [repointing](broken-reference) their withdrawal credentials.
 - Validators with `0x01` prefix: This newer method is derived from Ethereum addresses. In order for `0x01` validators to restake, they have to completely exit from the beacon chain, re-enter on the beacon chain as a new validator and set the withdrawal credentials to their EigenPod.
@@ -25,7 +25,7 @@ There are multiple methods to do this; the easiest is using [`ethdo`](https://gi
 ethdo validator info --validator=<yourvalidatorIndex> --verbose
 ```
 
-This outputs a **withdrawal credentials** field which either begins with `0x00` or `0x01`.&#x20;
+This outputs a **withdrawal credentials** field which either begins with `0x00` or `0x01`.
 
 Additionally, you can check [beaconcha.in](http://beaconcha.in/), navigate to your validator page, and check the **Beaconchain Deposits** field under the Deposits tab.
 

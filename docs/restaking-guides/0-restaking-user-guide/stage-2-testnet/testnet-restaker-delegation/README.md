@@ -4,9 +4,9 @@ Delegation is the process of assigning Restaked balance to an Operator. The Rest
 
 Caveats:
 
-* Stakers can only delegate to a single Operator at a time.&#x20;
-* Delegation is an "all or nothing" operation. You must delegate all of your available Restaked balance to a single Operator.
-* Delegation is not possible for Native Restakers while their validators are in the activation (aka entry) queue. Native Restaked tokens must be fully Restaked and proven on-chain before they can be delegated.&#x20;
+- Stakers can only delegate to a single Operator at a time.
+- Delegation is an "all or nothing" operation. You must delegate all of your available Restaked balance to a single Operator.
+- Delegation is not possible for Native Restakers while their validators are in the activation (aka entry) queue. Native Restaked tokens must be fully Restaked and proven on-chain before they can be delegated.
 
 ## **Staker and Operator Roles Clarification**
 

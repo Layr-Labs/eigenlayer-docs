@@ -24,15 +24,12 @@ Step 4: Observe the Unstaked Beacon Chain balance has increased after the escrow
 At this point you must exit your beacon chain validators prior to continuing. The validators must have completely exited from the validator queue before continuing. You may use [beaconcha.in](https://beaconcha.in) as a reference during this process.
 :::
 
-After your validators have exited, the Execution Chain amount should increase by the amount of those exited validators.&#x20;
+After your validators have exited, the Execution Chain amount should increase by the amount of those exited validators.
 
 The Redeposit button is available at this point to allow the user to Restake back into EigenLayer in case the withdrawal was queued by mistake.
 
-\
 Step 5: Once your validator has been exited click Withdraw to complete your deposit. Sign the transaction using your Web3 wallet.
 
 :::info
 Redelegation is available for a user who accidentally queues a withdrawal, but would like to resume staking and delegation without having to exit and re-enter their validators from the beacon chain.
 :::
-
-\

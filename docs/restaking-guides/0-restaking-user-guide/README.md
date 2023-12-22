@@ -12,6 +12,6 @@ Native restaking describes the process of changing an Ethereum validator's `with
 
 **Withdrawal Delay**
 
-EigenLayer is launching with a maximally conservative withdrawal delay, which is intended to only decrease over time.&#x20;
+EigenLayer is launching with a maximally conservative withdrawal delay, which is intended to only decrease over time.
 
 A 7-day delay window should give ample time to review withdrawals for anything suspicious and pause relevant functionality if needed.

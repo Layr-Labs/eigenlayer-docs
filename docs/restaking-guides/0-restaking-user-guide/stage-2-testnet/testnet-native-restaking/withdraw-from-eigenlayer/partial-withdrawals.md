@@ -3,7 +3,6 @@
 :::info
 Due to how withdrawals from Ethereum are designed, users can only initiate one partial withdrawal per[ sequential sweep](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) of all validators (which takes approximately 4-5 days).
 
-\
 All funds unstaked from EigenLayer go through a escrow period before being able to be withdrawn. After you unstake and queue the withdrawal, you must wait for the escrow period to end before being able to withdraw your assets.
 :::
 
@@ -23,7 +22,7 @@ Step 3: Observe the gas fee warning. Click Continue.
 
 ![](https://lh7-us.googleusercontent.com/eWXzCzR9Q-pbscHZm0na5rcFgpu9l5qPHYbbmPIR7z9hcoFVgpDWS0Aaqi4wUiG6FVRhdvROAalDFdZI6mTHhNalInIQr7JeJQNWG_FlYyxads4HkkuAmvMbFjDRCMm6xxWXig-S9xLkhYeJp_6s86s)
 
-Step 4: Enter the amount you wish to withdraw. Click Confirm.&#x20;
+Step 4: Enter the amount you wish to withdraw. Click Confirm.
 
 ![](https://lh7-us.googleusercontent.com/c9QOI7vNtpvAq4uOIZ_KCrrWyQLO_BDHZIpbXrIyz0fiMj3fKtlYPJlGx6L3S_sbYbSRyUetRv88qFjzlwkj0d96HtDWK0Yn-vUsv4_zTCxv4bZb7DuOcc7JKPGXY8hwyESrikWbyof9XkpREiIAwDw)
 
@@ -35,10 +34,10 @@ Note: if the user has more than 16 partial withdrawal transactions queued on the
 
 ![](https://lh7-us.googleusercontent.com/B1j-V4dY-iqYsXdfkPZxDhqa5ibMVgOncHU3Ft6FJqvc9QAH7CEuvsmQtqu65rGDwX3P_MD_252UgK2Z0UEXsSmB1vhBraoFPB0k3I9jTyDhuUbZaXJiZNSdH646I-ocSFtzmIP5XAVUGReeYEEbF3I)
 
-Observe the Unstaking balance has increased after the transaction is confirmed on chain.\
+Observe the Unstaking balance has increased after the transaction is confirmed on chain.
 
 Step 6: Click Withdraw after the escrow period to withdraw funds. Two wallet transactions will be generated for you to approve and proceed.
 
 ![](https://lh7-us.googleusercontent.com/yK-i-_zMD8KhpiiHVE_59bOwxBQuZEp0IlhfFCNqY7jYiNHwW9o4h3DF4R8Msu1kV4VboDo_WfhFHQC70ezd0QECKsqg4idohNll2vSiyk2s4Mjq0LL0ip_lRma0x708qzXuC97M5f12wlOT13kRiSk)
 
-Observe your funds have been sent to your wallet.\
+Observe your funds have been sent to your wallet.

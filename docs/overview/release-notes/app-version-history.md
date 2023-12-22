@@ -4,7 +4,7 @@ description: Summary of the most recent upgrades to the EigenLayer Frontend app.
 
 # App Version History
 
-## Version 2.0.1&#x20;
+## Version 2.0.1
 
 October 2, 2023
 
@@ -12,7 +12,7 @@ October 2, 2023
 
 **Next.js & Component Library:**
 
-Integrated the latest version of Next.js with Server Side Rendering (SSR) to enhance both performance and SEO.\
+Integrated the latest version of Next.js with Server Side Rendering (SSR) to enhance both performance and SEO.
 Added a customizable component library, providing a set of consistent and reusable UI elements.
 
 **trpc Integration:** Optimized API route management with trpc for efficient data interactions.
@@ -22,18 +22,18 @@ Added a customizable component library, providing a set of consistent and reusab
 **Restaking Points fix:**\
 The calculation for native restaking points for validators in the pending state:
 
-We are now using activation\_eligibility\_epoch to calculate the restaking points of validators in the pending queue. Prior to this change, we used activation\_epoch which resulted in errors in our calculation for the following reasons:
+We are now using activation_eligibility_epoch to calculate the restaking points of validators in the pending queue. Prior to this change, we used activation_epoch which resulted in errors in our calculation for the following reasons:
 
-* activation\_epoch can not be predicted while validators are pending so the value is set to a default of int\_max.
-* This impacted validators in a pending state as we were calculating their time integrated contribution (restaking points) using the int\_max value instead of their true activation\_epoch. Note: This only affected validators in a pending state. Once activated, the activation\_epoch updated to the correct value and points returned to normal.
+- activation_epoch can not be predicted while validators are pending so the value is set to a default of int_max.
+- This impacted validators in a pending state as we were calculating their time integrated contribution (restaking points) using the int_max value instead of their true activation_epoch. Note: This only affected validators in a pending state. Once activated, the activation_epoch updated to the correct value and points returned to normal.
 
-If you are unfamiliar with validator status variables and want to learn more see this [explanation](https://hackmd.io/@protolambda/validator\_status).
+If you are unfamiliar with validator status variables and want to learn more see this [explanation](https://hackmd.io/@protolambda/validator_status).
 
 **TVL calculation changes:**
 
 The way validator balances are counted has changed:
 
-* Prior to this update, we counted validator balances as a constant value of 32 ether. We’ve since updated this and counted the precise validator beacon chain balance to more accurately reflect user’s restaked values. (Note: This excludes partial withdrawals, because those are not restaked)
+- Prior to this update, we counted validator balances as a constant value of 32 ether. We’ve since updated this and counted the precise validator beacon chain balance to more accurately reflect user’s restaked values. (Note: This excludes partial withdrawals, because those are not restaked)
 
 What effect does this have on the new UI for users?
 
@@ -45,7 +45,7 @@ _Users with restaked validators:_ Users will now see their true validator balanc
 
 **Hosting & Observability:**
 
-Transitioned from Netlify to Vercel for better performance metrics.\
+Transitioned from Netlify to Vercel for better performance metrics.
 On Vercel, integrated plugins for improved API rate limiting and incorporated observability tools like Axiom and Grafana for system monitoring.
 
 **Transaction Notifications:** Replaced the transaction modal with a more direct transaction notification system.
@@ -55,4 +55,3 @@ On Vercel, integrated plugins for improved API rate limiting and incorporated ob
 **Automated Testing Suite:** Rolled out comprehensive automated tests covering various customer flows, from resetting approvals to managing withdrawals.
 
 **Wallet Integration:** Expanded wallet support with a notable addition of Gnosis Safe.
-
