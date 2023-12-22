@@ -4,6 +4,28 @@ description: Summary of the most recent modifications to our user documentation.
 
 # Documentation Changelog
 
+## Updates to Operator Installation, LST Addition
+
+Dec 18th, 2023
+
+* Added references to the newly supported LSTs.
+
+## Updates to Operator Installation, LST Addition
+
+Dec 12th, 2023
+
+* Modified Operator Installation instructions to point to the new repo: [https://github.com/Layr-Labs/eigenlayer-cli](https://github.com/Layr-Labs/eigenlayer-cli) .
+* Added instructions to obtain Goerli ETHx (Stader) and ankrETH (ankrETH).
+
+## Withdrawal Delay, Restaking Guide, Multiple Validators
+
+Dec 8th, 2023
+
+* Added Withdrawal Delay page.
+* Updated Create EigenPod and Set Withdrawal Credentials pages to include explanation of support for multiple validators pointing to a single EigenPod.
+* Updated context added Restaking Developer Guide page.
+* Updated Undelegate from an Operator page to clarify the Undelegate and Queue Withdrawal transactions are combined.
+
 ## EigenDA API and Null Bytes Padding
 
 Nov 28th, 2023

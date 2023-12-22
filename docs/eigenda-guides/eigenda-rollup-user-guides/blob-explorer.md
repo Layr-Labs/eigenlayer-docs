@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Blob Explorer
 
 The purpose of the Blob Explorer is to show Blobs and summary statistics. The main features of the Blob Explorer include:

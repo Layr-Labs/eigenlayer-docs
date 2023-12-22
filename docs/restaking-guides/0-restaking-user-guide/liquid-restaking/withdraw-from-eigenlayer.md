@@ -1,8 +1,10 @@
 # Withdraw from EigenLayer
 
-:::info
+{% hint style="info" %}
 All funds unstaked from EigenLayer go through a 7-day escrow period before being able to be withdrawn. Thus after you initiate (queue) the withdrawal, you must wait 7-days before being able to withdraw your assets.
-:::
+{% endhint %}
+
+
 
 **Step 1:** Navigate to the **Unstake tab**, enter your withdrawal amount, and click **Next:**
 

@@ -6,15 +6,19 @@ description: >-
 
 # Full Withdrawals
 
-:::info
+{% hint style="info" %}
 Ensure you have already [repointed your withdrawal credentials ](../repointing-a-validators-withdrawal-credentials.md) to your EigenPod before proceeding.
 
+
+
 All funds unstaked from EigenLayer Mainnet go through a 7-day escrow period before being able to be withdrawn. Thus after you initiate your unstake, you must wait 7-days before being able to withdraw your assets.
-:::
+{% endhint %}
+
+
 
 **Step 1:** Withdraw from Ethereum
 
-First, [initiate a withdrawal](withdrawing-a-validator-from-consensus-layer.md) from your consensus client to your EigenPod contract.
+First, [initiate a withdrawal](withdrawing-a-validator-from-consensus-layer.md) from your consensus client to your EigenPod contract.&#x20;
 
 Once you withdraw from Ethereum, your staked ETH balance is credited to your EigenPod address and can be viewed on the EigenLayer app.
 

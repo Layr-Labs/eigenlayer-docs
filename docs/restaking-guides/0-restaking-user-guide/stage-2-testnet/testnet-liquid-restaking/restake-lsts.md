@@ -1,8 +1,10 @@
 # Restake LSTs
 
-Step 1: Open the EigenLayer App and connect your Web3 wallet. Visit goerli.eigenlayer.xyz for the most recent EigenLayer Testnet app.
+Step 1: Open the EigenLayer App and connect your Web3 wallet. Visit goerli.eigenlayer.xyz for the most recent EigenLayer Testnet app.\
 
-![](https://lh7-us.googleusercontent.com/OZIhNy0g6_p2e6kR0yF9BJxHQcdhHNEnQSWwBokS3tSy2cd9bUyU0tve-ApItvVm7bJHKHum1T_2tgZhwa_LSyi7ScQdALSsUQioM0qMxZWcqWKhmtIQ7xcdOGtTOT6Uf18KnCs_zWgbXHLOtUqguSI)
+
+![](https://lh7-us.googleusercontent.com/OZIhNy0g6\_p2e6kR0yF9BJxHQcdhHNEnQSWwBokS3tSy2cd9bUyU0tve-ApItvVm7bJHKHum1T\_2tgZhwa\_LSyi7ScQdALSsUQioM0qMxZWcqWKhmtIQ7xcdOGtTOT6Uf18KnCs\_zWgbXHLOtUqguSI)\
+
 
 Step 2: Select the token you want to restake.
 
@@ -12,6 +14,10 @@ If this is your first time depositing a token on EigenLayer, you'll need to appr
 
 Once the approval transaction is confirmed, you will be prompted to confirm the deposit. Approve the Deposit transaction via your wallet.
 
-If successful, you will see the corresponding increase in your Restaked balance in the app:
+If successful, you will see the corresponding increase in your Restaked balance in the app:\
+\
+![](https://lh7-us.googleusercontent.com/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm\_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj\_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH\_DhsOLPBU)
 
-![](https://lh7-us.googleusercontent.com/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU)
+\
+\
+\

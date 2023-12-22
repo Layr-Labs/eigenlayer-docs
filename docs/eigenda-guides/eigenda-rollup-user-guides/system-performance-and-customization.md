@@ -1,4 +1,10 @@
+---
+sidebar_position: 2
+---
+
 # System Performance and Customization
+
+
 
 ## Latency
 
@@ -7,7 +13,7 @@ EigenDA end to end latency is measured between the following times:
 * Store (Disperse) blob is written through the Disperser API.
 * Blob availability proof (via aggregate BLS signatures) is available to be verified on chain.
 
-For the Stage 2 Testnet launch the maximum end to end latency is approximately 60s.
+For the Stage 2 Testnet launch the maximum end to end latency is approximately 60 seconds.
 
 ## Encoded System Throughput
 
@@ -15,10 +21,10 @@ The total volume of raw data traffic that is distributed among the distributed s
 
 When a rollup sends a blob to the system, it specifies a Quorum Threshold and an Adversary Threshold. Together, these parameters determine how the data is encoded and in particular how much of the Encoded System Throughput the blob will consume.
 
-* Adversary Threshold is the minimum percentage of stake that must attest in order to consider the blob dispersal successful. Clients use this to customize liveness requirements. The higher this number, the more operators may need to be up for attesting the blob
-* Quorum Threshold is the percentage of the stake within a given quorum that must sign in order for the blob to be accepted.
+* Quorum Threshold is the minimum percentage of stake that must attest in order to consider the blob dispersal successful. As such, clients can use this setting to customize liveness requirements (a low Quorum  Threshold means that a smaller set of operators can support a dispersal request, whereas a high Quorum Threshold quires more operators to be available to provide liveness).&#x20;
+* Adversary Threshold is the maximum percentage of the stake which can be held by nodes acting in  an adversarial manner before the availability of a blob is affected. &#x20;
 * Based on chosen values for Adversary Threshold and Quorum Threshold, the Coding ratio is derived as follows:
-  * Coding Ratio = 100 / (quorum threshold - adversary threshold)
+  * Coding Ratio = 100 / (Quorum Threshold - Adversary Threshold)
 
 For testing purposes you can start with an Adversary Threshold of 33% and Quorum Threshold of 80%.
 
@@ -26,9 +32,16 @@ Additional performance characteristics for the Disperser:
 
 * The maximum blob size per DisperseBlob invocation is 512KiB.
 * The maximum throughput supported by the Disperser is approximately 1 MiB/s.
-* The maximum throughput (aka Rate Limit) for an individual Rollup user (e.g., sequencer) is approximately 3KiB/s encoded.
 * By default each blob remains stored in the network for 14 days.
 
 ## Rate Limiting
 
-The user's request sent to the Disperser may be rate limited if their total throughput exceeds the rate limit. The user's request to DisperseBlob will return a rate limit error.
+The EigenDA system will limit the rate that any individual Rollup user (e.g., sequencer) can post data. In the future, these rates will be determined via a system of reservation and on-demand payment. However, at the current testnet stage, the system enforces the following uniform rate limits for all users, as identified by the IP address of their request:&#x20;
+
+* The maximum throughput for an individual Rollup user is approximately 3KiB/s encoded.
+* For a constant amount of data, the Disperser's KZG proving system more efficiently processes a small number of large blobs compared to a large number of small blobs. Thus, we also enforce a limit on the rate at which each rollup posts blobs to the system. Currently, rollups are limited to approximately one blob per batching interval (\~100 seconds).
+
+Both of these rate limits are enforced over an interval of about 10 minutes. The user's request sent to the Disperser will be rate limited if their total throughput exceeds the above rate limits, and the user's request to DisperseBlob will return a rate limit error.
+
+
+

@@ -11,7 +11,7 @@
 - **On-chain slashing contract:** A smart contract deployed by service modules on EigenLayer that enforces slashing, specifying and penalizing any misbehavior.
 - **Operator:** An Operator is a user who helps run the software build on top of EigenLayer. Operators register in EigenLayer and allow Stakers to delegate to them, then opt in to provide various services built on top of EigenLayer. Operators may themselves be Stakers; these are not mutually exclusive.
 - **Pooled security via restaking:** Pooled security is when multiple parties combine their resources to provide greater security for a system. In EigenLayer, Ethereum stakers can “restake” their ETH or Liquid Staking Tokens (LST) by opting into new services built on EigenLayer.
-- **Restaking Points:** A measure of your total EigenLayer restaking contribution. Based on amount of ETH staked over time, in units of ETH per second. For a precise definition of how Restaking Points are calculated, please refer to the [next](../restaking-guides/restaking-user-guide/restaked-points.md) section.
+- **Restaking Points:** A measure of your total EigenLayer restaking contribution. Based on amount of ETH staked over time, in units of ETH per second. For a precise definition of how Restaking Points are calculated, please refer to the [next](../restaking-guides/0-restaking-user-guide/restaked-points.md) section.
 - **Withdrawals**
   - **Full Withdrawals:** 32ETH Stake + Eth Staking Rewards (until now).
   - **Partial Withdrawals:** ETH consensus layer rewards (until now).
