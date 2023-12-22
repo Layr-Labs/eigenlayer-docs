@@ -1,3 +1,3 @@
 # Whitepaper
 
-[**Whitepaper**](../../assets/EigenLayer_WhitePaper.pdf)
+[**Whitepaper**](/EigenLayer_WhitePaper.pdf)

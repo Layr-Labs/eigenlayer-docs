@@ -6,13 +6,11 @@ description: Your Contribution to Shared Security
 
 ## Overview
 
-Restaked points are a measure of your contribution to the shared security of the EigenLayer ecosystem. They are a measure of staking participation equal to the time-integrated amount staked.&#x20;
-
-
+Restaked points are a measure of your contribution to the shared security of the EigenLayer ecosystem. They are a measure of staking participation equal to the time-integrated amount staked.
 
 ## Calculations
 
-In the formulas that follow, $$i$$ represents the index of a staker, while $$j$$ represents the index of a  token.
+In the formulas that follow, $$i$$ represents the index of a staker, while $$j$$ represents the index of a token.
 
 The participation measure of a staker $$i$$ for a token $$j$$ is given by the formula
 
@@ -39,4 +37,3 @@ R_i = \frac{P_i}{\sum_{i'} P_{i'}}.
 $$
 
 Consensus layer rewards are not included in the points calculation.
-

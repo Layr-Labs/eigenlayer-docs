@@ -1,7 +1,7 @@
 # EigenLayer Privacy Policy
 
-Last Revised on April 14, 2023 ​ \
-\
+Last Revised on April 14, 2023 ​
+
 This Privacy Policy for Layr Labs, Inc. ("Company", "we", "us" "our") describes how we collect, use and disclose information about users of the Company's website (eigenlayer.xyz), and any related services, tools and features, including the EigenLayer service (collectively, the "Services"). For the purposes of this Privacy Policy, "you" and "your" means you as the user of the Services. ​ Please read this Privacy Policy carefully. By using, accessing, or downloading any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree to this Privacy Policy, please do not use, access or download any of the Services. ​
 
 ## UPDATING THIS PRIVACY POLICY
@@ -12,28 +12,28 @@ This Privacy Policy for Layr Labs, Inc. ("Company", "we", "us" "our") describes 
 
 ​ When you access or use the Services, we may collect certain categories of information about you from a variety of sources, which comprises: ​
 
-* The following information about you: name, email address, and Discord Tag. We collect your email address and Discord Tag in order to communicate with you through the Services and through third party platforms, such as Discord. ​
-* The following third-party wallet ("Wallet") information: public wallet address and token holdings. We collect third-party Wallet information in order to facilitate your use of the Services. ​
-* Any other information you choose to include in communications with us, for example, when sending a message through the Services. ​ We also automatically collect certain information about your interaction with the Services ("Usage Data"). To do this, we may use cookies, web beacons/clear gifs and other geolocation tracking technologies ("Tracking Technologies"). Usage Data comprises of: ​
-* Device information (e.g., unique device identifier, device type, IP address, operating system) ​
-* Browser information (e.g., browser type) ​
-* Location information (e.g., approximate geolocation) ​
-* Other information regarding your interaction with the Services (e.g., log data, date and time stamps, clickstream data, ​ We use Usage Data to tailor features and content to you and to run analytics and better understand user interaction with the Services. For more information on how we use Tracking Technologies and your choices, see the section below, Cookies and Other Tracking Technologies. ​ In addition to the foregoing, we may use any of the above information to comply with any applicable legal obligations, to enforce any applicable terms of service, and to protect or defend the Services, our rights, and the rights of our users or others. ​
+- The following information about you: name, email address, and Discord Tag. We collect your email address and Discord Tag in order to communicate with you through the Services and through third party platforms, such as Discord. ​
+- The following third-party wallet ("Wallet") information: public wallet address and token holdings. We collect third-party Wallet information in order to facilitate your use of the Services. ​
+- Any other information you choose to include in communications with us, for example, when sending a message through the Services. ​ We also automatically collect certain information about your interaction with the Services ("Usage Data"). To do this, we may use cookies, web beacons/clear gifs and other geolocation tracking technologies ("Tracking Technologies"). Usage Data comprises of: ​
+- Device information (e.g., unique device identifier, device type, IP address, operating system) ​
+- Browser information (e.g., browser type) ​
+- Location information (e.g., approximate geolocation) ​
+- Other information regarding your interaction with the Services (e.g., log data, date and time stamps, clickstream data, ​ We use Usage Data to tailor features and content to you and to run analytics and better understand user interaction with the Services. For more information on how we use Tracking Technologies and your choices, see the section below, Cookies and Other Tracking Technologies. ​ In addition to the foregoing, we may use any of the above information to comply with any applicable legal obligations, to enforce any applicable terms of service, and to protect or defend the Services, our rights, and the rights of our users or others. ​
 
 ## HOW THE COMPANY SHARES YOUR INFORMATION
 
 ​ In certain circumstances, the Company may share your information with third parties for legitimate purposes subject to this Privacy Policy. Such circumstances comprise of: ​
 
-* With vendors or other service providers, such as ​
-* Blockchain analysis service providers, including Chainanalysis ​
-* Data analytics vendors, including Google Analytics ​
-* To comply with applicable law or any obligations thereunder, including cooperation with law\
+- With vendors or other service providers, such as ​
+- Blockchain analysis service providers, including Chainanalysis ​
+- Data analytics vendors, including Google Analytics ​
+- To comply with applicable law or any obligations thereunder, including cooperation with law
   enforcement, judicial orders, and regulatory inquiries ​
-* In connection with an asset sale, merger, bankruptcy, or other business transaction ​
-* To enforce any applicable terms of service ​
-* To ensure the safety and security of the Company and/or its users ​
-* When you request us to share certain information with third parties, such as through your use of login integrations ​
-* With professional advisors, such as auditors, law firms, or accounting firms ​
+- In connection with an asset sale, merger, bankruptcy, or other business transaction ​
+- To enforce any applicable terms of service ​
+- To ensure the safety and security of the Company and/or its users ​
+- When you request us to share certain information with third parties, such as through your use of login integrations ​
+- With professional advisors, such as auditors, law firms, or accounting firms ​
 
 ## COOKIES AND OTHER TRACKING TECHNOLOGIES
 

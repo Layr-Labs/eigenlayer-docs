@@ -19,7 +19,7 @@ Added a customizable component library, providing a set of consistent and reusab
 
 **TailwindCSS:** Incorporated TailwindCSS to streamline the design development process, maintaining UI consistency.
 
-**Restaking Points fix:**\
+**Restaking Points fix:**
 The calculation for native restaking points for validators in the pending state:
 
 We are now using activation_eligibility_epoch to calculate the restaking points of validators in the pending queue. Prior to this change, we used activation_epoch which resulted in errors in our calculation for the following reasons:

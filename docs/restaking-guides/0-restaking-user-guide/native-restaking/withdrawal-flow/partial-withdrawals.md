@@ -6,34 +6,37 @@ description: >-
 
 # Partial Withdrawals
 
-{% hint style="info" %}
-Due to how withdrawals from Ethereum are designed, users can only initiate one partial withdrawal per[ sequential sweep](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) of all validators (which takes approximately 4-5 days).\
-\
+:::info
+Due to how withdrawals from Ethereum are designed, users can only initiate one partial withdrawal per[ sequential sweep](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) of all validators (which takes approximately 4-5 days).
+
 All funds unstaked from EigenLayer go through a 7-day escrow period before being able to be withdrawn. Thus after you initiate your unstake, you must wait 7-days before being able to withdraw your assets.
-{% endhint %}
-
-
+:::
 
 **Step 1:** Unstake
 
-Click **Unstake** to initiate the escrow period.&#x20;
+Click **Unstake** to initiate the escrow period.
+<br/>
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-03-23 at 2.40.58 PM.png" alt=""/><figcaption></figcaption></figure>
+![escrow](/img/restake-guides/partial-withdrawals-1.png)
 
 If successful, you should receive the following confirmation:
+<br/>
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-03-23 at 2.43.15 PM.png" alt=""/><figcaption></figcaption></figure>
+![success](/img/restake-guides/partial-withdrawals-2.png)
 
 Once the transaction confirms, you should see your EigenPod balance move to _Unstake pending:_
+<br/>
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-03-23 at 2.43.26 PM.png" alt=""/><figcaption></figcaption></figure>
+![confirm](/img/restake-guides/partial-withdrawals-3.png)
 
 **Step 2:** Withdraw
 
 Upon completion of escrow, click **Withdraw** to transfer the funds to your wallet.
+<br/>
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-03-23 at 2.43.33 PM.png" alt=""/><figcaption></figcaption></figure>
+![withdrawl](/img/restake-guides/partial-withdrawals-4.png)
 
 If successful, you should receive the following confirmation:
+<br/>
 
-<figure><img src="../../../../.gitbook/assets/Screenshot 2023-03-23 at 2.13.15 PM.png" alt=""/><figcaption></figcaption></figure>
+![success](/img/restake-guides/partial-withdrawals-5.png)

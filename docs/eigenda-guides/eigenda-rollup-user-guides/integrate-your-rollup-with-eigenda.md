@@ -1,8 +1,4 @@
----
-sidebar_position: 1
----
-
-# Building on top of EigenDA
+# Integrate Your Rollup with EigenDA
 
 Rollup developers must plan for two points of integration with EigenDA: off chain integration with their sequencer and on-chain integration with their rollup smart contracts. Off chain integration involves a series of RPC calls to the EigenDA Disperser. On chain integration involves a smart contract function call to verify the blob was stored in the EigenDA network.
 
@@ -22,7 +18,7 @@ Please find the complete EigenDA API documentation in the [EigenDA github repo h
 - [Install grpccurl for your environment](https://github.com/fullstorydev/grpcurl#installation).
 - Download the eigenda repository and change your current working directory. The included Protobuf definitions will be required:
 
-```
+```bash
 gh repo clone Layr-Labs/eigenda
 cd eigenda
 ```
@@ -33,7 +29,7 @@ Invooke the Disperser/DisperseBlob endpoint.
 
 Example request:
 
-```
+```bash
 # Download the EigenDA repo via gh client or wget
 gh repo clone Layr-Labs/eigenda
 # Change your working directory to the eigenda folder in order to point to the protobuf defintions correctly
@@ -51,7 +47,7 @@ Best practice is for users to poll the GetBlobStatus service to monitor status o
 
 Example request:
 
-```
+```bash
 # Update the value of INSERT_REQUEST_ID with the result of your disperse call above
 
 grpcurl -proto ./api/proto/disperser/disperser.proto -d '{"request_id": "INSERT_REQUEST_ID"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/GetBlobStatus
@@ -63,10 +59,9 @@ Option A: invoke the Disperser/RetrieveBlob rpc endpoint. This is a recommended 
 
 Example request:
 
-```
+```bash
 # Note the value for batch_header_hash
-Can be obtained from the result of your call to GetBlobStatus via info.blob_verification_proof.batch_metadata.batch_header_hash.
-
+# Can be obtained from the result of your call to GetBlobStatus via info.blob_verification_proof.batch_metadata.batch_header_hash.
 
 grpcurl -proto ./api/proto/disperser/disperser.proto -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/RetrieveBlob
 ```
@@ -77,6 +72,7 @@ Option B: Retrieve the blob directly from EigenDA nodes. Integrate the [Retrieva
 
 When the blob is retrieved it may be appended by a number of null bytes, which the caller will need to remove. This occurs because the Disperser pads the blob with null bytes to fit the frame size for encoding.
 
+\
 Once the user decodes the data, the decoded data may have null bytes appended to the end. [Here is an example](https://github.com/Layr-Labs/eigenda/blob/master/test/integration_test.go#L522) on how we trim the appended null bytes from recovered data.
 
 ## On-Chain: Configure Your Sequencer Smart Contracts

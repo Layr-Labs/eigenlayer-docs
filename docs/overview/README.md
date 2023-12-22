@@ -14,6 +14,6 @@ With EigenLayer, Ethereum stakers can help secure many services by restaking the
 
 Anyone building a new decentralized service for Ethereum must bootstrap a new trust network to secure their system, fragmenting security. EigenLayer solves this problem by enabling any service, regardless of its composition (e.g. EVM-compatibility), to tap into the pooled security of Ethereum's stakers, creating an environment for permissionless innovation and free-market governance.
 
-![EigenLayer Architecture](../assets/eigenlayer-arch.png)
+![EigenLayer Architecture](/img/eigenlayer-arch.png)
 
 To learn more about EigenLayer please read the [**whitepaper**](https://docs.eigenlayer.xyz/overview/whitepaper) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.

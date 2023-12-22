@@ -1,26 +1,22 @@
 # EigenDA AVS Installation, Registration, and Upgrade
 
-{% hint style="info" %}
+:::info
 Please ensure you have reviewed the [current Active Operator Set cap](https://docs.eigenlayer.xyz/operator-guides/avs-installation-and-registration/eigenda-operator-guide#eigenda-churn-approver) and ensure you have sufficient delegated restaked ETH TVL before proceeding.
-{% endhint %}
+:::
 
 **Step 1:** Install Prerequisites
 
-* Complete the EigenLayer CLI installation and registration [here](https://docs.eigenlayer.xyz/operator-guides/operator-installation).
-* Install [Docker Engine on Linux](https://docs.docker.com/engine/install/ubuntu/).
-
-
+- Complete the EigenLayer CLI installation and registration [here](https://docs.eigenlayer.xyz/operator-guides/operator-installation).
+- Install [Docker Engine on Linux](https://docs.docker.com/engine/install/ubuntu/).
 
 **Step 2:** Prepare Local EigenDA files
 
 Clone this repo and execute the following commands:
 
-
 ```
 git clone https://github.com/Layr-Labs/eigenda-operator-setup.git
 cd eigenda-operator-setup
 ```
-
 
 Manually update the `.env` file downloaded in the steps above. Modify the sections marked with `TODO` to match your environment.
 
@@ -31,7 +27,6 @@ mkdir -p $HOME/.eigenlayer/eigenda/logs
 mkdir -p $HOME/.eigenlayer/eigenda/db
 ```
 
-\
 **Step 3:** Operator Networking Security Setup
 
 Retrieval Setup:
@@ -44,19 +39,17 @@ Dispersal Setup:
 
 In order to limit traffic from the EigenLabs hosted Disperser, please restrict your node's ingress traffic to be allowed by the the list provided below and port number set as `NODE_DISPERSAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env#L14) in the below setup.
 
-* `3.221.120.68/32`
-* `52.2.226.152/32`
-* `18.214.113.214/32`
-
-
+- `3.221.120.68/32`
+- `52.2.226.152/32`
+- `18.214.113.214/32`
 
 **Step 4:** Opt-in into EigenDA
 
 In order to opt-in into EigenDA as an Operator, you must meet the following delegated TVL requirements:
 
-* Have a minimum of 32 ETH delegated.
-* Have more than 1.1x current lowest-stake Operator in the active Operator set. Please see [EigenDA Churn Approver](https://docs.eigenlayer.xyz/operator-guides/avs-installation-and-registration/eigenda-operator-guide#eigenda-churn-approver) for more detail.
-* The operator to churn out has less than 10.01% of the total stake
+- Have a minimum of 32 ETH delegated.
+- Have more than 1.1x current lowest-stake Operator in the active Operator set. Please see [EigenDA Churn Approver](https://docs.eigenlayer.xyz/operator-guides/avs-installation-and-registration/eigenda-operator-guide#eigenda-churn-approver) for more detail.
+- The operator to churn out has less than 10.01% of the total stake
 
 Execute the following command to opt-in to EigenDA AVS:
 
@@ -69,8 +62,6 @@ Note: the script will use the `NODE_HOSTNAME` from [.env](https://github.com/Lay
 If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver then you may run the opt-in command again after the rate limiting threshold has passed. The current rate limiting threshold is 5 minutes.
 
 If you receive the error “error: failed to request churn approval .. Rate Limit Exceeded” you may retry after the threshold has passed. If you receive the error “insufficient funds”, you may increase your Operator’s delegated TVL to the required minimum and retry after the threshold has passed.
-
-
 
 **Step 5:** Run EigenDA
 
@@ -94,7 +85,6 @@ If you have successfully opted in to EigenDA and correctly running your EigenDA 
 
 The following example log messages confirm that your EigenDA node software is up and running:
 
-
 ```
 2023/11/16 22:21:04 maxprocs: Leaving GOMAXPROCS=16: CPU quota undefined
 2023/11/16 22:21:04 Initializing Node
@@ -114,9 +104,7 @@ INFO [11-16|22:22:04.448|github.com/Layr-Labs/eigenda/node/grpc/server.go:95]   
 
 ```
 
-
 The following example log messages confirm that your node is receiving traffic from the Disperser. If you do not see these log messages then either you have not successfully opted-in to EigenDA (per Step 4) or your network security group might not be setup correctly (per Step 3).
-
 
 ```
 DEBUG[11-16|22:22:29.588|github.com/Layr-Labs/eigenda/node/node.go:275]             Store batch took                         duration:=84.214213ms caller=node.go:275
@@ -127,16 +115,11 @@ INFO [11-16|22:22:30.016|github.com/Layr-Labs/eigenda/node/node.go:311]         
 DEBUG[11-16|22:22:30.016|github.com/Layr-Labs/eigenda/node/node.go:313]             Exiting process batch                    duration=512.422513ms caller=node.go:313
 ```
 
-
-
-
 **Step 6:** To bring the containers down, run the following command:
 
 ```
 docker compose down
 ```
-
-
 
 Optional: Opt-Out of EigenDA
 
@@ -178,4 +161,3 @@ If there are any specific instructions that needs to be followed for any upgrade
 ```
 docker compose up -d
 ```
-

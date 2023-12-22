@@ -17,20 +17,19 @@ For node operators, this standardization means supporting fewer system types, st
 
 Node class specifications encompass the following attributes:
 
-* Number and generation of virtual CPUs
-* Quantity of Memory
-* Networking Capacity (up/down)
-* Specialization (e.g., general purpose, compute-optimized, memory-optimized, etc.)
+- Number and generation of virtual CPUs
+- Quantity of Memory
+- Networking Capacity (up/down)
+- Specialization (e.g., general purpose, compute-optimized, memory-optimized, etc.)
 
-The storage requirements for each AVS are unbundled from the EigenLayer node classes and must be specified separately by the AVS.&#x20;
+The storage requirements for each AVS are unbundled from the EigenLayer node classes and must be specified separately by the AVS.
 
 ## General Purpose EigenLayer Node classes
 
-| Class                   | vCPUs (10th gen+) | Memory | Networking Capacity  |
-| ----------------------- | ----------------- | ------ | -------------------- |
-| General Purpose - large | 2                 | 8 GB   | 5 Mbps               |
-| General Purpose - xl    | 4                 | 16 GB  | 25 Mbps              |
-| General Purpose - 4xl   | 16                | 64 GB  | 5 Gbps               |
+| Class                   | vCPUs (10th gen+) | Memory | Networking Capacity |
+| ----------------------- | ----------------- | ------ | ------------------- |
+| General Purpose - large | 2                 | 8 GB   | 5 Mbps              |
+| General Purpose - xl    | 4                 | 16 GB  | 25 Mbps             |
+| General Purpose - 4xl   | 16                | 64 GB  | 5 Gbps              |
 
-NOTE: The EigenLayer node class specification will expand over time as we collect more data from AVS developers and operators.&#x20;
-
+NOTE: The EigenLayer node class specification will expand over time as we collect more data from AVS developers and operators.

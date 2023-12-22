@@ -1,7 +1,5 @@
 # Restake LSTs
 
-
-
 ## Restake with Liquid Staking Tokens
 
 **Step 1:** Open the EigenLayer App and connect your Web3 wallet, making sure you are connected to the Ethereum Mainnet network. Visit EigenLayer on the Ethereum Mainnet at [**app.eigenlayer.xyz**](https://app.eigenlayer.xyz/)**.**
@@ -28,11 +26,9 @@ If successful, you will receive a confirmation message:
 
 View your **restaked balance** on the app dashboard:
 
-<figure><img src="../../../.gitbook/assets/Screen Shot 2023-06-14 at 11.34.09 AM.jpeg" alt=""/><figcaption></figcaption></figure>
+![Restake Balance](/img/restake-guides/restake-balance.jpeg)
 
-**Step 4:** Monitor your Staking Rewards & Restaked Ratio on the [homepage](http://goerli.eigenlayer.xyz/). Restakers will earn Restaked Points based on their total EigenLayer restaking contribution. Restaked Points are calculated based on the amount staked over time, in units of ETH per second. Your Restaked Ratio is your restaked points over the total restaked points of all restakers. &#x20;
-
-
+**Step 4:** Monitor your Staking Rewards & Restaked Ratio on the [homepage](http://goerli.eigenlayer.xyz/). Restakers will earn Restaked Points based on their total EigenLayer restaking contribution. Restaked Points are calculated based on the amount staked over time, in units of ETH per second. Your Restaked Ratio is your restaked points over the total restaked points of all restakers.
 
 [Join Discord here ](https://discord.gg/eigenlayer)
 

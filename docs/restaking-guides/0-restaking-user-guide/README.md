@@ -6,15 +6,15 @@ These guides will walk you through how LST holders and Native Stakers can restak
 
 **Liquid restaking** is the process of depositing liquid staking tokens (LSTs) into the EigenLayer smart contracts. At this time, the protocol supports the following LSTs:
 
-* stETH (Lido)
-* rETH (Rocket Pool)
-* cbETH (Coinbase)
-* wBETH (Binance)
-* osETH (Stakewise)
-* swETH (Swell)
-* AnkrETH (Ankr)
-* EthX (Stader)
-* OETH (Origin ETH)
+- stETH (Lido)
+- rETH (Rocket Pool)
+- cbETH (Coinbase)
+- wBETH (Binance)
+- osETH (Stakewise)
+- swETH (Swell)
+- AnkrETH (Ankr)
+- EthX (Stader)
+- OETH (Origin ETH)
 
 The protocol plans to support additional liquid staking tokens in the future. If you would like to introduce your LST to the EigenLayer community, please do so on [the forum](https://forum.eigenlayer.xyz/t/about-the-new-lst-token-on-eigenlayer-category/6641).
 
@@ -22,6 +22,6 @@ The protocol plans to support additional liquid staking tokens in the future. If
 
 ## [**Withdrawal Delay**](https://docs.eigenlayer.xyz/security/withdrawal-delay)
 
-EigenLayer is launching with a maximally conservative withdrawal delay, which is intended to only decrease over time.&#x20;
+EigenLayer is launching with a maximally conservative withdrawal delay, which is intended to only decrease over time.
 
 A 7-day delay window should give ample time to review withdrawals for anything suspicious and pause relevant functionality if needed.

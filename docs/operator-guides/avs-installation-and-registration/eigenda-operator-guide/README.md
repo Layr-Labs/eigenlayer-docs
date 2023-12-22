@@ -8,7 +8,7 @@ This guide contains the steps needed to set up your node on the EigenDA testnet.
 
 ### Node Classes
 
-Operators can determine their required EigenLayer node class ([eigenlayer-node-classes.md](../eigenlayer-node-classes.md "mention")) by referencing their share of the total EigenDA quorum against the following table.&#x20;
+Operators can determine their required EigenLayer node class ([eigenlayer-node-classes.md](../eigenlayer-node-classes.md "mention")) by referencing their share of the total EigenDA quorum against the following table.
 
 |                         | Supported Throughput | Max % of Stake      |
 | ----------------------- | -------------------- | ------------------- |
@@ -16,15 +16,15 @@ Operators can determine their required EigenLayer node class ([eigenlayer-node-c
 | General Purpose - xl    | 500 Kbps             | 0.2%                |
 | General Purpose - 4xl   | 50 Mbps              | 20%                 |
 
-Professional operators with large or variable amounts of delegated stake should select the `4xl` node class. The `large` class is intended to be used by solo stakers with the minimal allowed quantity of stake.&#x20;
+Professional operators with large or variable amounts of delegated stake should select the `4xl` node class. The `large` class is intended to be used by solo stakers with the minimal allowed quantity of stake.
 
-We will update this specification to include new EigenLayer node classes as they are introduced.&#x20;
+We will update this specification to include new EigenLayer node classes as they are introduced.
 
 ### Node Storage Requirements
 
-EigenDA nodes must provision storage capacity (high performance SSD volumes) in order to store and serve all data passed to the node over a 2-week period.&#x20;
+EigenDA nodes must provision storage capacity (high performance SSD volumes) in order to store and serve all data passed to the node over a 2-week period.
 
-The following table summarizes the amount of storage that is required for a node based on the amount of stake delegated to the operator.&#x20;
+The following table summarizes the amount of storage that is required for a node based on the amount of stake delegated to the operator.
 
 | % of stake | Allocated Throughout | Required Storage |
 | ---------- | -------------------- | ---------------- |
@@ -33,15 +33,13 @@ The following table summarizes the amount of storage that is required for a node
 | 1%         | 2.5 Mbps             | 750 GB           |
 | 10%        | 25 Mbps              | 4 TB             |
 
-
-
 ## EigenDA Churn Approver
 
 The Churn Approver is responsible for managing the active set of Operator nodes in the EigenDA network. EigenDA uses an operator cap that limits the maximum number of active Operator nodes in the network in order to maintain the desired network performance and limit the L1 gas cost for aggregating signatures.
 
-{% hint style="info" %}
+:::info
 Active Operator Set Cap: for the testnet launch as of December 15, 2023, the active operator set cap is limited to 120 operators. We will review this operator cap on an ongoing basis, and explicitly communicate future changes.
-{% endhint %}
+:::
 
 In order to determine the current TVL of the top 120 operators, please visit our [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda) and sort by `TVL Ascending.`Observe the first 120 operators listed and the amount of ETH TVL delegated to them.
 
@@ -49,8 +47,8 @@ When a new operator wants to opt-in but EigenDA has reached its operator cap, th
 
 1. Check the Churn Approver’s signature.
 2. Perform checks against the stake of the newly-joining and (to-be-ejected) current lowest-stake operator:
-   * The new operator needs at least 1.1x the ejected operator’s stake.
-   * The ejected operator must constitute less than 3.33% of the total stake.
+   - The new operator needs at least 1.1x the ejected operator’s stake.
+   - The ejected operator must constitute less than 3.33% of the total stake.
 3. Eject the current lowest-stake operator.
 4. Proceed with opting-in the new operator, as normal.
 
@@ -61,12 +59,8 @@ The parameters of checks performed in step 2 are configurable by the contract go
 Operators that have been ejected can verify the change in two ways:
 
 1. Visit the EigenDA AVS application to observe whether your Operator is present in the active operator set on the [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda).
-2. Observe your EigenDA Operator log for the following logs. If you see this consistently, then your operator is not receiving any disperser traffic and you may have been ejected. This is not an error but if you only see this log line repeatedly then it means you may not be receiving any disperser traffic.&#x20;
+2. Observe your EigenDA Operator log for the following logs. If you see this consistently, then your operator is not receiving any disperser traffic and you may have been ejected. This is not an error but if you only see this log line repeatedly then it means you may not be receiving any disperser traffic.
 
 ```
 INFO [12-21|18:53:46.673|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=3  caller=node.go:233
 ```
-
-
-\
-\
