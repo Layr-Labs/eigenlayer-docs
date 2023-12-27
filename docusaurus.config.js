@@ -139,20 +139,21 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ["bash"],
-      },
-      algolia: {
-        appId: process.env.ALGOLIA_API_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: "eigenlayer",
-        externalUrlRegex: "docs.eigenlayer.xyz",
-        debug: true,
-        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-        replaceSearchResultPathname: {
-          from: "/docs/", // or as RegExp: /\/docs\//
-          to: "/",
-        },
-      },
+      }
     }),
+    themes: [
+      [
+        require.resolve("@easyops-cn/docusaurus-search-local"),
+        /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+        ({
+          // `hashed` is recommended as long-term-cache of index file is possible
+          language: ["en"],
+          indexDocs: true,
+          indexBlog: false,
+          docsRouteBasePath: "/",
+        }),
+      ],
+    ],
 };
 
 module.exports = config;
