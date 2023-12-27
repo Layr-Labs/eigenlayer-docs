@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Audits
 
 As part of our development process, we are excited to present audits to assess the robustness and reliability of our systems.

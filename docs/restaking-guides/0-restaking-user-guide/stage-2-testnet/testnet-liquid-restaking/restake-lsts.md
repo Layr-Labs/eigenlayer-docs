@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+---
+
+
 # Restake LSTs
 
 Step 1: Open the EigenLayer App and connect your Web3 wallet. Visit goerli.eigenlayer.xyz for the most recent EigenLayer Testnet app.\

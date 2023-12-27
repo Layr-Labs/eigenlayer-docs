@@ -18,7 +18,7 @@ Before you deploy a new validator you must plan to either:
 
 Native Restaking on EigenLayer consists of the following actions:
 
-[Verify Validator Withdrawal Prefix](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/native-restaking/validator-eligibility-withdrawal-prefix)
+[Verify Validator Withdrawal Prefix](validator-eligibility-withdrawal-prefix.md)
 
 1. For existing 0x01 validators you need to exit your validators
 2. Create EigenPod

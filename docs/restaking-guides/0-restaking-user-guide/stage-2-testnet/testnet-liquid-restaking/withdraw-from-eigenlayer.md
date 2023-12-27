@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+---
+
+
 # Withdraw from EigenLayer
 
 All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn.

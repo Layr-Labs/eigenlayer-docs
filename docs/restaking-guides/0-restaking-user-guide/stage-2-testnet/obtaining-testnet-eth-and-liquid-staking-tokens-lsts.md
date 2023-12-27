@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)
 
 In this guide, we will show you how to use a Goerli faucet to load your wallet with [testnet ETH](https://ethereum.org/en/developers/docs/networks/#ethereum-testnets) and how to obtain Goerli Liquid Staking Tokens so you can start testing liquid restaking.

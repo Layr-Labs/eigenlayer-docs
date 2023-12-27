@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Guardrails
 
 EigenLayer restaking has been deployed on Ethereum mainnet at the following contract addresses:

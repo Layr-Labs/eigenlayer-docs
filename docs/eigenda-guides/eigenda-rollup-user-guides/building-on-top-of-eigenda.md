@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Building on top of EigenDA
+# Building on Top of EigenDA
 
 Rollup developers must plan for two points of integration with EigenDA: off chain integration with their sequencer and on-chain integration with their rollup smart contracts. Off chain integration involves a series of RPC calls to the EigenDA Disperser. On chain integration involves a smart contract function call to verify the blob was stored in the EigenDA network.
 

@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Multisig Governance
 
 EigenLayer is designed with upgradeable smart contracts, the ability to pause functionality, and various adjustable parameters. The ability and responsibility to make decisions regarding contract upgrades, pausing functionality, and adjusting parameters initially have been delegated to three main governance multisigs.
