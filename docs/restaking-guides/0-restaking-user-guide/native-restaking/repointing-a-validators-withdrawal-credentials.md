@@ -17,7 +17,7 @@ ethdo is a CLI developed by independent Ethereum contributors. It abstracts a lo
 3. Follow the [basic](https://github.com/wealdtech/ethdo/blob/master/docs/changingwithdrawalcredentials.md#basic-operation) or [advanced](https://github.com/wealdtech/ethdo/blob/master/docs/changingwithdrawalcredentials.md#advanced-operation) guide for changing your validator's withdrawal credentials.
 
 :::info
-**I**nput the address copied in **step 2** as the **`--withdrawal-address`** flag.
+Input the address copied in **step 2** as the **`--withdrawal-address`** flag.
 :::
 
 4. Check that your validator has its withdrawal credentials correctly set by running the following command and replacing **VALIDATOR_INDEX** with your validator's index.
