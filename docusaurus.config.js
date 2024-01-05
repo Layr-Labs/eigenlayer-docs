@@ -34,6 +34,24 @@ const config = {
     locales: ["en"],
   },
 
+  plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        redirects: [
+          {
+            from: "/overview/eigenlayer-privacy-policy",
+            to: "/legal/eigenlayer-privacy-policy",
+          },
+          {
+            from: "/overview/terms-of-service",
+            to: "/legal/terms-of-service",
+          },
+        ],
+      },
+    ],
+  ],
+
   stylesheets: [
     {
       href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
@@ -139,21 +157,21 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ["bash"],
-      }
+      },
     }),
-    themes: [
-      [
-        require.resolve("@easyops-cn/docusaurus-search-local"),
-        /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
-        ({
-          // `hashed` is recommended as long-term-cache of index file is possible
-          language: ["en"],
-          indexDocs: true,
-          indexBlog: false,
-          docsRouteBasePath: "/",
-        }),
-      ],
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // `hashed` is recommended as long-term-cache of index file is possible
+        language: ["en"],
+        indexDocs: true,
+        indexBlog: false,
+        docsRouteBasePath: "/",
+      }),
     ],
+  ],
 };
 
 module.exports = config;
