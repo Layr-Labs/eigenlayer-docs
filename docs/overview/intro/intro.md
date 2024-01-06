@@ -17,4 +17,4 @@ Anyone building a new decentralized service for Ethereum must bootstrap a new tr
 
 ![EigenLayer Architecture](/img/eigenlayer-arch.png)
 
-To learn more about EigenLayer please read the [**whitepaper**](https://docs.eigenlayer.xyz/overview/whitepaper) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
+To learn more about EigenLayer please read the [**whitepaper**](https://docs.eigenlayer.xyz/assets/files/EigenLayer_WhitePaper-88c47923ca0319870c611decd6e562ad.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
