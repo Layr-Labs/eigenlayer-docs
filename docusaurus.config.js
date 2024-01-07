@@ -40,6 +40,10 @@ const config = {
       {
         redirects: [
           {
+            from: "/overview/readme/",
+            to: "/overview",
+          },
+          {
             from: "/overview/eigenlayer-privacy-policy",
             to: "/legal/eigenlayer-privacy-policy",
           },
