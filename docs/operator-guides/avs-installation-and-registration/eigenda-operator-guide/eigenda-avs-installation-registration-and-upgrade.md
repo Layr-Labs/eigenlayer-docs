@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # EigenDA AVS Installation, Registration, and Upgrade
 
 :::info
