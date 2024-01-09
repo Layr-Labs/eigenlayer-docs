@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 description: Setup Grafana and Prometheus Metrics and Monitoring Stack
 ---
 
