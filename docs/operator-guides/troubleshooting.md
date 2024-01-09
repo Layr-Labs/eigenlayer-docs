@@ -10,4 +10,4 @@ If you are getting this issue then either you are using a wrong rpc in your [ope
 
 * Please make sure you have correct rpc (goerli rpc for goerli nodes, mainnet rpc for mainnet) and is also accessible via your machine
 
-* Please find the correct smart contract addresses [here](https://docs.eigenlayer.xyz/operator-guides/operator-installation#goerli-smart-contract-addresses)
+* Please find the correct smart contract addresses [here](./operator-installation#goerli-smart-contract-addresses)
