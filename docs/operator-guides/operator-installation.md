@@ -201,6 +201,21 @@ When you run the Eigenlayer operator keys list command, it will display a list o
 
 This information can be useful for managing and identifying the keys you've created. Public keys are typically used for encryption, authentication, and verifying digital signatures.
 
+### Export keys
+If you want to see the private key of the existing keys, you can use the below command. This will only work if your keys are in default location (`~/.eigenlayer/operator_keys`)
+
+```
+eigenlayer operator keys export --key-type ecdsa [keyname]
+```
+
+This will also prompt for the password used to encrypt the key.
+
+If your keys is not in the default location, you can give the full path to the key file using --key-path flag. You don't need to provide the key name in that case.
+
+```
+eigenlayer operator keys export --key-type ecdsa --key-path [path]
+```
+
 ---
 
 ## Fund ECDSA Wallet

@@ -18,7 +18,7 @@ Yes. You are required to host the logo publicly like [this](https://goerli-opera
 Yes. We only support `.png` format and we strictly check the content of image. If your image doesn't satisfy the requirement then the EigenLayer App will not display the logo of your operator.
 
 #### What if I lose access to my keys?
-When you [create/import](./operator-installation#create-and-list-keys) keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can your the export command to get your plaintext private key again. 
+When you [create/import](./operator-installation#create-and-list-keys) keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can run the [export](./operator-installation.md#export-keys) command to get your plaintext private key. 
 
 #### What is my operator addresss? 
 After you [create/import](./operator-installation#create-and-list-keys) ecdsa key you will be shown below log message
