@@ -33,5 +33,5 @@ _\*Percentage of active stake vs. total stake. This will be monitored by how muc
 # Notice of Warning and Ejection
 In case of Warning and Ejection - notices will be posted via the following channels:
 * [Operator Working Group Slack](https://operatorwg.eigenlayer.xyz/)
-* EigenLayer Solo Staker Community Telegram
-* [EigenLayer Discord](https://discord.gg/eigenlayer)
+* [EigenLayer Solo Staker Community Telegram](https://t.me/+7ejv7SyIQJwwNGYx)
+* [EigenLayer Discord](https://discord.gg/eigenlayer): ⁠#operator-announcements
