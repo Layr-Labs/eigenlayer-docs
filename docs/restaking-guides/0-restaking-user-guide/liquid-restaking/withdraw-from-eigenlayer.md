@@ -4,7 +4,7 @@
 All funds unstaked from EigenLayer go through a 7-day escrow period before being able to be withdrawn. Thus after you initiate (queue) the withdrawal, you must wait 7-days before being able to withdraw your assets.
 :::
 
-**Step 1:** Navigate to the **Unstake tab**, enter your withdrawal amount, and click **Next:**
+**Step 1:** Navigate to the **Unstake tab**, enter your withdrawal amount, and click **Unstake**.
 
 
 **Step 2:** Click **Confirm** when prompted by your wallet. Once the transaction confirms, you should see your Restaked balance move to Unstaking.
