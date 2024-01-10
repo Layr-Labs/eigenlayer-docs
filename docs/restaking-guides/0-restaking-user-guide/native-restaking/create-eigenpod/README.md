@@ -11,18 +11,16 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 
 **Step 2:** Click **Create Pod**:
 
-![create-pod](/img/restake-guides/native-1-create-pod.jpeg)
+![create-pod](/img/restake-guides/native-create-eigenpod1.png)
 
-If successful, you should receive the following confirmation:
+If successful, you will receive a confirmation. Observe that your EigenPod address is available on the right portion of the screen.
 
-![confirm-pod](/img/restake-guides/native-2-confirm-pod.jpeg)
+![pod-detail](/img/restake-guides/native-create-eigenpod3.png)
 
-Click **Pod Details** to view your EigenPod address:
 
-![pod-detail](/img/restake-guides/native-3-pod-details.jpeg)
-![pod-address](/img/restake-guides/native-4-pod-address.jpeg)
+**Step 3:** Copy this address for future use setting your validator's withdrawal credentials.
 
-**Copy** this address.
+![copy-address](/img/restake-guides/native-create-eigenpod4.png)
 
 :::info
 This address is responsible for all subsequent restaking and withdrawal operations from that EigenPod.

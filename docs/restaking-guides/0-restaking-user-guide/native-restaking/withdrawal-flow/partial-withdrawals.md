@@ -12,31 +12,17 @@ Due to how withdrawals from Ethereum are designed, users can only initiate one p
 All funds unstaked from EigenLayer go through a 7-day escrow period before being able to be withdrawn. Thus after you initiate your unstake, you must wait 7-days before being able to withdraw your assets.
 :::
 
-**Step 1:** Unstake
+**Step 1:** Unstake - click **Unstake** to queue the withdrawal and initiate the escrow period.
 
-Click **Unstake** to initiate the escrow period.
-<br/>
+![escrow](/img/restake-guides/native-partial-withdrawal1.png)
 
-![escrow](/img/restake-guides/partial-withdrawals-1.png)
-
-If successful, you should receive the following confirmation:
-<br/>
-
-![success](/img/restake-guides/partial-withdrawals-2.png)
-
+If successful, you should receive a confirmation.
 Once the transaction confirms, you should see your EigenPod balance move to _Unstake pending:_
-<br/>
 
-![confirm](/img/restake-guides/partial-withdrawals-3.png)
+![confirm](/img/restake-guides/native-partial-withdrawal2.png)
 
-**Step 2:** Withdraw
+**Step 2:** Withdraw - upon completion of the escrow period, click **Withdraw** to transfer the funds to your wallet.
 
-Upon completion of escrow, click **Withdraw** to transfer the funds to your wallet.
-<br/>
+![withdrawl](/img/restake-guides/native-partial-withdrawal3.png)
 
-![withdrawl](/img/restake-guides/partial-withdrawals-4.png)
-
-If successful, you should receive the following confirmation:
-<br/>
-
-![success](/img/restake-guides/partial-withdrawals-5.png)
+If successful, you should receive a confirmation.

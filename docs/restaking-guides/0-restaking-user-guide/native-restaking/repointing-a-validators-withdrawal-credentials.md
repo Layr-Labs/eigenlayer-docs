@@ -28,7 +28,7 @@ ethdo validator credentials get --validator=VALIDATOR_INDEX
 
 5. Finally, navigate to the your EigenPod dashboard on the EigenLayer app and check that the number of restaked validators matches the number of validators whose withdrawal credentials you repointed:
 
-![native-withdraw](/img/restake-guides/native-withdraw-1.jpg)
+![native-withdraw](/img/restake-guides/set-validator-withdrawal-credentials.png)
 
 ### Option 2: Consensus Client
 
