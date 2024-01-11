@@ -18,7 +18,7 @@ cp .env.example .env
 - In the `prometheus.yml` file:
   - Update prometheus config [file](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/monitoring/prometheus.yml) is updated with the metrics port (`NODE_METRICS_PORT`) of the eigenda node in parent folder `.env` file
   - Ensure the eigenda container name for `scrape_configs.targets` matches the value of the parent folder `.env` file (`MAIN_SERVICE_NAME`).
-  - Make sure the location of prometheus file is correct in [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env.example#L2) file
+  - Make sure the location of prometheus file is correct in [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/monitoring/.env.example) file
 
 **Step 2:** Run the following command to start the monitoring stack
 
