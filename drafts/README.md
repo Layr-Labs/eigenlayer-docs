@@ -1,0 +1,1 @@
+This folder is a holding location for draft content, until we migrate to Docusaurus 3.x

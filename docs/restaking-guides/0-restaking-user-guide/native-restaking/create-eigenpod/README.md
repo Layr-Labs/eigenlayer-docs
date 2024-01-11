@@ -1,15 +1,15 @@
 # Create EigenPod and Set Withdrawal Credentials
 
-An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md) is a smart contract used by EigenLayer to manage validator balance and withdrawal status. Please review the following considerations when planning your EigenPod and validator operations:
+An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md) is a smart contract managed by users, designed to facilitate the EigenLayer protocol in monitoring and managing balance and withdrawal statuses. Please review the following considerations when planning your EigenPod and validator operations:
 
-- You may repoint any number of validators to a single EigenPod.
+- You may point any number of validators to a single EigenPod.
 - An Ethereum address can only deploy a single EigenPod.
 - The address that deploys an EigenPod becomes the owner of the contract and gains permission for restaking and withdrawal operations.
 - Ownership of an EigenPod cannot be transferred.
 
 **Step 1:** Open the [EigenLayer App](http://app.eigenlayer.xyz/) and connect your Web3 wallet, making sure you are connected to Ethereum mainnet.
 
-**Step 2:** Click **Create Pod**:
+**Step 2:** Click **Create EigenPod**:
 
 ![create-pod](/img/restake-guides/native-create-eigenpod1.png)
 
@@ -23,7 +23,7 @@ If successful, you will receive a confirmation. Observe that your EigenPod addre
 ![copy-address](/img/restake-guides/native-create-eigenpod4.png)
 
 :::info
-This address is responsible for all subsequent restaking and withdrawal operations from that EigenPod.
+This address is responsible for all subsequent restaking and withdrawal activities associated with that EigenPod.
 :::
 
 :::warning

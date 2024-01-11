@@ -1,7 +1,5 @@
 ---
-description: >-
-  This guide is intended to help you withdraw from Ethereum consensus and
-  EigenLayer with 32ETH + staking rewards
+sidebar_position: 2
 ---
 
 # Full Withdrawals
@@ -24,7 +22,9 @@ Once the validator withdrawal from Ethereum is completed, your staked ETH balanc
 
 ![withdrawal-unstake](/img/restake-guides/native-full-withdrawal2.png)
 
-**Step 4:** Withdraw your ETH - upon completion of the 7-day escrow, click **Withdraw** to transfer the ETH to your wallet
+**Step 4:** Wait for the 7-day escrow period to complete.
+
+**Step 5:** Withdraw your ETH. Click **Withdraw** to transfer the ETH to your wallet
 
 ![pending](/img/restake-guides/native-full-withdrawal3.png)
 

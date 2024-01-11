@@ -1,8 +1,7 @@
 ---
-description: >-
-  This guide is intended to help you withdraw your Ethereum staking rewards (to
-  date)
+sidebar_position: 1
 ---
+
 
 # Partial Withdrawals
 
@@ -21,7 +20,9 @@ Once the transaction confirms, you should see your EigenPod balance move to _Uns
 
 ![confirm](/img/restake-guides/native-partial-withdrawal2.png)
 
-**Step 2:** Withdraw - upon completion of the escrow period, click **Withdraw** to transfer the funds to your wallet.
+**Step 2:** Wait for the escrow period to complete.
+
+**Step 3:** Withdraw - upon completion of the escrow period. Click **Withdraw** to transfer the funds to your wallet.
 
 ![withdrawl](/img/restake-guides/native-partial-withdrawal3.png)
 

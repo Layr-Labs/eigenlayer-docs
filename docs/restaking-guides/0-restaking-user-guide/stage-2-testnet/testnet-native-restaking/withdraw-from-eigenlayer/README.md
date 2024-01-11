@@ -4,5 +4,5 @@ Please refer to the Ethereum Foundation’s documentation on [how withdrawal pay
 
 There are two kinds of withdrawals from native restaking in EigenLayer:
 
-- Partial withdrawals: Balances in excess of 32 Eth (earned rewards) are withdrawn to an Ethereum address and can be spent immediately. The validator will continue to be a part of the beacon chain and validate as expected.
-- Full withdrawals: The validator will exit and stop being a part of the beacon chain. The entire balance (32 ETH principle and any rewards) of the validator is then unlocked and allowed to be spent after the exit and withdrawal mechanism is complete.
+- **Partial** withdrawals: balances in excess of 32 ETH (earned rewards) are withdrawn to an Ethereum address. The validator will continue to be a part of the beacon chain and validate as expected.
+- **Full** withdrawals: users have the ability to cease their staking activities entirely. By choosing this option, they initiate the process of unlocking the entire balance held by their validator, including both the initial stake and any accumulated rewards. This action effectively ends their validator's participation in the network.

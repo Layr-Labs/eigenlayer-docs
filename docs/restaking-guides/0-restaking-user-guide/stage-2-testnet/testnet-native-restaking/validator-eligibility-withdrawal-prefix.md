@@ -5,7 +5,7 @@ sidebar_position: 6
 
 # Verify Validator Withdrawal Prefix (Optional)
 
-Beacon chain validators contain a field known as **withdrawal credentials,** a commitment to a private key that may be used later to withdraw funds from the validator's balance on the beacon chain. The first two bytes of these credentials are known as the [**withdrawal prefix**](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-0x00-and-0x01-withdrawal-credentials-prefixes).
+Beacon chain validators contain a field known 'withdrawal credentials', which can be utilized in the future to withdraw funds from the validator's balance on the beacon chain. The first two bytes of these credentials are known as the [**withdrawal prefix**](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-0x00-and-0x01-withdrawal-credentials-prefixes).
 
 The prefix can either be `0x00` or `0x01`:
 
@@ -35,7 +35,7 @@ Additionally, you can check [beaconcha.in](http://beaconcha.in/), navigate to yo
 If you have 0x00-prefixed credentials, you can only [migrate once](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-Once-I-have-changed-my-credential-to-0x01-can-I-change-it-to-an-alternative-withdrawal-address) to a 0x01-prefixed credential per the Ethereum protocol rules. You may choose to either:
 
 - Migrate your withdrawal credential to your EigenPod address.
-- Migrate (convert) your withdrawal credential from a [BLS address (0x00) to an execution address (0x01)](https://notes.ethereum.org/@launchpad/withdrawals-guide#BLS-to-execution-with-ethdo).
+- Migrate (convert) your withdrawal credential from a [BLS address (0x00) to an execution address (0x01)](https://notes.ethereum.org/@launchpad/withdrawals-guide#BLS-to-execution-with-ethdo), noting that an EigenPod qualifies as an execution address. It's crucial to understand that if the withdrawal credential is set to a 0x01 address that does not correspond to your EigenPod, you will be unable to restake. In such a scenario, exiting your validators becomes a necessary step.
 
 If you update your credentials **before** restaking on EigenLayer, you will have to go through the withdrawal queue and then restart the ETH validator staking process.
 

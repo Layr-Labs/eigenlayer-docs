@@ -15,7 +15,9 @@ All funds unstaked from EigenLayer will go through an escrow period before being
 
 ![](https://lh7-us.googleusercontent.com/Ol33uK-uNL7K5vXmWDyI_eVWQOT75Jx7kR9Q75Qn5547ExC0KwfBFn6SikZgfOIYqU2od1OSjXlsA9WXpDa653AXPc38mNQ9ESmSZX0pPxGnleA9QFOgSTpCEYzkzr051HyJwlvMMNpfdS_BBvxARz0)
 
-**Step 3:** Finalize Your Withdrawal. Your withdrawal is now in escrow. Once the escrow completes, you'll see the balance under Available to withdraw. Click Withdraw to finalize the process.
+**Step 3:** Your withdrawal is now in escrow. Wait for the escrow period to complete.
+
+**Step 4:** Once the escrow completes, you'll see the balance under Available to withdraw. Click **Withdraw** to finalize the process.
 
 ![](https://lh7-us.googleusercontent.com/VXO97JjR5VLDR8u0afZ6g9bq2zDScyP_UyQ4tkkc8J2IYWgfUIOUxIm08micsb8_kIne-aftSKuzwHBpoJV0NUGbWil-Zw0fUHdYUMgte5k6DbEj8dxpSvLT3V3k_DS78BO6c9GG3nDids7LGOyLbME)
 

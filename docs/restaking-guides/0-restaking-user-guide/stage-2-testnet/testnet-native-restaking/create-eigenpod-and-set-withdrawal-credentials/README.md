@@ -1,6 +1,6 @@
 # Create EigenPod and Set Withdrawal Credentials
 
-An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md) is a smart contract used by EigenLayer to manage validator balance and withdrawal status. Please review the following considerations when planning your EigenPod and validator operations:
+An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md) is a smart contract managed by users, designed to facilitate the EigenLayer protocol in monitoring and managing balance and withdrawal statuses. Please review the following considerations when planning your EigenPod and validator operations:
 
 - You may repoint any number of validators to a single EigenPod.
 - An Ethereum address can only deploy a single EigenPod.
@@ -17,11 +17,11 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 
 ![](https://lh7-us.googleusercontent.com/iLPD5MfrJT8krjQtly8sUUiqKtpTWXD58Ajp_jfKNTnNcV07s8TD-A2H0GLyPOmTHvFUWGho7qjICYzzhAvpyTwJh_Mpiq_k6lMWsNL7H5ns9OCVRa6MnjMpFpNDkNakfdTPVRcElFSfslcVJTHByN0)
 
-**Step 3:** Click Create Pod
+**Step 3:** Click **Create EigenPod**
 
 ![](https://lh7-us.googleusercontent.com/JmrdFSRiYNSe_77cpb8ut3ZEH4FIgyO1D4Sm76QM3mi6agrvsXQ1_I6t_CVnZ3hP3YRFrVGPvHWo7rQFxhYylYSO02XTQ02wKFjpRdN1auJDmGJAdJJ6ubmAJ0XfbiEbeH_4n9Aq0VDMBkD_I4g-n_0)
 
-**Step 4:** Review the fee recipient warning and click Create EigenPod
+**Step 4:** Review the fee recipient warning and click **Create EigenPod**
 
 ![](https://lh7-us.googleusercontent.com/gCiv9UYN6M4LTyyb78MXQJ9GeXCW-Sf-23FgWOw9JHs7wRvuSjMlfejOVgcc6ymUE0Lu98ojF-k6MZzdeV45KmYlnCM_jjdoecJcdozIacCGqd0cFNet-hdZdJ9iwVkL9-kg9suCQQhkYF9364PK_yQ)
 
@@ -30,7 +30,7 @@ If successful, you should receive a confirmation and the EigenPod Address will b
 ![](https://lh7-us.googleusercontent.com/LWnVdggenjRiCYhEeXbCGbr_HxNcSQx2BlGJFcAVn7V65J7jCpXXYnRYSWp-na2RZ39ZaqthMqjrKBmwCaRXrI_wFM9q1W_Aqb1QF9lOuMqWkhNh1mnOQbcRCdQZtgX9aEC7n3sWFKC4B5VsLifP6Uc)
 
 :::info
-This address is responsible for all subsequent restaking and withdrawal operations from that EigenPod.
+This address is responsible for all subsequent restaking and withdrawal activities associated with that EigenPod.
 :::
 
 :::danger
