@@ -2,11 +2,11 @@
 
 Follow the instructions below to create an EigenPod using a Safe address.
 
-**Step 1:** Create a [Safe{Wallet} Account](https://app.safe.global/) and note the new address created.
+**Step 1:** Create a [Safe&#123;Wallet&#125; Account](https://app.safe.global/) and note the new address created.
 
 **Step 2:** Locate the current “EigenPodManager -> Proxy” contract address via the[ EigenLayer Goerli Deployments table here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/README.md#m1-current-goerli-testnet-deployment).
 
-**Step 3:** In your Safe{Wallet} Dashboard, click “New Transaction”, then “Transaction Builder”
+**Step 3:** In your Safe&#123;Wallet&#125; Dashboard, click “New Transaction”, then “Transaction Builder”
 
 ![](https://lh7-us.googleusercontent.com/VhvtrzfZkAPIVjAVGaGiQLuHcoX94IeuJIZKymOP8rl5SU6YPkLMRDfyoEKT22MJUwCZp3bj4g7RnkFZPrvNDq1FBRWt6wp6fd_W_qxmdDczCr63Md7v_dFGjMRlA_cPbxAF2vs4pwRk8Y3aIGI5ghY)
 
