@@ -20,6 +20,7 @@ Clone this repo and execute the following commands:
 ```
 git clone https://github.com/Layr-Labs/eigenda-operator-setup.git
 cd eigenda-operator-setup
+cp .env.example .env
 ```
 
 Manually update the `.env` file downloaded in the steps above. Modify the sections marked with `TODO` to match your environment.
@@ -37,11 +38,11 @@ Retrieval Setup:
 
 In order for users to retrieve data from your node, you will need to open access to retrieval ports.
 
-Ensure the port specified as `NODE_RETRIEVAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env#L17) has open access to the public internet.
+Ensure the port specified as `NODE_RETRIEVAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L17) has open access to the public internet.
 
 Dispersal Setup:
 
-In order to limit traffic from the EigenLabs hosted Disperser, please restrict your node's ingress traffic to be allowed by the the list provided below and port number set as `NODE_DISPERSAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env#L14) in the below setup.
+In order to limit traffic from the EigenLabs hosted Disperser, please restrict your node's ingress traffic to be allowed by the the list provided below and port number set as `NODE_DISPERSAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L14) in the below setup.
 
 - `3.221.120.68/32`
 - `52.2.226.152/32`
@@ -61,7 +62,7 @@ Execute the following command to opt-in to EigenDA AVS:
 ./run.sh opt-in
 ```
 
-Note: the script will use the `NODE_HOSTNAME` from [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/d677db9636edd0c1f83f642aba0a9d12bb95763e/.env#L59) as your current IP.
+Note: the script will use the `NODE_HOSTNAME` from [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) as your current IP.
 
 If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver then you may run the opt-in command again after the rate limiting threshold has passed. The current rate limiting threshold is 5 minutes.
 
@@ -179,7 +180,7 @@ docker compose down
 
 #### Step 4: Start your services again
 
-Make sure your `.env` file still has correct values in the [TODO](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env#L60) sections before you restart your node.
+Make sure your `.env` file still has correct values in the [TODO](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L60) sections before you restart your node.
 
 If there are any specific instructions that needs to be followed for any upgrade, those instructions will be given with the release notes of the specific release. Please check the latest [release notes](https://github.com/Layr-Labs/eigenda-operator-setup/releases) on Github and follow the instructions before starting the services again.
 
