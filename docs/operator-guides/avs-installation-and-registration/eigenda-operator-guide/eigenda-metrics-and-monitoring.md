@@ -11,13 +11,14 @@ These instructions provide a quickstart guide to run the Prometheus, Grafana, an
 
 ```
 cd monitoring
+cp .env.example .env
 ```
 
 - Open the `.env` file, ensure the location of `prometheus.yml` is correct for your environment.
 - In the `prometheus.yml` file:
   - Update prometheus config [file](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/monitoring/prometheus.yml) is updated with the metrics port (`NODE_METRICS_PORT`) of the eigenda node in parent folder `.env` file
   - Ensure the eigenda container name for `scrape_configs.targets` matches the value of the parent folder `.env` file (`MAIN_SERVICE_NAME`).
-  - Make sure the location of prometheus file is correct in [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/monitoring/.env) file
+  - Make sure the location of prometheus file is correct in [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env.example#L2) file
 
 **Step 2:** Run the following command to start the monitoring stack
 
@@ -31,7 +32,7 @@ docker compose up -d
 docker network connect eigenda-network prometheus
 ```
 
-Note: eigenda-network is the name of the network in which eigenda is running. You can check the network name in eigenda [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env#L2) file (`NETWORK_NAME`). This will ensure Prometheus can scrape the metrics from Eigenda node.
+Note: eigenda-network is the name of the network in which eigenda is running. You can check the network name in eigenda [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env.example#L2) file (`NETWORK_NAME`). This will ensure Prometheus can scrape the metrics from Eigenda node.
 
 Useful Dashboards: we also provide a set of useful Grafana dashboards which would be useful for monitoring the EigenDA node. You can find them [here](https://github.com/Layr-Labs/eigenda-operator-setup/tree/master/dashboards). Once you have Grafana setup, feel free to import the dashboards.
 
