@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Full Withdrawal
 
 :::info
@@ -14,7 +18,7 @@ You can queue a withdrawal for any amount. However, when you choose to complete 
 
 **Step 2:** Click Unstake. Sign the transaction using your Web3 wallet.
 
-**Step 3:** Observe the Unstaking balance has increased during the escrow period.
+**Step 3:** Wait for the escrow period to complete. Observe the Unstaking balance has increased during the escrow period.
 
 ![](https://lh7-us.googleusercontent.com/QZvihKxzjPXs4XBWp8xNZdsc8FmLl7VuJ0m5yom_TqgqiFkpROSVSqEr_4XdMWMmhD-ZcTVOjRYxEaTmwpQzIz87dJdgpNs79jDQvw7TKgNxIXr3P1OJCsWeKZoew4I2iG_6Phy5rlej99HvuoKnY-g)
 

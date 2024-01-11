@@ -1,6 +1,6 @@
 # Withdrawing a Validator from the Ethereum Consensus Layer
 
-To withdraw your validator from participating in Ethereum consensus, follow your validator's consensus client's documentation:
+To withdraw your validator from participating in the Ethereum consensus layer, follow your validator's consensus client's documentation:
 
 * [Prysm](https://docs.prylabs.network/docs/wallet/withdraw-validator)
 * [Lighthouse](https://lighthouse-book.sigmaprime.io/voluntary-exit.html)
