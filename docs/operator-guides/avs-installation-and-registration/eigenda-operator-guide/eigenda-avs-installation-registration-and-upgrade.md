@@ -8,12 +8,12 @@ sidebar_position: 1
 Please ensure you have reviewed the [current Active Operator Set cap](https://docs.eigenlayer.xyz/operator-guides/avs-installation-and-registration/eigenda-operator-guide#eigenda-churn-approver) and ensure you have sufficient delegated restaked ETH TVL before proceeding.
 :::
 
-**Step 1:** Install Prerequisites
+#### Step 1: Install Prerequisites
 
 - Complete the EigenLayer CLI installation and registration [here](https://docs.eigenlayer.xyz/operator-guides/operator-installation).
 - Install [Docker Engine on Linux](https://docs.docker.com/engine/install/ubuntu/).
 
-**Step 2:** Prepare Local EigenDA files
+#### Step 2: Prepare Local EigenDA files
 
 Clone this repo and execute the following commands:
 
@@ -31,7 +31,7 @@ mkdir -p $HOME/.eigenlayer/eigenda/logs
 mkdir -p $HOME/.eigenlayer/eigenda/db
 ```
 
-**Step 3:** Operator Networking Security Setup
+#### Step 3: Operator Networking Security Setup
 
 Retrieval Setup:
 
@@ -47,7 +47,7 @@ In order to limit traffic from the EigenLabs hosted Disperser, please restrict y
 - `52.2.226.152/32`
 - `18.214.113.214/32`
 
-**Step 4:** Opt-in into EigenDA
+#### Step 4: Opt-in into EigenDA
 
 In order to opt-in into EigenDA as an Operator, you must meet the following delegated TVL requirements:
 
@@ -67,7 +67,7 @@ If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver 
 
 If you receive the error “error: failed to request churn approval .. Rate Limit Exceeded” you may retry after the threshold has passed. If you receive the error “insufficient funds”, you may increase your Operator’s delegated TVL to the required minimum and retry after the threshold has passed.
 
-**Step 5:** Run EigenDA
+#### Step 5: Run EigenDA
 
 Execute the following command to start the docker containers:
 
@@ -140,13 +140,13 @@ INFO [01-09|23:45:49.772|github.com/Layr-Labs/eigenda/node/node.go:334]         
 DEBUG[01-09|23:45:49.772|github.com/Layr-Labs/eigenda/node/node.go:336]             Exiting process batch                    duration=78.216395ms caller=node.go:336
 ```
 
-**Step 6:** To bring the containers down, run the following command:
+#### Step 6 (optional): To bring the containers down, run the following command
 
 ```
 docker compose down
 ```
 
-Optional: Opt-Out of EigenDA
+Opt-Out of EigenDA
 
 The following command will unregister you from the EigenDA AVS:
 
@@ -158,26 +158,26 @@ The following command will unregister you from the EigenDA AVS:
 
 Upgrade the AVS software for your EigenDA service setup by following the steps below:
 
-**Step 1:** Pull the latest repo
+#### Step 1: Pull the latest repo
 
 ```
 cd eigenda-operator-setup
 git pull
 ```
 
-**Step 2:** Pull the latest docker images
+#### Step 2: Pull the latest docker images
 
 ```
 docker compose pull
 ```
 
-**Step 3:** Stop the existing services
+#### Step 3: Stop the existing services
 
 ```
 docker compose down
 ```
 
-**Step 4:** Start your services again
+#### Step 4: Start your services again
 
 Make sure your `.env` file still has correct values in the [TODO](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env#L60) sections before you restart your node.
 
