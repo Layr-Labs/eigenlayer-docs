@@ -8,7 +8,7 @@ This guide contains the steps needed to set up your node on the EigenDA testnet.
 
 ### Node Classes
 
-Operators can determine their required EigenLayer node class ([eigenlayer-node-classes.md](../eigenlayer-node-classes.md "mention")) by referencing their share of the total EigenDA quorum against the following table.
+Operators can determine their required [EigenLayer node class](../eigenlayer-node-classes.md) by referencing their share of the total EigenDA quorum against the following table.
 
 |                         | Supported Throughput | Max % of Stake      |
 | ----------------------- | -------------------- | ------------------- |
