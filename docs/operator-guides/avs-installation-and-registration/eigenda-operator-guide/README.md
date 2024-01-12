@@ -38,10 +38,10 @@ The following table summarizes the amount of storage that is required for a node
 The Churn Approver is responsible for managing the active set of Operator nodes in the EigenDA network. EigenDA uses an operator cap that limits the maximum number of active Operator nodes in the network in order to maintain the desired network performance and limit the L1 gas cost for aggregating signatures.
 
 :::info
-Active Operator Set Cap: for the testnet launch as of December 15, 2023, the active operator set cap is limited to 120 operators. We will review this operator cap on an ongoing basis, and explicitly communicate future changes.
+Active Operator Set Cap: the active operator set cap is currently limited to 200 operators. We will review this operator cap on an ongoing basis, and explicitly communicate future changes.
 :::
 
-In order to determine the current TVL of the top 120 operators, please visit our [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda) and sort by `TVL Ascending.`Observe the first 120 operators listed and the amount of ETH TVL delegated to them.
+In order to determine the current TVL of the top 200 operators, please visit our [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda) and sort by `TVL Ascending.`Observe the first 200 operators listed and the amount of ETH TVL delegated to them.
 
 When a new operator wants to opt-in but EigenDA has reached its operator cap, the newly-registering operator can request a signature from the Churn Approver. The Churn Approver will check that the newly-joining operator meets stake requirements, and provide a signature that approves removing the current lowest-stake existing operator. The operator will then opt-in to EigenDA, providing the churner’s signature and information on the lowest-stake existing operator as additional inputs to EigenDA’s smart contract. Finally, the smart contract will:
 
