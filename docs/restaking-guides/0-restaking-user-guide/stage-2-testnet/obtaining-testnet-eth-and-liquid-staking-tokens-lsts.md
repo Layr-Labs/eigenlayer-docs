@@ -68,33 +68,16 @@ To convert Goerli ETH to ankrETH follow the instructions below:
 
 
 ## Swap goETH for LsETH (Liquid Staked ETH)​
-
-To convert Goerli ETH to LsETH follow the instructions below:
-
 - Navigate to the [Uniswap app](https://app.uniswap.org/swap) and connect your web3 wallet.
-
 - In the app's settings, make sure you toggle testnet support "on" and select Ethereum Goerli as the active network.
-
 - Click on your wallet address in the upper right hand corner of the app.
-
   - Select the Settings wheel.
-
   - Toggle "Show Testnets" to On.
-
   - In the list of networks to the left of your wallet address, change the active network to Goerli.
-
 - Click "Select Token" and search for LsETH.
-
   - If the token does not appear, search instead for the token address manually: 0x3ecCAdA3e11c1Cc3e9B5a53176A67cc3ABDD3E46
-
 - Initiate a swap from ETH to LsETH.
-
 - Import the token address to your wallet to view the available LsETH tokens: 0x3ecCAdA3e11c1Cc3e9B5a53176A67cc3ABDD3E46
-
-## Swap goETH for mETH (Mantle ETH)
-
-- Please follow the instructions via Mantle documentation here: [Fetching Test Tokens](https://docs.mantle.xyz/network/introduction/how-to-guides/fetching-test-tokens)
-
 
 
 
