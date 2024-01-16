@@ -1,6 +1,26 @@
+import re
 import os
 import requests
 from urllib.parse import urlparse
+
+
+def extract_valid_url_from_image_tag(text):
+    # Use regular expression to find the URL in the image tag
+    match = re.search(r'\(([^)]+)\)', text)
+    
+    if match:
+        # Extract the URL from the matched group
+        url_in_brackets = match.group(1)
+        
+        # Parse a valid URL from the extracted part
+        parsed_url = urlparse(url_in_brackets)
+        
+        # Check if the parsed URL is valid
+        if parsed_url.scheme and parsed_url.netloc:
+            return parsed_url.geturl()  # Return the valid URL
+
+
+
 
 # Function to download an image from a URL
 def download_image(url, folder_path, index):
@@ -35,15 +55,15 @@ def find_and_download_images(start_folder):
                 # Read each line in the file
                 with open(file_path, 'r') as text_file:
                     for line in text_file:
-                        # Check if the URL contains "googleusercontent.com"
-                        if "googleusercontent.com" in line:
-
-                            # Parse a valid URL from the line
-                            parsed_url = urlparse(line.strip())
-                    
+                        if "googleusercontent.com" in line and "None" not in line:
+                            #print("line in text file: ", line)
+                            # Check if the URL contains "googleusercontent.com"
+                            urlpath = urlparse(line.strip()).path
+                            #print("urlpath: ", urlpath)
+                            parsed_url = extract_valid_url_from_image_tag(urlpath)
                             # Download the image
-                            print("URL found: ", parsed_url.domain)
-                            # download_image(parsed_url.geturl(), image_folder, index)
+                            print("Parsed URL with googleusercontents: ", parsed_url)
+                            #download_image(parsed_url, image_folder, index)
                             index += 1
 
 # Specify the starting folder
