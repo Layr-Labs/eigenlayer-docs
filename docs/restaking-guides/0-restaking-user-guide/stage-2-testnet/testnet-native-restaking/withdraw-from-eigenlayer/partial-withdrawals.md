@@ -14,7 +14,10 @@ Partial withdrawals require on-chain proofs in order to process the withdrawal. 
 
 The proving cost is 200k gas + a fixed fee per proof that will be around 0.01 ETH. Each of these proofs will be able to prove up to 16 beacon chain withdrawals (batched into one transaction). The user will be prompted to sign additional transactions - one per each additional batch.
 
-**Step 1:** Note the Validator ETH Yield and Redeemable value. The Redeemable value may be lower than the Validator ETH Yield (beacon chain) due to the time lag associated with the beacon chain oracle, which occurs approximately every 4 hours.
+**Step 1:** Note the values for "Validator ETH Yield" and "Redeemable". 
+:::warning
+The Redeemable value may temporarily appear lower than the Validator ETH Yield (beacon chain) due to the time lag associated with the EigenLayer beacon chain oracle. This sync occurs approximately every 4 hours.
+:::
 
 ![](https://lh7-us.googleusercontent.com/315HLw5gMxldCg7bdYEiAVkXkroCylpev1HAjVRwnixIoU9PTy1l-czPnDH3JBqN3oZwand47yxjTqTpdglHzGXRjXEztnnPW8_lQ0p8SvlE-R9sCP4qk7oJMc8hxMM8-koAMLy1DCaU4T0peaUyJZs)
 

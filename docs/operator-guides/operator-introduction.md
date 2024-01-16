@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Operator Introduction
+# Introduction
 
 ## What is a Node Operator within EigenLayer?
 

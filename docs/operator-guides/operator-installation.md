@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Operator Installation
+# Installation
 
 ## Node Operator Checklist
 
@@ -238,12 +238,13 @@ You can create the config files needed for operator registration using the below
 eigenlayer operator config create
 ```
 
-It will create two file: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. A sample yaml [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) is provided for reference.
+It will create two files: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
-A public metadata url is required to register the operator. After creating and filling the [metadata](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json) file, you can it to a publicly accessible location and give the url in the config file. You are also required to upload the image of the operator to a publicly accessible location and give the url in the metadata file. We only support `.png` images for now.
+A public metadata url is required to register the operator. After updating your `metadata.json` file, you must upload it to a publicly accessible location and add that public url to your `operator.yaml` file. You are also required to upload the image of the operator to a publicly accessible location and give the url in the metadata file. Operator registration only supports `.png` images for now.
 
 :::warning
-Note: Please ensure that the `metadata.json`file is hosted in a publicly accessible location. The metadata_url parameter in the operator configuration must be publicly accessible in order for registration to succeed.
+Please ensure that the `metadata.json`file is hosted in a publicly accessible location. The metadata_url parameter in the operator configuration must be publicly accessible in order for registration to succeed.
+When using Github for hosting this file please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
 :::
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator-config.yaml.
