@@ -85,6 +85,7 @@ To convert Goerli ETH to ankrETH follow the instructions below:
 - Visit the [Mantle ETH Goerli Proxy contract](https://goerli.etherscan.io/address/0x307770388c483BF225DCbe55EE5BA8b9d0bC5C1d#writeProxyContract).
 - Click **Connect to Web3** to connect to your web3 wallet.
 - Scroll down to the "stake" function.
+  - Note: you must plan to stake **at least 0.1 Goerli ETH** in order for the stake function to work properly.
   - For the first parameter, "stake", input the amount of Goerli ETH you want to deposit. 
   - For the second parameter, "minMETHAMount", input the value "0" (number zero without quotes).
 - Click **Write** to initiate the transaction via your web3 wallet.
