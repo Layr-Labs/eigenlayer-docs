@@ -38,7 +38,7 @@ Finally, there is an _Executor Multisig_ which only has the (automated) role of 
 
 On a technical level, the governance architecture looks like the following:
 
-<figure><img src="https://lh5.googleusercontent.com/tdLYguBq5wyfQbJRkyVo7pqT1tBasCLxXP-aA60GZGXlqKDkLtQIN9guogHXdSRObApuLHT3LpPfIxZWJruxaAJBH5skfRY3EQAPya0sxxUnj1EoDgkUCxItwETv-dpaVVAV86JCzpYduZcpLQlH9-0" alt="" height="379" width="672"/><figcaption></figcaption></figure>
+<figure><img src="/img/googleusercontentbackup/tdLYguBq5wyfQbJRkyVo7pqT1tBasCLxXP-aA60GZGXlqKDkLtQIN9guogHXdSRObApuLHT3LpPfIxZWJruxaAJBH5skfRY3EQAPya0sxxUnj1EoDgkUCxItwETv-dpaVVAV86JCzpYduZcpLQlH9-0.png" alt="" height="379" width="672"/><figcaption></figcaption></figure>
 
 These multisigs represent a rudimentary but working system of transparent initial governance, with appropriate checks and balances. As the protocol continues to evolve, so will its governance, and we are continuously evaluating our options for potential future governance mechanics.
 

@@ -23,11 +23,11 @@ def extract_valid_url_from_image_tag(text):
 
 
 # Function to download an image from a URL
-def download_image(url, folder_path, index):
+def download_image(url, folder_path, file_path):
     response = requests.get(url)
     if response.status_code == 200:
         # Extract the file name from the URL
-        file_name = os.path.join(folder_path, f"image_{index}.png")
+        file_name = os.path.join(folder_path, file_path+".png")
         with open(file_name, 'wb') as file:
             file.write(response.content)
         print(f"Downloaded: {url}")
@@ -36,14 +36,11 @@ def download_image(url, folder_path, index):
 
 # Function to search for URLs with "googleusercontent.com"
 def find_and_download_images(start_folder):
-    image_folder = os.path.join(start_folder, 'image-saves')
+    image_folder = os.path.join(start_folder, '../static/img/googleusercontentbackup')
     
     # Create the image folder if it doesn't exist
     if not os.path.exists(image_folder):
         os.makedirs(image_folder)
-
-    # Counter to keep track of downloaded images
-    index = 1
 
     # Walk through the directory tree
     for root, dirs, files in os.walk(start_folder):
@@ -58,13 +55,19 @@ def find_and_download_images(start_folder):
                         if "googleusercontent.com" in line and "None" not in line:
                             #print("line in text file: ", line)
                             # Check if the URL contains "googleusercontent.com"
-                            urlpath = urlparse(line.strip()).path
-                            #print("urlpath: ", urlpath)
-                            parsed_url = extract_valid_url_from_image_tag(urlpath)
+                            parsed_url = extract_valid_url_from_image_tag(line.strip())
+                            #print("Parsed URL with googleusercontents: ", parsed_url)
+                            
+                            # Extract the file path
+                            file_path = urlparse(parsed_url).path[1:]
+                            #print ("file path: ", filepath)
+
                             # Download the image
-                            print("Parsed URL with googleusercontents: ", parsed_url)
-                            #download_image(parsed_url, image_folder, index)
-                            index += 1
+                            download_image(parsed_url, image_folder, file_path)
+                           
+                            
+                            
+                            
 
 # Specify the starting folder
 start_folder = "."  # Change this to the desired starting folder
