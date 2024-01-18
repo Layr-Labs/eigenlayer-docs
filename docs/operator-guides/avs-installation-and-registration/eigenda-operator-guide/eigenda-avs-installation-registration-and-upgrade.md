@@ -165,6 +165,9 @@ Upgrade the AVS software for your EigenDA service setup by following the steps b
 cd eigenda-operator-setup
 git pull
 ```
+Update the `MAIN_SERVICE_IMAGE` in your `.env` file with the latest EigenDA version as per the release notes.
+
+> **_NOTE:_** If there are any specific instructions that needs to be followed for any upgrade, those instructions will be given with the release notes of the specific release. Please check the latest [release notes](https://github.com/Layr-Labs/eigenda-operator-setup/releases) on GitHub and follow the instructions before starting the services again.
 
 #### Step 2: Pull the latest docker images
 
@@ -182,7 +185,6 @@ docker compose down
 
 Make sure your `.env` file still has correct values in the [TODO](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L60) sections before you restart your node.
 
-If there are any specific instructions that needs to be followed for any upgrade, those instructions will be given with the release notes of the specific release. Please check the latest [release notes](https://github.com/Layr-Labs/eigenda-operator-setup/releases) on Github and follow the instructions before starting the services again.
 
 ```
 docker compose up -d
