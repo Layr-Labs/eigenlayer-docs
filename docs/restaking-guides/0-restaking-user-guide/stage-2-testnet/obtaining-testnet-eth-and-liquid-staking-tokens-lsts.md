@@ -1,4 +1,4 @@
-<img width="1345" alt="image" src="https://github.com/Layr-Labs/eigenlayer-docs/assets/260568/c8185cc8-add6-4e86-87a2-6491f80fb0d7">---
+---
 sidebar_position: 1
 ---
 
