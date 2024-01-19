@@ -14,13 +14,13 @@ All funds unstaked from EigenLayer go through a escrow period before being able 
 
 You can queue a withdrawal for any amount. However, when you choose to complete the withdrawal, you will be required to exit enough validators and have the proofs generated for the required amount.
 
-![](https://lh7-us.googleusercontent.com/Iil3RwJtYPpGzrPFVjgwUvYmHwTdUk2tExBTvAOEN-tTzXa83LXQIwr8F1oTHM561YQMCpHEqVZWggqE75pjAmduoIoHaBqY7HpnKWbkE6k46QQTeBvOfnFZ0KYLJSIUsXyeS0mCtOMZehMRmBxy_Q8)
+![](/img/googleusercontentbackup/Iil3RwJtYPpGzrPFVjgwUvYmHwTdUk2tExBTvAOEN-tTzXa83LXQIwr8F1oTHM561YQMCpHEqVZWggqE75pjAmduoIoHaBqY7HpnKWbkE6k46QQTeBvOfnFZ0KYLJSIUsXyeS0mCtOMZehMRmBxy_Q8.png)
 
 **Step 2:** Click Unstake. Sign the transaction using your Web3 wallet.
 
 **Step 3:** Wait for the escrow period to complete. Observe the Unstaking balance has increased during the escrow period.
 
-![](https://lh7-us.googleusercontent.com/QZvihKxzjPXs4XBWp8xNZdsc8FmLl7VuJ0m5yom_TqgqiFkpROSVSqEr_4XdMWMmhD-ZcTVOjRYxEaTmwpQzIz87dJdgpNs79jDQvw7TKgNxIXr3P1OJCsWeKZoew4I2iG_6Phy5rlej99HvuoKnY-g)
+![](/img/googleusercontentbackup/QZvihKxzjPXs4XBWp8xNZdsc8FmLl7VuJ0m5yom_TqgqiFkpROSVSqEr_4XdMWMmhD-ZcTVOjRYxEaTmwpQzIz87dJdgpNs79jDQvw7TKgNxIXr3P1OJCsWeKZoew4I2iG_6Phy5rlej99HvuoKnY-g.png)
 
 **Step 4:** Observe the Unstaked Beacon Chain balance has increased after the escrow period.
 
