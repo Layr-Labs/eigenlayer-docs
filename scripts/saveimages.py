@@ -3,6 +3,7 @@ import os
 import requests
 from urllib.parse import urlparse
 
+counter = 0
 
 def extract_valid_url_from_image_tag(text):
     # Use regular expression to find the URL in the image tag
@@ -24,6 +25,10 @@ def extract_valid_url_from_image_tag(text):
 
 # Function to download an image from a URL
 def download_image(url, folder_path, file_path):
+    print("Trying to download:", url)
+    global counter
+    print("Counter: ", counter)
+
     response = requests.get(url)
     if response.status_code == 200:
         # Extract the file name from the URL
@@ -42,12 +47,15 @@ def find_and_download_images(start_folder):
     if not os.path.exists(image_folder):
         os.makedirs(image_folder)
 
+  
+
     # Walk through the directory tree
     for root, dirs, files in os.walk(start_folder):
         for file in files:
             # Check if the file is a text file (you can customize this check)
             if file.endswith(".md"):
                 file_path = os.path.join(root, file)
+                
                 
                 # Read each line in the file
                 with open(file_path, 'r') as text_file:
@@ -60,8 +68,11 @@ def find_and_download_images(start_folder):
                             
                             # Extract the file path
                             file_path = urlparse(parsed_url).path[1:]
-                            #print ("file path: ", filepath)
-
+                            
+                            global counter 
+                            counter += 1
+                            # print("Counter: ", counter)
+                            # print ("file path: ", file_path)
                             # Download the image
                             download_image(parsed_url, image_folder, file_path)
                            

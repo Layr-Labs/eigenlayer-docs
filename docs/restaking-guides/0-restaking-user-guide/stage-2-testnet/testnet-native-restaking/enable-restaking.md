@@ -16,7 +16,7 @@ This process can take **up to 4 hours** after your validators have entered the a
 
 **Step 2:** Observe the app is fetching beacon chain proofs and validating them on-chain.
 
-![](https://lh7-us.googleusercontent.com/TEQS3Nkjxf9NYe382VZ4UqYatO1r0QAtYvLYVmDavOhl7KkD-xyVamKulgxXVIFPe96u0VCs-gVbQ2UR7Oh-ZuktcHYP0Gfozqq2ZRFEpLhct9GXssVXf5ZZui9MmEKubqwekKrg2mPU9wZrDf8ZzPU)
+![](/img/googleusercontentbackup/TEQS3Nkjxf9NYe382VZ4UqYatO1r0QAtYvLYVmDavOhl7KkD-xyVamKulgxXVIFPe96u0VCs-gVbQ2UR7Oh-ZuktcHYP0Gfozqq2ZRFEpLhct9GXssVXf5ZZui9MmEKubqwekKrg2mPU9wZrDf8ZzPU.png)
 
 ![](/img/testnet-restake-guides/enable-restake-2.png)
 

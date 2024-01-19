@@ -18,7 +18,7 @@ If this is your first time depositing a token on EigenLayer, you'll need to appr
 
 If successful, you will see the corresponding increase in your Restaked balance in the app:
 
-![](https://lh7-us.googleusercontent.com/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU)
+![](/img/googleusercontentbackup/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU.png)
 
 **Step 6:** Monitor your Staking Rewards & Restaked Ratio on the [homepage](http://app.eigenlayer.xyz/).
 
