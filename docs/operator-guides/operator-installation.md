@@ -71,7 +71,7 @@ Now we’re going to install the eigenlayer-CLI using Go. The following command 
 go install github.com/Layr-Labs/eigenlayer-cli/cmd/eigenlayer@latest
 ```
 
-To check if the GOBIN is not in your PATH, you can execute echo $GOBIN from the Terminal. If it doesn't print anything, then it is not in your PATH. To add GOBIN to your PATH, add the following lines to your $HOME/.profile:
+To check if the GOBIN is not in your PATH, you can execute `echo $GOBIN` from the Terminal. If it doesn't print anything, then it is not in your PATH. To add GOBIN to your PATH, add the following lines to your $HOME/.profile:
 
 ```
 export GOBIN=$GOPATH/bin
