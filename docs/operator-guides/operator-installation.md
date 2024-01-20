@@ -65,6 +65,37 @@ curl -sSfL https://raw.githubusercontent.com/layr-labs/eigenlayer-cli/master/scr
 
 ### Install CLI using Go
 
+Firstly, let's make sure your system has the latest package information.
+
+```
+sudo apt update
+```
+
+Now, let's fetch the Go programming language for Linux. Execute this command:
+
+```
+wget https://golang.org/dl/go1.21.6.linux-amd64.tar.gz
+```
+
+Time to unpack the Go tarball:
+
+```
+sudo tar -C /usr/local -xzf go1.21.6.linux-amd64.tar.gz
+```
+
+Update the system's PATH to include the Go binary directory
+
+```
+export PATH=/usr/local/go/bin:$PATH
+```
+
+Source the .bashrc file to apply the changes to the current session
+
+```
+source ~/.bashrc
+```
+
+
 Now we’re going to install the eigenlayer-CLI using Go. The following command will install eigenlayer’s executable along with the library and its dependencies in your system.
 
 ```
