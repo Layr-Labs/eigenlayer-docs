@@ -29,9 +29,3 @@ Operators with a **stake of 4% or more**
 This structured approach ensures a fair and responsive mechanism for maintaining network integrity, with different thresholds based on the operator's stake and the overall network performance. Please note the criteria may change over time.
 
 _\*Percentage of active stake vs. total stake. This will be monitored by how much stake has signed the last batch._
-
-# Notice of Warning and Ejection
-In case of Warning and Ejection - notices will be posted via the following channels:
-* [Operator Working Group Slack](https://operatorwg.eigenlayer.xyz/)
-* [EigenLayer Solo Staker Community Telegram](https://t.me/+7ejv7SyIQJwwNGYx)
-* [EigenLayer Discord](https://discord.gg/eigenlayer): ⁠#operator-announcements
