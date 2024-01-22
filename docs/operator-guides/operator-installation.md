@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Installation
 
-## Node Operator Checklist
+## Node Operator Wishlist
 
 ### **Software Requirements**
 
