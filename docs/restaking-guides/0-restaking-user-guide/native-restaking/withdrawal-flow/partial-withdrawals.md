@@ -8,10 +8,14 @@ sidebar_position: 1
 :::info
 Due to how withdrawals from Ethereum are designed, users can only initiate one partial withdrawal per[ sequential sweep](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) of all validators (which takes approximately 4-5 days).
 
+All accrued consensus layer rewards will be unstaked through this action. For Stage 1 Mainnet you will not be able to choose a portion of the accrued consensus layer rewards to unstake.
+
 All funds unstaked from EigenLayer go through a 7-day escrow period before being able to be withdrawn. Thus after you initiate your unstake, you must wait 7-days before being able to withdraw your assets.
 :::
 
-**Step 1:** Unstake - click **Unstake** to queue the withdrawal and initiate the escrow period.
+
+
+**Step 1:** Unstake - click **Unstake** to queue the withdrawal and initiate the escrow period. 
 
 ![escrow](/img/restake-guides/native-partial-withdrawal1.png)
 

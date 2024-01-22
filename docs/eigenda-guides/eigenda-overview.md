@@ -11,7 +11,7 @@ Data Availability is a requirement for both for ZK and Optimistic rollups ([sour
 
 ## EigenDA Architecture
 
-![EigenDA Arhitecture](/img/eigen-da-diagram.png)
+![EigenDA Architecture](/img/eigen-da-diagram.png)
 
 The diagram above shows the basic flow of data through EigenDA:
 
