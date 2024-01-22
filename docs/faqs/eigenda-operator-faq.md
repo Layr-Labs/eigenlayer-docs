@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# EigenDA Operator - Frequently Asked Questions
+# EigenDA Operator
 
 #### Where do I check if my operator is a part of EigenDA set?
 You can search using the below EigenLayer webapp links:
