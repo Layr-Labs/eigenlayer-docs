@@ -4,7 +4,7 @@ description: >-
   mainnet on EigenLayer
 ---
 
-# AVS Development Guide
+# How to Build an AVS
 
 ## Step 1: Grasp EigenLayer fundamentals 
 ### Basic Understanding
