@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Operator - Frequently Asked Questions
+# General Operator
 
 #### Where are the smart contract addresses used to register operator to EigenLayer?
 
