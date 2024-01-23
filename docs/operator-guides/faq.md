@@ -38,3 +38,7 @@ If you want to change password of your encrypted keys, you have two options base
 
 1. If you know your private keys then you can just [re-import](operator-installation.md#import-keys) and when importing, choose a different name and the new password.
 2. If you don't know your private keys, you can get them using [export](./operator-installation.md#export-keys). Once you have the private keys you can use option 1 to re-import.
+
+#### What if I want to deactivate/deregister my operator from EigenLayer?
+Currently there's no way to deregister your operator but you can
+update the name of your operator in metadata url to be `Deactivated` or something similar. This will help display your operator as not active on the webapp.
