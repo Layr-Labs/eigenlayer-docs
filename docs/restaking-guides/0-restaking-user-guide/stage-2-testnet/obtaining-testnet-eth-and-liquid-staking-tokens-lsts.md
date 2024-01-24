@@ -94,9 +94,9 @@ To convert Goerli ETH to ankrETH follow the instructions below:
 - Import the token to your web3 wallet via address 0x20d7E093B3fa5eBfA7a0fa414FaD547743a2400F .
 
 
-## Deposit goETH for wbETH (Wrapped Beacon ETH)
+## Deposit goETH for wbETH (Binance Staked Ether)
 
-- Visit the [Wrapped Beacon ETH Proxy contract](https://goerli.etherscan.io/address/0xE7bCB9e341D546b66a46298f4893f5650a56e99E#writeProxyContract).
+- Visit the [Binance Staked Ether proxy contract](https://goerli.etherscan.io/address/0xE7bCB9e341D546b66a46298f4893f5650a56e99E#writeProxyContract).
 - Click **Connect to Web3** to connect to your web3 wallet.
 - Select "Contract"
 - Select "Write as Proxy"
