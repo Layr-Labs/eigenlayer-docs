@@ -12,9 +12,15 @@ These guides will walk you through how LST holders and Native Stakers can restak
 - wBETH (Binance)
 - osETH (Stakewise)
 - swETH (Swell)
-- AnkrETH (Ankr)
-- EthX (Stader)
-- OETH (Origin ETH)
+- ankrETH (Ankr)
+- ETHx (Stader)
+- oETH (Origin ETH)
+
+The following LSTs [will be supported at Jan 29th, 2024](https://www.blog.eigenlayer.xyz/introducing-new-lsts-and-unpausing-restaking-caps/).
+
+- sfxETH (Frax Ether)
+- mETH (Mantle Staked Ether)
+- LsETH (Liquid Staked Ether)
 
 The protocol plans to support additional liquid staking tokens in the future. If you would like to introduce your LST to the EigenLayer community, please do so on [the forum](https://forum.eigenlayer.xyz/t/about-the-new-lst-token-on-eigenlayer-category/6641).
 
