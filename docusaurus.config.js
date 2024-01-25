@@ -80,7 +80,11 @@ const config = {
           remarkPlugins: [math],
           rehypePlugins: [katex],
         },
-        blog: false,
+        blog: {
+          blogTitle: "EigenLayer Status",
+          postsPerPage: "ALL",
+          routeBasePath: "/status",
+        },
 
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -100,6 +104,11 @@ const config = {
           src: "img/eigenlayer-logo.png",
         },
         items: [
+          {
+            to: "status",
+            label: "Status",
+            position: "left",
+          },
           {
             href: "https://github.com/Layr-Labs",
             className: "header--github-link",
