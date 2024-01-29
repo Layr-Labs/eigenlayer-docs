@@ -1,8 +1,3 @@
----
-description: >-
-  Process: It takes approximately 6-8 months from having an idea to launching
-  mainnet on EigenLayer
----
 
 # How to Build an AVS
 
