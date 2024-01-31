@@ -4,25 +4,31 @@
 
 **Is EigenLayer a DeFi protocol?**
 
-No, EigenLayer is not a DeFi protocol. EigenLayer is a platform to bootstrap new proof of stake (PoS) decentralized systems. Through the EigenLayer protocol, users CANNOT engage in any financial activities such as swapping and lending. 
+No, EigenLayer is not a DeFi protocol. EigenLayer is a platform to bootstrap new proof of stake (PoS) systems. Through the EigenLayer protocol, users CANNOT engage in any financial activities such as swapping and lending. 
 
-However, for the services built on top of EigenLayer (we call them AVSs, Actively Validated Services), these services could be DeFi applications themselves or support key functionalities in other DeFi protocols. These AVSs are external to the EigenLayer contracts.
+However, for the decentralized services built on top of EigenLayer (we call them AVSs, Actively Validated Services), these services could be DeFi applications themselves or support key functionalities in other DeFi protocols. These AVSs are external to the EigenLayer contracts.
+
+Moreover, another class of protocols built on top of EigenLayer is called liquid restaking protocols (LRT). They are permissionlessly built on EigenLayer. We urge users to do their own research before interacting with LRTs.
 
 **Does EigenLayer reuse the same economic security?**
 
-Yes, EigenLayer does reuse the same economic security by enabling different AVSs to share a common economic security base. This concept, known as 'pooled security.' Similar to how various dApps share Ethereum's economic security, EigenLayer aims to let different decentralized PoS networks share the same economic security base.
+Yes, EigenLayer does reuse the same economic security by enabling different AVSs to share a common economic security base. This concept is known as 'pooled security.' Similar to how various dApps share Ethereum's economic security, EigenLayer allows different decentralized PoS networks share the same economic security base.
 
 Pooling allows various AVSs to contribute to a larger, shared economic security base, enhancing economic safety. This is because the cost to compromise any individual AVS increases significantly. For instance, consider 100 AVSs each with \$1M in economic security versus 100 AVSs sharing \$1B in economic security. The cost to attack any single AVS in the pooled system has effectively multiplied by 100.
 
-In addition to pooled security, EigenLayer lets each AVS acquire additional attributable security. Unlike pooled security, attributable security is specific to each AVS and can only be slashed by that AVS. This arrangement guarantees customers unconditional safety. Imagine a bridge protocol with a shared security base of \$1B and an attributable portion of \$100M. If a malfunction occurs, the protocol can assure the AVS customer that up to \$100M can be compensated through the attributable part. Attributable security also enables the flexible scaling of economic security. As an AVS, you can adjust your security budget based on user demand, catering to varying user needs at different times.
+In addition to pooled security, EigenLayer lets each AVS acquire additional attributable security. Unlike pooled security, attributable security is specific to each AVS and can only be slashed by one AVS. This arrangement guarantees AVS customers unconditional safety. 
 
-Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100M in unconditional safety, these AVSs can collectively purchase attributable security instead of each buying \$100M individually. This is feasible because if any of them fail, the \$100M will be compensated to the DeFi protocol.
+Imagine a bridge protocol with a shared security base of \$1B and an attributable portion of \$100M. If a malfunction occurs, the protocol can assure the AVS customer that up to \$100M can still be securing the bridge through the attributable part. Attributable security also enables the flexible scaling of economic security. As an AVS, you can adjust your security budget based on user demand, catering to varying user needs at different times.
+
+Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100M in unconditional safety, these AVSs can collectively purchase attributable security instead of each buying \$100M individually. This is feasible because if any of them fail, the \$100M will could be compensated to the DeFi protocol.
 
 In conclusion, EigenLayer not only allows AVSs to share economic security but also enables individual AVSs to acquire additional security. The combination of pooled and attributable security allows EigenLayer to flexibly scale economic security and achieve economies of scale for unconditional safety.
 
 **Why is EigenLayer's contract licensed under BSL?**
 
-EigenLayer's core contract operates under BSL due to the numerous market forces at play. EigenLayer is not isolated; it operates within a broader ecosystem. Innovators can utilize the comprehensive decentralized trust network of the Ethereum economy with EigenLayer, eliminating the need for new token creation. Without the need for a new token, this makes it easy for other entities, particularly those with extensive product distribution, to replicate and utilize the code. This situation applies to AVS building on EigenLayer and EigenLayer itself.
+EigenLayer's core contract operates under BSL due to the numerous market forces at play. EigenLayer is not isolated; it operates within a broader ecosystem. Innovators can utilize the comprehensive decentralized trust network of the Ethereum economy with EigenLayer, eliminating the need for new token creation. 
+
+Without the need for a new token, this makes it easy for other entities, particularly those with extensive product distribution, to replicate and utilize the code. This situation applies to AVS building on EigenLayer and EigenLayer itself.
 
 In scenarios where major LSTs have a much larger distribution and no new token is required for new networks, it becomes crucial to establish boundaries to safeguard open innovation. This protection ensures that individual LSTs do not consume open innovation and that existing protocols are not easily copying AVS designs. Consequently, EigenLayer's core operates under the BSL, transitioning to the MIT (Massachusetts Institute of Technology) license after two years, a practice also followed by some AVSs.
 
@@ -68,7 +74,7 @@ No, you won't be slashed if your operator is not malicious. As a staker, even if
 
 No, EigenLayer doesn't remove the value of any hypothetical AVS tokens, but adds more value to it.
 
-Firstly, Ethereum's L2 networks serve as a counterpoint. Despite outsourcing their network security to Ethereum, L2 tokens maintain significant value within their respective networks.
+Firstly, Ethereum's L2 networks serve as a greatest counterpoint to this line of logic. Despite outsourcing their network security to Ethereum, L2 tokens maintain significant value within their respective networks.
 
 Secondly, if an individual AVS decides to incorporate its own token for staking and network operations, EigenLayer supports [dual staking](https://www.blog.eigenlayer.xyz/dual-staking/). In this setup, an AVS can be secured by two types of assets, likely one in ETH and one in its native token.
 
@@ -78,7 +84,7 @@ During the initial phase, an AVS may choose to rely more heavily on ETH, giving 
 
 These points provide individual AVS with more options than the current status quo. Building on EigenLayer, therefore, doesn't negate the utility of an AVS token. Instead, through these additional options, we enhance their value.
 
-**Given the answer above, does it mean EigenLayer provides little value beyong the bootstrapping phase?**
+**Given the answer above, does it mean EigenLayer provides little value beyond the bootstrapping phase?**
 
 No, EigenLayer offers significant value at any stage of the AVS's economic security phase.
 
@@ -90,13 +96,9 @@ Thirdly, the flexible security that EigenLayer provides proves beneficial in han
 
 Finally, building on the synergy point, as AVSs begin to serve more customers collectively, the economic scale of insurance will enable AVSs to meet their customers' need for absolute safety more affordably.
 
-
-
 ## LRT Related
 
 **What roles does LRTs serve?**
-
-First, LRTs allow EigenLayer to not fiancialize. and opportunity cost and defi.
 
 LRTs safeguard EigenLayer and AVSs from external financial risks tied to staked positions. In EigenLayer, stakers don't receive a transferable receipt post-staking. Despite this, we expect some stakers to try and financialize their positions. 
 
@@ -116,11 +118,11 @@ Looping LRTs in lending markets can lead to a cascade of liquidations. This risk
 ## Ethereum Related
 **Does EigenLayer rely on Ethereum social consensus?**
 
-No, EigenLayer does not depend on Ethereum's social consensus. It aims for responsible decentralization. Instead of shifting unwarranted slashing risks to Ethereum or external protocols, EigenLayer includes a slashing veto committee. This internalizes social consensus and safeguards against slashing risks.
+No, EigenLayer does not depend on Ethereum's social consensus. EigenLayer aims for responsible decentralization. Instead of shifting unwarranted slashing risks to Ethereum or external protocols, EigenLayer includes a slashing veto committee. This internalizes social consensus and safeguards against slashing risks.
 
 The veto committee functions similarly to the relay in MEV-Boost. MEV-Boost relies on a double-trusted party, known as a relay, who is trusted by both proposers and builders. Any individual trusted by both parties can serve as a relay, effectively removing any entrenched actor.
 
-In Eigenlayer, a veto committee serves as a doubly-trusted intermediary between AVS and staker. The solution is the same as the relay, but instead of having a specific veto committee, anyone can establish a veto committee. As long as both parties trust the committee, the staker and AVS can interact through it.
+In EigenLayer, a veto committee serves as a doubly-trusted intermediary between AVS and staker. The solution is the same as the relay, but instead of having a specific veto committee, anyone can establish a veto committee. As long as both parties trust the committee, the staker and AVS can interact through it.
 
 The plan is to upgrade to a version of EigenLayer without a canonical veto committee. Instead, there will be a marketplace of veto committees. Operators can define their own veto committee, which can veto slashing from any AVS it has chosen. AVSs can specify a preference for veto committee(s) that operators must have in order to opt in. This promotes inter-subjectivity, as operators and AVSs coordinate their choices based on their subjective views of safety.
 
@@ -152,11 +154,11 @@ No, EigenLayer doesn't require self-limiting.
 
 The danger of a liquid staking protocol owning a substantial portion of the network is the potential imposition of a specific validator set on the Ethereum network. This risk doesn't apply to EigenLayer. Even if all staked ETH is restaked through EigenLayer, it doesn't control Ethereum's validator set. That control remains solely with Ethereum's stakers and validators.
 
-If EigenLayer self-limits, the surplus restaking demand will likely revert to liquid staking protocols, increasing centralization pressure at the protocol's base layer. If EigenLayer didn't exist, dominant LST protocols would likely offer restaking services only to their internal stakers. These centralized restaking services could considerably strengthen the dominant LST's central position. More restaking services mean additional yield, leading to further consolidation of the LST. This scenario resembles the situation with Miner Extractable Value (MEV), where large stakers, including professional operators and LSTs, can negotiate MEV order flow guarantees that smaller stakers can't participate in.
+If EigenLayer self-limits, the surplus restaking demand will likely revert to liquid staking protocols, increasing centralization pressure at the protocol's base layer. If EigenLayer didn't exist, dominant LST protocols would likely offer restaking services only to their internal stakers. These centralized restaking services could considerably strengthen the dominant LST's central position. More restaking services mean additional yield, leading to further consolidation of the LST. This scenario resembles the situation with MEV, where large stakers, including professional operators and LSTs, can negotiate MEV order flow guarantees that smaller stakers can't participate in.
 
-In contrast to the centralized restaking mechanisms mentioned above, EigenLayer is developing a credibly neutral, decentralized restaking platform. All participants, whether small or large LSTs, small or large node operators, or institutional and home stakers, can all participate in additional validation opportunities. This approach helps prevent a monopoly in LST or Liquid Restaking Tokens (LRT), fostering decentralization and neutrality among node operators.
+In contrast to the centralized restaking mechanisms mentioned above, EigenLayer is developing a credibly neutral, decentralized restaking platform. All participants, whether small or large LSTs, small or large node operators, or institutional and home stakers, can all participate in additional validation opportunities. This approach helps prevent a monopoly in LST or LRT, fostering decentralization and neutrality among node operators.
 
-Unlike LST or LRT, EigenLayer doesn't define an operator set, so it doesn't threaten Ethereum's censorship resistance or operator decentralization. 
+EigenLayer doesn't define an operator set, so it doesn't threaten Ethereum's censorship resistance or operator decentralization. 
 
 Self-limiting EigenLayer offers no significant benefit. Instead, if EigenLayer proves successful in the market, it could even be integrated into the Ethereum protocol as a native service.
 
@@ -168,5 +170,5 @@ It's important to highlight that EigenLayer operators never retain custody of th
 
 We have established several strategies to further limit the operator's capacity for harmful actions:
 1. Technical Trust: EigenLayer operators can utilize an anti-slasher within a Trusted Execution Environment (TEE) to verify its response to any validation task. The operator then sends the associated TEE certificate with its response for the task, confirming that the anti-slasher was utilized. Another technical solution to address the principal-agent problem is to structure the EigenLayer operator with decentralized DVT nodes.
-2. Economic Trust: Similar to RockePool, a specific LRT protocol might require operators to stake proportionally to the delegation they receive. This approach assumes a certain amount that can be slashed and a probability for that occurrence. By encouraging the operator nodes to behave correctly, the principal-agent problem can be mitigated.
+2. Economic Trust: Similar to RocketPool, a specific LRT protocol might require operators to stake proportionally to the delegation they receive. This approach assumes a certain amount that can be slashed and a probability for that occurrence. By encouraging the operator nodes to behave correctly, the principal-agent problem can be mitigated.
 3. Social Trust: A staker always has the option to self-delegate and operate the nodes for AVSs or delegate it to a trusted operator. In this scenario, the staker trusts the operator to perform only the stipulated operations and not engage in any malicious activities. This practice is common in the real world, where service providers like AWS offer services.
