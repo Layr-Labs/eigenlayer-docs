@@ -20,7 +20,7 @@ In addition to pooled security, EigenLayer will let each AVS acquire additional 
 
 Imagine a bridge protocol with a shared security base of \$10B and an attributable portion of \$10B. If a malfunction occurs, the protocol can assure the AVS customer that up to \$10B can still be securing the bridge through the attributable part. Attributable security also enables the flexible scaling of economic security. As an AVS, you can adjust your security budget based on user demand, catering to varying user needs at different times.
 
-Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100B in economic security, these AVSs can collectively purchase attributable security instead of each buying \$100B individually. This is feasible because if any of them fail, the \$100B could be compensated to the DeFi protocol.
+Furthermore, EigenLayer aims to achieve economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100B in economic security, these AVSs can collectively purchase attributable security instead of each buying \$100B individually. This is feasible because if any of them fail, the \$100B could be compensated to the DeFi protocol.
 
 In conclusion, EigenLayer not only allows AVSs to share economic security but also enables individual AVSs to acquire additional security. The combination of pooled and attributable security allows EigenLayer to flexibly and efficiently scale economic security.
 
