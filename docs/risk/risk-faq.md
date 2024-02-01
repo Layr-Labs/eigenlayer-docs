@@ -22,7 +22,7 @@ Imagine a bridge protocol with a shared security base of \$10B and an attributab
 
 Furthermore, EigenLayer aims to achieve economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100B in economic security, these AVSs can collectively purchase attributable security instead of each buying \$100B individually. This is feasible because if any of them fail, the \$100B could be compensated to the DeFi protocol.
 
-In conclusion, EigenLayer not only allows AVSs to share economic security but also enables individual AVSs to acquire additional security. The combination of pooled and attributable security allows EigenLayer to flexibly and efficiently scale economic security.
+In conclusion, EigenLayer will not only allow AVSs to share economic security but will also enable individual AVSs to acquire additional attributable security. The combination of pooled and attributable security allows EigenLayer to flexibly and efficiently scale economic security.
 
 **Why is EigenLayer's contract licensed under BSL?**
 
