@@ -62,7 +62,7 @@ The operator should not be slashed if it honestly carries out its validation ser
 
 **If the AVS offchain software bug caused a slashing event, would the operator or staker be slashed?**
 
-Foftware bugs in AVS should not cause stakers to be slashed. In the protocol's early stages, guardrails have been designed to help avoid such scenarios. A veto committee in be put in place to overturn any slashing incidents caused by bugs in the offchain node software.
+Software bugs in AVSs should not cause stakers to be slashed. In EigenLayer's early stages, guardrails have been designed to help avoid such scenarios. A veto committee will be put in place to overturn any slashing incidents caused by bugs in the offchain node software.
 
 **If everyone else conducted malicious activities, will I be slashed?**
 
