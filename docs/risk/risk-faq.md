@@ -54,19 +54,7 @@ Whereas in EigenLayer:
 2) Stakers have autonomy over the services they wish to validate.
 3) Stakers are not exposed to counterparty liquidity risks.
 
-There're clear differences between EigenLayer and rehypothecation.
-
-**If the operator I delegate to is honest, will I be slashed?**
-
-The operator should not be slashed if it honestly carries out its validation services, even if other operators are dishonest and malicious.
-
-**If the AVS offchain software bug caused a slashing event, would the operator or staker be slashed?**
-
-Software bugs in AVSs should not cause stakers to be slashed. In EigenLayer's early stages, guardrails have been designed to help avoid such scenarios. A veto committee will be put in place to overturn any slashing incidents caused by bugs in the offchain node software.
-
-**If everyone else conducted malicious activities, will I be slashed?**
-
-You shouldn't be slashed if your operator is not malicious. As a staker, even the other operators for an AVS are all malicious, as long as your operator is not involved in malicious activity, you should not be subject to slashing.
+There are clear differences between EigenLayer and rehypothecation.
 
 ## AVS Related
 
