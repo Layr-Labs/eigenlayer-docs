@@ -14,13 +14,13 @@ Moreover, another class of protocols built on top of EigenLayer is called liquid
 
 Yes, EigenLayer does reuse the same economic security by enabling different AVSs to share a common economic security base. This concept is known as 'pooled security.' Similar to how various dApps share Ethereum's economic security, EigenLayer allows different decentralized PoS networks share the same economic security base.
 
-Pooling allows various AVSs to contribute to a larger, shared economic security base, enhancing economic safety. This is because the cost to compromise any individual AVS increases significantly. For instance, consider 100 AVSs each with \$1M in economic security versus 100 AVSs sharing \$1B in economic security. The cost to attack any single AVS in the pooled system has effectively multiplied by 100.
+Pooling allows various AVSs to contribute to a larger, shared economic security base, enhancing economic safety. This is because the cost to compromise any individual AVS increases significantly. For instance, consider 100 AVSs each with \$1B in economic security versus 100 AVSs sharing \$100B in economic security. The cost to attack any single AVS in the pooled system has effectively multiplied by 100.
 
 In addition to pooled security, EigenLayer lets each AVS acquire additional attributable security. Unlike pooled security, attributable security is specific to each AVS and can only be slashed by one AVS. This arrangement guarantees AVS customers unconditional safety. 
 
-Imagine a bridge protocol with a shared security base of \$1B and an attributable portion of \$100M. If a malfunction occurs, the protocol can assure the AVS customer that up to \$100M can still be securing the bridge through the attributable part. Attributable security also enables the flexible scaling of economic security. As an AVS, you can adjust your security budget based on user demand, catering to varying user needs at different times.
+Imagine a bridge protocol with a shared security base of \$10B and an attributable portion of \$10B. If a malfunction occurs, the protocol can assure the AVS customer that up to \$10B can still be securing the bridge through the attributable part. Attributable security also enables the flexible scaling of economic security. As an AVS, you can adjust your security budget based on user demand, catering to varying user needs at different times.
 
-Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100M in unconditional safety, these AVSs can collectively purchase attributable security instead of each buying \$100M individually. This is feasible because if any of them fail, the \$100M will could be compensated to the DeFi protocol.
+Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100B in unconditional safety, these AVSs can collectively purchase attributable security instead of each buying \$100B individually. This is feasible because if any of them fail, the \$100B could be compensated to the DeFi protocol.
 
 In conclusion, EigenLayer not only allows AVSs to share economic security but also enables individual AVSs to acquire additional security. The combination of pooled and attributable security allows EigenLayer to flexibly scale economic security and achieve economies of scale for unconditional safety.
 
@@ -64,7 +64,7 @@ No, the operator will not be slashed if it honestly carries out its validation s
 
 No, software bugs in AVS will not cause stakers to lose money. In the protocol's early stages, we implemented guardrails to avoid such scenarios. We have a veto committee in place to overturn any slashing incidents caused by software bugs in the offchain node.
 
-**If everyone else conducted malicious activties, will I be slashed?**
+**If everyone else conducted malicious activities, will I be slashed?**
 
 No, you won't be slashed if your operator is not malicious. As a staker, even if the AVS you stake in is malicious (meaning the other operators are all malicious), as long as your operator is not involved in malicious activity, you are safe from being slashed.
 
