@@ -38,6 +38,9 @@ We are also exploring new licensing models that combine the benefits of protecte
 
 
 # Staker Related
+
+*Smart contract risks are inherit to all decentralized applications. EigenLayer is no different. EigenLayer aims to minimize such risks, they cannot be fully eliminated. Stakers should always keep in mind that smart contract risks exists and may cause loss of fund. This section is written from a system and mechanism design perspective only.*
+
 **Is EigenLayer rehypothecating my staked tokens?**
 
 No, EigenLayer does not engage in rehypothecation. 
@@ -55,6 +58,18 @@ Whereas in EigenLayer:
 3) Stakers are not exposed to counterparty liquidity risks.
 
 There are clear differences between EigenLayer and rehypothecation.
+
+**If the operator I delegate to is honest, will I be slashed?**
+
+No, in EigenLayer's design, the operator should not be slashed if it honestly carries out its validation services, even if other operators are dishonest and malicious.
+
+**If the AVS offchain software bug caused a slashing event, would the operator or staker be slashed?**
+
+No, in EigenLayer's design, software bugs in AVSs should not cause stakers to be slashed. In EigenLayer's early stages, guardrails have been designed and will continue to be added to help avoid such scenarios. In the future, a veto committee will be put in place to overturn any slashing incidents caused by bugs in the AVS software.
+
+**If everyone else conducted malicious activities, will I be slashed?**
+
+No, in EigenLayer's design, you should not be slashed if your operator is not malicious. As a staker, even the other AVS operators are all malicious, as long as your operator is not involved in malicious activity, you should not be subject to slashing.
 
 ## AVS Related
 
