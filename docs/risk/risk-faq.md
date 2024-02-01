@@ -16,13 +16,13 @@ Yes, EigenLayer does reuse the same economic security by enabling different AVSs
 
 Pooling allows various AVSs to contribute to a larger, shared economic security base, enhancing economic safety. This is because the cost to compromise any individual AVS increases significantly. For instance, consider 100 AVSs each with \$1B in economic security versus 100 AVSs sharing \$100B in economic security. The cost to attack any single AVS in the pooled system has effectively multiplied by 100.
 
-In addition to pooled security, EigenLayer lets each AVS acquire additional attributable security. Unlike pooled security, attributable security is specific to each AVS and can only be slashed by one AVS. This arrangement guarantees AVS customers unconditional safety. 
+In addition to pooled security, EigenLayer will let each AVS acquire additional attributable security. Unlike pooled security, attributable security is specific to each AVS and can only be slashed by one AVS. This arrangement can provide game-theoretic guarantees for AVS customers. 
 
 Imagine a bridge protocol with a shared security base of \$10B and an attributable portion of \$10B. If a malfunction occurs, the protocol can assure the AVS customer that up to \$10B can still be securing the bridge through the attributable part. Attributable security also enables the flexible scaling of economic security. As an AVS, you can adjust your security budget based on user demand, catering to varying user needs at different times.
 
-Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100B in unconditional safety, these AVSs can collectively purchase attributable security instead of each buying \$100B individually. This is feasible because if any of them fail, the \$100B could be compensated to the DeFi protocol.
+Furthermore, EigenLayer achieves economies of scale by allowing AVSs to share the same underlying smart contract infrastructure. If a DeFi application uses services from five different AVSs and requests \$100B in economic security, these AVSs can collectively purchase attributable security instead of each buying \$100B individually. This is feasible because if any of them fail, the \$100B could be compensated to the DeFi protocol.
 
-In conclusion, EigenLayer not only allows AVSs to share economic security but also enables individual AVSs to acquire additional security. The combination of pooled and attributable security allows EigenLayer to flexibly scale economic security and achieve economies of scale for unconditional safety.
+In conclusion, EigenLayer not only allows AVSs to share economic security but also enables individual AVSs to acquire additional security. The combination of pooled and attributable security allows EigenLayer to flexibly and efficiently scale economic security.
 
 **Why is EigenLayer's contract licensed under BSL?**
 
@@ -49,7 +49,7 @@ Rehypothecation in traditional finance implies:
 2) Depositors have little say in the financial activities conducted by the intermediary.
 3) Depositors are subject to substantial liquidity and counterparty risks.
 
-Where as in EigenLayer:
+Whereas in EigenLayer:
 1) Stakers retain full control over their staked tokens.
 2) Stakers have autonomy over the services they wish to validate.
 3) Stakers are not exposed to counterparty liquidity risks.
@@ -58,15 +58,15 @@ There're clear differences between EigenLayer and rehypothecation.
 
 **If the operator I delegate to is honest, will I be slashed?**
 
-No, the operator will not be slashed if it honestly carries out its validation services, even if other operators are dishonest and malicious.
+The operator should not be slashed if it honestly carries out its validation services, even if other operators are dishonest and malicious.
 
 **If the AVS offchain software bug caused a slashing event, would the operator or staker be slashed?**
 
-No, software bugs in AVS will not cause stakers to lose money. In the protocol's early stages, we implemented guardrails to avoid such scenarios. We have a veto committee in place to overturn any slashing incidents caused by software bugs in the offchain node.
+Foftware bugs in AVS should not cause stakers to be slashed. In the protocol's early stages, guardrails have been designed to help avoid such scenarios. A veto committee in be put in place to overturn any slashing incidents caused by bugs in the offchain node software.
 
 **If everyone else conducted malicious activities, will I be slashed?**
 
-No, you won't be slashed if your operator is not malicious. As a staker, even if the AVS you stake in is malicious (meaning the other operators are all malicious), as long as your operator is not involved in malicious activity, you are safe from being slashed.
+You shouldn't be slashed if your operator is not malicious. As a staker, even the other operators for an AVS are all malicious, as long as your operator is not involved in malicious activity, you should not be subject to slashing.
 
 ## AVS Related
 
@@ -92,9 +92,9 @@ Firstly, the use of ETH as the shared security set inherently reduces the endoge
 
 Secondly, as the AVS ecosystem matures, interoperability between different AVSs and the resulting synergy will become a crucial factor enabling AVSs to leverage EigenLayer.
 
-Thirdly, the flexible security that EigenLayer provides proves beneficial in handling security demand shocks for AVSs. If an AVS needs to secure a large customer transaction suddenly, it can access the necessary security immediately.
+Thirdly, the flexible security that EigenLayer provides proves beneficial in handling security demand shocks for AVSs. If an AVS needs to secure a large customer transaction suddenly, it can quickly access the necessary security.
 
-Finally, building on the synergy point, as AVSs begin to serve more customers collectively, the economic scale of insurance will enable AVSs to meet their customers' need for absolute safety more affordably.
+Finally, building on the synergy point, as AVSs begin to serve more customers collectively, the economic scale of insurance will enable AVSs to meet their customers' need for cryptoeconomic security more affordably.
 
 ## LRT Related
 
@@ -122,9 +122,9 @@ No, EigenLayer does not depend on Ethereum's social consensus. EigenLayer aims f
 
 The veto committee functions similarly to the relay in MEV-Boost. MEV-Boost relies on a double-trusted party, known as a relay, who is trusted by both proposers and builders. Any individual trusted by both parties can serve as a relay, effectively removing any entrenched actor.
 
-In EigenLayer, a veto committee serves as a doubly-trusted intermediary between AVS and staker. The solution is the same as the relay, but instead of having a specific veto committee, anyone can establish a veto committee. As long as both parties trust the committee, the staker and AVS can interact through it.
+In EigenLayer, a veto committee will serve as a doubly-trusted intermediary between AVS and staker. The solution is the same as the relay, but instead of having a specific veto committee, anyone will be able to establish a veto committee. As long as both parties trust the committee, the staker and AVS can interact through it.
 
-The plan is to upgrade to a version of EigenLayer without a canonical veto committee. Instead, there will be a marketplace of veto committees. Operators can define their own veto committee, which can veto slashing from any AVS it has chosen. AVSs can specify a preference for veto committee(s) that operators must have in order to opt in. This promotes inter-subjectivity, as operators and AVSs coordinate their choices based on their subjective views of safety.
+The intention is to upgrade to a version of EigenLayer without a canonical veto committee. Instead, there will be a marketplace of veto committees. Operators and AVSs would both be able to define their veto committee preference. AVSs and Operator veto committee choices would need to overlap in order for an operator to opt in to an AVS. This promotes inter-subjectivity, as operators and AVSs coordinate their choices based on their subjective views of safety.
 
 **Does EigenLayer increase centralization pressure on the validator set?**
 
