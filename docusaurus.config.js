@@ -42,17 +42,109 @@ const config = {
         redirects: [
           {
             from: "/overview/readme/",
-            to: "/overview",
+            to: "/eigenlayer/overview/",
           },
           {
             from: "/overview/eigenlayer-privacy-policy",
-            to: "/legal/eigenlayer-privacy-policy",
+            to: "/eigenlayer/legal/eigenlayer-privacy-policy",
           },
           {
             from: "/overview/terms-of-service",
-            to: "/legal/terms-of-service",
+            to: "/eigenlayer/legal/eigenlayer-privacy-policy",
+          },
+          // This is implicit, covered by the function case below
+          // {
+          //   from: "/overview/",
+          //   to: "/eigenlayer/overview/",
+          // },
+          {
+            from: "/overview/intro/",
+            to: "/eigenlayer/overview/",
+          },
+          {
+            from: "/overview/intro/protocol-features",
+            to: "/eigenlayer/overview/protocol-features",
+          },
+          {
+            from: "/eigenda-guides/eigenda-overview/",
+            to: "/eigenda/overview/",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/",
+            to: "/eigenda/rollup-guides/tutorial",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/building-on-top-of-eigenda",
+            to: "/eigenda/rollup-guides/tutorial",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/system-performance-and-customization",
+            to: "/eigenda/system-performance-and-customization",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/blob-explorer",
+            to: "/eigenda/blob-explorer",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide",
+            to: "/eigenda/rollup-guides/op-stack",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack-+-eigenda-locally",
+            to: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
+          },
+          {
+            from: "/eigenda-guides/integrations-overview",
+            to: "/eigenda/integrations-overview",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade",
+            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/",
+            to: "/eigenda/operator-guides/overview",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-metrics-and-monitoring",
+            to: "/eigenda/operator-guides/eigenda-metrics-and-monitoring",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/ip-stability-and-costs-of-change",
+            to: "/eigenda/operator-guides/ip-stability-and-costs-of-change",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/ejection-non-signing",
+            to: "/eigenda/operator-guides/ejection-non-signing",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/troubleshooting",
+            to: "/eigenda/operator-guides/troubleshooting",
+          },
+          {
+            from: "/faqs/eigenda-operator-faq",
+            to: "/eigenda/operator-guides/operator-faq",
+          },
+          {
+            from: "/faqs/operator-general-faq",
+            to: "/eigenlayer/operator-guides/operator-faq",
+          },
+          {
+            from: "/eigenda-guides/eigenda-rollup-user-guides/orbit/",
+            to: "/eigenda/rollup-guides/orbit/",
           },
         ],
+        createRedirects(existingPath) {
+
+          // eigenlayer redirects
+          if (existingPath.includes('/eigenlayer')) {
+            return [
+              existingPath.replace('/eigenlayer', ''),
+            ];
+          }
+
+          return undefined; // Return a falsy value: no redirect created
+        },
       },
     ],
   ],
@@ -109,6 +201,18 @@ const config = {
           src: "img/eigenlayer-logo.png",
         },
         items: [
+          {
+            to: "eigenlayer/overview",
+            label: "EigenLayer",
+            position: "left",
+            activeBasePath: 'eigenlayer/',
+          },
+          {
+            to: "eigenda/overview",
+            label: "EigenDA",
+            position: "left",
+            activeBasePath: 'eigenda/',
+          },
           {
             to: "status",
             label: "Status",
