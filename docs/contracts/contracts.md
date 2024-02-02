@@ -14,6 +14,8 @@ For more information on the core restaking contracts and their technical specifi
 
 ### Current Mainnet Deployment
 
+The current mainnet deployment is from a much older version of the core contracts repo. You can view the deployed contract addresses below, or check out the code itself on the [`mainnet-deployment`](https://github.com/Layr-Labs/eigenlayer-contracts/tree/mainnet-deployment) branch.
+
 | Name | Solidity | Proxy | Implementation | Notes |
 | -------- | -------- | -------- | -------- | -------- | 
 | StrategyManager | [`StrategyManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/0139d6213927c0a7812578899ddd3dda58051928/src/contracts/core/StrategyManager.sol) | [`0x8586...075A`](https://etherscan.io/address/0x858646372CC42E1A627fcE94aa7A7033e7CF075A) | [`0x5d25...42Fb`](https://etherscan.io/address/0x5d25EEf8CfEdaA47d31fE2346726dE1c21e342Fb) | Proxy: [OpenZeppelin TUP@4.7.1](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.1/contracts/proxy/transparent/TransparentUpgradeableProxy.sol) |
@@ -43,6 +45,8 @@ For more information on the core restaking contracts and their technical specifi
 | Proxy Admin | [OpenZeppelin ProxyAdmin@4.7.1](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.7.1/contracts/proxy/transparent/ProxyAdmin.sol) | - | [`0x8b95...2444`](https://etherscan.io/address/0x8b9566AdA63B64d1E1dcF1418b43fd1433b72444) | |
 
 ### Current Testnet Deployment
+
+The current testnet deployment is a beta release of the core contracts repo. You can view the deployed contract addresses below, or check out the code itself on the [`goerli-m2-deployment`](https://github.com/Layr-Labs/eigenlayer-contracts/tree/goerli-m2-deployment) branch.
 
 | Name | Solidity | Proxy | Implementation | Notes |
 | -------- | -------- | -------- | -------- | -------- | 
@@ -77,6 +81,8 @@ For more information on the contracts and their technical specifications, please
 No contracts have been deployed to mainnet yet.
 
 ### Current Testnet Deployment
+
+The current testnet deployment is a beta release of the middleware contracts repo. You can view the deployed contract addresses below, or check out the code itself on the [`v0.1.0-m2-goerli`](https://github.com/Layr-Labs/eigenlayer-middleware/tree/v0.1.0-m2-goerli) branch.
 
 | Name | Solidity | Proxy | Implementation | Notes |
 | -------- | -------- | -------- | -------- | -------- | 
