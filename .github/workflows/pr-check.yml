@@ -1,0 +1,40 @@
+name: PR Check Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+  
+jobs:
+  check-PR:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout base commit
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.base_ref }}
+
+      - name: Generate routes
+        run: |
+          ./ci-scripts/gen_routes.sh > routes_to_test.txt
+
+      - name: Upload routes file
+        uses: actions/upload-artifact@v2
+        with:
+          name: routes-to-test
+          path: routes_to_test.txt
+
+      - name: Checkout PR's head commit
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Download routes file
+        uses: actions/download-artifact@v2
+        with:
+          name: routes-to-test
+
+      - name: Run redirect tests
+        run: |
+          ./ci-scripts/test_redirects.sh routes_to_test.txt
