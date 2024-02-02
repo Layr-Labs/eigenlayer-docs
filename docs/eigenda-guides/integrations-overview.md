@@ -1,20 +1,38 @@
 # Optimistic Rollup Integration Strategies
 
-There are a few viable design strategies for securely integrating an optimistic rollup with EigenDA. This document aims to describe them in detail to provide rollup engineers with a strong understanding of how an EigenDA integration would impact their tech stack and security model.
+There are a few viable design strategies for securely an optimistic rollup with EigenDA. This document aims to describe them in detail to provide rollup engineers with a strong understanding of how an EigenDA integration would impact their tech stack and security model.
 
-For any given rollup there are three main concerns inherent to an integration with external DA:
+For any given rollup there are four main concerns inherent to an integration with external DA:
 
-1. **Dispersal.** The rollup batcher writes a transaction batch to the DA layer, waits for confirmation, and writes the resulting DA certificate to the rollup inbox.
-2. **DA certificate verification.** Either the rollup inbox contract or the rollup OS verifies that DA certificate is valid, i.e. that enough operators have certified the blob available, such that a transaction batch referenced by invalid certificates is not executed.
-3. **DA read/verification.** The L2 OS reads data from DA using the L2 VM's ReadPreImage opcode. The L2 node implements this opcode by retrieving data from DA and verifying that it matches the provided KZG commitment. In doing this verification, the chain ensures that the transaction data used to generate the rollup's state root has not been manipulated by the sequencer/proposer.
+1. **Dispersal.** The rollup batcher must write transaction batches to the DA layer, wait for confirmation, and write the resulting DA certificate to the rollup inbox.
+2. **Certificate Verification.** Either the rollup inbox contract or the rollup OS must verify that DA certificate is valid, i.e. that enough operators have certified the blob available, before reading the DA cert's data from the DA layer. This ensures that a transaction batch referenced by an invalid certificate is not executed.
+3. **Retrieval.** Rollup full nodes must retrieve EigenDA blobs as part of the L2 derivation/challenge process. Otherwise they cannot keep up with the state of the L2.
+4. **Data Verification.** The rollup's fraud arbitration protocol must be capable of verifying that the EigenDA blob data used to generate a state root matches the KZG commitment provided in the EigenDA cert posted to the rollup inbox. In doing this verification, the chain ensures that the transaction data used to generate the rollup's state root was not manipulated by the sequencer/proposer.
 
-The optimal code locations for dispersal and DA read/verification logic are unambiguous – dispersal logic can only live inside the rollup batcher and the DA read/verification logic can only live inside the derivation pipeline and fraud proof systems.
+Each strategy used to integrate EigenDA can be defined by how these for concerns are handled.
 
-That leaves DA certificate verification logic, which could be placed either in the rollup's inbox contract or inside the rollup virtual machine executing off-chain. The question of where to place this logic boils is the key distinguishing factor between the two general integration paths.
+## Trusted Verification Strategy (M0) {#M0}
 
-## L2 Inbox Verification Strategy ("V1")
+The trusted verification strategy does not do certificate or data verification. Instead it focuses on dispersal and retrieval for the sake of simplicity, but at the cost of security. This is an integration model fit for testnet. Let's walk through the lifecycle of an L2 batch:
 
-An instructive way to dive into the inbox contract DA cert verification strategy is to follow an L2 transaction from origination to finalization on Ethereum. We can further break this down into two stages, L2 chain finalization and L2 bridge finalization.
+1. A user authors a transaction using their wallet, and sends this transaction to the rollup sequencer.
+2. The batcher component of the rollup sequencer prepares an L2 batch which includes the user's transaction, which it sends to the EigenDA disperser, receiving an EigenDA certificate in return. The EigenDA certificate contains everything needed to retrieve the blob from the EigenDA operator set.
+    1. A lot is happening behind the scenes in the EigenDA disperser. First the disperser is encoding the blob and sending encoded chunks to the EigenDA operator set.
+    2. Then the disperser collects signatures of dispersal from the EigenDA operator set, and aggregates them into a single BLS signature.
+    3. Next disperser sends a transaction to the EigenDA Manager contract on Ethereum with the aggregated signature and other blob metadata.
+    4. The EigenDA Manager contract on Ethereum is responsible for verifying EigenDA certificates, and if they verify, recording that verification in storage. Verification consists of ensuring the the aggregated signature is valid and is based on the current EigenDA operator set. This blob verification status is important later on.
+    5. Finally, the EigenDA disperser returns the blob certificate to the caller.
+3. The batcher then sends a transaction to the rollup inbox contract on Ethereum with the EigenDA blob certificate as calldata, which accepts the EigenDA blob cert.
+
+On the derivation side, there is a similar flow in reverse. When an L2 full node encounters an EigenDA certificate in the rollup inbox, it knows to retrieve the underlying blob from the EigenDA operator set using the EigenDA client, and then interpret the transactions inside.
+
+Please keep in mind that this integration model is *insecure*. The rollup sequencer is completely trusted in this scenario, because the fraud proof system is disabled, and state roots cannot be challenged. This means the sequencer can post whatever state roots they want to the bridge contract and potentially steal funds.
+
+## L2 Inbox Certificate Verification Strategy (M1) {#M1}
+
+The natural locations for dispersal, retrieval, and data verification logic are unambiguous – dispersal logic can only live inside the rollup batcher, retrieval logic can only live inside the derivation pipeline, and data verification logic can only live inside the fraud proof system. That leaves certificate verification logic, which could be placed either in the rollup's inbox contract or inside the rollup virtual machine executing off-chain. The question of where to place this logic boils is the key distinguishing factor between the "M1" and "M2" integration paths.
+
+An instructive way to dive into the L2 inbox certificate verification strategy is to follow an L2 transaction from origination to finalization on Ethereum. We can further break this down into two stages, L2 chain finalization and L2 bridge finalization.
 
 ### L2 Chain Finalization
 
@@ -64,7 +82,7 @@ Let's walk through a scenario where the proposer is dishonest, in order to illus
 
 In order to implement an EigenDA integration with fraud proofs, the underlying rollup must support passing KZG commitments to `ReadPreImage` opcode. The rest of the L2 VM design works as-is for arbitrating fraud.
 
-## L2 OS Verification Strategy ("V2")
+## L2 OS Certificate Verification Strategy (M2) {#M2}
 
 The V2 integration strategy is similar to the V1 integration strategy, with the differece that EigenDA certificates are not verified on Ethereum. Instead, they are verified within the L2 itself, such that the validity of DA certs is enforced by the same fraud proof mechanism that is used with all other L2 state. In this mode, a rollup batcher may submit invalid EigenDA certs to the rollup inbox, such that L2 nodes interpret these invalid DA certs and discard them. If a rollup proposer submits a state root based on data referenced by an EigenDA cert, it is possible to successfully challenge that state root.
 
