@@ -111,9 +111,7 @@ In case you want the binary in your PATH (or if you used the [Go](https://github
 
 ## Create and List Keys
 
-ECDSA keypair corresponds to the operator Ethereum address and key for interacting with Eigenlayer. The BLS key is used for attestation purposes within the EigenLayer protocol. Only 1 BLS key can be registered per Operator entity in EigenLayer. Only 1 BLS key should be paired with only 1 ECDSA key and vice versa.
-
-There is a fixed 1 to 1 relationship between the ECDSA key and the BLS key. You can't re-use any kind of key with any other kind of key. Once registered you can't change the BLS key associated with ECDSA key.
+ECDSA keypair corresponds to the operator Ethereum address and key for interacting with Eigenlayer. The BLS key is used for attestation purposes within the EigenLayer protocol. BLS key is used when you register and AVS to EigenLayer.
 
 ### Create Keys
 
@@ -255,29 +253,23 @@ An example list of providers is [available here](https://www.alchemy.com/list-of
 
 #### Goerli Smart contract addresses
 
-For operator registration in a Goerli environment, you need to set the Slasher and BLS public key compendium contract as follows.
+For operator registration in a Goerli environment, you need to set the Delegation manager contract address as follows:
 \
-The Operator CLI requires two sets of keys (ECDSA and BLS) for two different purpose. For ECDSA, this is an Operator Ethereum address and key for interacting with Eigenlayer. For the BLS key, this is a key that is used for attestation on EigenLayer.
+The Operator CLI requires ECDSA keys for registration to EigenLayer. This is an Operator Ethereum address and key for interacting with Eigenlayer.
 
-Slasher Contract Address: [`0xD11d60b669Ecf7bE10329726043B3ac07B380C22`](https://goerli.etherscan.io/address/0xD11d60b669Ecf7bE10329726043B3ac07B380C22)
-
-BLS Public Key Compendium Contract Address: [`0xc81d3963087Fe09316cd1E032457989C7aC91b19`](https://goerli.etherscan.io/address/0xc81d3963087Fe09316cd1E032457989C7aC91b19)
+Delegation Manager: [`0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8`](https://goerli.etherscan.io/address/0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8)
 
 ```
-# EigenLayer Slasher contract address
+# EigenLayer Delegation manager contract address
 # This will be provided by EigenLayer team
-el_slasher_address: 0xD11d60b669Ecf7bE10329726043B3ac07B380C22
-
-# Address of BLS Public Key Compendium contract
-# This will be provided by EigenLayer team
-bls_public_key_compendium_address: 0xc81d3963087Fe09316cd1E032457989C7aC91b19
+el_delegation_manager_address: 0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8
 ```
 
 #### Registration commands
 
 This is the command you can use to register your operator.
 
-> _Note: ECDSA and BLS keys are required for operator registration. You may choose to either_ [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
+> _Note: ECDSA key is required for operator registration. You may choose to either_ [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
 
 ```
 eigenlayer operator register operator.yaml
