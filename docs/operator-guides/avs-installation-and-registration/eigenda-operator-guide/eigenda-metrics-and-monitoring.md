@@ -34,6 +34,10 @@ docker network connect eigenda-network prometheus
 
 Note: `eigenda-network` is the name of the network in which eigenda is running. You can check the network name in eigenda [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env.example#L2) file (`NETWORK_NAME`). This will ensure Prometheus can scrape the metrics from Eigenda node.
 
-Useful Dashboards: EigenDA offers a set of [Grafana dashboards](https://github.com/Layr-Labs/eigenda-operator-setup/tree/master/monitoring/dashboards) that are automatically imported when initializing the monitoring stack.
+#### Dashboards and Alerting
+
+EigenDA offers a set of Grafana [dashboards](https://github.com/Layr-Labs/eigenda-operator-setup/tree/master/monitoring/dashboards) and [alerts](https://github.com/Layr-Labs/eigenda-operator-setup/tree/master/monitoring/alerting) that are automatically imported when initializing the monitoring stack. Refer to the [operator setup guide](https://github.com/Layr-Labs/eigenda-operator-setup) for more details.
+
+---
 
 If you prefer to set up the metrics and monitoring stack manually, follow the steps located [here](https://github.com/Layr-Labs/eigenda-operator-setup#metrics).
