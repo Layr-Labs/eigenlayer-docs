@@ -15,6 +15,9 @@ These guides will walk you through how LST holders and Native Stakers can restak
 - AnkrETH (Ankr)
 - EthX (Stader)
 - OETH (Origin ETH)
+- sfrxETH (Frax Ether)
+- lsETH (Liquid Staked ETH)
+- mETH (Mantle Staked Ether)
 
 The protocol plans to support additional liquid staking tokens in the future. If you would like to introduce your LST to the EigenLayer community, please do so on [the forum](https://forum.eigenlayer.xyz/t/about-the-new-lst-token-on-eigenlayer-category/6641).
 
