@@ -28,8 +28,8 @@ For testing purposes you can start with an Adversary Threshold of 33% and Quorum
 
 Additional performance characteristics for the Disperser:
 
-- The maximum blob size per DisperseBlob invocation is 512KiB.
-- The maximum throughput supported by the Disperser is approximately 1 MiB/s.
+- The maximum blob size per DisperseBlob invocation is 2MiB.
+- The maximum throughput supported by the Disperser is approximately 10 MiB/s.
 - By default each blob remains stored in the network for 14 days.
 
 ## Rate Limiting
