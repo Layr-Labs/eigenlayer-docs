@@ -44,9 +44,9 @@ Some consensus clients also have their own, implementation-specific, support for
 - [Lighthouse](https://lighthouse-book.sigmaprime.io/voluntary-exit.html#faq)
 - [Nimbus](https://nimbus.guide/withdrawals.html#updating-your-withdrawal-credentials)
 
-:::info
+
 For further information, please refer to the [notes](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-How-do-I-fully-withdraw-exit-my-validator) from the Ethereum organization
-:::
+
 
 ### Option 3: DAppNode, Avado, etc.
 
