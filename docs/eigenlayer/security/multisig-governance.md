@@ -18,7 +18,7 @@ The Pauser Multisig is a 1-of-9 multisig that can also pause EigenLayer function
 
 The Community Multisig is a 9-of-13 multisig composed of members of the Ethereum community. In normal circumstances, the signers of the Community Multisig will simply act as observers, receiving regular updates on the Operations Multisig’s transactions, including notifications of the Operations Multisig queuing new time-locked actions. In extraordinary circumstances, the Community Multisig can perform emergency actions, including immediately executing time-critical upgrades or replacing the Operations Multisig in the event of private key compromise.
 
-The contract address for the Community Multisig is 0xFEA47018D632A77bA579846c840d5706705Dc598 and its members include:
+The Community Multisig members include:
 
 - Tim Beiko - Ethereum Foundation
 - Viktor Bunin - Coinbase
@@ -35,6 +35,8 @@ The contract address for the Community Multisig is 0xFEA47018D632A77bA579846c840
 - Rob Pellecchia - Figment Capital
 
 Finally, there is an _Executor Multisig_ which only has the (automated) role of executing functionality passed to it by either the Operations or Community Multisig.
+
+The contract addresses for the Operations, Pauser, Community and Executor Multisig are available at the [Deployed Contracts page](../deployed-contracts/deployed-contracts.md).
 
 On a technical level, the governance architecture looks like the following:
 

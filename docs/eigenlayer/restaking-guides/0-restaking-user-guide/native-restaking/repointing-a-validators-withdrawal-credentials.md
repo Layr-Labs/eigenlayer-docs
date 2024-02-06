@@ -45,7 +45,8 @@ Input the **EigenPod address** copied as the withdrawal address.
 
 - [Prysm](https://docs.prylabs.network/docs/wallet/withdraw-validator#option-1-partial-earnings-withdrawals)
 - [Teku](https://docs.teku.consensys.net/HowTo/Withdrawal-Keys)
-- [Lodestar](https://chainsafe.github.io/lodestar/reference/cli/#validator-bls-to-execution-change)
+- [Lighthouse](https://lighthouse-book.sigmaprime.io/voluntary-exit.html#faq)
+- [Nimbus](https://nimbus.guide/withdrawals.html#updating-your-withdrawal-credentials)
 
 :::info
 For further information, please refer to the [notes](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-How-do-I-fully-withdraw-exit-my-validator) from the Ethereum organization

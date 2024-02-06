@@ -91,5 +91,17 @@ To convert Goerli ETH to ankrETH follow the instructions below:
   - For the first parameter, "stake", input the amount of Goerli ETH you want to deposit. 
   - For the second parameter, "minMETHAMount", input the value "0" (number zero without quotes).
 - Click **Write** to initiate the transaction via your web3 wallet.
-- Import token to your web3 wallet via address 0x20d7E093B3fa5eBfA7a0fa414FaD547743a2400F .
+- Import the token to your web3 wallet via address 0x20d7E093B3fa5eBfA7a0fa414FaD547743a2400F .
 
+
+## Deposit goETH for wbETH (Binance Staked Ether)
+
+- Visit the [Binance Staked Ether proxy contract](https://goerli.etherscan.io/address/0xE7bCB9e341D546b66a46298f4893f5650a56e99E#writeProxyContract).
+- Click **Connect to Web3** to connect to your web3 wallet.
+- Select "Contract"
+- Select "Write as Proxy"
+- Scroll down to the "7. deposit" function.
+  - For the first parameter, "payableAmount", input the amount of Goerli ETH you want to deposit. 
+  - For the second parameter, "referral", input the address you want to receive the wbETH.
+- Click **Write** to initiate the transaction via your web3 wallet.
+- Import the token to your web3 wallet via address 0xE7bCB9e341D546b66a46298f4893f5650a56e99E .
