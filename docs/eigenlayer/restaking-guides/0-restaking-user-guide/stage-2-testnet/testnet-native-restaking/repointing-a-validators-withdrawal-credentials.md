@@ -37,12 +37,7 @@ ethdo validator credentials get --validator=VALIDATOR_INDEX
 Some consensus clients also have their own, implementation-specific, support for withdrawal credential repointing.
 
 1. Copy your `EigenPod address` from the EigenLayer app.
-2. Follow your validator's consensus client guide.
-
-:::success
-Input the **EigenPod address** copied as the withdrawal address.
-:::
-
+2. Follow your validator's consensus client guide and set the withdrawal address to the **EigenPod address**.
 
 - [Prysm](https://docs.prylabs.network/docs/wallet/withdraw-validator#option-1-partial-earnings-withdrawals)
 - [Teku](https://docs.teku.consensys.net/HowTo/Withdrawal-Keys)
