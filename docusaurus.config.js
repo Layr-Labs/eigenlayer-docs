@@ -193,10 +193,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-       
-        image: 'img/eigenlayer-logo.png',
-
+      image: 'img/eigenlayer-logo.png',
       
       navbar: {
         title: "EigenLayer Docs",
