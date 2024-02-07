@@ -37,9 +37,9 @@ The OP Stack Sequencer consists of 4 independent processes (long running service
 To add EigenDA support to the OP Stack Sequencer, we need to:
 
 1. **Update DA writes**: modify how L2 transaction data is posted for DA (Op-batcher).
-2. **Update DA reads**: modify how L2 transaction data is [derived](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#l2-chain-derivation-pipeline) from DA (op-node).
+2. **Update DA reads**: modify how L2 transaction data is [derived](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/derivation.md#l2-chain-derivation-pipeline) from DA (op-node).
 
-The Op-batcher service is modified to write (disperse) its Optimism [data frame](https://github.com/ethereum-optimism/optimism/blob/develop/specs/glossary.md#channel-frame) (a grouping of L2 transactions) to EigenDA, wait for confirmation and the resulting BlobInfo object. If the EigenDA dispersal is successful, the Op-batcher writes the BlobInfo object to Ethereum calldata instead of its original data frame. If the EigenDA dispersal fails, the Op-batcher service writes the original Optimism data frame to Ethereum calldata.
+The Op-batcher service is modified to write (disperse) its Optimism [data frame](https://github.com/ethereum-optimism/specs/blob/main/specs/glossary.md#channel-frame) (a grouping of L2 transactions) to EigenDA, wait for confirmation and the resulting BlobInfo object. If the EigenDA dispersal is successful, the Op-batcher writes the BlobInfo object to Ethereum calldata instead of its original data frame. If the EigenDA dispersal fails, the Op-batcher service writes the original Optimism data frame to Ethereum calldata.
 
 DA reads occur in the Op-node service, as part of the L2 derivation pipeline, where L2 transaction batches are “derived” from DA. The logic in this service is modified to determine whether the calldata contains a BlobInfo object (the result from the EigenDA dispersal step above) and retrieve its data from EigenDA, otherwise follow its normal derivation path from the data frame. In the future we expect to enhance this client to handle more robust EigenDA features, such as quorum selection for retrieval.
 
