@@ -253,7 +253,7 @@ An example list of providers is [available here](https://www.alchemy.com/list-of
 
 #### Goerli Smart contract addresses
 
-For operator registration in a Goerli environment, you need to set the Delegation manager contract address as follows:
+For operator registration in a Goerli environment, you need to set the Delegation Manager contract address as follows:
 \
 The Operator CLI requires ECDSA keys for registration to EigenLayer. This is an Operator Ethereum address and key for interacting with Eigenlayer.
 
