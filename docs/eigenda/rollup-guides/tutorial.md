@@ -39,7 +39,7 @@ gh repo clone Layr-Labs/eigenda
 # Change your working directory to the eigenda folder in order to point to the protobuf defintions correctly
 cd eigenda
 
-grpcurl -proto ./api/proto/disperser/disperser.proto -d '{"data": "0000", "security_params": [{"quorum_id": 0, "adversary_threshold": 25, "quorum_threshold": 50}]}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/DisperseBlob
+grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"data": "0000", "security_params": [{"quorum_id": 0, "adversary_threshold": 25, "quorum_threshold": 50}]}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/DisperseBlob
 
 ```
 
@@ -54,7 +54,7 @@ Example request:
 ```
 # Update the value of INSERT_REQUEST_ID with the result of your disperse call above
 
-grpcurl -proto ./api/proto/disperser/disperser.proto -d '{"request_id": "INSERT_REQUEST_ID"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/GetBlobStatus
+grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"request_id": "INSERT_REQUEST_ID"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/GetBlobStatus
 ```
 
 **Step 3: Retrieve a blob**
@@ -68,7 +68,7 @@ Example request:
 Can be obtained from the result of your call to GetBlobStatus via info.blob_verification_proof.batch_metadata.batch_header_hash.
 
 
-grpcurl -proto ./api/proto/disperser/disperser.proto -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/RetrieveBlob
+grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/RetrieveBlob
 ```
 
 Option B: Retrieve the blob directly from EigenDA nodes. Integrate the [Retrieval Client](https://github.com/Layr-Labs/eigenda/blob/master/clients/retrieval_client.go) into your Go binary.
