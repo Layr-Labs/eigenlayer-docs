@@ -111,7 +111,7 @@ In case you want the binary in your PATH (or if you used the [Go](https://github
 
 ## Create and List Keys
 
-ECDSA keypair corresponds to the operator Ethereum address and key for interacting with Eigenlayer. The BLS key is used for attestation purposes within the EigenLayer protocol. BLS key is used when you register and AVS to EigenLayer.
+ECDSA keypair corresponds to the operator Ethereum address and key for interacting with Eigenlayer. The BLS key is used for attestation purposes within the EigenLayer protocol. BLS key is used when you register an AVS to EigenLayer.
 
 ### Create Keys
 
@@ -260,7 +260,7 @@ The Operator CLI requires ECDSA keys for registration to EigenLayer. This is an 
 Delegation Manager: [`0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8`](https://goerli.etherscan.io/address/0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8)
 
 ```
-# EigenLayer Delegation manager contract address
+# EigenLayer Delegation Manager contract address
 # This will be provided by EigenLayer team
 el_delegation_manager_address: 0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8
 ```
