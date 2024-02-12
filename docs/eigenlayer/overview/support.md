@@ -1,5 +1,5 @@
 # Support
 
-For any issues, questions, comments, or concerns, please find the EigenLabs team and the EigenLayer community at: [https://discord.gg/eigenlayer](https://discord.gg/eigenlayer).
+For any issues, questions, comments, or concerns, please join the [EigenLayer Community Discord](https://discord.gg/eigenlayer).
 
-We look forward to seeing you in Discord!
+You may also send us a question via our AI enabled chatbot or Support team here: <a href="javascript:void(0)"  id="intercom_trigger_eldocs" >EigenLayer Support Desk</a>
