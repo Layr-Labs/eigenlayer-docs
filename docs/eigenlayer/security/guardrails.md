@@ -17,4 +17,4 @@ In addition, the protocol facilitates native restaking, allowing users to create
 
 There will be a 7-day [withdrawal delay](withdrawal-delay.md) that will serve as a security measure during the early stages of the EigenLayer mainnet, to optimize for the safety of assets. This withdrawal lag, which is common in staking protocols, is required when AVSs go live, as there is a lag to verify that activity associated with any AVS was completed successfully.
 
-Read the [user guide to liquid restaking here](https://docs.eigenlayer.xyz/guides/liquid-restaking) and the [user guide to native restaking here](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/native-restaking).
+Read the [user guide to liquid restaking here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/liquid-restaking) and the [user guide to native restaking here](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/native-restaking).
