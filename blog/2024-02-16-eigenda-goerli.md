@@ -1,7 +1,7 @@
 ---
 title: "[Goerli Testnet] Incident Update: \n EigenDA Operator Opt-In/Opt-Out Churner function impacted on Goerli testnet"
 slug: goerli-eigenda-churner-outage-feb-2024
-tags: [goerli][eigenda]
+tags: [goerli,eigenda]
 ---
 
 ### Investigating [Feb 16, 2024 - 15:30 PT]
