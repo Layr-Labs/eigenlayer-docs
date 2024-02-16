@@ -126,6 +126,11 @@ eigenlayer operator keys create --key-type bls [keyname]
 
 This will prompt a password which you can use to encrypt the keys. Keys will be stored in a local disk and will be shown once keys are created. It will also show the private key only once, so that you can back it up in case you lose the password or key file.
 
+You can also create keys by piping your password to this command. This can help in automated key creation and will not prompt for password. This support got added in [v0.6.2](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.6.2)
+```
+echo "password" | eigenlayer operator keys create --key-type ecdsa [keyname]
+```
+
 #### Input Command
 
 ```
@@ -159,6 +164,12 @@ To import a BLS key, use the command: `eigenlayer operator keys import --key-typ
 - `privatekey` is the private key of the key you wish to import.
   - For BLS keys, it should be a large number.
   - For ECDSA keys, it should be in hex format.
+
+
+You can also import keys by piping your password to this command. This can help in automated key creation and will not prompt for password. This support got added in [v0.6.2](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.6.2)
+```
+echo "password" | eigenlayer operator keys import --key-type ecdsa [keyname] [privatekey]
+```
 
 #### Input Command
 
