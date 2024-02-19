@@ -6,7 +6,7 @@ description: Your Contribution to Shared Security
 
 ## Overview
 
-Restaked points are a measure of your contribution to the shared security of the EigenLayer ecosystem. They are a measure of staking participation equal to the time-integrated amount staked.
+Restaked points are a measure of your contribution to the shared security of the EigenLayer ecosystem. They are a measure of staking participation equal to the time-integrated amount staked in units of ETH $$\cdot$$ hours.
 
 ## Calculations
 
@@ -18,9 +18,9 @@ $$
 P_{ij} = \int_{t=0}^T S_{ij}(t)dt
 $$
 
-where $$S_{ij}(t)$$ represents the amount of token $$j$$ held by staker $$i$$ at time $$t$$, measured in nominal units of ETH. For the purposes of the nominal participation measure, we treat all tokens, such as Native Restaked ETH and Liquid Staked ETH (LSTs) equivalently and calculate the total participation measure in units of ETH $$\cdot$$ hours.
+where $$S_{ij}(t)$$ represents the amount of token $$j$$ held by staker $$i$$ at time $$t$$, measured in nominal units of ETH. For the purposes of the nominal participation measure, we treat all tokens, such as Native Restaked ETH and Liquid Staked ETH (LSTs) equivalently and calculate the total participation measure in units of ETH $$\cdot$$ hours. Points are accrued for each Ethereum block that a token is actively staked.
 
-For instance, a user who stakes 1 stETH for 10 days should accrue 240 restaking points over this time period (1 ETH $$\times$$ 10 days $$\times$$ 24 hours/day = 240 ETH $$\cdot$$ hours)
+For instance, a user who stakes 1 stETH for 10 days should accrue 240 restaking points over this time period (1 ETH $$\times$$ 10 days $$\times$$ 24 hours/day = 240 ETH $$\cdot$$ hours).
 
 For natively staked ETH, we treat $$S_{ij}(t)$$ as a step function for each validator which transitions from 0 to 32ETH at the validator's activation epoch or BLS to execution change epoch and then back to 0 at the validator's exit epoch.
 
@@ -36,4 +36,7 @@ $$
 R_i = \frac{P_i}{\sum_{i'} P_{i'}}.
 $$
 
-Consensus layer rewards are not included in the points calculation.
+
+Additional clarifications for Native Restaking:
+- Consensus layer rewards are not included in the points calculation. Restaked points for native restaked is based on the validator's Effective Balance (capped at 32 ETH), rather than the validator's Current Balance (which includes rewards).
+- For Native Restaking, points accrual ends at the “Complete Withdrawal” action when the funds have exited EigenLayer completely.
