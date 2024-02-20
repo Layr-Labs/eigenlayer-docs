@@ -8,13 +8,13 @@
 
 **Step 2:** Select the token you want to restake.
 
-**Step 3:** Token Approval and Deposit. Enter the amount you would like to restake and click **Deposit**.
+**Step 3:** Token Approval. Enter the amount you would like to restake and click **Deposit**.
 
-If this is your first time depositing a token on EigenLayer, you'll need to approve token spending before you can restake. [Token Approval](https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-) gives a dApp permission to move the specified token from your wallet. Set a spending cap, and click **Next**.
+If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval](https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-) gives a dApp permission to move the specified token from your wallet. Set a spending cap, and click **Next**.
 
-**Step 4:** Once the approval transaction is confirmed, you will be prompted to **Confirm** the deposit.
+**Step 4:** Once the token Approval transaction is confirmed, you will be prompted to confirm the **Deposit** transaction. 
 
-**Step 5:** **Approve** the Deposit transaction via your wallet.
+**Step 5:** Confirm the **Deposit** transaction via your wallet.
 
 If successful, you will see the corresponding increase in your Restaked balance in the app:
 
