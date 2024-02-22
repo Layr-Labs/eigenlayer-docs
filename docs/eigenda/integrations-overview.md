@@ -1,7 +1,6 @@
 ---
 sidebar_position: 4
 ---
-
 # Optimistic Rollup Integration Strategies
 
 There are a few viable design strategies for securely deploying an optimistic rollup with
@@ -55,7 +54,7 @@ it to the disperser.
 signature and sends it and some blob metadata to to the EigenDA Manager contract on
 Ethereum. The EigenDA Manager contract on Ethereum is responsible for verifying EigenDA
 certificates, and if they verify, recording that verification in storage.
-Verification consists of ensuring the the aggregated signature is valid and is
+Verification consists of ensuring the aggregated signature is valid and is
 based on the current EigenDA operator set. This blob verification status is
 not used in this implementation strategy.
 4. If the sequencer is using the EigenDA disperser, then it shouldn't just trust
@@ -135,7 +134,7 @@ implementation, the EigenDA manager contract checks against its storage whether
 the blob certificate was verified. If so `verifyBlob()` returns `true` and the
 EigenDA certificate is allowed into the inbox.  Otherwise the blob ID is rejected.
 
-At this point the user's transaction has been confirmed on the rollup. Once
+At this point the the user's transaction has been confirmed on the rollup. Once
 the weak subjectivity window passes (~13 minutes), the user's transaction can be
 considered finalized.
 
@@ -165,7 +164,7 @@ outbound assets or messages are released by the bridge contract.
 
 In the event of a fraud challenge, the process is more complex. There is a
 second, equivalent state transition function for generating state roots which is
-much slower but also a much more rigorous fraud prove.
+much slower but also much a more rigorous fraud prove.
 
 That process models the L2 state as a virtual machine, complete with an operating
 system, which continuously reads messages from the rollup inbox contract using a
