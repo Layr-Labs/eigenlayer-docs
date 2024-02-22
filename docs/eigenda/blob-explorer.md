@@ -4,10 +4,13 @@ sidebar_position: 3
 
 # Blob Explorer
 
-The purpose of the Blob Explorer is to show Blobs and summary statistics. The main features of the Blob Explorer include:
+The purpose of the [Blob Explorer](https://blobs-goerli.eigenda.xyz/) is to show
+blob metadata and summary statistics for debugging and monitoring purposes.
 
-* The throughput data from the last hour
-* Display the last 100 blobs
-* Display details on a single blob for a given blob key
+<!-- TODO: Check whether we can see actual blobs on the blob explorer now -->
 
-In order to access the Blob Explorer, please visit [https://blobs-goerli.eigenda.xyz/](https://blobs-goerli.eigenda.xyz/).
+The Blob Explorer makes available:
+
+* Throughput data for the last hour
+* The contents of the last 100 blobs published
+* A view of blob metadata for any given blob key
