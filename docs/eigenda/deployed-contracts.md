@@ -14,7 +14,11 @@ No contracts have been deployed to mainnet yet.
 
 ### Current Testnet Deployment
 
-The current testnet deployment of EigenDA is [`v0.3.0`](https://github.com/Layr-Labs/eigenda/releases/tag/v0.3.0) part of which includes middleware contracts from the [`v0.1.1-goerli-m2`](https://github.com/Layr-Labs/eigenlayer-middleware/tree/testnet) release. Below are the deployed contract addresses and links to source.
+The current testnet deployment of EigenDA is
+[`v0.3.0`](https://github.com/Layr-Labs/eigenda/releases/tag/v0.3.0) part of
+which includes EigenLayer middleware contracts from the
+[`v0.1.1-goerli-m2`](https://github.com/Layr-Labs/eigenlayer-middleware/tree/testnet)
+release. Below are the deployed contract addresses and links to source.
 
 | Name                           | Solidity                                                                                                   | Proxy                                                          | Implementation                                                | Notes                                                                                                            |
 |--------------------------------|------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
