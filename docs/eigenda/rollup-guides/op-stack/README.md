@@ -7,12 +7,14 @@ title: OP Stack
 
 [OP Stack](https://stack.optimism.io/) is the set of [software
 components](https://github.com/ethereum-optimism/optimism) that run sequencers,
-nodes and contracts for [Optimism](https://www.optimism.io/) and which can be
+nodes, and contracts for [Optimism](https://www.optimism.io/) and which can be
 independently deployed to power third-party rollups.
 
 In its native mode, OP Stack uses Ethereum for Data Availability, meaning it
 persists L2 transaction batches to Ethereum in the form of calldata to form the
-canonical L2 chain. This comes with advantages and disadvantages. The advantage
+canonical L2 chain. This comes with advantages and disadvantages.
+
+The advantage
 of using Ethereum for DA is that the data is fully secured by Ethereum's
 security budget, and the system is relatively simple. The drawback is that
 Ethereum calldata is expensive, and relatively scarce. Ethereum's consensus
@@ -33,10 +35,10 @@ are detailed in the next section.**
 ![OP stack digram](/img/op-stack-blob-disersal-seq.png)
 
 In the absence of fraud proofs, the integration is relatively simple. On the
-sequencing side instead of writing L2 transaction data to Ethereum calldata, we
+sequencing side, instead of writing L2 transaction data to Ethereum calldata, we
 write L2 transaction data to EigenDA. Then we take the resulting EigenDA blob
 key and write that to Ethereum calldata. Where the blob data could be many
-megabytes in size, the blob key is only a few bytes long and so the cost of the
+megabytes in size, the blob key is only a few bytes long so the cost of the
 calldata becomes relatively negligible.
 
 The other side of the integration is the L2 derivation pipeline, which both
