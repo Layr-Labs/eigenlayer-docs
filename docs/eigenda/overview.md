@@ -9,36 +9,30 @@ EigenDA is a data availability store made by
 [testnet](https://blobs-goerli.eigenda.xyz/) and launching on mainnet in early
 Q2 2024.
 
-Designed as a place for rollups to store transactions until the rollup state is
-finalized, EigenDA has the following characteristics:
+EigenDA stores rollup transactions until their computed state is
+finalized, and is...
 
-* **Scalable.** EigenDA write throughput scales linearly with its number of
-  operators. At launch EigenDA will provide 10 MB/s of write throughput. This is
-  5x greater than the nearest competitor.
+* **Scalable.** EigenDA write throughput scales linearly with number of
+operators. At launch EigenDA will provide 10 MB/s of write throughput. This is
+5x greater than the nearest competitor.
 
-* **Secure.** EigenDA is made up of hundreds of operators registered in
-  EigenLayer, whose delegated stake imposes an economic cost to misbehavior. We
-  expect EigenDA to have billions of dollars of economic security at launch.
+* **Secure.** EigenDA is decentralized, and made up of hundreds of operators
+registered in EigenLayer whose delegated stake imposes an economic cost to
+misbehavior. EigenDA will have billions of dollars of economic security at
+launch.
 
-* **Cheap.** The abundance of L2 blockspace provided by EigenDA will demand a
-  new kind of pricing model. Where the pricing of L1 blockspace is primarily
-  constrained by supply, EigenDA blockspace pricing is primarily constrained by
-  cost-of-security, which is shared with Ethereum and other EigenLayer AVSs. As
-  a result we expect EigenDA to be orders of magnitude cheaper than competitors.
-
-* **Ethereum-centric.** EigenDA's design is inspired by Danksharding, which
-  promises to scale Ethereum-native DA beyond EIP-4844. EigenDA blob writes are
-  registered with contracts on Ethereum, which natively subject operators to
-  certain slashing risks. Ethereum L2s using EigenDA avoid any trust assumption
-  on another chain's light client, which can be fooled by dishonest validator
-  sets.
+* **Decentralized.** EigenDA's design is inspired by Danksharding, which
+promises to scale Ethereum-native DA beyond EIP-4844. EigenDA blob writes are
+registered with contracts on Ethereum, which natively subject operators to
+certain slashing risks. Ethereum L2s using EigenDA avoid any trust assumption on
+another chain's light client, which can be fooled by dishonest validator sets.
 
 ## How EigenDA Works
 
 The core insight of EigenDA is that the problem of data availability does not
-require independent consensus to solve. If we are building a decentralized
-transient data store for Ethereum, we can use Ethereum for aspects of
-coordination required, and for everything else address EigenDA operators
+require independent consensus to solve. In building a decentralized transient
+data store for Ethereum rollups, Ethereum can be used for aspects of
+coordination required, and data storage can be handled by EigenDA operators
 directly.
 
 This approach gives EigenDA the ability to scale linearly. In the context of an
