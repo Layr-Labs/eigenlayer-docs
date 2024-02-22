@@ -1,9 +1,10 @@
 ---
 sidebar_position: 4
 ---
+
 # Optimistic Rollup Integration Strategies
 
-There are a few viable design strategies for securely an optimistic rollup with
+There are a few viable design strategies for securely deploying an optimistic rollup with
 EigenDA. This document aims to describe them in detail to provide rollup
 engineers with a strong understanding of how an EigenDA integration would impact
 their tech stack and security model.
@@ -29,7 +30,7 @@ inbox. In doing this verification, the chain ensures that the transaction data
 used to generate the rollup's state root was not manipulated by the
 sequencer/proposer.
 
-Each strategy used to integrate EigenDA can be defined by how these for concerns
+Each strategy used to integrate EigenDA can be defined by how these four concerns
 are handled.
 
 ## Trusted Verification Strategy (M0) {#M0}
@@ -85,7 +86,7 @@ logic can only live inside the derivation pipeline, and data verification logic
 can only live inside the fraud proof system. That leaves certificate
 verification logic, which could be placed either in the rollup's inbox contract
 or inside the rollup virtual machine executing off-chain. The question of where
-to place this logic boils is the key distinguishing factor between the "M1" and
+to place this logic is the key distinguishing factor between the "M1" and
 "M2" integration paths.
 
 An instructive way to dive into the L2 inbox certificate verification strategy
@@ -102,7 +103,7 @@ L2 chain when the transaction has been sequenced in the L2 inbox contract. When
 this process is complete, any L2 node can say with confidence that the
 transaction is part of the cannonical L2 chain and is not subject to a reorg.
 
-For example, if you were selling your car and a buyer paid you by sending you a
+For example, if you were selling your car and a buyer paid you by sending you
 USDC on a secure rollup, it would be important to wait until the transaction had
 reached L2 chain finalization before letting them drive away with your vehicle.
 
@@ -121,7 +122,7 @@ it to the disperser.
 signature and sends it and some blob metadata to to the EigenDA Manager contract on
 Ethereum. The EigenDA Manager contract on Ethereum is responsible for verifying EigenDA
 certificates, and if they verify, recording that verification in storage.
-Verification consists of ensuring the the aggregated signature is valid and is
+Verification consists of ensuring the aggregated signature is valid and is
 based on the current EigenDA operator set. This blob verification status is
 used in step 5.
 4. Once the blob has been confirmed, the batcher sends a transaction to the
@@ -134,7 +135,7 @@ implementation, the EigenDA manager contract checks against its storage whether
 the blob certificate was verified. If so `verifyBlob()` returns `true` and the
 EigenDA certificate is allowed into the inbox.  Otherwise the blob ID is rejected.
 
-At this point the the user's transaction has been confirmed on the rollup. Once
+At this point the user's transaction has been confirmed on the rollup. Once
 the weak subjectivity window passes (~13 minutes), the user's transaction can be
 considered finalized.
 
@@ -164,9 +165,9 @@ outbound assets or messages are released by the bridge contract.
 
 In the event of a fraud challenge, the process is more complex. There is a
 second, equivalent state transition function for generating state roots which is
-much slower but also much more rigorous fraud prove.
+much slower but also a much more rigorous fraud prove.
 
-That process models the L2 state as virtual machine, complete with an operating
+That process models the L2 state as a virtual machine, complete with an operating
 system, which continuously reads messages from the rollup inbox contract using a
 special `ReadInboxMessage` opcode, and handles them accordingly. If an inbox
 message describes a batch of raw L2 transactions, the L2 OS knows it should
