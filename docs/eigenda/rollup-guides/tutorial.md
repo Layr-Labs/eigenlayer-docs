@@ -118,9 +118,10 @@ Data Availability is a requirement for both for ZK and Optimistic rollups
 
 - In both optimistic rollups and ZK-rollups, if transaction data is not
 available, then participants in the rollup will be unable to reconstruct the
-rollup state so as to bridge out their assets if desired.  - In optimistic
-rollups, if transaction data is not available, challengers are unable to check
-the sequencer’s state commitment and create fraud proofs when applicable.
+rollup state so as to bridge out their assets if desired.
+- In optimistic rollups, if transaction data is not available, challengers are
+unable to check the sequencer’s state commitment and create fraud proofs when
+applicable.
 
 **Verifying Blob Availability On Chain**
 

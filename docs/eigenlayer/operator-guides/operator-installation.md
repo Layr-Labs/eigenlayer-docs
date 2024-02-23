@@ -149,7 +149,6 @@ Please backup the above private key hex in safe place.
 Key location: /home/ubuntu/.eigenlayer/operator_keys/test.ecdsa.key.json
 Public Key hex:  f87ee475109c2943038b3c006b8a004ee17bebf3357d10d8f63ef202c5c28723906533dccfda5d76c1da0a9f05cc6d32085ca1af8aaab5a28171474b1ad0aa68
 Ethereum Address 0x6a8c0D554a694899041E52a91B4EC3Ff23d8aBD5
-
 ```
 
 ### Import Keys
@@ -247,7 +246,7 @@ You can create the config files needed for operator registration using the below
 eigenlayer operator config create
 ```
 
-When prompted for operator address, make sure your operator address is same as the ecdsa key address you created/imported in key creation steps. 
+When prompted for operator address, make sure your operator address is same as the ecdsa key address you created/imported in key creation steps.
 
 It will create two files: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 

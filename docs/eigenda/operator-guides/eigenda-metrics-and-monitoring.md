@@ -18,28 +18,28 @@ cp .env.example .env
 - Open the `.env` file, ensure the location of `prometheus.yml` is correct for your environment.
 - In the `prometheus.yml` file:
   - Update prometheus config [file](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/monitoring/prometheus.yml)
-    is updated with the metrics port (`NODE_METRICS_PORT`) of the eigenda node in parent folder `.env` file
-  - Ensure the eigenda container name for `scrape_configs.targets` matches the value of the parent folder `.env` file (`MAIN_SERVICE_NAME`).
+    is updated with the metrics port (`NODE_METRICS_PORT`) of the EigenDA node in parent folder `.env` file
+  - Ensure the EigenDA container name for `scrape_configs.targets` matches the value of the parent folder `.env` file (`MAIN_SERVICE_NAME`).
   - Make sure the location of prometheus file is correct in [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/monitoring/.env.example) file
 
-**Step 2:** Run the following command to start the monitoring stack
+**Step 2:** Run the following command to start the monitoring stack:
 
 ```
 docker compose up -d
 ```
 
-**Step 3:** Since eigenda is running in a different docker network we will need
-to have prometheus in the same network. To do that, run the following command
+**Step 3:** Since EigenDA is running in a different docker network, we will need
+to have prometheus in the same network. To do that, run the following command:
 
 ```
-docker network connect eigenda-network prometheus
+docker network connect `eigenda-network` prometheus
 ```
 
-Note: `eigenda-network` is the name of the network in which eigenda is running.
-You can check the network name in eigenda
+Note: `eigenda-network` is the name of the network in which EigenDA is running.
+You can check the network name in EigenDA
 [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env.example#L2)
 file (`NETWORK_NAME`). This will ensure Prometheus can scrape the metrics from
-Eigenda node.
+EigenDA node.
 
 Useful Dashboards: EigenDA offers a set of [Grafana
 dashboards](https://github.com/Layr-Labs/eigenda-operator-setup/tree/master/monitoring/dashboards)

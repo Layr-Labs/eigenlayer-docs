@@ -19,7 +19,7 @@ If none of this reason applies, please reach out to EigenLayer Support
 
 #### How do I know if my node is signing EigenDA blobs correctly?
 
-There are few ways you can confirm that your node is signing the blobs
+There are few ways you can confirm that your node is signing the blobs:
 
 * Ensure that you have monitoring setup according to the
  [guide](./eigenda-metrics-and-monitoring.md). Once you have added the provided
@@ -52,8 +52,8 @@ traffic, make sure [your network settings
 allows](./eigenda-avs-installation-registration-and-upgrade.md#step-3-operator-networking-security-setup)
 EigenDA's disperser to reach your node.
 
-If you were previously opted-in and was signing, it's possible you are [churned
-out](./overview.md#eigenda-churn-approver) by an other operator or you have been
+If you were previously opted-in and were signing, it's possible you are [churned
+out](./overview.md#eigenda-churn-approver) by another operator or you have been
 [ejected due to non-signing](./ejection-non-signing.md). Please try opting-in
 again.
 
@@ -61,9 +61,9 @@ again.
 
 If you are running on k8s or have a load balancer in front of your EigenDA node
 and you don't want EigenDA to automatically update IP which is sent to EigenDA
-while registeration then follow the steps to make sure correct IP is registered
+while registration then follow the steps to make sure correct IP is registered:
 
-* Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) to the public IP where you will want to recieve traffic.
+* Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) to the public IP where you will want to receive traffic.
 * Opt-in using the provided [steps](./eigenda-avs-installation-registration-and-upgrade.md#step-4-opt-in-into-eigenda)
 * Update the [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L57) to `0` to disable automatic IP update
 * Run the EigenDA node
