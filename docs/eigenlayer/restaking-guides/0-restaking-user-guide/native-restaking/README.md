@@ -4,7 +4,7 @@ description: How to restake and withdraw with Native Staking
 
 # Native Restaking
 
-Native Restaking is the process of pointing an Ethereum validator's [withdrawal credentials](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-withdrawals) to the user's [EigenPod](./create-eigenpod/README.md). You must operate an Ethereum Validator node in order to participate in Native Restaking. To learn more or set up your Ethereum Validator please follow this link from the[ Ethereum Foundation](https://goerli.launchpad.ethereum.org/).
+Native Restaking is the process of pointing an Ethereum validator's [withdrawal credentials](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-withdrawals) to the user's [EigenPod](./create-eigenpod/README.md). You must operate an Ethereum Validator node in order to participate in Native Restaking. To learn more or set up your Ethereum Validator please follow this link from the [Ethereum Foundation](https://goerli.launchpad.ethereum.org/).
 
 :::info
 Please read this entire guide before launching your new validator or integrating your existing validator. Before you deploy a new validator you must plan to either:

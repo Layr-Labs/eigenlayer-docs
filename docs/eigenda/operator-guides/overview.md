@@ -62,7 +62,7 @@ and explicitly communicate future changes.  :::
 
 In order to determine the current TVL of the top 200 operators, please visit our
 [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda) and sort by `TVL
-Ascending.`Observe the first 200 operators listed and the amount of ETH TVL
+Ascending`. Observe the first 200 operators listed and the amount of ETH TVL
 delegated to them.
 
 When a new operator wants to opt-in but EigenDA has reached its operator cap,
@@ -93,7 +93,7 @@ Operators that have been ejected can verify the change in two ways:
 in the active operator set on the [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda).
 2. Observe your EigenDA Operator log for the following logs. If you see this
 consistently, then your operator is not receiving any disperser traffic and you
-may have been ejected.  This is not an error but if you only see this log line
+may have been ejected. This is not an error but if you only see this log line
 repeatedly then it means you may not be receiving any disperser traffic.
 
 ```

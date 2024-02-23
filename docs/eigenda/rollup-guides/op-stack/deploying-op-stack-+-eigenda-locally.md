@@ -51,7 +51,7 @@ cd inabox make clean new-anvil deploy-all ./bin.sh start
 # To clean up Ctrl+C to quit EigenDA
 
 # then to stop anvil, the graph and localstack
-make stop-infra 
+make stop-infra
 ```
 
 ## Running OpStack Locally
@@ -65,7 +65,7 @@ git submodule update --init --recursive
 
 # install and use correct golang version
 
-gvm intall $(cat .go-version) gvm use $(cat .go-version)
+gvm install $(cat .go-version) gvm use $(cat .go-version)
 
 # build correct foundry version from source (may take a few minutes)
 
