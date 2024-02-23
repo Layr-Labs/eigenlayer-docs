@@ -14,8 +14,7 @@ In its native mode, OP Stack uses Ethereum for Data Availability, meaning it
 persists L2 transaction batches to Ethereum in the form of calldata to form the
 canonical L2 chain. This comes with advantages and disadvantages.
 
-The advantage
-of using Ethereum for DA is that the data is fully secured by Ethereum's
+The advantage of using Ethereum for DA is that the data is fully secured by Ethereum's
 security budget, and the system is relatively simple. The drawback is that
 Ethereum calldata is expensive, and relatively scarce. Ethereum's consensus
 throughput (pre-EIP-4844) is 200Kb per block, every 12 seconds. That is not
