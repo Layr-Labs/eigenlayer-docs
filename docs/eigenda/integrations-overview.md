@@ -100,7 +100,7 @@ finalization.
 First, L2 chain finalization. An L2 transaction is finalized with respect to the
 L2 chain when the transaction has been sequenced in the L2 inbox contract. When
 this process is complete, any L2 node can say with confidence that the
-transaction is part of the cannonical L2 chain and is not subject to a reorg.
+transaction is part of the canonical L2 chain and is not subject to a reorg.
 
 For example, if you were selling your car and a buyer paid you by sending you
 USDC on a secure rollup, it would be important to wait until the transaction had
@@ -216,7 +216,7 @@ of the L2 VM design works as-is for arbitrating fraud.
 <!-- ![M2 chain finalization](/img/eigenda/optimistic-M2-dispersal.png) -->
 
 The V2 integration strategy is similar to the V1 integration strategy, with the
-differece that EigenDA certificates are not verified on Ethereum. Instead, they
+difference that EigenDA certificates are not verified on Ethereum. Instead, they
 are verified within the L2 itself, such that the validity of DA certs is
 enforced by the same fraud proof mechanism that is used with all other L2 state.
 In this mode, a rollup batcher may submit invalid EigenDA certs to the rollup
