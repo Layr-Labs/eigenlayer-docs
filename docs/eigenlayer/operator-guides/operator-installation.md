@@ -8,10 +8,10 @@ sidebar_position: 2
 
 ### **Software Requirements**
 
+- Linux Environment: EigenLayer is supported only on Linux. Common Linux operating system includes Ubuntu and Debian. To install Ubuntu, please follow the instructions listed [here](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview). To install Debian, please follow the instructions listed [here](https://www.debian.org/releases/buster/amd64/)
 - Docker: Ensure that Docker is installed on your system. To download Docker, follow the instructions listed [here](https://docs.docker.com/get-docker/).
 - Docker Compose: Make sure Docker Compose is also installed and properly configured. To download Docker Compose, follow the instructions listed [here](https://docs.docker.com/compose/install/).
-- Linux Environment: EigenLayer is supported only on Linux. Ensure you have a Linux environment, such as Docker, for installation.
-  - If you choose to install eigenlayer-cli using the Go programming language, ensure you have Go installed, version 1.21 or higher. You can find the installation guide [here](https://go.dev/doc/install).
+- If you choose to install eigenlayer-cli using the Go programming language, ensure you have Go installed, version 1.21 or higher. You can find the installation guide [here](https://go.dev/doc/install).
 
 ---
 
@@ -108,6 +108,32 @@ The executable will be in the build folder.
 In case you want the binary in your PATH (or if you used the [Go](https://github.com/Layr-Labs/eigenlayer-cli#install-eigenlayer-cli-using-go) method and you don't have $GOBIN in your PATH), please copy the binary to /usr/local/bin:
 
 ---
+
+### Check if installation is successful
+
+To check if the installation of the eigenlayer-CLI is successful, type the following:
+
+#### Input Command
+
+```
+eigenlayer --help
+```
+
+The following will be prompted if the installation is successful.
+
+#### Output
+
+```
+Usage:
+  eigenlayer [command]
+
+Available Commands:
+  help        Help about any command
+  operator    Execute onchain operations for the operator
+
+Flags:
+  -h, --help   help for eigenlayer
+```
 
 ## Create and List Keys
 
