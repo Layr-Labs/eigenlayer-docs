@@ -27,7 +27,7 @@ function Home() {
             <div className="container">
               <div className="row cards__container">
                 <Card
-                  to="/build/subnet/hello-subnet"
+                  to="eigenlayer/overview"
                   header={{
                     label:"💡 Learn About EigenLayer"
                   }}
@@ -37,7 +37,7 @@ function Home() {
                 />
   
                 <Card
-                  to="intro"
+                  to="eigenlayer/restaking-guides/restaking-user-guide/"
                   header={{
                     label:"💙 Restake with EigenLayer"
                   }}
@@ -47,7 +47,7 @@ function Home() {
                 />
   
                 <Card
-                  to="/nodes/validate/add-a-validator"
+                  to="eigenlayer/operator-guides/operator-introduction"
                   header={{
                     label:"💻 Become an Operator"
                   }}
@@ -58,7 +58,7 @@ function Home() {
   
   
                 <Card
-                  to="/nodes/validate/add-a-validator"
+                  to="eigenda/overview"
                   header={{
                     label:"🛠️ Build on EigenDA"
                   }}
@@ -69,7 +69,7 @@ function Home() {
 
 
                 <Card
-                  to="/nodes/validate/add-a-validator"
+                  to="eigenlayer/avs-guides/avs-developer-guide"
                   header={{
                     label:"🚀 Launch Your AVS on EigenLayer"
                   }}
@@ -80,7 +80,7 @@ function Home() {
 
 
                 <Card
-                  to="/nodes/validate/add-a-validator"
+                  to="status"
                   header={{
                     label:"📞 Platform Status"
                   }}
