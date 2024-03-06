@@ -1,6 +1,6 @@
 # EigenLayer Privacy Policy
 
-Last Revised on April 14, 2023 ​
+***Last Revised on April 14, 2023***
 
 This Privacy Policy for Layr Labs, Inc. ("Company", "we", "us" "our") describes how we collect, use and disclose information about users of the Company's website (eigenlayer.xyz), and any related services, tools and features, including the EigenLayer service (collectively, the "Services"). For the purposes of this Privacy Policy, "you" and "your" means you as the user of the Services. ​ Please read this Privacy Policy carefully. By using, accessing, or downloading any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree to this Privacy Policy, please do not use, access or download any of the Services. ​
 

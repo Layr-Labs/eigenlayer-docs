@@ -171,6 +171,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          showLastUpdateTime: false
         },
         blog: {
           blogTitle: "EigenLayer Status",
