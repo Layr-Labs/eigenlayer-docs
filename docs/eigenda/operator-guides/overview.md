@@ -63,7 +63,10 @@ and explicitly communicate future changes.  :::
 In order to determine the current TVL of the top 200 operators, please visit our
 [AVS page](https://goerli.eigenlayer.xyz/avs/eigenda) and sort by `TVL
 Ascending.`Observe the first 200 operators listed and the amount of ETH TVL
-delegated to them.
+delegated to them. Please keep in mind that the AVS Page reflects real-time
+operator stake on EigenLayer, which is used to update the EigenDA operator set
+stake weights on a weekly basis (Wednesdays at 17:00 UTC), so the EigenDA stake
+may lag the real-time EigenLayer stake by at most 7 days.
 
 When a new operator wants to opt-in but EigenDA has reached its operator cap,
 the newly-registering operator can request a signature from the Churn Approver.
