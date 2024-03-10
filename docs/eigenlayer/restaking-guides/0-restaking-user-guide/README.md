@@ -21,7 +21,7 @@ These guides will walk you through how LST holders and Native Stakers can restak
 
 The protocol plans to support additional liquid staking tokens in the future. If you would like to introduce your LST to the EigenLayer community, please do so on [the forum](https://forum.eigenlayer.xyz/t/about-the-new-lst-token-on-eigenlayer-category/6641).
 
-**Native restaking** describes the process of setting an Ethereum validator's `withdrawCredential`to EigenLayer's smart contracts (EigenPod). You must operate an Ethereum Validator node in order to participate in Native Restaking.
+**Native restaking** describes the process of setting an Ethereum validator's `withdrawCredential` to EigenLayer's smart contracts (EigenPod). You must operate an Ethereum Validator node in order to participate in Native Restaking.
 
 ## [**Withdrawal Delay**](https://docs.eigenlayer.xyz/security/withdrawal-delay)
 
