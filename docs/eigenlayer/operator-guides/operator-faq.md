@@ -51,3 +51,7 @@ If you want to change password of your encrypted keys, you have two options base
 
 Currently there's no way to deregister your operator but you can
 update the name of your operator in metadata url to be `Deactivated` or something similar. This will help display your operator as not active on the webapp.
+
+#### Is there a limit to the number of AVSs that an Operator can opt-in to?
+
+There is no limit on the number of AVSs that an Operator can opt-in to. However, the Operator needs to ensure they have sufficient infrastructure capacity for the AVSs they opt-in to.

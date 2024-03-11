@@ -31,7 +31,7 @@ will consume.
 to consider the blob dispersal successful. As such, clients can use this setting
 to customize liveness requirements (a low Quorum Threshold means that a smaller
 set of operators can support a dispersal request, whereas a high Quorum
-Threshold quires more operators to be available to provide liveness).
+Threshold requires more operators to be available to provide liveness).
 - Adversary Threshold is the maximum percentage of the stake which can be held by
 nodes acting in an adversarial manner before the availability of a blob is
 affected.
