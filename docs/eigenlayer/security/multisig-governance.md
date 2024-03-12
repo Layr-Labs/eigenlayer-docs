@@ -8,11 +8,11 @@ EigenLayer is designed with upgradeable smart contracts, the ability to pause fu
 
 **The Operations Multisig**
 
-The Operations Multisig is a 3-of-5 and can execute routine upgrades and maintenance through a timelock that enforces a minimum 10-day delay on all safety-critical actions. It can also pause EigenLayer functionality in emergency situations.
+The Operations Multisig is a 3-of-6 and can execute routine upgrades and maintenance through a timelock that enforces a minimum 10-day delay on all safety-critical actions. It can also pause EigenLayer functionality in emergency situations.
 
 **The Pauser Multisig**
 
-The Pauser Multisig is a 1-of-9 multisig that can also pause EigenLayer functionality in emergency situations, but holds no other powers.
+The Pauser Multisig is a 1-of-14 multisig that can also pause EigenLayer functionality in emergency situations, but holds no other powers.
 
 **The Community Multisig**
 
