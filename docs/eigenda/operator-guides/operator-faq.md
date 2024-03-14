@@ -66,7 +66,7 @@ and you don't want EigenDA to automatically update IP which is sent to EigenDA
 while registering, then follow the steps to make sure correct IP is registered
 
 * Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) to the public IP where you will want to recieve traffic.
-* Opt-in using the provided [steps](./eigenda-avs-installation-registration-and-upgrade.md#step-4-opt-in-into-eigenda)
+* Opt-in using the provided [steps](./eigenda-avs-installation-registration-and-upgrade)
 * Update the [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L57) to `0` to disable automatic IP update
 * Run the EigenDA node
 
