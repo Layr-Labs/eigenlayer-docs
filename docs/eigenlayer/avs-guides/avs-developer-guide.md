@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # AVS Developer Guide
 
 For more information on building AVSs on EigenLayer, please review the [specifications](https://eigen.nethermind.io/docs/introduction) defined by the Eigen/Nethermind teams.

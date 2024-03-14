@@ -1,17 +1,22 @@
 ---
-sidebar_position: 0
+title: "Introduction"
+sidebar_position: 1
 ---
-
-# Introduction
-
-In the [EigenLayer](https://www.eigenlayer.xyz/) ecosystem, Ethereum validators can restake their beacon chain ETH, accept delegations in the form of native ETH or LSTs, and run node software specific to an Actively Validated Services (AVS). A Data Availability Layer such as EigenDA is an early example of an AVS.
-
-With the increasing number of AVS use cases, there is a need for a convention on how to develop, maintain, create interoperability, and monitor them. This documentation describes the AVS Node Specification.
-
-The documentation is divided into the following sections:
-- [AVS Node Specification](./spec/intro.md): A full description of the specification.
-- [Key Management](./keys/intro.md): Good practices for keys management.
  
+This is a specification for running AVS Nodes.The current version of the specification is `v0.0.1`.
+
+:::caution
+The current version of the AVS Node specification should be considered a public alpha version. Therefore, it may undergo rapid changes and experience incompatibility issues until the first stable version is released.
+:::
+
+The description of the Specification is divided into the following sections:
+
+- [AVS Node API](./api/api.mdx): HTTP RESTful API for AVS Nodes.
+- [Metrics](./metrics/metrics-prom.md): Prometheus standard metrics for AVS implementations.
+- [Plugin](./plugin/intro.mdx): How developers can provide an interface to execute on-time features.
+
+
+
 ## Definitions
 
 ### MUST
