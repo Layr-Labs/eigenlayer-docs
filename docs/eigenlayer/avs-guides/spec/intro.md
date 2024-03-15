@@ -13,7 +13,6 @@ The description of the Specification is divided into the following sections:
 
 - [AVS Node API](./api/api.mdx): HTTP RESTful API for AVS Nodes.
 - [Metrics](./metrics/metrics-prom.md): Prometheus standard metrics for AVS implementations.
-- [Plugin](./plugin/intro.mdx): How developers can provide an interface to execute on-time features.
 
 
 

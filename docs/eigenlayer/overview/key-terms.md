@@ -1,6 +1,6 @@
 # Key Terms
 
-- **Actively Validated Services (AVS):** an infrastructure service built on the EigenLayer protocol that enables the developer to provide services to their end user with all of the incentives of shared security. Examples of these services could include data availability layers, new virtual machines, keeper networks, oracle networks, bridges, AI inference networks, databases, threshold cryptography schemes, and trusted execution environments.
+- **Actively Validated Services (AVS):** Any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, and trusted execution environments.
 - **AVS Developer**: development team that builds an AVS service.
 - **Cryptoeconomic security:** security model that uses economic incentives and cryptography to ensure the proper functioning and security of a network.
 - **Delegation in EigenLayer:** feature that allows restakers holding ETH or LSTs to delegate their assets to other entities who will operate off-chain software containers of service modules built on EigenLayer, rather than operating the software themselves.
