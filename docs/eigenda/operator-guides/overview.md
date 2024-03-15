@@ -17,7 +17,7 @@ and documentation.
 ### Node Classes
 
 Operators can determine their required [EigenLayer node
-class](/eigenlayer/operator-guides/avs-installation-and-registration/eigenlayer-node-classes.md)
+class](../../eigenlayer/operator-guides/avs-installation-and-registration/eigenlayer-node-classes)
 by referencing their share of the total EigenDA quorum against the following
 table.
 

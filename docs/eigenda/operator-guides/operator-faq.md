@@ -29,8 +29,8 @@ There are few ways you can confirm that your node is signing the blobs
  ![EigenDA correct sign](/img/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-correct-sign.png)
 
 * If you have not setup metrics yet, you can still check the logs of your
-  EigenDA Node. If your logs resemble like mentioned in [this
-  section](./eigenda-avs-installation-registration-and-upgrade.md#step-5-run-eigenda)
+  EigenDA Node. If your logs resemble like mentioned in step 5 of respective network in this
+  section([goerli](./eigenda-avs-installation-registration-and-upgrade/goerli#step-5-run-eigenda), [holesky](./eigenda-avs-installation-registration-and-upgrade/holesky), [mainnet](./eigenda-avs-installation-registration-and-upgrade/mainnet))
   then you are signing correctly.
 
 #### My EigenDA node's logs look like these. What does it mean?
@@ -50,12 +50,11 @@ INFO [01-10|21:16:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]         
 
 This means you node software is running but you are not opted-in into EigenDA.
 If you opted in into EigenDA successfully and still not receiving dispersal
-traffic, make sure [your network settings
-allows](./eigenda-avs-installation-registration-and-upgrade.md#step-3-operator-networking-security-setup)
-EigenDA's disperser to reach your node.
+traffic, make sureyour network settings
+allow EigenDA's disperser to reach your node. Please check the step 3 of respective network guide([goerli](./eigenda-avs-installation-registration-and-upgrade/goerli#step-3-operator-networking-security-setup), [holesky](./eigenda-avs-installation-registration-and-upgrade/holesky), [mainnet](./eigenda-avs-installation-registration-and-upgrade/mainnet)) to see if settings are correct.
 
 If you were previously opted-in and were signing, it's possible you were [churned
-out](./overview.md#eigenda-churn-approver) by an other operator or you have been
+out](./overview#eigenda-churn-approver) by an other operator or you have been
 [ejected due to non-signing](./ejection-non-signing.md). Please try opting-in
 again.
 
@@ -66,7 +65,7 @@ and you don't want EigenDA to automatically update IP which is sent to EigenDA
 while registering, then follow the steps to make sure correct IP is registered
 
 * Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) to the public IP where you will want to recieve traffic.
-* Opt-in using the provided [steps](./eigenda-avs-installation-registration-and-upgrade.md#step-4-opt-in-into-eigenda)
+* Opt-in using the provided steps([goerli](./eigenda-avs-installation-registration-and-upgrade/goerli#step-4-opt-in-into-eigenda), [holesky](./eigenda-avs-installation-registration-and-upgrade/holesky), [mainnet](./eigenda-avs-installation-registration-and-upgrade/mainnet))
 * Update the [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L57) to `0` to disable automatic IP update
 * Run the EigenDA node
 
