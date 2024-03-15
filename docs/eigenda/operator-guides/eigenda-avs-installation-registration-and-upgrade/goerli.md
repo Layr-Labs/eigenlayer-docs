@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# EigenDA AVS Installation, Registration, and Upgrade
+# Goerli
 
 :::info
 Please ensure you have reviewed the [current Active Operator Set cap](https://docs.eigenlayer.xyz/operator-guides/avs-installation-and-registration/eigenda-operator-guide#eigenda-churn-approver) and ensure you have sufficient delegated restaked ETH TVL before proceeding.
@@ -19,7 +19,7 @@ Clone this repo and execute the following commands:
 
 ```
 git clone https://github.com/Layr-Labs/eigenda-operator-setup.git
-cd eigenda-operator-setup
+cd eigenda-operator-setup/goerli
 cp .env.example .env
 ```
 
@@ -28,8 +28,8 @@ Manually update the `.env` file downloaded in the steps above. Modify the sectio
 Create local folders which are required by EigenDA:
 
 ```
-mkdir -p $HOME/.eigenlayer/eigenda/logs
-mkdir -p $HOME/.eigenlayer/eigenda/db
+mkdir -p $HOME/.eigenlayer/eigenda/goerli/logs
+mkdir -p $HOME/.eigenlayer/eigenda/goerli/db
 ```
 
 #### Step 3: Operator Networking Security Setup
@@ -162,7 +162,7 @@ Upgrade the AVS software for your EigenDA service setup by following the steps b
 #### Step 1: Pull the latest repo
 
 ```
-cd eigenda-operator-setup
+cd eigenda-operator-setup/goerli
 git pull
 ```
 
