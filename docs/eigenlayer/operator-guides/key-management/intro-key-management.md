@@ -1,9 +1,9 @@
 ---
-sidebar_position: 6
+sidebar_position: 1
 id: intro
 ---
 
-# Key Management
+# Introduction
 
 This section presents key management suggestions for both operators. Within the context of EigenLayer, developers ought to be acquainted with proper practices concerning key loading, particularly signing keys, while stakers (users) should understand how to manage them effectively.
 
@@ -27,11 +27,3 @@ The signing key, as explained above, is used for the validator to perform their 
 
 A validator should only need to use their withdrawal keys a few times over the lifetime of being a validator. This means they can be put into cold storage and stored with high security (offline).
 
-
-
-## Key Management Best Practices for Node Operators
-
-- Secure keys, including secrets such as passphrases or mnemonics, using services like AWS Secrets Manager or Hashicorp Vault. These services can be seamlessly integrated with automated mechanisms that safely retrieve secrets or keys (e.g., remote signers). If resources permit, consider running your own Hashicorp Vault instance, which grants full custody of keys and secrets while sacrificing the service provider's availability and security guarantees.
-- Avoid generating all keys with the same mnemonic. Minimize the attack surface by employing a new mnemonic for every 200 or 1000 validator keys, depending on your preference. This approach also reduces the risk of losing key generation capabilities if a single mnemonic is lost, and limits the impact if an attacker gains access to a few mnemonics.
-- Use a remote signer like **[Web3signer](https://github.com/ConsenSys/web3signer)** or, better yet, distributed signers to eliminate single points of failure.
-- Develop a custom solution involving tailor-made tools. For instance, use Web3signer for remote signing and store keys on AWS Secrets Manager. A custom tool can manage automatic key storage in Secrets Manager and facilitate interactions with Web3signer.
