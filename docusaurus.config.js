@@ -98,8 +98,16 @@ const config = {
             to: "/eigenda/integrations-overview",
           },
           {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade",
-            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade",
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/goerli",
+            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/goerli",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/holesky",
+            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/holesky",
+          },
+          {
+            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/mainnet",
+            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/mainnet",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/",
