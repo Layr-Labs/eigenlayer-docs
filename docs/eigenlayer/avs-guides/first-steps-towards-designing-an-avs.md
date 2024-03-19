@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # First Steps Towards Designing an AVS
 
 Suppose, as a builder, you have thought about a primitive or a feature such as decentralized sequencing, Data availability, or something else cool that you want to see be built as an AVS on EigenLayer. Now, the immediate question is how to start thinking about building that AVS on EigenLayer. As a first step, the first four questions that you should try to answer are:
