@@ -22,4 +22,45 @@ title: AVS Operator Known Risks, Mitigations, and Best Practices
 - Misconfigured ports and services open to the internet.
 - Running containers with elevated privileges.
 
+# What can operators do to mitigate malicious AVS risks?
+## Operator Best Practices
+
+- Regularly update and patch containers and the host system.
+- Don't share your keys between AVSs / ETH validator. Refer to key management section.
+- Monitor container runtime (logs) behavior for any suspicious activities and setup alerts as relevant.
+- Do not run containers with privileged flag.It can give them almost unrestricted access to the host.
+- Limit Resources to a container so it doesn’t take down the cluster / node
+- Data Theft: Do not mount entire volumes into containers to prevent data leak, container escapes etc.
+- Follow Network Access / Least privilege principles in your organization to reduce attack surface
+
+## Key management
+AVS software will have access to two types of keys: 
+- ECDSA
+    - Operator key for registration to EigenLayer
+    - Operator key for registration to AVSs
+- BLS: for potential AVS logic if AVS design requires aggregating AVS tasks
+Don’t share BLS and ECDSA keys across different AVSs.
+
+## Infrastructure
+
+Docker Infra
+- Network Segmentation: Use Docker's network policies to segment containers  and limit inter-container communication.
+- Regular Audits: audit and monitor container activities using tools like - Docker Bench for Security or Clair.
+- Isolation
+    - Through VMs: lightweight VMs (like Kata Containers or gVisor) combine container - flexibility with VM isolation.
+    - User namespaces, seccomp, AppArmor, and SELinux etc can help further restrict the container.
+
+K8’s Infra
+- Network Segmentation: Limit the services your AVSs can talk to. Follow least privilege principles via [Kubernetes Documentation Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+
+Incident Response Plan: 
+- Have a plan in place for how to respond if a container is compromised. This includes isolating affected containers, analyzing and restoring services.
+- Regular Backups: Regularly backup your data and configurations to recover from any malicious changes.
+- Stay Updated: Always keep an eye on Docker's official documentation, security advisories, and community forums for the latest best practices and updates.
+
+
+
+
+
+
 
