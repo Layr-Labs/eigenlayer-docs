@@ -141,6 +141,10 @@ const config = {
             from: "/eigenda-guides/eigenda-rollup-user-guides/orbit/",
             to: "/eigenda/rollup-guides/orbit/",
           },
+          {
+            from: "/eigenlayer/avs-guides/avs-development-guide",
+            to: "/eigenlayer/avs-guides/how-to-build-an-avs",
+          },
         ],
         createRedirects(existingPath) {
 
@@ -240,11 +244,19 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "The Team",
+            title: "EigenLayer",
             items: [
               {
                 label: "About",
                 href: "https://www.eigenlayer.xyz/",
+              },
+              {
+                label: "Privacy Policy",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/eigenlayer-privacy-policy",
+              },
+              {
+                label: "Terms of Service",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/terms-of-service",
               },
             ],
           },

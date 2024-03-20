@@ -1,8 +1,8 @@
 # EigenLayer Privacy Policy
 
-***Last Revised on April 14, 2023***
+***Last Revised on March 20, 2024***
 
-This Privacy Policy for Layr Labs, Inc. ("Company", "we", "us" "our") describes how we collect, use and disclose information about users of the Company's website (eigenlayer.xyz), and any related services, tools and features, including the EigenLayer service (collectively, the "Services"). For the purposes of this Privacy Policy, "you" and "your" means you as the user of the Services. ​ Please read this Privacy Policy carefully. By using, accessing, or downloading any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree to this Privacy Policy, please do not use, access or download any of the Services. ​
+This Privacy Policy for Eigen Labs, Inc. ("Company", "we", "us" "our") describes how we collect, use and disclose information about users of the Company's website (eigenlayer.xyz), and any related services, tools and features, including the EigenLayer service (collectively, the "Services"). For the purposes of this Privacy Policy, "you" and "your" means you as the user of the Services. ​ Please read this Privacy Policy carefully. By using, accessing, or downloading any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy. If you do not agree to this Privacy Policy, please do not use, access or download any of the Services. ​
 
 ## UPDATING THIS PRIVACY POLICY
 
@@ -12,9 +12,11 @@ This Privacy Policy for Layr Labs, Inc. ("Company", "we", "us" "our") describes 
 
 ​ When you access or use the Services, we may collect certain categories of information about you from a variety of sources, which comprises: ​
 
-- The following information about you: name, email address, and Discord Tag. We collect your email address and Discord Tag in order to communicate with you through the Services and through third party platforms, such as Discord. ​
+- The following information about you: name, email address, and Discord Tag. We collect your email address and Discord Tag in order to communicate with you through the Services and through third party platforms, such as Discord. ​- Information included in any identity documents you provide to us, including without limitation driver’s license or passport number, date of birth and/or country of residence. We collect this in limited circumstances for the purposes of identification of the jurisdiction of residence of certain users or as otherwise needed to satisfy certain regulatory obligations.
 - The following third-party wallet ("Wallet") information: public wallet address and token holdings. We collect third-party Wallet information in order to facilitate your use of the Services. ​
-- Any other information you choose to include in communications with us, for example, when sending a message through the Services. ​ We also automatically collect certain information about your interaction with the Services ("Usage Data"). To do this, we may use cookies, web beacons/clear gifs and other geolocation tracking technologies ("Tracking Technologies"). Usage Data comprises of: ​
+- Any other information you choose to include in communications with us, for example, when sending a message through the Services. ​ 
+
+We also automatically collect certain information about your interaction with the Services ("Usage Data"). To do this, we may use cookies, web beacons/clear gifs and other geolocation tracking technologies ("Tracking Technologies"). Usage Data comprises of: ​
 - Device information (e.g., unique device identifier, device type, IP address, operating system) ​
 - Browser information (e.g., browser type) ​
 - Location information (e.g., approximate geolocation) ​
@@ -57,4 +59,4 @@ This Privacy Policy for Layr Labs, Inc. ("Company", "we", "us" "our") describes 
 
 ## HOW TO CONTACT US
 
-​Should you have any questions about our privacy practices or this Privacy Policy, please email us at admin@layrlabs.org or contact us at 1100 NE Campus Pkwy, Seattle, WA 98105 .
+Should you have any questions about our privacy practices or this Privacy Policy, please email us at admin@eigenlabs.org or contact us at 15790 Redmond Way #1176, Redmond, WA 98052 .
