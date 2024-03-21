@@ -5,7 +5,6 @@ title: AVS Developer Security Best Practices
 
 ## AVS Developer Security Best Practices
 
-Note that these best practices should be considered by operators when they’re considering running the AVS software. EigenLabs is not responsible for validating on-chain or off-chain software.
 
 - Containers should be able to run with least privilege. Least privilege is AVS-dependent. AVS team should outline these privileges as part of the operator onboarding docs. In the case these privileges are not specified, it’s recommended the operators ask the AVS team directly.
 - Emit runtime (logs) including security events
