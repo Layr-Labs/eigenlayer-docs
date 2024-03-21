@@ -42,7 +42,7 @@ function Home() {
                     label:"💙 Restake with EigenLayer"
                   }}
                   body={{
-                    label:"Contributed to shared security by restaking assets with EigenLayer."
+                    label:"Contribute to shared security by restaking assets with EigenLayer."
                   }}
                 />
   
