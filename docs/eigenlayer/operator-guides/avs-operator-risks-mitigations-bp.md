@@ -1,9 +1,10 @@
 ---
 sidebar_position: 6
-title: AVS Operator Known Risks, Mitigations, and Best Practices
+title: Operator Security Risks, Mitigations, and Best Practices
 ---
 
-# Known AVS Operator Risks
+# Operator Security Risks
+
 ## Malicious AVS 
 
 - Guest container breaking  into host machine:
@@ -22,6 +23,7 @@ title: AVS Operator Known Risks, Mitigations, and Best Practices
 - Misconfigured ports and services open to the internet.
 - Running containers with elevated privileges.
 
+
 # What can operators do to mitigate malicious AVS risks?
 ## Operator Best Practices
 
@@ -32,14 +34,6 @@ title: AVS Operator Known Risks, Mitigations, and Best Practices
 - Limit Resources to a container so it doesn’t take down the cluster / node
 - Data Theft: Do not mount entire volumes into containers to prevent data leak, container escapes etc.
 - Follow Network Access / Least privilege principles in your organization to reduce attack surface
-
-## Key management
-AVS software will have access to two types of keys: 
-- ECDSA
-    - Operator key for registration to EigenLayer
-    - Operator key for registration to AVSs
-- BLS: for potential AVS logic if AVS design requires aggregating AVS tasks
-Don’t share BLS and ECDSA keys across different AVSs.
 
 ## Infrastructure
 
