@@ -1,6 +1,6 @@
 
 # Terms of Service
-***Last Revised on March 11, 2024***
+***Last Revised on March 13, 2024***
 
 These Terms of Service (these "**Terms**") explain the terms and conditions by which you may access and use our website, www.eigenlayer.xyz (the "**Website**"), operated by or on behalf of Eigen Labs, Inc. ("**Company**", "**we**" or "**us**"), our App (as defined below), our EigenLayer App testnet ("**Testnet**"), our application programming interfaces ("**APIs**"), our research forum available at [research.eigenlayer.xyz](http://research.eigenlayer.xyz) ("**Research Forum**") and any other Services provided by the Company, including any related content, tools, documentation, features and functionality which are collectively referred to herein as the "**Services**".
 
