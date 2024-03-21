@@ -42,7 +42,7 @@ function Home() {
                     label:"💙 Restake with EigenLayer"
                   }}
                   body={{
-                    label:"Start your journey by reviewing an overview of the Eigenlayer ecosystem."
+                    label:"Contributed to shared security by restaking assets with EigenLayer."
                   }}
                 />
   
