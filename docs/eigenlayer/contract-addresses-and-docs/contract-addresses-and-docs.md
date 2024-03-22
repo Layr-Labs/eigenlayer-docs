@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Addresses and Technical Docs
+title: Contract Addresses and Docs
 ---
 
 ## EigenLayer Core Restaking Contracts

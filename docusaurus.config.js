@@ -145,6 +145,14 @@ const config = {
             from: "/eigenlayer/avs-guides/avs-development-guide",
             to: "/eigenlayer/avs-guides/how-to-build-an-avs",
           },
+          {
+            from: "/eigenlayer/deployed-contracts",
+            to: "/eigenlayer/contract-addresses-and-docs",
+          },
+          {
+            from: "/eigenda/deployed-contracts",
+            to: "/eigenda/contract-addresses-and-docs",
+          },
         ],
         createRedirects(existingPath) {
 

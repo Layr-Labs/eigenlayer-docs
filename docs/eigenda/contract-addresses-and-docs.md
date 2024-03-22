@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-title: Addresses and Technical Docs
+title: Contract Addresses and Docs
 ---
 
 ## EigenDA Contracts
@@ -13,4 +13,4 @@ An up-to-date reference of our current contract deployments can be found in the 
 
 ### Technical Documentation
 
-Our most up-to-date contract-level documentation can be found in the core repository's docs folder: [`eigenlayer-middleware/docs`](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev/docs).
+Our most up-to-date contract-level documentation can be found in the middleware repository's docs folder: [`eigenlayer-middleware/docs`](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev/docs).
