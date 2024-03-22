@@ -37,11 +37,11 @@ Retrieval Setup:
 
 In order for users to retrieve data from your node, you will need to open access to retrieval ports.
 
-Ensure the port specified as `NODE_RETRIEVAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L17) has open access to the public internet.
+Ensure the port specified as `NODE_RETRIEVAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L16) has open access to the public internet.
 
 Dispersal Setup:
 
-In order to limit traffic from the EigenLabs hosted Disperser, please restrict your node's ingress traffic to be allowed by the the list provided below and port number set as `NODE_DISPERSAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L14) in the below setup.
+In order to limit traffic from the EigenLabs hosted Disperser, please restrict your node's ingress traffic to be allowed by the the list provided below and port number set as `NODE_DISPERSAL_PORT` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L13) in the below setup.
 
 - `54.144.24.178/32`
 - `34.232.117.230/32`
@@ -71,7 +71,7 @@ Prior to running this command set `NODE_QUORUM_ID_LIST` in the [.env](https://gi
 ./run.sh opt-in
 ```
 
-Note: the script will use the `NODE_HOSTNAME` from [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) as your current IP.
+Note: the script will use the `NODE_HOSTNAME` from [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L67) as your current IP.
 
 If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver then you may run the opt-in command again after the rate limiting threshold has passed. The current rate limiting threshold is 5 minutes.
 
