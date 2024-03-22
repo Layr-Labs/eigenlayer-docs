@@ -95,7 +95,7 @@ docker logs -f <container_id>
 
 If you have successfully opted in to EigenDA and correctly running your EigenDA software, you should see the following logs for your EigenDA container:
 
-![EigenDA Logs](/img/operator-guides/eigenda-logs.png)
+## EigenDA Logs
 
 The following example log messages confirm that your EigenDA node software is up and running:
 
