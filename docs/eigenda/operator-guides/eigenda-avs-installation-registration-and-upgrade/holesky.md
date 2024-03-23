@@ -51,7 +51,6 @@ In order to limit traffic from the EigenLabs hosted Disperser, please restrict y
 
 In order to opt-in into EigenDA as an Operator, you must meet the following delegated TVL requirements:
 
-#### TODO: Revisit minimum ETH requirements??
 - Have a minimum of 32 ETH delegated.
 - Have more than 1.1x current lowest-stake Operator in the active Operator set. Please see [EigenDA Churn Approver](https://docs.eigenlayer.xyz/operator-guides/avs-installation-and-registration/eigenda-operator-guide#eigenda-churn-approver) for more detail.
 - The operator to churn out has less than 10.01% of the total stake
@@ -65,7 +64,7 @@ Quorums Maps:
 - WrappedEth Quorum: `1`
 - Dual Quorum: `0,1`
 
-Prior to running this command set `NODE_QUORUM_ID_LIST` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L14) to either `0` or `1` or `0,1` to be part of one of the quorums.
+Prior to running this command set `NODE_QUORUM_ID_LIST` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L14) to either `0` or `1` or `0,1` to be part of both quorums.
 
 ```
 ./run.sh opt-in
@@ -141,6 +140,8 @@ docker compose down
 
 Opt-Out of EigenDA
 
+Prior to running this command set `NODE_QUORUM_ID_LIST` in the [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L14) to either `0` or `1` or `0,1` to opt-out of both quorums.
+
 The following command will unregister you from the EigenDA AVS:
 
 ```
@@ -176,7 +177,7 @@ docker compose down
 
 #### Step 4: Start your services again
 
-Make sure your `.env` file still has correct values in the [TODO](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L60) sections before you restart your node.
+Make sure your `.env` file still has correct values in the [TODO](https://github.com/Layr-Labs/eigenda-operator-setup/blob/a069ad58a33222e12130e9989d743215a9293549/holesky/.env.example#L64) sections before you restart your node.
 
 ```
 docker compose up -d
