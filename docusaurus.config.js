@@ -75,7 +75,7 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/system-performance-and-customization",
-            to: "/eigenda/system-performance-and-customization",
+            to: "/eigenda/performance-metrics",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/blob-explorer",
@@ -91,19 +91,23 @@ const config = {
           },
           {
             from: "/eigenda-guides/integrations-overview",
-            to: "/eigenda/integrations-overview",
+            to: "/eigenda/rollup-guides/integrations-overview",
+          },
+          {
+            from: "/eigenda/integrations-overview",
+            to: "/eigenda/rollup-guides/integrations-overview",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/goerli",
-            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/goerli",
+            to: "/eigenda/operator-guides/networks/goerli",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/holesky",
-            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/holesky",
+            to: "/eigenda/operator-guides/networks/holesky",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/mainnet",
-            to: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/mainnet",
+            to: "/eigenda/operator-guides/networks/mainnet",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/",
@@ -140,7 +144,23 @@ const config = {
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
             to: "/eigenlayer/avs-guides/how-to-build-an-avs",
-          }
+          },
+          {
+            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/goerli",
+            to: "/eigenda/operator-guides/networks/goerli",
+          },
+          {
+            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/holesky",
+            to: "/eigenda/operator-guides/networks/holesky",
+          },
+          {
+            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/mainnet",
+            to: "/eigenda/operator-guides/networks/mainnet",
+          },
+          {
+            from: "/eigenda/system-performance-and-customization",
+            to: "/eigenda/performance-metrics",
+          },
         ],
         createRedirects(existingPath) {
 
@@ -203,7 +223,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/eigenlayer-logo.png',
-      
+
       navbar: {
         title: "EigenLayer Docs",
         logo: {

@@ -5,12 +5,11 @@ title: EigenDA Overview
 
 EigenDA is a data availability store made by
 [EigenLabs](https://www.eigenlayer.xyz/about) and built on top of
-[EigenLayer](../eigenlayer/overview/README.md), live on Goerli
-[testnet](https://blobs-goerli.eigenda.xyz/) and launching on mainnet in early
-Q2 2024.
+[EigenLayer](../eigenlayer/overview/README.md), currently launching to the
+Holesky testnet and launching on mainnet in early Q2 2024.
 
 EigenDA stores rollup transactions until their computed state is
-finalized, and is...
+finalized on the rollup bridge, and is...
 
 * **Scalable.** EigenDA write throughput scales linearly with number of
 operators. At launch EigenDA will provide 10 MB/s of write throughput. This is
@@ -43,10 +42,6 @@ around this trilemma is through an emphasis on L2s, where DA can be moved
 off-chain such that transaction data need not be replicated to every node.
 Instead, only DA metadata and accountability processes are processed on-chain.
 This enables DA to scale with respect to the bandwidth of the operator set.
-
-This approach also enables EigenDA to operate without a token. Using EigenDA
-does not introduce additional token / security risk to Ethereum L2s, resulting
-in a simpler model with less volatility.
 
 EigenDA works on the basis of three components:
 
@@ -104,4 +99,4 @@ consults the EigenDA manager contract on whether blob was certified available.
 If it was, the blob ID is allowed into the inbox contract. If not, the blob ID
 is discarded.
 
-For more on how rollups integrate with EigenDA, check out [Integrations Overview](./integrations-overview.md).
+For more on how rollups integrate with EigenDA, check out [Integrations Overview](./rollup-guides/integrations-overview.md).
