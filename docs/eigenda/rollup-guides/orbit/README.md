@@ -7,7 +7,7 @@ Labs](https://www.offchainlabs.com/) to enable rollup developers to build
 rollups using the same software that powers *Arbitrum One* and *Arbitrum Nova*.
 In partnership with AltLayer, we have forked the core component of Orbit,
 [Nitro](https://github.com/layr-Labs/nitro), to add
-[M0](../../integrations-overview.md#M0) support for EigenDA. The M0 status of
+[M0](../integrations-overview.md#M0) support for EigenDA. The M0 status of
 this integration means that it is only designed for testnet.
 
 ## How to deploy an Orbit chain

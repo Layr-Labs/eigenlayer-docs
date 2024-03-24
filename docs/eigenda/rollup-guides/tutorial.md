@@ -53,7 +53,7 @@ cd eigenda
 
 grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d
 '{"data": "0000", "security_params": [{"quorum_id": 0, "adversary_threshold":
-25, "quorum_threshold": 50}]}' disperser-goerli.eigenda.xyz:443
+25, "quorum_threshold": 50}]}' disperser-holesky.eigenda.xyz:443
 disperser.Disperser/DisperseBlob
 
 ```
@@ -77,7 +77,7 @@ Example request:
 # above
 
 grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d
-'{"request_id": "INSERT_REQUEST_ID"}' disperser-goerli.eigenda.xyz:443
+'{"request_id": "INSERT_REQUEST_ID"}' disperser-holesky.eigenda.xyz:443
 disperser.Disperser/GetBlobStatus
 ```
 
@@ -93,7 +93,7 @@ Example request:
 # Note the value for batch_header_hash can be obtained from the result of your
 # call to GetBlobStatus via info.blob_verification_proof.batch_metadata.batch_header_hash.
 
-grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' disperser-goerli.eigenda.xyz:443 disperser.Disperser/RetrieveBlob
+grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/RetrieveBlob
 ```
 
 Option B: Retrieve the blob directly from EigenDA nodes. Integrate the
