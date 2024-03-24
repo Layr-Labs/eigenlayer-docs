@@ -88,8 +88,9 @@ html[data-theme="dark"] .header--github-link:before {
   transition-duration: 200ms;
   align-items: start;
   height: 100%;
-  box-shadow: 0 8px 15px 2px rgba(86, 91, 115, 0.1);
+  box-shadow: 0 8px 15px 2px rgba(86, 91, 115, 0.2);
 }
+
 
 .card a {
   text-decoration: none;
@@ -101,4 +102,8 @@ html[data-theme="dark"] .header--github-link:before {
 
 .card__header h3 {
   color: blue;
+}
+
+.card-da-box-shadow {
+  box-shadow: 5px 5px 10px 10px rgba(170,252,78, 0.3);
 }

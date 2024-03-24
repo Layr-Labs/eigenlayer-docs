@@ -2,6 +2,8 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import Card from "../components/Card";
+import CardDA from "../components/CardDA";
+
 
 
 function Home() {
@@ -29,52 +31,50 @@ function Home() {
                 <Card
                   to="eigenlayer/overview"
                   header={{
-                    label:"💡 Learn About EigenLayer"
+                    label:"Intro to EigenLayer"
                   }}
                   body={{
-                    label:"Start your journey by reviewing an overview of the Eigenlayer ecosystem."
+                    label:"Start your journey with an overview of the protocol including key terms, features, and whitepaper."
                   }}
                 />
   
                 <Card
                   to="eigenlayer/restaking-guides/restaking-user-guide/"
                   header={{
-                    label:"💙 Restake with EigenLayer"
+                    label:"Guides for Restakers"
                   }}
                   body={{
-                    label:"Contribute to shared security by restaking assets with EigenLayer."
+                    label:"Understand the different ways to restake, including with LSTs (liquid) and EigenPods (natively)."
                   }}
                 />
   
                 <Card
                   to="eigenlayer/operator-guides/operator-introduction"
                   header={{
-                    label:"💻 Become an Operator"
+                    label:"Guides for Node Operators"
                   }}
                   body={{
-                    label:"Contribute to the EigenLayer ecosystem by running an Operator node."
+                    label:"Learn how to run an EigenLayer node, and set up to operate for AVSs such as EigenDA."
                   }}
                 />
   
-  
-                <Card
-                  to="eigenda/overview"
-                  header={{
-                    label:"🛠️ Build on EigenDA"
-                  }}
-                  body={{
-                    label:"Integrate EigenDA into your rollup or Web3 application."
-                  }}
-                />
-
 
                 <Card
                   to="eigenlayer/avs-guides/avs-developer-guide"
                   header={{
-                    label:"🚀 Launch Your AVS on EigenLayer"
+                    label:"Guides for AVS Developers"
                   }}
                   body={{
-                    label:"Learn how to build your Web3 application as an AVS on EigenLayer."
+                    label:"Learn how to design, build, and launch an AVS using EigenLayer restaking."
+                  }}
+                />
+
+
+                <CardDA
+                  to="eigenda/overview"
+                  
+                  body={{
+                    label:"Guides for rollup developers to easily integrate EigenDA, and for EigenLayer operators to join the EigenDA network."
                   }}
                 />
 
@@ -82,10 +82,10 @@ function Home() {
                 <Card
                   to="status"
                   header={{
-                    label:"📞 Platform Status"
+                    label:"Platform Status"
                   }}
                   body={{
-                    label:"Check the latest status of the EigenLayer app for any known outages."
+                    label:"Recent updates to the application or protocol, and any known outages."
                   }}
                 />
 
