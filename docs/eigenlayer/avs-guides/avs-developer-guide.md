@@ -6,6 +6,8 @@ sidebar_position: 1
 
 EigenLayer is a protocol built on Ethereum that introduces restaking, a new primitive in cryptoeconomic security. Restaking is the process of staking consensus layer ETH to extend security to additional infrastructure services and earn additional rewards.
 
+### What is an AVS?
+
 In the EigenLayer context, these infrastructure services are referred to as **Actively Validated Services (AVSs)**. AVS developers build the infrastructure logic and software, stakers provide stake to secure the infrastructure, and operators run the AVS software.
 
 The stake serves as a commitment to the users of the infrastructure when Restakers delegate their stake to Operators. The Operators earn incentives for proper verifiable operation of the AVS software and are subject to slashing in cases where they provably operate the AVS software maliciously.
