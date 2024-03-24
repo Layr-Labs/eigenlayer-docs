@@ -12,7 +12,7 @@ These infrastructure services are referred to as **Actively Validated Services (
 
 ### What can be built?
 
-An AVS can be system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, and trusted execution environments. Please see page 2 of the EigenLayer Whitepaper [here](/eigenlayer/overview/whitepaper) for the original definition and context of an AVS.
+An AVS can be any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, and trusted execution environments. Please see page 2 of the EigenLayer Whitepaper [here](/eigenlayer/overview/whitepaper) for the original definition and context of an AVS.
 
 Check out the existing AVS ecosystem page [here](https://www.eigenlayer.xyz/ecosystem?category=AVS) for an idea of what people are already building.
 
