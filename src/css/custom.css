@@ -70,6 +70,15 @@ html[data-theme="dark"] .header--github-link:before {
 }
 
 
+[data-theme="dark"] .card {
+  background-color: rgba(44, 46, 57, 0.2);
+  color: #ffffff;
+  box-shadow: 0 8px 15px 2px rgba(35, 37, 46, 0.2);
+}
+
+[data-theme="dark"] .card__header h3 {
+  color:  rgb(50, 50, 255);
+}
 
 .cards__container {
   margin: 3em 0;
@@ -101,9 +110,5 @@ html[data-theme="dark"] .header--github-link:before {
 }
 
 .card__header h3 {
-  color: blue;
-}
-
-.card-da-box-shadow {
-  box-shadow: 5px 5px 10px 10px rgba(170,252,78, 0.3);
+  color: #1A0C6D;
 }
