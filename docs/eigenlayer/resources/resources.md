@@ -27,7 +27,7 @@ title: Learning Resources
 
 [Unchained Podcast EigenLayer interview ](https://www.youtube.com/watch?v=16p7YG8S3ec)
 
-[Boys Club Ep 127: What is Eigenlayer?](https://open.spotify.com/episode/2aR83WBag0pj0ldRRm2vZD)
+[Boys Club Ep 127: What is EigenLayer?](https://open.spotify.com/episode/2aR83WBag0pj0ldRRm2vZD)
 
 ## Codebases
 
