@@ -69,3 +69,13 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - Import the Holesky sfrxETH token address (0xa63f56985F9C7F3bc9fFc5685535649e0C1a55f3) to your web3 wallet to view your token balance.
 
 
+## Swap holETH for mETH (Mantle ETH)​
+
+
+- Visit the MantleETH proxy contract’s Write as Proxy contract in Etherscan here: [0xbe16244EAe9837219147384c8A7560BA14946262](https://holesky.etherscan.io/address/0xbe16244EAe9837219147384c8A7560BA14946262#writeProxyContract).
+- Click **Connect to Web3** to connect your web3 wallet.
+- Click on the **19.stake()** function to expand its section:
+	- payableAmount: Enter the ETH amount you wish to deposit.
+	- minMETHAmount: set to 0.
+- Click **Write** to initiate the transaction. Approve the transaction in your web3 wallet.
+- Import the Holesky mETH token address (0xe3C063B1BEe9de02eb28352b55D49D85514C67FF) to your web3 wallet to view your token balance.
