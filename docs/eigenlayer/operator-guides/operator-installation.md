@@ -260,7 +260,7 @@ When using Github for hosting this file please ensure you link to the raw file (
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator-config.yaml.
 
-An example list of providers is [available here](https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum) for your reference.
+An example list of providers is [available here](https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum) and [here](https://chainlist.org/chain/17000) for your reference.
 
 
 #### Holesky Smart contract addresses
