@@ -2,7 +2,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import Card from "../components/Card";
-import CardDA from "../components/CardDA";
 
 
 
@@ -70,9 +69,11 @@ function Home() {
                 />
 
 
-                <CardDA
+                <Card
                   to="eigenda/overview"
-                  
+                  header={{
+                    label:"EigenDA Resources for Rollups and Operators"
+                  }}
                   body={{
                     label:"Guides for rollup developers to easily integrate EigenDA, and for EigenLayer operators to join the EigenDA network."
                   }}
