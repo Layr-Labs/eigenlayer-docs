@@ -20,7 +20,7 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 
 ## Swap holETH for wETH (Wrapped ETH)​
 - Send holETH to address 0x94373a4919B3240D86eA41593D5eBa789FEF3848 .
-- Import the WETH token address for Holesky stETH (0x94373a4919B3240D86eA41593D5eBa789FEF3848) to your web3 wallet to view your token balance.
+- Import the WETH token address (0x94373a4919B3240D86eA41593D5eBa789FEF3848) to your web3 wallet to view your token balance.
 
 ## Swap holETH for stETH (Lido)​
 - Visit: https://stake-holesky.testnet.fi/
@@ -43,13 +43,6 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - Follow the instructions on screen to stake (convert) your desired amount of Holesky ETH for Holesky ankrETH.
 - Click “Add ankrETH to wallet” to add the ankrETH token to your web3 wallet and view your available balance.
 
-## Mint frxETH
-- Add Holesky to your Web3 wallet (example instructions [here](https://www.coingecko.com/learn/holesky-testnet-eth#add-the-holesky-testnet-to-metamask)).
-- Manually switch your wallet to the Holesky network. The Frax Finance app does not allow the user to choose Holesky directly. 
-- Open the Frax Finance Mint app: [app.frax.finance/frxeth/mint](https://app.frax.finance/frxeth/mint) .
-- Enter the amount you wish to mint and click **Mint Only**.
-- Import the Holesky frxETH token address (0x17845EA6a9BfD2caF1b9E558948BB4999dF2656e) to your web3 wallet to view your token balance.
-
 ## Mint osETH (Stakewise)
 - Visit the [Stakewise Holesky Vault Marketplace](https://app.stakewise.io/vaults?networkId=holesky).
 - Select a vault to mint osETH.
@@ -66,4 +59,13 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - payableAmount: Enter the ETH amount you wish to deposit.
 - Click **Write** to initiate the transaction. Approve the transaction in your web3 wallet.
 - Import the Holesky ETHx token address (0x1d8b30cC38Dba8aBce1ac29Ea27d9cFd05379A09) to your web3 wallet to view your token balance.
+
+
+## Mint and Stake to Swap holETH for sfrxETH
+- Add Holesky to your Web3 wallet (example instructions [here](https://www.coingecko.com/learn/holesky-testnet-eth#add-the-holesky-testnet-to-metamask)).
+- Manually switch your wallet to the Holesky network. The Frax Finance app does not allow the user to choose Holesky directly. 
+- Open the Frax Finance Mint app: [app.frax.finance/frxeth/mint](https://app.frax.finance/frxeth/mint) .
+- Enter the amount you wish to mint and click **Mint & Stake**.
+- Import the Holesky sfrxETH token address (0xa63f56985F9C7F3bc9fFc5685535649e0C1a55f3) to your web3 wallet to view your token balance.
+
 
