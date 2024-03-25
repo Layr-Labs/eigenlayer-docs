@@ -19,13 +19,15 @@ title: Learning Resources
 
 [Shared Security: The Four Superpowers](https://twitter.com/sreeramkannan/status/1742949397523304600)
 
-## Videos and interviews
+## Videos and podcasts
 
 [Official EigenLayer YouTube Playlist](https://www.youtube.com/playlist?list=PL9sM6KtdZxrXMgMq4aBHaRnWaXlcJTiVj)
 
 [You Could've Invented EigenLayer](https://twitter.com/EthereumDenver/status/1762919101721116687)
 
 [Unchained Podcast EigenLayer interview ](https://www.youtube.com/watch?v=16p7YG8S3ec)
+
+[Boys Club Ep 127: What is Eigenlayer?](https://open.spotify.com/episode/2aR83WBag0pj0ldRRm2vZD)
 
 ## Codebases
 
