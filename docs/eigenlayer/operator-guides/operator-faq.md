@@ -6,15 +6,15 @@ title: Operator FAQ
 
 #### Where are the smart contract addresses used to register operator to EigenLayer?
 
-The contract addresses are located [here](../operator-guides/operator-installation#goerli-smart-contract-addresses)
+The contract addresses are located [here](../operator-guides/operator-installation#holesky-smart-contract-addresses)
 
 #### Am I required to publicly host metadata url?
 
-Yes. You are required to host the metadata url publicly. The `metadata` url should always be available and should return a proper json response like [this](https://goerli-operator-metadata.s3.amazonaws.com/metadata.json)
+Yes. You are required to host the metadata url publicly. The `metadata` url should always be available and should return a proper json response like [this](https://holesky-operator-metadata.s3.amazonaws.com/metadata.json)
 
 #### Am I required to publicly host logo in metadata json?
 
-Yes. You are required to host the logo publicly like [this](https://goerli-operator-metadata.s3.amazonaws.com/eigenlayer.png)
+Yes. You are required to host the logo publicly like [this](https://holesky-operator-metadata.s3.amazonaws.com/eigenlayer.png)
 
 #### Are there any restrictions to the logo image?
 

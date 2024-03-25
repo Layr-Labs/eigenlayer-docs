@@ -229,9 +229,9 @@ eigenlayer operator keys export --key-type ecdsa --key-path [path]
 
 ## Fund ECDSA Wallet
 
-Step 1: Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with Goerli ETH.
+Step 1: Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with Testnet ETH.
 
-Step 2: Send **at least 1 Goerli ETH** to the “address” field referenced in your operator-config.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
+Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in your operator-config.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
 
 ---
 
@@ -260,20 +260,19 @@ When using Github for hosting this file please ensure you link to the raw file (
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator-config.yaml.
 
-An example list of providers is [available here](https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum) for your reference. You may locate one using [Chainlist Goerli](https://chainlist.org/chain/5).
+An example list of providers is [available here](https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum) for your reference.
 
-#### Goerli Smart contract addresses
 
-For operator registration in a Goerli environment, you need to set the Delegation Manager contract address as follows:
-\
-The Operator CLI requires ECDSA keys for registration to EigenLayer. This is an Operator Ethereum address and key for interacting with Eigenlayer.
+#### Holesky Smart contract addresses
 
-Delegation Manager: [`0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8`](https://goerli.etherscan.io/address/0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8)
+For operator registration in a Holesky environment, you need to set the DelegationManager contract address as follows:
+
+[Current Testnet Deployment](Current Testnet Deployment): Holesky DelegationManager: [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7).
 
 ```
 # EigenLayer Delegation Manager contract address
 # This will be provided by EigenLayer team
-el_delegation_manager_address: 0x1b7b8F6b258f95Cf9596EabB9aa18B62940Eb0a8
+el_delegation_manager_address: 0xA44151489861Fe9e3055d95adC98FbD462B948e7
 ```
 
 #### Registration commands
