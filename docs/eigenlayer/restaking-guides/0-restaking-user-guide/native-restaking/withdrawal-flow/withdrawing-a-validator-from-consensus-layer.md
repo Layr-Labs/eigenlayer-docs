@@ -6,4 +6,4 @@ To withdraw your validator from participating in the Ethereum consensus layer, f
 * [Lighthouse](https://lighthouse-book.sigmaprime.io/voluntary-exit.html)
 * [Teku](https://docs.teku.consensys.net/HowTo/Voluntary-Exit)
 * [Nimbus](https://nimbus.guide/voluntary-exit.html)
-* [Lodestar](https://chainsafe.github.io/lodestar/reference/cli/#validator-voluntary-exit)
+* [Lodestar](https://chainsafe.github.io/lodestar/validator-management/validator-cli/#validator-voluntary-exit)
