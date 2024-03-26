@@ -17,6 +17,7 @@ Before you can use a faucet to load your wallet with testnet ETH, you will need:
 
 Once you have a Holesky compatible wallet and a Holesky ETH address, you can use a faucet to load your wallet with testnet ETH. Here are options available to obtain holETH:
 - [Holešky PoW Faucet](https://holesky-faucet.pk910.de).
+- [Holešky Proof of Machinehood (PoM) Faucet](https://www.holeskyfaucet.io/).
 
 ## Swap holETH for wETH (Wrapped ETH)​
 - Send holETH to address 0x94373a4919B3240D86eA41593D5eBa789FEF3848 .
