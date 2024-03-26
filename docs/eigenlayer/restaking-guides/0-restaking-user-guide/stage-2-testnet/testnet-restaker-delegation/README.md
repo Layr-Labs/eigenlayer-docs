@@ -7,6 +7,7 @@ Caveats:
 - Stakers can only delegate to a single Operator at a time.
 - Delegation is an "all or nothing" operation. You must delegate all of your available Restaked balance to a single Operator.
 - Delegation is not possible for Native Restakers while their validators are in the activation (aka entry) queue. Native Restaked tokens must be fully Restaked and proven on-chain before they can be delegated.
+- If you have already delegated your stake to an operator in any quorum, all new stakes will be delegated to the same operator automatically.
 
 ## **Staker and Operator Roles Clarification**
 

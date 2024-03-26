@@ -7,7 +7,7 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 - The address that deploys an EigenPod becomes the owner of the contract and gains permission for restaking and withdrawal operations.
 - Ownership of an EigenPod cannot be transferred.
 
-**Step 1:** Open the[ EigenLayer App](https://goerli.eigenlayer.xyz/) and connect your Web3 wallet, making sure you are connected to Ethereum mainnet.
+**Step 1:** Open the[ EigenLayer App](https://holesky.eigenlayer.xyz/) and connect your Web3 wallet, making sure you are connected to Ethereum mainnet.
 
 ![](/img/googleusercontentbackup/HNaZjUx0-Tp6xqPD7T6BVccmiXiwbTLD2g4jw4R87xpGw_XsTAqXXJ1eYIBOeYKZOaQ0RcYBsOr3OrZL0xUG8l6xumGHqAbByRFYHe6Qoe5zeUgHL2fYCWnCi1SNNgIkTIdj8db9t3LHVsAJi6qA5Ys.png)
 

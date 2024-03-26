@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Restake LSTs
 
-**Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit goerli.eigenlayer.xyz for the most recent EigenLayer Testnet app.
+**Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit holesky.eigenlayer.xyz for the most recent EigenLayer Testnet app.
 
 ![](/img/googleusercontentbackup/OZIhNy0g6_p2e6kR0yF9BJxHQcdhHNEnQSWwBokS3tSy2cd9bUyU0tve-ApItvVm7bJHKHum1T_2tgZhwa_LSyi7ScQdALSsUQioM0qMxZWcqWKhmtIQ7xcdOGtTOT6Uf18KnCs_zWgbXHLOtUqguSI.png)
 
@@ -23,4 +23,4 @@ If successful, you will see the corresponding increase in your Restaked balance 
 
 ![](/img/googleusercontentbackup/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU.png)
 
-**Step 6:** Monitor your Staking Rewards & Restaked Ratio on the [homepage](http://goerli.eigenlayer.xyz/).
+**Step 6:** Monitor your Staking Rewards & Restaked Ratio on the [homepage](http://holesky.eigenlayer.xyz/).
