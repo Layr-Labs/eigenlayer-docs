@@ -62,10 +62,6 @@ const config = {
             to: "/eigenlayer/overview/",
           },
           {
-            from: "/overview/intro/protocol-features",
-            to: "/eigenlayer/overview/protocol-features",
-          },
-          {
             from: "/eigenda-guides/eigenda-overview/",
             to: "/eigenda/overview/",
           },

@@ -77,7 +77,7 @@ html[data-theme="dark"] .header--github-link:before {
 }
 
 [data-theme="dark"] .card__header h3 {
-  color:  rgb(50, 50, 255);
+  color:  #CADFFF;
 }
 
 .cards__container {
