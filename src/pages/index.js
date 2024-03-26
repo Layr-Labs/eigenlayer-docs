@@ -53,7 +53,7 @@ function Home() {
                     label:"Guides for Node Operators"
                   }}
                   body={{
-                    label:"Learn how to run an EigenLayer node, and set up to operate for AVSs such as EigenDA."
+                    label:"Learn how to run an EigenLayer node, and set up to operate for AVSs."
                   }}
                 />
   
@@ -64,7 +64,7 @@ function Home() {
                     label:"Guides for AVS Developers"
                   }}
                   body={{
-                    label:"Learn how to design, build, and launch an AVS using EigenLayer restaking."
+                    label:"Learn how to design, build, and launch an AVSs (Actively Validated Services) using EigenLayer restaking."
                   }}
                 />
 
@@ -75,7 +75,7 @@ function Home() {
                     label:"EigenDA Resources for Rollups and Operators"
                   }}
                   body={{
-                    label:"Guides for rollup developers to easily integrate EigenDA, and for EigenLayer operators to join the EigenDA network."
+                    label:"Guides for rollup developers to integrate EigenDA, and for EigenLayer operators to join the EigenDA network."
                   }}
                 />
 
@@ -86,7 +86,7 @@ function Home() {
                     label:"Platform Status"
                   }}
                   body={{
-                    label:"Recent updates to the application or protocol, and any known outages."
+                    label:"Outages, Status and Resolution details."
                   }}
                 />
 
