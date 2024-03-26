@@ -53,7 +53,7 @@ function Home() {
                     label:"Guides for Node Operators"
                   }}
                   body={{
-                    label:"Learn how to run an EigenLayer node, and set up to operate for AVSs."
+                    label:"Learn how to run an EigenLayer node and set up to operate for AVSs."
                   }}
                 />
   
@@ -75,7 +75,7 @@ function Home() {
                     label:"EigenDA Resources for Rollups and Operators"
                   }}
                   body={{
-                    label:"Guides for rollup developers to integrate EigenDA, and for EigenLayer operators to join the EigenDA network."
+                    label:"Guides for rollup developers to integrate EigenDA and for Operators to join the EigenDA network. "
                   }}
                 />
 
