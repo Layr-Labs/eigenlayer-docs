@@ -13,7 +13,7 @@ Before you can use a faucet to load your wallet with testnet ETH, you will need:
 - An Ethereum-compatible wallet (e.g. MetaMask). Take note of its public address.
 - Add Holesky network to your Web3 wallet (example instructions [here](https://www.coingecko.com/learn/holesky-testnet-eth#add-the-holesky-testnet-to-metamask)) if it does not automatically appear.
 
-## Obtain Holesky ETH (aka goETH) via a Faucet
+## Obtain Holesky ETH (aka holETH) via a Faucet
 
 Once you have a Holesky compatible wallet and a Holesky ETH address, you can use a faucet to load your wallet with testnet ETH. Here are options available to obtain holETH:
 - [Holešky PoW Faucet](https://holesky-faucet.pk910.de).
