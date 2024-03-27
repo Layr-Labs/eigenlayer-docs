@@ -11,20 +11,20 @@ Holesky testnet and launching on mainnet in early Q2 2024.
 EigenDA stores rollup transactions until their computed state is
 finalized on the rollup bridge, and is...
 
-* **Scalable.** EigenDA write throughput scales linearly with number of
-operators. At launch EigenDA will provide 10 MB/s of write throughput. This is
-5x greater than the nearest competitor.
+- **Scalable.** EigenDA write throughput scales linearly with number of
+  operators. At launch EigenDA will provide 10 MB/s of write throughput. This is
+  5x greater than the nearest competitor.
 
-* **Secure.** EigenDA is decentralized, and made up of hundreds of operators
-registered in EigenLayer whose delegated stake imposes an economic cost to
-misbehavior. EigenDA will have billions of dollars of economic security at
-launch.
+- **Secure.** EigenDA is decentralized, and made up of hundreds of operators
+  registered in EigenLayer whose delegated stake imposes an economic cost to
+  misbehavior. EigenDA will have billions of dollars of economic security at
+  launch.
 
-* **Decentralized.** EigenDA's design is inspired by Danksharding, which
-promises to scale Ethereum-native DA beyond EIP-4844. EigenDA blob writes are
-registered with contracts on Ethereum, which natively subject operators to
-certain slashing risks. Ethereum L2s using EigenDA avoid any trust assumption on
-another chain's light client, which can be fooled by dishonest validator sets.
+- **Decentralized.** EigenDA's design is inspired by Danksharding, which
+  promises to scale Ethereum-native DA beyond EIP-4844. EigenDA blob writes are
+  registered with contracts on Ethereum, which natively subject operators to
+  certain slashing risks. Ethereum L2s using EigenDA avoid any trust assumption on
+  another chain's light client, which can be fooled by dishonest validator sets.
 
 ## How EigenDA Works
 
@@ -45,9 +45,9 @@ This enables DA to scale with respect to the bandwidth of the operator set.
 
 EigenDA works on the basis of three components:
 
-* Operators
-* The Disperser (untrusted)
-* Retrievers (untrusted)
+- Operators
+- The Disperser (untrusted)
+- Retrievers (untrusted)
 
 EigenDA **operators** are third-parties running the EigenDA node software,
 registered in EigenLayer with stake delegated to them. EigenDA operators are
@@ -82,21 +82,21 @@ host their own retriever as a sidecar to their sequencer.
 The diagram above shows the basic flow of data through EigenDA:
 
 1. The rollup sequencer sends a batch of transactions as a blob to the EigenDA
-disperser sidecar.
+   disperser sidecar.
 2. The EigenDA disperser sidecar erasure encodes the blob into chunks, generates a KZG
-commitment and multi-reveal proofs for each chunk, and disperses chunks to
-EigenDA Operators, receiving signatures certifying storage in return.
+   commitment and multi-reveal proofs for each chunk, and disperses chunks to
+   EigenDA Operators, receiving signatures certifying storage in return.
 3. After aggregating the received signatures, the disperser registers the blob
-onchain by sending a transaction to the EigenDA Manager contract with the
-aggregated signature and blob metadata.
+   onchain by sending a transaction to the EigenDA Manager contract with the
+   aggregated signature and blob metadata.
 4. The EigenDA Manager contract verifies the aggregated signature with the help
-of the EigenDA Registry contract, and stores the result onchain.
+   of the EigenDA Registry contract, and stores the result onchain.
 5. Once the blob has been stored offchain and registered onchain, the
-sequencer posts the EigenDA blob ID to its inbox contract in a transaction. A
-blob ID is no more than 100 bytes long.
+   sequencer posts the EigenDA blob ID to its inbox contract in a transaction. A
+   blob ID is no more than 100 bytes long.
 6. Before accepting the blob ID into the rollup's inbox, the inbox contract
-consults the EigenDA manager contract on whether blob was certified available.
-If it was, the blob ID is allowed into the inbox contract. If not, the blob ID
-is discarded.
+   consults the EigenDA manager contract on whether blob was certified available.
+   If it was, the blob ID is allowed into the inbox contract. If not, the blob ID
+   is discarded.
 
 For more on how rollups integrate with EigenDA, check out [Integrations Overview](./rollup-guides/integrations-overview.md).
