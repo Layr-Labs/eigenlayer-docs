@@ -11,7 +11,6 @@ export default function RenderHolesky() {
     try {
       let response = await fetch('https://raw.githubusercontent.com/layr-labs/eigenda-operator-setup/master/holesky/README.md')
       .then((response) => response.text())
-      console.log('response: ', response)
       response = response.replace('<!-- :::info -->', '')
       response = response.replace('<!-- ::: -->', '')
       response = response.replace('# Holesky', '')
