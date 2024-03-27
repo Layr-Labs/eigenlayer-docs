@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-export default function RenderHolesky() {
+export default function RenderMarkdown({ src }) {
   const [markdown, setMarkdown] = useState('')
   useEffect(() => {
     fetchMarkdown()
   }, [])
   async function fetchMarkdown() {
     try {
-      let response = await fetch('https://raw.githubusercontent.com/layr-labs/eigenda-operator-setup/master/holesky/README.md')
+      let response = await fetch(src)
       .then((response) => response.text())
       response = response.replace('<!-- :::info -->', '')
       response = response.replace('<!-- ::: -->', '')
