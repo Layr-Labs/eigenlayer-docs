@@ -45,7 +45,7 @@ Docker Infra
     - User namespaces, seccomp, AppArmor, and SELinux etc can help further restrict the container.
 
 K8’s Infra
-- Network Segmentation: Limit the services your AVSs can talk to. Follow least privilege principles via [Kubernetes Documentation Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+- Network Segmentation: Limit the services your AVSs can talk to. Follow least privilege principles via [Kubernetes Documentation Network Policies][ref1].
 
 Incident Response Plan: 
 - Have a plan in place for how to respond if a container is compromised. This includes isolating affected containers, analyzing and restoring services.
@@ -58,3 +58,5 @@ Incident Response Plan:
 
 
 
+
+[ref1]: https://kubernetes.io/docs/concepts/services-networking/network-policies/

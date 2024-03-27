@@ -21,13 +21,13 @@ Software:
 
 ### Installing Dependencies
 
-1. Install [foundry](https://book.getfoundry.sh/getting-started/installation)
+1. Install [foundry][ref1]
 (general version)
-2. Install [gvm](https://github.com/moovweb/gvm)
-3. Install [localstack](https://localstack.cloud/)
+2. Install [gvm][ref2]
+3. Install [localstack][ref3]
 4. Install [protobuf
-compiler](https://grpc.io/docs/protoc-installation/)
-5. Install [graph-cli](https://www.npmjs.com/package/@graphprotocol/graph-cli)
+compiler][ref4]
+5. Install [graph-cli][ref5]
 
 ## Running EigenDA Locally
 
@@ -87,3 +87,9 @@ make devnet-up
 
 make devnet-down devnet-clean
 ```
+
+[ref1]: https://book.getfoundry.sh/getting-started/installation
+[ref2]: https://github.com/moovweb/gvm
+[ref3]: https://localstack.cloud/
+[ref4]: https://grpc.io/docs/protoc-installation/
+[ref5]: https://www.npmjs.com/package/@graphprotocol/graph-cli

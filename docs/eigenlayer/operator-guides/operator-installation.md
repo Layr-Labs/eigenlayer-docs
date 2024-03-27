@@ -8,10 +8,10 @@ sidebar_position: 2
 
 ### **Software Requirements**
 
-- Docker: Ensure that Docker is installed on your system. To download Docker, follow the instructions listed [here](https://docs.docker.com/get-docker/).
-- Docker Compose: Make sure Docker Compose is also installed and properly configured. To download Docker Compose, follow the instructions listed [here](https://docs.docker.com/compose/install/).
+- Docker: Ensure that Docker is installed on your system. To download Docker, follow the instructions listed [here][ref1].
+- Docker Compose: Make sure Docker Compose is also installed and properly configured. To download Docker Compose, follow the instructions listed [here][ref2].
 - Linux Environment: EigenLayer is supported only on Linux. Ensure you have a Linux environment, such as Docker, for installation.
-  - If you choose to install eigenlayer-cli using the Go programming language, ensure you have Go installed, version 1.21 or higher. You can find the installation guide [here](https://go.dev/doc/install).
+  - If you choose to install eigenlayer-cli using the Go programming language, ensure you have Go installed, version 1.21 or higher. You can find the installation guide [here][ref3].
 
 ---
 
@@ -84,7 +84,7 @@ Changes made to a profile file may not apply until the next time you log into yo
 
 ### Install CLI from Source
 
-To pursue this installation method you need to have Go. Please ensure that you installed Go with a minimum version of 1.21 [here](https://go.dev/doc/install).
+To pursue this installation method you need to have Go. Please ensure that you installed Go with a minimum version of 1.21 [here][ref4].
 
 With this method, you generate the binary manually, downloading and compiling the source code.
 
@@ -105,7 +105,7 @@ make build
 
 The executable will be in the build folder.
 
-In case you want the binary in your PATH (or if you used the [Go](https://github.com/Layr-Labs/eigenlayer-cli#install-eigenlayer-cli-using-go) method and you don't have $GOBIN in your PATH), please copy the binary to /usr/local/bin:
+In case you want the binary in your PATH (or if you used the [Go][ref5] method and you don't have $GOBIN in your PATH), please copy the binary to /usr/local/bin:
 
 ---
 
@@ -126,7 +126,7 @@ eigenlayer operator keys create --key-type bls [keyname]
 
 This will prompt a password which you can use to encrypt the keys. Keys will be stored in a local disk and will be shown once keys are created. It will also show the private key only once, so that you can back it up in case you lose the password or key file.
 
-You can also create keys by piping your password to this command. This can help in automated key creation and will not prompt for password. This support got added in [v0.6.2](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.6.2)
+You can also create keys by piping your password to this command. This can help in automated key creation and will not prompt for password. This support got added in [v0.6.2][ref6]
 ```
 echo "password" | eigenlayer operator keys create --key-type ecdsa [keyname]
 ```
@@ -166,7 +166,7 @@ To import a BLS key, use the command: `eigenlayer operator keys import --key-typ
   - For ECDSA keys, it should be in hex format.
 
 
-You can also import keys by piping your password to this command. This can help in automated key creation and will not prompt for password. This support got added in [v0.6.2](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.6.2)
+You can also import keys by piping your password to this command. This can help in automated key creation and will not prompt for password. This support got added in [v0.6.2][ref7]
 ```
 echo "password" | eigenlayer operator keys import --key-type ecdsa [keyname] [privatekey]
 ```
@@ -229,7 +229,7 @@ eigenlayer operator keys export --key-type ecdsa --key-path [path]
 
 ## Fund ECDSA Wallet
 
-Step 1: Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with HolEth.
+Step 1: Follow the instructions in [Obtaining Testnet ETH][ref8] to fund a web3 wallet with HolEth.
 
 Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in your operator-config.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
 
@@ -249,25 +249,25 @@ eigenlayer operator config create
 
 When prompted for operator address, make sure your operator address is same as the ecdsa key address you created/imported in key creation steps. 
 
-It will create two files: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
+It will create two files: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml][ref9] .
 
 A public metadata url is required to register the operator. After updating your `metadata.json` file, you must upload it to a publicly accessible location and add that public url to your `operator.yaml` file. You are also required to upload the image of the operator to a publicly accessible location and give the url in the metadata file. Operator registration only supports `.png` images for now.
 
 :::warning
 Please ensure that the `metadata.json`file is hosted in a publicly accessible location. The metadata_url parameter in the operator configuration must be publicly accessible in order for registration to succeed.
-When using Github for hosting this file please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
+When using Github for hosting this file please ensure you link to the raw file ([example][ref10]), rather than the github repo URL ([example][ref11]).
 :::
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator-config.yaml.
 
-An example list of providers is [available here](https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum) and [here](https://chainlist.org/chain/17000) for your reference.
+An example list of providers is [available here][ref12] and [here][ref13] for your reference.
 
 
 #### Holesky Smart contract addresses
 
 For operator registration in a Holesky environment, you need to set the DelegationManager contract address as follows:
 
-[Current Testnet Deployment](Current Testnet Deployment): Holesky DelegationManager: [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7).
+[Current Testnet Deployment][ref14]: Holesky DelegationManager: [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`][ref15].
 
 ```
 # EigenLayer Delegation Manager contract address
@@ -279,7 +279,7 @@ el_delegation_manager_address: 0xA44151489861Fe9e3055d95adC98FbD462B948e7
 
 This is the command you can use to register your operator.
 
-> _Note: ECDSA key is required for operator registration. You may choose to either_ [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
+> _Note: ECDSA key is required for operator registration. You may choose to either_ [_create_][ref16] _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_][ref17] _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
 
 ```
 eigenlayer operator register operator.yaml
@@ -304,3 +304,21 @@ This is the command you can use to make changes or updates to the metadata of yo
 ```
 eigenlayer operator update operator.yaml
 ```
+
+[ref1]: https://docs.docker.com/get-docker/
+[ref2]: https://docs.docker.com/compose/install/
+[ref3]: https://go.dev/doc/install
+[ref4]: https://go.dev/doc/install
+[ref5]: https://github.com/Layr-Labs/eigenlayer-cli#install-eigenlayer-cli-using-go
+[ref6]: https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.6.2
+[ref7]: https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.6.2
+[ref8]: https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts
+[ref9]: https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml
+[ref10]: https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json
+[ref11]: https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json
+[ref12]: https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum
+[ref13]: https://chainlist.org/chain/17000
+[ref14]: Current Testnet Deployment
+[ref15]: https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7
+[ref16]: https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys
+[ref17]: https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys

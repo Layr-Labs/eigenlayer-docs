@@ -1,13 +1,13 @@
 # Create EigenPod and Set Withdrawal Credentials
 
-An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md) is a smart contract managed by users, designed to facilitate the EigenLayer protocol in monitoring and managing balance and withdrawal statuses. Please review the following considerations when planning your EigenPod and validator operations:
+An [EigenPod][ref1] is a smart contract managed by users, designed to facilitate the EigenLayer protocol in monitoring and managing balance and withdrawal statuses. Please review the following considerations when planning your EigenPod and validator operations:
 
 - You may repoint any number of validators to a single EigenPod.
 - An Ethereum address can only deploy a single EigenPod.
 - The address that deploys an EigenPod becomes the owner of the contract and gains permission for restaking and withdrawal operations.
 - Ownership of an EigenPod cannot be transferred.
 
-**Step 1:** Open the[ EigenLayer App](https://holesky.eigenlayer.xyz/) and connect your Web3 wallet, making sure you are connected to Ethereum mainnet.
+**Step 1:** Open the[ EigenLayer App][ref2] and connect your Web3 wallet, making sure you are connected to Ethereum mainnet.
 
 ![](/img/googleusercontentbackup/HNaZjUx0-Tp6xqPD7T6BVccmiXiwbTLD2g4jw4R87xpGw_XsTAqXXJ1eYIBOeYKZOaQ0RcYBsOr3OrZL0xUG8l6xumGHqAbByRFYHe6Qoe5zeUgHL2fYCWnCi1SNNgIkTIdj8db9t3LHVsAJi6qA5Ys.png)
 
@@ -36,3 +36,6 @@ This address is responsible for all subsequent restaking and withdrawal activiti
 :::danger
 Validators SHOULD NOT direct execution rewards (`suggested_fee_recipient`) to their EigenPod. These funds may be irretrievably stuck.
 :::
+
+[ref1]: https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md
+[ref2]: https://holesky.eigenlayer.xyz/

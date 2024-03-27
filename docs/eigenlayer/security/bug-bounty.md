@@ -6,4 +6,6 @@ description: Check out the official bug bounty program for EigenLayer on Immunef
 # Bug Bounty
 
 Check out the official bug bounty program for EigenLayer on Immunefi:
-[https://immunefi.com/bounty/eigenlayer/](https://immunefi.com/bounty/eigenlayer/)
+[https://immunefi.com/bounty/eigenlayer/][ref1]
+
+[ref1]: https://immunefi.com/bounty/eigenlayer/

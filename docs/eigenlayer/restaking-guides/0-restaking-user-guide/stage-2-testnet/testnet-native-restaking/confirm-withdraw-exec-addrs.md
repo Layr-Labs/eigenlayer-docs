@@ -21,12 +21,16 @@ https://beaconcha.in/validator/[validator_pubkey]#deposits
 ## Confirming Execution Address
 
 To list your validator's Execution address (aka “Fee Recipient”), please refer to your Consensus Client specific documentation. For example:
-- [Lighthouse: Querying the fee recipient](https://lighthouse-book.sigmaprime.io/suggested-fee-recipient.html#querying-the-fee-recipient)
-- [Prysm: Configure fee recipient](https://docs.prylabs.network/docs/execution-node/fee-recipient#configure-fee-recipient)
-- [Teku: Proposer configuration file attributes: fee_recipient](https://docs.teku.consensys.io/how-to/configure/use-proposer-config-file)
+- [Lighthouse: Querying the fee recipient][ref1]
+- [Prysm: Configure fee recipient][ref2]
+- [Teku: Proposer configuration file attributes: fee_recipient][ref3]
 
 
 
 
 
 
+
+[ref1]: https://lighthouse-book.sigmaprime.io/suggested-fee-recipient.html#querying-the-fee-recipient
+[ref2]: https://docs.prylabs.network/docs/execution-node/fee-recipient#configure-fee-recipient
+[ref3]: https://docs.teku.consensys.io/how-to/configure/use-proposer-config-file

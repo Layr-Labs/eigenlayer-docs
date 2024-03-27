@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Holesky
 
-The EigenDA Holesky testnet is the current EigenDA testnet. The EigenDA Holesky testnet was preceded by the now-sunset [EigenDA Goerli testnet](./goerli.md).
+The EigenDA Holesky testnet is the current EigenDA testnet. The EigenDA Holesky testnet was preceded by the now-sunset [EigenDA Goerli testnet][ref1].
 
 ## Quick Links
 
@@ -25,3 +25,5 @@ The EigenDA Holesky testnet is the current EigenDA testnet. The EigenDA Holesky 
 [1]: https://blobs-holesky.eigenda.xyz/
 [2]: https://holesky.eigenlayer.xyz/avs/eigenda
 [3]: https://github.com/Layr-Labs/eigenlayer-middleware/?tab=readme-ov-file#current-testnet-deployment
+
+[ref1]: ./goerli.md

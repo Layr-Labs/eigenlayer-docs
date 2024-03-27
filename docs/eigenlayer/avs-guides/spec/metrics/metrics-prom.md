@@ -19,7 +19,7 @@ The table below defines metrics which may be captured by AVS Nodes which expose 
 
 :::note
 
-A definition of a strategy contract can be found in [Key Terms](../../../overview/key-terms.md).
+A definition of a strategy contract can be found in [Key Terms][ref1].
 
 :::
 
@@ -48,3 +48,4 @@ The `quorum_name` label of the `eigen_registered_stakes` metric is optional and 
 * `eigen_performance_score{}`
 * `eigen_rpc_request_duration_seconds{method="eth_getBlockByNumber", client_version="nethermind/v1.17.2"}`
 * `eigen_rpc_request_total{method="eth_getBlockByNumber", client_version="nethermind/v1.17.2"}` 
+[ref1]: ../../../overview/key-terms.md

@@ -34,7 +34,7 @@ are handled.
 
 ## Trusted Verification Strategy (M0) {#M0}
 
-![M0 chain finalization](/img/eigenda/optimistic-M0-dispersal.png)
+![M0 chain finalization][ref1]
 
 The trusted verification strategy does not do certificate or data verification.
 Instead it focuses on dispersal and retrieval for the sake of simplicity, but at
@@ -95,7 +95,7 @@ finalization.
 
 ### L2 Chain Finalization
 
-![M1 chain finalization](/img/eigenda/optimistic-M1-dispersal.png)
+![M1 chain finalization][ref2]
 
 First, L2 chain finalization. An L2 transaction is finalized with respect to the
 L2 chain when the transaction has been sequenced in the L2 inbox contract. When
@@ -140,7 +140,7 @@ considered finalized.
 
 ### L2 Bridge Finalization
 
-![M1 bridge finalization](/img/eigenda/optimistic-M1-settlement.png)
+![M1 bridge finalization][ref3]
 
 L2 bridge finalization is necessary for bridging assets or data from the L2 to
 the L1. Bridge finalization depends on the rollup bridge contract on the L1
@@ -182,7 +182,7 @@ referenced by the EigenDA cert.
 Let's walk through a scenario where the proposer is dishonest, in order to
 illustrate:
 
-![M1 bridge challenge](/img/eigenda/optimistic-M1-challenge.png)
+![M1 bridge challenge][ref4]
 
 1. The proposer encounters an EigenDA cert and rather than reading data from
 EigenDA honestly, decides to read data from elsewhere, not committed to by the
@@ -213,7 +213,7 @@ of the L2 VM design works as-is for arbitrating fraud.
 
 ## L2 OS Certificate Verification Strategy (M2) {#M2}
 
-<!-- ![M2 chain finalization](/img/eigenda/optimistic-M2-dispersal.png) -->
+<!-- ![M2 chain finalization][ref5] -->
 
 The V2 integration strategy is similar to the V1 integration strategy, with the
 difference that EigenDA certificates are not verified on Ethereum. Instead, they
@@ -237,3 +237,8 @@ which would incur significant signature verification gas costs regardless of
 whether the sequencer is honest. When placed within the rollup OS, DA
 certificate verification only incurs on-chain costs when the sequencer is
 dishonest.
+[ref1]: /img/eigenda/optimistic-M0-dispersal.png
+[ref2]: /img/eigenda/optimistic-M1-dispersal.png
+[ref3]: /img/eigenda/optimistic-M1-settlement.png
+[ref4]: /img/eigenda/optimistic-M1-challenge.png
+[ref5]: /img/eigenda/optimistic-M2-dispersal.png

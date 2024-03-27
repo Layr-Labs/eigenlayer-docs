@@ -8,8 +8,12 @@ Before creating an issue with EigenLayer support please check this page to see i
 
 #### Getting "no contract code at given address"
 
-If you are getting this issue then either you are using a wrong rpc in your [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml#L32) file or you have wrong smart contract address in your [config](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml#L25).
+If you are getting this issue then either you are using a wrong rpc in your [operator.yaml][ref1] file or you have wrong smart contract address in your [config][ref2].
 
 * Please make sure you have correct rpc node chosen for your network and that it is also reachable via your machine.
 
-* Please find the correct smart contract addresses [here](./operator-installation#holesky-smart-contract-addresses).
+* Please find the correct smart contract addresses [here][ref3].
+
+[ref1]: https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml#L32
+[ref2]: https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml#L25
+[ref3]: ./operator-installation#holesky-smart-contract-addresses

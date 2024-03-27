@@ -5,6 +5,10 @@ sidebar_position: 7
 
 This page indexes active and deprecated EigenDA networks:
 
-* [EigenDA Goerli Testnet (Deprecated)](./goerli.md)
-* [EigenDA Holesky Testnet](./holesky.md)
-* [EigenDA Mainnet](./mainnet.md)
+* [EigenDA Goerli Testnet (Deprecated)][ref1]
+* [EigenDA Holesky Testnet][ref2]
+* [EigenDA Mainnet][ref3]
+
+[ref1]: ./goerli.md
+[ref2]: ./holesky.md
+[ref3]: ./mainnet.md

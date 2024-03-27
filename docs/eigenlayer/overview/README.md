@@ -6,7 +6,7 @@ EigenLayer is a protocol built on Ethereum that introduces restaking, a new prim
 
 ## Why Build with EigenLayer?
 
-With EigenLayer, Ethereum stakers can help secure many services by restaking their staked ETH and opting-in to many services simultaneously, providing [**pooled security**](key-terms)**.** Reusing ETH to provide security across many services reduces capital costs for a staker to participate and significantly increases the trust guarantees to individual services.
+With EigenLayer, Ethereum stakers can help secure many services by restaking their staked ETH and opting-in to many services simultaneously, providing [**pooled security**][ref1]**.** Reusing ETH to provide security across many services reduces capital costs for a staker to participate and significantly increases the trust guarantees to individual services.
 
 Anyone building a new decentralized service for Ethereum must bootstrap a new trust network to secure their system, fragmenting security. EigenLayer solves this problem by enabling any service, regardless of its composition (e.g. EVM-compatibility), to tap into the pooled security of Ethereum's stakers, creating an environment for permissionless innovation and free-market governance.
 
@@ -20,6 +20,11 @@ Anyone building a new decentralized service for Ethereum must bootstrap a new tr
     - Operators perform validation tasks for AVSs, contributing to the security and integrity of the network.
     - AVSs deliver services to users (**AVS Consumers**) and the broader Web3 ecosystem.
 
-![EigenLayer Architecture](/img/eigenlayer-arch.png)
+![EigenLayer Architecture][ref2]
 
-To learn more about EigenLayer please read the [**Whitepaper**](/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
+To learn more about EigenLayer please read the [**Whitepaper**][ref3] or visit the [**Learn**][ref4] section of the EigenLayer website.
+
+[ref1]: key-terms
+[ref2]: /img/eigenlayer-arch.png
+[ref3]: /EigenLayer_WhitePaper.pdf
+[ref4]: https://www.eigenlayer.xyz/learn

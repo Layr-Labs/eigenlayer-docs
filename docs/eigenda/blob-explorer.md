@@ -12,4 +12,6 @@ The Blob Explorer renders:
 * Throughput data for the last hour
 * A view of blob metadata for any given blob key
 
-For links to network blob explorers please consult a specific network page, [see index](./networks/README.md).
+For links to network blob explorers please consult a specific network page, [see index][ref1].
+
+[ref1]: ./networks/README.md

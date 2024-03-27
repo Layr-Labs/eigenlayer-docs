@@ -36,7 +36,7 @@ The Community Multisig members include:
 
 Finally, there is an _Executor Multisig_ which only has the (automated) role of executing functionality passed to it by either the Operations or Community Multisig.
 
-The contract addresses for the Operations, Pauser, Community and Executor Multisig are available at the [Deployed Contracts page](../deployed-contracts/deployed-contracts.md).
+The contract addresses for the Operations, Pauser, Community and Executor Multisig are available at the [Deployed Contracts page][ref1].
 
 On a technical level, the governance architecture looks like the following:
 
@@ -45,3 +45,5 @@ On a technical level, the governance architecture looks like the following:
 These multisigs represent a rudimentary but working system of transparent initial governance, with appropriate checks and balances. As the protocol continues to evolve, so will its governance, and we are continuously evaluating our options for potential future governance mechanics.
 
 Decentralized governance practices are rapidly evolving, continuously pushing boundaries and exploring innovative approaches. In addition to the above, EigenLayer anticipates the emergence of novel mechanisms that have yet to be designed and is excited to research them and facilitate implementation.
+
+[ref1]: ../deployed-contracts/deployed-contracts.md

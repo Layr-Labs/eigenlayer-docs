@@ -6,15 +6,15 @@ title: Operator FAQ
 
 #### Where are the smart contract addresses used to register operator to EigenLayer?
 
-The contract addresses are located [here](../operator-guides/operator-installation#holesky-smart-contract-addresses)
+The contract addresses are located [here][ref1]
 
 #### Am I required to publicly host metadata url?
 
-Yes. You are required to host the metadata url publicly. The `metadata` url should always be available and should return a proper json response like [this](https://holesky-operator-metadata.s3.amazonaws.com/metadata.json)
+Yes. You are required to host the metadata url publicly. The `metadata` url should always be available and should return a proper json response like [this][ref2]
 
 #### Am I required to publicly host logo in metadata json?
 
-Yes. You are required to host the logo publicly like [this](https://holesky-operator-metadata.s3.amazonaws.com/eigenlayer.png)
+Yes. You are required to host the logo publicly like [this][ref3]
 
 #### Are there any restrictions to the logo image?
 
@@ -22,11 +22,11 @@ Yes. We only support `.png` format and we strictly check the content of image. I
 
 #### What if I lose access to my keys?
 
-When you [create/import](../operator-guides/operator-installation#create-and-list-keys) keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can run the [export](../operator-guides/operator-installation.md#export-keys) command to get your plaintext private key.
+When you [create/import][ref4] keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can run the [export][ref5] command to get your plaintext private key.
 
 #### What is my operator addresss?
 
-After you [create/import](../operator-guides/operator-installation#create-and-list-keys) ecdsa key you will be shown below log message
+After you [create/import][ref6] ecdsa key you will be shown below log message
 
 ```
 ? Enter password to encrypt the ecdsa private key:
@@ -44,8 +44,8 @@ You operator address is the `Ethereum Address` in the logs.
 
 If you want to change password of your encrypted keys, you have two options based on what information you have readily available:
 
-1. If you know your private keys then you can just [re-import](../operator-guides/operator-installation.md#import-keys) and when importing, choose a different name and the new password.
-2. If you don't know your private keys, you can get them using [export](../operator-guides/operator-installation.md#export-keys). Once you have the private keys you can use option 1 to re-import.
+1. If you know your private keys then you can just [re-import][ref7] and when importing, choose a different name and the new password.
+2. If you don't know your private keys, you can get them using [export][ref8]. Once you have the private keys you can use option 1 to re-import.
 
 #### What if I want to deactivate/deregister my operator from EigenLayer?
 
@@ -55,3 +55,11 @@ update the name of your operator in metadata url to be `Deactivated` or somethin
 #### Is there a limit to the number of AVSs that an Operator can opt-in to?
 
 There is no limit on the number of AVSs that an Operator can opt-in to. However, the Operator needs to ensure they have sufficient infrastructure capacity for the AVSs they opt-in to.
+[ref1]: ../operator-guides/operator-installation#holesky-smart-contract-addresses
+[ref2]: https://holesky-operator-metadata.s3.amazonaws.com/metadata.json
+[ref3]: https://holesky-operator-metadata.s3.amazonaws.com/eigenlayer.png
+[ref4]: ../operator-guides/operator-installation#create-and-list-keys
+[ref5]: ../operator-guides/operator-installation.md#export-keys
+[ref6]: ../operator-guides/operator-installation#create-and-list-keys
+[ref7]: ../operator-guides/operator-installation.md#import-keys
+[ref8]: ../operator-guides/operator-installation.md#export-keys

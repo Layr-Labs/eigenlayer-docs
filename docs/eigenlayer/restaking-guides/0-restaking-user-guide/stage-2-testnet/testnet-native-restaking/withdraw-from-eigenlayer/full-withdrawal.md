@@ -25,7 +25,7 @@ You can queue a withdrawal for any amount. However, when you choose to complete 
 **Step 4:** Observe the Unstaked Beacon Chain balance has increased after the escrow period.
 
 :::warning
-At this point you must exit your beacon chain validators prior to continuing. The validators must have completely exited from the validator queue before continuing. You may use [beaconcha.in](https://beaconcha.in) as a reference during this process.
+At this point you must exit your beacon chain validators prior to continuing. The validators must have completely exited from the validator queue before continuing. You may use [beaconcha.in][ref1] as a reference during this process.
 :::
 
 After your validators have exited, the Execution Chain amount should increase by the amount of those exited validators.
@@ -37,3 +37,5 @@ The Redeposit button is available at this point to allow the user to Restake bac
 :::info
 Redelegation is available for a user who accidentally queues a withdrawal, but would like to resume staking and delegation without having to exit and re-enter their validators from the beacon chain.
 :::
+
+[ref1]: https://beaconcha.in

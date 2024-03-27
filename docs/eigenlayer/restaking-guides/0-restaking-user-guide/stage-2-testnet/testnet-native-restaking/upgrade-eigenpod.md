@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Upgrade EigenPod
 
-If your EigenPod was created prior to Stage 2, you will need to upgrade your EigenPod per the steps below. Otherwise, please proceed to the [Enable Restaking section](enable-restaking.md).
+If your EigenPod was created prior to Stage 2, you will need to upgrade your EigenPod per the steps below. Otherwise, please proceed to the [Enable Restaking section][ref1].
 
 EigenLayer Phase 2 enables proving of the state of your validators from the beacon chain to EigenLayer smart contracts to confirm the amount restaked. As a result EigenPods that were created prior to M2 contract upgrades are required to have their balances reset to zero, then generate the proofs through the EigenLayer app in order to ensure proof accounting is accurate.
 
@@ -25,3 +25,5 @@ EigenLayer Phase 2 enables proving of the state of your validators from the beac
 ![](/img/googleusercontentbackup/vPmsNTcLVtLEeP1vqMRzi654epk7rTIx5fbB7aJTVPK6b7mGdrNdmTriyAFBuQrcU4hu1AYUf46ZM7PFe0SGU-QA9BeZQI506I6goJbNvTNROGxCoRX36E1KNk3irLV72vXP0-jTNmp73h_QS8L4wlI.png)
 
 ![](/img/googleusercontentbackup/S7vhK85nTJpd5145drzAArKwO-L7E0NlGbzo9t4CV_XZANC2KjKf7jIIAwNrk6Q-FRoytRPMUhtpuqNd_nNBaoXbIamXvkJJfWLhEuiFWuS7wflVrqJKr-nk4kn-EiAKXKNtL-rVfEzgBpoBem3tWg8.png)
+
+[ref1]: enable-restaking.md
