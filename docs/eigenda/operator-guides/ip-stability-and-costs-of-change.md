@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # IP Stability & Costs of Change
 
-It is important to ensure that your EigenDA Node service (addressed by IP:Port, which needs to register on-chain) is reachable from the internet. The chart below summarizes the potential IP sharing and stability options for Operators. This is a test.
+It is important to ensure that your EigenDA Node service (addressed by IP:Port, which needs to register on-chain) is reachable from the internet. The chart below summarizes the potential IP sharing and stability options for Operators.
 
 |                        | Shared IP                                                                                                                           | Dedicated IP                                                                                                                                                     |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
