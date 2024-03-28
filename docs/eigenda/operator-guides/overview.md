@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 ---
+
 # EigenDA Operator Guide
 
 ## Introduction
@@ -77,9 +78,9 @@ contract will:
 
 1. Check the Churn Approver’s signature.
 2. Perform checks against the stake of the newly-joining and (to-be-ejected)
-current lowest-stake operator:
-    - The new operator needs at least 1.1x the ejected operator’s stake.
-    - The ejected operator must constitute less than 3.33% of the total stake.
+   current lowest-stake operator:
+   - The new operator needs at least 1.1x the ejected operator’s stake.
+   - The ejected operator must constitute less than 3.33% of the total stake.
 3. Eject the current lowest-stake operator.
 4. Proceed with opting-in the new operator, as normal.
 
@@ -91,11 +92,11 @@ governance.
 Operators that have been ejected can verify the change in two ways:
 
 1. Visit the EigenDA AVS application to observe whether your Operator is present
-in the active operator set on the [AVS page](https://holesky.eigenlayer.xyz/avs/eigenda).
+   in the active operator set on the [AVS page](https://holesky.eigenlayer.xyz/avs/eigenda).
 2. Observe your EigenDA Operator log for the following logs. If you see this
-consistently, then your operator is not receiving any disperser traffic and you
-may have been ejected.  This is not an error but if you only see this log line
-repeatedly then it means you may not be receiving any disperser traffic.
+   consistently, then your operator is not receiving any disperser traffic and you
+   may have been ejected.  This is not an error but if you only see this log line
+   repeatedly then it means you may not be receiving any disperser traffic.
 
 ```
 INFO [12-21|18:53:46.673|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=3  caller=node.go:233
