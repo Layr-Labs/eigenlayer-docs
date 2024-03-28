@@ -16,4 +16,4 @@ The Blob Explorer renders:
 
 For links to network blob explorers please consult a specific network page, [see index](./networks/README.md).
 
-wf testing: creating an example link to test how holocron manages links eg important educational content
+wf testing: creating an example link to test how holocron manages links eg [important educational content](https://youtu.be/y8OnoxKotPQ?si=l5RI7T84NIH1T7Ec&t=8)
