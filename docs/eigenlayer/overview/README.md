@@ -20,6 +20,9 @@ Anyone building a new decentralized service for Ethereum must bootstrap a new tr
     - Operators perform validation tasks for AVSs, contributing to the security and integrity of the network.
     - AVSs deliver services to users (**AVS Consumers**) and the broader Web3 ecosystem.
 
-![EigenLayer Architecture](/img/eigenlayer-arch.png)
+<img src="/img/overview/eigenlayer-arch-v2.png" width="75%"
+    style={{ margin: '50px'}}>
+</img>
+
 
 To learn more about EigenLayer please read the [**Whitepaper**](/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
