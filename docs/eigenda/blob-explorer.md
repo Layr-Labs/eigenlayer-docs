@@ -15,3 +15,5 @@ The Blob Explorer renders:
 - A view of blob metadata for any given blob key
 
 For links to network blob explorers please consult a specific network page, [see index](./networks/README.md).
+
+wf: creating an example link to see how ho
