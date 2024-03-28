@@ -55,3 +55,7 @@ update the name of your operator in metadata url to be `Deactivated` or somethin
 #### Is there a limit to the number of AVSs that an Operator can opt-in to?
 
 There is no limit on the number of AVSs that an Operator can opt-in to. However, the Operator needs to ensure they have sufficient infrastructure capacity for the AVSs they opt-in to.
+
+#### How to resolve the error "No contract code at given address" imply?
+
+Ensure that your operator is pointing to the correct RPC service and that it is accessible from your operator ([example](https://chainlist.org/)).

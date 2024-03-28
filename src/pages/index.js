@@ -64,7 +64,7 @@ function Home() {
                     label:"Guides for AVS Developers"
                   }}
                   body={{
-                    label:"Learn how to design, build, and launch an AVSs (Actively Validated Services) using EigenLayer restaking."
+                    label:"Learn how to design, build, and launch an AVSs (Actively Validated Services)."
                   }}
                 />
 
