@@ -64,7 +64,7 @@ No, EigenLayer doesn't remove the value of any hypothetical AVS tokens, but adds
 
 Firstly, Ethereum's L2 networks serve as a greatest counterpoint to this line of logic. Despite outsourcing their network security to Ethereum, L2 tokens maintain significant value within their respective networks.
 
-Secondly, if an individual AVS decides to incorporate its own token for staking and network operations, EigenLayer supports [dual staking](https://www.blog.eigenlayer.xyz/dual-staking/). In this setup, an AVS can be secured by two types of assets, likely one in ETH and one in its native token.
+Secondly, if an individual AVS decides to incorporate its own token for staking and network operations, EigenLayer supports [dual staking][ref1]. In this setup, an AVS can be secured by two types of assets, likely one in ETH and one in its native token.
 
 It's important to note that in the dual staking model, AVS governance always has the ability to adjust the balance between AVS's native token and ETH within its network. 
 
@@ -116,15 +116,15 @@ The intention is to upgrade to a version of EigenLayer without a canonical veto 
 
 **Does EigenLayer increase centralization pressure on the validator set?**
 
-If EigenLayer imposes additional computational demands on Ethereum validators, it unavoidably becomes a centralization vector for Ethereum. With this principle in mind, EigenLayer discourages the increase in node requirements for Ethereum validators and promotes the use of lightweight AVSs, such as [EigenDA](https://twitter.com/eigen_da).
+If EigenLayer imposes additional computational demands on Ethereum validators, it unavoidably becomes a centralization vector for Ethereum. With this principle in mind, EigenLayer discourages the increase in node requirements for Ethereum validators and promotes the use of lightweight AVSs, such as [EigenDA][ref2].
 
 For more computationally demanding AVSs, EigenLayer's delegation features allow Home stakers to secure Ethereum while delegating the operation of other AVSs to a different operator.
 
-Ongoing research is focused on mechanisms, such as the [Optimistic Delegation Framework](https://research.eigenlayer.xyz/t/optimistic-delegation-framework-idea-to-allow-for-native-restaking-without-delegation/39) and [AVS for PBS](https://www.youtube.com/watch?v=7xCqa_Ufv0A), to reduce the computational load on Ethereum validators in a trust-minimized manner.
+Ongoing research is focused on mechanisms, such as the [Optimistic Delegation Framework][ref3] and [AVS for PBS][ref4], to reduce the computational load on Ethereum validators in a trust-minimized manner.
 
 From an economic standpoint, we are exploring the possibility of directly incentivizing individual stakers through a rewards sharing scheme. Consider, for instance, allocating a certain percentage (x%) of all rewards processed through EigenLayer to solo validators.
 
-If you are interested in discussing these mechanisms and incentive issues further, please share your thoughts on [research.eigenlayer.xyz](http://research.eigenlayer.xyz)
+If you are interested in discussing these mechanisms and incentive issues further, please share your thoughts on [research.eigenlayer.xyz][ref5]
 
 **Does EigenLayer eat away into the security margin of Ethereum?**
 
@@ -134,7 +134,7 @@ When the stake in EigenLayer is significantly less than the total staked ETH, it
 
 If the stake in EigenLayer makes up a large part of the total staked ETH, EigenLayer doesn't put the entire stake at risk. Instead, it sets aside a portion as a buffer for Ethereum, offering only the remaining stake for security. This approach ensures that we can consistently safeguard Ethereum's security margin.
 
-For a better understanding of the required security level for Ethereum, we suggest readers refer to [StakeSure](https://arxiv.org/abs/2401.05797).
+For a better understanding of the required security level for Ethereum, we suggest readers refer to [StakeSure][ref6].
 
 **Does EigenLayer need to self-limit like other liquid staking protocols?**
 
@@ -160,3 +160,9 @@ We have established several strategies to further limit the operator's capacity 
 1. Technical Trust: EigenLayer operators can utilize an anti-slasher within a Trusted Execution Environment (TEE) to verify its response to any validation task. The operator then sends the associated TEE certificate with its response for the task, confirming that the anti-slasher was utilized. Another technical solution to address the principal-agent problem is to structure the EigenLayer operator with decentralized DVT nodes.
 2. Economic Trust: Similar to RocketPool, a specific LRT protocol might require operators to stake proportionally to the delegation they receive. This approach assumes a certain amount that can be slashed and a probability for that occurrence. By encouraging the operator nodes to behave correctly, the principal-agent problem can be mitigated.
 3. Social Trust: A staker always has the option to self-delegate and operate the nodes for AVSs or delegate it to a trusted operator. In this scenario, the staker trusts the operator to perform only the stipulated operations and not engage in any malicious activities. This practice is common in the real world, where service providers like AWS offer services.
+[ref1]: https://www.blog.eigenlayer.xyz/dual-staking/
+[ref2]: https://twitter.com/eigen_da
+[ref3]: https://research.eigenlayer.xyz/t/optimistic-delegation-framework-idea-to-allow-for-native-restaking-without-delegation/39
+[ref4]: https://www.youtube.com/watch?v=7xCqa_Ufv0A
+[ref5]: http://research.eigenlayer.xyz
+[ref6]: https://arxiv.org/abs/2401.05797

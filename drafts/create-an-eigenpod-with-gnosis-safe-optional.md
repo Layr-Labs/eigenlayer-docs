@@ -5,7 +5,7 @@ Creating an EigenPod using Gnosis Safe is an important feature requested by a la
 
 Step 1: Open Etherscan for your current network (Testnet or Mainnet).
 
-Step 2: Find the current EigenPodManager proxy contract address via the [EigenLayer Deployments table here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/README.md#deployments).
+Step 2: Find the current EigenPodManager proxy contract address via the [EigenLayer Deployments table here][ref1].
 
 Step 3: Access the EigenPodManager contract on Etherscan.
 
@@ -34,3 +34,5 @@ Step 4: Open your Gnosis Safe and create a new transaction. Copy the contract AB
     style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} 
   />
 </div>
+
+[ref1]: https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/README.md#deployments

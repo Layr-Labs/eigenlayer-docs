@@ -13,7 +13,7 @@ sidebar_position: 1
 
 **Step 3:** Token Approval. Enter the amount you would like to restake and click **Deposit**.
 
-If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval](https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-) gives a dApp permission to move the specified token from your wallet. Set a spending cap, and click **Next**.
+If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval][ref1] gives a dApp permission to move the specified token from your wallet. Set a spending cap, and click **Next**.
 
 **Step 4:** Once the token Approval transaction is confirmed, you will be prompted to confirm the **Deposit** transaction. 
 
@@ -23,4 +23,6 @@ If successful, you will see the corresponding increase in your Restaked balance 
 
 ![](/img/googleusercontentbackup/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU.png)
 
-**Step 6:** Monitor your Staking Rewards & Restaked Ratio on the [homepage](http://holesky.eigenlayer.xyz/).
+**Step 6:** Monitor your Staking Rewards & Restaked Ratio on the [homepage][ref2].
+[ref1]: https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-
+[ref2]: http://holesky.eigenlayer.xyz/

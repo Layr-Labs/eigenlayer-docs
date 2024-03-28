@@ -10,5 +10,8 @@ We are dedicated to providing a more robust support framework for direct smart c
 
 
 Resources:
-* [EigenLayer Protocol Developer Docs](https://github.com/Layr-Labs/eigenlayer-contracts#documentation): latest protocol specifications for developers.
-* [EigenLayer Protocol Contract Addresses](../deployed-contracts/deployed-contracts.md): deployed contract addresses for Ethereum Mainnet and Testnet.
+* [EigenLayer Protocol Developer Docs][ref1]: latest protocol specifications for developers.
+* [EigenLayer Protocol Contract Addresses][ref2]: deployed contract addresses for Ethereum Mainnet and Testnet.
+
+[ref1]: https://github.com/Layr-Labs/eigenlayer-contracts#documentation
+[ref2]: ../deployed-contracts/deployed-contracts.md

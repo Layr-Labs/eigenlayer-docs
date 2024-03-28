@@ -4,8 +4,8 @@ title: EigenDA Overview
 ---
 
 EigenDA is a data availability store made by
-[EigenLabs](https://www.eigenlayer.xyz/about) and built on top of
-[EigenLayer](../eigenlayer/overview/README.md), currently launching to the
+[EigenLabs][ref1] and built on top of
+[EigenLayer][ref2], currently launching to the
 Holesky testnet and launching on mainnet in early Q2 2024.
 
 EigenDA stores rollup transactions until their computed state is
@@ -77,7 +77,7 @@ host their own retriever as a sidecar to their sequencer.
 
 ### How Rollups Integrate
 
-![EigenDA Architecture](/img/eigenda/dispersal-flow-diagram.png)
+![EigenDA Architecture][ref3]
 
 The diagram above shows the basic flow of data through EigenDA:
 
@@ -99,4 +99,9 @@ consults the EigenDA manager contract on whether blob was certified available.
 If it was, the blob ID is allowed into the inbox contract. If not, the blob ID
 is discarded.
 
-For more on how rollups integrate with EigenDA, check out [Integrations Overview](./rollup-guides/integrations-overview.md).
+For more on how rollups integrate with EigenDA, check out [Integrations Overview][ref4].
+
+[ref1]: https://www.eigenlayer.xyz/about
+[ref2]: ../eigenlayer/overview/README.md
+[ref3]: /img/eigenda/dispersal-flow-diagram.png
+[ref4]: ./rollup-guides/integrations-overview.md

@@ -11,8 +11,8 @@ The current version of the AVS Node specification should be considered a public 
 
 The description of the Specification is divided into the following sections:
 
-- [AVS Node API](./api/api.mdx): HTTP RESTful API for AVS Nodes.
-- [Metrics](./metrics/metrics-prom.md): Prometheus standard metrics for AVS implementations.
+- [AVS Node API][ref1]: HTTP RESTful API for AVS Nodes.
+- [Metrics][ref2]: Prometheus standard metrics for AVS implementations.
 
 
 
@@ -35,3 +35,5 @@ Example Usage:
 
 - "Operators **SHOULD** regularly back up their data to prevent potential loss."
 - "For optimal performance, you **SHOULD** stick to the AVS hardware requirements."
+[ref1]: ./api/api.mdx
+[ref2]: ./metrics/metrics-prom.md

@@ -5,9 +5,9 @@ title: OP Stack
 
 ## OP Stack and EigenDA
 
-[OP Stack](https://stack.optimism.io/) is the set of [software
-components](https://github.com/ethereum-optimism/optimism) that run sequencers,
-nodes, and contracts for [Optimism](https://www.optimism.io/) and which can be
+[OP Stack][ref1] is the set of [software
+components][ref2] that run sequencers,
+nodes, and contracts for [Optimism][ref3] and which can be
 independently deployed to power third-party rollups.
 
 In its native mode, OP Stack uses Ethereum for Data Availability, meaning it
@@ -25,13 +25,13 @@ transaction data to a permissionless, trustless, secure, and scalable DA
 Operator set, and the last bottleneck on the performance of your rollup will be
 removed.
 
-[**EigenLabs has forked OP Stack**](https://github.com/Layr-labs/optimism) **to
+[**EigenLabs has forked OP Stack**][ref4] **to
 add optional support for EigenDA. The modifications were relatively simple and
 are detailed in the next section.**
 
 ## How it works
 
-![OP stack digram](/img/op-stack-blob-disersal-seq.png)
+![OP stack digram][ref5]
 
 In the absence of fraud proofs, the integration is relatively simple. On the
 sequencing side, instead of writing L2 transaction data to Ethereum calldata, we
@@ -52,12 +52,12 @@ to Ethereum DA in the event that EigenDA is not functioning correctly.
 ## L1 Contracts
 
 No contract changes are required for this integration. The latest OP Stack
-release [Bedrock](https://stack.optimism.io/docs/releases/bedrock/) includes
+release [Bedrock][ref6] includes
 contracts that implement the integration between the L1 and L2, and integration
 points between the Sequencer and the L1. Although EigenDA supports on-chain data
 availability verification, the current version of OP Stack has not yet fully
 integrated support for fault proofs (more detail [here on their Alpha
-release](https://blog.oplabs.co/op-stack-fault-proof-alpha/)). We plan to enable
+release][ref7]). We plan to enable
 this verification with EigenLayer once OP Stack has fully integrated their
 fault-proof architecture.
 
@@ -78,11 +78,11 @@ To add EigenDA support to the OP Stack Sequencer, we need to:
 1. **Update DA writes**: modify how L2 transaction data is posted for DA
 (Op-batcher).
 2. **Update DA reads**: modify how L2 transaction data is
-[derived](https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#l2-chain-derivation-pipeline)
+[derived][ref8]
 from DA (op-node).
 
 The Op-batcher service is modified to write (disperse) its Optimism [data
-frame](https://github.com/ethereum-optimism/optimism/blob/develop/specs/glossary.md#channel-frame)
+frame][ref9]
 (a grouping of L2 transactions) to EigenDA, wait for confirmation and the
 resulting BlobInfo object. If the EigenDA dispersal is successful, the
 Op-batcher writes the BlobInfo object to Ethereum calldata instead of its
@@ -100,16 +100,29 @@ such as quorum selection for retrieval.
 ## Resources
 
 - Eigen Labs OP Stack Fork:
-[https://github.com/Layr-Labs/optimism](https://github.com/Layr-Labs/optimism) -
+[https://github.com/Layr-Labs/optimism][ref10] -
 Announcing EigenDA x OP Stack Support:
-[https://www.blog.eigenlayer.xyz/announcing-eigenda-x-op-stack-support/](https://www.blog.eigenlayer.xyz/announcing-eigenda-x-op-stack-support/)
+[https://www.blog.eigenlayer.xyz/announcing-eigenda-x-op-stack-support/][ref11]
 
 ## Next Steps
 
 If you are a Rollup considering integrating with EigenDA and OP Stack - reach
 out to our team to discuss how we can support and accelerate your onboarding:
-[https://contact.eigenda.xyz/](https://contact.eigenda.xyz/)
+[https://contact.eigenda.xyz/][ref12]
 
 If you are a Rollup developer and have questions on the integration- reach out
 to our Support team via:
-[https://support.eigenlayer.xyz/](https://support.eigenlayer.xyz/)
+[https://support.eigenlayer.xyz/][ref13]
+[ref1]: https://stack.optimism.io/
+[ref2]: https://github.com/ethereum-optimism/optimism
+[ref3]: https://www.optimism.io/
+[ref4]: https://github.com/Layr-labs/optimism
+[ref5]: /img/op-stack-blob-disersal-seq.png
+[ref6]: https://stack.optimism.io/docs/releases/bedrock/
+[ref7]: https://blog.oplabs.co/op-stack-fault-proof-alpha/
+[ref8]: https://github.com/ethereum-optimism/optimism/blob/develop/specs/derivation.md#l2-chain-derivation-pipeline
+[ref9]: https://github.com/ethereum-optimism/optimism/blob/develop/specs/glossary.md#channel-frame
+[ref10]: https://github.com/Layr-Labs/optimism
+[ref11]: https://www.blog.eigenlayer.xyz/announcing-eigenda-x-op-stack-support/
+[ref12]: https://contact.eigenda.xyz/
+[ref13]: https://support.eigenlayer.xyz/

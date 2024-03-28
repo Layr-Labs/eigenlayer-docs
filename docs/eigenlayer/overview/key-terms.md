@@ -15,9 +15,11 @@
 - **Quorum**: grouping of Strategies to be used by an AVS for shared security measures.
 - **Quorum Threshold**: the minimum amount of Operator responses and their stake % that must be received by the Aggregator entity.
 - **Restaker**: person who restakes Native or LST ETH to the EigenLayer protocol.
-- **Restaking Points:** a measure of your total EigenLayer restaking contribution. Based on amount of ETH staked over time, in units of ETH per second. For a precise definition of how Restaking Points are calculated, please refer to the [next](../restaking-guides/0-restaking-user-guide/restaked-points.md) section.
+- **Restaking Points:** a measure of your total EigenLayer restaking contribution. Based on amount of ETH staked over time, in units of ETH per second. For a precise definition of how Restaking Points are calculated, please refer to the [next][ref1] section.
 - **Stake**: the amount of ETH delegated to the current set of Operators.
 - **Strategies**: assets that are restaked into the platform.
 - **Withdrawals**
   - **Full Withdrawals:** 32ETH Stake + Eth Staking Rewards (until now).
   - **Partial Withdrawals:** ETH consensus layer rewards (until now).
+
+[ref1]: ../restaking-guides/0-restaking-user-guide/restaked-points.md

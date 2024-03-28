@@ -13,11 +13,14 @@ Error: failed to opt-in EigenDA Node Network for operator ID: <OPERATOR_ID>, ope
 ```
 
 This is because your operator doesn't have enough stake to run EigenDA. Please
-refer to [this](./overview.md#eigenda-churn-approver) to learn more about this
+refer to [this][ref1] to learn more about this
 error
 
 #### failed to read or decrypt the BLS/ECDSA private key
 
 Please make sure the operator keys [location in the .env
-file](https://github.com/Layr-Labs/eigenda-operator-setup/blob/19c386e38a838e28be27bd2737252d3fe2ce8a62/.env#L83)
+file][ref2]
 is correctly populated. Make sure to put correct bls and ecdsa key location
+
+[ref1]: ./overview.md#eigenda-churn-approver
+[ref2]: https://github.com/Layr-Labs/eigenda-operator-setup/blob/19c386e38a838e28be27bd2737252d3fe2ce8a62/.env#L83

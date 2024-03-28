@@ -14,25 +14,25 @@ stored in the EigenDA network, as well as updates to how.
 These instructions are built to interact with the live EigenDA testnet. For
 developers who wish to operate a local network for testing and debugging, please
 see the instructions in the [EigenDA inabox tests
-here](https://github.com/Layr-Labs/eigenda/tree/master/inabox).
+here][ref1].
 
 ## Off-Chain: Configure Your Sequencer Backend Service
 
-EigenDA is built as a [gRPC service](https://grpc.io/). There are
+EigenDA is built as a [gRPC service][ref2]. There are
 many available clients you may use for your integration. For the following
-examples we leverage [grpcurl](https://github.com/fullstorydev/grpcurl), however
-please see [Awesome gRPC](https://github.com/grpc-ecosystem/awesome-grpc#tools)
+examples we leverage [grpcurl][ref3], however
+please see [Awesome gRPC][ref4]
 for a complete list to choose the best client for your project.
 
 Please find the complete EigenDA API documentation in the [EigenDA github repo
-here](https://github.com/Layr-Labs/eigenda/tree/master/api/docs).
+here][ref5].
 
 ### Disperse and Retrieve Blob Examples
 
 **Prerequisites:**
 
 - Open a linux terminal.
-- [Install grpccurl for your environment](https://github.com/fullstorydev/grpcurl#installation).
+- [Install grpccurl for your environment][ref6].
 - Download the eigenda repository and change your current working directory. The
 included Protobuf definitions will be required:
 
@@ -98,7 +98,7 @@ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d
 
 Option B: Retrieve the blob directly from EigenDA nodes. Integrate the
 [Retrieval
-Client](https://github.com/Layr-Labs/eigenda/blob/master/clients/retrieval_client.go)
+Client][ref7]
 into your Go binary.
 
 ### Null Bytes Padding
@@ -108,13 +108,13 @@ the caller will need to remove. This occurs because the Disperser pads the blob
 with null bytes to fit the frame size for encoding.
 
 Once the user decodes the data, the decoded data may have null bytes appended to
-the end. [Here is an example](https://github.com/Layr-Labs/eigenda/blob/master/test/integration_test.go#L522)
+the end. [Here is an example][ref8]
 on how we trim the appended null bytes from recovered data.
 
 ## On-Chain: Configure Your Sequencer Smart Contracts
 
 Data Availability is a requirement for both for ZK and Optimistic rollups
-([source](http://datalayr-docs.s3-website-us-east-1.amazonaws.com/build/rollups/)):
+([source][ref9]):
 
 - In both optimistic rollups and ZK-rollups, if transaction data is not
 available, then participants in the rollup will be unable to reconstruct the
@@ -134,7 +134,7 @@ which conditions. This may be invoked via the sequencer, validator or other
 component in the rollup architecture.
 
 1. Import the
-[EigenDABlobUtils.sol](https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDABlobUtils.sol)
+[EigenDABlobUtils.sol][ref10]
 file to your rollup’s source code repository.
 2. Add the library to your rollup smart contract.
 3. Invoke the verifyBlob() function
@@ -149,16 +149,29 @@ verified to be available during a fault proof challenge.
 
 If a rollup wishes to implement their own fraud proof with EigenDA, we have
 provided an example via the
-[EigenDAKZGUtils.openCommitment()](https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDAKZGUtils.sol)
+[EigenDAKZGUtils.openCommitment()][ref11]
 function. Opening a commitment is the way to prove to the light client for the
 rollup (perhaps the rollup bridge smart contract) that a certain state
 transition is incorrect. It reveals the underlying data of the polynomial.
 
 Per
-[EIP-4844](https://eips.ethereum.org/EIPS/eip-4844#how-rollups-would-function):
+[EIP-4844][ref12]:
 
 “The fraud proof can verify the transition in smaller steps, loading at most a
 few values of the blob at a time through calldata. For each value it would
 provide a KZG proof and use the point evaluation precompile to verify the value
 against the versioned hash that was submitted before, and then perform the fraud
 proof verification on that data as is done today.”
+
+[ref1]: https://github.com/Layr-Labs/eigenda/tree/master/inabox
+[ref2]: https://grpc.io/
+[ref3]: https://github.com/fullstorydev/grpcurl
+[ref4]: https://github.com/grpc-ecosystem/awesome-grpc#tools
+[ref5]: https://github.com/Layr-Labs/eigenda/tree/master/api/docs
+[ref6]: https://github.com/fullstorydev/grpcurl#installation
+[ref7]: https://github.com/Layr-Labs/eigenda/blob/master/clients/retrieval_client.go
+[ref8]: https://github.com/Layr-Labs/eigenda/blob/master/test/integration_test.go#L522
+[ref9]: http://datalayr-docs.s3-website-us-east-1.amazonaws.com/build/rollups/
+[ref10]: https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDABlobUtils.sol
+[ref11]: https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDAKZGUtils.sol
+[ref12]: https://eips.ethereum.org/EIPS/eip-4844#how-rollups-would-function

@@ -21,7 +21,7 @@ The following is the lifecycle of an \<operator, quorum>, with responsibilities
 at different stages from when the operator opted-in the quorum to opt-out and
 beyond:
 
-![Diagram of EigenDA Operator Unregistration Process](./diagram.png)
+![Diagram of EigenDA Operator Unregistration Process][ref1]
 
 Operators have three primitive responsibilities:
 
@@ -84,3 +84,5 @@ lifecycle will be restarted.
 | Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |  
 | --- | --- | --- | --- |
 | Attesting + Storing | Lazy signing rate: `num-batches-lazily-signed / num-batches-signed` | Lazy signing rate = `0` | Hard measure: slashing via Proof of Custody (if SLA is violated). Data availability sampling |
+
+[ref1]: ./diagram.png

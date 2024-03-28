@@ -5,7 +5,7 @@ sidebar_position: 1
 # Partial Withdrawals
 
 :::info
-Due to how withdrawals from Ethereum are designed, users can only initiate one partial withdrawal per[ sequential sweep](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) of all validators (which takes approximately 4-5 days).
+Due to how withdrawals from Ethereum are designed, users can only initiate one partial withdrawal per[ sequential sweep][ref1] of all validators (which takes approximately 4-5 days).
 
 All funds unstaked from EigenLayer go through a escrow period before being able to be withdrawn. After you unstake and queue the withdrawal, you must wait for the escrow period to end before being able to withdraw your assets.
 :::
@@ -48,3 +48,5 @@ Observe the Unstaking balance has increased after the transaction is confirmed o
 ![](/img/googleusercontentbackup/yK-i-_zMD8KhpiiHVE_59bOwxBQuZEp0IlhfFCNqY7jYiNHwW9o4h3DF4R8Msu1kV4VboDo_WfhFHQC70ezd0QECKsqg4idohNll2vSiyk2s4Mjq0LL0ip_lRma0x708qzXuC97M5f12wlOT13kRiSk.png)
 
 Observe your funds have been sent to your wallet.
+
+[ref1]: https://ethereum.org/en/staking/withdrawals/#validator-sweeping

@@ -16,7 +16,7 @@ and documentation.
 
 ### Node Classes
 
-Operators can determine their required [EigenLayer node class](../../eigenlayer/operator-guides/avs-installation-and-registration/eigenlayer-node-classes) by referencing their share of the total EigenDA quorum against the following
+Operators can determine their required [EigenLayer node class][ref1] by referencing their share of the total EigenDA quorum against the following
 table.
 
 |                         | Supported Throughput | Max % of Stake      |
@@ -59,7 +59,7 @@ limited to 200 operators. We will review this operator cap on an ongoing basis,
 and explicitly communicate future changes.  :::
 
 In order to determine the current TVL of the top 200 operators, please visit our
-[AVS page](https://holesky.eigenlayer.xyz/avs/eigenda) and sort by `TVL
+[AVS page][ref2] and sort by `TVL
 Ascending.`Observe the first 200 operators listed and the amount of ETH TVL
 delegated to them. Please keep in mind that the AVS Page reflects real-time
 operator stake on EigenLayer, which is used to update the EigenDA operator set
@@ -91,7 +91,7 @@ governance.
 Operators that have been ejected can verify the change in two ways:
 
 1. Visit the EigenDA AVS application to observe whether your Operator is present
-in the active operator set on the [AVS page](https://holesky.eigenlayer.xyz/avs/eigenda).
+in the active operator set on the [AVS page][ref3].
 2. Observe your EigenDA Operator log for the following logs. If you see this
 consistently, then your operator is not receiving any disperser traffic and you
 may have been ejected.  This is not an error but if you only see this log line
@@ -100,3 +100,7 @@ repeatedly then it means you may not be receiving any disperser traffic.
 ```
 INFO [12-21|18:53:46.673|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=3  caller=node.go:233
 ```
+
+[ref1]: ../../eigenlayer/operator-guides/avs-installation-and-registration/eigenlayer-node-classes
+[ref2]: https://holesky.eigenlayer.xyz/avs/eigenda
+[ref3]: https://holesky.eigenlayer.xyz/avs/eigenda
