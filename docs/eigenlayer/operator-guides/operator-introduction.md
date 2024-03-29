@@ -20,4 +20,6 @@ Most Operators will receive token delegations sourced from other Restakers withi
 
 Quorums are a grouping of Strategies (Restaked Assets) to be used by an AVS for shared security measures. Operators can choose to opt into quorums of one or more tokens, depending on their preference and the designs of the AVS operate.
 
+An Operator can opt into as many quorums as they like as long as they have sufficient TVL for those the quorums.
+
 
