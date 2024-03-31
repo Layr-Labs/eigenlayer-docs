@@ -36,7 +36,10 @@ here](https://github.com/Layr-Labs/eigenda/tree/master/api/docs).
 - Download the eigenda repository and change your current working directory. The
 included Protobuf definitions will be required:
 
-``` gh repo clone Layr-Labs/eigenda cd eigenda ```
+``` 
+gh repo clone Layr-Labs/eigenda
+cd eigenda 
+```
 
 **Step 1: Store (Disperse) a blob**
 
