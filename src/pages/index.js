@@ -28,7 +28,7 @@ function Home() {
             <div className="container">
               <div className="row cards__container">
                 <Card
-                  to="eigenlayer/overview"
+                  to="eigenlayer/overview/"
                   header={{
                     label:"Intro to EigenLayer"
                   }}
