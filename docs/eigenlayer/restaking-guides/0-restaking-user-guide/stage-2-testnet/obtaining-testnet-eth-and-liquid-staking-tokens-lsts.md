@@ -52,15 +52,6 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - Or import the osETH address (0xF603c5A3F774F05d4D848A9bB139809790890864) for Holesky stETH token to your web3 wallet to view your token balance.
 
 
-## Swap holETH for LsETH (Liquid Staked ETH from Liquid Collective)​​
-- Visit the Liquid Staked ETH LsETH proxy contract’s Write as Proxy contract in Etherscan here: [0x1d8b30cC38Dba8aBce1ac29Ea27d9cFd05379A09](https://holesky.etherscan.io/address/0x1d8b30cC38Dba8aBce1ac29Ea27d9cFd05379A09#writeProxyContract).
-- Click **Connect to Web3** to connect your web3 wallet.
-- Click on the **5.deposit()** function to expand its section:
-- payableAmount: Enter the ETH amount you wish to deposit.
-- Click **Write** to initiate the transaction. Approve the transaction in your web3 wallet.
-- Import the Holesky ETHx token address (0x1d8b30cC38Dba8aBce1ac29Ea27d9cFd05379A09) to your web3 wallet to view your token balance.
-
-
 ## Mint and Stake to Swap holETH for sfrxETH
 - Add Holesky to your Web3 wallet (example instructions [here](https://www.coingecko.com/learn/holesky-testnet-eth#add-the-holesky-testnet-to-metamask)).
 - Manually switch your wallet to the Holesky network. The Frax Finance app does not allow the user to choose Holesky directly. 
