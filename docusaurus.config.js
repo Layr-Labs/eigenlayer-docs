@@ -50,7 +50,7 @@ const config = {
           },
           {
             from: "/overview/terms-of-service",
-            to: "/eigenlayer/legal/eigenlayer-privacy-policy",
+            to: "/eigenlayer/legal/terms-of-service",
           },
           // This is implicit, covered by the function case below
           // {
