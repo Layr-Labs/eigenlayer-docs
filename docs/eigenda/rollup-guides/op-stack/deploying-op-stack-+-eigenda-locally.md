@@ -60,7 +60,7 @@ make stop-infra
 
 # clone
 
-git clone -b eigenda-develop <git@github.com>:Layr-Labs/optimism.git cd optimism
+git clone -b eigenda-develop git@github.com:Layr-Labs/optimism.git && cd optimism
 git submodule update --init --recursive
 
 # install and use correct golang version
