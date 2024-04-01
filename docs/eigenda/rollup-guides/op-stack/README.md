@@ -31,7 +31,7 @@ are detailed in the next section.**
 
 ## How it works
 
-![OP stack digram](/img/op-stack-blob-disersal-seq.png)
+![OP stack diagram](/img/op-stack-blob-disersal-seq.png)
 
 In the absence of fraud proofs, the integration is relatively simple. On the
 sequencing side, instead of writing L2 transaction data to Ethereum calldata, we

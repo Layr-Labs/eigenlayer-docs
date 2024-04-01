@@ -110,7 +110,7 @@ on how we trim the appended null bytes from recovered data.
 
 ## On-Chain: Configure Your Sequencer Smart Contracts
 
-Data Availability is a requirement for both for ZK and Optimistic rollups
+Data Availability is a requirement for both ZK and Optimistic rollups
 ([source](http://datalayr-docs.s3-website-us-east-1.amazonaws.com/build/rollups/)):
 
 - In both optimistic rollups and ZK-rollups, if transaction data is not

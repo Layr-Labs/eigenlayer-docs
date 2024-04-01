@@ -65,7 +65,7 @@ git submodule update --init --recursive
 
 # install and use correct golang version
 
-gvm intall $(cat .go-version) gvm use $(cat .go-version)
+gvm install $(cat .go-version) gvm use $(cat .go-version)
 
 # build correct foundry version from source (may take a few minutes)
 

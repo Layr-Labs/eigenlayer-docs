@@ -57,7 +57,7 @@ guide([holesky](./networks/holesky),
 correct.
 
 If you were previously opted-in and were signing, it's possible you were [churned
-out](./overview#eigenda-churn-approver) by an other operator or you have been
+out](./overview#eigenda-churn-approver) by another operator or you have been
 [ejected due to non-signing](./ejection-non-signing.md). Please try opting-in
 again.
 
