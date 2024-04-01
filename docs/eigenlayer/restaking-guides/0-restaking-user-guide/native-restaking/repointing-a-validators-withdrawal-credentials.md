@@ -43,6 +43,7 @@ Some consensus clients also have their own, implementation-specific, support for
 - [Teku](https://docs.teku.consensys.net/HowTo/Withdrawal-Keys)
 - [Lighthouse](https://lighthouse-book.sigmaprime.io/voluntary-exit.html#faq)
 - [Nimbus](https://nimbus.guide/withdrawals.html#updating-your-withdrawal-credentials)
+- [Lodestar](https://chainsafe.github.io/lodestar/validator-management/validator-cli/#validator-bls-to-execution-change)
 
 
 For further information, please refer to the [notes](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-How-do-I-fully-withdraw-exit-my-validator) from the Ethereum organization
