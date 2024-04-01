@@ -6,7 +6,7 @@ EigenLayer is a protocol built on Ethereum that introduces restaking, a new prim
 
 ## Why Build with EigenLayer?
 
-With EigenLayer, Ethereum stakers can help secure many services by restaking their staked ETH and opting-in to many services simultaneously, providing [**pooled security**](key-terms)**.** Reusing ETH to provide security across many services reduces capital costs for a staker to participate and significantly increases the trust guarantees to individual services.
+With EigenLayer, Ethereum stakers can help secure many services by restaking their staked ETH and opting-in to many services simultaneously, providing [**pooled security**](/eigenlayer/overview/key-terms)**.** Reusing ETH to provide security across many services reduces capital costs for a staker to participate and significantly increases the trust guarantees to individual services.
 
 Anyone building a new decentralized service for Ethereum must bootstrap a new trust network to secure their system, fragmenting security. EigenLayer solves this problem by enabling any service, regardless of its composition (e.g. EVM-compatibility), to tap into the pooled security of Ethereum's stakers, creating an environment for permissionless innovation and free-market governance.
 
