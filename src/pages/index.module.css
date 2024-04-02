@@ -21,3 +21,31 @@
   align-items: center;
   justify-content: center;
 }
+
+.cardTitle {
+  color: blue;
+}
+
+
+
+
+.main {
+  margin-bottom: 50px;
+  margin-top: 0px;
+}
+
+
+.features {
+  display: flex;
+  align-items: top;
+  width: 100%;
+}
+
+.featureImage {
+  height: 200px;
+  width: 200px;
+}
+
+.iconExternalIcon {
+  margin-left: 0.5em;
+}
