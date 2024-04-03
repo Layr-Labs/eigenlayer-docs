@@ -36,7 +36,7 @@ here](https://github.com/Layr-Labs/eigenda/tree/master/api/docs).
 - Download the eigenda repository and change your current working directory. The
 included Protobuf definitions will be required:
 
-``` 
+```
 gh repo clone Layr-Labs/eigenda
 cd eigenda 
 ```
@@ -54,7 +54,7 @@ $ gh repo clone Layr-Labs/eigenda
 # protobuf defintions correctly
 $ cd eigenda
 
-$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"data": "0000"}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
+$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"data": "hello"}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
 ```
 
 **Step 2: Validate the blob was stored in a batch**
@@ -94,8 +94,7 @@ $ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto 
 ```
 
 Option B: Retrieve the blob directly from EigenDA nodes. Integrate the
-[Retrieval
-Client](https://github.com/Layr-Labs/eigenda/blob/master/clients/retrieval_client.go)
+[Retrieval Client](https://github.com/Layr-Labs/eigenda/blob/master/clients/retrieval_client.go)
 into your Go binary.
 
 ### Null Bytes Padding
@@ -107,6 +106,24 @@ with null bytes to fit the frame size for encoding.
 Once the user decodes the data, the decoded data may have null bytes appended to
 the end. [Here is an example](https://github.com/Layr-Labs/eigenda/blob/master/test/integration_test.go#L522)
 on how we trim the appended null bytes from recovered data.
+
+## Troubleshooting
+
+If you encounter an error that looks like this:
+
+```bash
+ERROR:
+  Code: InvalidArgument
+  Message: rpc error: code = InvalidArgument desc = encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617
+```
+
+This means that you have stumbled upon an idiosyncracy of how EigenDA currently
+works. Essentially what this means is that you have tried to disperse a blob
+that is not encoded correctly, and that in order to disperse this blob you
+should first encode it. This error is much more likely to be encountered when
+playing with EigenDA using a raw GRPC CLI, since there is no encoding logic
+built-in. Please see [Blob Encoding Requirements](./blob-encoding.md) for more
+detail.
 
 ## On-Chain: Configure Your Sequencer Smart Contracts
 
