@@ -49,8 +49,5 @@ The metadataURI should follow the format outlined in this [example](https://hole
 }
 ```
 
-## Quorums
-The design for a V2 marketplace that supports more expressive views of stake (quorums, insurance, payments, etc) has not been finalized. Recommendation to AVS teams is to upgrade their contracts for V2 marketplace to meet interface requirements for indexing.
-
-## Frontend Onboarding - Whitelist
-We currently have a whitelist on the testnet version of the frontend, so once you have done the above, reach out to Nima and provide your service manager address to be added to the whitelist.
+## Holesky Dashboard onboarding
+Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard
