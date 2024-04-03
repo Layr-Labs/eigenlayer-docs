@@ -4,12 +4,19 @@ sidebar_position: 2
 
 # Full Withdrawal
 
-:::info
-Ensure you have already repointed your withdrawal credentials to your EigenPod before proceeding.
+Full Withdrawal is the process of unlocking the entire balance held by their validator, including both the initial stake and any accumulated rewards.
 
 All funds unstaked from EigenLayer go through a escrow period before being able to be withdrawn. After you unstake and queue the withdrawal, you must wait for the escrow period to end before being able to withdraw your assets.
+
+:::tip
+Exits from the beacon chain can be completed in independently of (in parallel, at the same time as) queuing a Full Withdrawal from EigenLayer.  This optimization may reduce your overall (end to end) time required to withdraw Native restaked funds from EigenLayer.
 :::
- 
+
+:::warn
+Ensure you have [repointed your withdrawal credentials](../repointing-a-validators-withdrawal-credentials.md) to your EigenPod before proceeding.
+:::
+
+
 **Step 1:** Enter the amount in the text box next to the Unstake button.
 
 You can queue a withdrawal for any amount. However, when you choose to complete the withdrawal, you will be required to exit enough validators and have the proofs generated for the required amount.
