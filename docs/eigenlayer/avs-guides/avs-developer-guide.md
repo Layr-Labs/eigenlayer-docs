@@ -1,27 +1,26 @@
 ---
 sidebar_position: 1
+title: AVS Development Overview
 ---
 
-# AVS Developer Guide
+Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-### What is an AVS?
+## What is an AVS?
 
-EigenLayer is a protocol built on Ethereum that introduces **restaking**: the process of staking consensus layer ETH to extend security to additional infrastructure services to earn additional rewards.
+An AVS is any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, trusted execution environments and more.
 
-These infrastructure services are referred to as **Actively Validated Services (AVSs)**. AVS developers build the infrastructure logic and software, [stakers](/eigenlayer/restaking-guides/restaking-user-guide/) provide stake to secure the infrastructure, and [operators](/eigenlayer/operator-guides/operator-introduction) run the AVS software.
+Each AVS has its own set of contracts that hold state relevant to the service’s functionality, such as what operators are running the service and how much stake is securing the service.
 
-### What can be built?
 
-An AVS can be any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, and trusted execution environments. Please see page 2 of the EigenLayer Whitepaper [here](/eigenlayer/overview/whitepaper) for the original definition and context of an AVS.
+Below is a high-level overview of EigenLayer core contracts as well as how an AVS is built on top of it and consumed.
 
-Check out the existing AVS ecosystem page [here](https://www.eigenlayer.xyz/ecosystem?category=AVS) for an idea of what people are already building.
+![AVS Architecture Overview](/img/avs/avs-architecture-v1.png)
 
-### Getting started
+Let’s clarify some of the interactions demonstrated by the above diagram.
 
-For more information on building AVSs on EigenLayer, please see the following resources:
 
-- [Evolution of the EigenLayer Protocol](https://www.blog.eigenlayer.xyz/ycie/).
-- [How to Build an AVS](./how-to-build-an-avs.md).
-- [Node Specification](./spec/intro.md).
-- To get in touch with our team and discuss onboarding your project, please contact us via [this AVS Questionnaire](https://forms.gle/9tGCWXTp2AsR9hSZ8).
-- Stay up to date with our [AVS Research blog](https://www.blog.eigenlayer.xyz/tag/avs-research/).
+- The stakers interact with EigenLayer by depositing assets into the `StrategyManager`. To learn more about exactly how this works, [this doc](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/StrategyManager.md) provides a deep dive on the `StrategyManager`.
+- The stakers also interact with EigenLayer by choosing operators to delegate to. This delegation is handled by the `DelegationManager` and you can find a deep dive explanation on that [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/DelegationManager.md).
+- The operators are actors who run offchain client software that are specific to the AVSs they’ve opted into serving. This client software is independent of the core EigenLayer protocol. There’s a registration/deregistration process operators have to go through with EigenLayer’s `DelegationManager` contract to become EigenLayer operators. Operator registration is a requirement for these operators to opt into AVSs and serve them. Refer to [this doc](https://docs.eigenlayer.xyz/eigenlayer/operator-guides/operator-introduction) for how registration works.
+- The dotted lines for the boxes represent components that are optional depending on the interface design.
+- Each AVS developer can design and implement its own contracts as they see fit as long as their entry point (canonically called the `ServiceManager`) implements the interface expected by the EigenLayer protocol.
