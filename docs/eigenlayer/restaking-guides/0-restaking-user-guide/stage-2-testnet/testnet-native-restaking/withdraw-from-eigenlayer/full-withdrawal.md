@@ -12,7 +12,7 @@ All funds unstaked from EigenLayer go through a escrow period before being able 
 Exits from the beacon chain can be completed in independently of (in parallel, at the same time as) queuing a Full Withdrawal from EigenLayer.  This optimization may reduce your overall (end to end) time required to withdraw Native restaked funds from EigenLayer.
 :::
 
-:::warn
+:::warning
 Ensure you have [repointed your withdrawal credentials](../repointing-a-validators-withdrawal-credentials.md) to your EigenPod before proceeding.
 :::
 
