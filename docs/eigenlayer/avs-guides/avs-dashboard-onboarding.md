@@ -25,9 +25,7 @@ function updateAVSMetadataURI(string calldata metadataURI);
 }
 ```
 
-In order to have its name, information, and logo indexed, an AVS MUST invoke `updateAVSMetadataURI()` on the AVSDirectory contract. 
-
-(*TODO: fix the link to the AVSDirectory contract above, per Alex's help.)
+In order to have its name, information, and logo indexed, an AVS MUST invoke `updateAVSMetadataURI()` on the [AVSDirectory contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/core/AVSDirectory.sol).
 
 In order to have its list of operators displayed on the UI, an AVS MUST handle operator registration/deregistration by calling `registerOperatorToAVS()` and `deregisterOperatorFromAVS()` on EigenLayer’s AVSDirectory.
 
