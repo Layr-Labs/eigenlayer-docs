@@ -50,4 +50,4 @@ The metadataURI should follow the format outlined in this [example](https://hole
 ```
 
 ## Holesky Dashboard onboarding
-Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard
+Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard.
