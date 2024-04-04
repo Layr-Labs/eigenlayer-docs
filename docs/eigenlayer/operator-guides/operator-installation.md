@@ -241,7 +241,7 @@ Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in
 
 #### Configuration Setup
 
-You can create the config files needed for operator registration using the below command:
+You can create the config files(`operator.yaml` and `metadata.json`) needed for operator registration using the below command:
 
 ```
 eigenlayer operator config create
