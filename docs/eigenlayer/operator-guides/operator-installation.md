@@ -231,7 +231,7 @@ eigenlayer operator keys export --key-type ecdsa --key-path [path]
 
 Step 1: Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with HolEth.
 
-Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in your operator-config.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
+Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in your `operator.yaml` file that will be created in the Operator Registration and configuration setup step below. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
 
 ---
 
@@ -241,11 +241,18 @@ Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in
 
 #### Configuration Setup
 
-You can create the config files needed for operator registration using the below command:
+You can create the config files(`operator.yaml` and `metadata.json`) needed for operator registration using the below command:
 
 ```
 eigenlayer operator config create
 ```
+Below is a list of required information that you will need to populate in the `operator.yaml` file:
+1. Operator address
+2. Earnings address (default to your operator address)
+3. ETH rpc url
+4. ECDSA key path
+5. Select Network: mainnet,goerli, holesky,local
+
 
 When prompted for operator address, make sure your operator address is same as the ecdsa key address you created/imported in key creation steps. 
 
@@ -265,7 +272,7 @@ An example list of providers is [available here](https://www.alchemy.com/list-of
 
 #### Holesky Smart contract addresses
 
-For operator registration in a Holesky environment, you need to set the DelegationManager contract address as follows:
+For operator registration in a Holesky environment, you need to set the DelegationManager contract address in the `operator.yaml` to the following address:
 
 [Current Testnet Deployment](Current Testnet Deployment): Holesky DelegationManager: [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7).
 
