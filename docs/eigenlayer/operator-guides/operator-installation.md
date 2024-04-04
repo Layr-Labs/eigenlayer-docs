@@ -251,7 +251,7 @@ When prompted for operator address, make sure your operator address is same as t
 
 It will create two files: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
-A public metadata url is required to register the operator. After updating your `metadata.json` file, you must upload it to a publicly accessible location and add that public url to your `operator.yaml` file. You are also required to upload the image of the operator to a publicly accessible location and give the url in the metadata file. Operator registration only supports `.png` images for now.
+A public metadata url is required to register the operator. After updating your `metadata.json` file, you must upload it to a publicly accessible location and add that public url to your `operator.yaml` file. You are also required to upload the image of the operator to a publicly accessible location and give the url in the metadata file. Operator registration only supports `.png` images for now and must be less than 2MB in size.
 
 :::warning
 Please ensure that the `metadata.json`file is hosted in a publicly accessible location. The metadata_url parameter in the operator configuration must be publicly accessible in order for registration to succeed.
