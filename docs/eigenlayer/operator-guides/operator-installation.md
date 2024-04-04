@@ -272,7 +272,7 @@ An example list of providers is [available here](https://www.alchemy.com/list-of
 
 #### Holesky Smart contract addresses
 
-For operator registration in a Holesky environment, you need to set the DelegationManager contract address as follows:
+For operator registration in a Holesky environment, you need to set the DelegationManager contract address in the `operator.yaml` to the following address:
 
 [Current Testnet Deployment](Current Testnet Deployment): Holesky DelegationManager: [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7).
 
