@@ -267,9 +267,10 @@ You are also required to upload the image of the operator to a publicly accessib
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator-config.yaml.
 
-An example list of providers is available here:
+Please find example lists of RPC node providers here:
+- https://chainlist.org/
 - https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum
-- https://chainlist.org/chain/17000
+
 
 Ensure that your Operator server can reach your RPC provider at this point. You may run the following command from your Operator server:
 `curl -I [your_server_url]`
