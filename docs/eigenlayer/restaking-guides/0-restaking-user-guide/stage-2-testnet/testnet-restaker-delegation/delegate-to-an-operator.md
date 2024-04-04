@@ -1,16 +1,21 @@
+---
+sidebar_position: 1
+title: Delegate to an Operator
+---
+
 # Delegate to an Operator
 
-Follow these steps to initiate delegation of your restaked balance to an Operator. Delegation is an all or nothing operation. You must delegate all of your available Restaked balance to a single Operator.
+Follow the steps below to initiate delegation of your restaked balance to an Operator. Delegation is an all or nothing operation. You must delegate all of your available Restaked balance to a single Operator.
 
-**Step 1:** Navigate to the Operator tab to view a list of available Operators.
+**Step 1:** Navigate to the **Operator** page to view a list of available Operators.
 
 ![](/img/googleusercontentbackup/Nr-KLQTJF5C3Flo0YL1iqruUWPBvIdLnjetLh1fyfPnFr8ziUaCOJZE6FV6MpHcSsJikqrviHqCxAPsvVXBJDT6YbH8_Y0LKt8bvMPQ60RwViNOfw6CwdAw9i4T9P11hRMY2VF4et7bmERutEkSYkJM.png)
 
-**Step 2:** Search for operators via their name or Ethereum address. Click on the Operator tile to view their Detail page.
+**Step 2:** Search for operators via their name or Ethereum address. Click on the **Operator's tile** to view their Detail page.
 
 ![](/img/googleusercontentbackup/z3oR0kwjxB8nk66ebFuRRVh8T90fIpWSdEDvbaydgghNnmqrUxhb4RIRhO5HvtUdJfPMICshYA7NM9Ifn637zv8QJa9HUipLDPD_KcddXjAhVadRyrjyuKDQXdzHzKnmcYsHQC9dzxJqA9Pf1qdb8dQ.png)
 
-**Step 3:** Click Delegate to initiate a delegation of all your staked assets to that operator.
+**Step 3:** Click **Delegate** to initiate a delegation of all your staked assets to that operator.
 
 **Step 4:** Confirm the transaction in your Web3 wallet.
 
