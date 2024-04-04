@@ -34,7 +34,7 @@ Operators with **less than 4% stake**
 
 * Warning Issued: If an operator drops more than 10% of requests within a
   48-hour period.  Ejection Policy: Operators will be ejected if they fail to
-* address the issue within 48 hours following the warning.
+  address the issue within 48 hours following the warning.
 
 Operators with a **stake of 4% or more**  
 
