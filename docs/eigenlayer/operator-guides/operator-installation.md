@@ -246,6 +246,13 @@ You can create the config files(`operator.yaml` and `metadata.json`) needed for 
 ```
 eigenlayer operator config create
 ```
+Below is a list of required information that you will need to populate in the `operator.yaml` file:
+1. Operator address
+2. Earnings address (default to your operator address)
+3. ETH rpc url
+4. ECDSA key path
+5. Select Network: mainnet,goerli, holesky,local
+
 
 When prompted for operator address, make sure your operator address is same as the ecdsa key address you created/imported in key creation steps. 
 
