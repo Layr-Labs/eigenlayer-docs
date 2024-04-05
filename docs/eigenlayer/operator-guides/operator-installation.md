@@ -251,19 +251,22 @@ When prompted for operator address, make sure your operator address is same as t
 
 The command will create two files: `operator.yaml` and `metadata.json`.
 
-**Step 2:** Modify `metadata.json`, upload and ensure it is publicly accessible:
+**Step 2.1:** Modify `metadata.json`, upload, and ensure it is publicly accessible:
 
 After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
-
-
-:::warning
-When using Github for hosting this file please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
-:::
-
 
 **Step 3:** Upload operator logo and ensure it is publicly accessible:
 
 You are also required to upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. The `metadata.json` must be less than 4KB in size. Operator registration only supports `.png` images for now and must be less than 1MB in size.
+
+:::info
+For Mainnet Operators - the `metadata.json` and operator logo .png files MUST be hosted via github.com specifically. This requirement does not apply to Testnet.
+:::
+
+:::warning
+When using Github for hosting please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
+:::
+
 
 **Step 4:** Configure RPC Node:  
 
