@@ -251,13 +251,12 @@ When prompted for operator address, make sure your operator address is same as t
 
 The command will create two files: `operator.yaml` and `metadata.json`.
 
-**Step 2:** Modify `metadata.json`, upload, and ensure it is publicly accessible:
+**Step 2:** Upload Logo Image, Configure `metadata.json`, and Upload Both
 
-After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
+Upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration only supports `.png` images for now and must be less than 1MB in size.
 
-**Step 3:** Upload operator logo and ensure it is publicly accessible:
+Complete your the details in `metadata.json`.  The `metadata.json` must be less than 4KB in size. Upload the file to a publicly accessible location and set that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
-You are also required to upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. The `metadata.json` must be less than 4KB in size. Operator registration only supports `.png` images for now and must be less than 1MB in size.
 
 :::info
 For Mainnet Operators - the `metadata.json` and operator logo .png files MUST be hosted via github.com specifically. This requirement does not apply to Testnet.
@@ -268,7 +267,7 @@ When using Github for hosting please ensure you link to the raw file ([example](
 :::
 
 
-**Step 4:** Configure RPC Node:  
+**Step 3:** Configure RPC Node:  
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator.yaml.
 
@@ -284,7 +283,7 @@ Ensure that your Operator server can reach your RPC provider at this point. You 
 
 
 
-**Step 5:** DelegationManager Contract Address
+**Step 4:** DelegationManager Contract Address
 
 You must configure the correct DelegationManager contract address for your environment.
 - Navigate to [EigenLayer Contracts: Deployments](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments) and locate the Proxy address for `DelegationManager` for your environment (Mainnet, Testnet).
