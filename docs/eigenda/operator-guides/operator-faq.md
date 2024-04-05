@@ -30,7 +30,7 @@ There are few ways you can confirm that your node is signing the blobs
 
 * If you have not setup metrics yet, you can still check the logs of your
   EigenDA Node. If your logs resemble like mentioned in step 5 of respective network in this
-  section([holesky](./networks/holesky.md), [mainnet](./networks/mainnet.md))
+  section([holesky](./networks/holesky.mdx), [mainnet](./networks/mainnet.md))
   then you are signing correctly.
 
 #### My EigenDA node's logs look like these. What does it mean?
