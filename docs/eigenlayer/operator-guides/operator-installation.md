@@ -251,7 +251,7 @@ When prompted for operator address, make sure your operator address is same as t
 
 The command will create two files: `operator.yaml` and `metadata.json`.
 
-**Step 2.1:** Modify `metadata.json`, upload, and ensure it is publicly accessible:
+**Step 2:** Modify `metadata.json`, upload, and ensure it is publicly accessible:
 
 After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
