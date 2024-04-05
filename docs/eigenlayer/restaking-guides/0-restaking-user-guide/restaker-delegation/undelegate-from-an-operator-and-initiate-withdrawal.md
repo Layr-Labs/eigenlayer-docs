@@ -1,12 +1,16 @@
+---
+sidebar_position: 2
+title: Undelegate and Initiate Withdrawal
+---
+
 # Undelegate from an Operator and Initiate Withdrawal
 
 Restakers can Undelegate their balance from an Operator at any time. Undelegation flows are the same for both Native and LST Restakers.
 
-If you would like to **Undelegate from an Operator and then Redelegate** your restaked funds, remember to click the "Redeposit" button for the Unstaked balance in order to Restake the funds (Step 4 below). This Redeposit action is possible even if restaking for the given asset (including LST) has been paused or capped.
-
 :::warning
 Initiating an Undelegate transaction will also automatically queue a withdrawal (Unstake) of your funds. The Undelegate and Queue Withdrawal transactions are combined due to the security architecture of EigenLayer smart contracts.
 :::
+
 
 ## Instructions to Undelegate and Queue Withdraw
 
@@ -16,12 +20,18 @@ Initiating an Undelegate transaction will also automatically queue a withdrawal 
 
 **Step 2:** Confirm the two transactions in your Web3 wallet.
 
-**Step 3:** Observe that your Restaked balance is now 0.0 ETH.
+**Step 3:** Observe that your Restaked balances are now 0.0 TVL.
 
 ![](/img/googleusercontentbackup/DStQhIFho5ga5_1h945XDiJGtnQvrEy_KzXm1jnhCCysFWJCV2JoOSnEY4xX35loBDGw-tjjoWq_vUAGICkyR9Gz0eUplNKsuDJkp73rFOFMwd2NQYE5Gs_cVZ7riCGsF7j86PARHtyhf14PH3sKb2Y.png)
 
-**Step 4:** Visit the page for your unstaked assets and to observe your **Unstaked** balance has increased the corresponding amount.
+**Step 4:** Visit the pages for your unstaked assets and to observe your **Unstaked** balance has increased the corresponding amount.
 
-**Step 5:** Choose to either **Redeposit** your funds back into EigenLayer or click **Withdraw** to finalize the withdrawal.
+**Step 5:** Wait for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/stage-2-testnet/README.md#testnet-vs-mainnet-differences).
+
+**Step 6:** Click **Withdraw** to finalize the withdrawal.
 
 ![](/img/googleusercontentbackup/7-TpReNxUQnJlp0W_KqCyaQf7osXcMwHFDKaAybtmTUgEhGmdHreUrAE0jPj7ZZisKqaLhIhkZtksYFz3r8_KShhr-92FyA6pERdXbQhzZQ4bZlceEDIKhR-M_wutvom_JTc8E9h-GSfl3jxDxdf6EE.png)
+
+:::info
+The "Redeposit" button is also available for the user to Restake funds if the withdrawal was initiated by mistake. This Redeposit action is possible even if restaking for the given asset (including LST) has been paused or capped.
+:::

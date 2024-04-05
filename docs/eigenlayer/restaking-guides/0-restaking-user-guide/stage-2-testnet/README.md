@@ -1,4 +1,7 @@
-# Stage 2 Testnet
+---
+sidebar_position: 4
+title: Testnet Restaking
+---
 
 ## Testing Restaking on the Holesky Testnet
 

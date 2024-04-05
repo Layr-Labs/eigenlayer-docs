@@ -1,6 +1,5 @@
 ---
-description: Need to clarify your withdrawal prefix?
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 # Verify Validator Withdrawal Prefix (Optional)
@@ -10,7 +9,7 @@ Beacon chain validators contain a field known 'withdrawal credentials', which ca
 The prefix can either be `0x00` or `0x01`:
 
 - Validators with `0x00` prefix: These are specific to BLS-style withdrawal credentials, common to early ETH stakers. Validators with this prefix can easily restake on EigenLayer, by [repointing](repointing-a-validators-withdrawal-credentials.md) their withdrawal credentials.
-- Validators with `0x01` prefix: This newer method is derived from Ethereum addresses. In order for `0x01` validators to restake, they have to completely [exit from the beacon chain](./withdrawal-flow/withdrawing-a-validator-from-consensus-layer.md), re-enter on the beacon chain as a new validator and set the withdrawal credentials to their EigenPod.
+- Validators with `0x01` prefix: This newer method is derived from Ethereum addresses. While beacon chain rewards are much easier for these validators, restaking on EigenLayer is quite difficult. In order for `0x01` validators to restake, they have to completely exit from the beacon chain, re-enter on the beacon chain as a new validator, and then repoint withdrawal credentials to the EigenLayer smart contract.
 
 ## **New Validators**
 
@@ -22,7 +21,7 @@ ETH stakers planning to create new validators can set their withdrawal credentia
 
 There are multiple methods to do this; the easiest is using [`ethdo`](https://github.com/wealdtech/ethdo).
 
-```bash
+```sh
 ethdo validator info --validator=<yourvalidatorIndex> --verbose
 ```
 
@@ -45,4 +44,4 @@ This migration is a **one-time** process, so please proceed cautiously.
 
 ### Existing Validators with 0x01 Prefixes
 
-If you have validators with 0x01 prefixes that are not pointed to an EigenPod, you will need to exit and create new Ethereum validators with the withdrawn ETH, setting the withdrawal credentials to an EigenPod to restake on EigenLayer.
+If you have validators with 0x01 prefixes that are not pointed to an EigenPod, you will have to go through the withdrawal queue. In this case, you'll need to withdraw your ETH, create a new Ethereum validator with the withdrawn ETH, and set the withdrawal credentials to an EigenPod to restake on EigenLayer.

@@ -30,7 +30,7 @@ ethdo validator credentials get --validator=VALIDATOR_INDEX
 
 5. Finally, navigate to the your EigenPod dashboard on the EigenLayer app and check that the number of restaked validators matches the number of validators whose withdrawal credentials you repointed:
 
-![native-withdraw](/img/restake-guides/set-validator-withdrawal-credentials.png)
+![validator](/img/restake-guides/native-stake-repoint-1.png)
 
 ### Option 2: Consensus Client
 
@@ -43,10 +43,10 @@ Some consensus clients also have their own, implementation-specific, support for
 - [Teku](https://docs.teku.consensys.net/HowTo/Withdrawal-Keys)
 - [Lighthouse](https://lighthouse-book.sigmaprime.io/voluntary-exit.html#faq)
 - [Nimbus](https://nimbus.guide/withdrawals.html#updating-your-withdrawal-credentials)
-- [Lodestar](https://chainsafe.github.io/lodestar/validator-management/validator-cli/#validator-bls-to-execution-change)
 
 
 For further information, please refer to the [notes](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-How-do-I-fully-withdraw-exit-my-validator) from the Ethereum organization
+
 
 ### Option 3: DAppNode, Avado, etc.
 

@@ -1,8 +1,9 @@
 ---
-description: Your Contribution to Shared Security
+title: Restaked Points
+sidebar_position: 5
 ---
 
-# Restaked Points
+
 
 ## Overview
 

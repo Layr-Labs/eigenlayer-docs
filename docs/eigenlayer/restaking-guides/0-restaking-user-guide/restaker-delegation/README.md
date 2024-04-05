@@ -1,4 +1,9 @@
-# Testnet Restaker Delegation
+---
+sidebar_position: 3
+title: Delegation
+---
+
+# Delegation
 
 Delegation is the process of assigning Restaked balance to an Operator. The Restaker will receive fees according to the AVSs that the Operator chooses to run. Restakers can undelegate their balance to end their assignment to the Operator and later redelegate the balance to a new Operator.
 

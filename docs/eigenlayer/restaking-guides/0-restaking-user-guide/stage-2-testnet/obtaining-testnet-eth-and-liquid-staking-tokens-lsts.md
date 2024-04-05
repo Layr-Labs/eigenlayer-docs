@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)
