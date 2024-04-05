@@ -263,7 +263,7 @@ When using Github for hosting this file please ensure you link to the raw file (
 
 **Step 3:** Upload operator logo and ensure it is publicly accessible:
 
-You are also required to upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration currently only supports the `.png` logo file type and must be less than 2MB in size.
+You are also required to upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. The `metadata.json` must be less than 4KB in size. Operator registration only supports `.png` images for now and must be less than 1MB in size.
 
 **Step 4:** Configure RPC Node:  
 
