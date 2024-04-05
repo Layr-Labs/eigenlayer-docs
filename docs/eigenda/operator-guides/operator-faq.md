@@ -61,12 +61,13 @@ out](./overview#eigenda-churn-approver) by another operator or you have been
 [ejected due to non-signing](./ejection-non-signing.md). Please try opting-in
 again.
 
-#### I have a static load balancer in front of EigenDA node, how do I register and fix this IP for EigenDA?
+#### I have a static IP/DNS address. How do I register and fix this address for EigenDA?
 
-If you are running on k8s or have a load balancer in front of your EigenDA node
+If you have a static IP address or DNS address set up to receive the traffic 
+(i.e. running on k8s or have a load balancer in front of your EigenDA node)
 and you don't want EigenDA to automatically update IP which is sent to EigenDA
-while registering, then follow the steps to make sure correct IP is registered
+while registering, then follow the steps to make sure correct IP is registered:
 
-* Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/2872d76b5e0b127400eb7e6dd16da362c7c142ba/.env.example#L63) to the public IP where you will want to recieve traffic.
+* Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/v0.6.0/holesky/.env.example#L71) to the public IP where you will want to recieve traffic.
 * Opt-in using the provided steps([holesky](./networks/holesky), [mainnet](./networks/mainnet)).
-* In order to disable the node IP address from being automatically updated, set the value of `NODE_PUBLIC_IP_CHECK_INTERVAL` to `0`.
+* In order to disable the node IP address from being automatically updated, set the value of [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/v0.6.0/holesky/.env.example#L65) to `0`.
