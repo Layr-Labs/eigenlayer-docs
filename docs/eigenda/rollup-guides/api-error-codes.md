@@ -49,6 +49,7 @@ This table summarizes all the current status codes and their mappings to HTTP co
 | "custom_quorum_numbers should not include the required quorums %v, but required quorum %d was found" | InvalidArgument (400)  | This error occurs when a custom quorum number includes a required quorum number.                                            |
 | "the blob must be sent to at least one quorum"                                                       | InvalidArgument (400)  | This error occurs when no quorums are specified for the blob dispersal.                                                     |
 | "invalid request: %w"                                                                                | InvalidArgument (400)  | This error occurs when the request contains invalid parameters, such as invalid security parameters.                        |
+| "encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617" | InvalidArgument (400) | This error occurs when the blob has not been encoded correctly. See [blob encoding](blob-encoding.md). |
 | "request ratelimited: \<rate type> for quorum %d"                                                    | ResourceExhausted (429)| This error occurs when the request is rate limited for the specified quorum based on the configured rate limits.            |
 
 #### Disperser.GetBlobStatus()

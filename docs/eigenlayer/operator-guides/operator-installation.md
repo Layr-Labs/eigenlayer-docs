@@ -231,7 +231,7 @@ eigenlayer operator keys export --key-type ecdsa --key-path [path]
 
 Step 1: Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with HolEth.
 
-Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in your operator-config.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
+Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in your operator.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
 
 ---
 
@@ -255,17 +255,20 @@ The command will create two files: `operator.yaml` and `metadata.json`.
 
 After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
+
 :::warning
 When using Github for hosting this file please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
 :::
 
+
 **Step 3:** Upload operator image and ensure it is publicly accessible:
 
-You are also required to upload the image of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration only supports `.png` images for now.
+You are also required to upload the image of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration only supports `.png` images for now and must be less than 2MB in size.
 
 **Step 4:** Configure RPC Node:  
 
-The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator-config.yaml.
+The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator.yaml.
+
 
 Please find example lists of RPC node providers here:
 - https://chainlist.org/

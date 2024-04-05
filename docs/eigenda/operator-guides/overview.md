@@ -16,14 +16,22 @@ and documentation.
 
 ### Node Classes
 
-Operators can determine their required [EigenLayer node class](../../eigenlayer/operator-guides/avs-installation-and-registration/eigenlayer-node-classes) by referencing their share of the total EigenDA quorum against the following
-table.
+The EigenDA network design dictates that operators with greater stake will
+receive more frequent chunk dispersal requests, since they operate with greater
+cryptoeconomic security. This means that an operator's node requirements are a
+function of the total amount of stake they wield across all quorums, which we
+call 'Total Quorum Stake' (TQS). For example, if an operator Foobar has 3% stake
+on the restaked ETH quorum, and 5% ETH on a staked WETH quorum, then operator
+Foobar's TQS is 8%.
 
-|                         | Supported Throughput | Max % of Stake      |
-| ----------------------- | -------------------- | ------------------- |
-| General Purpose - large | 80 Kbps              | 0.03% (Solo staker) |
-| General Purpose - xl    | 500 Kbps             | 0.2%                |
-| General Purpose - 4xl   | 50 Mbps              | 20%                 |
+Operators should use the following table to determine which [EigenLayer node class][1]
+is appropriate for their level of stake:
+
+| Total Quorum Stake (TQS) |                         | Supported Throughput |
+| ------------------------ | ----------------------- | -------------------- |
+| Up to 0.03% (Solo staker)      | General Purpose - large | 80 Kbps              |
+| Up to 0.2%                     | General Purpose - xl    | 500 Kbps             |
+| Up to 20%                      | General Purpose - 4xl   | 50 Mbps              |
 
 Professional operators with large or variable amounts of delegated stake should
 select the `4xl` node class. The `large` class is intended to be used by solo
@@ -34,18 +42,19 @@ are introduced.
 
 ### Node Storage Requirements
 
-EigenDA nodes must provision storage capacity (high performance SSD volumes) in
-order to store and serve all data passed to the node over a 2-week period.
+EigenDA nodes **must** provision high-performance SSD storage in order to keep
+up with network storage and retrieval tasks. Failure to maintain adequate
+performance will result in unacceptable validation latency and automatic churn.
 
-The following table summarizes the amount of storage that is required for a node
-based on the amount of stake delegated to the operator.
+The following table summarizes required storage capacity based on TQS:
 
-| % of stake | Allocated Throughout | Required Storage |
-| ---------- | -------------------- | ---------------- |
-| 0.03%      | 80 Kbps              | 20 GB            |
-| 0.2%       | 500 Kbps             | 150 GB           |
-| 1%         | 2.5 Mbps             | 750 GB           |
-| 10%        | 25 Mbps              | 4 TB             |
+| Total Quorum Stake (TQS) | Allocated Throughout | Required Storage |
+| ------------------------ | -------------------- | ---------------- |
+| Up to 0.03%                    | 80 Kbps              | 20 GB            |
+| Up to 0.2%                     | 500 Kbps             | 150 GB           |
+| Up to 1%                       | 2.5 Mbps             | 750 GB           |
+| Up to 10%                      | 25 Mbps              | 4 TB             |
+| Up to 20%                      | 50 Mbps              | 8 TB             |
 
 ## EigenDA Churn Approver
 
@@ -100,3 +109,5 @@ repeatedly then it means you may not be receiving any disperser traffic.
 ```
 INFO [12-21|18:53:46.673|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=3  caller=node.go:233
 ```
+
+[1]: https://github.com/Layr-Labs/eigenlayer-docs/blob/main/docs/eigenda/operator-guides/overview.md#L23

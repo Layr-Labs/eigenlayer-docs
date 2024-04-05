@@ -8,7 +8,7 @@ No, EigenLayer is not a DeFi protocol. EigenLayer is a platform to bootstrap new
 
 However, for the decentralized services built on top of EigenLayer (we call them AVSs, Actively Validated Services), these services could be DeFi applications themselves or support key functionalities in other DeFi protocols. These AVSs are external to the EigenLayer contracts.
 
-Moreover, another class of protocols built on top of EigenLayer is called liquid restaking protocols (LRT). They are permissionlessly built on EigenLayer. We urge users to do their own research before interacting with LRTs.
+Moreover, another class of protocols built on top of EigenLayer is called liquid restaking token (LRT). They function similarly to liquid staking tokens. They are permissionlessly built on EigenLayer. We urge users to do their own research before interacting with LRTs.
 
 **Does EigenLayer reuse the same economic security?**
 
