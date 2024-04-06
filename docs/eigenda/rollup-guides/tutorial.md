@@ -54,7 +54,7 @@ $ gh repo clone Layr-Labs/eigenda
 # protobuf defintions correctly
 $ cd eigenda
 
-$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"data": "hello"}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
+$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"data": "LWhlbGxvLQ=="}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
 ```
 
 **Step 2: Validate the blob was stored in a batch**
