@@ -59,3 +59,7 @@ There is no limit on the number of AVSs that an Operator can opt-in to. However,
 #### How to resolve the error "No contract code at given address" imply?
 
 Ensure that your operator is pointing to the correct RPC service and that it is accessible from your operator ([example](https://chainlist.org/)).
+
+#### What is the process for rotating the keys for an existing operator? How can I register again and carry over the stake to a new key?
+
+This operation is not supported at this time.
