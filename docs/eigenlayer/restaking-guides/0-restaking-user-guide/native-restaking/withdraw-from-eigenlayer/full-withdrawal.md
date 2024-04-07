@@ -15,8 +15,8 @@ Exits from the beacon chain can be completed in independently of (in parallel, a
 :::warning
 Ensure you have [repointed your withdrawal credentials](../repointing-a-validators-withdrawal-credentials.md) to your EigenPod before proceeding.
 :::
- 
-**Step 1:** Enter the amount you wish to withdraw in the text box next to the Unstake button.
+
+**Step 1:** Enter the amount in the text box next to the Unstake button.
 
 You can queue a withdrawal for any amount. However, when you choose to complete the withdrawal, you will be required to exit enough validators and have the proofs generated for the required amount.
 

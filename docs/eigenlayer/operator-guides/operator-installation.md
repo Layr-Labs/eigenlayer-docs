@@ -241,7 +241,7 @@ Step 2: Send **at least 1 Holesky ETH** to the “address” field referenced in
 
 #### Configuration Setup
 
-You can create the config files needed for operator registration using the below command:
+**Step 1:** Create the config files needed for operator registration using the below command:
 
 ```
 eigenlayer operator config create
@@ -249,33 +249,53 @@ eigenlayer operator config create
 
 When prompted for operator address, make sure your operator address is same as the ecdsa key address you created/imported in key creation steps. 
 
-It will create two files: `operator.yaml` and `metadata.json` After filling the details in `metadata.json`, please upload this into a publicly accessible location and fill that url in `operator.yaml`. A valid metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
+The command will create two files: `operator.yaml` and `metadata.json`.
 
-A public metadata url is required to register the operator. After updating your `metadata.json` file, you must upload it to a publicly accessible location and add that public url to your `operator.yaml` file. You are also required to upload the image of the operator to a publicly accessible location and give the url in the metadata file. Operator registration only supports `.png` images for now.
+**Step 2:** Upload Logo Image, Configure `metadata.json`, and Upload Both
+
+Upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration only supports `.png` images for now and must be less than 1MB in size.
+
+Complete your the details in `metadata.json`.  The `metadata.json` must be less than 4KB in size. Upload the file to a publicly accessible location and set that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
+
+
+:::info
+For Mainnet Operators - the `metadata.json` and operator logo .png files MUST be hosted via github.com specifically. This requirement does not apply to Testnet.
+:::
 
 :::warning
-Please ensure that the `metadata.json`file is hosted in a publicly accessible location. The metadata_url parameter in the operator configuration must be publicly accessible in order for registration to succeed.
-When using Github for hosting this file please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
+When using Github for hosting please ensure you link to the raw file ([example](https://raw.githubusercontent.com/Layr-Labs/eigenlayer-cli/master/pkg/operator/config/metadata-example.json)), rather than the github repo URL ([example](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/metadata-example.json)).
 :::
+
+
+**Step 3:** Configure RPC Node:  
 
 The EigenLayer CLI requires access to an Ethereum RPC node in order to post registration. Please plan to either leverage an RPC node provider or run your own local RPC node to reference in operator.yaml.
 
-An example list of providers is [available here](https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum) and [here](https://chainlist.org/chain/17000) for your reference.
+
+Please find example lists of RPC node providers here:
+- https://chainlist.org/
+- https://www.alchemy.com/list-of/rpc-node-providers-on-ethereum
 
 
-#### Holesky Smart contract addresses
+Ensure that your Operator server can reach your RPC provider at this point. You may run the following command from your Operator server:
+`curl -I [your_server_url]`
 
-For operator registration in a Holesky environment, you need to set the DelegationManager contract address as follows:
 
-[Current Testnet Deployment](Current Testnet Deployment): Holesky DelegationManager: [`0xA44151489861Fe9e3055d95adC98FbD462B948e7`](https://holesky.etherscan.io/address/0xA44151489861Fe9e3055d95adC98FbD462B948e7).
 
-```
-# EigenLayer Delegation Manager contract address
-# This will be provided by EigenLayer team
-el_delegation_manager_address: 0xA44151489861Fe9e3055d95adC98FbD462B948e7
-```
 
-#### Registration commands
+**Step 4:** DelegationManager Contract Address
+
+You must configure the correct DelegationManager contract address for your environment.
+- Navigate to [EigenLayer Contracts: Deployments](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments) and locate the Proxy address for `DelegationManager` for your environment (Mainnet, Testnet).
+- Set the value for `el_delegation_manager_address` in your operator config file to the address for your environment.
+
+
+**Optional:** Set Delegation Approver
+
+Operators have the option to set [delegationApprover](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/interfaces/IDelegationManager.sol#L30) when they register. This is address is used to approve delegation requests from stakers. The `delegationApprover` address will be required sign and approve new delegation from Stakers to this Operator. Otherwise, the `delegationApprover` will not be used if the default value is left as `0x000..`.
+
+
+#### Registration Command
 
 This is the command you can use to register your operator.
 
