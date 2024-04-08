@@ -54,7 +54,7 @@ Note: if the operator re-opts in the quorum at any point from `B` to `D`, the ab
 
 | Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |
 | --- | --- | --- | --- |
-| Attesting | Signing rate: num-batches-signed / num-batches-responsible-to-sign | >=90% signing rate over rolling 48 hours (general) or >90% over rolling 24h (if operator has >4% stake) | Soft measure: Social pressure (if SLA is not violated) - Publish operator's attesting availability/performance and rank. <br> Hard measure: Ejection (if SLA is violated) |
+| Attesting | Signing rate: num-batches-signed / num-batches-responsible-to-sign | >=90% signing rate over rolling 48 hours (general) or >90% over rolling 24h (if operator has >4% stake) | Soft measure: Social pressure (if SLA is not violated) - Publish operator's attesting availability/performance and rank. <br/> Hard measure: Ejection (if SLA is violated) |
 | Serving | Serving availability: num-requests-success / num-total-requests | >=95% serving availability | Soft measure: Social pressure - Publish operator's serving availability/performance and rank. |
 
 ### Safety
