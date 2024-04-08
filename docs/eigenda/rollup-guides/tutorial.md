@@ -41,7 +41,15 @@ gh repo clone Layr-Labs/eigenda
 cd eigenda 
 ```
 
-**Step 1: Store (Disperse) a blob**
+**Step 1: Build EigenDA Utils**
+
+The next step requires the `kzgpad` utility, which you can build with the following:
+
+```
+make build
+```
+
+**Step 2: Store (Disperse) a blob**
 
 Invoke the Disperser/DisperseBlob endpoint.
 
@@ -54,10 +62,14 @@ $ gh repo clone Layr-Labs/eigenda
 # protobuf defintions correctly
 $ cd eigenda
 
-$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"data": "LWhlbGxvLQ=="}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
+$ grpcurl \
+  -import-path ./api/proto \
+  -proto ./api/proto/disperser/disperser.proto \
+  -d '{"data": "'$(tools/kzgpad/bin/kzgpad -e hello)'"}' \
+  disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
 ```
 
-**Step 2: Validate the blob was stored in a batch**
+**Step 3: Validate the blob was stored in a batch**
 
 Invoke the Disperser/GetBlobStatus service in order to validate the blob was
 correctly stored and dispersed to the EigenDA network. The GetBlobStatus service
@@ -75,10 +87,14 @@ Example request:
 # Update the value of INSERT_REQUEST_ID with the result of your disperse call
 # above
 
-$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"request_id": "INSERT_REQUEST_ID"}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/GetBlobStatus
+$ grpcurl \
+  -import-path ./api/proto \
+  -proto ./api/proto/disperser/disperser.proto \
+  -d '{"request_id": "INSERT_REQUEST_ID"}' \
+  disperser-holesky.eigenda.xyz:443 disperser.Disperser/GetBlobStatus
 ```
 
-**Step 3: Retrieve a blob**
+**Step 4: Retrieve a blob**
 
 Option A: invoke the Disperser/RetrieveBlob rpc endpoint. This is a recommended
 function for anyone that would like to inspect a stored blob.
@@ -90,7 +106,13 @@ Example request:
 # Note the value for batch_header_hash can be obtained from the result of your
 # call to GetBlobStatus via info.blob_verification_proof.batch_metadata.batch_header_hash.
 
-$ grpcurl -import-path ./api/proto -proto ./api/proto/disperser/disperser.proto -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' disperser-holesky.eigenda.xyz:443 disperser.Disperser/RetrieveBlob
+$ grpcurl \
+  -import-path ./api/proto \
+  -proto ./api/proto/disperser/disperser.proto \
+  -d '{"batch_header_hash": "INSERT_VALUE", "blob_index":"INSERT_VALUE"}' \
+  disperser-holesky.eigenda.xyz:443 disperser.Disperser/RetrieveBlob | \
+  jq -r .data | \
+  tools/kzgpad/bin/kzgpad -d -
 ```
 
 Option B: Retrieve the blob directly from EigenDA nodes. Integrate the
@@ -120,10 +142,10 @@ ERROR:
 This means that you have stumbled upon an idiosyncracy of how EigenDA currently
 works. Essentially what this means is that you have tried to disperse a blob
 that is not encoded correctly, and that in order to disperse this blob you
-should first encode it. This error is much more likely to be encountered when
-playing with EigenDA using a raw GRPC CLI, since there is no encoding logic
-built-in. Please see [Blob Encoding Requirements](./blob-encoding.md) for more
-detail.
+should first encode it using `kzgpad`, a utility distributed in the `eigenda`
+repo. This error is much more likely to be encountered when playing with EigenDA
+using a raw GRPC CLI, since there is no encoding logic built-in. Please see
+[Blob Encoding Requirements](./blob-encoding.md) for more detail.
 
 ## On-Chain: Configure Your Sequencer Smart Contracts
 

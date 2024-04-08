@@ -43,13 +43,31 @@ If you do not adhere to this encoding scheme, you may encounter errors like thes
 $ grpcurl \
     -import-path ./api/proto \
     -proto ./api/proto/disperser/disperser.proto \
-    -d '{"data": "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8A=="}' \
+    -d '{"data": "hello"}' \
     disperser-preprod-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
 
 ERROR:
   Code: InvalidArgument
   Message: rpc error: code = InvalidArgument desc = encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617
 ```
+
+The simplest way to resovlve this until we have a dedicated EigenDA CLI is to
+use the `kzgpad` utility documented in the [tutorial](./tutorial.md):
+
+```bash
+$ grpcurl \
+  -proto ./api/proto/disperser/disperser.proto \
+  -import-path ./api/proto \
+  -d '{"data": "'$(tools/kzgpad/bin/kzgpad -e hello)'"}' \
+  disperser-holesky.eigenda.xyz:443 disperser.Disperser/DisperseBlob
+
+{
+  "result": "PROCESSING",
+  "requestId": "OGEyYTVjOWI3Njg4MjdkZTVhOTU1MmMzOGEwNDRjNjY5NTljNjhmNmQyZjIxYjUyNjBhZjU0ZDJmODdkYjgyNy0zMTM3MzEzMjM2MzAzODM4MzYzOTMzMzgzMzMxMzYzMzM0MzYzNzJmMzAyZjMzMzMyZjMxMmYzMzMzMmZlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1"
+}
+```
+
+## Pad One Byte Codec
 
 One example golang encoding scheme for implementing the above validity rule is [copied
 from the EigenDA codesbase][1] below:
