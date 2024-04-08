@@ -77,10 +77,10 @@ lifecycle will be restarted.
 | Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |
 | --- | --- | --- | --- |
 | Attesting | Signing rate: num-batches-signed / num-batches-responsible-to-sign | >=90% signing rate over rolling 48 hours (general) or >90% over rolling 24h (if operator has >4% stake) | Soft measure: Social pressure (if SLA is not violated) - Publish operator's attesting availability/performance and rank. Hard measure: Ejection (if SLA is violated) |
-| Serving | Serving availability: num-requests-success / num-total-requests | >=95% serving availability | Soft measure: Social pressure - Publish operator's serving availability/performance and rank. Data availability sampling |
+| Serving | Serving availability: num-requests-success / num-total-requests | >=95% serving availability | Soft measure: Social pressure - Publish operator's serving availability/performance and rank. |
 
 ### Safety
 
-| Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |  
+| Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |
 | --- | --- | --- | --- |
-| Attesting + Storing | Lazy signing rate: `num-batches-lazily-signed / num-batches-signed` | Lazy signing rate = `0` | Hard measure: slashing via Proof of Custody (if SLA is violated). Data availability sampling |
+| Attesting + Storing | Lazy signing rate: `num-batches-lazily-signed / num-batches-signed` | Lazy signing rate = `0` | Hard measure: slashing via Proof of Custody if SLA is violated (this is to be built). |
