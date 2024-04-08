@@ -13,7 +13,7 @@ Exits from the beacon chain can be completed in independently of (in parallel, a
 :::
 
 :::warning
-Ensure you have [repointed your withdrawal credentials](../repointing-a-validators-withdrawal-credentials.md) to your EigenPod before proceeding.
+Ensure you have [repointed your withdrawal credentials](../create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials.md) to your EigenPod before proceeding.
 :::
 
 **Step 1:** Enter the amount in the text box next to the Unstake button.

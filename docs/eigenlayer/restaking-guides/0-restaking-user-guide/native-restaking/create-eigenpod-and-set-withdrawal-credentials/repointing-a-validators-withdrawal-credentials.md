@@ -5,7 +5,7 @@ sidebar_position: 2
 # Set Validator Withdrawal Credentials
 
 :::info
-If you do not know your withdrawal prefix, please review [Validator Withdrawal Prefix](validator-eligibility-withdrawal-prefix.md "mention") before starting this guide.
+If you do not know your withdrawal prefix, please review [Validator Withdrawal Prefix](../validator-eligibility-withdrawal-prefix.md) before starting this guide.
 :::
 
 This guide provides a step-by-step walkthrough for users to set their validators' withdrawal credentials using one of three available methods: via [ethdo](#option-1-ethdo), through the [Consensus Client](#option-2-consensus-client), or directly from their [staking hardware device](#option-3-dappnode-avado-etc).
