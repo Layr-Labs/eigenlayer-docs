@@ -68,9 +68,9 @@ If you have a static IP address or DNS address set up to receive the traffic
 and you don't want EigenDA to automatically update IP which is sent to EigenDA
 while registering, then follow the steps to make sure correct IP is registered:
 
-* Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/v0.6.0/holesky/.env.example#L71) to the public IP where you will want to recieve traffic.
+* Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/31d99e2aa67962878969b81a15c7e8d13ee69750/mainnet/.env.example#L71) to the public IP where you will want to recieve traffic.
 * Opt-in using the provided steps([holesky](./networks/holesky), [mainnet](./networks/mainnet)).
-* In order to disable the node IP address from being automatically updated, set the value of [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/v0.6.0/holesky/.env.example#L65) to `0`.
+* In order to disable the node IP address from being automatically updated, set the value of [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/31d99e2aa67962878969b81a15c7e8d13ee69750/mainnet/.env.example#L65) to `0`.
 
 
 #### What does the error "EIP1271 .. signature not from signer" mean?
