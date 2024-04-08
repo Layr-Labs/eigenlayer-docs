@@ -4,9 +4,6 @@ title: Operator FAQ
 ---
 
 
-#### Where are the smart contract addresses used to register operator to EigenLayer?
-
-The contract addresses are located [here](../operator-guides/operator-installation#holesky-smart-contract-addresses)
 
 #### Am I required to publicly host metadata url?
 
@@ -38,18 +35,18 @@ Public Key hex:  f87ee475109c2943038b3c006b8a004ee17bebf3357d10d8f63ef202c5c2872
 Ethereum Address 0x6a8c0D554a694899041E52a91B4EC3Ff23d8aBD5
 ```
 
-You operator address is the `Ethereum Address` in the logs.
+Your operator address is the `Ethereum Address` in the logs.
 
-#### What if I want to change password of my encryped keys?
+#### What if I want to change the password of my encrypted keys?
 
-If you want to change password of your encrypted keys, you have two options based on what information you have readily available:
+If you want to change the password of your encrypted keys, you have two options based on what information you have readily available:
 
 1. If you know your private keys then you can just [re-import](../operator-guides/operator-installation.md#import-keys) and when importing, choose a different name and the new password.
 2. If you don't know your private keys, you can get them using [export](../operator-guides/operator-installation.md#export-keys). Once you have the private keys you can use option 1 to re-import.
 
 #### What if I want to deactivate/deregister my operator from EigenLayer?
 
-Currently there's no way to deregister your operator but you can
+Currently, there's no way to deregister your operator but you can
 update the name of your operator in metadata url to be `Deactivated` or something similar. This will help display your operator as not active on the webapp.
 
 #### Is there a limit to the number of AVSs that an Operator can opt-in to?

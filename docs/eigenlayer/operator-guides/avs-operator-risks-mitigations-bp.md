@@ -12,7 +12,7 @@ title: Operator Security Risks, Mitigations, and Best Practices
     - Escape to Host: There have been vulnerabilities in the past that allowed processes within a container to escape and get access to the host. This is especially dangerous if containers are run with elevated privileges.
     - Inter-container Attacks: If one container is compromised, an attacker might try to move laterally to other containers on the same host.
 
-- Access to host’s network. Because containers run in a home stakers environment, they have access to a home network or a k8s environment.
+- Access to the host’s network. Because containers run in a home stakers environment, they have access to a home network or a k8s environment.
 - Malware in the container or via a supply chain attack or AVS is malicious.
 
 
@@ -48,7 +48,7 @@ K8’s Infra
 - Network Segmentation: Limit the services your AVSs can talk to. Follow least privilege principles via [Kubernetes Documentation Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
 
 Incident Response Plan: 
-- Have a plan in place for how to respond if a container is compromised. This includes isolating affected containers, analyzing and restoring services.
+- Have a plan in place for how to respond if a container is compromised. This includes isolating affected containers, analyzing, and restoring services.
 - Regular Backups: Regularly backup your data and configurations to recover from any malicious changes.
 - Stay Updated: Always keep an eye on Docker's official documentation, security advisories, and community forums for the latest best practices and updates.
 
