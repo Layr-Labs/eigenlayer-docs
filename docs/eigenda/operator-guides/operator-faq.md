@@ -71,3 +71,8 @@ while registering, then follow the steps to make sure correct IP is registered:
 * Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/v0.6.0/holesky/.env.example#L71) to the public IP where you will want to recieve traffic.
 * Opt-in using the provided steps([holesky](./networks/holesky), [mainnet](./networks/mainnet)).
 * In order to disable the node IP address from being automatically updated, set the value of [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/v0.6.0/holesky/.env.example#L65) to `0`.
+
+
+#### What does the error "EIP1271 .. signature not from signer" mean?
+
+This indicates you have not imported your BLS key correctly. Please reconfirm the keys you imported to ensure there were no typos or mistakes.

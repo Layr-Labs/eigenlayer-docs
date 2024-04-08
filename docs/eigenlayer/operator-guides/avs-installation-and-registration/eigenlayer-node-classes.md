@@ -6,7 +6,7 @@ sidebar_position: 1
 
 EigenLayer is introducing a standardized set of node classes for AVS developers and node operators to use as a coordination tool that will aid in the emergence of an efficient marketplace.
 
-EigenLayer's standardized node classes enable AVS developers to clearly communicate system requirements, reducing complexity in development processes. These classes categorize nodes based on their capabilities, performance characteristics, and other relevant attributes. This standardization means developers can choose a node class that aligns with their application's specific needs without having to delve into the technicalities of each individual node
+EigenLayer's standardized node classes enable AVS developers to communicate system requirements, reducing complexity in development processes. These classes categorize nodes based on their capabilities, performance characteristics, and other relevant attributes. This standardization means developers can choose a node class that aligns with their application's specific needs without having to delve into the technicalities of each individual node
 
 For node operators, this standardization means supporting fewer system types, streamlining their operations and focusing their resources more effectively. This can be achieved by applying the following strategies:
 
