@@ -21,15 +21,15 @@ The Redeemable value may temporarily appear lower than the Validator ETH Yield (
 
 ![](/img/googleusercontentbackup/315HLw5gMxldCg7bdYEiAVkXkroCylpev1HAjVRwnixIoU9PTy1l-czPnDH3JBqN3oZwand47yxjTqTpdglHzGXRjXEztnnPW8_lQ0p8SvlE-R9sCP4qk7oJMc8hxMM8-koAMLy1DCaU4T0peaUyJZs.png)
 
-**Step 2:** Click Redeem to initiate the escrow period.
+**Step 2:** Click **Redeem** to initiate the escrow period.
 
 ![](/img/googleusercontentbackup/X2Ipqen9fpnIPp1dnn6g8hFBtpFZr_t7zoBHPHKZ5AvNrxH4Ai1HFqwjuM2YMvEWJgRfmanLYaeg7XwVT-WDtIEv6B9Q6XvgFuXSaTW2OEg20umVOpgSEQQKV2UgDfJH1S0NjuC7fEMGv298ABcvw_s.png)
 
-**Step 3:** Observe the gas fee warning. Click Continue.
+**Step 3:** Observe the gas fee warning. Click **Continue**.
 
 ![](/img/googleusercontentbackup/eWXzCzR9Q-pbscHZm0na5rcFgpu9l5qPHYbbmPIR7z9hcoFVgpDWS0Aaqi4wUiG6FVRhdvROAalDFdZI6mTHhNalInIQr7JeJQNWG_FlYyxads4HkkuAmvMbFjDRCMm6xxWXig-S9xLkhYeJp_6s86s.png)
 
-**Step 4:** Enter the amount you wish to withdraw. Click Confirm.
+**Step 4:** Enter the amount you wish to withdraw. Click **Confirm**.
 
 ![](/img/googleusercontentbackup/c9QOI7vNtpvAq4uOIZ_KCrrWyQLO_BDHZIpbXrIyz0fiMj3fKtlYPJlGx6L3S_sbYbSRyUetRv88qFjzlwkj0d96HtDWK0Yn-vUsv4_zTCxv4bZb7DuOcc7JKPGXY8hwyESrikWbyof9XkpREiIAwDw.png)
 
@@ -43,7 +43,7 @@ Note: if the user has more than 16 partial withdrawal transactions queued on the
 
 Observe the Unstaking balance has increased after the transaction is confirmed on chain.
 
-**Step 6:** Click Withdraw after the escrow period to withdraw funds. Two wallet transactions will be generated for you to approve and proceed.
+**Step 6:** Click **Withdraw** after the escrow period to withdraw funds. Two wallet transactions will be generated for you to approve and proceed.
 
 ![](/img/googleusercontentbackup/yK-i-_zMD8KhpiiHVE_59bOwxBQuZEp0IlhfFCNqY7jYiNHwW9o4h3DF4R8Msu1kV4VboDo_WfhFHQC70ezd0QECKsqg4idohNll2vSiyk2s4Mjq0LL0ip_lRma0x708qzXuC97M5f12wlOT13kRiSk.png)
 

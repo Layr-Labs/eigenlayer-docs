@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# Confirming Validator Withdrawal and Execution Addresses (Optional)
+# Confirm Validator Withdrawal and Execution Addresses (Optional)
 
 Verifying your Validator’s Withdrawal and Execution addresses can help ensure you have configured your Native Restaking with EigenLayer safely. The instructions below will help you ensure that your Withdrawal address is set to your EigenPod and that your Execution address (aka “Fee Recipient”) is not set to your EigenPod.
 
