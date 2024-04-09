@@ -7,9 +7,9 @@ title: Undelegate and Initiate Withdrawal
 
 Restakers can Undelegate their balance from an Operator at any time. Undelegation flows are the same for both Native and LST Restakers.
 
-:::warning
-Initiating an Undelegate transaction will also automatically queue a withdrawal (Unstake) of your funds. The Undelegate and Queue Withdrawal transactions are combined due to the security architecture of EigenLayer smart contracts.
-:::
+Initiating an Undelegate transaction will also automatically queue a withdrawal but not complete the withdrawal. If you want to redeposit, you can do so immediately after the escrow period ends. If you want to complete the withdrawal, you can do so immediately after the escrow period ends.
+
+The Undelegate and Queue Withdrawal transactions are combined due to the security architecture of EigenLayer smart contracts.
 
 
 ## Instructions to Undelegate and Queue Withdraw
