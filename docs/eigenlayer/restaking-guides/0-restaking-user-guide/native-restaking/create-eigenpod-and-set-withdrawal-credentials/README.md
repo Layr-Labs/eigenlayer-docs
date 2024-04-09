@@ -19,10 +19,6 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 
 ![](/img/googleusercontentbackup/NAjPWmiVugcK4LBKRe-Sj8bZKf5c9oR-hRmvr0jeQg3XN-eUdlasEru71Zjb59p30QnF-7fUbflVfEMxnfqC9HdQJXV2zpo3E7x1HgJm91bNybpzYbo4er1cPO8fv514uyZVcdT6Xu8GVFQHA6iT1pI.png)
 
-<!-- <img src="/img/overview/eigenlayer-arch-v2.png" width="75%"
-    style={{ margin: '50px'}}>
-</img> -->
-
 ![](/img/googleusercontentbackup/iLPD5MfrJT8krjQtly8sUUiqKtpTWXD58Ajp_jfKNTnNcV07s8TD-A2H0GLyPOmTHvFUWGho7qjICYzzhAvpyTwJh_Mpiq_k6lMWsNL7H5ns9OCVRa6MnjMpFpNDkNakfdTPVRcElFSfslcVJTHByN0.png)
 
 **Step 3:** Click **Create EigenPod** to continue.
