@@ -8,7 +8,7 @@ Beacon chain validators contain a field known 'withdrawal credentials', which ca
 
 The prefix can either be `0x00` or `0x01`:
 
-- Validators with `0x00` prefix: These are specific to BLS-style withdrawal credentials, common to early ETH stakers. Validators with this prefix can easily restake on EigenLayer, by [repointing](repointing-a-validators-withdrawal-credentials.md) their withdrawal credentials.
+- Validators with `0x00` prefix: These are specific to BLS-style withdrawal credentials, common to early ETH stakers. Validators with this prefix can easily restake on EigenLayer, by [repointing](./create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials.md) their withdrawal credentials.
 - Validators with `0x01` prefix: This newer method is derived from Ethereum addresses. While beacon chain rewards are much easier for these validators, restaking on EigenLayer is quite difficult. In order for `0x01` validators to restake, they have to completely exit from the beacon chain, re-enter on the beacon chain as a new validator, and then repoint withdrawal credentials to the EigenLayer smart contract.
 
 ## **New Validators**

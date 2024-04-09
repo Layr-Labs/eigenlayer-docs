@@ -5,62 +5,6 @@ sidebar_position: 7
 
 # EigenDA Operator FAQ
 
-#### Where do I check if my operator is a part of EigenDA set?
-
-You can search using the below EigenLayer webapp links:
-
-* [Holesky](https://holesky.eigenlayer.xyz/avs/eigenda)
-
-#### I opted in into running EigenDA but I am not in the operator set anymore. What happened?
-
-Either you are [churned out](./overview.md#eigenda-churn-approver) by an other
-operator or you have been [ejected due to non-signing](./ejection-non-signing.md).
-If neither of these reasons apply, please reach out to EigenLayer Support
-
-#### How do I know if my node is signing EigenDA blobs correctly?
-
-There are few ways you can confirm that your node is signing the blobs
-
-* Ensure that you have monitoring setup according to the
- [guide](./eigenda-metrics-and-monitoring.md). Once you have added the provided
- EigenDA Grafana dashboards, take a look at the graph saying **EigenDA number
- of processed batches**. This graph should be increasing like below graph:
-
- ![EigenDA correct sign](/img/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-correct-sign.png)
-
-* If you have not setup metrics yet, you can still check the logs of your
-  EigenDA Node. If your logs resemble like mentioned in step 5 of respective network in this
-  section([holesky](./networks/holesky.mdx), [mainnet](./networks/mainnet.md))
-  then you are signing correctly.
-
-#### My EigenDA node's logs look like these. What does it mean?
-
-```
-INFO [01-10|20:49:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|20:52:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|20:55:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|20:58:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|21:01:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|21:04:53.437|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|21:07:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|21:10:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|21:13:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-INFO [01-10|21:16:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
-```
-
-This means you node software is running but you are not opted-in into EigenDA.
-If you opted in into EigenDA successfully and still not receiving dispersal
-traffic, make sure your network settings allow EigenDA's disperser to reach your
-node. Please check the step 3 of respective network
-guide([holesky](./networks/holesky),
-[mainnet](./networks/mainnet)) to see if settings are
-correct.
-
-If you were previously opted-in and were signing, it's possible you were [churned
-out](./overview#eigenda-churn-approver) by another operator or you have been
-[ejected due to non-signing](./ejection-non-signing.md). Please try opting-in
-again.
-
 #### I have a static IP/DNS address. How do I register and fix this address for EigenDA?
 
 If you have a static IP address or DNS address set up to receive the traffic 
@@ -72,7 +16,3 @@ while registering, then follow the steps to make sure correct IP is registered:
 * Opt-in using the provided steps([holesky](./networks/holesky), [mainnet](./networks/mainnet)).
 * In order to disable the node IP address from being automatically updated, set the value of [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/31d99e2aa67962878969b81a15c7e8d13ee69750/mainnet/.env.example#L65) to `0`.
 
-
-#### What does the error "EIP1271 .. signature not from signer" mean?
-
-This indicates you have not imported your BLS key correctly. Please reconfirm the keys you imported to ensure there were no typos or mistakes.

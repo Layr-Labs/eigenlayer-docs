@@ -161,6 +161,10 @@ const config = {
             from: "/eigenda/system-performance-and-customization",
             to: "/eigenda/performance-metrics",
           },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod/",
+            to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/",
+          },
         ],
         createRedirects(existingPath) {
 
