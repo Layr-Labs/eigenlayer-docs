@@ -5,8 +5,8 @@ title: EigenDA Overview
 
 EigenDA is a data availability store made by
 [EigenLabs](https://www.eigenlayer.xyz/about) and built on top of
-[EigenLayer](../eigenlayer/overview/README.md), currently launching to the
-Holesky testnet and launching on mainnet in early Q2 2024.
+[EigenLayer](../eigenlayer/overview/README.md), currently on mainnet since Q2 2024.
+It is also available on Holesky testnet for testing and development purposes.
 
 EigenDA stores rollup transactions until their computed state is
 finalized on the rollup bridge, and is...
