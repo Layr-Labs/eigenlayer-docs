@@ -99,7 +99,7 @@ or if you have **make** installed:
 
 ```
 git clone https://github.com/Layr-Labs/eigenlayer-cli.git
-cd eigenlayer
+cd eigenlayer-cli
 make build
 ```
 
