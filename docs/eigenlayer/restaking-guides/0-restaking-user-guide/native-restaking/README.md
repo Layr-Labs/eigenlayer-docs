@@ -30,4 +30,4 @@ Existing Stage 1 EigenPods will need to be **Upgraded** in order to be **activel
 
 ### Deposit and Withdrawal Costs
 
-Native Restaking Deposit and Withdrawal transactions will incur additional gas fees due to the required proof verification. Restaking with EigenLayer requires proof of beacon chain staking and active validator status. This proof is generated off chain during Deposit and Withdrawal then verified on chain. The verification process will incur a gas fee of approximately 200k gas + a fixed fee per proof that will be around 0.01 ETH. Please plan and budget accordingly for associated costs.
+Native Restaking Deposit and Withdrawal transactions will incur additional gas fees due to the required proof verification. Restaking with EigenLayer requires proof of beacon chain staking and active validator status. This proof is generated off chain during Deposit and Withdrawal then verified on chain. The verification process will incur a gas fee of approximately 200k gas + some fixed gas per proof. Please plan and budget accordingly for associated costs.

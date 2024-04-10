@@ -12,7 +12,7 @@ All funds unstaked from EigenLayer go through a escrow period before being able 
 
 Partial withdrawals require on-chain proofs in order to process the withdrawal. Please consider deferring your withdrawals until full withdrawals are needed due to the gas costs associated with the proof.
 
-The proving cost is 200k gas + a fixed fee per proof that will be around 0.01 ETH. Each of these proofs will be able to prove up to 16 beacon chain withdrawals (batched into one transaction). The user will be prompted to sign additional transactions - one per each additional batch.
+The verification process will incur a gas fee of approximately 200k gas + some fixed gas per proof. Each of these proofs will be able to prove up to 16 beacon chain withdrawals (batched into one transaction). The user will be prompted to sign additional transactions - one per each additional batch.
 
 **Step 1:** Note the values for "Validator ETH Yield" and "Redeemable". 
 :::warning
