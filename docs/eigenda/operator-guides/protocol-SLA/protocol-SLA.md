@@ -52,27 +52,29 @@ Note: if the operator re-opts in the quorum at any point from `B` to `D`, the ab
 
 **Responsibilities**
 
-Operators are responsible to perform both attestion and serving within the EigenDA protocol. We track performance of these responsibilities using the following service level indidactors (SLIs).
+Operators are required to carry out both attestation and serving (retrieval) functions as part of their role within the EigenDA protocol. The assessment of their performance in these areas is conducted using the service level indicators (SLI) specified here.
 
-| Responsibility | Daily SLI (measure) |
+| Responsibility | Rolling Daily SLI (measure) |
 | --- | --- |
 | Attesting | Signing rate: num-batches-signed / num-batches-responsible-to-sign |
 | Serving | Serving availability: num-requests-success / num-total-requests |
 
-Note that the SLI is evaluated over a 24 hour interval. 
+Note that the SLI is evaluated over a rolling 24 hour interval. 
 
 **SLA**
 
-When an operator is unavailable to perform its responsibilities, the damage to the network scales with the amount of take held by the operator. We ask operators to maintain high availability of both attesting and serving in accordance with the amount of stake delegated to the operator, as indicated by the following service level agreement (SLA) table. 
+Operators are required to maintain high availability of both attesting and serving in accordance with the amount of stake delegated to the operator, as indicated by the service level agreement (SLA) table below. Since the impact of an operator's failure to perform its responsibilities scales with the amount of stake delegated to the operator, operator's hold a larger percentage of delegated stake are held to higher standards of availability for attesting and serving (retrieval).
 
-| Share of Quorum Stake | Daily SLA (policy) | Nominal Maximum Daily Downtime |
+| Share of Quorum Stake | Rolling Daily SLA (policy) | Nominal Maximum Daily Downtime |
 | --- | --- | --- |
 | Baseline | 90 % | 2.4 hours |
 | > 5%  | 95% | 1.2 hours | 
 | > 10% | 97.5% | 36 minutes |
 
-Operators with delegated stake in multiple quorums must satisfy the SLA associated with the highest percentage of delegated stake across all registered quorums. For instance, an operator with 1% of stake in quorum 0 and 7% of stake in quorum 1 should keep its signing rate and serving availability of 95% for both quorums. 
+Operators who hold delegated stakes delegated stake in multiple quorums must satisfy the SLA associated with each of their registered quorums. For instance, an operator holding 1% of stake in 'quorum 0' and 7% of stake in 'quorum 1' must keep its signing rate and serving availability above 90% for 'quorum 0' and 95% for 'quorum 1'. 
 
 **Enforcement Actions**
 
-Operators can be ejected from the protocol at any time if they are in violation of their Daily SLA.  Such ejection may or may not be preceded by warnings or soft enforcement measures in the form of the publication of operators' SLI and overall rank. For instance, an operator with 10% of stake which fails to attest to blobs for 45 minutes can be ejected without warning; this is more likely to occur if the performance of the operator is affecting the network liveness. 
+Operators can be subject to forced ejection from the protocol if they fail to meet their Rolling Daily SLA. This action can occur with or without prior notice and may follow initial soft enforcement steps, including the disclosure of the operator's SLI and overall ranking. Ejection is performed on a per quorum basis.  An operator holding a 10% stake in 'quorum 0' who does not attest to blobs for 45 minutes may face immediate ejection from that quorum, particularly if their performance compromises the network's liveness.
+
+Note that while an operator SLA is evaluated on a rolling 24 hours basis, enforcement actions may or may not occur at the point of violation.
