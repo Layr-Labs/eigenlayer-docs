@@ -63,7 +63,7 @@ Note that the SLI is evaluated over a rolling 24 hour interval.
 
 **SLA**
 
-Operators are required to maintain high availability of both attesting and serving in accordance with the amount of stake delegated to the operator, as indicated by the service level agreement (SLA) table below. Since the impact of an operator's failure to perform its responsibilities scales with the amount of stake delegated to the operator, operator's hold a larger percentage of delegated stake are held to higher standards of availability for attesting and serving (retrieval).
+Operators are required to maintain high availability of both attesting and serving (retrieval) in accordance with the amount of stake delegated to the operator, as indicated by the service level agreement (SLA) table below. Since the impact of an operator's failure to perform its responsibilities scales with the amount of stake delegated to the operator, operators holding a larger percentage of delegated stake are held to higher standards of availability.
 
 | Share of Quorum Stake | Rolling Daily SLA (policy) | Nominal Maximum Daily Downtime |
 | --- | --- | --- |
