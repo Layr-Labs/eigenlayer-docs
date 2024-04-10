@@ -170,7 +170,7 @@ which conditions. This may be invoked via the sequencer, validator or other
 component in the rollup architecture.
 
 1. Import the
-[EigenDABlobUtils.sol](https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDABlobUtils.sol)
+[EigenDARollupUtils.sol](https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDARollupUtils.sol)
 file to your rollup’s source code repository.
 2. Add the library to your rollup smart contract.
 3. Invoke the verifyBlob() function
@@ -185,7 +185,7 @@ verified to be available during a fault proof challenge.
 
 If a rollup wishes to implement their own fraud proof with EigenDA, we have
 provided an example via the
-[EigenDAKZGUtils.openCommitment()](https://github.com/Layr-Labs/eigenda/blob/master/contracts/src/libraries/EigenDAKZGUtils.sol)
+[EigenDARollupUtils.openCommitment()](https://github.com/Layr-Labs/eigenda/blob/b52bdcba0de3606e900d2ca86dfd46189576a482/contracts/src/libraries/EigenDARollupUtils.sol#L123)
 function. Opening a commitment is the way to prove to the light client for the
 rollup (perhaps the rollup bridge smart contract) that a certain state
 transition is incorrect. It reveals the underlying data of the polynomial.
