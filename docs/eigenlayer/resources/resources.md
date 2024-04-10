@@ -7,10 +7,10 @@ title: Learning Resources
 
 ### Start here
 
+* [Boys Club Ep 127: What is EigenLayer?](https://open.spotify.com/episode/2aR83WBag0pj0ldRRm2vZD)
 * [You Could've Invented EigenLayer (Video)](https://www.youtube.com/watch?v=fCl_PucMytU)
 * [The Three Pillars of Programmable Trust: The EigenLayer End Game](https://www.blog.eigenlayer.xyz/the-three-dimensions-of-programmable-trust/)
 * [Shared Security: The Four Superpowers](https://twitter.com/sreeramkannan/status/1742949397523304600)
-* [Unchained Podcast EigenLayer interview ](https://www.youtube.com/watch?v=16p7YG8S3ec)
 
 ### Blog posts
 
@@ -23,9 +23,10 @@ title: Learning Resources
 ### Videos and podcasts
 
 * [Official EigenLayer YouTube Playlist](https://www.youtube.com/playlist?list=PL9sM6KtdZxrXMgMq4aBHaRnWaXlcJTiVj)
-* [Boys Club Ep 127: What is EigenLayer?](https://open.spotify.com/episode/2aR83WBag0pj0ldRRm2vZD)
+* [Unchained Podcast EigenLayer interview ](https://www.youtube.com/watch?v=16p7YG8S3ec)
 * [EigenLayer in 2024](https://www.youtube.com/watch?v=ms94dx9HvL0)
 * [EigenLayer: The Endgame Coordination Layer](https://www.youtube.com/watch?v=o9y_pZUr0Nc)
+
 
 ### Codebases
 
