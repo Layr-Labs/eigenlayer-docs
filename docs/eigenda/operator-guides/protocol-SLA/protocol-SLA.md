@@ -76,5 +76,3 @@ Operators who hold delegated stakes delegated stake in multiple quorums must sat
 **Enforcement Actions**
 
 Operators can be subject to forced ejection from the protocol if they fail to meet their Rolling Daily SLA. This action can occur with or without prior notice and may follow initial soft enforcement steps, including the disclosure of the operator's SLI and overall ranking. Ejection is performed on a per quorum basis.  An operator holding a 10% stake in 'quorum 0' who does not attest to blobs for 45 minutes may face immediate ejection from that quorum, particularly if their performance compromises the network's liveness.
-
-Note that while an operator SLA is evaluated on a rolling 24 hours basis, enforcement actions may or may not occur at the point of violation.
