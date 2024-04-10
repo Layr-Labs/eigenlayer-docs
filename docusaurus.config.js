@@ -122,10 +122,6 @@ const config = {
             to: "/eigenda/operator-guides/ip-stability-and-costs-of-change",
           },
           {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/ejection-non-signing",
-            to: "/eigenda/operator-guides/ejection-non-signing",
-          },
-          {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/troubleshooting",
             to: "/eigenda/operator-guides/troubleshooting",
           },

@@ -14,7 +14,7 @@ You can search using the below EigenLayer webapp links:
 #### I opted in into running EigenDA but I am not in the operator set anymore. What happened?
 
 Either you are [churned out](./overview.md#eigenda-churn-approver) by an other
-operator or you have been [ejected due to non-signing](./ejection-non-signing.md).
+operator or you have been [ejected due to non-signing](./protocol-SLA/).
 If neither of these reasons apply, please reach out to EigenLayer Support
 
 #### How do I know if my node is signing EigenDA blobs correctly?
@@ -78,7 +78,7 @@ correct.
 
 If you were previously opted-in and were signing, it's possible you were [churned
 out](./overview#eigenda-churn-approver) by another operator or you have been
-[ejected due to non-signing](./ejection-non-signing.md). Please try opting-in
+[ejected due to non-signing](./protocol-SLA/). Please try opting-in
 again.
 
 
