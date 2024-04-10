@@ -50,15 +50,29 @@ Note: if the operator re-opts in the quorum at any point from `B` to `D`, the ab
 
 ## Accountability Measurements, Policies, and Actions
 
-### Liveness
+**Responsibilities**
 
-| Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |
-| --- | --- | --- | --- |
-| Attesting | Signing rate: num-batches-signed / num-batches-responsible-to-sign | >=90% signing rate over rolling 48 hours (general) or >90% over rolling 24h (if operator has >4% stake) | Soft measure: Social pressure (if SLA is not violated) - Publish operator's attesting availability/performance and rank. <br/> Hard measure: Ejection (if SLA is violated) |
-| Serving | Serving availability: num-requests-success / num-total-requests | >=95% serving availability | Soft measure: Social pressure - Publish operator's serving availability/performance and rank. |
+Operators are responsible to perform both attestion and serving within the EigenDA protocol. We track performance of these responsibilities using the following service level indidactors (SLIs).
 
-### Safety
+| Responsibility | Daily SLI (measure) |
+| --- | --- |
+| Attesting | Signing rate: num-batches-signed / num-batches-responsible-to-sign |
+| Serving | Serving availability: num-requests-success / num-total-requests |
 
-| Responsibility | SLI (measure) | SLA (policy) | Accountability (action) |
-| --- | --- | --- | --- |
-| Attesting + Storing | Lazy signing rate: `num-batches-lazily-signed / num-batches-signed` | Lazy signing rate = `0` | Hard measure: slashing via Proof of Custody if SLA is violated (this is to be built). |
+Note that the SLI is evaluated over a 24 hour interval. 
+
+**SLA**
+
+When an operator is unavailable to perform its responsibilities, the damage to the network scales with the amount of take held by the operator. We ask operators to maintain high availability of both attesting and serving in accordance with the amount of stake delegated to the operator, as indicated by the following service level agreement (SLA) table. 
+
+| Share of Quorum Stake | Daily SLA (policy) | Nominal Maximum Daily Downtime |
+| --- | --- | --- |
+| Baseline | 90 % | 2.4 hours |
+| > 5%  | 95% | 1.2 hours | 
+| > 10% | 97.5% | 36 minutes |
+
+Operators with delegated stake in multiple quorums must satisfy the SLA associated with the highest percentage of delegated stake across all registered quorums. For instance, an operator with 1% of stake in quorum 0 and 7% of stake in quorum 1 should keep its signing rate and serving availability of 95% for both quorums. 
+
+**Enforcement Actions**
+
+Operators can be ejected from the protocol at any time if they are in violation of their Daily SLA.  Such ejection may or may not be preceded by warnings or soft enforcement measures in the form of the publication of operators' SLI and overall rank. For instance, an operator with 10% of stake which fails to attest to blobs for 45 minutes can be ejected without warning; this is more likely to occur if the performance of the operator is affecting the network liveness. 
