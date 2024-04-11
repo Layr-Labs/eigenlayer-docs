@@ -60,4 +60,4 @@ We also automatically collect certain information about your interaction with th
 
 ## HOW TO CONTACT US
 
-Should you have any questions about our privacy practices or this Privacy Policy, please email us at admin@eigenlabs.org or contact us at 15790 Redmond Way #1176, Redmond, WA 98052 .
+Should you have any questions about our privacy practices or this Privacy Policy, please email us at notices@eigenlabs.org or contact us at 15790 Redmond Way #1176, Redmond, WA 98052 .
