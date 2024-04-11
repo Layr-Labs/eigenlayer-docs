@@ -21,7 +21,7 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - [Automata Faucet](https://www.holeskyfaucet.io/)
 
 ## Swap holETH for wETH (Wrapped ETH)​
-- Send holETH to address 0x94373a4919B3240D86eA41593D5eBa789FEF3848 .
+- Send holETH to address 0x94373a4919B3240D86eA41593D5eBa789FEF3848.
 - Import the WETH token address (0x94373a4919B3240D86eA41593D5eBa789FEF3848) to your web3 wallet to view your token balance.
 
 ## Swap holETH for stETH (Lido)​
