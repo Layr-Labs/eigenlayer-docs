@@ -259,7 +259,8 @@ Complete your the details in `metadata.json`.  The `metadata.json` must be less 
 
 
 :::info
-For Mainnet Operators - the `metadata.json` and operator logo .png files MUST be hosted via github.com specifically. This requirement does not apply to Testnet.
+For Mainnet Operators - the `metadata.json` and operator logo .png files MUST be hosted via github.com repositories specifically. Caveat: **gist.github.com** hosted files are not permitted.
+These requirements do not apply to Testnet Operators.
 :::
 
 :::warning
