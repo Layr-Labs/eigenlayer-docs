@@ -37,6 +37,11 @@ title: Operator Security Risks, Mitigations, and Best Practices
 
 ## Infrastructure
 
+General
+- Only allow Network traffic to ports / from whitelisted ip's required by the AVS.
+- Do not expose critical services like ssh to the internet.
+- Configure your firewall with a DENY ALL approach and explicitly allow traffic that is required.
+  
 Docker Infra
 - Network Segmentation: Use Docker's network policies to segment containers  and limit inter-container communication.
 - Regular Audits: audit and monitor container activities using tools like - Docker Bench for Security or Clair.
