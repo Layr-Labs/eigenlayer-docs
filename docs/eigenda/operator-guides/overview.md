@@ -24,7 +24,7 @@ call 'Total Quorum Stake' (TQS). For example, if an operator Foobar has 3% stake
 on the restaked ETH quorum, and 5% ETH on a staked WETH quorum, then operator
 Foobar's TQS is 8%.
 
-Operators should use the following table to determine which [EigenLayer node class][1]
+Operators should use the following table to determine which [EigenLayer node class](/eigenlayer/operator-guides/eigenlayer-node-classes#general-purpose-eigenlayer-node-classes)
 is appropriate for their level of stake:
 
 | Total Quorum Stake (TQS) |                         | Supported Throughput |
@@ -110,4 +110,3 @@ repeatedly then it means you may not be receiving any disperser traffic.
 INFO [12-21|18:53:46.673|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=3  caller=node.go:233
 ```
 
-[1]: https://github.com/Layr-Labs/eigenlayer-docs/blob/main/docs/eigenda/operator-guides/overview.md#L23
