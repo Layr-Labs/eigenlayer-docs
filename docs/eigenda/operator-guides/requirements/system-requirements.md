@@ -14,7 +14,7 @@ call 'Total Quorum Stake' (TQS). For example, if an operator Foobar has 3% stake
 on the restaked ETH quorum, and 5% ETH on a staked WETH quorum, then operator
 Foobar's TQS is 8%.
 
-Operators should use the following table to determine which [EigenLayer node class][1]
+Operators should use the following table to determine which [EigenLayer node class](/eigenlayer/operator-guides/eigenlayer-node-classes#general-purpose-eigenlayer-node-classes)
 is appropriate for their level of stake:
 
 | Total Quorum Stake (TQS) |                         | Supported Throughput |

@@ -1,11 +1,10 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 # Register Your Operator
 
 Your operator will not begin receiving traffic from the EigenDA disperser until it has registered for one or more quorums with EigenDA. Note, as discussed in [delegation requirements](../requirements/delegation-requirements/) that registration with an EigenDA quorum requires that an operator already be [registered as an operator with EigenLayer](https://docs.eigenlayer.xyz/operator-guides/operator-installation) and to have a minimum amount of stake delegated within each quorum to be registered. 
-
 
 ## Opt-in to an EigenDA Quorum
 
@@ -25,11 +24,10 @@ You only need to provide the quorum which you want to opt into. For example if y
 
 If you attempt to opt-in to both quorums ('`0,1`') you must have sufficient TVL to opt-in to the active Operator set for both quorums, otherwise the entire opt-in attempt will fail for both quorums. The opt-in attempt for both quorums is an "all or nothing" process.
 
-> **_WARNING:_**
-Operator must wait up to 6 hours if the delegation happened after you opt-in to the EigenDA AVS. EigenLayer's AVS-Sync component runs at 6 hour batch intervals to update the delegation totals on chain for each operator. If you are unable to opt in despite having sufficient delegated stake, please wait at least 6 hours, then retry opt-in.
+:::warning
+Operators must wait up to 6 hours if the delegation happened after you opt-in to the EigenDA AVS. EigenLayer's AVS-Sync component runs at 6 hour batch intervals to update the delegation totals on chain for each operator. If you are unable to opt in despite having sufficient delegated stake, please wait at least 6 hours, then retry opt-in.
+:::
 
-
-The opt-in command also downloads the latest SRS points if they don't exist on the node. The file is approximately 8GB in size and the opt-in process can some time to complete depending on the network bandwidth.
 
 The script will use the `NODE_HOSTNAME` from [.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/31d99e2aa67962878969b81a15c7e8d13ee69750/mainnet/.env.example#L71) as your current IP.
 
@@ -38,10 +36,32 @@ If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver 
 If you receive the error “error: failed to request churn approval .. Rate Limit Exceeded” you may retry after the threshold has passed. If you receive the error “insufficient funds”, you may increase your Operator’s delegated TVL to the required minimum and retry after the threshold has passed.
 
 
+## Check for network traffic
+
+Once you have successfully opted into a quorum, you should begin to see logs indicating that your node is receiving, validating, and storing batches from the network, like the following:
+
+```
+Batch verify 1 frames of 256 symbols out of 1 blobs
+time=2024-03-22T19:34:39.858Z level=DEBUG source=/app/node/node.go:330 msg="Validate batch took" duration:=96.155565ms
+time=2024-03-22T19:34:39.858Z level=DEBUG source=/app/node/node.go:340 msg="Store batch took" duration:=0s
+time=2024-03-22T19:34:39.859Z level=DEBUG source=/app/node/node.go:346 msg="Signed batch header hash" pubkey=0x00cea342f086977a33b3f1bba57d09c6cdf8eaf20b9dec856dc874ab65414b6e2377a91ab3bc2360224f3ba071eb4753da650e957d9c0535b14922609a9ff052150595f3a89c06e87a78d3e3ebad09771f181b632bd971c1d58deb3e1fde9397087c1cc1097c48b1e900d418ef43538a8abdccde72921c3148ae4de5e0f39ef3
+time=2024-03-22T19:34:39.859Z level=DEBUG source=/app/node/node.go:349 msg="Sign batch took" duration=1.32679ms
+time=2024-03-22T19:34:39.860Z level=INFO source=/app/node/node.go:351 msg="StoreChunks succeeded"
+time=2024-03-22T19:34:39.860Z level=DEBUG source=/app/node/node.go:353 msg="Exiting process batch" duration=97.815499ms
+Batch verify 1 frames of 256 symbols out of 1 blobs
+time=2024-03-22T19:35:30.062Z level=DEBUG source=/app/node/node.go:330 msg="Validate batch took" duration:=83.890892ms
+time=2024-03-22T19:35:30.062Z level=DEBUG source=/app/node/node.go:340 msg="Store batch took" duration:=0s
+time=2024-03-22T19:35:30.063Z level=DEBUG source=/app/node/node.go:346 msg="Signed batch header hash" pubkey=0x00cea342f086977a33b3f1bba57d09c6cdf8eaf20b9dec856dc874ab65414b6e2377a91ab3bc2360224f3ba071eb4753da650e957d9c0535b14922609a9ff052150595f3a89c06e87a78d3e3ebad09771f181b632bd971c1d58deb3e1fde9397087c1cc1097c48b1e900d418ef43538a8abdccde72921c3148ae4de5e0f39ef3
+time=2024-03-22T19:35:30.063Z level=DEBUG source=/app/node/node.go:349 msg="Sign batch took" duration=1.201012ms
+time=2024-03-22T19:35:30.063Z level=INFO source=/app/node/node.go:351 msg="StoreChunks succeeded"
+time=2024-03-22T19:35:30.063Z level=DEBUG source=/app/node/node.go:353 msg="Exiting process batch" 
+```
+
 ## Opt-Out of an EigenDA Quorum
 
-> **_WARNING:_**
-Please be careful to ensure that you opt-out of your current (or intended) quorum.
+:::warning
+Please be careful to ensure that you only opt-out of your current (or intended) quorum.
+:::
 
 The following command can be used to opt out from the EigenDA AVS:
 
