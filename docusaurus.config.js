@@ -98,28 +98,8 @@ const config = {
             to: "/eigenda/rollup-guides/integrations-overview",
           },
           {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/goerli",
-            to: "/eigenda/operator-guides/networks/goerli",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/holesky",
-            to: "/eigenda/operator-guides/networks/holesky",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/mainnet",
-            to: "/eigenda/operator-guides/networks/mainnet",
-          },
-          {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/",
             to: "/eigenda/operator-guides/overview",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-metrics-and-monitoring",
-            to: "/eigenda/operator-guides/eigenda-metrics-and-monitoring",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/ip-stability-and-costs-of-change",
-            to: "/eigenda/operator-guides/ip-stability-and-costs-of-change",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/troubleshooting",
@@ -140,18 +120,6 @@ const config = {
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
             to: "/eigenlayer/avs-guides/how-to-build-an-avs",
-          },
-          {
-            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/goerli",
-            to: "/eigenda/operator-guides/networks/goerli",
-          },
-          {
-            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/holesky",
-            to: "/eigenda/operator-guides/networks/holesky",
-          },
-          {
-            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/mainnet",
-            to: "/eigenda/operator-guides/networks/mainnet",
           },
           {
             from: "/eigenda/system-performance-and-customization",

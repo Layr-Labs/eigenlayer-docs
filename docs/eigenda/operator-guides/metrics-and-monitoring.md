@@ -1,9 +1,9 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 description: Setup Grafana and Prometheus Metrics and Monitoring Stack
 ---
 
-# EigenDA Metrics and Monitoring
+# Metrics and Monitoring
 
 These instructions provide a quickstart guide to run the Prometheus, Grafana,
 and Node exporter stack.
