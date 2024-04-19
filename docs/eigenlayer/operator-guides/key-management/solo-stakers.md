@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3 
+sidebar_position: 3
 id: solo-stakers
 ---
 
@@ -16,7 +16,7 @@ Individuals managing a limited number of validator keys typically do not require
 - Limit access: Restrict access to backed-up keys to a select few trusted individuals, and consider implementing a multi-signature scheme to require multiple parties for key recovery.
 - Maintain secrecy: Avoid discussing the location or existence of your backed-up keys with others, and do not store any written records that could lead an attacker to their location.
 - Continuously update security measures: Regularly assess and update the security measures in place to protect your backed-up keys, staying informed about the latest threats and best practices.
-- Use an air-gaped device: Consider using an air-gapped device, such as a computer not connected to the internet, to store backed-up keys. This provides an additional layer of security against remote attacks. Use USB devices or QR codes for sharing the keys with the air-gaped device.
+- Use an air-gapped device: Consider using an air-gapped device, such as a computer not connected to the internet, to store backed-up keys. This provides an additional layer of security against remote attacks. Use USB devices or QR codes for sharing the keys with the air-gapped device.
 
 ## Securing Mnemonic or Seed Phrases for Key Generation
 
