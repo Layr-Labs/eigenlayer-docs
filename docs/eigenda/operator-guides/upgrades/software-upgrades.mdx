@@ -2,6 +2,11 @@
 sidebar_position: 1
 ---
 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
 # Software Upgrades
 
 Please monitor the following channels for updates to EigenDA Operator software:
@@ -12,10 +17,21 @@ If you are running your node using docker compose, you can perform an upgrade by
 
 #### Step 1: Pull the latest repo
 
-```
-cd eigenda-operator-setup/mainnet
-git pull
-```
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+    ```
+    cd eigenda-operator-setup/mainnet
+    git pull
+    ```
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+    ```
+    cd eigenda-operator-setup/holesky
+    git pull
+    ```
+  </TabItem>
+</Tabs>
+
 
 Update the `MAIN_SERVICE_IMAGE` in your `.env` file with the latest EigenDA version as per the release notes.
 

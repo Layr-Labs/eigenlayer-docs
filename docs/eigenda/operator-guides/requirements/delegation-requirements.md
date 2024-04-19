@@ -25,8 +25,8 @@ in the EigenDA network.
 
 In order to determine the current TVL of the top 200 operators, please visit our
 [AVS page](https://holesky.eigenlayer.xyz/avs/eigenda) and sort by `TVL
-Ascending.`Observe the first 200 operators listed and the amount of ETH TVL
-delegated to them. Please keep in mind that the AVS Page reflects real-time
+Descending.` Observe the first 200 operators listed and the amount of ETH TVL
+delegated to them. Please keep in mind that the AVS Page reflects the
 operator stake on EigenLayer, which is used to update the EigenDA operator set
 stake weights on a weekly basis (Wednesdays at 17:00 UTC), so the EigenDA stake
 may lag the real-time EigenLayer stake by at most 7 days.
@@ -51,7 +51,7 @@ current lowest-stake operator:
 The parameters of checks performed in step 2 are configurable by the contract
 governance.
 
-### Operator Ejection Confirmation
+### Operator Churn Confirmation
 
 Operators that have been ejected can verify the change in two ways:
 

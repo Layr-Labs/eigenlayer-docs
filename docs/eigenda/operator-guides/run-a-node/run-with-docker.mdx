@@ -37,8 +37,11 @@ Run the following commands to clone the Oprator Setup Repo and create a new envi
   </TabItem>
 </Tabs>
 
-
 The provided `.env` contains many default configuration settings for the node. All sections marked with `TODO` must be updated to match your environment. We recommend that operators follow the steps in the next section to configure their node to run without access to their ECDSA private key. 
+
+:::info
+As described [here](../registration/), the ECDSA and BLS keys needed to populate your `.env` can be obtained via the process of registering as an operator for EigenLayer. 
+:::
 
 :::warning
 Do not modify the docker-compose.yml file. If you choose to modify this file, unexpected behaviors can result.

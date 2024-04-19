@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Register Your Operator
 
-Your operator will not begin receiving traffic from the EigenDA disperser until it has registered for one or more quorums with EigenDA. Note, as discussed in [delegation requirements](../requirements/delegation-requirements/) that registration with an EigenDA quorum requires that an operator already be [registered as an operator with EigenLayer](https://docs.eigenlayer.xyz/operator-guides/operator-installation) and to have a minimum amount of stake delegated within each quorum to be registered. 
+Your operator will not begin receiving traffic from the EigenDA disperser until it has registered for one or more quorums with EigenDA. Note, as discussed in [delegation requirements](../requirements/delegation-requirements/), that registration with an EigenDA quorum requires that an operator already be [registered as an operator with EigenLayer](https://docs.eigenlayer.xyz/operator-guides/operator-installation) and to have a minimum amount of stake delegated within each quorum to be registered. 
 
 ## Opt-in to an EigenDA Quorum
 
