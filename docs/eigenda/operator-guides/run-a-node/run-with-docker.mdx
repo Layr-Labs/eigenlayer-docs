@@ -19,20 +19,22 @@ To proceed with these instructions, be sure to ensure that you have installed do
 #### Clone the Oprator Setup Repo and populate the environment variables
 
 Run the following commands to clone the Oprator Setup Repo and create a new environment file from the provided template. 
+The `srs_setup.sh` script will also download the (~8GB) structured reference string (SRS) used by the EigenDA node as part of its KZG verification to the `eigenda-operator-setup/resources` directory. 
+
 
 <Tabs groupId="network">
   <TabItem value="mainnet" label="Mainnet">
     ```
     git clone https://github.com/Layr-Labs/eigenda-operator-setup.git
-    cd eigenda-operator-setup/mainnet
-    cp .env.example .env
+    cd eigenda-operator-setup && ./srs_setup.sh
+    cd mainnet && cp .env.example .env
     ```
   </TabItem>
   <TabItem value="holesky" label="Holesky">
     ```
     git clone https://github.com/Layr-Labs/eigenda-operator-setup.git
-    cd eigenda-operator-setup/holesky
-    cp .env.example .env
+    cd eigenda-operator-setup && ./srs_setup.sh
+    cd holesky && cp .env.example .env
     ```
   </TabItem>
 </Tabs>
@@ -46,16 +48,6 @@ As described [here](../registration/), the ECDSA and BLS keys needed to populate
 :::warning
 Do not modify the docker-compose.yml file. If you choose to modify this file, unexpected behaviors can result.
 :::
-
-#### Download the Structured Reference String (SRS)
-
-EigenDA makes use of a structured reference string (SRS) as part of its KZG verification. Run the following command to download all required files into the `eigenda-operator-setup/resources` directory. 
-
-```
-./srs_setup.sh
-```
-
-The file is approximately 8GB in size.
 
 #### Configure local storage locations
 
