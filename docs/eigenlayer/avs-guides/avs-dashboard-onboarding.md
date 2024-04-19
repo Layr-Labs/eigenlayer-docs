@@ -1,27 +1,27 @@
 ---
 sidebar_position: 6
-title: AVS Holesky Dashboard Onboarding
+title: AVS Dashboard Onboarding
 ---
 
 
-This document defines interfaces that AVSs must implement to index their data for the V1 AVS Marketplace
+This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
 
 
 ## Interface
 
 ```javascript
 interface IServiceManager {
-// These 3 functions are just proxies to the same-named functions in the AVSDirectory
+// Below 3 functions are just proxies to the same-named functions in the AVSDirectory
 function registerOperatorToAVS(address operator, Signature memory signature);
 
 function deregisterOperatorFromAVS(address operator);
 
 function updateAVSMetadataURI(string calldata metadataURI);
 	
-	// Implement in ServiceManager
-	function getOperatorRestakedStrategies(address operator) returns (address[] memory)
+// Below 2 functions are needed for the frontend and payments MVP
+function getOperatorRestakedStrategies(address operator) returns (address[] memory)
 
-	function getRestakeableStrategies() returns (address[] memory);
+function getRestakeableStrategies() returns (address[] memory);
 }
 ```
 
@@ -52,3 +52,6 @@ The metadataURI should follow the format outlined in this [example](https://hole
 
 ## Holesky Dashboard onboarding
 Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard.
+
+## Mainnet Dashboard onboarding
+Contact us.
