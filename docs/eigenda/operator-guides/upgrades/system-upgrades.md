@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # System Upgrades
 
-Since system requirements scale dynamically in accordance with the amount of stake delegated to the operator, node operators may from time to time need to upgrade their system setups in order to continue meeting the [Protocol SLA](./protocol-SLA/)
+Since system requirements scale dynamically in accordance with the amount of stake delegated to the operator, node operators may from time to time need to upgrade their system setups in order to continue meeting the [Protocol SLA](../requirements/protocol-SLA/)
 
 When performing a system upgrade, operators should be mindful of the following considerations: 
 - Maintain custody of BLS signing keys.
