@@ -18,7 +18,7 @@ function deregisterOperatorFromAVS(address operator);
 
 function updateAVSMetadataURI(string calldata metadataURI);
 	
-// Below 2 functions are needed for the frontend and payments MVP
+// Below 2 functions are needed for your AVS to appear correctly on the UI
 function getOperatorRestakedStrategies(address operator) returns (address[] memory)
 
 function getRestakeableStrategies() returns (address[] memory);
