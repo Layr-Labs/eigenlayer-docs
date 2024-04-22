@@ -54,4 +54,4 @@ The metadataURI should follow the format outlined in this [example](https://hole
 Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard.
 
 ## Mainnet Dashboard onboarding
-Contact us.
+Prior to planning your Mainnet onboarding, please test first in Testnet and contact our team via the form [here](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding#holesky-dashboard-onboarding).
