@@ -1,5 +1,6 @@
 ---
 title: Protocol SLA
+sidebar_position: 3
 ---
 
 # Operator Protocol SLA

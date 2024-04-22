@@ -1,6 +1,6 @@
 ---
 title: FAQ
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # EigenDA Operator FAQ
@@ -13,6 +13,6 @@ and you don't want EigenDA to automatically update IP which is sent to EigenDA
 while registering, then follow the steps to make sure correct IP is registered:
 
 * Update the [NODE_HOSTNAME](https://github.com/Layr-Labs/eigenda-operator-setup/blob/31d99e2aa67962878969b81a15c7e8d13ee69750/mainnet/.env.example#L71) to the public IP where you will want to recieve traffic.
-* Opt-in using the provided steps([holesky](./networks/holesky), [mainnet](./networks/mainnet)).
+* Opt-in using the [provided steps](./run-a-node/registration/).
 * In order to disable the node IP address from being automatically updated, set the value of [NODE_PUBLIC_IP_CHECK_INTERVAL](https://github.com/Layr-Labs/eigenda-operator-setup/blob/31d99e2aa67962878969b81a15c7e8d13ee69750/mainnet/.env.example#L65) to `0`.
 
