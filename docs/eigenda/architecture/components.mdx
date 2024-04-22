@@ -1,0 +1,68 @@
+# Components
+
+## Operator Node
+
+EigenDA Nodes are responsible for storing blobs and responding to retrieval requests. A decentralized set of operators run EigenDA nodes in exchange for payment. The [API](https://github.com/Layr-Labs/eigenda/blob/master/api/proto/node/node.proto#L9) of an operator node consists of three endpoints: `StoreChunks()`, `RetrieveChunks()` and `GetBlobHeader()`.
+{/*<!-- link to operator page -->*/}
+
+## Disperser Backend
+
+<p align="center">
+<img src={require('./assets/disperser-components.png').default} alt="Description" width="50%"/>
+</p>
+
+The disperser is an untrusted API hosted by Eigen Labs responsible for encoding, chunking and writing blobs to nodes. It returns a DA certificate to the client as a result, which can be used to verify that the data was dispersed correctly and later used to retrieve the blob and verify its accuracy.
+
+The full dispersal process involves registering a batch of blobs on Ethereum in a relatively expensive transaction, so Eigen Labs runs a disperser to amortize this fee across clients. Since the disperser is untrusted, any client can run their own disperser if they wish.
+
+Under the hood, the disperser is made up of an API service, several encoder services, and a batcher service.
+
+### Disperser-API Service
+
+The API service hosts the
+[interface](https://github.com/Layr-Labs/eigenda/blob/master/api/proto/disperser/disperser.proto#L7)
+through which clients interact with the disperser and by extension the EigenDA
+operator set.
+
+Clients submit blobs to the `DisperseBlob()` or `DisperseBlobAuthenticated()` endpoints, receiving a request ID in response. The client can use the request ID with the `GetBlobStatus()` endpoint to track the progress of the blob's dispersal. Once the blob has been dispersed, this endpoint returns a DA certificate, which is used for later retrieving the blob with the `RetrieveBlob()` disperser/retriever endpoint.
+
+The following diagram shows the request flow when a blob is dispersed:
+
+<img src={require('./assets/disperser.png').default} alt="disperser-encoder service" width="100%"/>
+
+{/*Link to details of DA certificate.*/}
+
+### Disperser-Encoder Service
+
+The encoder runs in a loop encoding all blobs that are enqueued for encoding.  The following diagram describes the steps of this encoding process:
+
+<img src={require('./assets/encoder.png').default} alt="disperser-batcher" width="90%"/>
+
+### Disperser-Batcher Service
+
+Periodically the batcher assembles a transaction with the blobs that were recently dispersed to submit to the manager contract onchain. The following diagram lays out the steps:
+
+<img src={require('./assets/batcher.png').default} alt="dispserser-batcher" width="80%"/>
+
+## Manager Contract
+
+The manager contract on Ethereum is the central trusted location where
+blobs are registered as available. This contract maintains a map in storage of
+all of the blob batches that have ever been dispersed. This makes it easy for
+the client contract to later verify whether a DA certificate that is being
+submitted to it is referencing a blob that was made available.
+
+## Retriever Service
+
+The `RetrieveBlob()` endpoint available on the disperser is also made available
+for convenience on a standalone service called the "retriever", which clients
+can run if they wish. By performing network reads through a self-hosted
+retriever sidecar, clients can avoid potential performance bottlenecks inherent
+to the Eigen Labs disperser.
+
+ is a standalone API service for reading, assembling,
+and decoding blobs from the EigenDA operator set. For
+convenience the disperser hosted by Eigen Labs also encapsulates a retriever
+API.
+
+{/* <!-- ## Churner Service --> */}
