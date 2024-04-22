@@ -2,27 +2,59 @@
 sidebar_position: 2
 ---
 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Register Your Operator
 
 Your operator will not begin receiving traffic from the EigenDA disperser until it has registered for one or more quorums with EigenDA. Note, as discussed in [delegation requirements](../requirements/delegation-requirements/), that registration with an EigenDA quorum requires that an operator already be [registered as an operator with EigenLayer](https://docs.eigenlayer.xyz/operator-guides/operator-installation) and to have a minimum amount of stake delegated within each quorum to be registered. 
 
 ## Opt-in to an EigenDA Quorum
 
-If you meet the delegation requirements for opting into one or more quorums, you can execute the following command from the `eigenda-operator-setup/mainnet` folder to opt-in to the desired quorums:
+If you meet the delegation requirements for opting into one or more quorums, you can execute the following command from the `eigenda-operator-setup` folder to opt-in to the desired quorums:
 
-```
-./run.sh opt-in <quorum>
 
-# for opting in to quorum 0:
-./run.sh opt-in 0
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+    ```
+    cd mainnet
 
-# for opting in to quorum 0 and 1:
-./run.sh opt-in 0,1 
+    ./run.sh opt-in <quorum>
 
-```
-You only need to provide the quorum which you want to opt into. For example if you are already registered to quorum `0` and want to opt-in one more quorum `1`, then you just need to set `<quorum>` as `1` while opting in again.
+    # for opting in to quorum 0:
+    ./run.sh opt-in 0
+    ```
 
-If you attempt to opt-in to both quorums ('`0,1`') you must have sufficient TVL to opt-in to the active Operator set for both quorums, otherwise the entire opt-in attempt will fail for both quorums. The opt-in attempt for both quorums is an "all or nothing" process.
+    Note: EigenDA maintains one [quorum](https://docs.eigenlayer.xyz/eigenlayer/operator-guides/operator-introduction#quorums) on Mainet: Restaked ETH (including Native and LST Restaked ETH) and Restaked WETH.
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+    ```
+    cd holesky
+
+    ./run.sh opt-in <quorum>
+
+    # for opting in to quorum 0:
+    ./run.sh opt-in 0
+
+    # for opting in to quorum 0 and 1:
+    ./run.sh opt-in 0,1 
+    ```
+
+    Note: EigenDA maintains two [quorums](https://docs.eigenlayer.xyz/eigenlayer/operator-guides/operator-introduction#quorums) on Holesky: Restaked ETH (including Native and LST Restaked ETH) and Restaked WETH. EigenDA allows the Operator to opt-in to either quorum or both quorums at once (aka dual-quorum).
+    - ETH (Native & LST) Quorum:  `0`
+    - WrappedEth (WETH) Quorum: `1`
+    - Dual Quorum: `0,1`
+
+    You only need to provide the quorum which you want to opt into. For example if you are already registered to quorum `0` and want to opt-in one more quorum `1`, then you just need to set `<quorum>` as `1` while opting in again.
+
+    If you attempt to opt-in to both quorums ('`0,1`') you must have sufficient TVL to opt-in to the active Operator set for both quorums, otherwise the entire opt-in attempt will fail for both quorums. The opt-in attempt for both quorums is an "all or nothing" process.
+
+  </TabItem>
+</Tabs>
+
+
 
 :::warning
 Operators must wait up to 6 hours if the delegation happened after you opt-in to the EigenDA AVS. EigenLayer's AVS-Sync component runs at 6 hour batch intervals to update the delegation totals on chain for each operator. If you are unable to opt in despite having sufficient delegated stake, please wait at least 6 hours, then retry opt-in.
@@ -35,6 +67,9 @@ If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver 
 
 If you receive the error “error: failed to request churn approval .. Rate Limit Exceeded” you may retry after the threshold has passed. If you receive the error “insufficient funds”, you may increase your Operator’s delegated TVL to the required minimum and retry after the threshold has passed.
 
+:::info
+More information about the registration process that is executed by the above commands can be found at the [Registration Protocol Overview](../registration-protocol/).
+:::
 
 ## Check for network traffic
 
