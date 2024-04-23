@@ -37,7 +37,9 @@ are introduced.
 ## Node Storage Requirements
 
 EigenDA nodes **must** provision high-performance SSD storage in order to keep
-up with network storage and retrieval tasks. Failure to maintain adequate
+up with network storage and retrieval tasks. Enterprise grade SSDs are recommended, such as `PCIe 4.0 x4 M.2/U.2 NVMe`.
+
+Failure to maintain adequate
 performance will result in unacceptable validation latency and [automatic ejection](./protocol-SLA/).
 
 The following table summarizes required storage capacity based on TQS:
