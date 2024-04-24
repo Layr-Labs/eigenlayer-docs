@@ -13,8 +13,7 @@ You can search using the below EigenLayer webapp links:
 
 #### I opted in into running EigenDA but I am not in the operator set anymore. What happened?
 
-Either you are [churned out](./requirements/delegation-requirements/#churn-approver) by an other
-operator or you have been [ejected due to non-signing](./requirements/protocol-SLA/).
+Either you are [churned out](./requirements/delegation-requirements#have-i-been-churned) by another operator or you have been [ejected due to non-signing](./requirements/protocol-SLA/).
 If neither of these reasons apply, please reach out to EigenLayer Support
 
 #### How do I know if my node is signing EigenDA blobs correctly?
@@ -29,7 +28,7 @@ There are few ways you can confirm that your node is signing the blobs
  ![EigenDA correct sign](/img/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-correct-sign.png)
 
 * If you have not setup metrics yet, you can still check the logs of your
-  EigenDA Node. If you are signing correctly, your logs should resemble those shown [here](./run-a-node/registration/#check-for-network-traffic)
+  EigenDA Node. If you are signing correctly, your logs should resemble those shown [here](./run-a-node/registration#check-for-network-traffic)
 
 
 #### Errors while opting in into EigenDA
@@ -40,8 +39,7 @@ There are few ways you can confirm that your node is signing the blobs
 Error: failed to opt-in EigenDA Node Network for operator ID: <OPERATOR_ID>, operator address: <OPERATOR_ADDRESS>, error: failed to request churn approval: rpc error: code = Unknown desc = failed to process churn request: registering operator must have 10.000000% more than the stake of the lowest-stake operator. Stake of registering operator: 0, stake of lowest-stake operator: 6301801525718228411481, quorum ID: 0
 ```
 
-This is because your operator doesn't have enough stake to run EigenDA. Please
-refer to [EigenDA Churn Management](./requirements/delegation-requirements/#churn-approver) to learn more about this error.
+This is because your operator doesn't have enough stake to run EigenDA. Please refer to [EigenDA Churn Management](./requirements/delegation-requirements#have-i-been-churned) to learn more about this error.
 
 ##### failed to read or decrypt the BLS/ECDSA private key
 
@@ -66,10 +64,10 @@ INFO [01-10|21:16:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]         
 This means you node software is running but you are not opted-in into EigenDA.
 If you opted in into EigenDA successfully and still not receiving dispersal
 traffic, make sure your network settings allow EigenDA's disperser to reach your
-node. Please check that your network settings match the [prescribed settings](./run-a-node/run-with-docker/#network-configuration).
+node. Please check that your network settings match the [prescribed settings](./run-a-node/run-with-docker#network-configuration).
 
 If you were previously opted-in and were signing, it's possible you were [churned
-out](./requirements/delegation-requirements/#churn-approver) by another operator or you have been
+out](./requirements/delegation-requirements#have-i-been-churned) by another operator or you have been
 [ejected due to non-signing or other SLA violations](./requirements/protocol-SLA/). Please try opting-in
 again.
 
