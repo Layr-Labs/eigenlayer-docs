@@ -42,7 +42,7 @@ The `srs_setup.sh` script will also download the (~8GB) structured reference str
 The provided `.env` contains many default configuration settings for the node. All sections marked with `TODO` must be updated to match your environment. We recommend that operators follow the steps in the next section to configure their node to run without access to their ECDSA private key. 
 
 :::info
-As described [here](../registration/), the ECDSA and BLS keys needed to populate your `.env` can be obtained via the process of registering as an operator for EigenLayer. 
+As described [here](./registration.mdx), the ECDSA and BLS keys needed to populate your `.env` can be obtained via the process of registering as an operator for EigenLayer. 
 :::
 
 :::warning
@@ -64,7 +64,7 @@ NODE_LOG_PATH_HOST=${EIGENDA_HOME}/logs
 NODE_DB_PATH_HOST=${EIGENDA_HOME}/db
 ```
 
-Ensure that these locations correspond to high performance SSD storage with sufficient capaicity, as indicated in the [System Requirements](../requirements/system-requirements/#node-storage-requirements). Also ensure that the specific folders exist that the docker user has the correct write permissions:
+Ensure that these locations correspond to high performance SSD storage with sufficient capaicity, as indicated in the [System Requirements](../requirements/system-requirements.md#node-storage-requirements). Also ensure that the specific folders exist that the docker user has the correct write permissions:
 
 ```
 mkdir -p ${NODE_LOG_PATH_HOST}
