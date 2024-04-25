@@ -50,6 +50,17 @@ The following table summarizes required storage capacity based on TQS:
 | Up to 10%                      | 25 Mbps              | 4 TB             |
 | Up to 20%                      | 50 Mbps              | 8 TB             |
 
+
+:::info
+The rough size of the message sent from the EigenDA disperser to a DA node can be estimated using the following formula: 
+
+```
+<batch size (MB)>  = <throughput (MB/s)>  * <batch interval (s)>  * <coding rate> * <% stake>
+```
+
+Where `<coding rate> = 5` for all current EigenDA quorums. So if the network is operating at 1MB/s with a 10 minute batch interval, and a node has 5% of the stake, then that node will receive roughly 150MB per message from the disperser. 
+:::
+
 ## System Upgrades
 
 Since system requirements scale dynamically in accordance with the amount of stake delegated to the operator, node operators may from time to time need to upgrade their system setups in order to continue meeting the [Protocol SLA](./protocol-SLA/). Guidance for performing such upgrades is covered in [System Upgrades](../upgrades/software-upgrades/)

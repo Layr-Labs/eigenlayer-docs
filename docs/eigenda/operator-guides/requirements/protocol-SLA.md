@@ -70,9 +70,12 @@ Operators are required to maintain high availability of both attesting and servi
 | --- | --- | --- |
 | Baseline | 90 % | 2.4 hours |
 | > 5%  | 95% | 1.2 hours | 
-| > 10% | 97.5% | 36 minutes |
+| > 10% | 98% | 29 minutes |
+| > 15% | 99.5% | 7 minutes |
 
 Operators who hold delegated stake in multiple quorums must satisfy the SLA associated with each of their registered quorums. For instance, an operator holding 1% of stake in 'quorum 0' and 7% of stake in 'quorum 1' must keep its signing rate and serving availability above 90% for 'quorum 0' and 95% for 'quorum 1'. 
+
+
 
 **Enforcement Actions**
 
