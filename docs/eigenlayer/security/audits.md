@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Audits
 
-As part of our development process, we are excited to present audits to assess the robustness and reliability of our systems.
+As a key component of our development process, please see the following audits that help assess the robustness and reliability of our systems:
 
 - [Consensys Diligence](https://consensys.net/diligence/audits/2023/03/eigenlabs-eigenlayer/)
 
