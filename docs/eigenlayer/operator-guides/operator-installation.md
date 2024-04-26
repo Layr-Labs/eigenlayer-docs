@@ -332,19 +332,20 @@ eigenlayer operator update operator.yaml
 Delegation Approver functionality can be used in multiple ways to give Operators additional programmatic control over which Restakers they accept delegation from.
 
 
-### EOA Signature Approval
+### Passing Signatures from the DelegationApprover to Stakers
 
 One series of designs involves passing a unique signature from the Operator to the Restaker requesting approval. The unique signature will have a corresponding ‘salt’ (unique value used once) and an ‘expiry’. The Restaker passes the signature (salt & expiry) into the `DelegationManager.delegateTo` function ([source here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L135-L155)). This function uses EIP1271 to check the signature, so either:
 - A) The Operator has set an EOA as their `delegationApprover` and the DelegationManager simply checks that the signature is a valid ECDSA signature from the EOA.
 - OR B) The Operator has set a smart contract as their `delegationApprover` and the DelegationManager calls the isValidSignature function on the `delegationApprover` and checks if the contract returns `0x1626ba7e` (as defined in the [EIP-1271 specification](https://eips.ethereum.org/EIPS/eip-1271#specification)).
 
+If the delegationApprover themself calls the DelegationManager.delegateToBySignature function, then they need to provide a [signature from the Restaker](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L157-L204). The approverSignatureAndExpiry input is ignored if the caller is themselves the delegationApprover. One potential drawback to this approach is the delegationApprover would pay the gas for the transaction.
 
-**Whitelist and Blacklisting Restakers for Delegation**
+**Whitelisting and Blacklisting Restakers for Delegation**
 
-If the Operator uses option B) a smart contract for their `delegationApprover`, they can also maintain an approved whitelist. The contract can store a Merkle root of approved signature hashes and provide each Restaker with a Merkle proof when they delegate. [This branch](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat-example-operator-delegation-whitelist/src/contracts/examples/DelegationApproverWhitelist.sol) provides a PoC of what such a smart contract could look like.
+If the Operator uses option B above, a smart contract for their `delegationApprover`, they can also maintain an approved whitelist. The contract can store a Merkle root of approved signature hashes and provide each Restaker with a Merkle proof when they delegate. [This branch](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat-example-operator-delegation-whitelist/src/contracts/examples/DelegationApproverWhitelist.sol) provides a PoC of what such a smart contract could look like.
 
 The example above could be modified to act as a “blacklist” by using Merkle proofs of non-inclusion instead of Merkle proofs of inclusion.
-If the delegationApprover themself calls the DelegationManager.delegateToBySignature function, then they need to provide a [signature from the Restaker](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L157-L204). The approverSignatureAndExpiry input is ignored if the caller is themselves the delegationApprover. One potential drawback to this approach is the delegationApprover would pay the gas for the transaction.
+
 
 
 
