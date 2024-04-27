@@ -4,14 +4,15 @@ sidebar_position: 2
 
 # Audits
 
-As part of our development process, we are excited to present audits to assess the robustness and reliability of our systems.
+As a key component of our development process, please see the most recent audits that help assess the robustness and reliability of our systems:
+- [Sigma Prime](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/audits/M2%20Mainnet%20-%20Sigma%20Prime%20-%20Feb%202024.pdf)  
+- [Dedaub](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/audits/M2%20Mainnet%20-%20Dedaub%20-%20Feb%202024.pdf)
+- [Cantina](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/audits/M2%20Mainnet%20-%20Cantina%20-%20Apr%202024.pdf)
 
-Audit 1: [Consensys Diligence](https://consensys.net/diligence/audits/2023/03/eigenlabs-eigenlayer/)
-Delve into this thorough examination as it evaluates the various components of our technology. Uncover insights about the architecture and security measures ensuring that you have a comprehensive understanding of our system's integrity.
+Please see the following repositories for all current and past audits:
+- [EigenLayer-Contracts / Audits](https://github.com/Layr-Labs/eigenlayer-contracts/tree/dev/audits)
+- [EigenLayer-Middleware / Audits](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev/audits)
 
-Audit 2: [Sigma Prime](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/audits/Sigma_Prime_Eigen_Layer_Phase_2_Security_Assessment_Report_v2_1.pdf)  
-Explore this comprehensive assessment that focuses on evaluating compliance, functionality, and security adherence to industry standards. Gain valuable insights into our implementation strategies, code architecture, and general engineering practices.
-
-We encourage you to review both audits carefully, as they offer an in-depth analysis of our technology's capabilities, security measures, and overall reliability.
+We encourage you to review all audits carefully as they offer an in-depth analysis of our technology's capabilities, security measures, and overall reliability.
 
 Instructions are also available for [Installation and Running Tests / Analyzers](https://github.com/Layr-Labs/eigenlayer-contracts#installation) via the Github repo.
