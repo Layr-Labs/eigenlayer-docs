@@ -291,7 +291,9 @@ You must configure the correct DelegationManager contract address for your envir
 
 **Optional:** Set Delegation Approver
 
-Operators have the option to set [delegationApprover](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/interfaces/IDelegationManager.sol#L30) when they register. This is address is used to approve delegation requests from stakers. The `delegationApprover` address will be required sign and approve new delegation from Stakers to this Operator. Otherwise, the `delegationApprover` will not be used if the default value is left as `0x000..`. Please see [delegationApprover Design Patterns](#delegationapprover-design-patterns) below for more detail.
+Operators have the option to set [delegationApprover](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/interfaces/IDelegationManager.sol#L30) when they register. If the `delegationApprover` is set to a nonzero value, then the `delegationApprover` address will be required sign its approval of new delegations from Stakers to this Operator. If the default value is left as the zero address (0x000...) then all new delegations will be automatically approved without the need for any signature. Please see [delegationApprover Design Patterns](#delegationapprover-design-patterns) below for more detail.
+
+
 
 
 
