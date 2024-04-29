@@ -20,7 +20,7 @@ The EigenDA Holesky testnet is the current EigenDA testnet. The EigenDA Holesky 
 | Batch Confirmation Interval | Every 50 seconds |
 | Max Blob Size | 2 MB |
 | Default Blob Dispersal Rate limit | No more than 1 blob every 100 seconds |
-| Default Blob Size Rate Limit | No more than 1.8 MB every 10 minutes |
+| Default Blob Throughput Rate Limit | No more than 1.8 MB every 10 minutes |
 
 [1]: https://blobs-holesky.eigenda.xyz/
 [2]: https://holesky.eigenlayer.xyz/avs/eigenda
