@@ -75,3 +75,13 @@ again.
 #### What does the error "EIP1271 .. signature not from signer" mean?
 
 This indicates you have not imported your BLS key correctly. Please reconfirm the keys you imported to ensure there were no typos or mistakes.
+
+#### Error message "failed to update operator's socket .. execution reverted"
+
+"msg="failed to update operator's socket" !BADKEY="execution reverted: RegistryCoordinator.updateSocket: operator is not registered"
+
+This indicates the RPC endpoint may not be functioning correctly, or the operator config is misconfigured (eg pointing to the wrong chain_id value), or the operator is not registered.
+
+Please test your RPC endpoint via the following command `curl -I [rpc_url]`. 
+- A 400 series response indicates the server is down (unreachable).
+- A 200 series response indicates the server is available and working properly.
