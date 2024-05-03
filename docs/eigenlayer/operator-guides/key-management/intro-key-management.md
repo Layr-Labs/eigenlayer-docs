@@ -41,6 +41,6 @@ The operator key should NEVER be used as an AVS key. They should also only be us
 
 #### AVS signing keys
 
-AVS keys are actively used by node software to sign messages for AVSs. AVSs that use the eigenlayer-middleware contracts would typically use a bn254 key as the avs signing key, but other AVSs might require an ecdsa, ed25519, or any other key type.
+AVS keys are actively used by node software to sign messages for AVSs. AVSs that use the eigenlayer-middleware contracts would typically use a bn254 key as the AVS signing key, but other AVSs might require an ecdsa, ed25519, or any other key type.
 
 We advise operators to use a different key for every AVS, and NEVER to reuse their operator key as an AVS signing key. 
