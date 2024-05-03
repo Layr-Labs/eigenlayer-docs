@@ -28,3 +28,12 @@ The following content is **<ins>not permitted</ins>** to be displayed in the Ope
 
 
 Eigen Labs, Inc. (“**Eigen Labs**”) reserves the right to update these Guidelines at any time and without notice. If you violate these Guidelines, Eigen Labs may delist you or otherwise decrease your visibility on the App. 
+
+## Reporting a Violation or Remediation of Guidelines
+
+Please use our [Support channel](https://support.eigenlayer.xyz/) for reporting either of the following:
+- Operator violations of Webapp Content Guidelines.
+- Appeal to review and whitelist an Operator who has remediated their violation of the guidelines.
+
+Click on the Intercom chat icon in the bottom right of your screen, then choose “Create a Ticket: Operator Blocklist”.
+
