@@ -37,7 +37,7 @@ Contrary to Eigenlayer, where an operator controls a bunch of (signing, withdraw
 
 An operator's operator key is the ecdsa key that is used to authenticate any interaction with the eigenlayer core contracts, and hence control an operator's actions such as registering to an operator, changing its operator parameters, force undelegating a staker, etc.
 
-The operator key should NEVER be used as an AVS key. They should also only be used to interact with the eigenlayer core contracts via the eigenlayer-cli or other operator-built tools, and should NOT be loaded into any node software. Any action that needs to be programatically triggered on the AVS contracts should be authorized via an AVS key, not the operator key.
+The operator key should NEVER be used as an AVS key. They should also only be used to interact with the eigenlayer core contracts via the [eigenlayer-cli](https://github.com/Layr-Labs/eigenlayer-cli) or other operator-built tools, and should NOT be loaded into any node software. Any action that needs to be programatically triggered on the AVS contracts should be authorized via an AVS key, not the operator key.
 
 #### AVS signing keys
 
