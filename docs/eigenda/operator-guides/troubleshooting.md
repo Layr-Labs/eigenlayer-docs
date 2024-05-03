@@ -61,6 +61,8 @@ INFO [01-10|21:13:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]         
 INFO [01-10|21:16:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
 ```
 
+These logs only contain intermittent INFO logs and they do not contain instances of logs that indicate your node is actively receiving new blobs from the Dispser. Healthy log files would include messages such as "Validate batch took", "Store batch took", "Signed batch header hash".
+
 This means you node software is running but you are not opted-in into EigenDA.
 If you opted in into EigenDA successfully and still not receiving dispersal
 traffic, make sure your network settings allow EigenDA's disperser to reach your
