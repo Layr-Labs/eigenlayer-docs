@@ -25,4 +25,4 @@ Anyone building a new decentralized service for Ethereum must bootstrap a new tr
 </img>
 
 
-To learn more about EigenLayer please read the [**Whitepaper**](/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
+To learn more about EigenLayer please read the [**Whitepaper**](/pdf/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
