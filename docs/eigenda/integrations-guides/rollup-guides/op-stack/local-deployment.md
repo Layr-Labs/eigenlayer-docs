@@ -1,8 +1,9 @@
 ---
 title: Local Deployment
+sidebar_position: 2
 ---
 
-# Deploying EigenDA OP Stack Locally
+# Local Deployment
 
 This guide will show you how to deploy an OP Stack rollup on a local Ethereum
 instance, using a local EigenDA instance for DA.

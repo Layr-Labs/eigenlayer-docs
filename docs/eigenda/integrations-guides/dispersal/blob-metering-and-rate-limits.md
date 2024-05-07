@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Performance Metrics
+# Blob Metering and Rate Limits
 
 Various behaviors of the EigenDA networks can be described along the following
 performance metrics.

@@ -67,35 +67,63 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/",
-            to: "/eigenda/rollup-guides/tutorial",
+            to: "/eigenda/integrations-guides/dispersal/cli-guide",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/building-on-top-of-eigenda",
-            to: "/eigenda/rollup-guides/tutorial",
+            to: "/eigenda/integrations-guides/dispersal/cli-guide",
+          },
+          {
+            from: "/eigenda/rollup-guides/tutorial",
+            to: "/eigenda/integrations-guides/dispersal/cli-guide",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/system-performance-and-customization",
-            to: "/eigenda/performance-metrics",
+            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+          },
+          {
+            from: "/eigenda/system-performance-and-customization",
+            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+          },
+          {
+            from: "/eigenda/performance-metrics",
+            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/blob-explorer",
-            to: "/eigenda/blob-explorer",
+            to: "/eigenda/networks/",
+          },
+          {
+            from: "/eigenda/blob-explorer",
+            to: "/eigenda/networks/",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide",
-            to: "/eigenda/rollup-guides/op-stack",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
+          },
+          {
+            from: "/eigenda/rollup-guides/op-stack",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack-+-eigenda-locally",
-            to: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
+          },
+          {
+            from: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
           },
           {
             from: "/eigenda-guides/integrations-overview",
-            to: "/eigenda/rollup-guides/integrations-overview",
+            to: "/eigenda/integrations-guides/rollup-guides/integrations-overview",
           },
           {
             from: "/eigenda/integrations-overview",
-            to: "/eigenda/rollup-guides/integrations-overview",
+            to: "/eigenda/integrations-guides/rollup-guides/integrations-overview",
+          },
+          {
+            from: "/eigenda/rollup-guides/integrations-overview",
+            to: "/eigenda/integrations-guides/rollup-guides/integrations-overview",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/",
@@ -115,19 +143,31 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/orbit/",
-            to: "/eigenda/rollup-guides/orbit/",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
+          },
+          {
+            from: "/eigenda/rollup-guides/orbit/",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
           },
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
             to: "/eigenlayer/avs-guides/how-to-build-an-avs",
           },
           {
-            from: "/eigenda/system-performance-and-customization",
-            to: "/eigenda/performance-metrics",
-          },
-          {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod/",
             to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/",
+          },
+          {
+            from: "/eigenda/rollup-guides/",
+            to: "/eigenda/integrations-guides/rollup-guides/",
+          },
+          {
+            from: "/eigenda/rollup-guides/api-error-codes",
+            to: "/eigenda/integrations-guides/dispersal/api-error-codes",
+          },
+          {
+            from: "/eigenda/rollup-guides/blob-encoding",
+            to: "/eigenda/integrations-guides/dispersal/blob-serialization-requirements",
           },
         ],
         createRedirects(existingPath) {
