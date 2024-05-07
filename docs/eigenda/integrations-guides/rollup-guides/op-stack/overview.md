@@ -1,7 +1,7 @@
 ---
-title: OP Stack
+sidebar_position: 1
 ---
-# EigenDA OP Stack Integration
+# Overview
 
 ## OP Stack and EigenDA
 

@@ -99,4 +99,4 @@ consults the EigenDA manager contract on whether blob was certified available.
 If it was, the blob ID is allowed into the inbox contract. If not, the blob ID
 is discarded.
 
-For more on how rollups integrate with EigenDA, check out [Integrations Overview](./rollup-guides/integrations-overview.md).
+For more on how rollups integrate with EigenDA, check out [Integrations Overview](./integrations-guides/rollup-guides/integrations-overview.md).

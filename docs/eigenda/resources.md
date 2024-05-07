@@ -1,9 +1,9 @@
 ---
-sidebar_position: 8
+sidebar_position: 4
 title: Resources
 ---
 
-# EigenDA Resources
+# Resources
 
 ### Educational resources
 

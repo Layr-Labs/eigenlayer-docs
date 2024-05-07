@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 5
 ---
 
-# Dispersing your first blob
+# Dispersing Your First Blob
 
 Rollup developers must plan for at least two points of integration with EigenDA: offchain
 integration with their sequencer and onchain integration with their rollup smart
@@ -145,7 +145,7 @@ that is not encoded correctly, and that in order to disperse this blob you
 should first encode it using `kzgpad`, a utility distributed in the `eigenda`
 repo. This error is much more likely to be encountered when playing with EigenDA
 using a raw GRPC CLI, since there is no encoding logic built-in. Please see
-[Blob Encoding Requirements](./blob-encoding.md) for more detail.
+[Blob Encoding Requirements](./blob-serialization-requirements.md) for more detail.
 
 ## On-Chain: Configure Your Sequencer Smart Contracts
 
