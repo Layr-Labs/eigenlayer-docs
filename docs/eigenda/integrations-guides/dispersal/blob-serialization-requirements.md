@@ -1,4 +1,7 @@
-# Blob Encoding Requirements
+---
+sidebar_position: 3
+---
+# Blob Serialization Requirements
 
 Like EIP-4844, EigenDA identifies blobs using KZG commitments. Properly
 speaking, KZG commitments commit to a polynomial whose coefficients and
@@ -52,7 +55,7 @@ ERROR:
 ```
 
 The simplest way to resovlve this until we have a dedicated EigenDA CLI is to
-use the `kzgpad` utility documented in the [tutorial](./tutorial.md):
+use the `kzgpad` utility documented in the [tutorial](./cli-guide.md):
 
 ```bash
 $ grpcurl \
