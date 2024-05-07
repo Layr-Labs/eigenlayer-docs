@@ -253,6 +253,8 @@ The command will create two files: `operator.yaml` and `metadata.json`.
 
 Upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration only supports `.png` images for now and must be less than 1MB in size.
 
+The `name` and `description` should comply with the regex mention [here](https://github.com/Layr-Labs/eigensdk-go/blob/master/utils/utils.go#L29). You can use services like https://regex101.com/ to validate your fields. 
+
 Complete your the details in `metadata.json`.  The `metadata.json` must be less than 4KB in size. Upload the file to a publicly accessible location and set that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
 
