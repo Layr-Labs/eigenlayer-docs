@@ -3,13 +3,17 @@ sidebar_position: 3
 ---
 # Blob Serialization Requirements
 
+## BN254 Field Element Compatibility
+
 Like EIP-4844, EigenDA identifies blobs using KZG commitments. Properly
 speaking, KZG commitments commit to a polynomial whose coefficients and
 evaluations live in a specific field associated with an Elliptic Curve. When
 EigenDA accepts a blob of data, it has to convert this blob into a polynomial
 living on this field. This must be done in a careful manner in order to avoid
-restricting possible use cases for rollups and other secure protocols building
+restricting possible use cases for clients building
 on EigenDA.
+
+<!-- TODO: Link EIP-4844 -->
 
 EigenDA will convert each 32 bytes of the incoming blob into a field element
 (like EIP-4844), which is in turn interpreted as a coefficient of the blob
@@ -18,6 +22,8 @@ bytes, each 32 byte array must be validated by finding the BigEndian integer
 associated with the array and checking whether it is within the field modulus.
 
 ```python
+BLS_MODULUS = 21888242871839275222246405745257275088548364400416034343698204186575808495617
+
 def bytes_to_bls_field(b: Bytes32) -> BLSFieldElement:
     """
     Convert untrusted bytes to a trusted and validated BLS scalar field element.
@@ -39,6 +45,8 @@ cannot be represented by an integer number of bits, there is no generic lossless
 conversion which does not require some validation; Moreover, hard-coding a lossy
 conversion means that not all polynomials can be represented in EigenDA, which
 in turn restricts certain use cases.
+
+### Using kzgpad
 
 If you do not adhere to this encoding scheme, you may encounter errors like these:
 
@@ -70,10 +78,9 @@ $ grpcurl \
 }
 ```
 
-## Pad One Byte Codec
+## Pad One Byte Codec ("kzgpad")
 
-One example golang encoding scheme for implementing the above validity rule is [copied
-from the EigenDA codesbase][1] below:
+One example golang encoding scheme for implementing the above validity rule is [copied from the EigenDA codesbase][1] below.
 
 ```go
 // ConvertByPaddingEmptyByte takes bytes and insert an empty byte at the front of every 31 byte.
