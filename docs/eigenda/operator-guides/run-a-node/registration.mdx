@@ -73,7 +73,8 @@ More information about the registration process that is executed by the above co
 
 ## Check for network traffic
 
-Once you have successfully opted into a quorum, you should begin to see logs indicating that your node is receiving, validating, and storing batches from the network, like the following:
+EigenDA uses the operator state that is 75 blocks (15 minutes) behind the current chain head to ensure the state is not at risk of being reorg'd.
+About 15 minutes after you have successfully opted into a quorum, you should begin to see logs indicating that your node is receiving, validating, and storing batches from the network, like the following:
 
 ```
 Batch verify 1 frames of 256 symbols out of 1 blobs
