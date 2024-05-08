@@ -3,9 +3,9 @@ sidebar_position: 1
 ---
 
 
-# Restake EIGEN and LSTs
+# Restake LSTs & Stake EIGEN
 
-Restake your EIGEN and LST tokens by following the steps below.
+Restake your LSTs & Stake EIGEN by following the steps below.
 
 **Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit EigenLayer on the Ethereum Mainnet at app.eigenlayer.xyz.
 
@@ -24,7 +24,7 @@ If this is your first time depositing a token on EigenLayer, you'll need to **Ap
 ![](/img/googleusercontentbackup/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU.png)
 
 
-## Delegate Your EIGEN and LST Tokens
+## Delegate Your LSTs & EIGEN
 
 After your tokens have been fully restaked in EigenLayer, delegate your tokens to an Operator to contribute to the shared security of the EigenLayer ecosystem.
 
