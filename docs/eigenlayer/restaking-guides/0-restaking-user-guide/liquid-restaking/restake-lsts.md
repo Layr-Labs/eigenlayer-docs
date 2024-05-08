@@ -30,6 +30,6 @@ After your tokens have been fully restaked in EigenLayer, delegate your tokens t
 
 Click the **Delegate** button on the EIGEN and LST token pages to begin delegating to an operator.
 
-Please see the [Delegate to An Operator](/eigenlayer/restaking-guides/0-restaking-user-guide/restaker-delegation/delegate-to-an-operator.md) for more detail.
+Please see the [Delegate to An Operator](/eigenlayer/restaking-guides/0-restaking-user-guide/restaker-delegation/delegate-to-an-operator.md) page for more detail.
 
 ![](/img/restake-guides/restake-eigen-token.jpg)
