@@ -25,7 +25,7 @@ Generally speaking, suppose you want to migrate node to a new machine, you shoul
 
 **New machine**:
 1. Copy over the files from old machine located at `NODE_DB_PATH_HOST`
-2. Start the EigenDA Node with the files copied from the old machine (e.g. `docker-compose up -d`) and make sure node is reachable
+2. Start the EigenDA Node (e.g. `docker-compose up -d`) with the files copied from the old machine (the file should be placed under the path per `NODE_DB_PATH_HOST`) and make sure node is reachable
 3. Opt-in the quorums with a new IP address (so the old machine remains reachable with original IP while this is setting up)
 
 Lastly, when the new node is working for both retrieval and dispersal, you can turn down the node at old machine (e.g. `docker-compose down`).
