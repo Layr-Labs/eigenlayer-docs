@@ -29,4 +29,4 @@ Generally speaking, suppose you want to migrate node to a new machine, you shoul
 2. Start the EigenDA Node with the files copied from the old machine (e.g. `docker-compose up -d`) and make sure node is reachable
 3. Opt-in the quorums
 
-Lastly, when new machine is working for both retrieval and dispersal, you can turn down the old machine (e.g. `docker-compose down`).
+Lastly, when new machine is working for both retrieval and dispersal, you can turn down the node at old machine (e.g. `docker-compose down`).
