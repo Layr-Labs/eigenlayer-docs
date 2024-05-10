@@ -17,3 +17,6 @@ If you are getting this issue then either you are using a wrong rpc in your [ope
 #### How to resolve the error "No contract code at given address" imply?
 
 Ensure that your operator is pointing to the correct RPC service and that it is accessible from your operator ([example](https://chainlist.org/)).
+
+#### My operator's metadata (name, description, logo) is not showing up in the webapp
+Please make sure to comply with our metadata [guidelines](./operator-installation.md#operator-configuration-and-registration)

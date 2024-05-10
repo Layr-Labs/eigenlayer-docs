@@ -61,6 +61,8 @@ INFO [01-10|21:13:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]         
 INFO [01-10|21:16:53.436|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=0 caller=node.go:233
 ```
 
+These logs only contain intermittent INFO logs and they do not contain instances of logs that indicate your node is actively receiving new blobs from the Dispser. Healthy log files would include messages such as "Validate batch took", "Store batch took", "Signed batch header hash".
+
 This means you node software is running but you are not opted-in into EigenDA.
 If you opted in into EigenDA successfully and still not receiving dispersal
 traffic, make sure your network settings allow EigenDA's disperser to reach your
@@ -75,3 +77,13 @@ again.
 #### What does the error "EIP1271 .. signature not from signer" mean?
 
 This indicates you have not imported your BLS key correctly. Please reconfirm the keys you imported to ensure there were no typos or mistakes.
+
+#### Error message "failed to update operator's socket .. execution reverted"
+
+"msg="failed to update operator's socket" !BADKEY="execution reverted: RegistryCoordinator.updateSocket: operator is not registered"
+
+This indicates the RPC endpoint may not be functioning correctly, or the operator config is misconfigured (eg pointing to the wrong chain_id value), or the operator is not registered.
+
+Please test your RPC endpoint via the following command `curl -I [rpc_url]`. 
+- A 400 series response indicates the server is down (unreachable).
+- A 200 series response indicates the server is available and working properly.

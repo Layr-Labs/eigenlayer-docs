@@ -45,10 +45,12 @@ The metadataURI should follow the format outlined in this [example](https://hole
     "name": "EigenLabs AVS 1",
     "website": "https://www.eigenlayer.xyz/",
     "description": "This is my 1st AVS",
-    "logo": "https://holesky-operator-metadata.s3.amazonaws.com/eigenlayer.png",
+    "logo": "https://raw.githubusercontent.com/layr-labs/eigendata/master/avs/eigenlabs/logo.png",
     "twitter": "https://twitter.com/eigenlayer"
 }
 ```
+
+Note that for proper rendering of your logo on the UI, the logo _must_ be hosted on GitHub and its reference must point to the raw file as the example above shows. If you need a repo for your logo to be hosted publicly, you can make a PR to the `eigendata` repo and have your logo added: https://github.com/Layr-Labs/eigendata.
 
 ## Holesky Dashboard onboarding
 Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard.

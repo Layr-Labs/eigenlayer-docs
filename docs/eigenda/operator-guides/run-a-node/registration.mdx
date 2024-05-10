@@ -79,12 +79,13 @@ If your operator fails to opt-in to EigenDA or is ejected by the Churn Approver 
 If you receive the error “error: failed to request churn approval .. Rate Limit Exceeded” you may retry after the threshold has passed. If you receive the error “insufficient funds”, you may increase your Operator’s delegated TVL to the required minimum and retry after the threshold has passed.
 
 :::info
-More information about the registration process that is executed by the above commands can be found at the [Registration Protocol Overview](../registration-protocol/).
+More information about the registration process that is executed by the above commands can be found at the [Registration Protocol Overview](../registration-protocol.md).
 :::
 
 ## Check for network traffic
 
-Once you have successfully opted into a quorum, you should begin to see logs indicating that your node is receiving, validating, and storing batches from the network, like the following:
+EigenDA uses the operator state that is 75 blocks (15 minutes) behind the current chain head to ensure the state is not at risk of being reorg'd.
+About 15 minutes after you have successfully opted into a quorum, you should begin to see logs indicating that your node is receiving, validating, and storing batches from the network, like the following:
 
 ```
 Batch verify 1 frames of 256 symbols out of 1 blobs
@@ -94,6 +95,14 @@ time=2024-03-22T19:34:39.859Z level=DEBUG source=/app/node/node.go:346 msg="Sign
 time=2024-03-22T19:34:39.859Z level=DEBUG source=/app/node/node.go:349 msg="Sign batch took" duration=1.32679ms
 time=2024-03-22T19:34:39.860Z level=INFO source=/app/node/node.go:351 msg="StoreChunks succeeded"
 time=2024-03-22T19:34:39.860Z level=DEBUG source=/app/node/node.go:353 msg="Exiting process batch" duration=97.815499ms
+```
+
+## List Quorums
+
+The following command lists the quorums the node is currently opted into.
+
+```
+./run.sh list-quorums
 ```
 
 ## Opt-Out of an EigenDA Quorum
