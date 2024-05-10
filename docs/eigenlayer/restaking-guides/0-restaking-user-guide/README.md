@@ -1,11 +1,12 @@
 # Restaking User Guide
 
-These guides will walk you through how LST holders and Native Stakers can restake, withdraw and earn points on the [EigenLayer app](https://app.eigenlayer.xyz/).
+These guides will walk you through how EIGEN token holders, LST holders and Native Stakers can restake, withdraw and earn points on the [EigenLayer app](https://app.eigenlayer.xyz/).
 
 ## **Liquid vs Native Restaking**
 
-**Liquid restaking** is the process of depositing liquid staking tokens (LSTs) into the EigenLayer smart contracts. At this time, the protocol supports the following LSTs:
+**Liquid restaking** is the process of depositing liquid staking tokens (LSTs) and EIGEN tokens into the EigenLayer smart contracts. At this time, the protocol supports the following tokens:
 
+- EIGEN (EigenLayer)
 - stETH (Lido)
 - rETH (Rocket Pool)
 - cbETH (Coinbase)
