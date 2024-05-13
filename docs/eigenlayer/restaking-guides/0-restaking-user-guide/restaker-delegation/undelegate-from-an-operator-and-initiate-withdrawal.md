@@ -33,5 +33,5 @@ Initiating an Undelegate transaction will also **automatically queue a withdrawa
 ![](/img/googleusercontentbackup/7-TpReNxUQnJlp0W_KqCyaQf7osXcMwHFDKaAybtmTUgEhGmdHreUrAE0jPj7ZZisKqaLhIhkZtksYFz3r8_KShhr-92FyA6pERdXbQhzZQ4bZlceEDIKhR-M_wutvom_JTc8E9h-GSfl3jxDxdf6EE.png)
 
 :::info
-The "Redeposit" button is also available for the user to Restake funds if the withdrawal was initiated by mistake. This Redeposit action is possible even if restaking for the given asset (including LST) has been paused or capped.
+The "Redeposit" button is also available for the user to Restake funds if the withdrawal was initiated by mistake.
 :::
