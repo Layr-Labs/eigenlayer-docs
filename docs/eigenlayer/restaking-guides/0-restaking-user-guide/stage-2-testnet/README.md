@@ -17,5 +17,5 @@ Users are encouraged to first test their staking approach on the Holesky Testnet
 
 - Withdraw (Escrow) Period:
     - All funds unstaked from _EigenLayer Testnet_ go through a delay (escrow period) of 10 blocks (roughly 2 minutes) before being able to be withdrawn.
-    - All funds unstaked from _EigenLayer Mainnet_ will go through a 7-day escrow period before being able to be withdrawn.
+    - LST tokens and Native Restaking funds unstaked from _EigenLayer Mainnet_ will go through a 7-day escrow period before being able to be withdrawn. EIGEN token will go through a 24-day escrow period.
 - Holesky Testnet will not include Restaked Points calculations.

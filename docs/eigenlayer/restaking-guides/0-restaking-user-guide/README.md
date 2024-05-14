@@ -24,8 +24,6 @@ The protocol plans to support additional liquid staking tokens in the future. If
 
 **Native restaking** describes the process of setting an Ethereum validator's `withdrawCredential` to EigenLayer's smart contracts (EigenPod). You must operate an Ethereum Validator node in order to participate in Native Restaking.
 
-## [**Withdrawal Delay**](https://docs.eigenlayer.xyz/security/withdrawal-delay)
+## Escrow Period (Withdrawal Delay)
 
-EigenLayer is launching with a maximally conservative withdrawal delay, which is intended to only decrease over time.
-
-A 7-day delay window should give ample time to review withdrawals for anything suspicious and pause relevant functionality if needed.
+EigenLayer contracts feature a **7-day** withdrawal delay for LST tokens and Native Restaking, a critical security measure for instances of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. The withdrawal window for EIGEN token is **24-days**, which is necessary to support future planned functionality unique to the token. Please see [Withdrawal Delay](/docs/eigenlayer/security/withdrawal-delay.md) for more detail.
