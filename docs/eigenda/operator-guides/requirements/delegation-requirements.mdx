@@ -24,13 +24,13 @@ The EigenDA operator cap means that in order to be an operator for EigenDA, you 
     - Minimum stake floor: Each operator must have
       - at least 32 ETH to join the ETH quorum, or
       - at least 1 EIGEN to join the EIGEN quorum.
-    - Congested operator set stake floor: When the global operator cap (200) is reached, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
+    - Congested operator set stake floor: When the global operator cap (200) is reached for the quorum, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
 
   </TabItem>
   <TabItem value="holesky" label="Holesky">
 
     - Minimum stake floor: Each operator must have at least 32 ETH.
-    - Congested operator set stake floor: When the global operator cap (200) is reached, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
+    - Congested operator set stake floor: When the global operator cap (200) is reached for the quorum, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
 
   </TabItem>
 </Tabs>
@@ -40,9 +40,9 @@ Details about how these requirements are enforced and the process by which DA no
 
 ## Checking eligibility
 
-In order to determine the current TVL of the top 200 operators, please visit our
+In order to determine the current TVL of the top 200 operators for each quorum, please visit our
 AVS page ([Mainnet](https://app.eigenlayer.xyz/avs/eigenda), [Holesky](https://holesky.eigenlayer.xyz/avs/eigenda)) and sort by `TVL
-Ascending.` Observe the first 200 operators listed and the amount of ETH TVL
+Ascending.` Observe the first 200 operators listed for the quorum and the amount of ETH TVL
 delegated to them. Please keep in mind that the AVS Page reflects the
 operator stake on EigenLayer, which is used to update the EigenDA operator set
 stake weights on a weekly basis (Wednesdays at 17:00 UTC), so the EigenDA stake
