@@ -7,30 +7,30 @@ import TabItem from '@theme/TabItem';
 
 # Delegation Requirements
 
-:::info 
+:::info
 Active Operator Set Cap: the active operator set cap is currently
 limited to 200 operators for both Mainnet and Holesky. We will review this operator cap on an ongoing basis,
 and explicitly communicate future changes.
 :::
 
-EigenDA currently only allows a limited number of operators to join the protocol. This restriction relates directly to the cost of bridging EigenDA availability attestations to the Ethereum L1 and will be relaxed as this cost is alleviated via various technological improvements. 
+EigenDA currently only allows a limited number of operators to join the protocol. This restriction relates directly to the cost of bridging EigenDA availability attestations to the Ethereum L1 and will be relaxed as this cost is alleviated via various technological improvements.
 
-The EigenDA operator cap means that in order to be an operator for EigenDA, you must first register as an EigenLayer operator and meet certain stake requirements. These requirements are evaluated on a per-quorum basis, relative to the weighting for each quorum: 
+The EigenDA operator cap means that in order to be an operator for EigenDA, you must first register as an EigenLayer operator and meet certain stake requirements. These requirements are evaluated on a per-quorum basis, relative to the weighting for each quorum:
 
 
 <Tabs groupId="network">
   <TabItem value="mainnet" label="Mainnet">
-    
-    - Minimum stake floor: Each operator must have 
-      - at least 96 ETH to join the ETH quorum, or 
+
+    - Minimum stake floor: Each operator must have
+      - at least 32 ETH to join the ETH quorum, or
       - at least 1 EIGEN to join the EIGEN quorum.
-    - Congested operator set stake floor: When the global operator cap (200) is reached, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.  
+    - Congested operator set stake floor: When the global operator cap (200) is reached, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
 
   </TabItem>
   <TabItem value="holesky" label="Holesky">
-   
-    - Minimum stake floor: Each operator must have at least 32 ETH. 
-    - Congested operator set stake floor: When the global operator cap (200) is reached, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.  
+
+    - Minimum stake floor: Each operator must have at least 32 ETH.
+    - Congested operator set stake floor: When the global operator cap (200) is reached, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
 
   </TabItem>
 </Tabs>
@@ -49,7 +49,7 @@ stake weights on a weekly basis (Wednesdays at 17:00 UTC), so the EigenDA stake
 may lag the real-time EigenLayer stake by at most 7 days.
 
 
-## Have I been churned? 
+## Have I been churned?
 
 Operators that have been ejected can verify the change in two ways:
 
