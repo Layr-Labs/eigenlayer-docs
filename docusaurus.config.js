@@ -27,6 +27,10 @@ const config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
 
+  markdown: {
+    mermaid: true
+  },
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -202,7 +206,6 @@ const config = {
       ({
         docs: {
           breadcrumbs: true,
-          showLastUpdateTime: true,
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
@@ -349,6 +352,7 @@ const config = {
         docsRouteBasePath: "/",
       }),
     ],
+    '@docusaurus/theme-mermaid'
   ],
 };
 
