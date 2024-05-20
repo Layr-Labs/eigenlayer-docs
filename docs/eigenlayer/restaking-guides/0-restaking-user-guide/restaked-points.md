@@ -41,3 +41,4 @@ $$
 Additional clarifications for Native Restaking:
 - Consensus layer rewards are not included in the points calculation. Restaked points for native restaked is based on the validator's Effective Balance (capped at 32 ETH), rather than the validator's Current Balance (which includes rewards).
 - For Native and LST Restaking, points accrual ends at the “Complete Withdrawal” action when the funds have exited EigenLayer completely.
+- ​Currently users do not earn restaked points for staking EIGEN. Please see the [FAQ here](https://docs.eigenfoundation.org/faq/staking#will-i-earn-rewards-for-staking-eigen) for more information.

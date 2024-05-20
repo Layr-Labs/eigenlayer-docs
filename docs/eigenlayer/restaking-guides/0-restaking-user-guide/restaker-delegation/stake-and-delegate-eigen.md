@@ -3,6 +3,12 @@ sidebar_position: 4
 title: Delegating EIGEN
 ---
 
+## Restake and Delegate EIGEN: Video Walkthrough
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mTsnzfcy8OU?si=ovoSZQQn8LWR6z7f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Steps to Delegate EIGEN
+
 Follow the steps below to delegate EIGEN tokens to an EigenDA node operator.
 
 **Step 1:** Visit [https://app.eigenlayer.xyz/restake/EIGEN](https://app.eigenlayer.xyz/restake/EIGEN)

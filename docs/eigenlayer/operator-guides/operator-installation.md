@@ -295,6 +295,8 @@ You must configure the correct DelegationManager contract address for your envir
 
 Operators have the option to set [delegationApprover](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/interfaces/IDelegationManager.sol#L30) when they register. If the `delegationApprover` is set to a nonzero value, then the `delegationApprover` address will be required sign its approval of new delegations from Stakers to this Operator. If the default value is left as the zero address (0x000...) then all new delegations will be automatically approved without the need for any signature. Please see [delegationApprover Design Patterns](#delegationapprover-design-patterns) below for more detail.
 
+ The EigenLayer Web App simulates transactions to check for contract reversions. If the delegate call will revert for any reason the button will be disabled.
+
 
 
 
