@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Operator Protocol SLA
 
-When operators opt-in to EigenDA, they assume responsibilities imposed by the protocol to provide the EigenDA node service honestly and with at least a certain level of availability and performance. Operators are held accountable for these responsibilities by the network and may face penalties such ejection for unavailability faults.
+When operators opt-in to EigenDA, they assume responsibilities imposed by the protocol to provide the EigenDA node service honestly and with at least a certain level of availability and performance. Operators are held accountable for these responsibilities by the network and may face penalties such as ejection for unavailability faults.
 
 ## Responsibilities
 
