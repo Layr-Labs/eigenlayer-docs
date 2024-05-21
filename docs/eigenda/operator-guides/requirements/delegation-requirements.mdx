@@ -1,0 +1,66 @@
+---
+sidebar_position: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Delegation Requirements
+
+:::info
+Active Operator Set Cap: the active operator set cap is currently
+limited to 200 operators for both Mainnet and Holesky. We will review this operator cap on an ongoing basis,
+and explicitly communicate future changes.
+:::
+
+EigenDA currently only allows a limited number of operators to join the protocol. This restriction relates directly to the cost of bridging EigenDA availability attestations to the Ethereum L1 and will be relaxed as this cost is alleviated via various technological improvements.
+
+The EigenDA operator cap means that in order to be an operator for EigenDA, you must first register as an EigenLayer operator and meet certain stake requirements. These requirements are evaluated on a per-quorum basis, relative to the weighting for each quorum:
+
+
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+
+    - Minimum stake floor: Each operator must have
+      - at least 32 ETH to join the ETH quorum, or
+      - at least 1 EIGEN to join the EIGEN quorum.
+    - Congested operator set stake floor: When the global operator cap (200) is reached for the quorum, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+
+    - Minimum stake floor: Each operator must have at least 32 ETH.
+    - Congested operator set stake floor: When the global operator cap (200) is reached for the quorum, the joining operator must have more than 1.1X the quorum weight of the current lowest-weighted operator in order to replace that operator.
+
+  </TabItem>
+</Tabs>
+
+Details about how these requirements are enforced and the process by which DA nodes join a quorum for which they are eligible can be found at the [Registration Protocol Overview](../registration-protocol.md).
+
+
+## Checking eligibility
+
+In order to determine the current TVL of the top 200 operators for each quorum, please visit our
+AVS page ([Mainnet](https://app.eigenlayer.xyz/avs/eigenda), [Holesky](https://holesky.eigenlayer.xyz/avs/eigenda)) and sort by `TVL
+Ascending.` Observe the first 200 operators listed for the quorum and the amount of ETH TVL
+delegated to them. Please keep in mind that the AVS Page reflects the
+operator stake on EigenLayer, which is used to update the EigenDA operator set
+stake weights on a weekly basis (Wednesdays at 17:00 UTC), so the EigenDA stake
+may lag the real-time EigenLayer stake by at most 7 days.
+
+
+## Have I been churned?
+
+Operators that have been ejected can verify the change in two ways:
+
+1. Visit the EigenDA AVS application to observe whether your Operator is present
+in the active operator set on the [AVS page](https://holesky.eigenlayer.xyz/avs/eigenda).
+2. Observe your EigenDA Operator log for the following logs. If you see this
+consistently, then your operator is not receiving any disperser traffic and you
+may have been ejected.  This is not an error but if you only see this log line
+repeatedly then it means you may not be receiving any disperser traffic.
+
+```
+INFO [12-21|18:53:46.673|github.com/Layr-Labs/eigenda/node/node.go:233]             Complete an expiration cycle to remove expired batches "num expired batches found and removed"=3  caller=node.go:233
+```
+

@@ -24,8 +24,12 @@ const config = {
   organizationName: "layr-labs", // Usually your GitHub org/user name.
   projectName: "docusaurus", // Usually your repo name.
 
-  onBrokenLinks: "warn",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "throw",
+
+  markdown: {
+    mermaid: true
+  },
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -67,59 +71,67 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/",
-            to: "/eigenda/rollup-guides/tutorial",
+            to: "/eigenda/integrations-guides/dispersal/cli-guide",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/building-on-top-of-eigenda",
-            to: "/eigenda/rollup-guides/tutorial",
+            to: "/eigenda/integrations-guides/dispersal/cli-guide",
+          },
+          {
+            from: "/eigenda/rollup-guides/tutorial",
+            to: "/eigenda/integrations-guides/dispersal/cli-guide",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/system-performance-and-customization",
-            to: "/eigenda/performance-metrics",
+            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+          },
+          {
+            from: "/eigenda/system-performance-and-customization",
+            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+          },
+          {
+            from: "/eigenda/performance-metrics",
+            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/blob-explorer",
-            to: "/eigenda/blob-explorer",
+            to: "/eigenda/networks/",
+          },
+          {
+            from: "/eigenda/blob-explorer",
+            to: "/eigenda/networks/",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide",
-            to: "/eigenda/rollup-guides/op-stack",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
+          },
+          {
+            from: "/eigenda/rollup-guides/op-stack",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack-+-eigenda-locally",
-            to: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
+          },
+          {
+            from: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
           },
           {
             from: "/eigenda-guides/integrations-overview",
-            to: "/eigenda/rollup-guides/integrations-overview",
+            to: "/eigenda/integrations-guides/rollup-guides/integrations-overview",
           },
           {
             from: "/eigenda/integrations-overview",
-            to: "/eigenda/rollup-guides/integrations-overview",
+            to: "/eigenda/integrations-guides/rollup-guides/integrations-overview",
           },
           {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/goerli",
-            to: "/eigenda/operator-guides/networks/goerli",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/holesky",
-            to: "/eigenda/operator-guides/networks/holesky",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-avs-installation-registration-and-upgrade/mainnet",
-            to: "/eigenda/operator-guides/networks/mainnet",
+            from: "/eigenda/rollup-guides/integrations-overview",
+            to: "/eigenda/integrations-guides/rollup-guides/integrations-overview",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/",
             to: "/eigenda/operator-guides/overview",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/eigenda-metrics-and-monitoring",
-            to: "/eigenda/operator-guides/eigenda-metrics-and-monitoring",
-          },
-          {
-            from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/ip-stability-and-costs-of-change",
-            to: "/eigenda/operator-guides/ip-stability-and-costs-of-change",
           },
           {
             from: "/operator-guides/avs-installation-and-registration/eigenda-operator-guide/troubleshooting",
@@ -135,31 +147,31 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/orbit/",
-            to: "/eigenda/rollup-guides/orbit/",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
+          },
+          {
+            from: "/eigenda/rollup-guides/orbit/",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
           },
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
             to: "/eigenlayer/avs-guides/how-to-build-an-avs",
           },
           {
-            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/goerli",
-            to: "/eigenda/operator-guides/networks/goerli",
-          },
-          {
-            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/holesky",
-            to: "/eigenda/operator-guides/networks/holesky",
-          },
-          {
-            from: "/eigenda/operator-guides/eigenda-avs-installation-registration-and-upgrade/mainnet",
-            to: "/eigenda/operator-guides/networks/mainnet",
-          },
-          {
-            from: "/eigenda/system-performance-and-customization",
-            to: "/eigenda/performance-metrics",
-          },
-          {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod/",
             to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/",
+          },
+          {
+            from: "/eigenda/rollup-guides/",
+            to: "/eigenda/integrations-guides/rollup-guides/",
+          },
+          {
+            from: "/eigenda/rollup-guides/api-error-codes",
+            to: "/eigenda/integrations-guides/dispersal/api-error-codes",
+          },
+          {
+            from: "/eigenda/rollup-guides/blob-encoding",
+            to: "/eigenda/integrations-guides/dispersal/blob-serialization-requirements",
           },
         ],
         createRedirects(existingPath) {
@@ -194,7 +206,6 @@ const config = {
       ({
         docs: {
           breadcrumbs: true,
-          showLastUpdateTime: true,
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
@@ -341,6 +352,7 @@ const config = {
         docsRouteBasePath: "/",
       }),
     ],
+    '@docusaurus/theme-mermaid'
   ],
 };
 

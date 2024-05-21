@@ -30,7 +30,7 @@ Do not click Unstake the assets at the Operator page. This can cause a partially
 **Step 5:** Wait for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/stage-2-testnet/README.md#testnet-vs-mainnet-differences).
 
 
-**Step 6:** Manually Redeposit each asset. Visit each asset page individually. Navigate to the **Unstake** tab, click **Redeposit**.
+**Step 6:** Manually Redeposit each asset. Visit each asset page individually. Navigate to the **Unstake** tab, click **Redeposit**. This will prompt a Redeposit transaction for each asset that you will confirm in your Web3 wallet.
 
 **Step 7:** After all assets have been redeposited, visit the Operator page for the new operator you wish to delegate to. Click **Delegate** button.
 

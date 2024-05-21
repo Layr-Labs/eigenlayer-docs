@@ -35,7 +35,7 @@ By following these steps, you can determine if you have a suitable Linux environ
 
 ---
 
-## Installation
+## CLI Installation
 
 ### Install CLI using Binary
 
@@ -53,7 +53,7 @@ To add the binary to your path, run:
 export PATH=$PATH:~/bin
 ```
 
-#### Installing in custom location
+#### Install CLI in A Custom Location
 
 To download the binary in a custom location, run:
 
@@ -63,7 +63,7 @@ curl -sSfL https://raw.githubusercontent.com/layr-labs/eigenlayer-cli/master/scr
 
 ---
 
-### Install CLI using Go
+### Install CLI Using Go
 
 Now we’re going to install the eigenlayer-CLI using Go. The following command will install eigenlayer’s executable along with the library and its dependencies in your system.
 
@@ -229,17 +229,15 @@ eigenlayer operator keys export --key-type ecdsa --key-path [path]
 
 ## Fund ECDSA Wallet
 
-Step 1: Follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with HolEth.
+Send **at least 1 ETH** to the “address” field referenced in your operator.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
 
-Step 2: Send **at least 1 ETH** to the “address” field referenced in your operator.yaml file. This ETH will be used to cover the gas cost for operator registration in the subsequent steps.
+If you are deploying to Testnet, please follow the instructions in [Obtaining Testnet ETH](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts) to fund a web3 wallet with HolEth.
+
 
 ---
 
-## Operator Registration
+## Operator Configuration and Registration
 
-### Registration
-
-#### Configuration Setup
 
 **Step 1:** Create the config files needed for operator registration using the below command:
 
@@ -254,6 +252,8 @@ The command will create two files: `operator.yaml` and `metadata.json`.
 **Step 2:** Upload Logo Image, Configure `metadata.json`, and Upload Both
 
 Upload the logo of the operator to a publicly accessible location and set the url in your `metadata.json` file. Operator registration only supports `.png` images for now and must be less than 1MB in size.
+
+The `name` and `description` should comply with the regex mention [here](https://github.com/Layr-Labs/eigensdk-go/blob/master/utils/utils.go#L29). You can use services like https://regex101.com/ to validate your fields. 
 
 Complete your the details in `metadata.json`.  The `metadata.json` must be less than 4KB in size. Upload the file to a publicly accessible location and set that url in `operator.yaml`. Please note that a **publicly accessible** metadata url is required for successful registration. An example operator.yaml file is provided for your reference here: [operator.yaml](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/pkg/operator/config/operator-config-example.yaml) .
 
@@ -293,22 +293,27 @@ You must configure the correct DelegationManager contract address for your envir
 
 **Optional:** Set Delegation Approver
 
-Operators have the option to set [delegationApprover](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/interfaces/IDelegationManager.sol#L30) when they register. This is address is used to approve delegation requests from stakers. The `delegationApprover` address will be required sign and approve new delegation from Stakers to this Operator. Otherwise, the `delegationApprover` will not be used if the default value is left as `0x000..`.
+Operators have the option to set [delegationApprover](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/interfaces/IDelegationManager.sol#L30) when they register. If the `delegationApprover` is set to a nonzero value, then the `delegationApprover` address will be required sign its approval of new delegations from Stakers to this Operator. If the default value is left as the zero address (0x000...) then all new delegations will be automatically approved without the need for any signature. Please see [delegationApprover Design Patterns](#delegationapprover-design-patterns) below for more detail.
+
+ The EigenLayer Web App simulates transactions to check for contract reversions. If the delegate call will revert for any reason the button will be disabled.
 
 
-#### Registration Command
+
+
+
+**Step 5:** Registration Command
 
 This is the command you can use to register your operator.
-
-> _Note: ECDSA key is required for operator registration. You may choose to either_ [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
 
 ```
 eigenlayer operator register operator.yaml
 ```
 
+> _Note: ECDSA key is required for operator registration. You may choose to either_ [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
+
 ---
 
-### Checking Status of Registration
+## Checking Status of Registration
 
 This is the command you can use to inquire about the registration status of your operator.
 
@@ -318,10 +323,35 @@ eigenlayer operator status operator.yaml
 
 ---
 
-### Metadata Updates
+## Metadata Updates
 
 This is the command you can use to make changes or updates to the metadata of your operator.
 
 ```
 eigenlayer operator update operator.yaml
 ```
+
+
+
+## delegationApprover Design Patterns
+
+Delegation Approver functionality can be used in multiple ways to give Operators additional programmatic control over which Restakers they accept delegation from.
+
+
+### Passing Signatures from the DelegationApprover to Stakers
+
+One series of designs involves passing a unique signature from the Operator to the Restaker requesting approval. The unique signature will have a corresponding ‘salt’ (unique value used once) and an ‘expiry’. The Restaker passes the signature (salt & expiry) into the `DelegationManager.delegateTo` function ([source here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L135-L155)). This function uses EIP1271 to check the signature, so either:
+- A) The Operator has set an EOA as their `delegationApprover` and the DelegationManager simply checks that the signature is a valid ECDSA signature from the EOA.
+- OR B) The Operator has set a smart contract as their `delegationApprover` and the DelegationManager calls the isValidSignature function on the `delegationApprover` and checks if the contract returns `0x1626ba7e` (as defined in the [EIP-1271 specification](https://eips.ethereum.org/EIPS/eip-1271#specification)).
+
+If the delegationApprover themself calls the DelegationManager.delegateToBySignature function, then they need to provide a [signature from the Restaker](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L157-L204). The approverSignatureAndExpiry input is ignored if the caller is themselves the delegationApprover. One potential drawback to this approach is the delegationApprover would pay the gas for the transaction.
+
+**Whitelisting and Blacklisting Restakers for Delegation**
+
+If the Operator uses option B above, a smart contract for their `delegationApprover`, they can also maintain an approved whitelist. The contract can store a Merkle root of approved signature hashes and provide each Restaker with a Merkle proof when they delegate. [This branch](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat-example-operator-delegation-whitelist/src/contracts/examples/DelegationApproverWhitelist.sol) provides a PoC of what such a smart contract could look like.
+
+The example above could be modified to act as a “blacklist” by using Merkle proofs of non-inclusion instead of Merkle proofs of inclusion.
+
+
+
+

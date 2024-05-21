@@ -3,9 +3,12 @@ sidebar_position: 1
 title: Delegate to an Operator
 ---
 
-# Delegate to an Operator
+# Delegate EIGEN, LSTs, and Native Restaked ETH to an Operator
 
-Follow the steps below to initiate delegation of your restaked balance to an Operator. Delegation is an all or nothing operation. You must delegate all of your available Restaked balance to a single Operator.
+Follow the steps below to initiate delegation of your Restaked balance to an Operator of your choice. This Restaked balance includes EIGEN tokens, LST tokens, and Native Restaked TVL.
+
+Delegation is an **all or nothing** operation. Through the following process you will delegate all of your available Restaked balance to a single Operator. 
+
 
 **Step 1:** Navigate to the **Operator** page to view a list of available Operators.
 

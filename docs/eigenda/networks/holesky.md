@@ -17,7 +17,8 @@ The EigenDA Holesky testnet is the current EigenDA testnet. The EigenDA Holesky 
 | Property | Value |
 | --- | --- |
 | Disperser Address | `disperser-holesky.eigenda.xyz:443` |
-| Batch Confirmation Interval | Every 50 seconds |
+| Churner Address | `churner-holesky.eigenda.xyz:443` |
+| Batch Confirmation Interval | Every 10 minutes (may vary based on network health) |
 | Max Blob Size | 2 MB |
 | Default Blob Dispersal Rate limit | No more than 1 blob every 100 seconds |
 | Default Blob Size Rate Limit | No more than 1.8 MB every 10 minutes |

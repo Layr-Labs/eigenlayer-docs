@@ -1,27 +1,27 @@
 ---
 sidebar_position: 6
-title: AVS Holesky Dashboard Onboarding
+title: AVS Dashboard Onboarding
 ---
 
 
-This document defines interfaces that AVSs must implement to index their data for the V1 AVS Marketplace
+This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
 
 
 ## Interface
 
 ```javascript
 interface IServiceManager {
-// These 3 functions are just proxies to the same-named functions in the AVSDirectory
+// Below 3 functions are just proxies to the same-named functions in the AVSDirectory
 function registerOperatorToAVS(address operator, Signature memory signature);
 
 function deregisterOperatorFromAVS(address operator);
 
 function updateAVSMetadataURI(string calldata metadataURI);
 	
-	// Implement in ServiceManager
-	function getOperatorRestakedStrategies(address operator) returns (address[] memory)
+// Below 2 functions are needed for your AVS to appear correctly on the UI
+function getOperatorRestakedStrategies(address operator) returns (address[] memory)
 
-	function getRestakeableStrategies() returns (address[] memory);
+function getRestakeableStrategies() returns (address[] memory);
 }
 ```
 
@@ -45,10 +45,15 @@ The metadataURI should follow the format outlined in this [example](https://hole
     "name": "EigenLabs AVS 1",
     "website": "https://www.eigenlayer.xyz/",
     "description": "This is my 1st AVS",
-    "logo": "https://holesky-operator-metadata.s3.amazonaws.com/eigenlayer.png",
+    "logo": "https://raw.githubusercontent.com/layr-labs/eigendata/master/avs/eigenlabs/logo.png",
     "twitter": "https://twitter.com/eigenlayer"
 }
 ```
 
+Note that for proper rendering of your logo on the UI, the logo _must_ be hosted on GitHub and its reference must point to the raw file as the example above shows. If you need a repo for your logo to be hosted publicly, you can make a PR to the `eigendata` repo and have your logo added: https://github.com/Layr-Labs/eigendata.
+
 ## Holesky Dashboard onboarding
 Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard.
+
+## Mainnet Dashboard onboarding
+Prior to planning your Mainnet onboarding, please test first in Testnet and contact our team via the form [here](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding#holesky-dashboard-onboarding).

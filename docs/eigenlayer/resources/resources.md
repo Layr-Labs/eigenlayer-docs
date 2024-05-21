@@ -43,3 +43,7 @@ title: Learning Resources
 * [EigenLayer Research Forum](https://research.eigenlayer.xyz/)
 * [Discord](https://discord.com/invite/eigenlayer)
 * [Twitter](https://twitter.com/eigenlayer)
+
+### Community Data APIs 
+* [Dune EigenLayer API](https://docs.dune.com/api-reference/eigenlayer/introduction)
+* [EigenExplorer API](https://docs.eigenexplorer.com/api-reference/introduction)
