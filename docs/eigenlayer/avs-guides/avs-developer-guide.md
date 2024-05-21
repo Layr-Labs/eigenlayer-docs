@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: AVS Development Overview
+title: AVS Overview
 ---
 
 Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
@@ -10,7 +10,6 @@ Before diving into what AVSs are and how you can design and build one, check out
 An AVS is any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, trusted execution environments and more.
 
 Each AVS has its own set of contracts that hold state relevant to the service’s functionality, such as what operators are running the service and how much stake is securing the service.
-
 
 Below is a high-level overview of EigenLayer core contracts as well as how an AVS is built on top of it and consumed.
 
@@ -25,6 +24,12 @@ Let’s clarify some of the interactions demonstrated by the above diagram.
 - The dotted lines for the boxes represent components that are optional depending on the interface design.
 - Each AVS developer can design and implement its own contracts as they see fit as long as their entry point (canonically called the `ServiceManager`) implements the interface expected by the EigenLayer protocol. Specific details expanding on this will be coming soon.
 
+
+
 ## Additional Resources
 
-The [awesome-avs](https://github.com/Layr-Labs/awesome-avs) repo also contains a lot of resources for learning about and building an AVS.
+Visit [awesome-avs](https://github.com/Layr-Labs/awesome-avs) to view learning resources for building an AVS and the latest community contributions.
+
+## Get in Touch
+
+Once you have an idea of what you want to build on EigenLayer, submit an [AVS Questionnaire](https://bit.ly/avsquestions) and get in touch with us.

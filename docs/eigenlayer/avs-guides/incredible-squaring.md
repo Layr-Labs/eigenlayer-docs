@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-title: Quickstart Guide with Incredible Squaring
+sidebar_position: 3
+title: Incredible Squaring
 ---
 
 ## What is Incredible Squaring?
