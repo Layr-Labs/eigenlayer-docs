@@ -138,13 +138,11 @@ message DisperseBlobReply {
 
 ##### Client Registration
 
-On testnet dispersal is permissionless for [free tier levels of dispersal throughput](../../networks/holesky.md), meaning the EigenDA disperser does not require authentication. Clients looking for more throughput should submit a response to the [Testnet Client Registration Form](https://placeholder.vc).
+On testnet dispersal is permissionless for [free tier levels of dispersal throughput](../../networks/holesky.md), meaning the EigenDA disperser does not require authentication.
 
-<!-- TODO: Link testnet client registration form -->
+On mainnet the EigenDA disperser requires authentication for all throughput tiers, including the free tier.
 
-On mainnet the EigenDA disperser requires authentication for all throughput tiers, including the free tier. Mainnet clients should submit a response to the [EigenDA Client Onboarding Form](https://placeholder.vc).
-
-<!-- TODO: Link mainnet client registration form -->
+Clients looking to send traffic to EigenDA mainnet or use more traffic on testnet should reach out via the [EigenDA Client Registration Form](https://forms.gle/3QRNTYhSMacVFNcU8) so we can get in touch.
 
 ### GetBlobStatus()
 
