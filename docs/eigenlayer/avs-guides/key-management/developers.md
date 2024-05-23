@@ -36,7 +36,7 @@ A good choice for a remote signer is [Web3signer](https://docs.web3signer.consen
 
 ## Key Management Recommendation for Developers
 
-The AVS can implement a feasible and sufficient method of loading the keys. This is asking for a path to a keystore folder. This keystore needs to follow some structure that AVS knows how to read. Currently [eigenlayer-cli](https://github.com/NethermindEth/eigenlayer#create-and-list-keys) supports creation of encrypted ecdsa and bn254 keys in the [web3 secret storage](https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage/) format. 
+The AVS can implement a feasible and sufficient method of loading the keys. This is asking for a path to a keystore folder. This keystore needs to follow some structure that AVS knows how to read. Currently [eigenlayer-cli](https://github.com/Layr-Labs/eigenlayer-cli) supports creation of encrypted ecdsa and bn254 keys in the [web3 secret storage](https://ethereum.org/en/developers/docs/data-structures-and-encoding/web3-secret-storage/) format. 
 
 
 :::note
