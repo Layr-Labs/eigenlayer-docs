@@ -1,37 +1,99 @@
 ---
 sidebar_position: 2
+title: Building an AVS
 ---
 
-# How to Build an AVS
 
-## Step 1: Grasp EigenLayer fundamentals 
-### Basic Understanding
-* Understand the basics of EigenLayer
-    * Understand [how EigenLayer works.](https://www.blog.eigenlayer.xyz/ycie/)
-        * Read our [GitHub](https://github.com/Layr-Labs/eigenlayer-contracts/tree/master#introduction) on how EigenLayer contract architecture works.
-        * Understand the type of trust you would need with [programmable trust](https://www.blog.eigenlayer.xyz/the-three-dimensions-of-programmable-trust/).
-        * Play with our [Incredible Squaring AVS demo](https://github.com/Layr-Labs/incredible-squaring-avs) - a dummy AVS we built to showcase the on-chain contracts and off-chain node software components of an AVS.
-            1. Incredible Squaring [Overall 5 min Walk-Through](https://www.loom.com/share/50314b3ec0f34e2ba386d45724602d76?sid=cf176400-fdbb-4bdc-8563-22a68414985d)
-            2. Incredible Squaring [TaskManager 5 min Walk-Through](https://www.loom.com/share/5f3f2a447bc54ffa9d37d203c32088de?sid=0f5c2c07-82c5-4640-bc6f-6e4327bb3d81)
-        - Once you have an idea of what you want to build on EigenLayer, submit an [AVS Questionnaire](https://bit.ly/avsquestions) and get in touch with us.
-### Assessing
-* Once we review your AVS Questionnaire response, we will reach out and hop on a call with you to address any questions you have about the technical architecture of your system, the process of becoming an AVS, and EigenLayer’s value proposition.
-* Look into our docs more and determine whether building on EigenLayer makes sense and is feasible. You can ask any questions in our shared Telegram group, and our researchers and engineers will answer any specific questions.
+## Step 1: Learn EigenLayer fundamentals 
 
-## Step 2: From idea to testnet: 
-### Engineering 
-* AVS must write on-chain contracts, which contain the AVS registry contract and slashing contract, and test out the integration to EigenLayer by studying our Incredible Squaring demo. 
-    * AVS can use [Incredible Squaring](https://github.com/Layr-Labs/incredible-squaring-avs) to write on-chain code.
-    * The Incredible Squaring contracts consist of shadow deployment of Eigenlayer core contracts that AVSs can use for understanding how off-chain and on-chain code for any AVS can interact with Eigenlayer contracts. It contains the Strategy Manager (used to deposit and withdraw stake and stake accounting), Delegation Manager (used for operator registration and stakers delegating to operators), and experimental_slasher.sol (used for AVS syncing with Eigenlayer state) contracts. 
-    * We are providing a set of registry contracts that AVS teams can use as their own registry contracts, which will help them save development effort. Of course, AVS teams are free to write their own registry contracts instead.
-* AVSs must write their off-chain node software for operators to run.
-    * AVS can use our [EigenSDK](https://github.com/Layr-Labs/eigensdk-go) for writing off-chain code; the EigenSDK is being openly developed and is a work in progress. 
-    * The EigenSDK has libraries and templates to help you write your off-chain node software code. It consists of modules for signature aggregation, interacting with EigenLayer contracts, networking, cryptography, and clients for events monitoring. Currently, many of these libraries are still work in progress.
+Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-## Step 3: From testnet to mainnet:
-### Testing
-We can invite our partners to test out your AVS test network
-### Auditing
-Audit with at least 2-3 reputable audit firms
-### Go live with us 
-Launch on mainnet after having a sufficient period of risk assessment, testing, and simulation!
+Review the materials available under [EigenLayer Learning Resources](/docs/eigenlayer/resources/resources.md), including:
+- How EigenLayer works via [You Could've Invented EigenLayer](https://www.blog.eigenlayer.xyz/ycie/).
+- Understand the type of trust you would need with [The Three Pillars of Programmable Trust: The EigenLayer End Game](https://www.blog.eigenlayer.xyz/the-three-dimensions-of-programmable-trust/).
+        
+      
+## Step 2: Idea to Code: Testing and Deploying your AVS Locally
+
+The following content covers the minimum set of smart contract integrations and deployment scripts that a project needs to build in order to:
+1. Be considered a fully functional AVS for demo and proof of concept purposes.
+2. Prepare your AVS to integrate Payments and Slashing functionality, which will be release soon.
+
+
+:::info
+To begin the process below, fork the example repo here [hello-world-avs](https://github.com/Layr-Labs/hello-world-avs).
+:::
+
+
+### Smart Contract Requirements
+
+
+**1: Integration with EigenLayer Core (AVS Directory)**  
+Implement an instance of ECDSAServiceManagerBase or ServiceManagerBase (BLS).  
+Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/src/HelloWorldServiceManager.sol) and incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/master/contracts/src/IncredibleSquaringServiceManager.sol).
+
+**2: On Chain Verification**  
+Implement at least one on-chain provable event. The most common approach is to write a ECDSA or BLS aggregate signature (APK) on-chain.
+This will be utilized in future versions of EigenLayer for Payments and Slashing functionality.  
+Please see the example from incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/8bd0ac663dcc2289cad02af4a7f0002ea07bc1d8/contracts/src/IncredibleSquaringTaskManager.sol#L102) and from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L130).
+
+
+### Contract Deployment Requirements
+
+Implement deployment scripts for your contracts to deploy to your [local anvil node](https://book.getfoundry.sh/reference/anvil/).
+
+**1: Deploy of EigenLayer Contracts and State**  
+Please see the example from hello-world-avs[here](https://github.com/Layr-Labs/hello-world-avs/blob/master/utils/anvil/deploy-eigenlayer-save-anvil-state.sh).
+
+**2: Deploy your AVS contracts**  
+Please see the example forge deployment script from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/script/HelloWorldDeployer.s.sol) and bash deployment script [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/utils/anvil/deploy-eigenlayer-save-anvil-state.sh).
+
+
+
+### Operator (Off-Chain) Requirements
+
+**1: Operator Registration to AVS**  
+Provide a mechanism for the Operator register to the AVS.  
+
+Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L41). 
+
+**2: At least one event written to your AVSs on chain contracts**  
+The Operator binary (or off chain aggregation service code) must write at least one event to the AVSs on chain contracts to be used for future on-chain verification, payments, and slashing purposes.  
+
+Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L25).
+
+
+
+
+
+## Step 3: Preparing and Deploying to Testnet
+
+1. Package the Operator’s long running executable in a way that is easy for Operators to launch  (via binary, docker container, or similar).
+
+2. Author Testnet user and Operator documentation, including:
+   - Trust Modeling: clarify any trust assumptions in your architecture to your users. Identify the components that are trusted (centralized) and untrusted (decentralized, trustless).
+   - Operator instructions to install, register, deregister.
+   - End user (aka “Consumer”) instructions to utilize your AVS service.
+   - Communication channels that will be utilized for AVS upgrades.
+   - Describe Operator monitoring tooling available, such as GraFana dashboards, log files or similar.
+
+3. Follow the [AVS Developer Security Best Practices](./avs-developer-best-practices.md).
+
+4. Follow the guidance in [Key Manage Considerations for Developers](./key-management/developers.md).
+
+5. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
+
+6.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
+
+
+## Step 4: Preparing and Deploying to Mainnet
+
+1. Smart Contract Auditing: have your codebase audited with at least 2-3 reputable audit firms.
+2. Finalize User and Operator documentation.
+3. Follow the [Mainnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
+
+
+
+## Get in Touch
+
+Once you have an idea of what you want to build on EigenLayer, submit an [AVS Questionnaire](https://bit.ly/avsquestions) and get in touch with us.
