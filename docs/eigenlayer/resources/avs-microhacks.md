@@ -3,17 +3,19 @@ sidebar_position: 3
 title: AVS MicroHacks Hackathon
 ---
 
-### May 27 - June 17 2024
+### Season 1 May 27 - June 17 2024
 
 AVS MicroHacks are mini-hackathons targeted at specific focus areas.
 
-The first MicroHack will last 21 days with $50,000.00 in prizes, lasting from May 27 2024 to June 17 2024.
+The first AVS MicroHacks starts now and is focused on making AVS development easier and more approachable for developers from all backgrounds.
 
-All participants who with qualifying entries will also earn EigenLayer swag packs 🎒.
+Season 1 of AVS MicroHacks will last 21 days with $50,000.00 in prizes, lasting from May 27 2024 to June 17 2024.
+
+All participants with qualifying entries will also receive EigenLayer swag packs 🎒.
 
 2 individual winners will also receive an all expenses paid trip to [ETHCC](https://ethcc.io/) in Brussels.
 
-Sign up here to participate: [https://avsmicrohacks.eigenlayer.xyz](https://avsmicrohacks.eigenlayer.xyz).
+Sign up to participate: [https://avsmicrohacks.eigenlayer.xyz](https://avsmicrohacks.eigenlayer.xyz).
 
 ### About
 
@@ -29,9 +31,31 @@ The first season of MicroHacks will have the following 2 tracks and prize pools:
 - Fourth prize $2,500 USDC
 - Fifth prize $2,500 USDC
 
+To be eligible, you must open source your code and share your project on X and / or Farcaster or Lens.
+
+#### Ideas
+
 This track will be focused on building example AVSs, reference architectures that other developers can use to build out their own custom AVSs, or any tooling that makes building AVSs easier.
 
-To be eligible, you must open source your code and share your project on X and / or Farcaster or Lens.
+Anything that accomplished the above objective is eligible, but if you're looking for ideas here are a few:
+
+**Reference architectures in Go, Rust, or TypeScript/JavaScript**
+1. More advanced "Hello worlds"
+2. Oracles
+3. Off-chain data verification (i.e. sports scores or election data)
+4. Coprocessors
+5. AI execution
+6. Databases
+7. IPFS pinning
+8. Permanent file storage
+9. Data archival
+10. FHE
+11. Execution environments
+
+**Developer tooling**
+1. SDKs
+2. CLIs and scaffolding tools
+3. Services
 
 ### 2. AVS Education Hackathon - Tutorials, videos, & guides on EigenLayer AVSs
 
@@ -41,17 +65,17 @@ To be eligible, you must open source your code and share your project on X and /
 - Fourth prize 2,500 USDC
 - Fifth prize 2,500 USDC
 
-This track is focused on educating developers on all things AVSs - what they are, how to build them, and how to use them. Including education about AVSs already live on mainnet.
+This track is focused on educating developers on all things AVSs - technical deep dives, how to build them, and how to use them. Including education about AVSs already live on mainnet.
 
 Submissions can be in the form of a video, blog post, social media post, or really any publicly viewable digital content.
 
-To be eligible, you must share your work on X and / or Farcaster and Lens.
+To be eligible, you must share your work on X and / or Farcaster / Lens.
 
 #### 📅 Key Dates:
 
 - Kickoff: May 27
 - Submission Deadline: June 17
-- Winner Announcements: June 21
+- Winners announced: June 21
 
 #### 📝 How it works
 
@@ -63,5 +87,7 @@ To be eligible, you must share your work on X and / or Farcaster and Lens.
 6. Swag will be shipped to you within 60 days of the end of the hackathon.
 
 Stay updated by coming back to this page or by following [@buildoneigen](https://x.com/buildoneigen/).
+
+Additional learning resources for hackers available at [https://github.com/Layr-Labs/awesome-avs](https://github.com/Layr-Labs/awesome-avs).
 
 Hackathon Terms of Service are available [here](https://docs.google.com/document/d/1WsTcO9gmFQHe_mUlySvNfxlESEZxHkea).

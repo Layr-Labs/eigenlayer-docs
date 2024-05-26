@@ -8,7 +8,7 @@ title: Building an AVS
 
 Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-Review the materials available under [EigenLayer Learning Resources](/docs/eigenlayer/resources/resources.md), including:
+Review the materials available under [EigenLayer Learning Resources](/docs/eigenlayer/resources/learning-resources.md), including:
 - How EigenLayer works via [You Could've Invented EigenLayer](https://www.blog.eigenlayer.xyz/ycie/).
 - Understand the type of trust you would need with [The Three Pillars of Programmable Trust: The EigenLayer End Game](https://www.blog.eigenlayer.xyz/the-three-dimensions-of-programmable-trust/).
         
