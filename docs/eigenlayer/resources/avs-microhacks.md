@@ -84,7 +84,6 @@ To be eligible, you must share your work on X and / or Farcaster / Lens.
 4. Relevance: The content should be relevant to the target audience and meet their learning needs.
 5. Engagement: The material should be engaging and hold the audience's attention.
 6. Practicality: The content should offer practical insights, tips, or steps that the audience can apply.
-7. Production Value: For videos, the quality of production
 
 #### 📅 Key Dates:
 
