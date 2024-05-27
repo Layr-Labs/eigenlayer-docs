@@ -23,7 +23,7 @@ AVS MicroHacks are mini-hackathons targeted at specific focus areas.
 
 The first season of MicroHacks will have the following 2 tracks and prize pools:
 
-### 1. AVS Reference Architectures and tooling
+### Track 1 - AVS Reference Architectures and tooling
 
 - First prize $12.500 USDC plus 1 ticket and trip to ETHCC, dinner with team
 - Second prize $7,500 USDC
@@ -57,6 +57,12 @@ Anything that accomplished the above objective is eligible, but if you're lookin
 2. CLIs and scaffolding tools
 3. Services
 
+#### Track 1 juding criteria
+1. Documentation - the better the documentation the higher the score.
+2. Code quality - well organized and readable code will score higher.
+3. Extensibility - how easy can a developer use this to build out their own idea?
+4. DX - does the project provide a high quality developer experience?
+
 ### 2. AVS Education Hackathon - Tutorials, videos, & guides on EigenLayer AVSs
 
 - First prize 7,500 USDC plus 1 ticket and trip to ETHCC, dinner with team
@@ -70,6 +76,15 @@ This track is focused on educating developers on all things AVSs - technical dee
 Submissions can be in the form of a video, blog post, social media post, or really any publicly viewable digital content.
 
 To be eligible, you must share your work on X and / or Farcaster / Lens.
+
+#### Track 2 juding criteria
+1. Accuracy: Information provided should be factually correct and well-researched.
+2. Clarity: Concepts should be explained clearly and concisely, avoiding unnecessary jargon.
+3. Depth: The material should cover the topic thoroughly, providing enough detail to be informative.
+4. Relevance: The content should be relevant to the target audience and meet their learning needs.
+5. Engagement: The material should be engaging and hold the audience's attention.
+6. Practicality: The content should offer practical insights, tips, or steps that the audience can apply.
+7. Production Value: For videos, the quality of production
 
 #### 📅 Key Dates:
 
