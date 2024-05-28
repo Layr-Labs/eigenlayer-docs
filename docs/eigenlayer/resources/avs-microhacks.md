@@ -63,7 +63,7 @@ Anything that accomplished the above objective is eligible, but if you're lookin
 3. Extensibility - how easy can a developer use this to build out their own idea?
 4. DX - does the project provide a high quality developer experience?
 
-### 2. AVS Education Hackathon - Tutorials, videos, & guides on EigenLayer AVSs
+### Track 2 - AVS Education Hackathon - Tutorials, videos, & guides on EigenLayer AVSs
 
 - First prize 7,500 USDC plus 1 ticket and trip to ETHCC, dinner with team
 - Second prize 5,000 USDC
@@ -85,20 +85,27 @@ To be eligible, you must share your work on X and / or Farcaster / Lens.
 5. Engagement: The material should be engaging and hold the audience's attention.
 6. Practicality: The content should offer practical insights, tips, or steps that the audience can apply.
 
-#### 📅 Key Dates:
+### 📅 Key Dates:
 
 - Kickoff: May 27
 - Submission Deadline: June 17
 - Winners announced: June 21
 
-#### 📝 How it works
+### 📝 How it works
 
 1. Sign up to participate in the hackathon
 2. Next you will receive an email confirmation.
 3. You'll be invited to a private Telegram group with other Season 1 hackers and EigenLayer team members to help answer any questions along the way.
-4. Submit your project [here](https://airtable.com/appnYZo360sWuEYLS/shrR5gTmYShzhS0GE) by 23:59 UTC+14:00 on June 17. You should receive a confirmation email that your project was submitted successfully. If you do not receive this email, reach out to a moderator on Telegram to confirm your project has successfully been submitted.
+4. Submit your project [here](https://airtable.com/appnYZo360sWuEYLS/shrR5gTmYShzhS0GE) by 23:59 PST on June 17. You should receive a confirmation email that your project was submitted successfully. If you do not receive this email, reach out to a moderator on Telegram to confirm your project has successfully been submitted.
 5. You will be notified directly if you have won a prize. Project winners will also be announced on social media by June 24.
 6. Swag will be shipped to you within 60 days of the end of the hackathon.
+
+### FAQ
+
+1. Can I submit multiple projects - Yes.
+2. If I submitted my project to other hackathons is it eligible for this hackathon - Yes.
+3. Can I submit a project I started working on before the hackathon started - yes, as long as a reasonable portion of work was done during the time of this hackathon.
+4. Will I be eligible for future hackathons or retroactive funding if I participate and / or win a prize in AVS MicroHacks Season 1 Hackathon? Yes.
 
 Stay updated by coming back to this page or by following [@buildoneigen](https://x.com/buildoneigen/).
 
