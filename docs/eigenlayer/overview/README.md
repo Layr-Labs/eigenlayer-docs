@@ -1,3 +1,8 @@
+---
+title: Intro to EigenLayer
+sidebar_position: 1
+---
+
 # Intro to EigenLayer
 
 ## What is EigenLayer?

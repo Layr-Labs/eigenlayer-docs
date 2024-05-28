@@ -1,4 +1,9 @@
-# Key Terms
+---
+title: Key Terms
+sidebar_position: 2
+---
+
+
 
 - **Actively Validated Services (AVS):** Any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, and trusted execution environments.
 - **AVS Developer**: development team that builds an AVS service.
