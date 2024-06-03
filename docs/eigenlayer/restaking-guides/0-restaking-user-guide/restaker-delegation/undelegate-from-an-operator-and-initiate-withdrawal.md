@@ -26,7 +26,7 @@ Initiating an Undelegate transaction will also **automatically queue a withdrawa
 
 **Step 4:** Visit the pages for your unstaked assets and to observe your **Unstaked** balance has increased the corresponding amount.
 
-**Step 5:** Wait for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/stage-2-testnet/README.md#testnet-vs-mainnet-differences).
+**Step 5:** Wait for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/testnet/README.md#testnet-vs-mainnet-differences).
 
 **Step 6:** Click **Withdraw** to finalize the withdrawal.
 
