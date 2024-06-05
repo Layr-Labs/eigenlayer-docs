@@ -16,9 +16,12 @@ Follow the instructions below step by step in order to claim your currently avai
 
 **Step 3**: Select tokens individually you wish to claim rewarsd for or click **Select All** to claim all token rewards at once.
 
+![...](/img/restake-guides/rewards-claim2.png)
+
+![...](/img/restake-guides/rewards-claim3.png)
 
 **Step 4**: Click **Claim Tokens** button. This will initiate a transaction in your Web3 wallet to include claim proofs. **Sign** the transaction.
 
 
-**Step 5**: View the Summary of Claimed tokens.
+**Step 5**: View the summary of Rewards claimed successfully.
 ![...](/img/restake-guides/rewards-claim5.png)
