@@ -24,7 +24,7 @@ Please follow the recommended steps below carefully to avoid a "partially delega
 
 **Step 3:** **Observe** that your Restaked balances are now 0.0 TVL. Those assets are now undelegated from the previous Operator appear in "Pending Withdraw" state.
 
-**Step 4:** **Wait** for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/stage-2-testnet/README.md#testnet-vs-mainnet-differences).
+**Step 4:** **Wait** for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/testnet/README.md#testnet-vs-mainnet-differences).
 
 
 
