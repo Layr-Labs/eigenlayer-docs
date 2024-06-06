@@ -19,18 +19,21 @@ title: Learning Resources
 * [The EigenLayer Universe: Ideas for Building the Next 15 Unicorns](https://www.blog.eigenlayer.xyz/eigenlayer-universe-15-unicorn-ideas/)
 * [Dual Staking](https://www.blog.eigenlayer.xyz/dual-staking/)
 * [EigenLayer for Developers](https://nader.substack.com/p/beyond-restaking-eigenlayer-for-developers)
+* [EigenLayer: Intersubjective Faults, Token forking, bEIGEN & more](https://mirror.xyz/edatweets.eth/l3QtrWv-27h5DVkrSdFMq96MRJ8AotemvmZIQ23Ew3A)
 
 ### Videos and podcasts
 
-* [Official EigenLayer YouTube Playlist](https://www.youtube.com/playlist?list=PL9sM6KtdZxrXMgMq4aBHaRnWaXlcJTiVj)
+* [Official EigenLayer YouTube](https://www.youtube.com/@EigenLayer)
 * [Unchained Podcast EigenLayer interview ](https://www.youtube.com/watch?v=16p7YG8S3ec)
 * [EigenLayer in 2024](https://www.youtube.com/watch?v=ms94dx9HvL0)
 * [EigenLayer: The Endgame Coordination Layer](https://www.youtube.com/watch?v=o9y_pZUr0Nc)
 
 
-### Codebases
+### Developer resources
 
-* [Incredible Squaring (Hello World AVS)](https://github.com/Layr-Labs/incredible-squaring-avs)
+* [Awesome AVS](https://github.com/Layr-Labs/awesome-avs)
+* [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs)
+* [Incredible Squaring AVS](https://github.com/Layr-Labs/incredible-squaring-avs)
 * [Eigen Go SDK](https://github.com/Layr-Labs/eigensdk-go)
 * [EigenLayer Contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
 * [EigenLayer Middleware](https://github.com/Layr-Labs/eigenlayer-middleware)
@@ -42,4 +45,5 @@ title: Learning Resources
 * [EigenLayer Forum](https://forum.eigenlayer.xyz/)
 * [EigenLayer Research Forum](https://research.eigenlayer.xyz/)
 * [Discord](https://discord.com/invite/eigenlayer)
-* [Twitter](https://twitter.com/eigenlayer)
+* [EigenLayer Twitter](https://twitter.com/eigenlayer)
+* [BuildOnEigen Twitter](https://x.com/buildoneigen)
