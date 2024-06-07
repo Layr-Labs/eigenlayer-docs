@@ -110,12 +110,8 @@ const config = {
             to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
           },
           {
-            from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack-+-eigenda-locally",
-            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
-          },
-          {
-            from: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
-            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
+            from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack/deployment",
           },
           {
             from: "/eigenda-guides/integrations-overview",
