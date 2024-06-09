@@ -53,7 +53,7 @@ The metadataURI should follow the format outlined in this [example](https://hole
 Note that for proper rendering of your logo on the UI, the logo _must_ be hosted on GitHub and its reference must point to the raw file as the example above shows. If you need a repo for your logo to be hosted publicly, you can make a PR to the `eigendata` repo and have your logo added: https://github.com/Layr-Labs/eigendata.
 
 ## Holesky Dashboard onboarding
-Once you've gone through the above steps, fill out [this form](https://forms.gle/8BJSntA3eYUnZZgs8) so the metadata you submitted for your AVS can be reflected on the Holesky dashboard.
+Once you've gone through the above steps and you've called the `updateAVSMetadataURI` function, your AVS will be reflected on the Holesky dashboard in about 10 minutes.
 
 ## Mainnet Dashboard onboarding
-Prior to planning your Mainnet onboarding, please test first in Testnet and contact our team via the form [here](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding#holesky-dashboard-onboarding).
+Prior to planning your Mainnet onboarding, please test first on testnet. If not already connected to the Eigen Labs team regarding any onboarding questions, you can get in touch with the team by filling out [this form](https://forms.gle/8BJSntA3eYUnZZgs8).
