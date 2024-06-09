@@ -3,15 +3,12 @@ title: Public Deployment
 sidebar_position: 2
 ---
 
-# Public Deployment
+# Deploy Guide
 
-This guide will show you how to deploy an OP Stack rollup on a public Ethereum
-network, using an EigenDA proxy instance for secure communication with DA. 
+This guide will show you how to deploy an Optimism Plasma rollup on a public Ethereum network, using an EigenDA proxy instance for secure communication with the DA. 
 
 ## EigenDA Proxy
-EigenDA proxy is a sidecar server which is compatible with the optimism plasma generic server [spec](https://specs.optimism.io/experimental/plasma.html). Instructions for spawning and running the service can be found [here](https://github.com/Layr-Labs/eigenda-proxy). There are two respective modes that can be leveraged when running the integration:
-* default - this mode talks to a deployed EigenDA disperser and verifies commitments against blobs when reading/writing
-* [memstore](https://github.com/Layr-Labs/eigenda-proxy?tab=readme-ov-file#in-memory-storage) - this mode is much faster for dispersal/retrieval but is not recommended for use in production or mainnet environments. 
+EigenDA proxy is a sidecar server which implements the optimism plasma server [spec](https://specs.optimism.io/experimental/plasma.html). Instructions for spawning and running the service can be found [here](https://github.com/Layr-Labs/eigenda-proxy). 
 
 Instructions for building and running the service can be found [here](https://github.com/Layr-Labs/eigenda-proxy?tab=readme-ov-file#running-locally).
 
