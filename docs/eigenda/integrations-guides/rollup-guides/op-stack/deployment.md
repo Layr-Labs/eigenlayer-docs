@@ -39,7 +39,7 @@ max_eigenda_sync_start = (60 sec/minute * 60 min/hour * 24 hour/day * 14 days) /
 max_eigenda_sync_start = 100,800 blocks
 ```
 
-To ensure adequate safety and faster [finality](https://specs.optimism.io/experimental/plasma.html#safety-and-finality), we recommend setting the `DaChallengeWindow + DaResolveWindow < 100,800`. Since this value affects `Final` head, setting this sum to  lower value (<1000 blocks) is most ideal for efficient operation.
+To ensure adequate safety and faster [finality](https://specs.optimism.io/experimental/plasma.html#safety-and-finality), we recommend setting the `DaChallengeWindow + DaResolveWindow < 100,800`. Since this value affects `Final` head, setting this sum to a lower value (e.g, 1000 blocks) is most ideal for efficient operation.
 
 
 These values can be manually set in the respective OP Node `rollup.json` configuration; e.g:
@@ -57,14 +57,14 @@ These values can be manually set in the respective OP Node `rollup.json` configu
 #### Proxy Communication
 
 *OP Node*
-The following env config values should be set to ensure proper OP Node <-> Proxy communication:
+The following env config values should be set to ensure proper communication between OP Node and EigenDA Proxy:
 - `OP_NODE_PLASMA_ENABLED=true`
 - `OP_NODE_PLASMA_DA_SERVICE=true`
 - `OP_NODE_PLASMA_VERIFY_ON_READ=false`
 - `OP_NODE_PLASMA_DA_SERVER={EIGENDA_PROXY_URL}`
 
 *OP Batcher*
-The following env config values should be set accordingly to ensure proper OP Batcher <-> Proxy communication:
+The following env config values should be set accordingly to ensure proper communication between OP Batcher and EigenDA Proxy:
 - `OP_BATCHER_PLASMA_ENABLED=true`
 - `OP_BATCHER_PLASMA_DA_SERVICE=true`
 - `OP_BATCHER_PLASMA_VERIFY_ON_READ=false`
