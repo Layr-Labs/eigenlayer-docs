@@ -5,12 +5,10 @@ sidebar_position: 2
 
 # Deploy Guide
 
-This guide will show you how to deploy an Optimism Plasma rollup on a public Ethereum network, using an EigenDA proxy instance for secure communication with the DA. 
+This guide will show you how to deploy an Optimism Alt-Da rollup on a public Ethereum network, using an EigenDA proxy instance for secure communication with the DA. 
 
 ## EigenDA Proxy
-EigenDA proxy is a sidecar server which implements the optimism plasma server [spec](https://specs.optimism.io/experimental/plasma.html). Instructions for spawning and running the service can be found [here](https://github.com/Layr-Labs/eigenda-proxy). 
-
-Instructions for building and running the service can be found [here](https://github.com/Layr-Labs/eigenda-proxy?tab=readme-ov-file#running-locally).
+EigenDA proxy is a sidecar server which implements the optimism alt-da server [spec](https://specs.optimism.io/experimental/alt-da.html). Instructions for spawning and running the service can be found [here](https://github.com/Layr-Labs/eigenda-proxy). 
 
 ### Security
 When reading and writing, the proxy verifies the respective raw batch data against the commitment to ensure tamper resistance. This means a sequencer would never accept an invalid commitment when publishing to DA.
@@ -57,6 +55,7 @@ These values can be manually set in the respective OP Node `rollup.json` configu
 #### Proxy Communication
 
 *OP Node*
+
 The following env config values should be set to ensure proper communication between OP Node and EigenDA Proxy:
 - `OP_NODE_PLASMA_ENABLED=true`
 - `OP_NODE_PLASMA_DA_SERVICE=true`
@@ -64,6 +63,7 @@ The following env config values should be set to ensure proper communication bet
 - `OP_NODE_PLASMA_DA_SERVER={EIGENDA_PROXY_URL}`
 
 *OP Batcher*
+
 The following env config values should be set accordingly to ensure proper communication between OP Batcher and EigenDA Proxy:
 - `OP_BATCHER_PLASMA_ENABLED=true`
 - `OP_BATCHER_PLASMA_DA_SERVICE=true`
@@ -74,4 +74,4 @@ The following env config values should be set accordingly to ensure proper commu
 ## Challenge Contract
 One new component of OP Plasma is the addition of a [challenge contract](https://specs.optimism.io/experimental/plasma.html#data-availability-challenge-contract) which allows altruistic actors to challenge commitments posted to the sequencer inbox. This functionality is currently unsupported for EigenDA.
 
-Its worth noting the security model doesn't change since the OP Sequencer is a trusted entity that unilaterally controls the liveness and security of the L2 chain. In the case where the sequencer posts an invalid commitment that results then any verifier nodes syncing from EigenDA would halt given they'd be incapable of inspecting the batch. This is analogous to the same DoS vector where the sequencer arbitrarily stops producing batches. 
+Its worth noting the security model doesn't change since the OP Sequencer is a trusted entity that unilaterally controls the liveness of the L2 chain. In the case where the sequencer posts an invalid commitment to the L1 inbox, syncing verifier nodes would halt given they'd be incapable of inspecting the batch. This is analogous to the same DoS vector where the sequencer arbitrarily stops producing batches. 
