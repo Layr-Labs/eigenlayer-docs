@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+title: Disperse to Testnet
 ---
 
 # Dispersing Your First Blob to Testnet
@@ -122,5 +123,5 @@ that is not encoded correctly, and that in order to disperse this blob you
 should first encode it using `kzgpad`, a utility distributed in the `eigenda`
 repo. This error is much more likely to be encountered when playing with EigenDA
 using a raw GRPC CLI, since there is no encoding logic built-in. Please see
-[Blob Encoding Requirements](./blob-serialization-requirements.md) for more detail.
+[Blob Encoding Requirements](../api-documentation/blob-serialization-requirements.md) for more detail.
 
