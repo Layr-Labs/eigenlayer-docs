@@ -9,11 +9,7 @@ export default function RenderMarkdown({ src }) {
   }, [])
   async function fetchMarkdown() {
     try {
-      let response = await fetch(src)
-      .then((response) => response.text())
-      response = response.replace('<!-- :::info -->', '')
-      response = response.replace('<!-- ::: -->', '')
-      response = response.replace('# Holesky', '')
+      let response = await fetch(src).then((response) => response.text())
       setMarkdown(response)
     } catch (err) {
       console.error(err)

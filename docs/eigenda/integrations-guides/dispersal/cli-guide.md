@@ -136,7 +136,7 @@ If you encounter an error that looks like this:
 ```bash
 ERROR:
   Code: InvalidArgument
-  Message: rpc error: code = InvalidArgument desc = encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617
+  Message: rpc error: code = InvalidArgument desc = encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32 bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617
 ```
 
 This means that you have stumbled upon an idiosyncracy of how EigenDA currently
