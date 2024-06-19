@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 ---
-# General Optimistic Rollup Strategies
+# Optimistic Rollup Integration Strategies
 
 There are a few viable design strategies for securely deploying an optimistic rollup with
 EigenDA. This document aims to describe them in detail to provide rollup

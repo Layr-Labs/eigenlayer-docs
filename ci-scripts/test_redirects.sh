@@ -11,7 +11,7 @@ usage() {
     echo
     echo "Usage pattern:"
     echo "1. Switch from new branch to old branch"
-    echo "2. Generate routes get_routes.sh > routes_to_test.txt"
+    echo "2. Generate routes ci-scripts/gen_routes.sh > routes_to_test.txt"
     echo "3. Switch from old branch to new branch (bringing routes_to_test.txt over)"
     echo "4. Run $0 routes_to_test.txt"
     echo ""

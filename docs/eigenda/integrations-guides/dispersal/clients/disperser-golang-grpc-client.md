@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Disperser Client Tutorial
+# Disperser Client
 
 EigenDA offers a low-level golang client which wraps the bottom-level GRPC client with ECDSA keypair authentication logic. That client is available in the EigenDA repo in [disperser_client.go](https://github.com/Layr-Labs/eigenda/blame/5ff66ae6a15d77956a878fe4d2d02751444c9fa9/clients/disperser_client.go#L49). This is a tutorial for getting started using this client.
 
