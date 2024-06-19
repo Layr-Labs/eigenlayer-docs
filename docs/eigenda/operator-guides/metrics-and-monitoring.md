@@ -37,7 +37,7 @@ docker network connect eigenda-network prometheus
 
 Note: `eigenda-network` is the name of the network in which eigenda is running.
 You can check the network name in eigenda
-[.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/.env.example#L2)
+[.env](https://github.com/Layr-Labs/eigenda-operator-setup/blob/master/mainnet/.env.example#L2)
 file (`NETWORK_NAME`). This will ensure Prometheus can scrape the metrics from
 Eigenda node.
 
