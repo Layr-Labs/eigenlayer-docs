@@ -24,7 +24,7 @@ network and can be found on the network's description.
 
 ## Encoded System Throughput
 
-The total volume of data per unit time written to EigenDA operator set is known
+The total volume of data per unit of time written to EigenDA operator set is known
 as the Encoded System Throughput (ECS). The "encoded" part denotes that this
 data is not the raw input data that was sent to the disperser by the client.
 Rather the encoded data is an extended version of the input data which is

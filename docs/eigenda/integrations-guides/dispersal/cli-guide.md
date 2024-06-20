@@ -59,7 +59,7 @@ Example request:
 # Download the EigenDA repo via gh client or wget
 $ gh repo clone Layr-Labs/eigenda
 # Change your working directory to the eigenda folder in order to point to the
-# protobuf defintions correctly
+# protobuf definitions correctly
 $ cd eigenda
 
 $ grpcurl \

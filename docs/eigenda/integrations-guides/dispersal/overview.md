@@ -31,7 +31,7 @@ graph TD;
     C -->|15 days elapses since dispersal finalization| D[Blob Expired];
 ```
 
-The Disperser offers an asynchrounous API for dispersing blobs, where clients should poll the `GetBlobStatus()` endpoint with the dispersal request ID they received from calling one of the two disperse endpoints until the disperser reports the blob as successfully dispersed and finalized.
+The Disperser offers an asynchronous API for dispersing blobs, where clients should poll the `GetBlobStatus()` endpoint with the dispersal request ID they received from calling one of the two disperse endpoints until the disperser reports the blob as successfully dispersed and finalized.
 
 ## Endpoints
 
