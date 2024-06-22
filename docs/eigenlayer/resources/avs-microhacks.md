@@ -5,7 +5,7 @@ title: EigenLayer MicroHacks Hackathons
 
 The first EigenLayer AVS MicroHacks Hackathon wrapped up on June 21 2024.
 
-Be on the look out for more future hackathons soon!
+Be on the lookout for more future hackathons soon!
 
 <!-- ### Season 1 May 27 - June 17 2024
 
