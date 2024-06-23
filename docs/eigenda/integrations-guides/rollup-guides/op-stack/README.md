@@ -21,9 +21,9 @@ First check out the version of the EigenDA proxy corresponding to the verison of
 | OP Stack Version | Compatible EigenDA Proxy Version |
 |------------------|-----------------------|
 | [v1.7.6](https://github.com/ethereum-optimism/optimism/releases/tag/v1.7.6)           | [v1.0.0](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.0.0)                |
-| [v1.7.7](https://github.com/ethereum-optimism/optimism/releases/tag/v1.7.7)           | [v1.1.0](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.1.0)                |
+| [v1.7.7](https://github.com/ethereum-optimism/optimism/releases/tag/v1.7.7)           | [v1.1.1](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.1.1)                |
 
-Follow the instructions in the README associated with that version. For example, [this is the README for eigenda-proxy v1.1.0](https://github.com/Layr-Labs/eigenda-proxy/blob/v1.1.0/README.md).
+Follow the instructions in the README associated with that version. For example, [this is the README for eigenda-proxy v1.1.1](https://github.com/Layr-Labs/eigenda-proxy/blob/v1.1.1/README.md).
 
 ### Deploying OP Stack
 
