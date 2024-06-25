@@ -40,7 +40,7 @@ Here we provide a narrative-level description of the major API endpoints. Please
 ### DisperseBlob()
 
 :::info
-This endpoint will likely be deprecated in future releases. All production traffic should prefer the `DisperseBlobAuthenticated` endpoint. 
+This endpoint will be deprecated in future releases. All production traffic should prefer the `DisperseBlobAuthenticated` endpoint. 
 :::
 
 The `DisperseBlob()` is a simple unauthenticated endpoint which allows users to send test traffic to the EigenDA testnet and mainnet networks. Requests to the `DisperseBlob()` endpoint are rate limited based on IP address. 

@@ -15,7 +15,7 @@ $$
 
 1. **Confirmation Threshold** is the minimum percentage of stake that must attest in
 order to consider the blob dispersal successful. As such, this
-setting affects liveness tolerance. For example, a lower quorum
+setting affects liveness tolerance. For example, a lower confirmation
 threshold means that a smaller set of operators are required to meet a dispersal
 request, whereas a high quorum threshold requires more operators to be available
 to provide liveness.
@@ -28,7 +28,7 @@ held by adversarial nodes before the availability of a blob is affected.
 
 Currently, the EigenDA disperser enforces two types of rate limits:
 
-- Data rate limit: Limits the total amount of data posted within a 10 minute interval.
+- Data rate limit: Limits the total amount of data posted within a fixed (e.g. 10 minute) interval.
 - Blob rate limit: Limits the total number of blobs posted within a 10 minute interval.
 
 If a client exceeds either of these rate limits, they will receive a rate limit error and the request will not be processed. Rate limits are determined by [network defaults](../../../networks/) or by reservation payments. 
