@@ -1,6 +1,6 @@
 ---
-sidebar_position: 6
-title: Authenticated Dispersal
+sidebar_position: 1
+title: Golang Client
 ---
 
 # Using the Golang Client for Authenticated Dispersal

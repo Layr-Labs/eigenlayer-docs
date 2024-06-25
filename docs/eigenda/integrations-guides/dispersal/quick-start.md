@@ -1,9 +1,9 @@
 ---
-sidebar_position: 5
-title: Disperse to Testnet
+sidebar_position: 1
+title: Quick Start
 ---
 
-# Dispersing Your First Blob to Testnet
+# Quick Start: Dispersing Your First Blob to Testnet
 
 ## Disperse and Retrieve Blob Examples
 
@@ -114,7 +114,7 @@ If you encounter an error that looks like this:
 ```bash
 ERROR:
   Code: InvalidArgument
-  Message: rpc error: code = InvalidArgument desc = encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617
+  Message: rpc error: code = InvalidArgument desc = encountered an error to convert a 32-bytes into a valid field element, please use the correct format where every 32 bytes(big-endian) is less than 21888242871839275222246405745257275088548364400416034343698204186575808495617
 ```
 
 This means that you have stumbled upon an idiosyncracy of how EigenDA currently
@@ -123,5 +123,5 @@ that is not encoded correctly, and that in order to disperse this blob you
 should first encode it using `kzgpad`, a utility distributed in the `eigenda`
 repo. This error is much more likely to be encountered when playing with EigenDA
 using a raw GRPC CLI, since there is no encoding logic built-in. Please see
-[Blob Encoding Requirements](../api-documentation/blob-serialization-requirements.md) for more detail.
+[Blob Encoding Requirements](./api-documentation/blob-serialization-requirements.md) for more detail.
 

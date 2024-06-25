@@ -103,19 +103,23 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide",
-            to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack",
           },
           {
             from: "/eigenda/rollup-guides/op-stack",
-            to: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack",
           },
           {
-            from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack-+-eigenda-locally",
-            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
+            from: "/eigenda/integrations-guides/rollup-guides/op-stack/overview",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack",
           },
           {
-            from: "/eigenda/rollup-guides/op-stack/deploying-op-stack-+-eigenda-locally",
-            to: "/eigenda/integrations-guides/rollup-guides/op-stack/local-deployment",
+            from: "/eigenda-guides/eigenda-rollup-user-guides/op-stack-+-eigenda-user-guide/deploying-op-stack",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack",
+          },
+          {
+            from: "/eigenda/integrations-guides/rollup-guides/op-stack/deployment",
+            to: "/eigenda/integrations-guides/rollup-guides/op-stack",
           },
           {
             from: "/eigenda-guides/integrations-overview",
@@ -147,11 +151,15 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/orbit/",
-            to: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit",
           },
           {
             from: "/eigenda/rollup-guides/orbit/",
-            to: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit",
+          },
+          {
+            from: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
+            to: "/eigenda/integrations-guides/rollup-guides/orbit",
           },
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
@@ -172,6 +180,10 @@ const config = {
           {
             from: "/eigenda/rollup-guides/blob-encoding",
             to: "/eigenda/integrations-guides/dispersal/api-documentation/blob-serialization-requirements",
+          },
+          {
+            from: "/eigenda/integrations-guides/dispersal/disperser-golang-grpc-client",
+            to: "/eigenda/integrations-guides/dispersal/clients/golang-client",
           },
         ],
         createRedirects(existingPath) {
