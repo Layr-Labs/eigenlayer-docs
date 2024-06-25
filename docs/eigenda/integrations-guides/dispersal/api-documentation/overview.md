@@ -49,7 +49,7 @@ The `DisperseBlob()` is a simple unauthenticated endpoint which allows users to 
 Currently, all users can permissionlessly utilize the `DisperseBlob` endpoint on [testnet](../../../networks/holesky.md) at free-tier throughput levels. Mainnet users can request IP-whitelisting via the [EigenDA Client Registration Form](https://forms.gle/3QRNTYhSMacVFNcU8), but should prefer the authenticated endpoint described in the next section. 
 :::
 
-The `DisperseBlob()` endpoint accepts a [DisperseBlobRequest](https://github.com/Layr-Labs/eigenda/blob/master/api/proto/disperser/disperser.proto#L72) and returns a [DisperseBlobReply](TODO), as described below: 
+The `DisperseBlob()` endpoint accepts a [DisperseBlobRequest](https://github.com/Layr-Labs/eigenda/blob/master/api/proto/disperser/disperser.proto#L72) and returns a [DisperseBlobReply](https://github.com/Layr-Labs/eigenda/blob/master/api/proto/disperser/disperser.proto#L92), as described below:
 
 #### DisperseBlobRequest
 

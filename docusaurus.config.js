@@ -71,27 +71,27 @@ const config = {
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/",
-            to: "/eigenda/integrations-guides/dispersal/cli-guide",
+            to: "/eigenda/integrations-guides/rollup-guides/",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/building-on-top-of-eigenda",
-            to: "/eigenda/integrations-guides/dispersal/cli-guide",
+            to: "/eigenda/integrations-guides/rollup-guides/",
           },
           {
             from: "/eigenda/rollup-guides/tutorial",
-            to: "/eigenda/integrations-guides/dispersal/cli-guide",
+            to: "/eigenda/integrations-guides/rollup-guides/",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/system-performance-and-customization",
-            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+            to: "/eigenda/integrations-guides/dispersal/api-documentation/metering-and-rate-limits",
           },
           {
             from: "/eigenda/system-performance-and-customization",
-            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+            to: "/eigenda/integrations-guides/dispersal/api-documentation/metering-and-rate-limits",
           },
           {
             from: "/eigenda/performance-metrics",
-            to: "/eigenda/integrations-guides/dispersal/blob-metering-and-rate-limits",
+            to: "/eigenda/integrations-guides/dispersal/api-documentation/metering-and-rate-limits",
           },
           {
             from: "/eigenda-guides/eigenda-rollup-user-guides/blob-explorer",
@@ -167,11 +167,11 @@ const config = {
           },
           {
             from: "/eigenda/rollup-guides/api-error-codes",
-            to: "/eigenda/integrations-guides/dispersal/api-error-codes",
+            to: "/eigenda/integrations-guides/dispersal/api-documentation/error-codes",
           },
           {
             from: "/eigenda/rollup-guides/blob-encoding",
-            to: "/eigenda/integrations-guides/dispersal/blob-serialization-requirements",
+            to: "/eigenda/integrations-guides/dispersal/api-documentation/blob-serialization-requirements",
           },
         ],
         createRedirects(existingPath) {
