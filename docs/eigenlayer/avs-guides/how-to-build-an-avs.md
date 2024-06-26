@@ -17,7 +17,7 @@ Review the materials available under [EigenLayer Learning Resources](/docs/eigen
 
 The following content covers the minimum set of smart contract integrations and deployment scripts that a project needs to build in order to:
 1. Be considered a fully functional AVS for demo and proof of concept purposes.
-2. Prepare your AVS to integrate Payments and Slashing functionality, which will be release soon.
+2. Prepare your AVS to integrate Rewards and Slashing functionality, which will be release soon.
 
 
 :::info
@@ -34,7 +34,7 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 
 **2: On Chain Verification**  
 Implement at least one on-chain provable event. The most common approach is to write a ECDSA or BLS aggregate signature (APK) on-chain.
-This will be utilized in future versions of EigenLayer for Payments and Slashing functionality.  
+This will be utilized in future versions of EigenLayer for Rewards and Slashing functionality.  
 Please see the example from incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/8bd0ac663dcc2289cad02af4a7f0002ea07bc1d8/contracts/src/IncredibleSquaringTaskManager.sol#L102) and from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L130).
 
 
@@ -58,7 +58,7 @@ Provide a mechanism for the Operator register to the AVS.
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L41). 
 
 **2: At least one event written to your AVSs on chain contracts**  
-The Operator binary (or off chain aggregation service code) must write at least one event to the AVSs on chain contracts to be used for future on-chain verification, payments, and slashing purposes.  
+The Operator binary (or off chain aggregation service code) must write at least one event to the AVSs on chain contracts to be used for future on-chain verification, rewards, and slashing purposes.  
 
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L25).
 
