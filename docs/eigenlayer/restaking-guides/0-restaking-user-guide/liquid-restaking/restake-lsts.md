@@ -3,33 +3,35 @@ sidebar_position: 1
 ---
 
 
-# Restake LSTs & Stake EIGEN
+# Restake and Delegate
 
 Restake your LSTs & Stake EIGEN by following the steps below.
 
 **Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit EigenLayer on the Ethereum Mainnet at app.eigenlayer.xyz.
 
-![](/img/googleusercontentbackup/OZIhNy0g6_p2e6kR0yF9BJxHQcdhHNEnQSWwBokS3tSy2cd9bUyU0tve-ApItvVm7bJHKHum1T_2tgZhwa_LSyi7ScQdALSsUQioM0qMxZWcqWKhmtIQ7xcdOGtTOT6Uf18KnCs_zWgbXHLOtUqguSI.png)
 
-**Step 2:** Select the token you want to restake.
+![](/img/restake-guides/lst-restake-1.png)
 
-**Step 3:** Token Approval. Enter the amount you would like to restake and click **Deposit**.
+**Step 2:** Click **Restake**.
 
-If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval](https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-) gives a dApp permission to move the specified token from your wallet. Set a spending cap, and click **Next**.
+**Step 3:** Click on the asset you wish to restake. Choose the the amount of the asset you wish to restake. Click **Submit** to continue.
 
-**Step 4:** Once the token Approval transaction is confirmed, you will be prompted to confirm the **Deposit** transaction. 
-
-**Step 5:** Confirm the **Deposit** transaction via your wallet. Observe the corresponding increase in your Restaked balance in the app:
-
-![](/img/googleusercontentbackup/J5g4XOmz3hOOeQG2w6gFtPxzKLiyPq06v8pBQ2BNITHkfzVX1F26lm_Sf0qCxtIL-bTUye7w573yJub5S6iOA8xtJmOIjZybgLXiCM8YFZHj_6UFc2LEv8HLFmNO7OOLP0c1MmGnCBL7bH_DhsOLPBU.png)
+![](/img/restake-guides/lst-restake-2.png)
 
 
-## Delegate Your LSTs & EIGEN
+If you have not yet delegated your assets to an Operator, you will be prompted to do so at this step. Click on an Operator then click **Submit** to continue.
 
-After your tokens have been fully restaked in EigenLayer, delegate your tokens to an Operator to contribute to the shared security of the EigenLayer ecosystem.
+![](/img/restake-guides/lst-restake-2.1.png)
 
-Click the **Delegate** button on the EIGEN and LST token pages to begin delegating to an operator.
 
-Please see the [Delegate to An Operator](/eigenlayer/restaking-guides/0-restaking-user-guide/restaker-delegation/delegate-to-an-operator.md) page for more detail.
 
-![](/img/restake-guides/restake-eigen-token.jpg)
+**Step 4:** Token Approval, Deposit, and Delegate transactions:
+- If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval](https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-) gives a dApp permission to move the specified token from your wallet.
+- If you have not yet delegated assets to an Operator, you will receive two transaction prompts: one for the **Deposit** transaction and second for the **Delegate** transaction.
+
+**Step 5:** **Sign** the transaction(s) via your Web3 wallet to continue.
+
+
+**Step 6:** Observe the confirmation that the Restake operation is completed.
+
+![](/img/restake-guides/lst-restake-3.png)
