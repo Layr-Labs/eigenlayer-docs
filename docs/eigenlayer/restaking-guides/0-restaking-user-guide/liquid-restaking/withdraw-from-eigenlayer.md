@@ -3,22 +3,31 @@ sidebar_position: 2
 ---
 
 
-# Withdraw from EigenLayer
+# Unstake and Withdraw
 
 :::info
-All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn.
+All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn. Please see the [Escrow Period](../README.md#escrow-period-withdrawal-delay) section for more detail.
 :::
 
-**Step 1:** Navigate to the Unstake tab, enter your withdrawal amount, and click **Next**.
+**Step 1:** Navigate to the token asset you wish to unstake. Click **Unstake** to continue.
 
-**Step 2:** Click **Confirm** when prompted by your wallet. Once the transaction confirms, you should see your Restaked balance move to Unstaking.
+![](/img/restake-guides/lst-unstake-1.png)
 
-![](/img/googleusercontentbackup/Ol33uK-uNL7K5vXmWDyI_eVWQOT75Jx7kR9Q75Qn5547ExC0KwfBFn6SikZgfOIYqU2od1OSjXlsA9WXpDa653AXPc38mNQ9ESmSZX0pPxGnleA9QFOgSTpCEYzkzr051HyJwlvMMNpfdS_BBvxARz0.png)
 
-**Step 3:** Your withdrawal is now in escrow. **Wait** for the escrow period to complete.
+**Step 2:** Choose the the amount of the asset you wish to restake. Click **Submit** to continue.
 
-**Step 4:** Once the escrow completes, you'll see the balance under Available to withdraw. Click **Withdraw** to finalize the process.
+![](/img/restake-guides/lst-unstake-2.png)
 
-![](/img/googleusercontentbackup/VXO97JjR5VLDR8u0afZ6g9bq2zDScyP_UyQ4tkkc8J2IYWgfUIOUxIm08micsb8_kIne-aftSKuzwHBpoJV0NUGbWil-Zw0fUHdYUMgte5k6DbEj8dxpSvLT3V3k_DS78BO6c9GG3nDids7LGOyLbME.png)
+**Step 3:** Click **Confirm** to sign the queue withdrawal transaction when prompted by your wallet.
 
-![](/img/googleusercontentbackup/RLMOGvPSu2_BPRIu4o32LZIKFgSOySe8tatR67-pGsFPZxVmk1RSLvkNT_FHXcZUDtP8eINc2EQUG3y4X0yVM7l6Ly1q2iE8v1j6VDr7vI1wtR4GqKBsrLgc9pUwMvzu9UeXQbsumCSlGPNRiX9-1vA.png)
+**Step 4:** Observe the Unstake confirmation page. Your withdrawal is now in escrow. **Wait** for the escrow period to complete.
+
+![](/img/restake-guides/lst-unstake-3.png)
+
+
+**Step 5:** Once the escrow completes, you'll see the withdrawable balance under Available to Withdraw. Click **Withdraw** to complete the withdrawal. **Sign** the transaction when prompted by your Web3 wallet.
+
+![](/img/restake-guides/lst-unstake-4.png)
+
+
+After the transaction is completed your withdrawn assets will be visible in your Web3 wallet.
