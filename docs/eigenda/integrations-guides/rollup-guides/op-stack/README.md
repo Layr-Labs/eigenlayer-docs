@@ -16,14 +16,12 @@ To implement this server spec, EigenDA provides the [EigenDA Proxy](../../disper
 
 ### Deploying EigenDA Proxy
 
-First check out the version of the EigenDA proxy corresponding to the verison of OP Stack you are deploying:
+First check out the version of the EigenDA proxy corresponding to the verison of OP Stack you are deploying, and follow there README in that version:
 
 | OP Stack Version | Compatible EigenDA Proxy Version |
 |------------------|-----------------------|
 | [v1.7.6](https://github.com/ethereum-optimism/optimism/releases/tag/v1.7.6)           | [v1.0.0](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.0.0)                |
-| [v1.7.7](https://github.com/ethereum-optimism/optimism/releases/tag/v1.7.7)           | [v1.1.1](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.1.1)                |
-
-Follow the instructions in the README associated with that version. For example, [this is the README for eigenda-proxy v1.1.1](https://github.com/Layr-Labs/eigenda-proxy/blob/v1.1.1/README.md).
+| [v1.7.7](https://github.com/ethereum-optimism/optimism/releases/tag/v1.7.7)           | [v1.2.0](https://github.com/Layr-Labs/eigenda-proxy/releases/tag/v1.2.0)                |
 
 ### Deploying OP Stack
 
@@ -35,11 +33,11 @@ In the op-node `rollup.json` configuration the following should be set:
 
 ```json
 {
-  "alt-da_config": {
+  "plasma_config": {
     "da_challenge_contract_address": "0x0000000000000000000000000000000000000000",
     "da_commitment_type": "GenericCommitment",
-    "da_challenge_window": 3600,
-    "da_resolve_window": 3600
+    "da_challenge_window": 300,
+    "da_resolve_window": 300
   }
 }
 ```
