@@ -18,7 +18,8 @@ Please follow the recommended steps below carefully to avoid a "partially delega
 
 **Step 1:** Visit the **Operator** page for your currently delegated Operator. Click **Undelegate**.
 
-![undelegate button](/img/restake-guides/change-delegation-1.png)
+![undelegate button](/img/restake-guides/delegate-3.png)
+
 
 **Step 2:** **Confirm** the two transactions in your Web3 wallet.
 
@@ -33,7 +34,7 @@ Please follow the recommended steps below carefully to avoid a "partially delega
 **Step 6:** After all assets have been redeposited, **navigate** to the Operator page for the new operator you wish to delegate to. Click **Delegate** button.
 
 
-![](/img/googleusercontentbackup/z3oR0kwjxB8nk66ebFuRRVh8T90fIpWSdEDvbaydgghNnmqrUxhb4RIRhO5HvtUdJfPMICshYA7NM9Ifn637zv8QJa9HUipLDPD_KcddXjAhVadRyrjyuKDQXdzHzKnmcYsHQC9dzxJqA9Pf1qdb8dQ.png)
+![](/img/restake-guides/delegate-2.png)
 
 
 **Step 7:** **Observe** that your delegation has been changed to the new Operator.

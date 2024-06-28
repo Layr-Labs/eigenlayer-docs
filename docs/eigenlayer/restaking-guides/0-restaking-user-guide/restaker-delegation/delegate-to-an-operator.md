@@ -7,16 +7,17 @@ title: Delegate to an Operator
 
 Follow the steps below to initiate delegation of your Restaked balance to an Operator of your choice. This Restaked balance includes EIGEN tokens, LST tokens, and Native Restaked TVL.
 
-Delegation is an **all or nothing** operation. Through the following process you will delegate all of your available Restaked balance to a single Operator. 
+Delegation is a unified step in the standard EIGEN and LST Restaking flow. For Native Restakers or scenarios where the unified Restaking flow was not completed, the following steps will allow you to delegate your stake directly.
+
 
 
 **Step 1:** Navigate to the **Operator** page to view a list of available Operators.
 
-![](/img/googleusercontentbackup/Nr-KLQTJF5C3Flo0YL1iqruUWPBvIdLnjetLh1fyfPnFr8ziUaCOJZE6FV6MpHcSsJikqrviHqCxAPsvVXBJDT6YbH8_Y0LKt8bvMPQ60RwViNOfw6CwdAw9i4T9P11hRMY2VF4et7bmERutEkSYkJM.png)
+![](/img/restake-guides/delegate-1.png)
 
 **Step 2:** Search for operators via their name or Ethereum address. Click on the **Operator's tile** to view their Detail page.
 
-![](/img/googleusercontentbackup/z3oR0kwjxB8nk66ebFuRRVh8T90fIpWSdEDvbaydgghNnmqrUxhb4RIRhO5HvtUdJfPMICshYA7NM9Ifn637zv8QJa9HUipLDPD_KcddXjAhVadRyrjyuKDQXdzHzKnmcYsHQC9dzxJqA9Pf1qdb8dQ.png)
+![](/img/restake-guides/delegate-2.png)
 
 **Step 3:** Click **Delegate** to initiate a delegation of all your staked assets to that operator.
 
@@ -24,8 +25,6 @@ Delegation is an **all or nothing** operation. Through the following process you
 
 **Step 5:** Note the delegating progress message.
 
-![](/img/googleusercontentbackup/f095JZRoCQKZ517ztnYPycUR2XljZRi5QkRsynahH7AZHdjONMCaRRugPwVv1WfG0ryPGaY-4f-z3P8-hwdkrKatwEtrZ8p-gbKZoDdP6t7KIFw37KU5CSbyAqvuBkbqkuEyWuPLoXgcGvw205Rd5O4.png)
+**Step 6:** After the transaction has been confirmed, please note your stake will show as Delegated for that Operator.
 
-**Step 6:** Note your delegated balance reflects all of your available restaked funds.
-
-![](/img/googleusercontentbackup/JUd_5rwSzM_v0riAYdX2_37nKhRdr2Rq0adsPITsnUVuFOxvYb5keIpFe49ZVdgEWfI8YVXnmBeOj2iH5KzCb8-GuuXJIvujXXH8_HxxEUa2TUFhKjFJlfe9HDnezqI5iIMhlmZItBEAmxxrZ3FA0nE.png)
+![](/img/restake-guides/delegate-3.png)
