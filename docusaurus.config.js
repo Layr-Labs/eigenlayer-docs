@@ -10,11 +10,11 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "EigenLayer",
+  title: "EigenDA",
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://docs.eigenlayer.xyz/",
+  url: "https://docs.eigenda.xyz/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -44,27 +44,6 @@ const config = {
       "@docusaurus/plugin-client-redirects",
       {
         redirects: [
-          {
-            from: "/overview/readme/",
-            to: "/eigenlayer/overview/",
-          },
-          {
-            from: "/overview/eigenlayer-privacy-policy",
-            to: "/eigenlayer/legal/eigenlayer-privacy-policy",
-          },
-          {
-            from: "/overview/terms-of-service",
-            to: "/eigenlayer/legal/terms-of-service",
-          },
-          // This is implicit, covered by the function case below
-          // {
-          //   from: "/overview/",
-          //   to: "/eigenlayer/overview/",
-          // },
-          {
-            from: "/overview/intro/",
-            to: "/eigenlayer/overview/",
-          },
           {
             from: "/eigenda-guides/eigenda-overview/",
             to: "/eigenda/overview/",
@@ -146,10 +125,6 @@ const config = {
             to: "/eigenda/operator-guides/operator-faq",
           },
           {
-            from: "/faqs/operator-general-faq",
-            to: "/eigenlayer/operator-guides/operator-faq",
-          },
-          {
             from: "/eigenda-guides/eigenda-rollup-user-guides/orbit/",
             to: "/eigenda/integrations-guides/rollup-guides/orbit",
           },
@@ -160,14 +135,6 @@ const config = {
           {
             from: "/eigenda/integrations-guides/rollup-guides/orbit/overview",
             to: "/eigenda/integrations-guides/rollup-guides/orbit",
-          },
-          {
-            from: "/eigenlayer/avs-guides/avs-development-guide",
-            to: "/eigenlayer/avs-guides/how-to-build-an-avs",
-          },
-          {
-            from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod/",
-            to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/",
           },
           {
             from: "/eigenda/rollup-guides/",
@@ -187,14 +154,6 @@ const config = {
           },
         ],
         createRedirects(existingPath) {
-
-          // eigenlayer redirects
-          if (existingPath.includes('/eigenlayer')) {
-            return [
-              existingPath.replace('/eigenlayer', ''),
-            ];
-          }
-
           return undefined; // Return a falsy value: no redirect created
         },
       },
@@ -219,13 +178,12 @@ const config = {
         docs: {
           breadcrumbs: true,
           routeBasePath: "/",
-          sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
           rehypePlugins: [katex],
           showLastUpdateTime: false
         },
         blog: {
-          blogTitle: "EigenLayer Status",
+          blogTitle: "EigenDA Status",
           postsPerPage: "ALL",
           routeBasePath: "/status",
         },
@@ -245,31 +203,24 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/eigenlayer-logo.png',
+      image: 'img/eigenda-logo.png',
 
       navbar: {
-        title: "EigenLayer Docs",
+        title: "EigenDA Docs",
         logo: {
           alt: "EigenLayer Logo",
-          src: "img/eigenlayer-logo.png",
+          src: "img/eigenda-logo.png",
         },
         items: [
           {
-            to: "eigenlayer/overview",
-            label: "EigenLayer",
-            position: "left",
-            activeBasePath: 'eigenlayer/',
-          },
-          {
-            to: "eigenda/overview",
-            label: "EigenDA",
-            position: "left",
-            activeBasePath: 'eigenda/',
+            to: "https://docs.eigenlayer.xyz",
+            label: "EigenLayer Docs",
+            position: "right",
           },
           {
             to: "status",
             label: "Status",
-            position: "left",
+            position: "right",
           },
           {
             href: "https://github.com/Layr-Labs",

@@ -6,99 +6,95 @@ import Card from "../components/Card";
 
 
 function Home() {
-    const context = useDocusaurusContext();
-    const { siteConfig = {} } = context;
-  
-    return (
-      <Layout title="Homepage" description="EigenLayer Documentation">
-        <main className={styles.main}>
-          <br />
-          <h1
-            align="center"
-            title="tagline"
-            style={{
-              fontWeight: "700",
-              marginBottom: "0px",
-              fontSize: "x-large",
-            }}
-          >
-            Welcome to the EigenLayer Documentation Site
-          </h1>
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row cards__container">
-                <Card
-                  to="eigenlayer/overview"
-                  header={{
-                    label:"Intro to EigenLayer"
-                  }}
-                  body={{
-                    label:"Start your journey with an overview of the protocol including key terms, features, and whitepaper."
-                  }}
-                />
-  
-                <Card
-                  to="eigenlayer/restaking-guides/restaking-user-guide/"
-                  header={{
-                    label:"Guides for Restakers"
-                  }}
-                  body={{
-                    label:"Understand the different ways to restake, including with LSTs (liquid) and EigenPods (natively)."
-                  }}
-                />
-  
-                <Card
-                  to="eigenlayer/operator-guides/operator-introduction"
-                  header={{
-                    label:"Guides for Node Operators"
-                  }}
-                  body={{
-                    label:"Learn how to run an EigenLayer node and set up to operate for AVSs."
-                  }}
-                />
-  
+  const context = useDocusaurusContext();
+  const { siteConfig = {} } = context;
 
-                <Card
-                  to="eigenlayer/avs-guides/avs-developer-guide"
-                  header={{
-                    label:"Guides for AVS Developers"
-                  }}
-                  body={{
-                    label:"Learn how to design, build, and launch an AVS (Actively Validated Service)."
-                  }}
-                />
+  return (
+    <Layout title="Homepage" description="EigenDA Documentation">
+      <main className={styles.main}>
+        <br />
+        <h1
+          align="center"
+          title="tagline"
+          style={{
+            fontWeight: "700",
+            marginBottom: "0px",
+            fontSize: "x-large",
+          }}
+        >
+          EigenDA Documentation
+        </h1>
+        <section className={styles.features}>
+          <div className="container">
+            <div className="row cards__container">
 
+              <Card
+                to="overview"
+                header={{
+                  label: "Overview"
+                }}
+                body={{
+                  label: "Start your journey with an overview of the EigenDA protocol"
+                }}
+              />
 
-                <Card
-                  to="eigenda/overview"
-                  header={{
-                    label:"EigenDA Resources for Rollups and Operators"
-                  }}
-                  body={{
-                    label:"Guides for rollup developers to integrate EigenDA and for Operators to join the EigenDA network. "
-                  }}
-                />
+              <Card
+                to="integrations-guides/dispersal/api-documentation/overview"
+                header={{
+                  label: "Learn: Network API Reference"
+                }}
+                body={{
+                  label: "These pages document the details of how to integrate with EigenDA"
+                }}
+              />
 
+              <Card
+                to="integrations-guides/dispersal/quick-start"
+                header={{
+                  label: "Disperse your first blob"
+                }}
+                body={{
+                  label: "Learn how EigenDA works by dispersing and retrieving a blob on the command line"
+                }}
+              />
 
-                <Card
-                  to="status"
-                  header={{
-                    label:"Platform Status"
-                  }}
-                  body={{
-                    label:"Outages, Status and Resolution details."
-                  }}
-                />
+              <Card
+                to="integrations-guides/rollup-guides/op-stack/"
+                header={{
+                  label: "Launch an OP Stack Rollup"
+                }}
+                body={{
+                  label: "Ready to launch a rollup on EigenDA? Get started here"
+                }}
+              />
 
+              <Card
+                to="operator-guides/overview"
+                header={{
+                  label: "Run an EigenDA node"
+                }}
+                body={{
+                  label: "Look here for docs on spinning up an EigenDA node"
+                }}
+              />
 
+              <Card
+                to="https://forms.gle/CMSJTxQPXfG5HTQQ7"
+                header={{
+                  label: "Register for EigenDA Mainnet"
+                }}
+                body={{
+                  label: "EigenDA Mainnet will soon be permissionless; until then please register here to launch your rollup"
+                }}
+              />
 
-              </div>
             </div>
-          </section>
-        </main>
+          </div>
+        </section>
+      </main>
 
-      </Layout>
-    );
-  }
-  
-  export default Home;
+    </Layout>
+  );
+}
+
+export default Home;

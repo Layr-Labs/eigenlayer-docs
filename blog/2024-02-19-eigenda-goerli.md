@@ -1,5 +1,5 @@
 ---
-title: "[Goerli Testnet] Incident Update: \n EigenDA Blobs Not Retrieving"
+title: "Goerli Testnet Retrieval Incident"
 slug: goerli-eigenda-retrieving-outatge-feb-2024
 tags: [goerli,eigenda]
 ---

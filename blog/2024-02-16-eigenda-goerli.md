@@ -1,5 +1,5 @@
 ---
-title: "[Goerli Testnet] Incident Update: \n EigenDA Operator Opt-In Churner function impacted on Goerli testnet"
+title: "Goerli Testnet Operator Opt-In Incident"
 slug: goerli-eigenda-churner-outage-feb-2024
 tags: [goerli,eigenda]
 ---
@@ -10,10 +10,9 @@ tags: [goerli,eigenda]
 
 - Additional Support: If you are still encountering issues with opting-in into EigenDA, please share via the [EigenLayer Discord](https://discord.gg/eigenlayer) #support-operators channel.
 
-
 ### Monitoring [Feb 16, 2024 - 15:30 PT]
 
-- **Actions:** We identified the root cause that resulted in this incident with the Churner service. We have successfully deployed the fixes, and are continuing to monitor the service. We don’t expect operators to face any further issues related to opting-in of EigenDA, and can resume normal operations on Goerli testnet.
+- **Actions:** We identified the root cause that resulted in an incident with the Churner service. We have deployed fixes and continue to monitor the service. We do not expect operators to face any further issues related to opting-in of EigenDA, and can resume normal operations on Goerli testnet.
 
 - **Additional Support:** If you (EigenLayer operators) are still encountering issues with the EigenDA opt-in functionality, please raise your issue via the [EigenLayer Discord](https://discord.gg/eigenlayer) #support-operators channel.
 
