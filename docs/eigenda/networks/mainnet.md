@@ -18,6 +18,7 @@ sidebar_position: 3
 | Churner Address | `churner.eigenda.xyz:443` |
 | Batch Confirmation Interval | Every 10 minutes (may vary based on network health) |
 | Max Blob Size | 2 MB |
+| Stake Sync (AVS-Sync) Interval | Every 6 days |
 
 [1]: https://blobs.eigenda.xyz/
 [2]: https://app.eigenlayer.xyz/avs/0x870679e138bcdf293b7ff14dd44b70fc97e12fc0
