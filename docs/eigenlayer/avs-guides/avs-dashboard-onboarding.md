@@ -6,6 +6,9 @@ title: AVS Dashboard Onboarding
 
 This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
 
+:::info
+Your AVS will **not appear** in the AVS Marketplace unless its metadata has been assigned via the steps below.
+:::
 
 ## Interface
 

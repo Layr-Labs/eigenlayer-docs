@@ -18,7 +18,7 @@ Initiating an Undelegate transaction will also **automatically queue a withdrawa
 
 ![](/img/restake-guides/delegate-4.png)
 
-**Step 2:** Confirm the Undelegate and Queue Withdrawal transactions in your Web3 wallet.
+**Step 2:** Confirm the Undelegate transaction in your Web3 wallet.
 
 **Step 3:** Observe that your Restaked balances are now 0.0 TVL.
 
