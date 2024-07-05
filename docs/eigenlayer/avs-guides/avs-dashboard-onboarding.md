@@ -6,10 +6,6 @@ title: AVS Dashboard Onboarding
 
 This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
 
-:::info
-Your AVS will **not appear** in the AVS Marketplace unless its metadata has been assigned via the steps below.
-:::
-
 ## Interface
 
 ```javascript
@@ -28,8 +24,11 @@ function getRestakeableStrategies() returns (address[] memory);
 }
 ```
 
-In order to have its name, information, and logo indexed, an AVS MUST invoke `updateAVSMetadataURI()` on the [AVSDirectory contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/core/AVSDirectory.sol).
+New AVS Listings: in order for an AVS to have its name, information, and logo indexed, it must invoke `updateAVSMetadataURI()` on the [AVSDirectory contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/core/AVSDirectory.sol).
 It currently takes about 10 minutes for it to be indexed and the metadata to be updated on the dashboard.
+
+Updating AVS Listings: tbd w/rich and samuel
+
 
 In order to have its list of operators displayed on the UI, an AVS MUST handle operator registration/deregistration by calling `registerOperatorToAVS()` and `deregisterOperatorFromAVS()` on EigenLayer’s AVSDirectory.
 
