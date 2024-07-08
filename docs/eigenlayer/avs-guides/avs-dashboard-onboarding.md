@@ -27,7 +27,7 @@ function getRestakeableStrategies() returns (address[] memory);
 New AVS Listings: in order for an AVS to have its name, information, and logo indexed, it must invoke `updateAVSMetadataURI()` on the [AVSDirectory contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/core/AVSDirectory.sol).
 It currently takes about 10 minutes for it to be indexed and the metadata to be updated on the dashboard.
 
-Updating AVS Listings: tbd w/rich and samuel
+Updating AVS Listings:  if you deploy a new contract for a new version of your AVS, please be sure to remove the previous listing. Invoke the update metadata function with value of null, such as `updateAVSMetadataURI("")` to remove the previous listing. Your listing will then be removed from the application cache within one hour.
 
 
 In order to have its list of operators displayed on the UI, an AVS MUST handle operator registration/deregistration by calling `registerOperatorToAVS()` and `deregisterOperatorFromAVS()` on EigenLayer’s AVSDirectory.
