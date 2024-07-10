@@ -324,11 +324,18 @@ eigenlayer operator status operator.yaml
 ---
 
 ## Metadata Updates
-
-This is the command you can use to make changes or updates to the metadata of your operator.
+### General metadata update
+This is the command you can use to make changes or updates to the metadata of your operator. Post v0.9.0, this command will not update metadata uri. Please use [below](#update-metadata-uri-post-v090) command to update it. 
 
 ```
 eigenlayer operator update operator.yaml
+```
+
+### Update metadata URI (Post v0.9.0)
+In [v0.9.0](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.9.0), we have introduced a new comamnd to update metadata uri.
+
+```
+eigenlayer operator update-metadata-uri operator.yaml
 ```
 
 
