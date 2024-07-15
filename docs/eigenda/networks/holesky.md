@@ -24,6 +24,14 @@ The EigenDA Holesky testnet is the current EigenDA testnet. The EigenDA Holesky 
 | Default Blob Size Rate Limit | No more than 1.8 MB every 10 minutes |
 | Stake Sync (AVS-Sync) Interval | Every 24 hours |
 
+## Quorums
+
+| Quorum Number | Token |
+| --- | --- |
+| 0 | ETH, LSTs |
+| 1 | [WETH](https://holesky.etherscan.io/address/0x94373a4919B3240D86eA41593D5eBa789FEF3848) |
+| 2 | [reALT](https://holesky.etherscan.io/address/0x2ff89Aa21D2FB7B00F28A3d224ECf5854ea162f4) |
+
 [1]: https://blobs-holesky.eigenda.xyz/
 [2]: https://holesky.eigenlayer.xyz/avs/eigenda
 [3]: https://github.com/Layr-Labs/eigenlayer-middleware/?tab=readme-ov-file#current-testnet-deployment

@@ -20,6 +20,13 @@ sidebar_position: 3
 | Max Blob Size | 2 MB |
 | Stake Sync (AVS-Sync) Interval | Every 6 days |
 
+## Quorums
+
+| Quorum Number | Token |
+| --- | --- |
+| 0 | ETH, LSTs |
+| 1 | EIGEN |
+
 [1]: https://blobs.eigenda.xyz/
 [2]: https://app.eigenlayer.xyz/avs/0x870679e138bcdf293b7ff14dd44b70fc97e12fc0
 [3]: https://github.com/Layr-Labs/eigenlayer-middleware/?tab=readme-ov-file#current-mainnet-deployment
