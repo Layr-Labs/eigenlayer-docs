@@ -21,7 +21,7 @@ Please follow the recommended steps below carefully to avoid a "partially delega
 ![undelegate button](/img/restake-guides/delegate-3.png)
 
 
-**Step 2:** **Confirm** the two transactions in your Web3 wallet.
+**Step 2:** **Confirm** the Undelegate transaction in your Web3 wallet.
 
 **Step 3:** **Observe** that your Restaked balances are now 0.0 TVL. Those assets are now undelegated from the previous Operator appear in "Pending Withdraw" state.
 
