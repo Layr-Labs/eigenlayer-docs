@@ -9,7 +9,7 @@ Full Withdrawal is the process of unlocking the entire balance held by their val
 
 **Step 1:** Ensure you have [repointed your validator's withdrawal credentials](../create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials.md) to your EigenPod.
 
-**Step 2:** Fully exit your validator from the beacon chain. You may monitor its activity via beaconcha.in/validator/[yourvalidatorid] .
+**Step 2:** Fully exit your validator from the beacon chain. You may monitor its activity via beaconcha.in/validator/[yourvalidatorindex] or [yourvalidatorpublickey] .
 
 **Step 3:** Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod. Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/[yourvalidatorid]#withdrawals .
 
@@ -29,9 +29,11 @@ You can queue a withdrawal for any amount. However, when you choose to complete 
 
 **Step 8:** Observe the Unstaked Beacon Chain balance has increased after the escrow period. The Execution Chain amount should have increased by the amount of those exited validators.
 
+:::info
 The Redeposit button is available at this point to allow the user to Restake back into EigenLayer in case the withdrawal was queued by mistake.
+:::
 
-**Step 9:** Once your validator has been exited click Withdraw to complete your deposit. **Sign** the transaction using your Web3 wallet.
+**Step 9:** Click Withdraw to complete your withdrawal. **Sign** the transaction using your Web3 wallet.
 
 :::info
 Redelegation is available for a user who accidentally queues a withdrawal, but would like to resume staking and delegation without having to exit and re-enter their validators from the beacon chain.
