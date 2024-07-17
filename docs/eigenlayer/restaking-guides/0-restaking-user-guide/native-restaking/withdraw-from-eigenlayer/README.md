@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Withdraw from EigenLayer
+# Unstake and Withdraw
 
 Please refer to the Ethereum Foundation’s documentation on [how withdrawal payments work](https://ethereum.org/en/staking/withdrawals/#how-do-withdrawals-work).
 

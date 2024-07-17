@@ -19,7 +19,7 @@ Full Withdrawal is the process of unlocking the entire balance held by their val
 
 You can queue a withdrawal for any amount. However, when you choose to complete the withdrawal, you will be required to exit enough validators and have the proofs generated for the required amount.
 
-![](/img/googleusercontentbackup/Iil3RwJtYPpGzrPFVjgwUvYmHwTdUk2tExBTvAOEN-tTzXa83LXQIwr8F1oTHM561YQMCpHEqVZWggqE75pjAmduoIoHaBqY7HpnKWbkE6k46QQTeBvOfnFZ0KYLJSIUsXyeS0mCtOMZehMRmBxy_Q8.png)
+`todo  ![](/img/restake-guides/native-full-withdraw1.png) `
 
 **Step 6:** Click **Unstake**. **Sign** the transaction using your Web3 wallet.
 
