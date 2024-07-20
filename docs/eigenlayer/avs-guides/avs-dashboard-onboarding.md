@@ -36,6 +36,8 @@ In order to have its restakeable strategies displayed on the UI, an AVS MUST imp
 
 In order to have its Total Restaked Value displayed on the UI, an AVS MUST implement `getOperatorRestakedStrategies()`.
 
+Refer to [ServiceManagerBase.sol](https://github.com/Layr-Labs/eigenlayer-middleware/blob/mainnet/src/ServiceManagerBase.sol) for a reference implementation of the interface.
+
 Proxy and Implementation addresses for AVSDirectory contract are available at EigenLayer Contracts -> [Deployments](https://github.com/Layr-Labs/eigenlayer-contracts/?tab=readme-ov-file#deployments).
 
 ## MetadataURI Format
