@@ -1,0 +1,148 @@
+---
+sidebar_position: 2
+---
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Using CLI
+
+Follow the instructions below step by step in order to claim your currently available rewards in the EigenLayer web app via EigenLayer CLI. Rewards can be claimed by a Staker or Operator.
+
+### Step 1: Install the latest version of EigenLayer CLI
+
+Head over to the [installation instructions](https://github.com/Layr-Labs/eigenlayer-cli#install-eigenlayer-cli-using-a-binary) for getting the binary with your preferred way. 
+
+Below steps assume that you have used the default binary installation command and your binary is installed at `./bin/` location
+
+
+### Step 2: Check if installation is correct
+```bash
+./bin/eigenlayer --version
+```
+This should output the version of EigenLayer CLI installed
+```bash
+eigenlayer version v<X.X.X>
+```
+
+### Step 3: Check if rewards are available to claim
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+    ```bash
+    ./bin/eigenlayer rewards show \
+      --network mainnet \
+      --earner-address <earner-address> \
+      --claim-type unclaimed
+
+    ```
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+    ```bash
+    ./bin/eigenlayer rewards show \
+      --network holesky \
+      --earner-address <earner-address> \
+      --claim-type unclaimed
+    ```
+  </TabItem>
+</Tabs>
+
+This will output the token address and the amount of unclaimed rewards available 
+```bash
+---------------------------------------------------------------------------------------
+Token Address                              | Wei Amount
+---------------------------------------------------------------------------------------
+0x554c393923c753d146aa34608523ad7946b61662 | 6324648267039518
+0xdf3b00151bf851e8c4036ceda284d38a2f1d09df | 132817613607829878
+---------------------------------------------------------------------------------------
+```
+
+### Step 4: Ensure you have your keys in place
+Claiming rewards requires you to have access to your wallet keys. 
+Supported Key Management options are listed [here](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#supported-key-management-backends)
+
+:::info
+If you already have your keys in either either of the supported key management options, you can skip this step.
+:::
+
+In case you have your keys in some browser wallet, you can import your keys to local keystore file by using the following command
+```bash
+./bin/eigenlayer keys import \
+  --key-type <key-type> <private-key-hex>
+```
+This will ask you to set a password to protect your keystore file.
+
+Refer your browser wallet documentation to get the `private-key-hex`.
+
+### Step 5: Claim the rewards
+
+Make sure the keys you are using to claim is the claimer you have set.
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+    If you are using local keystore file, use the following command to claim rewards
+    
+    ```bash
+    ./bin/eigenlayer rewards claim \
+      --network holesky \
+      --eth-rpc-url <mainnet-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --recipient-address <address-to-send-rewards-to> \
+      --path-to-key-store /path/to/key/store-json \
+      --token-addresses <comma-separated-list-of-token-addresses> \
+      --broadcast
+    ```
+    `comma-separated-list-of-token-addresses` - You can get this from output of [Step 3](#step-3-check-if-rewards-are-available-to-claim)
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+    If you are using local keystore file, use the following command to claim rewards
+    
+    ```bash
+    ./bin/eigenlayer rewards claim \
+      --network holesky \
+      --eth-rpc-url <holesky-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --recipient-address <address-to-send-rewards-to> \
+      --path-to-key-store /path/to/key/store-json \
+      --token-addresses <comma-separated-list-of-token-addresses> \
+      --broadcast
+    ```
+    `comma-separated-list-of-token-addresses` - You can get this from output of Step 3
+  </TabItem>
+</Tabs>
+
+If you are using fireblocks or web3 wallet check the command help for the respective key management backend.
+```bash
+./bin/eigenlayer rewards claim --help
+```
+
+### Step 6: (Optional) Check the rewards paramters
+If you want to see the rewards parameters before claiming, you can use the following command
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+    If you are using local keystore file, use the following command to claim rewards
+    
+    ```bash
+    ./bin/eigenlayer rewards claim \
+      --network holesky \
+      --eth-rpc-url <mainnet-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --token-addresses <comma-separated-list-of-token-addresses>
+    ```
+    `comma-separated-list-of-token-addresses` - You can get this from output of [Step 3](#step-3-check-if-rewards-are-available-to-claim)
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+    If you are using local keystore file, use the following command to claim rewards
+    
+    ```bash
+    ./bin/eigenlayer rewards claim \
+      --network holesky \
+      --eth-rpc-url <holesky-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --token-addresses <comma-separated-list-of-token-addresses>
+    ```
+    `comma-separated-list-of-token-addresses` - You can get this from output of Step 3
+  </TabItem>
+</Tabs>
