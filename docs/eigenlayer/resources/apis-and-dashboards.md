@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: APIs and Dashboards
+title: APIs, Dashboards, and Tooling
 ---
 
 APIs
@@ -13,3 +13,7 @@ Dashboards
 - [The Ultimate Restaking Dashboard](https://dune.com/hahahash/eigenlayer)
 - [AVS Dashboard](https://dune.com/hahahash/avs)
 - [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
+
+Developer Tooling
+
+- [Othentic](https://www.othentic.xyz/) - Library of components for AVS builders.
