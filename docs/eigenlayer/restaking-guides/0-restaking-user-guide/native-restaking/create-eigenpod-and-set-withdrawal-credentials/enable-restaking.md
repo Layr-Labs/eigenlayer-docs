@@ -9,19 +9,13 @@ After your Beacon chain ETH balance has been proven and verified on chain, you w
 :::warning
 This process can take **up to 4 hours** after your validators have entered the active state on the beacon chain. You may use [beaconcha.in](https://beaconcha.in) as a reference during this process.
 :::
-
+ 
 **Step 1:** Click **Restake** from the Beacon Chain Ether page.
 
-![](/img/restake-guides/enable-restake-1.png)
-
 **Step 2:** Observe the app is fetching beacon chain proofs and validating them on-chain.
-
-![](/img/googleusercontentbackup/TEQS3Nkjxf9NYe382VZ4UqYatO1r0QAtYvLYVmDavOhl7KkD-xyVamKulgxXVIFPe96u0VCs-gVbQ2UR7Oh-ZuktcHYP0Gfozqq2ZRFEpLhct9GXssVXf5ZZui9MmEKubqwekKrg2mPU9wZrDf8ZzPU.png)
-
-![](/img/restake-guides/enable-restake-2.png)
 
 **Step 3:** **Confirm** the transaction via your Web3 wallet.
 
 **Step 4:** Observe your Beacon Chain Restaked and Total Restaked balances have increased accordingly.
 
-![](/img/restake-guides/enable-restake-3.png)
+
