@@ -19,13 +19,10 @@ Full Withdrawal is the process of unlocking the entire balance held by their val
 
 You can queue a withdrawal for any amount. However, when you choose to complete the withdrawal, you will be required to exit enough validators and have the proofs generated for the required amount.
 
-`todo  ![](/img/restake-guides/native-full-withdraw1.png) `
 
 **Step 6:** Click **Unstake**. **Sign** the transaction using your Web3 wallet.
 
 **Step 7:** Wait for the escrow period to complete. Observe the Unstaking balance has increased during the escrow period.
-
-![](/img/googleusercontentbackup/QZvihKxzjPXs4XBWp8xNZdsc8FmLl7VuJ0m5yom_TqgqiFkpROSVSqEr_4XdMWMmhD-ZcTVOjRYxEaTmwpQzIz87dJdgpNs79jDQvw7TKgNxIXr3P1OJCsWeKZoew4I2iG_6Phy5rlej99HvuoKnY-g.png)
 
 **Step 8:** Observe the Unstaked Beacon Chain balance has increased after the escrow period. The Execution Chain amount should have increased by the amount of those exited validators.
 
