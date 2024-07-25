@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# Claim Rewards
+# Using WebApp
 
 Follow the instructions below step by step in order to claim your currently available rewards in the EigenLayer web app. Rewards can be claimed by a Staker or Operator.
 

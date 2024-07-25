@@ -22,4 +22,5 @@ Quorums are a grouping of Strategies (Restaked Assets) to be used by an AVS for 
 
 An Operator can opt into as many quorums as they like as long as they have sufficient TVL for those quorums.
 
-
+## Rewards
+Head over to the [rewards claiming](../restaking-guides/0-restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview.md) documentation on how to claim rewards.
