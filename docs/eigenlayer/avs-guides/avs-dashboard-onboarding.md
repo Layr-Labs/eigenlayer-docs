@@ -31,7 +31,7 @@ function getRestakeableStrategies() returns (address[] memory);
 
 ### registerOperatorToAVS and deregisterOperatorFromAVS
 In order to have its list of operators displayed on the UI, an AVS MUST handle operator registration/deregistration by calling `registerOperatorToAVS()` and `deregisterOperatorFromAVS()` on EigenLayer’s AVSDirectory.  Primarily, these functions serve to forward calls to the `AVSDirectory.sol` contract to confirm an operator's registration with the AVS.
-```
+```solidity
 function registerOperatorToAVS(
         address operator,
         ISignatureUtils.SignatureWithSaltAndExpiry memory operatorSignature
@@ -51,7 +51,7 @@ This function must be implemented in order to provide the list of strategies tha
 
 Note that there is no guarantee is made on whether the operator has shares for a strategy in a quorum or uniqueness of each element in the returned array. The off-chain service should do that validation separately
 
-```
+```solidity
 function getOperatorRestakedStrategies(address operator) external view returns (address[] memory) {
         bytes32 operatorId = registryCoordinator.getOperatorId(operator);
         uint192 operatorBitmap = registryCoordinator.getCurrentQuorumBitmap(operatorId);
@@ -84,7 +84,7 @@ function getOperatorRestakedStrategies(address operator) external view returns (
 ### getRestakeableStrategies
 This function must be implemented in order to have all possible restakeable strategies for that AVS displayed on the UI correctly.  These are the strategies that the AVS supports for restaking.  
 
-```
+```solidity
 function getRestakeableStrategies() external view returns (address[] memory) {
         uint256 quorumCount = registryCoordinator.quorumCount();
 
