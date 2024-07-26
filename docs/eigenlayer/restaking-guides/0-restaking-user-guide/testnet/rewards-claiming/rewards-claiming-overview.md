@@ -16,24 +16,8 @@ Rewards are calculated via an offchain process. Every week a merkle root is post
 
 Reward Earners (Stakers and Operators) can set a claimer address that can claim rewards for the tokens they've earned. An Earner is its own claimer by default and only the claimer address can claim rewards. If a new claimer is set, the new address can claim all of the previously unclaimed rewards. The earner can always configure their designated claimer address.
 
-
 ## AVS Integrations
-
-AVSs can make rewards submissions via calling `createAVSRewardsSubmission` on the `RewardsCoordinator` contract. Each rewards submission specifies:  
-
-1. A time range for which the rewards submission is valid. Rewards submissions can be retroactive from the M2 upgrade and last up to 30 days in the future.
-2. A list of strategies and multipliers, which enables the AVS to weigh the relative payout to each strategy within a single rewards submission.
-3. The ERC20 token in which rewards should be denominated.
-Rewards MUST come from an AVSs ServiceManager contract. An example integration can be found [here](https://github.com/Layr-Labs/eigenlayer-middleware/blob/v0.2.0-rc2-holesky-preprod-rewards/src/ServiceManagerBase.sol#L76-L104).  
-
-Integration Notes:
-- The rewards passed on to earners are calculated daily and posted on-chain weekly.
-- If the AVS does not have any operators opted into the AVS on a day of an active reward, those tokens are not distributed pro-rata to future days.
-- Rewards cannot be clawed back by AVSs.
-- Operators will only be distributed rewards on **entire** days that they have opted into the AVS.
-- Due to the rounding in the off-chain process, we recommend not making range submission token amounts with more than 15 significant digits of precision. If more than 15 significant digits are provided, the extra precision will be truncated.
-- There are several requirements for successfully calling `createAVSRewardsSubmission`. It's recommended to read further details [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.0-rc3-holesky-preprod-rewards/docs/core/RewardsCoordinator.md#createavsrewardssubmission).
-
+Refer to [AVS Guide: AVS Rewards](../../../../avs-guides/rewards.md).
 
 ## Rewards Contract Configurations
 
