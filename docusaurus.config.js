@@ -185,6 +185,12 @@ const config = {
             from: "/eigenda/integrations-guides/dispersal/disperser-golang-grpc-client",
             to: "/eigenda/integrations-guides/dispersal/clients/golang-client",
           },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
+            to: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
+          },
+
+          
         ],
         createRedirects(existingPath) {
 
