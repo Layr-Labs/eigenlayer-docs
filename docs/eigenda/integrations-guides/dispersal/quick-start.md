@@ -94,7 +94,7 @@ $ grpcurl \
 ```
 
 Option B: Retrieve the blob directly from EigenDA nodes. Integrate the
-[Retrieval Client](https://github.com/Layr-Labs/eigenda/blob/master/clients/retrieval_client.go)
+[Retrieval Client](https://github.com/Layr-Labs/eigenda/tree/master/retriever)
 into your Go binary.
 
 ### Null Bytes Padding

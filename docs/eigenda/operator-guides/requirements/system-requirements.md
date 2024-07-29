@@ -40,7 +40,7 @@ EigenDA nodes **must** provision high-performance SSD storage in order to keep
 up with network storage and retrieval tasks. Enterprise grade SSDs are recommended, such as `PCIe 4.0 x4 M.2/U.2 NVMe`.
 
 Failure to maintain adequate
-performance will result in unacceptable validation latency and [automatic ejection](./protocol-SLA/).
+performance will result in unacceptable validation latency and [automatic ejection](protocol-SLA/).
 
 The following table summarizes required storage capacity based on TQS:
 
@@ -65,7 +65,7 @@ Where `<coding rate> = 5` for all current EigenDA quorums. So if the network is 
 
 ## System Upgrades
 
-Since system requirements scale dynamically in accordance with the amount of stake delegated to the operator, node operators may from time to time need to upgrade their system setups in order to continue meeting the [Protocol SLA](./protocol-SLA/). Guidance for performing such upgrades is covered in [System Upgrades](../upgrades/software-upgrades/)
+Since system requirements scale dynamically in accordance with the amount of stake delegated to the operator, node operators may from time to time need to upgrade their system setups in order to continue meeting the [Protocol SLA](protocol-SLA/). Guidance for performing such upgrades is covered in [System Upgrades](../upgrades/system-upgrades/)
 
 ## IP Stability Requirements
 
