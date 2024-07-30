@@ -5,6 +5,8 @@ title: AVS Overview
 
 Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
+Also, check out the resources in __[Awesome AVS](https://github.com/Layr-Labs/awesome-avs)__ for more reference architectures, tutorials, and guides.
+
 ## What is an AVS?
 
 An AVS is any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, trusted execution environments and more.
