@@ -4,7 +4,7 @@ title: EigenDA Overview
 ---
 
 EigenDA is a data availability store made by
-[EigenLabs](https://www.eigenlayer.xyz/about) and built on top of
+[EigenLabs](https://www.eigenlabs.org/) and built on top of
 [EigenLayer](../eigenlayer/overview/README.md), currently on mainnet since Q2 2024.
 It is also available on Holesky testnet for testing and development purposes.
 
