@@ -13,28 +13,14 @@ function Card({ to, header, body, externalIcon = false }) {
   */
 
   return (
-    <div className={clsx("col col--4 ", styles.feature)}>
-      <Link className="navbar__link card" to={to}>
-        <div className="card__header">
+    <div className={clsx("col col--4 landing-link-container", styles.feature)}>
+      <Link to={to} className="docs-landing-link">
+        <div className="card__header link-body-header">
           <h3>
             {header.label}
-            {externalIcon && (
-              <svg
-                width="13.5"
-                height="13.5"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                className={styles.iconExternalIcon}
-              >
-                <path
-                  fill="currentColor"
-                  d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"
-                ></path>
-              </svg>
-            )}
           </h3>
         </div>
-        <div className="card__body">
+        <div className="link-body-container">
           <p>
             {body.label}
           </p>

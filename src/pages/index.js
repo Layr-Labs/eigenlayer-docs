@@ -3,8 +3,6 @@ import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import Card from "../components/Card";
 
-
-
 function Home() {
     const context = useDocusaurusContext();
     const { siteConfig = {} } = context;
@@ -13,20 +11,22 @@ function Home() {
       <Layout title="Homepage" description="EigenLayer Documentation">
         <main className={styles.main}>
           <br />
-          <h1
-            align="center"
-            title="tagline"
-            style={{
-              fontWeight: "700",
-              marginBottom: "0px",
-              fontSize: "x-large",
-            }}
-          >
-            Welcome to the EigenLayer Documentation Site
-          </h1>
           <section className={styles.features}>
             <div className="container">
-              <div className="row cards__container">
+              <h1
+              title="tagline"
+              className="landing-tagline"
+              style={{
+                fontWeight: "700",
+                marginBottom: "0px",
+                fontSize: "x-large",
+                paddingTop: "55px",
+                paddingBottom: "10px",
+              }}
+            >
+              Welcome to the EigenLayer Documentation Site
+            </h1>
+              <div className="row cards__container docs-landing">
                 <Card
                   to="eigenlayer/overview"
                   header={{
