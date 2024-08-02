@@ -25,7 +25,7 @@ Rewards MUST come from an AVSs ServiceManager contract. An example integration c
 Integration Notes:
 - The rewards passed on to earners are calculated daily. Rewards take 2 days to populate in the daily calculation. For example, if a reward submission was made on August 3rd, it would show up in the August 5th calculation
 - Reward roots are posted weekly on mainnet and daily on testnet
-- Reward roots are on a 7 day activation delay on mainnet and 2 hour activation delay on testnet
+- Reward roots are on a 7 day activation delay (ie. when it is claimable against) on mainnet and 2 hour activation delay on testnet
 - If the AVS does not have any operators opted into the AVS on a day of an active reward, those tokens are not distributed pro-rata to future days.
 - Rewards cannot be clawed back by AVSs.
 - Operators will only be distributed rewards on **entire** days that they have opted into the AVS.
