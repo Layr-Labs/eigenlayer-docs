@@ -8,7 +8,7 @@ For issues with the dApp, LST and restaking issues and Operator questions you ma
 
 # \$EIGEN Claim Support
 
-For any issues concerning \$EIGEN including token claims and stakedrop issues, please visit the stakedrop-support channel in the [EigenLayer Community Discord](https://discord.gg/eigenlayer). The EigenFoundation support team can address your question there. Please see docs.eigenfoundation.org for information related to EIGEN token claims.
+For any issues concerning \$EIGEN including token claims and stakedrop issues, please visit the stakedrop-support channel in the [EigenLayer Community Discord](https://discord.gg/eigenlayer). The Eigen Foundation support team can address your question there. Please see docs.eigenfoundation.org for information related to EIGEN token claims.
 
 Please beware of any fraudulent tokens, dApps, and phishing sites:
 - The only site to claim \$EIGEN is: claims.eigenfoundation.org .
