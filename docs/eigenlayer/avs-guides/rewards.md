@@ -23,10 +23,12 @@ The rewards protocol is currently live on testnet. AVSs can make rewards submiss
 Rewards MUST come from an AVSs ServiceManager contract. An example integration can be found [here](https://github.com/Layr-Labs/eigenlayer-middleware/blob/v0.2.0-rc2-holesky-preprod-rewards/src/ServiceManagerBase.sol#L76-L104).  
 
 Integration Notes:
-- The rewards passed on to earners are calculated daily and posted on-chain weekly.
+- The rewards passed on to earners are calculated daily. Rewards take 2 days to populate in the daily calculation. For example, if a reward submission was made on August 3rd, it would show up in the August 5th calculation
+- Reward roots are posted weekly on mainnet and daily on testnet
+- Reward roots are on a 7 day activation delay (ie. when it is claimable against) on mainnet and 2 hour activation delay on testnet
 - If the AVS does not have any operators opted into the AVS on a day of an active reward, those tokens are not distributed pro-rata to future days.
 - Rewards cannot be clawed back by AVSs.
 - Operators will only be distributed rewards on **entire** days that they have opted into the AVS.
 - Due to the rounding in the off-chain process, we recommend not making range submission token amounts with more than 15 significant digits of precision. If more than 15 significant digits are provided, the extra precision will be truncated.
-- Rewrads can be made in multiple ERC-20 tokens by calling `createAVSRewardsSubmission` for each ERC-20 token to reward in.  
+- Rewards can be made in multiple ERC-20 tokens by calling `createAVSRewardsSubmission` for each ERC-20 token to reward in.  
 - There are several requirements for successfully calling `createAVSRewardsSubmission`. It's recommended to read further details [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.0-rc3-holesky-preprod-rewards/docs/core/RewardsCoordinator.md#createavsrewardssubmission).
