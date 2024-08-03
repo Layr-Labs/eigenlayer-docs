@@ -16,6 +16,32 @@ Please note the following resources are available for users that wish to take a 
 
 # Smart Contract Liquid Restaking User Guide
 
+## Steps to Deposit (Restake) Liquid Tokens
+
+1. Call StrategyManager.depositIntoStrategy() .
+2. User is now actively Restaked.
+
+## Steps to Withdraw (Unstake) Liquid Tokens
+
+1. Queue Withdrawal: call DelegationManager.queueWithdrawal() to trigger the escrow period. Wait for Escrow Period: 24 days for $EIGEN, 7 days for all other tokens. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
+
+2. Complete Withdrawal as Tokens: call DelegationManager.completeQueuedWithdrawal() to complete the withdrawal and return assets to the withdrawer's wallet.
+
+
+# Smart Contract Delegation User Guide
+
+The process of Delegating assets is the same for both liquid and native restaked assets. The user's Restaking wallet must Delegate all restaked assets to a single Operator. After the initial Delegate operation - any subsequent Deposited (Restaked) assets are also automatically delegated to the current operator.
+
+## Steps to Delegate Assets
+
+1. Call DelegationManager.delegateTo()
+2. Your Restaked assets are now delegated.
+
+## Steps to Change Actively Delegated Operator
+
+_Coming Soon_ In the meantime, please see the smart contract specifications above and the high level process walkthrough [here](./0-restaking-user-guide/restaker-delegation/redelegation-process.md).
+
+
 # Smart Contract Native Restaking User Guide
 
 ## PEPE Release
@@ -54,14 +80,16 @@ As of the PEPE release, users can now convert consensus rewards and validator ex
 ### Checkpoint Frequency
 
 Users should not initiate a checkpoint more frequently than once every two weeks (approximately). 
-The longer you wait before performing a checkpoint, the more gas users will save. The gas cost of a checkpoint is the same, regardless of how many consensus rewards will be proven. Each user should determine the best interval to fit their gas cost and restaking benefit needs. Consensus rewards are moved from the beacon chain to your EigenPod once every approximately 8 days per the Ethereum protocol. Checkpoint intervals more frequently than 8 days would result in no benefit for the user.
+The longer you wait before performing a checkpoint, the more gas users will save. The gas cost of a checkpoint is the same, regardless of how many consensus rewards will be proven. Each user should determine the best interval to fit their gas cost and restaking benefit needs.
+
+Consensus rewards are moved from the beacon chain to your EigenPod once every approximately 8 days per the Ethereum protocol. Checkpoint intervals more frequently than 8 days would result in no benefit for the user.
 
 
 ## Steps to Withdraw Restaked Balance
 
 1. Validator Exit
    1. Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
-   2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to \[some time tbd from Chris\] for between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod. Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
+   2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
 2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
 3. Call the DelegationManager.queueWithdrawal() function.
 4. Wait for Escrow Period to complete.
@@ -72,7 +100,7 @@ The longer you wait before performing a checkpoint, the more gas users will save
 This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
 
 1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. \[todo: complete this process with Eng\]
+2. [todo: complete this process with Eng]
    1. ?Call the DelegationManager.queueWithdrawal() function?
    2. I [couldn't find out](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat/partial-withdrawal-batching/docs/core/DelegationManager.md#queuewithdrawals) how the user should limit their withdrawal to only Yield amounts, to avoid interfering with native restaked validator ETH balances.
 3. Wait for Escrow Period to complete.
