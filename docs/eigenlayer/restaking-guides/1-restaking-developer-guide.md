@@ -24,4 +24,56 @@ EigenLayer core contracts have had two previous major releases: M1 and M2. PEPE 
 
 Please see the [this document](https://hackmd.io/@-HV50kYcRqOjl_7du8m1AA/SkJPfqBeC) and [PR #515](https://github.com/Layr-Labs/eigenlayer-contracts/pull/515) for a design history and motivation for the PEPE Release.
 
+## Key Management and Proof Submitter
+
+Use a secure key management solution for your EigenPod generation key (aka the EigenPod "owner"), such as a hardware wallet solution.
+
+We recommend using a different key for the Proof Submitter. The Proof Submitter is any other address that is approved to submit proofs on behalf of the EigenPod owner. This allows the EigenPod owner key to remain used less frequently and remain more secure.
+
+[todo ask @antojoseph to suggest wording here]
+
+## Prerequisites
+
+The user will need an environment available to run the [EigenPod Proof Gen CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#quickstart) including its software prerequisites.
+
 ## Steps to Deposit (Restake) Validator Native Beacon Chain ETH
+
+For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
+
+
+
+
+## Steps to Convert Consensus Rewards to Restaked Shares
+
+As of the PEPE release, users can now convert consensus rewards and validator execution fees to restaked shares.  Initiating and completing a checkpoint proof will automatically convert any consensus rewards to restaked shares for the EigenPod.
+
+1. Check the status command via `./cli status` to determine how many additional shares the user would gain from completing a checkpoint at this time.
+2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint. This command will both start the checkpoint and run verify proofs until the checkpoint is completed.
+
+
+### Checkpoint Frequency
+
+Users should not initiate a checkpoint more frequently than once every two weeks (approximately). 
+The longer you wait before performing a checkpoint, the more gas users will save. The gas cost of a checkpoint is the same, regardless of how many consensus rewards will be proven. Each user should determine the best interval to fit their gas cost and restaking benefit needs. Consensus rewards are moved from the beacon chain to your EigenPod once every approximately 8 days per the Ethereum protocol. Checkpoint intervals more frequently than 8 days would result in no benefit for the user.
+
+
+## Steps to Withdraw Restaked Balance
+
+1. Validator Exit
+   1. Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
+   2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to \[some time tbd from Chris\] for between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod. Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
+2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
+3. Call the DelegationManager.queueWithdrawal() function.
+4. Wait for Escrow Period to complete.
+5. Call DelegationManager.completeQueuedWithdrawal()
+
+## Steps to Withdraw Yield Only
+
+This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
+
+1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
+2. \[todo: complete this process with Eng\]
+   1. ?Call the DelegationManager.queueWithdrawal() function?
+   2. I [couldn't find out](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat/partial-withdrawal-batching/docs/core/DelegationManager.md#queuewithdrawals) how the user should limit their withdrawal to only Yield amounts, to avoid interfering with native restaked validator ETH balances.
+3. Wait for Escrow Period to complete.
+4. Call DelegationManager.completeQueuedWithdrawal()?
