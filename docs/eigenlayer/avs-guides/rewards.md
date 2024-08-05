@@ -5,7 +5,7 @@ title: AVS Rewards
 
 ## Overview
 
-The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`, an AVS can specify a time range for which the reward will be distributed, a relative weighting of LSTs and NativeETH for the reward, and an ERC20 token to make rewards in.  
+The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`, an AVS can specify a time range for which the reward will be distributed, a list of weights for each Strategy for the reward, and an ERC20 token to make rewards in.  
 
 Operators will earn a flat 10% commission on rewards. The rest of the reward is passed on to the operator's delegated stakers. Rewards are proportional to:
 - The amount of stake.
@@ -32,3 +32,17 @@ Integration Notes:
 - Due to the rounding in the off-chain process, we recommend not making range submission token amounts with more than 15 significant digits of precision. If more than 15 significant digits are provided, the extra precision will be truncated.
 - Rewards can be made in multiple ERC-20 tokens by calling `createAVSRewardsSubmission` for each ERC-20 token to reward in.  
 - There are several requirements for successfully calling `createAVSRewardsSubmission`. It's recommended to read further details [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.0-rc3-holesky-preprod-rewards/docs/core/RewardsCoordinator.md#createavsrewardssubmission).
+
+## FAQ
+
+### When are rewards submissions including in daily calculation
+
+An AVS's reward submission is included in the calculation 2 days after it is submitted. For example, if the AVS submits a rewards on August 2nd, it will be included in the August 4th rewards calculation.
+
+### How long will do stakers and operators of my AVS have to wait to claim their rewards?
+
+Worst case, stakers and operators of an AVS will have to wait 16 days to claim a reward (2 day calculation delay + 7 day root submission cadence + 7 day activation delay).
+
+### How can I display the symbol and name of my reward token?
+
+An automated process for this is being finalized. 
