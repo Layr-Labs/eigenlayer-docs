@@ -37,7 +37,7 @@ Integration Notes:
 
 ### When are rewards submissions including in daily calculation?
 
-An AVS's reward submission is included in the calculation 2 days after it is submitted. For example, if the AVS submits a rewards submission on August 2nd, it will be included in the August 4th rewards calculation.
+An AVS' reward submission is included in the calculation 2 days after it is submitted. For example, if the AVS submits a rewards submission on August 2nd, it will be included in the August 4th rewards calculation.
 
 ### How long will do stakers and operators of my AVS have to wait to claim their rewards?
 
