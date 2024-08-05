@@ -11,8 +11,8 @@ After a root is posted, rewards are claimable after an activation delay. On main
 
 #### What portion of rewards goes to my operator?
 
-Operators get a fixed 10% portion rewards. In a future release this will be variable. 
+Operators get a fixed 10% portion rewards, though this is subject to change in a future release to be variable.
 
 #### How can I receive rewards on testnet?
 
-To accumulate Rewards on Testnet for testing purposes you must be or delegate to an operator who has opted into an AVS with active rewards. EigenDA is one such AVS. 
+To accumulate rewards on testnet for testing purposes you must be an operator (or delegate to one) who has opted into an AVS with active rewards. EigenDA is one such AVS.
