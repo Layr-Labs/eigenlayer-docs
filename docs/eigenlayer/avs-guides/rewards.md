@@ -11,7 +11,7 @@ Operators will earn a flat 10% commission on rewards. The rest of the reward is 
 - The amount of stake.
 - The AVS's relative weighting of strategies in a rewards submission.
 
-Rewards are calculated via an offchain process. Every week a merkle root is posted which represents the cumulative rewards across all earners. There is an additional 2 hour delay on testnet and 1 week delay on mainnet after posting in order for the root to be claimable against with a valid merkle proof. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). 
+Rewards are calculated via an offchain process. Every week a merkle root is posted which represents the cumulative rewards across all earners. There is an additional 2 hour delay on testnet and 1 week delay on mainnet in order for the root to be claimable against. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). 
 
 ## AVS Integration
 
@@ -35,9 +35,9 @@ Integration Notes:
 
 ## FAQ
 
-### When are rewards submissions including in daily calculation
+### When are rewards submissions including in daily calculation?
 
-An AVS's reward submission is included in the calculation 2 days after it is submitted. For example, if the AVS submits a rewards on August 2nd, it will be included in the August 4th rewards calculation.
+An AVS's reward submission is included in the calculation 2 days after it is submitted. For example, if the AVS submits a rewards submission on August 2nd, it will be included in the August 4th rewards calculation.
 
 ### How long will do stakers and operators of my AVS have to wait to claim their rewards?
 

@@ -11,7 +11,7 @@ After a root is posted, rewards are claimable after an activation delay. On main
 
 #### What portion of rewards goes to my operator?
 
-Operators get a fixed 10% portion rewards. 
+Operators get a fixed 10% portion rewards. In a future release this will be variable. 
 
 #### How can I receive rewards on testnet?
 
