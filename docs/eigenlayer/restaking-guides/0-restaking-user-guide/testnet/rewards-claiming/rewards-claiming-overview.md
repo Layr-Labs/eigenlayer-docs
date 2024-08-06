@@ -1,12 +1,13 @@
 ---
 sidebar_position: 1
+title: Rewards Claiming Overview
 ---
 
 # Rewards Overview
 
 ## Overview
 
-The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`, an AVS can specify a time range for which the reward will be distributed, a relative weighting of LSTs and NativeETH for the reward, and an ERC20 token to make rewards in.  
+The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`, an AVS can specify a time range for which the reward will be distributed, a list of weights for each `Strategy` for the reward, and an ERC20 token to make rewards in.  
 
 Operators will earn a flat 10% commission on rewards. The rest of the reward is passed on to the operator's delegated stakers. Rewards are proportional to:
 - The amount of stake.
@@ -31,3 +32,4 @@ Earners can set designated claimer addresses on the `RewardsCoordinator` contrac
 
 ### Rewards Recipient Address
 Not to be confused with the designated claimer address specified above, the recipient address is the address that will actually receive the ERC20 token rewards. The designated claimer (or the earner themselves) has the ability to call `RewardsCoordinator.processClaim` for the earner while also specifying a recipient address to receive all the rewards.
+
