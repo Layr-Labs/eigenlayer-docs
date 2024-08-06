@@ -58,15 +58,31 @@ We recommend using a different key for the Proof Submitter. The Proof Submitter 
 
 [todo ask @antojoseph to suggest wording here]
 
+
+## EigenPod Upgrades
+
+For all M1 to PEPE migrations - we no longer require users to upgrade their EigenPod contracts per the deprecated activateRestaking() method. M1 pods will be upgraded automatically to PEPE compliant EigenPods by EigenLabs [todo ask @wadealexc or @gpsanant for their guidance on wording here].
+
+
+
 ## Prerequisites
 
 The user will need an environment available to run the [EigenPod Proof Gen CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#quickstart) including its software prerequisites.
 
 ## Steps to Deposit (Restake) Validator Native Beacon Chain ETH
 
+1. Create EigenPod: EigenPodManager.createPod()
+2. Connect validator(s) withdrawal credentials to point to the EigenPod address when the validator is created. Please see [Ethereum Launchpad](https://launchpad.ethereum.org/en/withdrawals#enabling-withdrawals) for more information. 
+    a. Optional: you may choose to set the FEE_RECIPIENT to your EigenPod address if you wish to Restake those fees.
+    b. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/ to follow your validator status.
+3. Generate Proof Via eigenpod-proofs-generation CLI
+    a. Run the `credentials` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation).
+    b. Include the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act onchain for you. This is the private key of the wallet that was used to create the EigenPod. Note: future versions of this documentation will include a ProofSubmitter option which will enable you to submit these validator proofs without requiring your EigenPod Owner private key.
+    [todo ask @jbrower95 to confirm these steps]
+4. Your validator ETH balance is now Restaked.
+
+
 For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
-
-
 
 
 ## Steps to Convert Consensus Rewards to Restaked Shares
@@ -100,7 +116,7 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
 
 1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. [todo: complete this process with Eng]
+2. [todo: complete this process with @jbrower95 or @gpsanant]
    1. ?Call the DelegationManager.queueWithdrawal() function?
    2. I [couldn't find out](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat/partial-withdrawal-batching/docs/core/DelegationManager.md#queuewithdrawals) how the user should limit their withdrawal to only Yield amounts, to avoid interfering with native restaked validator ETH balances.
 3. Wait for Escrow Period to complete.
