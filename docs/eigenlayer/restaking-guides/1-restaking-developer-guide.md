@@ -71,15 +71,33 @@ The user will need an environment available to run the [EigenPod Proof Gen CLI](
 
 ## Steps to Deposit (Restake) Validator Native Beacon Chain ETH
 
-1. Create EigenPod: EigenPodManager.createPod()
-2. Connect validator(s) withdrawal credentials to point to the EigenPod address when the validator is created. Please see [Ethereum Launchpad](https://launchpad.ethereum.org/en/withdrawals#enabling-withdrawals) for more information. 
+### Part 1: Create EigenPod
+
+Call EigenPodManager.createPod() .  
+
+### Part 2: Configure validator(s) withdrawal credentials
+
+1. Configure the validator(s) credentials to point to the EigenPod address when the validator is created. Please see [Ethereum Launchpad](https://launchpad.ethereum.org/en/withdrawals#enabling-withdrawals) for more information. 
     a. Optional: you may choose to set the FEE_RECIPIENT to your EigenPod address if you wish to Restake those fees.
-    b. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/ to follow your validator status.
-3. Generate Proof Via eigenpod-proofs-generation CLI
-    a. Run the `credentials` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation).
-    b. Include the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act onchain for you. This is the private key of the wallet that was used to create the EigenPod. Note: future versions of this documentation will include a ProofSubmitter option which will enable you to submit these validator proofs without requiring your EigenPod Owner private key.
-    [todo ask @jbrower95 to confirm these steps]
-4. Your validator ETH balance is now Restaked.
+
+2. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/ to follow your validator status.
+
+### Part 3: Generate EigenPod Proof Via eigenpod-proofs-generation CLI
+
+1. Run the `credentials` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation).
+    
+2. Choose to either a) include the EigenPod Owner private key in the CLI `credentials` command or b) use the `credentials` command to generate the proof, then submit the proof via [todo] transaction.
+
+Option a) Include the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act onchain for you. This is the private key of the wallet that was used to create the EigenPod.
+
+Note: future versions of this documentation will include a ProofSubmitter option which will enable you to submit these validator proofs without requiring your EigenPod Owner private key.
+        [todo ask @jbrower95 to confirm these steps]
+
+Option b) Invoke the `credentials` command **without** the `--sender` argument and private key.
+
+[todo ask @jbrower95 to confirm these steps]
+
+3. Your validator ETH balance is now Restaked.
 
 
 For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
