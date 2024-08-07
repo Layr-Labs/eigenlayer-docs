@@ -44,30 +44,45 @@ _Coming Soon_ In the meantime, please see the smart contract specifications abov
 
 # Smart Contract Native Restaking User Guide
 
+For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
+
 ## PEPE Release
 
 EigenLayer core contracts have had two previous major releases: M1 and M2. PEPE (Protocol: EigenPod Enhancement upgrade) is the current major release that focuses primarily on enhancements to Native Restaking and EigenPod design. The PEPE release will result in significantly lower gas fees and great compatibility with future scheduled Ethereum network upgrades.
 
 Please see the [this document](https://hackmd.io/@-HV50kYcRqOjl_7du8m1AA/SkJPfqBeC) and [PR #515](https://github.com/Layr-Labs/eigenlayer-contracts/pull/515) for a design history and motivation for the PEPE Release.
 
-## Key Management and Proof Submitter
-
-Use a secure key management solution for your EigenPod generation key (aka the EigenPod "owner"), such as a hardware wallet solution.
-
-We recommend using a different key for the Proof Submitter. The Proof Submitter is any other address that is approved to submit proofs on behalf of the EigenPod owner. This allows the EigenPod owner key to remain used less frequently and remain more secure.
-
-[todo ask @antojoseph to suggest wording here]
-
 
 ## EigenPod Upgrades
 
-For all M1 to PEPE migrations - we no longer require users to upgrade their EigenPod contracts per the deprecated activateRestaking() method. M1 pods will be upgraded automatically to PEPE compliant EigenPods by EigenLabs [todo ask @wadealexc or @gpsanant for their guidance on wording here].
+For all M1 to PEPE migrations - we no longer require users to upgrade their EigenPod contracts per the deprecated activateRestaking() method. M1 pods will be upgraded automatically to PEPE compliant EigenPods by EigenLabs.
+
+The delayed withdrawal router will remain functional after PEPE. It will not receive new rewards from EigenPods, however if you have existing rewards you may continue to claim them as they become claimable.
+
+Eigen Labs will "push through any rewards that are still in the delayed withdrawal router 7 days after the PEPE upgrade (after which point all rewards in there will be claimable). So if you haven’t claimed by this point, we’ll automatically process those claims on your behalf and send them to whatever destination they were going to. " [todo ask @wadealexc his guidance to clarify the wording for this section].
 
 
 
 ## Prerequisites
 
 The user will need an environment available to run the [EigenPod Proof Gen CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#quickstart) including its software prerequisites.
+
+
+## Key Management and EigenPod Proof Submitter
+
+EigenLayer Native Restaking requires submitting proofs to EigenLayer contracts to prove the amount of validator ETH is active and its withdrawal address is pointing to the EigenPod. Be sure to use the most secure key management solution available for your EigenPod generation key (aka the EigenPod "owner"), such as a hardware wallet or cold wallet solution.
+[todo ask @antojoseph to suggest wording here]
+
+For users who do not wish to include the EigenPod Owner Private Key in their proof generation commands, you may identify another wallet and delegate its privilege to submit proofs on its behalf using the assign_submitter command. This is a **one time process** to assign a submitter for proofs. At any point in the future the `sender` of the proof can be the assigned submitter.
+
+We recommend using a **different key** for the Proof Submitter vs the EigenPod owner. The Proof Submitter is any other address that is approved to submit proofs on behalf of the EigenPod owner. This allows the EigenPod owner key to remain used less frequently and remain more secure.
+
+Use the following command to assign a submitter for your EigenPod:
+```bash
+/cli assign-submitter --execNode $NODE_ETH --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
+```
+
+
 
 ## Steps to Deposit (Restake) Validator Native Beacon Chain ETH
 
@@ -82,25 +97,27 @@ Call EigenPodManager.createPod() .
 
 2. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/ to follow your validator status.
 
-### Part 3: Generate EigenPod Proof Via eigenpod-proofs-generation CLI
+### Part 3: Link the Validator to the EigenPod via Proof Generation
 
 1. Run the `credentials` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation).
     
-2. Choose to either a) include the EigenPod Owner private key in the CLI `credentials` command or b) use the `credentials` command to generate the proof, then submit the proof via [todo] transaction.
 
-Option a) Include the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act onchain for you. This is the private key of the wallet that was used to create the EigenPod.
-
-Note: future versions of this documentation will include a ProofSubmitter option which will enable you to submit these validator proofs without requiring your EigenPod Owner private key.
-        [todo ask @jbrower95 to confirm these steps]
-
-Option b) Invoke the `credentials` command **without** the `--sender` argument and private key.
-
-[todo ask @jbrower95 to confirm these steps]
-
-3. Your validator ETH balance is now Restaked.
+2. Invoke the `credentials` command with the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act onchain for you. This is the private key of the wallet that was used to create the EigenPod. Example here:
+```bash
+./cli credentials --execNode $NODE_ETH --beaconNode $NODE_BEACON --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
+```
 
 
-For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
+
+
+### Part 4: Run a Checkpoint Proof
+
+Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
+
+Your validator ETH balance is now Restaked.
+
+
+
 
 
 ## Steps to Convert Consensus Rewards to Restaked Shares
@@ -129,12 +146,13 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 4. Wait for Escrow Period to complete.
 5. Call DelegationManager.completeQueuedWithdrawal()
 
+
 ## Steps to Withdraw Yield Only
 
 This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
 
 1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. [todo: complete this process with @jbrower95 or @gpsanant]
+2. [todo: complete this process with @wadealexc to confirm and/or check latest notes from slack thread this AM]
    1. ?Call the DelegationManager.queueWithdrawal() function?
    2. I [couldn't find out](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat/partial-withdrawal-batching/docs/core/DelegationManager.md#queuewithdrawals) how the user should limit their withdrawal to only Yield amounts, to avoid interfering with native restaked validator ETH balances.
 3. Wait for Escrow Period to complete.
