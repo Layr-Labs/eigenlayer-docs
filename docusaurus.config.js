@@ -189,6 +189,11 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
             to: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
           },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
+            to: "/eigenlayer/restaking-guides/restaking-user-guide/",
+          },
+          
 
           
         ],
