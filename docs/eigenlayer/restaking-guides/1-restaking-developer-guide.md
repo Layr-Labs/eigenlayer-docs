@@ -61,7 +61,7 @@ The delayed withdrawal router will remain functional after PEPE. It will not rec
 
 To claim consensus rewards invoke DelayedWithdrawalRouter.claimDelayedWithdrawals().
 References:
-* [DelayedWithdrawalRouter.claimDelayedWithdrawals](DelayedWithdrawalRouter.claimDelayedWithdrawals)
+* [DelayedWithdrawalRouter.claimDelayedWithdrawals](https://github.com/Layr-Labs/eigenlayer-contracts/blob/3b47ccf0ff98dc3f08befd24e3ae70d7ecce6342/src/contracts/pods/DelayedWithdrawalRouter.sol#L94)
 * [Contract Deployment Addresses](https://github.com/Layr-Labs/eigenlayer-contracts/tree/v0.3.2-mainnet-rewards?tab=readme-ov-file#deployments): find the Proxy address of DelayedWithdrawalRouter here.
 
 Eigen Labs will push through any rewards that are still in the delayed withdrawal router 7 days after the PEPE upgrade (after which point all rewards in there will be claimable). So if you haven’t claimed by this point, we’ll automatically process those claims on your behalf and send them to the wallet of the EigenPod owner.
