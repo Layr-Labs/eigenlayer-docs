@@ -57,10 +57,14 @@ Please see the [this document](https://hackmd.io/@-HV50kYcRqOjl_7du8m1AA/SkJPfqB
 
 For all M1 to PEPE migrations - we no longer require users to upgrade their EigenPod contracts per the deprecated activateRestaking() method. M1 pods will be upgraded automatically to PEPE compliant EigenPods by EigenLabs.
 
-The delayed withdrawal router will remain functional after PEPE. It will not receive new rewards from EigenPods, however if you have existing rewards you may continue to claim them as they become claimable.
+The delayed withdrawal router will remain functional after PEPE. It will not receive new consensus rewards from EigenPods, however if you have existing rewards you may continue to claim them as they become claimable.
 
-Eigen Labs will "push through any rewards that are still in the delayed withdrawal router 7 days after the PEPE upgrade (after which point all rewards in there will be claimable). So if you haven’t claimed by this point, we’ll automatically process those claims on your behalf and send them to whatever destination they were going to. " [todo ask @wadealexc his guidance to clarify the wording for this section].
+To claim consensus rewards invoke DelayedWithdrawalRouter.claimDelayedWithdrawals().
+References:
+* [DelayedWithdrawalRouter.claimDelayedWithdrawals](DelayedWithdrawalRouter.claimDelayedWithdrawals)
+* [Contract Deployment Addresses](https://github.com/Layr-Labs/eigenlayer-contracts/tree/v0.3.2-mainnet-rewards?tab=readme-ov-file#deployments): find the Proxy address of DelayedWithdrawalRouter here.
 
+Eigen Labs will push through any rewards that are still in the delayed withdrawal router 7 days after the PEPE upgrade (after which point all rewards in there will be claimable). So if you haven’t claimed by this point, we’ll automatically process those claims on your behalf and send them to the wallet of the EigenPod owner.
 
 
 ## Prerequisites
@@ -70,17 +74,16 @@ The user will need an environment available to run the [EigenPod Proof Gen CLI](
 
 ## Key Management and EigenPod Proof Submitter
 
-EigenLayer Native Restaking requires submitting proofs to EigenLayer contracts to prove the amount of validator ETH is active and its withdrawal address is pointing to the EigenPod. Be sure to use the most secure key management solution available for your EigenPod generation key (aka the EigenPod "owner"), such as a hardware wallet or cold wallet solution.
-[todo ask @antojoseph to suggest wording here]
-
-For users who do not wish to include the EigenPod Owner Private Key in their proof generation commands, you may identify another wallet and delegate its privilege to submit proofs on its behalf using the assign_submitter command. This is a **one time process** to assign a submitter for proofs. At any point in the future the `sender` of the proof can be the assigned submitter.
-
-We recommend using a **different key** for the Proof Submitter vs the EigenPod owner. The Proof Submitter is any other address that is approved to submit proofs on behalf of the EigenPod owner. This allows the EigenPod owner key to remain used less frequently and remain more secure.
+EigenLayer Native Restaking requires submitting proofs to EigenLayer contracts to prove the amount of validator ETH is active and its withdrawal address is pointing to the EigenPod. For users who do not wish to include the "EigenPod Owner" (aka The EigenPod generation key) in their proof generation commands, you may identify another wallet as the **Proof Submitter** and delegate its privilege to submit proofs on its behalf using the assign_submitter command. This is a **one time process** to assign a submitter for proofs. At any point in the future the `sender` of the proof can be the assigned submitter.
 
 Use the following command to assign a submitter for your EigenPod:
 ```bash
 /cli assign-submitter --execNode $NODE_ETH --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
 ```
+
+Consider using a cold key for the EigenPod Owner role. This key should be stored securely and used infrequently. For cold keys, we recommend using hardware wallets (e.g., Ledger, HSMSs) or smart contract multisigs (e.g., Safe). 
+
+We strongly recommend using a seperate key for the Proof Submitter, which can be considered a hot key. The Proof Submitter is any other address approved to submit proofs on behalf of the EigenPod owner. This separation allows the EigenPod owner key to remain secure and cold. Hot keys, while less secure, can be managed with solutions like Vault (Hashicorp) or environment variables. It is crucial not to store any meaningful value in your hot keys as operational keys are considered less secure. 
 
 
 
@@ -152,8 +155,12 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
 
 1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. [todo: complete this process with @wadealexc to confirm and/or check latest notes from slack thread this AM]
-   1. ?Call the DelegationManager.queueWithdrawal() function?
-   2. I [couldn't find out](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat/partial-withdrawal-batching/docs/core/DelegationManager.md#queuewithdrawals) how the user should limit their withdrawal to only Yield amounts, to avoid interfering with native restaked validator ETH balances.
-3. Wait for Escrow Period to complete.
-4. Call DelegationManager.completeQueuedWithdrawal()?
+2. Invoke the DelegationManager.queueWithdrawal() function with the amount of the yield to be withdrawn. This function can only be invoked by the **EigenPod Owner wallet**. 
+   * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
+      * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
+      * shares - amount of yield in wei.
+      * withdrawer - address of the EigenPod owner.
+3. Wait for Escrow Period to complete (7 days).
+4. Call DelegationManager.completeQueuedWithdrawal(). This function can only be invoked by the **EigenPod Owner wallet**.
+
+
