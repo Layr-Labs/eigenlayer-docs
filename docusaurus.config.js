@@ -360,6 +360,10 @@ const config = {
       src: '/js/intercom.js',
       async: true,
     },
+    {
+      src: '/js/eigenda-redirects.js',
+      async: false,
+    },
   ],
   themes: [
     [
