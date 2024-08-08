@@ -16,6 +16,8 @@ Becoming an Operator in the EigenLayer ecosystem does not require a specific amo
 
 Most Operators will receive token delegations sourced from other Restakers within the network, otherwise Operators can choose to self-delegate by allocating their restaked token balance.
 
+As a reminder, only operators who have stake delegated from Restakers and are opted into one or more AVSs will receive payments once the payments functionality is live on Mainnet.
+
 ## Quorums
 
 Quorums are a grouping of Strategies (Restaked Assets) to be used by an AVS for shared security measures. Operators can choose to opt into quorums of one or more tokens, depending on their preference and the designs of the AVS operate.
