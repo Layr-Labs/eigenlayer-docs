@@ -187,13 +187,30 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
-            to: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
             to: "/eigenlayer/restaking-guides/restaking-user-guide/",
           },
           
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+          },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-ui",
+            to: "/eigenlayer/rewards-claiming/claim-rewards/via-ui",
+          },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-cli",
+            to: "/eigenlayer/rewards-claiming/claim-rewards/via-cli",
+          },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-faq",
+            to: "/eigenlayer/rewards-claiming/rewards-claiming-faq",
+          },
+
 
           
         ],
