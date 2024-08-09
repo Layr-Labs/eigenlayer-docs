@@ -106,7 +106,9 @@ Call EigenPodManager.createPod() .
 
 2. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/ to follow your validator status.
 
-3. Run the `status` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation). The command will confirm whether the validator is detected by the command on the network.
+3. Run the `status` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation). The command will confirm the withdrawal address is set correctly and the validator is active on the beacon chain.
+
+![](/img/restake-guides/native-cli-status.png)
 
 
 ### Part 3: Link the Validator to the EigenPod via Proof Generation
@@ -119,12 +121,6 @@ Call EigenPodManager.createPod() .
 ./cli credentials --execNode $NODE_ETH --beaconNode $NODE_BEACON --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
 ```
 
-
-
-
-### Part 4: Run a Checkpoint Proof
-
-Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
 
 Your validator ETH balance is now Restaked.
 
@@ -147,15 +143,16 @@ The longer you wait before performing a checkpoint, the more gas users will save
 Consensus rewards are moved from the beacon chain to your EigenPod once every approximately 8 days per the Ethereum protocol. Checkpoint intervals more frequently than 8 days would result in no benefit for the user.
 
 
-## Steps to Withdraw Restaked Balance
+## Steps to Withdraw Validator Restaked Balance
 
 1. Validator Exit
    1. Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
    2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
 2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-3. Call the DelegationManager.queueWithdrawal() function.
+3. Call the DelegationManager.queueWithdrawal() function. 
+   * At this point the user's restaked is reduced by the number of shares sent to the queueWithdrawal() function.
 4. Wait for Escrow Period to complete.
-5. Call DelegationManager.completeQueuedWithdrawal()
+5. Call DelegationManager.completeQueuedWithdrawal().
 
 
 ## Steps to Withdraw Yield Only
