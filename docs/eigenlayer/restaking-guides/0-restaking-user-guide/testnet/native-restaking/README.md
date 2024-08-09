@@ -18,11 +18,11 @@ Before you deploy a new validator you must plan to either:
 :::
 
 Native Restaking on EigenLayer consists of the following actions:
-
 [todo @wesfloyd to review this after eng meeting on 8/9]
-1. Create New EigenPod, Set Withdrawal Credentials, Enable Restaking
-1. Upgrade Existing EigenPod
-1. Withdraw from EigenLayer
+1. Restake New Validator Native Beacon Chain ETH
+2. Convert Consensus Rewards to Restaked Shares
+3. Withdraw Restaked Balance
+4. Withdraw Yield Only
 
 
 

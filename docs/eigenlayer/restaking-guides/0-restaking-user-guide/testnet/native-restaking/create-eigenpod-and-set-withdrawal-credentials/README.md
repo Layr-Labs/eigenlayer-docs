@@ -17,7 +17,7 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 
 **Step 2:** Click **Create EigenPod** to continue.
 
-**Step 3:** Review the fee recipient warning and click **Create EigenPod**
+**Step 3:** Click **Create EigenPod**
 
 ![](/img/restake-guides/native-create-pod2.png)
 
@@ -28,6 +28,3 @@ If successful, you should receive a confirmation and the EigenPod Address will b
 This address is responsible for all subsequent restaking and withdrawal activities associated with that EigenPod.
 :::
 
-:::danger
-Validators SHOULD NOT direct execution rewards (`suggested_fee_recipient`) to their EigenPod. These funds may be irretrievably stuck.
-:::

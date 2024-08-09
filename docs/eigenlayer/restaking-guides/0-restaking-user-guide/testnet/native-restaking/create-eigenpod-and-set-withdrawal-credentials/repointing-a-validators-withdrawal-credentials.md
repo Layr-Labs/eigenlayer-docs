@@ -54,6 +54,4 @@ For further information, please refer to the [notes](https://notes.ethereum.org/
 2. Locate your validator ID in the Beacon chain explorer ([beaconcha.in](https://beaconcha.in/))
 3. Broadcast the signature you generated in step 1 using this tool: [https://beaconcha.in/tools/broadcast](https://beaconcha.in/tools/broadcast)
 
-:::warning
-Validators SHOULD NOT direct execution rewards (`suggested_fee_recipient`) to their EigenPod. These funds may be irretrievably stuck.
-:::
+
