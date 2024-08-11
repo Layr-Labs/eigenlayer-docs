@@ -27,7 +27,7 @@ title: Learning Resources
 * [Unchained Podcast EigenLayer interview ](https://www.youtube.com/watch?v=16p7YG8S3ec)
 * [EigenLayer in 2024](https://www.youtube.com/watch?v=ms94dx9HvL0)
 * [EigenLayer: The Endgame Coordination Layer](https://www.youtube.com/watch?v=o9y_pZUr0Nc)
-
+* [EigenLayer Explained: 4th Paradigm in CryptoEconomic Capital Efficiency](https://www.youtube.com/watch?v=iMFscq9Sxdk)
 
 ### Developer resources
 
