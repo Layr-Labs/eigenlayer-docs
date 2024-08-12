@@ -24,12 +24,3 @@ As of Monday 8/12/24 this section is under construction. Please check back soon 
 :::
 
 
-
-## Safe Wallets and Native Restaking
-
-Restakers are welcome to leverage Safe Wallets for Native Restaking with EigenLayer. Restakers can choose either:
-
-- Native Restaking via the [EigenLayer Web App](https://app.eigenlayer.xyz/), [Safe and WalletConnect](https://help.safe.global/en/articles/108235-how-to-connect-a-safe-to-a-dapp-using-walletconnect). This option will provide the simplest user experience.
-- Restaking via Smart Contracts. Users with more advanced development and smart contract experience are welcome to:
-  - Learn how EigenLayer Native Restaking contracts work via reviewing our [eigenlayer-contracts documentation](https://github.com/Layr-Labs/eigenlayer-contracts/tree/dev/docs#common-user-flows).
-  - Initiate the required transactions via [Safe Core or Safe Wallet](https://docs.safe.global/home/what-is-safe).
