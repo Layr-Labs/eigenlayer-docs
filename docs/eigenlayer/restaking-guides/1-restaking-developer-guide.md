@@ -46,7 +46,9 @@ The process of Delegating assets is the same for both liquid and native restaked
 _Coming Soon_ In the meantime, please see the smart contract specifications above and the high level process walkthrough [here](./0-restaking-user-guide/restaker-delegation/redelegation-process.md).
 
 
-# Smart Contract Native Restaking User Guide
+# Smart Contract Native Restaking User Guide (Holesky Testnet)
+
+The following instructions describe how to Restake validator ETH on Holesky Testnet. This mechanism is referred to as "Native Restaking".
 
 For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
 
