@@ -91,7 +91,7 @@ Overview: the amount of ETH available to be withdrawn will appear under "Availab
 
 
 If you wish to withdraw native ETH from an active validator, complete the following steps before proceeding:
-1. Ensure you have [repointed your validator's withdrawal credentials](../create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials.md) to your EigenPod.
+1. Ensure you have repointed your validator's withdrawal credentials to your EigenPod prior to continuing. Please see [Ethereum Launchpad](https://launchpad.ethereum.org/en/withdrawals#enabling-withdrawals) for more information. 
 1. Fully exit your validator from the beacon chain. You may monitor its activity via beaconcha.in/validator/[validator_index].
 1. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod. Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/[validator_index]#withdrawals .
 
