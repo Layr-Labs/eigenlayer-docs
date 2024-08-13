@@ -13,7 +13,7 @@ Caveats:
 - Delegation is an "all or nothing" operation. You must delegate all of your available Restaked balance to a single Operator.
 - Delegation is not possible for Native Restakers while their validators are in the activation (aka entry) queue. Native Restaked tokens must be fully Restaked and proven on-chain before they can be delegated.
 - If you have already delegated your stake to an operator in any quorum, all new stakes will be delegated to the same operator automatically.
-- If the delegated Operator is no longer in the active set of an AVS (such as due to [Churning in EigenDA](/docs/eigenda/operator-guides/requirements/delegation-requirements.mdx) for example), the Restaker has the option to Redelegate their TVL balance to another Operator. Please see the [Undelegate from an Operator and Initiate Withdrawal](./undelegate-from-an-operator-and-initiate-withdrawal.md) page for specific instructions.
+- If the delegated Operator is no longer in the active set of an AVS (such as due to operator ejection), the Restaker has the option to Redelegate their TVL balance to another Operator. Please see the [Undelegate from an Operator and Initiate Withdrawal](./undelegate-from-an-operator-and-initiate-withdrawal.md) page for specific instructions.
 
 ## **Staker and Operator Roles Clarification**
 
