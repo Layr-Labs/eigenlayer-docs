@@ -70,12 +70,12 @@ function Home() {
 
 
                 <Card
-                  to="eigenda/overview"
+                  to="eigenlayer/rewards-claiming/rewards-claiming-overview"
                   header={{
-                    label:"EigenDA Resources for Rollups and Operators"
+                    label:"Claim AVS Rewards"
                   }}
                   body={{
-                    label:"Guides for rollup developers to integrate EigenDA and for Operators to join the EigenDA network. "
+                    label:"Instructions for Stakers and Operators to claim rewards from AVS submissions."
                   }}
                 />
 
