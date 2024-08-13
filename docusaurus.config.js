@@ -269,7 +269,7 @@ const config = {
     },
     {
       src: '/js/eigenda-redirects.js',
-      async: true,
+      async: false,
     },
   ],
   themes: [
