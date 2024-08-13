@@ -185,6 +185,11 @@ const config = {
           },
           
           {
+            href: 'https://docs.eigenda.xyz/',
+            label: 'EigenDA',
+            position: "left",
+          },
+          {
             to: "status",
             label: "Status",
             position: "left",
