@@ -34,10 +34,10 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 EigenLayer core contracts have had two previous major releases: M1 and M2. PEPE (Protocol: EigenPod Enhancement upgrade) is the current major release that focuses primarily on enhancements to Native Restaking and EigenPod design. The PEPE release will result in significantly lower gas fees and great compatibility with future scheduled Ethereum network upgrades.
 
 The PEPE release takes advantage of a new [Checkpoint Proof](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/EigenPod.md#checkpointing-validators) system to convert native validator ETH and validator yield to actively restaked shares. These proofs are initiated prior to any Restaking or Withdrawal action and are necessary to prove the expected funds are deposited in the EigenPod and/or validator. Checkpoint proofs are a two step process consisting of:
-1. Staring a Checkpoint: this step occurs once.
+1. Starting a Checkpoint: this step occurs once.
 1. Verify (and Completing) a Checkpoint: this step occurs multiple times until all of the remaining unproven ETH balance in the EigenPod has been proven.
 
-We recommend users connect many validators to a single EigenPod in order to reduce cost and complexity where practical. For each of the actions below that require a checkpoint proof, the web app will batch up to 80 validators per proof transaction batch. Users with more than validators will require additional transactions to complete each checkpoint proof. Please plan your gas costs accordingly.
+We recommend users connect many validators to a single EigenPod in order to reduce cost and complexity where practical. For each of the actions below that require a checkpoint proof, the web app will batch up to 80 validators per proof transaction batch. Users with more validators will require additional transactions to complete each checkpoint proof. Please plan your gas costs accordingly.
 
 
 ## Restake New Validator (Native Beacon Chain ETH)
@@ -54,7 +54,7 @@ This address is responsible for all subsequent restaking and withdrawal activiti
 
 Repoint Validator:
 1. Configure the validator(s) credentials to point to the EigenPod address when the validator is created. Please see [Ethereum Launchpad](https://launchpad.ethereum.org/en/withdrawals#enabling-withdrawals) for more information. 
-    * Confirming Withdrawal Address: you can confirm that your your withdrawal credentials (which should match your EigenPod), via the following URL: https://beaconcha.in/validator/[validator_index]#deposits
+    * Confirming Withdrawal Address: you can confirm your withdrawal credentials (which should match your EigenPod), via the following URL: https://beaconcha.in/validator/[validator_index]#deposits
     * Optional: as of the PEPE release you may choose to set the FEE_RECIPIENT to your EigenPod address if you wish to Restake those fees.
 1. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/[validator_index] to follow your validator status. Please note: this process could take up to 7 days depending on the the Beacon Chain deposit queue.
 1. The validator's state will transition to `Awaiting Restake` in the web app.
@@ -64,7 +64,7 @@ Activate Restaking:
 1. Click **Restake** to initiate restaking the validator.
 1. Sign the transaction with your web3 wallet.
 1. Your validator is now **Restaked**.
-1. You now have the option to choose an Operator and initiate Delegate your restaked assets to that Operator.
+1. You now have the option to delegate your restaked assets to your selected Operator. If you are already delegated to an Operator, your assets will automatically delegate to your currently selected Operator.
 
 
 # Restake Validator Yield (Rewards, Fees, and ETH)
@@ -72,7 +72,7 @@ Activate Restaking:
 As of the PEPE release, users can now convert consensus rewards, validator execution fees and ETH sent to the EigenPod to restaked shares (referred to broadly in this document as "Validator Yield").  Initiating and completing a checkpoint proof will automatically convert any consensus rewards to restaked shares for the EigenPod.
 
 1. Observe the value of `Unstaked Balance` becomes greater than zero when there is ETH available to convert to restaked shares in the EigenPod.
-1. Click **Begin Restake** to initiate a checkpoint proof.
+1. Click **Restake** to initiate a checkpoint proof.
 1. Sign two transactions: Begin Restake (to initiate a checkpoint proof) and Restake (to complete the checkpoint proof).
 1. Observe the Restaked Balance has increased by the amount of validator yield proven in the previous step.
 
@@ -87,7 +87,7 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 
 # Withdraw Native ETH or Validator Yield
 
-Overview: the amount of ETH available to be withdrawn will appear under "Available to Queue" in the web app. This amount will include any exited validators where the balance was withdrawn to EigenPod and any validator yield available to be withdrawn.
+Overview: the amount of ETH available to be queued for withdrawal will appear under "Available to Queue" in the web app. This amount will include any exited validators where the balance was withdrawn to EigenPod and any validator yield available to be withdrawn.
 
 
 If you wish to withdraw native ETH from an active validator, complete the following steps before proceeding:
@@ -102,13 +102,13 @@ Each queue withdrawal action will trigger a checkpoint and the associated gas co
 
 Queue the Withdrawal:
 1. Click **Queue Withdrawal** in the web app.
-1. Choose the amount you wish to queue the withdrawal and continue.
+1. Choose the amount you wish to queue for withdrawal and continue
 1. A checkpoint proof is initiated. **Sign** the associated transaction with your web3 wallet.
-1. Wait for [Escrow Period](../../README.md#escrow-period-withdrawal-delay) to complete.
+1. Wait for the [Escrow Period](../../README.md#escrow-period-withdrawal-delay) to complete.
 
 
 Redeposit or Complete Withdrawal:
-Redelegation is available at this step for users who accidentally queues a withdrawal, but would like to resume staking and delegation without having to exit and re-enter their validators from the beacon chain.
+Redeposit or Complete Withdrawal: Redepositing is available at this step for users who accidentally queued a withdrawal, but would like to resume staking and delegation.
 1. Choose to either **Restake** (to Redposit the assets) or **Withdraw** (to complete the withdrawal).
 1. **Sign** the transaction using your web3 wallet.
 
@@ -119,18 +119,10 @@ Undelegate and/or Change Delegation
 1. Click Undelegate
 1. **Sign** the transaction using your web3 wallet. Note: a queue withdrawal event occurs via the smart contracts at this time, because Undelegate and Queue Withdrawal actions are linked at the smart contract level. This information is not presented to the user in order simplify the user flow and focus on the change delegation action.
 1. User is now Undelegated from the Operator.
-
-// Wes to ask - what happens to any lst/token assets that were queued for withdrawal with this step?
-// Wes to ask - does the user need to wait for the escrow period to complete here?
+1. Wait for the [Escrow Period](../../README.md#escrow-period-withdrawal-delay) to complete.
 
 Delegate to a New Operator
 1. Navigate to an Operator you wish to delegate your assets to.
 1. Click **Delegate** to delegate to the new Operator.
 1. **Sign** the transaction using your web3 wallet.
 1. You are now delegated to the new operator
-
-
-
-
-
-Questions: Upgrade?
