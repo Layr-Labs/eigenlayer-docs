@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # Rewards Distribution Data
 
-Daily rewards snapshot distribution data is available via a public S3 bucket. Users may access this data for their own analytics purposes. Follow these steps in order access the data:
+Rewards snapshot distribution data is available via a public S3 bucket. Users may access this data for their own analytics purposes. Follow these steps in order access the data:
 
 
 1) Get a list of snapshot dates from RewardsCoordinator contract.
