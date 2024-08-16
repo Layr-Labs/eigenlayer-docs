@@ -147,11 +147,7 @@ const config = {
           rehypePlugins: [katex],
           showLastUpdateTime: false
         },
-        blog: {
-          blogTitle: "EigenLayer Status",
-          postsPerPage: "ALL",
-          routeBasePath: "/status",
-        },
+        
 
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -189,11 +185,7 @@ const config = {
             label: 'EigenDA',
             position: "left",
           },
-          {
-            to: "status",
-            label: "Status",
-            position: "left",
-          },
+
           {
             href: "https://github.com/Layr-Labs",
             className: "header--github-link",

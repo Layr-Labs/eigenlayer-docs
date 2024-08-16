@@ -16,7 +16,9 @@ The verification process will incur a gas fee of approximately 200k gas + some f
 
 **Step 1:** Note the values for "Validator ETH Yield" and "Redeemable". 
 :::warning
-The Redeemable value may temporarily appear lower than the Validator ETH Yield (beacon chain) due to the time lag associated with the EigenLayer beacon chain oracle. This sync occurs approximately every 4 hours.
+The Redeemable value may temporarily appear lower than the Validator ETH Yield (beacon chain) due to:
+1. The time lag associated with Ethereum beacon chain validator sweeps, which can be up to 65812 slots or 9 days. Please see the Ethereum docs [here](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) for more information.
+1. The time lag associated with the EigenLayer beacon chain oracle. This sync occurs approximately every 4 hours.
 :::
 
 
