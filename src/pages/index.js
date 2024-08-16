@@ -79,14 +79,13 @@ function Home() {
                   }}
                 />
 
-
                 <Card
-                  to="status"
+                  to="eigenlayer/resources/learning-resources"
                   header={{
-                    label:"Platform Status"
+                    label:"Resources"
                   }}
                   body={{
-                    label:"Outages, Status and Resolution details."
+                    label:"Materials for deeper dives on the EigenLayer platform."
                   }}
                 />
 
