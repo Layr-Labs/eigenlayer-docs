@@ -15,9 +15,9 @@ Review the materials available under [EigenLayer Learning Resources](/docs/eigen
       
 ## Step 2: Idea to Code: Testing and Deploying your AVS Locally
 
-The following content covers the minimum set of smart contract integrations and deployment scripts that a project needs to build in order to:
+The following section covers the minimum set of smart contract integrations and deployment scripts that an AVS needs to build in order to:
 1. Be considered a fully functional AVS for demo and proof of concept purposes.
-2. Prepare your AVS to integrate Rewards and Slashing functionality, which will be release soon.
+2. Prepare your AVS to integrate Slashing functionality, which will be release soon.
 
 
 :::info
@@ -34,7 +34,6 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 
 **2: On Chain Verification**  
 Implement at least one on-chain provable event. The most common approach is to write a ECDSA or BLS aggregate signature (APK) on-chain.
-This will be utilized in future versions of EigenLayer for Rewards and Slashing functionality.  
 Please see the example from incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/8bd0ac663dcc2289cad02af4a7f0002ea07bc1d8/contracts/src/IncredibleSquaringTaskManager.sol#L102) and from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L130).
 
 
@@ -84,6 +83,8 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 5. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
 
 6.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
+
+7. Implement Rewards payments per the instructions [here](./rewards.md).
 
 
 ## Step 4: Preparing and Deploying to Mainnet

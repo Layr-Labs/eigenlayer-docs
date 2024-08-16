@@ -20,3 +20,9 @@ To accumulate rewards on testnet for testing purposes you must be an operator (o
 ### Are reward distributions based on the amount of work performed by an operator, the Operator's total delegated stake or both?
 
 The current rewards calculation assumes that work done is directly proportional to stake; therefore, rewards are distributed proportional to stake. If an operator does not perform the tasks expected of it, the AVS should eject or "churn" the operator (which we have examples for in our middleware contracts).
+
+### Will the AVS Rewards be distributed using the same ERC20 token used to Stake / Operate (opt-in) to the AVS?
+
+An AVS can distribute any token it chooses for each week's [RewardSubmission](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createavsrewardssubmission). These Reward Token(s) can be different from the list of Strategies (assets) that were originally staked, delegated and opted into the Restaker, Operator, and AVS.
+
+For examples Restakers could delegate stETH (lido eth) to an Operator. The Operator could opt in to the AVS quorum with stETH strategy. Then a week later the AVS could pay rewards in rETH (rocketpool) eth. The decision is entirely up to to the AVS to determine.
