@@ -5,7 +5,7 @@ title: AVS Overview
 
 Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-Also, check out the resources in __[Awesome AVS](https://github.com/Layr-Labs/awesome-avs)__ for more reference architectures, tutorials, and guides.
+Also, check out the resources in __[AVS Book](https://eigenlabs.gitbook.io/avs-book)__ and __[Awesome AVS](https://github.com/Layr-Labs/awesome-avs)__ for more reference architectures, tutorials, and guides.
 
 ## What is an AVS?
 
