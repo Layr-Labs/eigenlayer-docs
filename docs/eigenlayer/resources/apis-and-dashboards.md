@@ -11,8 +11,9 @@ APIs
 Dashboards
 
 - [The Ultimate Restaking Dashboard](https://dune.com/hahahash/eigenlayer)
-- [AVS Dashboard](https://dune.com/hahahash/avs)
+- [AVS Dune Dashboard](https://dune.com/hahahash/avs)
 - [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
+- [EigenLayer Dune dashboard by dyorcrypto](https://dune.com/dyorcrypto/eigenlayer)
 
 Developer Tooling
 
