@@ -42,7 +42,7 @@ Please see the example from incredible-squaring-avs [here](https://github.com/La
 Implement deployment scripts for your contracts to deploy to your [local anvil node](https://book.getfoundry.sh/reference/anvil/).
 
 **1: Deploy of EigenLayer Contracts and State**  
-Please see the example from hello-world-avs[here](https://github.com/Layr-Labs/hello-world-avs/blob/master/utils/anvil/deploy-eigenlayer-save-anvil-state.sh).
+Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/utils/anvil/deploy-eigenlayer-save-anvil-state.sh).
 
 **2: Deploy your AVS contracts**  
 Please see the example forge deployment script from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/script/HelloWorldDeployer.s.sol) and bash deployment script [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/utils/anvil/deploy-eigenlayer-save-anvil-state.sh).
