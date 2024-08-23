@@ -7,7 +7,6 @@ title: Permissionless Token Strategies
 
 Permissionless Token Support enables any ERC-20 token to be permissionlessly added as a restakable asset, significantly broadening the scope of assets that can contribute to the security of decentralized networks, and unlocking the cryptoeconomic security of ERC-20 tokens on EigenLayer.
 
-This feature is currently available on the **Holesky Testnet**.
 
 With this capability, AVSs can choose to accept any ERC-20 token as a restaked asset to provide cryptoeconomic security for their AVS. This allows AVSs to evaluate the supply and utility of all available tokens to create cross-ecosystem partnerships while ensuring the safety and security of their services. This increases alignment and connectivity across the ecosystem, moving us closer to the ultimate goal of open innovation.
 
