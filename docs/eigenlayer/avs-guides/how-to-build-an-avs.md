@@ -84,7 +84,7 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 
 6.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
 
-7. Implement Rewards payments per the instructions [here](./rewards.md).
+7. Implement Rewards distributions per the instructions [here](./rewards.md).
 
 
 ## Step 4: Preparing and Deploying to Mainnet

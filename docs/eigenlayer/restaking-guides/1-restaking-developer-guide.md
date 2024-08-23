@@ -24,14 +24,17 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 ### Deposit (Restake) Liquid Tokens
 
 1. For the token being deposited, invoke ERC20(token).approve(StrategyManager, amount) to authorize EigenLayer contracts before depositing.
-2. Call StrategyManager.depositIntoStrategy() .
+2. Invoke StrategyManager.depositIntoStrategy() .
 3. User is now actively Restaked.
 
 ### Withdraw (Unstake) Liquid Tokens
 
-1. Queue Withdrawal: call DelegationManager.queueWithdrawal() to trigger the escrow period. Wait for Escrow Period: 24 days for $EIGEN, 7 days for all other tokens. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
+1. Queue Withdrawal: invoke DelegationManager.queueWithdrawal() to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
+   * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
+   * [Deployed Contract Addresses](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments): find addresses for deployed strategies here.
 
-2. Complete Withdrawal as Tokens: call DelegationManager.completeQueuedWithdrawal() to complete the withdrawal and return assets to the withdrawer's wallet.
+
+2. Complete Withdrawal as Tokens: invoke DelegationManager.completeQueuedWithdrawal() to complete the withdrawal and return assets to the withdrawer's wallet.
 
 
 ## Smart Contract Delegation User Guide
@@ -40,7 +43,7 @@ The process of Delegating assets is the same for both liquid and native restaked
 
 ### Delegate Assets
 
-1. Call DelegationManager.delegateTo()
+1. Invoke DelegationManager.delegateTo()
    a. operator: the address of the operator you want to delegate to.
    b. approverSignatureAndExpiry: can be left blank.
    c. approverSalt: can be left blank.
@@ -116,7 +119,7 @@ The steps below are only required for new validator native beacon chain ETH. Any
 
 The user will need an environment available to run the [EigenPod Proof Gen CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#quickstart) including its software prerequisites.
 
-#### Part 1: Create EigenPod**
+#### Part 1: Create EigenPod
 
 Call EigenPodManager.createPod() .  
 
@@ -170,23 +173,31 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
    1. Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
    2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
 2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-3. Call the DelegationManager.queueWithdrawal() function. 
-   * At this point the user's restaked is reduced by the number of shares sent to the queueWithdrawal() function.
+3. Invoke the DelegationManager.queueWithdrawal() function. 
+   * This function can only be invoked by the **EigenPod Owner wallet**. 
+   * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
+   * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
 4. Wait for Escrow Period to complete.
-5. Call DelegationManager.completeQueuedWithdrawal().
+5. Invoke DelegationManager.completeQueuedWithdrawal().
 
 
 ### Withdraw Yield Only
 
 This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
 
+
+Determine the number of shares available to withdraw. This step is an _optional_ convenience to avoid attempting to queue a withdrawal for more shares than allowed.
+1. Invoke EigenPod.withdrawableRestakedExecutionLayerGwei(). Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the deafult measure used by the Beacon chain to store balances.
+1. Convert the resulting Gwi to Wei. Multiple the amount in Gwei * 1 billion (1e9). 
+1. The amount in Wei represents the number of shares available to withdraw.
+
+Withdraw yield shares amount:
 1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
 2. Invoke the DelegationManager.queueWithdrawal() function with the amount of the yield to be withdrawn. This function can only be invoked by the **EigenPod Owner wallet**. 
+   * This function can only be invoked by the **EigenPod Owner wallet**. 
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
-      * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
-      * shares - amount of yield in wei.
-      * withdrawer - address of the EigenPod owner.
+   * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
 3. Wait for Escrow Period to complete (7 days).
-4. Call DelegationManager.completeQueuedWithdrawal(). This function can only be invoked by the **EigenPod Owner wallet**.
+4. Invoke DelegationManager.completeQueuedWithdrawal(). This function can only be invoked by the **EigenPod Owner wallet**.
 
 
