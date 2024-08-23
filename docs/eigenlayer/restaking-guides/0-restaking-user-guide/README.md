@@ -26,4 +26,4 @@ The protocol plans to support additional liquid staking tokens in the future. If
 
 ## Escrow Period (Withdrawal Delay)
 
-EigenLayer contracts feature a **7-day** withdrawal delay for LST tokens and Native Restaking, a critical security measure for instances of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. The withdrawal window for EIGEN token is **24-days**, which is necessary to support future planned functionality unique to the token. Please see [Withdrawal Delay](/docs/eigenlayer/security/withdrawal-delay.md) for more detail.
+EigenLayer contracts feature a **7-day** withdrawal delay for all tokens and Native Restaking, a critical security measure for instances of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. Please see [Withdrawal Delay](/docs/eigenlayer/security/withdrawal-delay.md) for more detail.

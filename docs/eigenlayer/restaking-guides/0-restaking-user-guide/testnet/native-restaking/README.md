@@ -76,6 +76,10 @@ As of the PEPE release, users can now convert consensus rewards, validator execu
 1. Sign two transactions: Begin Restake (to initiate a checkpoint proof) and Restake (to complete the checkpoint proof).
 1. Observe the Restaked Balance has increased by the amount of validator yield proven in the previous step.
 
+:::info
+1. The time lag associated with Ethereum beacon chain validator sweeps, which can be up to 65812 slots or 9 days. Please see the Ethereum docs [here](https://ethereum.org/en/staking/withdrawals/#validator-sweeping) for more information.
+:::
+
 ### Checkpoint Frequency
 
 Users should not initiate a checkpoint more frequently than once every two weeks (approximately). 
