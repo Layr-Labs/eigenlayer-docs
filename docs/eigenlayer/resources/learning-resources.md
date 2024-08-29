@@ -44,6 +44,7 @@ title: Learning Resources
 
 * [EigenLayer Forum](https://forum.eigenlayer.xyz/)
 * [EigenLayer Research Forum](https://research.eigenlayer.xyz/)
+* [Build on Eigen group chat](https://airtable.com/appnYZo360sWuEYLS/shrz6Pstds7EXjC5N)
 * [Discord](https://discord.com/invite/eigenlayer)
 * [EigenLayer Twitter](https://twitter.com/eigenlayer)
 * [BuildOnEigen Twitter](https://x.com/buildoneigen)
