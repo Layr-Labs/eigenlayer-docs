@@ -24,17 +24,17 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 ### Deposit (Restake) Liquid Tokens
 
 1. For the token being deposited, invoke ERC20(token).approve(StrategyManager, amount) to authorize EigenLayer contracts before depositing.
-2. Invoke StrategyManager.depositIntoStrategy() .
+2. Invoke `StrategyManager.depositIntoStrategy()` .
 3. User is now actively Restaked.
 
 ### Withdraw (Unstake) Liquid Tokens
 
-1. Queue Withdrawal: invoke DelegationManager.queueWithdrawal() to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
+1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * [Deployed Contract Addresses](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments): find addresses for deployed strategies here.
 
 
-2. Complete Withdrawal as Tokens: invoke DelegationManager.completeQueuedWithdrawal() to complete the withdrawal and return assets to the withdrawer's wallet.
+2. Complete Withdrawal as Tokens: invoke `DelegationManager.completeQueuedWithdrawal()` to complete the withdrawal and return assets to the withdrawer's wallet.
 
 
 ## Smart Contract Delegation User Guide
@@ -43,7 +43,7 @@ The process of Delegating assets is the same for both liquid and native restaked
 
 ### Delegate Assets
 
-1. Invoke DelegationManager.delegateTo()
+1. Invoke `DelegationManager.delegateTo()`. Please observe the following notes on the parameters:
    a. operator: the address of the operator you want to delegate to.
    b. approverSignatureAndExpiry: can be left blank.
    c. approverSalt: can be left blank.
@@ -51,7 +51,21 @@ The process of Delegating assets is the same for both liquid and native restaked
 
 ### Change Actively Delegated Operator
 
-_Coming Soon_ In the meantime, please see the smart contract specifications above and the high level process walkthrough [here](./0-restaking-user-guide/restaker-delegation/redelegation-process.md).
+
+The following steps are necessary for a Restaker to **move** their Delegated balance to a New Operator. The process below requires users to perform each of the following steps in order:
+- **Undelegate** assets, which 
+- **Redeposit** each asset.
+- **Delegate** to the new Operator.
+
+1. Undelegate: invoke `DelegationManager.undelegate()`.
+   * Note: this action automatically **queues a withdrawal**. The Undelegate and Queue Withdrawal transactions are intenionally combined due to the security architecture of EigenLayer smart contracts.
+2. Wait for the Escrow Period to complete.
+3. Invoke DelegationManager.completeQueuedWithdrawal(). **Important:** you will choose to complete the withdrawal as shares, which is effectively a **redeposit** action.
+   * `receiveAsTokens` should be set to _false_.
+4. Invoke `DelegationManager.delegateTo()` to delegate your restaked assets to the new Operator.
+
+
+
 
 
 ## Native Restaking Guide
@@ -83,11 +97,11 @@ Please see the [this document](https://hackmd.io/@-HV50kYcRqOjl_7du8m1AA/SkJPfqB
 
 ### EigenPod Upgrades and Pending Consensus Rewards
 
-For all M1 to PEPE migrations - we no longer require users to upgrade their EigenPod contracts per the deprecated activateRestaking() method. M1 pods will be upgraded automatically to PEPE compliant EigenPods by EigenLabs.
+For all M1 to PEPE migrations - we no longer require users to upgrade their EigenPod contracts per the deprecated `activateRestaking()` method. M1 pods will be upgraded automatically to PEPE compliant EigenPods by EigenLabs.
 
 The delayed withdrawal router is being deprecated with the PEPE release, but will remain functional. It will not receive new consensus rewards from EigenPods, however if you have existing rewards you may continue to claim them as they become claimable.
 
-To claim consensus rewards invoke DelayedWithdrawalRouter.claimDelayedWithdrawals().
+To claim consensus rewards invoke `DelayedWithdrawalRouter.claimDelayedWithdrawals()`.
 References:
 * [DelayedWithdrawalRouter.claimDelayedWithdrawals](https://github.com/Layr-Labs/eigenlayer-contracts/blob/3b47ccf0ff98dc3f08befd24e3ae70d7ecce6342/src/contracts/pods/DelayedWithdrawalRouter.sol#L94)
 * [Contract Deployment Addresses](https://github.com/Layr-Labs/eigenlayer-contracts/tree/v0.3.2-mainnet-rewards?tab=readme-ov-file#deployments): find the Proxy address of DelayedWithdrawalRouter here.
@@ -121,7 +135,7 @@ The user will need an environment available to run the [EigenPod Proof Gen CLI](
 
 #### Part 1: Create EigenPod
 
-Call EigenPodManager.createPod() .  
+Invoke `EigenPodManager.createPod()`.  
 
 #### Part 2: Configure Validator(s) Withdrawal Credentials
 
@@ -145,8 +159,9 @@ Call EigenPodManager.createPod() .
 ./cli credentials --execNode $NODE_ETH --beaconNode $NODE_BEACON --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
 ```
 
+3. Invoke the `status` command to confirm restaked shares increased by the anticipated amount.
 
-Your validator ETH balance is now Restaked.
+4. Your validator ETH balance is now Restaked.
 
 
 
@@ -173,12 +188,12 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
    1. Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
    2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
 2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-3. Invoke the DelegationManager.queueWithdrawal() function. 
+3. Invoke the `DelegationManager.queueWithdrawal()` function. 
    * This function can only be invoked by the **EigenPod Owner wallet**. 
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
-4. Wait for Escrow Period to complete.
-5. Invoke DelegationManager.completeQueuedWithdrawal().
+4. Wait for the Escrow Period to complete.
+5. Invoke `DelegationManager.completeQueuedWithdrawal()`.
 
 
 ### Withdraw Yield Only
@@ -187,17 +202,25 @@ This process is intended to allow users to withdraw yield (beacon chain consensu
 
 
 Determine the number of shares available to withdraw. This step is an _optional_ convenience to avoid attempting to queue a withdrawal for more shares than allowed.
-1. Invoke EigenPod.withdrawableRestakedExecutionLayerGwei(). Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the deafult measure used by the Beacon chain to store balances.
+1. Invoke `EigenPod.withdrawableRestakedExecutionLayerGwei()`. Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the deafult measure used by the Beacon chain to store balances.
 1. Convert the resulting Gwi to Wei. Multiple the amount in Gwei * 1 billion (1e9). 
 1. The amount in Wei represents the number of shares available to withdraw.
 
 Withdraw yield shares amount:
 1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. Invoke the DelegationManager.queueWithdrawal() function with the amount of the yield to be withdrawn. This function can only be invoked by the **EigenPod Owner wallet**. 
+2. Invoke the `DelegationManager.queueWithdrawal()` function with the amount of the yield to be withdrawn. This function can only be invoked by the **EigenPod Owner wallet**. 
    * This function can only be invoked by the **EigenPod Owner wallet**. 
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
-3. Wait for Escrow Period to complete (7 days).
-4. Invoke DelegationManager.completeQueuedWithdrawal(). This function can only be invoked by the **EigenPod Owner wallet**.
+3. Wait for the Escrow Period to complete.
+4. Invoke `DelegationManager.completeQueuedWithdrawal()`. This function can only be invoked by the **EigenPod Owner wallet**.
 
 
+
+### Queue withdrawal takes an `amount` as input, what will that value be?
+
+The input amount for `DelegationManager.queueWithdrawal()` can be any amount you like. However, it must be less than or equal to `withdrawableRestakedExecutionLayerGwei`. The value of `withdrawableRestakedExecutionLayerGwei` will equal any checkpointed yield (consensus rewards, fees, ETH) and any checkpointed exited validator native eth that has been withdrawn to the EigenPod.
+
+### How to account for the exchange rates between Strategy token `amounts` and `shares`?
+
+Invoke `[Strategy].underlyingToSharesView()` and `[Strategy].sharesToUnderlyingView()` as needed to convert their current balances between shares and tokens.

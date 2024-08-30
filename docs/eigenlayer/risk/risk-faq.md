@@ -104,15 +104,7 @@ However, in lending markets, looping LRTs may occur based on the risk analysis o
 Looping LRTs in lending markets can lead to a cascade of liquidations. This risk is limited to individual lending markets and does not affect the security of EigenLayer. This is similar to the stETH depeg incident in 2022. During the event, the price risk of stETH is contained within the lending market, and Ethereum consensus remains unaffected.
 
 ## Ethereum Related
-**Does EigenLayer rely on Ethereum social consensus?**
 
-No, EigenLayer does not depend on Ethereum's social consensus. EigenLayer aims for responsible decentralization. Instead of shifting unwarranted slashing risks to Ethereum or external protocols, EigenLayer includes a slashing veto committee. This internalizes social consensus and safeguards against slashing risks.
-
-The veto committee functions similarly to the relay in MEV-Boost. MEV-Boost relies on a double-trusted party, known as a relay, who is trusted by both proposers and builders. Any individual trusted by both parties can serve as a relay, effectively removing any entrenched actor.
-
-In EigenLayer, a veto committee will serve as a doubly-trusted intermediary between AVS and staker. The solution is the same as the relay, but instead of having a specific veto committee, anyone will be able to establish a veto committee. As long as both parties trust the committee, the staker and AVS can interact through it.
-
-The intention is to upgrade to a version of EigenLayer without a canonical veto committee. Instead, there will be a marketplace of veto committees. Operators and AVSs would both be able to define their veto committee preference. AVSs and Operator veto committee choices would need to overlap in order for an operator to opt in to an AVS. This promotes inter-subjectivity, as operators and AVSs coordinate their choices based on their subjective views of safety.
 
 **Does EigenLayer increase centralization pressure on the validator set?**
 
