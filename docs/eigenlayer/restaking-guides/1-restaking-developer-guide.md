@@ -84,9 +84,7 @@ Native Restaking consists of the following actions:
 
 
 
-### PEPE Release (Holesky Testnet)
-
-Note: the PEPE compliant release is currently deployed to Holesky Testnet only.
+### PEPE Release
 
 EigenLayer core contracts have had two previous major releases: M1 and M2. PEPE (Protocol: EigenPod Enhancement upgrade) is the current major release that focuses primarily on enhancements to Native Restaking and EigenPod design. The PEPE release will result in significantly lower gas fees and great compatibility with future scheduled Ethereum network upgrades.
 

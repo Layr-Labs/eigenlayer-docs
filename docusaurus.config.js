@@ -75,10 +75,6 @@ const config = {
             from: "/eigenlayer/avs-guides/avs-development-guide",
             to: "/eigenlayer/avs-guides/how-to-build-an-avs",
           },
-          {
-            from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod/",
-            to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/",
-          },
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
