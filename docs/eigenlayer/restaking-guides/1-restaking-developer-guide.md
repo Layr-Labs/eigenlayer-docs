@@ -25,14 +25,16 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 
 1. For the token being deposited, invoke ERC20(token).approve(StrategyManager, amount) to authorize EigenLayer contracts before depositing.
 2. Invoke `StrategyManager.depositIntoStrategy()` .
-3. User is now actively Restaked.
+   * Parameters:
+     * `strategy` - use the address of the deployed strategy ([example list here](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments)).
+     * `token` - use the address of the token associated with that strategy.
+4. User is now actively Restaked.
 
 ### Withdraw (Unstake) Liquid Tokens
 
 1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
-   * [Deployed Contract Addresses](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments): find addresses for deployed strategies here.
-
+   * `strategy` - use the address of the deployed strategy ([example list here](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments)).
 
 2. Complete Withdrawal as Tokens: invoke `DelegationManager.completeQueuedWithdrawal()` to complete the withdrawal and return assets to the withdrawer's wallet.
 
