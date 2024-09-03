@@ -97,9 +97,9 @@ This feature is especially crucial during substantial market downturns. As the p
 
 **Is there an LRT looping risk that would potentially cause potential liquidation cascade?**
 
-No, looping LRTs in EigenLayer is not possible because depositing LRTs into EigenLayer is currently not allowed.
+With the recent Permissionless Token upgrade to the protocol, it is up to the AVSs to determine the risks of the collateral they accept for restaking.
 
-However, in lending markets, looping LRTs may occur based on the risk analysis of individual LRTs. We advise caution when taking this step as it involves financial leverage and exposes LRT holders to significant risks.
+In lending markets, looping LRTs may occur based on the risk analysis of individual LRTs. We advise caution when taking this step as it involves financial leverage and exposes LRT holders to significant risks.
 
 Looping LRTs in lending markets can lead to a cascade of liquidations. This risk is limited to individual lending markets and does not affect the security of EigenLayer. This is similar to the stETH depeg incident in 2022. During the event, the price risk of stETH is contained within the lending market, and Ethereum consensus remains unaffected.
 
