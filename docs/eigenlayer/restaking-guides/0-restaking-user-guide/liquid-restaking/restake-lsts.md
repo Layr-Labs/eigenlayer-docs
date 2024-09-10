@@ -26,7 +26,7 @@ If you have not yet delegated your assets to an Operator, you will be prompted t
 
 
 **Step 4:** Token Approval, Deposit, and Delegate transactions:
-- If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval](https://support.metamask.io/hc/en-us/articles/6174898326683-What-is-a-token-approval-) gives a dApp permission to move the specified token from your wallet.
+- If this is your first time depositing a token on EigenLayer, you'll need to **Approve** token spending before you can restake. [Token Approval](https://support.metamask.io/transactions-and-gas/transactions/what-is-a-token-approval) gives a dApp permission to move the specified token from your wallet.
 - If you have not yet delegated assets to an Operator, you will receive two transaction prompts: one for the **Deposit** transaction and second for the **Delegate** transaction.
 
 **Step 5:** **Sign** the transaction(s) via your Web3 wallet to continue.
