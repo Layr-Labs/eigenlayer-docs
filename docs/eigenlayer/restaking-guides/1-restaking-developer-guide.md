@@ -192,13 +192,13 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 3. Determine the number of shares available to withdraw.
    * Invoke `[YourEigenPodContract].withdrawableRestakedExecutionLayerGwei()` to get the number amount of withdrawable execution layer ETH in Gwei.
    * Convert the Gwei to Wei (multiply by  by 10^9 or 1,000,000,000).
-3. Invoke the `DelegationManager.queueWithdrawal()` function. 
+4. Invoke the `DelegationManager.queueWithdrawal()` function. 
    * This function can only be invoked by the **EigenPod Owner wallet**. 
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
    * shares - use the amount of withdrawableRestakedExecutionLayerGwei converted to Wei in the steps above.
-4. Wait for the Escrow Period to complete.
-5. Invoke `DelegationManager.completeQueuedWithdrawal()`.
+5. Wait for the Escrow Period to complete.
+6. Invoke `DelegationManager.completeQueuedWithdrawal()`.
 
 
 ### Withdraw Yield Only
