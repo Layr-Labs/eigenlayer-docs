@@ -35,7 +35,7 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * `strategy` - use the address of the deployed strategy ([example list here](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments)).
-   * `shares` - the number of shares in the given strategy. Note this parameter is not meant to reference the amount of the underlying token. Invoke `[Strategy].underlyingToSharesView()` and `[Strategy].sharesToUnderlyingView()` as needed to convert their current balances between strategy shares and underlying token amounts.
+   * `shares` - the number of shares in the given strategy. Note this parameter is not meant to reference the amount of the underlying token. Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between strategy shares and underlying token amounts.
 
 2. Complete Withdrawal as Tokens: invoke `DelegationManager.completeQueuedWithdrawal()` to complete the withdrawal and return assets to the withdrawer's wallet.
 
@@ -228,4 +228,4 @@ The input amount for `DelegationManager.queueWithdrawal()` can be any amount you
 
 ### How to account for the exchange rates between Strategy token `amounts` and `shares`?
 
-Invoke `[Strategy].underlyingToSharesView()` and `[Strategy].sharesToUnderlyingView()` as needed to convert their current balances between shares and underlying token amounts.
+Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between shares and underlying token amounts.
