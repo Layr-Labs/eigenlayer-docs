@@ -35,6 +35,7 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * `strategy` - use the address of the deployed strategy ([example list here](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments)).
+   * `shares` - the number of shares in the given strategy. Note this parameter is not meant to reference the amount of the underlying token. Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between strategy shares and underlying token amounts.
 
 2. Complete Withdrawal as Tokens: invoke `DelegationManager.completeQueuedWithdrawal()` to complete the withdrawal and return assets to the withdrawer's wallet.
 
@@ -185,15 +186,19 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 ### Withdraw Validator Restaked Balance
 
 1. Validator Exit
-   1. Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
-   2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
+   * Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
+   * Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
 2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-3. Invoke the `DelegationManager.queueWithdrawal()` function. 
+3. Determine the number of shares available to withdraw.
+   * Invoke `[YourEigenPodContract].withdrawableRestakedExecutionLayerGwei()` to get the number amount of withdrawable execution layer ETH in Gwei.
+   * Convert the Gwei to Wei (multiply by  by 10^9 or 1,000,000,000).
+4. Invoke the `DelegationManager.queueWithdrawal()` function. 
    * This function can only be invoked by the **EigenPod Owner wallet**. 
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
-4. Wait for the Escrow Period to complete.
-5. Invoke `DelegationManager.completeQueuedWithdrawal()`.
+   * shares - use the amount of withdrawableRestakedExecutionLayerGwei converted to Wei in the steps above.
+5. Wait for the Escrow Period to complete.
+6. Invoke `DelegationManager.completeQueuedWithdrawal()`.
 
 
 ### Withdraw Yield Only
@@ -215,7 +220,7 @@ Withdraw yield shares amount:
 3. Wait for the Escrow Period to complete.
 4. Invoke `DelegationManager.completeQueuedWithdrawal()`. This function can only be invoked by the **EigenPod Owner wallet**.
 
-
+## FAQ
 
 ### Queue withdrawal takes an `amount` as input, what will that value be?
 
@@ -223,4 +228,4 @@ The input amount for `DelegationManager.queueWithdrawal()` can be any amount you
 
 ### How to account for the exchange rates between Strategy token `amounts` and `shares`?
 
-Invoke `[Strategy].underlyingToSharesView()` and `[Strategy].sharesToUnderlyingView()` as needed to convert their current balances between shares and tokens.
+Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between shares and underlying token amounts.
