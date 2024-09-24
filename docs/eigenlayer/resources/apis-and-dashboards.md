@@ -21,4 +21,5 @@ Developer Tooling
 - [Official Go SDK](https://github.com/Layr-Labs/eigensdk-go)
 - [Official Rust SDK](https://github.com/Layr-Labs/eigensdk-rs)
 - [Othentic](https://www.othentic.xyz) - Library of components for AVS builders.
-- [Gadget](https://github.com/webb-tools/gadget)
+- [Gadget](https://github.com/webb-tools/gadget) - A framework for building modular AVS and Tangle Blueprints:.
+- [AltLayer Wizard](https://wizard.altlayer.io/) - AVS-as-a-Service platform.
