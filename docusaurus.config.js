@@ -101,9 +101,10 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-faq",
             to: "/eigenlayer/rewards-claiming/rewards-claiming-faq",
           },
-
-
-          
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
+            to: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
+          },
         ],
         createRedirects(existingPath) {
 
