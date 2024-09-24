@@ -6,6 +6,12 @@ For any discussion, engagement, and learning about EigenLayer, please join the [
 
 For issues with the dApp, LST and restaking issues and Operator questions you may send us a question via our AI-enabled chatbot and Support team here:  <a href="javascript:void(0)"  id="intercom_trigger_eldocs" >EigenLayer Support Desk</a>
 
+# EigenLayer Forum
+
+If you are interested in EigenLayer at a deeper level, please check out the [EigenLayer forum](https://forum.eigenlayer.xyz/)!
+
+There are groups of researchers, AVS developers, and more contributing knowledge and expertise to help build the open verifiable cloud.
+
 # \$EIGEN Claim Support
 
 For any issues concerning \$EIGEN including token claims and stakedrop issues, please visit the stakedrop-support channel in the [EigenLayer Community Discord](https://discord.gg/eigenlayer). The Eigen Foundation support team can address your question there. Please see docs.eigenfoundation.org for information related to EIGEN token claims.
