@@ -8,9 +8,7 @@ For issues with the dApp, LST and restaking issues and Operator questions you ma
 
 # EigenLayer Forum
 
-If you are interested in EigenLayer at a deeper level, please check out the [EigenLayer forum](https://forum.eigenlayer.xyz/)!
-
-There are groups of researchers, AVS developers, and more contributing knowledge and expertise to help build the open verifiable cloud.
+If you are interested in EigenLayer at a deeper level, please check out the [EigenLayer forum](https://forum.eigenlayer.xyz/)! There are groups of researchers, AVS developers, and more contributing their expertise to help build the open verifiable cloud.
 
 # \$EIGEN Claim Support
 
