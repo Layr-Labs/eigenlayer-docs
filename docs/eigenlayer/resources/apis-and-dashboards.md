@@ -14,7 +14,12 @@ Dashboards
 - [AVS Dune Dashboard](https://dune.com/hahahash/avs)
 - [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
 - [EigenLayer Dune dashboard by dyorcrypto](https://dune.com/dyorcrypto/eigenlayer)
+- [Validator Info - EigenLayer](https://validator.info/eigenlayer)
 
 Developer Tooling
 
-- [Othentic](https://www.othentic.xyz/) - Library of components for AVS builders.
+- [Official Go SDK](https://github.com/Layr-Labs/eigensdk-go)
+- [Official Rust SDK](https://github.com/Layr-Labs/eigensdk-rs)
+- [Othentic](https://www.othentic.xyz) - Library of components for AVS builders.
+- [Gadget](https://github.com/webb-tools/gadget) - A framework for building modular AVS and Tangle Blueprints:.
+- [AltLayer Wizard](https://wizard.altlayer.io/) - AVS-as-a-Service platform.
