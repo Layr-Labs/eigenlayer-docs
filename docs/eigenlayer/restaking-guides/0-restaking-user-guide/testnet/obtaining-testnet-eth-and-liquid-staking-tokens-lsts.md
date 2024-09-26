@@ -19,6 +19,7 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - [Holešky PoW Faucet](https://holesky-faucet.pk910.de)
 - [Quicknode Faucet](https://faucet.quicknode.com/ethereum/holesky)
 - [Automata Faucet](https://www.holeskyfaucet.io/)
+- [LearnWeb3 Faucet](https://learnweb3.io/faucets/holesky/)
 
 ## Swap holETH for wETH (Wrapped ETH)​
 - Send holETH to address 0x94373a4919B3240D86eA41593D5eBa789FEF3848.
