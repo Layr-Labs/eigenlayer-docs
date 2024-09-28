@@ -197,3 +197,30 @@ html[data-theme="dark"] .header--github-link:before {
     border-bottom: 1px solid #1a0c6d;
   }
 }
+
+
+.button1 {
+  
+  background-color: #0056b3; /* Darker blue */
+  color: #FFFFFF; /* White text */
+  border: none;
+  border-radius: 8px; /* Slightly rounded corners */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight:600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.button1:hover {
+  background-color: #007BFF; /* Blue background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  font-weight: 600;
+}
+
+.button1-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap as needed */
+  padding: 10px;
+}
