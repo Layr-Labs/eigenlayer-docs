@@ -1,12 +1,15 @@
-# Disclosures
+---
+sidebar_position: 2
+title: Disclosures Related to Employee and Investor Staking
+---
 
-## Disclosures Related to Employee and Investor Staking
+# Disclosures Related to Employee and Investor Staking
 
 ***Last Revised on September 30, 2024***
 
 ### EMPLOYEE AND INVESTOR LOCKUP ON EIGEN
 
-EIGEN provided by Eigen Labs to its employees and [Investors](https://www.eigenlabs.org/#investors) is subject to the following lockup schedule: 4% of each recipient’s EIGEN will unlock each month starting September, 2025 and an additional 4% will unlock each month thereafter, such that all EIGEN will be unlocked in September 2027 (the “**Lockup Schedule**”).
+EIGEN provided by Eigen Labs to its employees and [Investors](https://www.eigenlabs.org/#investors) is subject to the following lockup schedule: 4% of each recipient’s EIGEN will unlock each month starting September 2025 and an additional 4% will unlock each month thereafter, such that all EIGEN will be unlocked in September 2027 (the “**Lockup Schedule**”).
 
 ### EMPLOYEE AND INVESTOR STAKING ON EIGENLAYER
 
