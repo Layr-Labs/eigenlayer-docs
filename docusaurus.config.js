@@ -57,8 +57,8 @@ const config = {
             to: "/eigenlayer/legal/terms-of-service",
           },
           {
-            from: "/overview/disclaimers-and-disclosures",
-            to: "/eigenlayer/legal/disclaimers-and-disclosures",
+            from: "/overview/disclaimers",
+            to: "/eigenlayer/legal/disclaimers",
           },
           // This is implicit, covered by the function case below
           // {
@@ -214,8 +214,8 @@ const config = {
                 href: "https://docs.eigenlayer.xyz/eigenlayer/legal/terms-of-service",
               },
               {
-                label: "Disclaimers and Disclosures",
-                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/disclaimers-and-disclosures",
+                label: "Disclaimers",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/disclaimers",
               },
             ],
           },

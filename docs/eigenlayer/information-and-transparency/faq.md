@@ -1,4 +1,4 @@
-# Risk FAQ
+# FAQ
 
 ## General Questions
 
