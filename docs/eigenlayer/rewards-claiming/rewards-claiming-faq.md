@@ -26,3 +26,18 @@ The current rewards calculation assumes that work done is directly proportional 
 An AVS can distribute any token it chooses for each week's [RewardSubmission](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createavsrewardssubmission). These Reward Token(s) can be different from the list of Strategies (assets) that were originally staked, delegated and opted into the Restaker, Operator, and AVS.
 
 For examples Restakers could delegate stETH (lido eth) to an Operator. The Operator could opt in to the AVS quorum with stETH strategy. Then a week later the AVS could pay rewards in rETH (rocketpool) eth. The decision is entirely up to to the AVS to determine.
+
+### How is the APR calculated?
+
+The UI shows a 7-day trailing APR. Rewards begin accruing 2 days after a user has restaked (due to the 2 day calculation delay) to a strategy & operator that is earning rewards. The APR is given by the following equation:
+
+$$
+\frac{E_\text{earned}}{\sum_{7 \ \text{days}}E_{\text staked}}*365\ \text{days}
+$$
+
+That is, $$ E_{earned} $$ is the ETH value in reward tokens over the past 7 days. Reward tokens that do not have a publicly available price are not included in this calculation. 
+$$ E_{\text staked} $$ is the ETH value of restaked assets on a given day. To calculate the per-strategy APR for a strategy, $$ s $$, we do the following:
+
+$$
+\frac{E_{\text{earned}, s}}{\sum_{7 \ \text{days}}E_{\text staked, s}}*365\ \text{days}
+$$
