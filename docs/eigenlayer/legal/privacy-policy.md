@@ -1,4 +1,4 @@
-# EigenLayer Privacy Policy
+# Privacy Policy
 
 ***Last Revised on March 20, 2024***
 

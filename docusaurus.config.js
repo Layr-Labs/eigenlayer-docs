@@ -49,12 +49,16 @@ const config = {
             to: "/eigenlayer/overview/",
           },
           {
-            from: "/overview/eigenlayer-privacy-policy",
-            to: "/eigenlayer/legal/eigenlayer-privacy-policy",
+            from: "/overview/privacy-policy",
+            to: "/eigenlayer/legal/privacy-policy",
           },
           {
             from: "/overview/terms-of-service",
             to: "/eigenlayer/legal/terms-of-service",
+          },
+          {
+            from: "/overview/disclaimers-and-disclosures",
+            to: "/eigenlayer/legal/disclaimers-and-disclosures",
           },
           // This is implicit, covered by the function case below
           // {
@@ -203,11 +207,15 @@ const config = {
               },
               {
                 label: "Privacy Policy",
-                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/eigenlayer-privacy-policy",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/privacy-policy",
               },
               {
                 label: "Terms of Service",
                 href: "https://docs.eigenlayer.xyz/eigenlayer/legal/terms-of-service",
+              },
+              {
+                label: "Disclaimers and Disclosures",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/legal/disclaimers-and-disclosures",
               },
             ],
           },
