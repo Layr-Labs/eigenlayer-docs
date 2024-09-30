@@ -18,11 +18,11 @@ It was [previously communicated](https://blog.eigenfoundation.org/announcement/)
 - **Stakedrops**: Eigen Labs employees were not permitted to claim stakedrops.
 
 #### Investors:
-- **EIGEN staking**: Eigen Labs [Investors](https://www.eigenlabs.org/#investors) are not restricted from staking EIGEN on EigenLayer. As such, investors may choose to stake their EIGEN and receive staking rewards the same as any other user. EIGEN provided by Eigen Labs to investors is subject to the Lockup Schedule, but EIGEN investors receive from staking will not be subject to the Lockup Schedule. 
+- ***EIGEN staking**: Eigen Labs [Investors](https://www.eigenlabs.org/#investors) are not restricted from staking EIGEN on EigenLayer. As such, investors may choose to stake their EIGEN and receive staking rewards the same as any other user. EIGEN provided by Eigen Labs to investors is subject to the Lockup Schedule, but EIGEN investors receive from staking will not be subject to the Lockup Schedule. 
   - Note, as previously communicated, Investors did not receive rewards or airdrop allocation for any staking of EIGEN prior to September 30, 2024. 
 - **Other assets staking**: Eigen Labs does not restrict [Investors](https://www.eigenlabs.org/#investors) from staking other assets on EigenLayer (including ETH and LSTs), and any rewards received (including EIGEN) from such staking will not be subject to the Lockup Schedule.
 - **Stakedrops**: Investors were not restricted from claiming stakedrops.
 
 *25% programmatic incentives go to EIGEN staking while the remaining 75% go to ETH and ETH-equivalent staking assets.
 
-In addition to the above disclosures, we also encourage you to familiarize yourself with our [Privacy Policy](../legal/privacy-policy.md) and our [Terms of Service](../legal/terms-of-service.md).  The above policies and disclosures are subject to change at any time for any reason and without notice. 
+In addition to the above disclosures, we also encourage you to review our [Privacy Policy](../legal/privacy-policy.md) and our [Terms of Service](../legal/terms-of-service.md).  The above policies and disclosures are subject to change at any time for any reason and without notice. 
