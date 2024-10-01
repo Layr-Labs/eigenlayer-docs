@@ -38,7 +38,7 @@ For purposes of these Terms, "**you**" and "**your**" means you as the user of t
 
 4. **Location of Our Privacy Policy**
 
-    1. Privacy Policy. Our Privacy Policy describes how we handle the information you provide to us when you use the Services. For an explanation of our privacy practices, please visit our [Privacy Policy here](./eigenlayer-privacy-policy.md).
+    1. Privacy Policy. Our Privacy Policy describes how we handle the information you provide to us when you use the Services. For an explanation of our privacy practices, please visit our [Privacy Policy here](./privacy-policy.md).
     
 
 5. **Rights We Grant You**
