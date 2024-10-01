@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+title: Terms of Service
+---
 
 # Terms of Service
 ***Last Revised on August 29, 2024***
