@@ -1,3 +1,8 @@
+---
+sidebar_position: 3
+title: Disclaimers
+---
+
 # Disclaimers
 
 ***Last Revised on September 30, 2024***
