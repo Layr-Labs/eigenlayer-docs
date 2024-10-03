@@ -5,13 +5,21 @@ title: AVS Overview
 
 Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-Also, check out the the following resources additional reference architectures, tutorials, and guides:
+Also, check out the the following resources:
 
 <div class="button1-container">
     <Button label="AVS Book" link="https://eigenlabs.gitbook.io/avs-book" />
+    <Button label="GO SDK" link="https://github.com/Layr-Labs/eigensdk-go" />
+    <Button label="Rust SDK" link="https://github.com/Layr-Labs/eigensdk-rs" />
     <Button label="Awesome AVS" link="https://github.com/Layr-Labs/awesome-avs" />
 </div>
 
+<p className="button1-container-heading">Or connect with our team:</p>
+
+<div class="button1-container">
+    <Button label="BuildOnEigen Group Chat" link="https://t.me/+LsjfhgFoHJEyN2Rh" />
+    <Button label="Schedule a call" link="https://share.hsforms.com/1BksFoaPjSk2l3pQ5J4EVCAein6l" />
+</div>
 
 ## What is an AVS?
 

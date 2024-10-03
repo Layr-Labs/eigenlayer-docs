@@ -200,11 +200,10 @@ html[data-theme="dark"] .header--github-link:before {
 
 
 .button1 {
-  
   background-color: #0056b3; /* Darker blue */
   color: #FFFFFF; /* White text */
   border: none;
-  border-radius: 8px; /* Slightly rounded corners */
+  border-radius: 3px; /* Slightly rounded corners */
   padding: 10px 20px;
   font-size: 16px;
   font-weight:600;
@@ -220,7 +219,9 @@ html[data-theme="dark"] .header--github-link:before {
 
 .button1-container {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Adjust the gap as needed */
-  padding: 10px;
+  gap: 5px; /* Adjust the gap as needed */
+}
+
+.button1-container-heading {
+  margin-top: 25px;
 }
