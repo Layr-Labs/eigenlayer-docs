@@ -100,7 +100,7 @@ If you wish to withdraw native ETH from an active validator, complete the follow
 1. Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod. Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/[validator_index]#withdrawals .
 
 
-:::warn
+:::warning
 Each queue withdrawal action will trigger a checkpoint and the associated gas costs. Please review the [Checkpoint Frequency](#checkpoint-frequency) section and plan for gas costs accordingly.
 :::
 

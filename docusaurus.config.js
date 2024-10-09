@@ -77,7 +77,7 @@ const config = {
           
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
-            to: "/eigenlayer/avs-guides/how-to-build-an-avs",
+            to: "/developers/how-to-build-an-avs",
           },
           
           {
@@ -180,6 +180,12 @@ const config = {
             position: "left",
             activeBasePath: 'eigenlayer/',
           },
+          {
+            to: "developers/avs-developer-guide",
+            label: "Developers",
+            position: "left",
+            activeBasePath: 'developer/',
+          },
           
           {
             href: 'https://docs.eigenda.xyz/',
@@ -273,6 +279,10 @@ const config = {
       src: '/js/eigenda-redirects.js',
       async: false,
     },
+    {
+      src: '/js/avs-guide-redirects.js',
+      async: false,
+    }
   ],
   themes: [
     [
