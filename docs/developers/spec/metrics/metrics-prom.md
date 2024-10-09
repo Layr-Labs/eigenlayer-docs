@@ -19,7 +19,7 @@ The table below defines metrics which may be captured by AVS Nodes which expose 
 
 :::note
 
-A definition of a strategy contract can be found in [Key Terms](../../../overview/key-terms.md).
+A definition of a strategy contract can be found in [Key Terms](/docs/eigenlayer/overview/key-terms.md).
 
 :::
 

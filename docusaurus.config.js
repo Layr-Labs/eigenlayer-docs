@@ -77,7 +77,7 @@ const config = {
           
           {
             from: "/eigenlayer/avs-guides/avs-development-guide",
-            to: "/eigenlayer/avs-guides/how-to-build-an-avs",
+            to: "/developers/how-to-build-an-avs",
           },
           
           {
@@ -179,6 +179,12 @@ const config = {
             label: "EigenLayer",
             position: "left",
             activeBasePath: 'eigenlayer/',
+          },
+          {
+            to: "developers/avs-developer-guide",
+            label: "Developers",
+            position: "left",
+            activeBasePath: 'developer/',
           },
           
           {

@@ -18,7 +18,7 @@ Rewards are calculated via an offchain process. Every week a merkle root is post
 Reward Earners (Stakers and Operators) can set a claimer address that can claim rewards for the tokens they've earned. An Earner is its own claimer by default and only the claimer address can claim rewards. If a new claimer is set, the new address can claim all of the previously unclaimed rewards. The earner can always configure their designated claimer address.
 
 ## AVS Integrations
-Refer to [AVS Guide: AVS Rewards](../avs-guides/rewards.md).
+Refer to [AVS Guide: AVS Rewards](/docs/developers/rewards.md).
 
 ## Rewards Contract Configurations
 
