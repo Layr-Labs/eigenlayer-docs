@@ -31,6 +31,7 @@ title: Learning Resources
 
 ### Developer resources
 
+* [AVS Book](https://avs.eigenlayer.xyz/)
 * [Awesome AVS](https://github.com/Layr-Labs/awesome-avs)
 * [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs)
 * [Incredible Squaring AVS](https://github.com/Layr-Labs/incredible-squaring-avs)
