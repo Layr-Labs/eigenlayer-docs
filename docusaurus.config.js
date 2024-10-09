@@ -279,6 +279,10 @@ const config = {
       src: '/js/eigenda-redirects.js',
       async: false,
     },
+    {
+      src: '/js/avs-guide-redirects.js',
+      async: false,
+    }
   ],
   themes: [
     [
