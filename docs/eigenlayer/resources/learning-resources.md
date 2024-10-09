@@ -31,10 +31,12 @@ title: Learning Resources
 
 ### Developer resources
 
+* [AVS Book](https://avs.eigenlayer.xyz/)
 * [Awesome AVS](https://github.com/Layr-Labs/awesome-avs)
 * [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs)
 * [Incredible Squaring AVS](https://github.com/Layr-Labs/incredible-squaring-avs)
-* [Eigen Go SDK](https://github.com/Layr-Labs/eigensdk-go)
+* [EigenLayer Go SDK](https://github.com/Layr-Labs/eigensdk-go)
+* [EigenLayer Rust SDK](https://github.com/Layr-Labs/eigensdk-rs)
 * [EigenLayer Contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
 * [EigenLayer Middleware](https://github.com/Layr-Labs/eigenlayer-middleware)
 * [EigenLayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
