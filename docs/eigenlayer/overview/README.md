@@ -10,7 +10,7 @@ sidebar_position: 1
 
 EigenLayer is a protocol built on Ethereum that introduces restaking, a new primitive in cryptoeconomic security. It allows users to stake assets such as Native ETH, Liquid Staking Tokens (LSTs), EIGEN token or any ERC20 token into EigenLayer smart contracts, thereby extending Ethereum's cryptoeconomic security to additional applications on the network.
 
-EigenLayer establishes a shared security infrastructure where decentralized services and protocols can be built, all leveraging the same underlying economic security from Ethereum stakers. This approach improves both scalability and composability in the blockchain ecosystem. It fosters innovation by enabling newer projects to benefit from Ethereum’s robust security guarantees without the need to replicate the costly process of securing their own network.
+EigenLayer establishes a shared security infrastructure where decentralized services and protocols can be built. This approach improves both scalability and composability in the blockchain ecosystem. It fosters innovation by enabling newer projects to benefit from Ethereum’s robust security guarantees without the need to replicate the costly process of securing their own network.
 
 ## Why Build with EigenLayer?
 
