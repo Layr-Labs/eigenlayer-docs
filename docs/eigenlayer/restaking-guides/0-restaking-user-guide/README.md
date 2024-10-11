@@ -4,23 +4,10 @@ These guides will walk you through how EIGEN token holders, LST holders and Nati
 
 ## **Liquid vs Native Restaking**
 
-**Liquid restaking** is the process of depositing liquid staking tokens (LSTs) and EIGEN tokens into the EigenLayer smart contracts. At this time, the protocol supports the following tokens:
+**Liquid restaking** is the process of depositing "liquid" tokens, including LSTs, EIGEN token, and any ERC20 token into the EigenLayer smart contracts.
 
-- EIGEN (EigenLayer)
-- stETH (Lido)
-- rETH (Rocket Pool)
-- cbETH (Coinbase)
-- wBETH (Binance)
-- osETH (Stakewise)
-- swETH (Swell)
-- AnkrETH (Ankr)
-- EthX (Stader)
-- OETH (Origin ETH)
-- sfrxETH (Frax Ether)
-- lsETH (Liquid Staked ETH)
-- mETH (Mantle Staked Ether)
+..
 
-The protocol plans to support additional liquid staking tokens in the future. If you would like to introduce your LST to the EigenLayer community, please do so on [the forum](https://forum.eigenlayer.xyz/t/about-the-new-lst-token-on-eigenlayer-category/6641).
 
 **Native restaking** describes the process of setting an Ethereum validator's `withdrawCredential` to EigenLayer's smart contracts (EigenPod). You must operate an Ethereum Validator node in order to participate in Native Restaking.
 
