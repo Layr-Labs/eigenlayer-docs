@@ -6,7 +6,7 @@ These guides will walk you through how EIGEN token holders, LST holders and Nati
 
 **Liquid restaking** is the process of depositing "liquid" tokens, including LSTs, EIGEN token, and any ERC20 token into the EigenLayer smart contracts.
 
-..
+For more information about adding new ERC20 tokens, please see [Permissionless Token Strategies](/docs/developers/avs-permissionlesss.md)
 
 
 **Native restaking** describes the process of setting an Ethereum validator's `withdrawCredential` to EigenLayer's smart contracts (EigenPod). You must operate an Ethereum Validator node in order to participate in Native Restaking.

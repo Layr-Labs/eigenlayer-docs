@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Restake and Delegate
 
-Restake your LSTs & Stake EIGEN by following the steps below.
+Restake your liquid tokens by following the steps below.
 
 **Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit EigenLayer on the Ethereum Mainnet at app.eigenlayer.xyz.
 
