@@ -229,6 +229,10 @@ const config = {
             title: "Community",
             items: [
               {
+                label: "Support",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/overview/support",
+              },
+              {
                 label: "Discord",
                 href: "https://discord.com/invite/eigenlayer",
               },
