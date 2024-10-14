@@ -10,6 +10,8 @@ import TabItem from '@theme/TabItem';
 
 Follow the instructions below step by step in order to claim your currently available rewards in the EigenLayer web app via EigenLayer CLI. Rewards can be claimed by a Staker or Operator.
 
+## Quick Steps
+
 ### Step 1: Install the latest version of EigenLayer CLI
 
 Head over to the [installation instructions](https://github.com/Layr-Labs/eigenlayer-cli#install-eigenlayer-cli-using-a-binary) for getting the binary with your preferred way. 
@@ -146,3 +148,45 @@ If you want to see the rewards parameters before claiming, you can use the follo
     `comma-separated-list-of-token-addresses` - You can get this from output of Step 3
   </TabItem>
 </Tabs>
+
+## Advanced configurations
+### Setting an address to claim rewards on earners behalf
+If you want a different address to claim the rewards on earners behalf, you can set the claimer using the following command
+```bash
+./bin/eigenlayer rewards set-claimer \
+  --network mainnet \
+  --eth-rpc-url <mainnet-eth-rpc-url> \
+  --earner-address <earner-address> \
+  --claimer-address <claimer-address> \
+  --path-to-key-store /path/to/key/store-json \
+  --broadcast
+```
+
+### Claiming rewards when earner is a smart contract
+If the earner is a smart contract, you can claim rewards by either generating a JSON object with the arguments to the call `processClaim`
+method on rewards coordinator contract
+or generate a calldata which can be signed and broadcasted.
+
+To generate the JSON object, use the following command
+```bash
+    ./bin/eigenlayer rewards claim \
+      --network mainnet \
+      --eth-rpc-url <mainnet-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --recipient-address <address-to-send-rewards-to> \
+      --path-to-key-store /path/to/key/store-json \
+      --token-addresses <comma-separated-list-of-token-addresses> \
+      --output-type json
+```
+
+To generate the calldata, use the following command
+```bash
+    ./bin/eigenlayer rewards claim \
+      --network mainnet \
+      --eth-rpc-url <mainnet-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --recipient-address <address-to-send-rewards-to> \
+      --path-to-key-store /path/to/key/store-json \
+      --token-addresses <comma-separated-list-of-token-addresses> \
+      --output-type calldata
+```
