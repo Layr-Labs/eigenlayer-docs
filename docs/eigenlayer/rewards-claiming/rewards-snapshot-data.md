@@ -56,7 +56,7 @@ Extract data from the claim-amounts.json file as needed. Please find the schema 
     },
     "cumulative_amount": {
       "type": "string",
-      "Number of tokens earned since genesis"
+      "Cumulative amount of tokens earned over time (includes both claimed and unclaimed rewards)"
     }
   },
   "required": [
