@@ -229,6 +229,14 @@ const config = {
             title: "Community",
             items: [
               {
+                label: "Support",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/overview/support",
+              },
+              {
+                label: "Forum",
+                href: "https://forum.eigenlayer.xyz/",
+              },
+              {
                 label: "Discord",
                 href: "https://discord.com/invite/eigenlayer",
               },
@@ -244,10 +252,6 @@ const config = {
               {
                 label: "GitHub",
                 href: "https://github.com/Layr-Labs",
-              },
-              {
-                label: "Discourse",
-                href: "http://forum.eigenlayer.xyz/",
               },
               {
                 label: "Youtube",
