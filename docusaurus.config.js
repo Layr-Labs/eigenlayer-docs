@@ -109,6 +109,10 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
             to: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
           },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials",
+            to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/#restake-new-validator-native-beacon-chain-eth",
+          },
         ],
         createRedirects(existingPath) {
 
