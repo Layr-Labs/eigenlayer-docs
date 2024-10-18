@@ -21,7 +21,7 @@ Rewards snapshot distribution data is available via a public S3 bucket. Users ma
 
 2) Construct the URL to return the claim-amounts.json file for the desired snapshot date in the following format:
 
-`https://<bucket url>/<environment>/<network>/<snapshot date>/claim-amounts.json`
+`<bucket url>/<environment>/<network>/<snapshot date>/claim-amounts.json`
 
 * bucket_url: 
   * [https://eigenlabs-rewards-testnet-holesky.s3.amazonaws.com](https://eigenlabs-rewards-testnet-holesky.s3.amazonaws.com)
