@@ -15,6 +15,7 @@ Dashboards
 - [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
 - [EigenLayer Dune dashboard by dyorcrypto](https://dune.com/dyorcrypto/eigenlayer)
 - [Validator Info - EigenLayer](https://validator.info/eigenlayer)
+- [Restaking Info by Nethermind](https://restaking.info/)
 
 Developer Tooling
 
