@@ -97,4 +97,4 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 
 ## Get in Touch
 
-Once you have an idea of what you want to build on EigenLayer, submit an [AVS Questionnaire](https://bit.ly/avsquestions) and get in touch with us.
+If you would like to discuss your ideas to build an AVS on EigenLayer, submit your contact information via [this form](https://share.hsforms.com/1BksFoaPjSk2l3pQ5J4EVCAein6l) and we'll be in touch shortly.
