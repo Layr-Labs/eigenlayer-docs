@@ -10,8 +10,28 @@ Before proceeding, please review the previous sections on [AVS Overview](./avs-d
 
 ## Step 1: AVS Design
 
+[todo lots of work here]
 
-        
+### Validation Techniques (Trust Engineering)
+
+
+### Task Design
+
+Tasks are a common design model used for AVS operations. They are not required, but they are a convenient mechanism for the AVS designer. Tasks enable the AVS to group and monitor discrete units of work to be performed by the Operators offchain and later validated onchain.
+
+Tasks can be submitted either onchain by the consumer to the AVS contracts or offchain by the consumer directly to the Operators. 
+
+### Task Aggregation
+
+Responses to tasks can be aggregated by an entity (the "aggregator") which can take results or signatures from the 
+
+
+### Signature Types
+
+In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. Currently, there are two primary types of signatures used within EigenLayer: BLS (Boneh-Lynn-Shacham) and ECDSA (Elliptic Curve Digital Signature Algorithm) signatures.
+
+[todo complete this section]
+
       
 ## Step 2: Idea to Code: Testing and Deploying your AVS Locally
 
