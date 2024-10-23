@@ -15,15 +15,13 @@ title: Preparing for Testnet and Mainnet Deployment
    - Communication channels that will be utilized for AVS upgrades.
    - Describe Operator monitoring tooling available, such as GraFana dashboards, log files or similar.
 
-3. Follow the [AVS Developer Security Best Practices](./avs-developer-best-practices.md).
+3. Follow the [AVS Developer Security Best Practices](./avs-developer-best-practices.md) and [Key Manage Considerations for Developers](./avs-developer-best-practices.md#key-management-recommendation-for-developers).
 
-4. Follow the guidance in [Key Manage Considerations for Developers](./key-management/developers.md).
+4. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
 
-5. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
+5.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
 
-6.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
-
-7. Implement Rewards distributions per the instructions [here](./rewards.md).
+6. Implement Rewards distributions per the instructions [here](./rewards.md).
 
 
 ## Preparing and Deploying to Mainnet
