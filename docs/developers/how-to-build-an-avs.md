@@ -1,16 +1,16 @@
 ---
-sidebar_position: 2
-title: Building an AVS
+sidebar_position: 3
+title: Build Your Own AVS
 ---
 
+This section will walk you through the process of designing and building your own AVS from scratch. It is intended to take you from an idea to a working local prototype.
 
-## Step 1: Learn EigenLayer fundamentals 
+Before proceeding, please review the previous sections on [AVS Overview](./avs-developer-guide.md), [EigenLayer Overview](/docs/eigenlayer/overview/README.md) and the [Quick Start example](./quickstart.md) to become familiar with the basic concepts.
 
-Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-Review the materials available under [EigenLayer Learning Resources](/docs/eigenlayer/resources/learning-resources.md), including:
-- How EigenLayer works via [You Could've Invented EigenLayer](https://www.blog.eigenlayer.xyz/ycie/).
-- Understand the type of trust you would need with [The Three Pillars of Programmable Trust: The EigenLayer End Game](https://www.blog.eigenlayer.xyz/the-three-dimensions-of-programmable-trust/).
+## Step 1: AVS Design
+
+
         
       
 ## Step 2: Idea to Code: Testing and Deploying your AVS Locally
@@ -60,6 +60,11 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 The Operator binary (or off chain aggregation service code) must write at least one event to the AVSs on chain contracts to be used for future on-chain verification, rewards, and slashing purposes.  
 
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L25).
+
+
+## Step 3: Deploy and Test Locally
+
+Follow the existing pattern in the Hello World [Local Devnet Deployment](https://github.com/Layr-Labs/hello-world-avs?tab=readme-ov-file#local-devnet-deployment) steps. Modify your steps as needed.
 
 
 
