@@ -1,12 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Quick Start Example
 ---
 
-[Hello-World-AVS GitHub Repo](https://github.com/Layr-Labs/hello-world-avs)
-
 ## Hello World AVS: Local Deployment
-The Hello World AVS is a simple implementation designed to demonstrate the core mechanics of how AVSs work within the EigenLayer framework. This example walks you through the process of:
+The [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs) is a simple implementation designed to demonstrate the core mechanics of how AVSs work within the EigenLayer framework. This example walks you through the process of:
 - Spinning up a local chain with EigenLayer contracts and AVS contracts preconfigured.
 - Registering an Operator with both EigenLayer and the AVS.
 - Consumer client requesting work to be done by the AVS.
@@ -16,7 +14,7 @@ The Hello World AVS is a simple implementation designed to demonstrate the core 
 ![Hello World Diagram](/img/avs/hello-world-diagram-v2.png)
 
 ## Key Components of Hello World AVS
-- AVS Consumer: Requests a "Hello, {name}" message to be generated and signed.
+- AVS Consumer: Requests a "Hello, ___" message to be generated and signed.
 - AVS: Takes the request and emits an event for operators to handle.
 - Operators: Picks up the request, generates the message, signs it, and submits it back to the AVS.
 - Validation: Ensures the operator is registered and has the necessary stake, then accepts the submission.
