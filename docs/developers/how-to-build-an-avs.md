@@ -17,20 +17,27 @@ Before proceeding, please review the previous sections on [AVS Overview](./avs-d
 
 ### Task Design
 
-Tasks are a common design model used for AVS operations. They are not required, but they are a convenient mechanism for the AVS designer. Tasks enable the AVS to group and monitor discrete units of work to be performed by the Operators offchain and later validated onchain.
+Tasks are a common design model used for AVS operations. They are not required, but they are a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators offchain, which are later validated onchain.
 
-Tasks can be submitted either onchain by the consumer to the AVS contracts or offchain by the consumer directly to the Operators. 
-
-### Task Aggregation
-
-Responses to tasks can be aggregated by an entity (the "aggregator") which can take results or signatures from the 
-
+Tasks can be submitted either:
+1) Onchain by the Consumer (end user) to the AVS contracts.
+2) Offchain by the Consumer directly to the Operators. 
 
 ### Signature Types
 
-In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. Currently, there are two primary types of signatures used within EigenLayer: BLS (Boneh-Lynn-Shacham) and ECDSA (Elliptic Curve Digital Signature Algorithm) signatures.
+In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. Signatures cryptographically confirm that a specific wallet address has signed a message (e.g., a string value) with its private key. Currently, there are two primary types of signatures used within EigenLayer: BLS (Boneh-Lynn-Shacham) and ECDSA (Elliptic Curve Digital Signature Algorithm) signatures.
 
-[todo complete this section]
+### Task and Signature Aggregation
+
+Operator responses to tasks are often signed using the BLS or ECDSA algorithm. These signatures can be aggregated by any entity at any time, but they are often aggregated by an entity run by the AVS (the "aggregator"). A common AVS design involves combining multiple Operator BLS signatures into a single aggregate signature and written on chain ([example here](https://github.com/Layr-Labs/eigensdk-go/blob/dev/services/bls_aggregation/blsagg.go) written in Go). The aggregate signature can then be verified to confirm whether any of the individual Operators were included in the aggregate.
+
+### Design Your AVS Security (Trust Model)
+
+Consider the following requirements for your AVS:
+- Which portion of your project needs to be proven on chain?
+- Which Operator behaviors should be rewarded, and which behaviors are malicious and should be slashed or penalized?”
+- How do you envision Operators fulfilling this purpose as a network of Actively Validated Operators in your AVS?
+
 
       
 ## Step 2: Idea to Code: Testing and Deploying your AVS Locally
@@ -53,13 +60,13 @@ Implement an instance of ECDSAServiceManagerBase or ServiceManagerBase (BLS).
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/src/HelloWorldServiceManager.sol) and incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/master/contracts/src/IncredibleSquaringServiceManager.sol).
 
 **2: On Chain Verification**  
-Implement at least one on-chain provable event. The most common approach is to write a ECDSA or BLS aggregate signature (APK) on-chain.
+Implement at least one on-chain provable event. The most common approach is to write an ECDSA or BLS aggregate signature on-chain.
 Please see the example from incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/8bd0ac663dcc2289cad02af4a7f0002ea07bc1d8/contracts/src/IncredibleSquaringTaskManager.sol#L102) and from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L130).
 
 
 ### Contract Deployment Requirements
 
-Implement deployment scripts for your contracts to deploy to your [local anvil node](https://book.getfoundry.sh/reference/anvil/).
+Implement deployment scripts to deploy your contracts to your [local Anvil node](https://book.getfoundry.sh/reference/anvil/).
 
 **1: Deploy of EigenLayer Contracts and State**  
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/utils/anvil/deploy-eigenlayer-save-anvil-state.sh).
@@ -89,34 +96,6 @@ Follow the existing pattern in the Hello World [Local Devnet Deployment](https:/
 
 
 
-
-## Step 3: Preparing and Deploying to Testnet
-
-1. Package the Operator’s long running executable in a way that is easy for Operators to launch  (via binary, docker container, or similar).
-
-2. Author Testnet user and Operator documentation, including:
-   - Trust Modeling: clarify any trust assumptions in your architecture to your users. Identify the components that are trusted (centralized) and untrusted (decentralized, trustless).
-   - Operator instructions to install, register, deregister.
-   - End user (aka “Consumer”) instructions to utilize your AVS service.
-   - Communication channels that will be utilized for AVS upgrades.
-   - Describe Operator monitoring tooling available, such as GraFana dashboards, log files or similar.
-
-3. Follow the [AVS Developer Security Best Practices](./avs-developer-best-practices.md).
-
-4. Follow the guidance in [Key Manage Considerations for Developers](./key-management/developers.md).
-
-5. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
-
-6.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
-
-7. Implement Rewards distributions per the instructions [here](./rewards.md).
-
-
-## Step 4: Preparing and Deploying to Mainnet
-
-1. Smart Contract Auditing: have your codebase audited with at least 2-3 reputable audit firms.
-2. Finalize User and Operator documentation.
-3. Follow the [Mainnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
 
 
 
