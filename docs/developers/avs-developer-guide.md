@@ -3,35 +3,12 @@ sidebar_position: 1
 title: AVS Overview
 ---
 
-Before diving into what AVSs are and how you can design and build one, check out the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
 
-Also, check out the the following resources:
+## What is an Actively Validated Service (AVS)?
 
-<div class="button1-container">
-    <Button label="AVS Book" link="https://eigenlabs.gitbook.io/avs-book" />
-    <Button label="GO SDK" link="https://github.com/Layr-Labs/eigensdk-go" />
-    <Button label="Rust SDK" link="https://github.com/Layr-Labs/eigensdk-rs" />
-    <Button label="Awesome AVS" link="https://github.com/Layr-Labs/awesome-avs" />
-</div>
+An AVS is a service build on EigenLayer that requires its own distributed validation semantics for verification. Each AVS has its own set of contracts that hold state relevant to the service’s functionality, such as what operators are running the service and how much stake is securing the service. Examples of these services may include sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, trusted execution environments (TEEs).
 
-<p className="button1-container-heading">Or connect with our team:</p>
 
-<div class="button1-container">
-    <Button label="BuildOnEigen Group Chat" link="https://t.me/+LsjfhgFoHJEyN2Rh" />
-    <Button label="Schedule a call" link="https://share.hsforms.com/1BksFoaPjSk2l3pQ5J4EVCAein6l" />
-</div>
-
-## What is an AVS?
-
-An AVS is any system that requires its own distributed validation semantics for verification, such as sidechains, data availability layers, new virtual machines, keeper networks, oracle networks, bridges, threshold cryptography schemes, trusted execution environments and more.
-
-Each AVS has its own set of contracts that hold state relevant to the service’s functionality, such as what operators are running the service and how much stake is securing the service.
-
-Below is a high-level overview of EigenLayer core contracts as well as how an AVS is built on top of it and consumed.
-
-![AVS Architecture Overview](/img/avs/avs-architecture-v1.png)
-
-Let’s clarify some of the interactions demonstrated by the above diagram.
 
 
 - The stakers interact with EigenLayer by depositing assets into the `StrategyManager`. To learn more about exactly how this works, [this doc](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/StrategyManager.md) provides a deep dive on the `StrategyManager`.
@@ -41,10 +18,12 @@ Let’s clarify some of the interactions demonstrated by the above diagram.
 - Each AVS developer can design and implement its own contracts as they see fit as long as their entry point (canonically called the `ServiceManager`) implements the interface expected by the EigenLayer protocol. Specific details expanding on this will be coming soon.
 
 
+Before diving into what AVSs are and how you can design and build one, check out the
 
-## Additional Resources
 
-Visit [awesome-avs](https://github.com/Layr-Labs/awesome-avs) to view learning resources for building an AVS and the latest community contributions.
+Pleasee see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) overview to quickly become familiar with what stakers and operators are.
+
+
 
 ## Get in Touch
 
