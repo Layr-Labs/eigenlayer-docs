@@ -18,6 +18,5 @@ No. Per the [Undelegate from an Operator and Initiate Withdrawal](../0-restaking
 
 Please see the Deployments table [here](https://github.com/Layr-Labs/eigenlayer-contracts/?tab=readme-ov-file#strategies---eigen).
 
-### Does restaking it give restaked points, etc.
-Restaking EIGEN does not currently earn Restaked Points in the EigenLayer Web App. Please see [Will I earn rewards for staking EIGEN?](https://docs.eigenfoundation.org/faq/staking#will-i-earn-rewards-for-staking-eigen) for more detail.
+
 
