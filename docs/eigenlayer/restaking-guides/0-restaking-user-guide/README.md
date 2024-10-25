@@ -1,6 +1,6 @@
 # Restaking User Guide
 
-These guides will walk you through how EIGEN token holders, LST holders and Native Stakers can restake, withdraw and earn points on the [EigenLayer Web App](https://app.eigenlayer.xyz/).
+These guides will walk you through how EIGEN token holders, LST holders and Native Stakers can restake, delegate, and withdraw on the [EigenLayer Web App](https://app.eigenlayer.xyz/).
 
 ## **Liquid vs Native Restaking**
 
