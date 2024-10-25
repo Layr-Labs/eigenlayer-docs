@@ -113,6 +113,10 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials",
             to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/#restake-new-validator-native-beacon-chain-eth",
           },
+          {
+            from: "/overview/eigenlayer-privacy-policy",
+            to: "/eigenlayer/legal/privacy-policy",
+          },
         ],
         createRedirects(existingPath) {
 
