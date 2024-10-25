@@ -22,8 +22,11 @@ The [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs) is a simple 
 
 ## Code Walkthrough
 
-[question to Nader - can we simply embed this video here as a Youtube video?
-https://drive.google.com/file/d/1P6uA6kYWCbpeorTjADuoTlQ-q8uqwPZf/view?usp=sharing]
+*Question to Nader - can we simply embed this video here as a Youtube video? If so, here is an example of how it could look:*
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2-maLV1O2lU?si=85qZl4xmsL0nBKPq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
 
 ## Local Deployment Test
 
