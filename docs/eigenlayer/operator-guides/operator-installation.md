@@ -354,7 +354,7 @@ One series of designs involves passing a unique signature from the Operator to t
 If the delegationApprover themself calls the DelegationManager.delegateToBySignature function, then they need to provide a [signature from the Restaker](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L157-L204). The approverSignatureAndExpiry input is ignored if the caller is themselves the delegationApprover. One potential drawback to this approach is the delegationApprover would pay the gas for the transaction.
 
 #### Generating approval signatures using eigenlayer-cli
-If you want to generate signatures for stakers using delegationApprover address, you can use eigelayer-cli (>= v0.10.8) to generate those. Use the below command to generate
+If you want to generate signatures for stakers using delegationApprover address, you can use eigenlayer-cli (>= v0.10.8) to generate those. Use the below command to generate
 ```bash
 eigenlayer operator get-delegation-approval \
   --ecdsa-private-key <delegation-approval-address-private-key> \
