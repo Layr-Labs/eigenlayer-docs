@@ -353,7 +353,40 @@ One series of designs involves passing a unique signature from the Operator to t
 
 If the delegationApprover themself calls the DelegationManager.delegateToBySignature function, then they need to provide a [signature from the Restaker](https://github.com/Layr-Labs/eigenlayer-contracts/blob/mainnet/src/contracts/core/DelegationManager.sol#L157-L204). The approverSignatureAndExpiry input is ignored if the caller is themselves the delegationApprover. One potential drawback to this approach is the delegationApprover would pay the gas for the transaction.
 
-**Whitelisting and Blacklisting Restakers for Delegation**
+#### Generating approval signatures using eigenlayer-cli
+If you want to generate signatures for stakers using delegationApprover address, you can use eigelayer-cli (>= v0.10.8) to generate those. Use the below command to generate
+```bash
+eigenlayer operator get-delegation-approval \
+  --ecdsa-private-key <delegation-approval-address-private-key> \
+  operator.yaml <staker-address>
+  --
+```
+It will generate a signature like below
+```bash
+operator: 0x2222AAC0C980Cc029624b7ff55B88Bc6F63C538f
+approverSignatureAndExpiry.signature: 0xd8af4e2d294d644a989a517583420037d9a089de23bb828b3c00e309e5c6517b236221a5af145cea9eeba59f24732bb410efa79bc840130724b2bf23640011271c
+approverSignatureAndExpiry.expiry: 1729989609
+approverSalt: 0xdca4f1809aeb9c0f7059e328d1e28b317efff44b4ae9c2de67a53af8865876d3
+```
+You are provide these details to stakers and they would be able to successfully delegate to the operator. By default, the expiry of this salt is `3600` seconds. In order to change it, use the `--expiry` flag to provide the desited value. You can also use `--path-to-key-store` flag instead of `--ecdsa-private-key` if you have your approval key as a keystore. 
+
+In case you want to generate the unsigned salt and sign it yourself, just skip passing any signer information
+```bash
+eigenlayer operator get-delegation-approval \
+  operator.yaml <staker-address>
+```
+This will generate the hash of the salt as given below, please sign it with delegation approval key and pass the signature to your stakers
+```bash
+staker: 0x5f8C207382426D3f7F248E6321Cf93B34e66d6b9
+operator: 0x2222AAC0C980Cc029624b7ff55B88Bc6F63C538f
+_delegationApprover: 0x111116fE4F8C2f83E3eB2318F090557b7CD0BF76
+approverSalt: 0x5a94beaf38876a825bc1a12ba0c1e290e28934b9f9748a754cf76e3d10ecef23
+expiry: 1729990089
+
+hash: 0x48d6bfbd7ebc9c106c060904b0c9066951349858f1390d566d5cd726600dd1e8 (sign this payload)
+```
+
+#### Whitelisting and Blacklisting Restakers for Delegation
 
 If the Operator uses option B above, a smart contract for their `delegationApprover`, they can also maintain an approved whitelist. The contract can store a Merkle root of approved signature hashes and provide each Restaker with a Merkle proof when they delegate. [This branch](https://github.com/Layr-Labs/eigenlayer-contracts/blob/feat-example-operator-delegation-whitelist/src/contracts/examples/DelegationApproverWhitelist.sol) provides a PoC of what such a smart contract could look like.
 
