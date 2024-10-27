@@ -368,7 +368,7 @@ approverSignatureAndExpiry.signature: 0xd8af4e2d294d644a989a517583420037d9a089de
 approverSignatureAndExpiry.expiry: 1729989609
 approverSalt: 0xdca4f1809aeb9c0f7059e328d1e28b317efff44b4ae9c2de67a53af8865876d3
 ```
-You are provide these details to stakers and they would be able to successfully delegate to the operator. By default, the expiry of this salt is `3600` seconds. In order to change it, use the `--expiry` flag to provide the desited value. You can also use `--path-to-key-store` flag instead of `--ecdsa-private-key` if you have your approval key as a keystore. 
+You are provide these details to stakers and they would be able to successfully delegate to the operator. By default, the expiry of this salt is `3600` seconds. In order to change it, use the `--expiry` flag to provide the desited value. You can also use `--path-to-key-store` flag instead of `--ecdsa-private-key` if you have your approval key as a keystore. We do NOT support web3signer or fireblocks for this operation. 
 
 In case you want to generate the unsigned salt and sign it yourself, just skip passing any signer information
 ```bash
