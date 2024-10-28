@@ -22,8 +22,56 @@ The [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs) is a simple 
 
 ## Code Walkthrough
 
-*Question to Nader - can we simply embed this video here as a Youtube video? If so, here is an example of how it could look:*
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2-maLV1O2lU?si=85qZl4xmsL0nBKPq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### Onchain Smart Contracts
+
+The following sections highlight a few crucial components of the Hello World example that implement core AVS functionality. 
+
+**[HelloWorldServiceManager.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/src/HelloWorldServiceManager.sol)**
+
+The contract definition declares that it implements `ECDSAServiceManagerBase`, which allows it to inherit the core required functionality of `IServiceManager`
+```solidity
+contract HelloWorldServiceManager is ECDSAServiceManagerBase, IHelloWorldServiceManager {
+    using ECDSAUpgradeable for bytes32;
+```
+
+The following functions are responsible for the "business logic" of the AVS. In the case of hello world the business logic includes managing the lifecycle of a "task" (creation and response) with a simple `name` string value.
+```solidity
+function createNewTask(string memory name) external returns (Task memory) { ...}
+
+function respondToTask(Task calldata task, uint32 referenceTaskIndex, bytes memory signature) external {
+```
+
+**[HelloWorldDeployer.s.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/script/HelloWorldDeployer.s.sol)**
+
+The deployment of the HelloWorld contracts associates the quorums and their asset strategies to the AVS.
+
+```solidity
+    token = new ERC20Mock();
+    helloWorldStrategy = IStrategy(StrategyFactory(coreDeployment.strategyFactory).deployNewStrategy(token));
+
+    quorum.strategies.push(
+        StrategyParams({strategy: helloWorldStrategy, multiplier: 10_000})
+    );
+```
+
+
+**[HelloWorldDeploymentLib.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/script/utils/HelloWorldDeploymentLib.sol)**
+
+
+
+Please find a complete list of the requirements to implement an AVS at [Build Your Own AVS: Step 2 Idea to Code](/docs/developers/how-to-build-an-avs.md#step-2-idea-to-code-building-and-deploying-your-avs-locally).
+
+### Offchain Operator Code
+
+**** todo
+Operator code, focus on registering operator, registering and respond to task
+
+
+
+
+
+
+### 
 
 
 
@@ -32,4 +80,3 @@ The [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs) is a simple 
 
 Please follow the steps under [Local Devnet Deployment](https://github.com/Layr-Labs/hello-world-avs?tab=readme-ov-file#local-devnet-deployment) to deploy an instance of Hello World locally on your machine.
 
-* Question to Nader: can we avoid creating a copy of the Hello World AVS walkthrough content in these docs, if it is duplicative of the information in the repo Readme here?
