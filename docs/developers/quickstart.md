@@ -28,7 +28,8 @@ The following sections highlight a few crucial components of the Hello World exa
 
 **[HelloWorldServiceManager.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/src/HelloWorldServiceManager.sol)**
 
-The contract definition declares that it implements `ECDSAServiceManagerBase`, which allows it to inherit the core required functionality of `IServiceManager`
+The contract definition declares that it implements `ECDSAServiceManagerBase`, which allows it to inherit the core required functionality of `IServiceManager`. These contracts are included from the [eigenlayer-middleware repo](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev/docs#eigenlayer-middleware-docs) and are [required components](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev/docs#system-components) for any AVS.
+
 ```sol
 contract HelloWorldServiceManager is ECDSAServiceManagerBase, IHelloWorldServiceManager {
     using ECDSAUpgradeable for bytes32;
@@ -103,7 +104,7 @@ quorum.strategies.push(
 ### Offchain Operator Code
 
 
-***[index.ts](https://github.com/Layr-Labs/hello-world-avs/blob/master/operator/index.ts)**
+**[index.ts](https://github.com/Layr-Labs/hello-world-avs/blob/master/operator/index.ts)**
 
 The following snippets of Operator code manage Operator registration to core EigenLayer protocol, registration to the Hello World AVS, listening and responding to tasks.
 
