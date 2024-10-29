@@ -1,6 +1,6 @@
 ---
-sidebar_position: 10
-title: Developer Learning Resources
+sidebar_position: 4
+title: Developer Resources
 ---
 
 

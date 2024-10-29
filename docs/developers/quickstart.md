@@ -109,8 +109,7 @@ quorum.strategies.push(
 The following snippets of Operator code manage Operator registration to core EigenLayer protocol, registration to the Hello World AVS, listening and responding to tasks.
 
 ```sol
-
-
+// Register Operator to EigenLayer core contracts and Hello World AVS
 const registerOperator = async () => {
     
     // Registers as an Operator in EigenLayer.
@@ -135,7 +134,7 @@ const registerOperator = async () => {
     console.log("Operator registered on AVS successfully");
 };
 
-
+// Listen for new task events on chain
 const monitorNewTasks = async () => {
 
     helloWorldServiceManager.on("NewTaskCreated", async (taskIndex: number, task: any) => {
@@ -147,7 +146,7 @@ const monitorNewTasks = async () => {
 
 
 
-
+// Generate Hello, Name message string
 const signAndRespondToTask = async (taskIndex: number, taskCreatedBlock: number, taskName: string) => {
     const message = `Hello, ${taskName}`;
     const messageHash = ethers.solidityPackedKeccak256(["string"], [message]);
@@ -184,6 +183,7 @@ The following Typescript code generates new tasks at a random interval. This ent
 
 ```sol
 
+// Create a New Task (a new name to be signed as "hello, name")
 async function createNewTask(taskName: string) {
   try {
     // Send a transaction to the createNewTask function
