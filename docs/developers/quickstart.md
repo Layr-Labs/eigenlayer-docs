@@ -22,57 +22,182 @@ The [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs) is a simple 
 
 ## Code Walkthrough
 
-### Onchain Smart Contracts
-
 The following sections highlight a few crucial components of the Hello World example that implement core AVS functionality. 
+
+### AVS Contract
 
 **[HelloWorldServiceManager.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/src/HelloWorldServiceManager.sol)**
 
 The contract definition declares that it implements `ECDSAServiceManagerBase`, which allows it to inherit the core required functionality of `IServiceManager`
-```solidity
+```sol
 contract HelloWorldServiceManager is ECDSAServiceManagerBase, IHelloWorldServiceManager {
     using ECDSAUpgradeable for bytes32;
 ```
 
 The following functions are responsible for the "business logic" of the AVS. In the case of hello world the business logic includes managing the lifecycle of a "task" (creation and response) with a simple `name` string value.
-```solidity
-function createNewTask(string memory name) external returns (Task memory) { ...}
+```sol
+function createNewTask(
+    string memory name
+) external returns (Task memory) {
+    // create a new task struct
+    Task memory newTask;
+    newTask.name = name;
+    newTask.taskCreatedBlock = uint32(block.number);
 
-function respondToTask(Task calldata task, uint32 referenceTaskIndex, bytes memory signature) external {
+    // store hash of task onchain, emit event, and increase taskNum
+    allTaskHashes[latestTaskNum] = keccak256(abi.encode(newTask));
+    emit NewTaskCreated(latestTaskNum, newTask);
+    latestTaskNum = latestTaskNum + 1;
+
+    return newTask;
+}
+
+function respondToTask(
+    Task calldata task,
+    uint32 referenceTaskIndex,
+    bytes memory signature
+) external {
+    // check that the task is valid, hasn't been responsed yet, and is being responded in time
+    require(
+        keccak256(abi.encode(task)) == allTaskHashes[referenceTaskIndex],
+        "supplied task does not match the one recorded in the contract"
+    );
+    require(
+        allTaskResponses[msg.sender][referenceTaskIndex].length == 0,
+        "Operator has already responded to the task"
+    );
+
+    // The message that was signed
+    bytes32 messageHash = keccak256(abi.encodePacked("Hello, ", task.name));
+    bytes32 ethSignedMessageHash = messageHash.toEthSignedMessageHash();
+    bytes4 magicValue = IERC1271Upgradeable.isValidSignature.selector;
+    if (!(magicValue == ECDSAStakeRegistry(stakeRegistry).isValidSignature(ethSignedMessageHash,signature))){
+        revert();
+    }
+
+    // updating the storage with task responses
+    allTaskResponses[msg.sender][referenceTaskIndex] = signature;
+
+    // emitting event
+    emit TaskResponded(referenceTaskIndex, task, msg.sender);
+}
 ```
+
+Please find a complete list of the requirements to implement an AVS at [Build Your Own AVS: Step 2 Idea to Code](/docs/developers/how-to-build-an-avs.md#step-2-idea-to-code-building-and-deploying-your-avs-locally).
+
+### Contract Deployment Scripts
 
 **[HelloWorldDeployer.s.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/script/HelloWorldDeployer.s.sol)**
 
 The deployment of the HelloWorld contracts associates the quorums and their asset strategies to the AVS.
 
-```solidity
-    token = new ERC20Mock();
-    helloWorldStrategy = IStrategy(StrategyFactory(coreDeployment.strategyFactory).deployNewStrategy(token));
+```sol
+token = new ERC20Mock();
+helloWorldStrategy = IStrategy(StrategyFactory(coreDeployment.strategyFactory).deployNewStrategy(token));
 
-    quorum.strategies.push(
-        StrategyParams({strategy: helloWorldStrategy, multiplier: 10_000})
-    );
+quorum.strategies.push(
+    StrategyParams({strategy: helloWorldStrategy, multiplier: 10_000})
+);
 ```
-
-
-**[HelloWorldDeploymentLib.sol](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/script/utils/HelloWorldDeploymentLib.sol)**
-
-
-
-Please find a complete list of the requirements to implement an AVS at [Build Your Own AVS: Step 2 Idea to Code](/docs/developers/how-to-build-an-avs.md#step-2-idea-to-code-building-and-deploying-your-avs-locally).
 
 ### Offchain Operator Code
 
-**** todo
-Operator code, focus on registering operator, registering and respond to task
+
+***[index.ts](https://github.com/Layr-Labs/hello-world-avs/blob/master/operator/index.ts)**
+
+The following snippets of Operator code manage Operator registration to core EigenLayer protocol, registration to the Hello World AVS, listening and responding to tasks.
+
+```sol
+
+
+const registerOperator = async () => {
+    
+    // Registers as an Operator in EigenLayer.
+    try {
+        const tx1 = await delegationManager.registerAsOperator({
+            __deprecated_earningsReceiver: await wallet.address,
+            delegationApprover: "0x0000000000000000000000000000000000000000",
+            stakerOptOutWindowBlocks: 0
+        }, "");
+        await tx1.wait();
+        console.log("Operator registered to Core EigenLayer contracts");
+    }
+    
+    ...
+    
+    
+    const tx2 = await ecdsaRegistryContract.registerOperatorWithSignature(
+        operatorSignatureWithSaltAndExpiry,
+        wallet.address
+    );
+    await tx2.wait();
+    console.log("Operator registered on AVS successfully");
+};
+
+
+const monitorNewTasks = async () => {
+
+    helloWorldServiceManager.on("NewTaskCreated", async (taskIndex: number, task: any) => {
+        console.log(`New task detected: Hello, ${task.name}`);
+        await signAndRespondToTask(taskIndex, task.taskCreatedBlock, task.name);
+    });
+    console.log("Monitoring for new tasks...");
+};
 
 
 
 
+const signAndRespondToTask = async (taskIndex: number, taskCreatedBlock: number, taskName: string) => {
+    const message = `Hello, ${taskName}`;
+    const messageHash = ethers.solidityPackedKeccak256(["string"], [message]);
+    const messageBytes = ethers.getBytes(messageHash);
+    const signature = await wallet.signMessage(messageBytes);
+
+    console.log(`Signing and responding to task ${taskIndex}`);
+
+    const operators = [await wallet.getAddress()];
+    const signatures = [signature];
+    const signedTask = ethers.AbiCoder.defaultAbiCoder().encode(
+        ["address[]", "bytes[]", "uint32"],
+        [operators, signatures, ethers.toBigInt(await provider.getBlockNumber()-1)]
+    );
+
+    const tx = await helloWorldServiceManager.respondToTask(
+        { name: taskName, taskCreatedBlock: taskCreatedBlock },
+        taskIndex,
+        signedTask
+    );
+    await tx.wait();
+    console.log(`Responded to task.`);
+};
 
 
-### 
+```
 
+
+### Offchain Task Generator
+
+**[createNewTasks.ts](https://github.com/Layr-Labs/hello-world-avs/blob/master/operator/createNewTasks.ts)**
+
+The following Typescript code generates new tasks at a random interval. This entity that generates tasks for the AVS is also referred to as the "AVS Consumer".
+
+```sol
+
+async function createNewTask(taskName: string) {
+  try {
+    // Send a transaction to the createNewTask function
+    const tx = await helloWorldServiceManager.createNewTask(taskName);
+    
+    // Wait for the transaction to be mined
+    const receipt = await tx.wait();
+    
+    console.log(`Transaction successful with hash: ${receipt.hash}`);
+  } catch (error) {
+    console.error('Error sending transaction:', error);
+  }
+}
+
+```
 
 
 
