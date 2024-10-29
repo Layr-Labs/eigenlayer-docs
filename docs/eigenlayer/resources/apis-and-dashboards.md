@@ -14,6 +14,6 @@ title: APIs, Dashboards, and Tooling
 - [AVS Dune Dashboard](https://dune.com/hahahash/avs)
 - [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
 - [EigenLayer Dune dashboard by dyorcrypto](https://dune.com/dyorcrypto/eigenlayer)
-- [Validator Info - EigenLayer](https://validator.info/eigenlayer)
+- [Validator Info - In-depth real-time EigenLayer Analytics](https://validator.info/eigenlayer)
 - [Restaking Info by Nethermind](https://restaking.info/)
 
