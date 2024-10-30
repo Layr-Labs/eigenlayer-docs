@@ -20,7 +20,7 @@ Operators are most often expected to **run the same workload** among all Operato
 
 ### Task Design
 
-Tasks are a common design model used for AVS operations. They are not required, but they are a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators offchain, which are later validated onchain.
+Tasks are a common design model used for AVS operations. This design model is not required by the protocol, but it is a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators offchain, which are later validated onchain. A Task can be any unit of work written in any language as needed by the AVS designer.
 
 Tasks can be submitted either:
 1) Onchain by the Consumer (end user) to the AVS contracts.
