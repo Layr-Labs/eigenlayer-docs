@@ -18,27 +18,14 @@ Please refer to each metric below for their data freshness.
 
 ## Economy Metrics
 
-### EIGEN Token Metadata
 
+### ETH TVL / EIGEN TVL / Total TVL in USD
 
-Definition:
-- EIGEN Market Cap: The total market capitalization of circulating EIGEN tokens.
-- EIGEN FDV: The fully diluted valuation of EIGEN tokens.
-- EIGEN Trading Volume: The total trading volume of EIGEN tokens in the last 24 hours.
-- Percentage of EIGEN Staked: The percentage of circulating EIGEN tokens that are currently staked.
-
-Data Sources: Coingecko, Ethereum RPC
-Data Fresh Frequency: Every 1 minute
-
-
-### Total Value Locked (TVL) in USD
-
-
-Definition: The total value in USD of all assets locked in EigenLayer's ecosystem, including all ETH LSTs, native ETH from EigenPods, EIGEN tokens, and all other permissionless assets restaked.
+Definition: Dollar value of total assets staked/restaked in EigenLayer, including all ETH (LSTs and native ETH), EIGEN tokens, and all other permissionless assets restaked.
 
 Formula:
 
-1. To index all strategies' TVL in EigenLayer, except the beacon strategy (aka, native-ETH strategy) and EIGEN strategy:
+1. For all strategies' TVL in EigenLayer, except the beacon strategy (aka, native-ETH strategy) and EIGEN strategy:
 
 - Index strategies in EigenLayer from all `StrategyAddedToDepositWhitelist` events minus `StrategyRemovedFromDepositWhitelist` events from the `StrategyManager` contract, which will include all strategies except the beacon strategy.
 - For each strategy in EigenLayer, get their underlying tokens.
@@ -47,7 +34,7 @@ Formula:
     - Note that some tokens may lack pricing data on Coingecko; these will be excluded from the TVL in USD calculation.
 
 
-2. To index the beacon strategy:
+2. For the beacon strategy:
 
 - Index all `PodDeployed` events from the `EigenPodManager` contract.
 - For each EigenPod, query the beacon chain to check which validators have pointed their withdrawal credentials to the pod.
@@ -57,7 +44,7 @@ Formula:
 - Sum up all validators balance, multiply by ETH pricing from Coingecko
 
 
-3. To index EIGEN strategy:
+3. For EIGEN strategy:
 
 Follow the same steps in 1, with exception that EIGEN strategy is backed by bEIGEN (Backing EIGEN) token instead of
 EIGEN token.
@@ -65,30 +52,76 @@ Coingecko only provides EIGEN token pricing, so we need to use EIGEN token prici
 to calculate TVL in USD for EIGEN strategy.
 
 
-4. Sum up above 3 TVLs in USD to get the total TVL in USD for EigenLayer.
+4. Sum up above 3 values to get the total TVL in USD for EigenLayer, or use them separately for ETH TVL and EIGEN TVL
 
 
 Data Sources: Ethereum events, ERC20 contracts, Beacon Chain data, Coingecko
 Data Fresh Frequency: Every 1 hour
 
 
-### Number of EIGEN Holders
 
-Definition: Total number of unique addresses that hold EIGEN tokens.
+### # of Restakers
+
+Definition: Number of addresses staked/restaked in EigenLayer
 
 Formula:
 
-- Index all `Transfer` events from EIGEN token contract.
-- Get EIGEN token balance for each wallet address.
-- Count unique addresses that have non-zero EIGEN token balance.
+- Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from `DelegationManager` contract.
+- Calculate delegation balance for each staker.
+- Count # of unique stakers who has non-zero balance on at least 1 strategy.
 
 Data Sources: Ethereum events
 Data Fresh Frequency: Every 1 hour
 
 
-### Total Rewards Distributed
+### # of EIGEN Holders
 
-Definition: Total rewards in USD distributed to date to EigenLayer's ecosystem.
+Definition: Number of unique addresses that hold EIGEN tokens.
+
+Formula:
+
+- Index all `Transfer` events from EIGEN token contract.
+- Calculate EIGEN token balance for each wallet address.
+- Count # of unique addresses that have non-zero EIGEN token balance.
+
+Data Sources: Ethereum events
+Data Fresh Frequency: Every 1 hour
+
+
+
+### % of ETH Restaked
+
+Definition: Percentage of total ETH that is restaked, out of ETH circulating supply.
+
+Formula:
+
+- Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from `DelegationManager` contract.
+- Calculate total delegated ETH amount for all ETH strategies, by convert shares to underlying tokens by strategy's ratio of shares to underlying token, then convert underlying tokens amount to tokens amount with token decimals `token amount = underlying token / 1e18`.
+- Divide total delegated ETH amount by ETH circulating supply from Coingecko.
+
+Data Sources: Ethereum events, Coingecko
+Data Fresh Frequency: Every 1 hour
+
+
+
+### % of EIGEN Staked
+
+Definition: Percentage of total EIGEN that is staked, out of EIGEN circulating supply.
+
+Formula:
+
+ Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from `DelegationManager` contract.
+- Calculate total delegated EIGEN amount for EIGEN strategy, by converting shares amount to underlying tokens amount as 1:1, then convert underlying tokens amount to tokens amount with token decimals `token amount = underlying token / 1e18`.
+- Divide total delegated EIGEN amount by EIGEN circulating supply from Coingecko.
+
+Data Sources: Ethereum events, Coingecko
+Data Fresh Frequency: Every 1 hour
+
+
+
+### Total Rewards Earned
+
+Definition: Dollar value of total rewards earned in EigenLayer.
 
 Formula:
 
@@ -100,57 +133,66 @@ Data Sources: Ethereum events, ERC20 contracts, Coingecko
 Data Fresh Frequency: Every 1 hour
 
 
+
 ### Total AVS FDV
 
-Definition: Total Fully Diluted Valuation (FDV) of all Actively Validated Services(AVSs) in EigenLayer's ecosystem.
+Definition: Total dollar value of AVS token FDV
 
 Formula:
+
 
 
 Data Sources: Coingecko
 Data Fresh Frequency: Every 1 hour
 
 
+
 ### Restakers Funnel
 
-Definition: The funnel of restakers in EigenLayer's ecosystem, which includes the number of restakers who delegated more than $1M, $50M, and $100M.
+Definition: The funnel of restakers in EigenLayer, which includes the number of restakers who restaked (delegated) more than $1M, $50M, and $100M cumulatively.
 
 Formula:
 
 - Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from the `DelegationManager` contract.
-- For each restaker, get their delegated shares amount to date, convert shares to underlying tokens by strategy's ratio of shares to underlying token, then convert to tokens amount via token decimals, to USD by multiplying with the corresponding token pricing from Coingecko.
+- For each restaker, get their delegated shares amount to date, convert shares to underlying tokens by strategy's ratio of shares to underlying token, then convert to tokens amount via token decimals, then convert to USD amount by multiplying with the corresponding token pricing from Coingecko.
 - Sum up all USD value of delegated tokens for each restaker, count them by $1M, $50M, and $100M thresholds.
-- Cumulate the thresholds, meaning the number of restakers who delegated more than $1M includes that of who delegated more than $50M and $100M, the number of restakers who delegated more than $50M includes that of who delegated more than $100M.
+- Cumulate thresholds, meaning the number of restakers who delegated more than $1M includes that of who delegated more than $50M and $100M, the number of restakers who delegated more than $50M includes that of who delegated more than $100M.
 
 Data Sources: Ethereum events, ERC20 contracts, Coingecko.
 Data Fresh Frequency: Every 1 hour.
 
 
+
 ### Operators Funnel
 
-Definition: The funnel of operators in EigenLayer's ecosystem, which includes the number of operators:
- 1. Who registers on EigenLayer.
- 2. Who are active (registers to at least one AVS on EigenLayer with delegated shares larger than 0 in ETH or EIGEN strategies) on EigenLayer.
- 3. Who have been distributed rewards to.
+Definition: The funnel of operators in EigenLayer, which includes the number of operators who:
+ 1. Registers on EigenLayer.
+ 2. Are active (registers to at least one AVS on EigenLayer with delegated shares larger than 0 in ETH or EIGEN strategies) on EigenLayer.
+ 3. Have earned rewards.
+
 
 Formula:
 
 - `Registered Operators`: Index `OperatorMetadataURIUpdated` event from the `AVSDirectory` contract, count the number of unique operator addresses registered
 - `Active Operators`:
     - Index `OperatorAVSRegisterationStatus` event from the `AVSDirectory` contract, count the number of unique operator addresses who are registered to at least 1 AVS.
-    - Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from the `DelegationManager` contract, count the number of operators who are in step above and also have shares larger than 0 in any of ETH AND EIGEN strategies, as "number of active operators".
-- `Operators that have been distributed rewards to`: Count number of operators above who have been distributed rewards to, by querying rewards data published (see `rewards` section for details).
+    - Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from `DelegationManager` contract, count the number of operators who have shares larger than 0 in any of ETH and EIGEN strategies, and also registered to at least 1 AVS, as "number of active operators".
+- `Operators that have earned rewards`: Count number of operators above who have earned rewards, by querying rewards data published (see `rewards` section for details).
 
-Data Sources: Ethereum events.
+Data Sources: Ethereum events, EigenLayer rewards data
 Data Fresh Frequency: Every 1 hour.
+
 
 
 ### AVSs Funnel
 
 
-Definition: The funnel of AVSs in EigenLayer's ecosystem, which includes the number of AVSs who are in development on EigenLayer testnet and mainnet, who are active (has at least 1 operator registered to it on EigenLayer) on EigenLayer mainnet, and who have distributed rewards to operators and stakers on EigenLayer mainnet.
+Definition: The funnel of AVSs in EigenLayer, which includes AVSs who:
+1. Are in development on EigenLayer testnet and mainnet.
+2. Are active by having at least 1 active operator registered to it on EigenLayer mainnet.
+3. Have distributed rewards to operators and stakers on EigenLayer mainnet.
 
-Note this is the only metrics that contains data from testnet, all other metrics are from mainnet only.
+Note this is the only metric that contains data from testnet, all other metrics are for mainnet only.
 
 Formula:
 - `AVSs in Development`: Use data across mainnet, testnet and private channels.
