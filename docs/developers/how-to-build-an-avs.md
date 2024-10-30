@@ -10,13 +10,21 @@ Before proceeding, please review the previous sections on [AVS Overview](./avs-d
 
 ## Step 1: AVS Design
 
+### Design Your AVS Security (Trust Model)
+
+The first step toward designing your AVS is to determine how its offchain operations will be validated onchain. Consider which Operator behaviors should be rewarded and which behaviors are malicious and should be slashed or penalized. Determine which data (or evidence) of their operations can be written on chain to validate their behavior.
+
+Operators are most often expected to **run the same workload** among all Operators in the AVS's quorum. This ensures that malicious behaviors can be easily validated onchain. When designing your Operator workload, consider a task that can be easily scaled to run among all Operators in the quorum.
+
+
+
 ### Task Design
 
 Tasks are a common design model used for AVS operations. They are not required, but they are a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators offchain, which are later validated onchain.
 
 Tasks can be submitted either:
 1) Onchain by the Consumer (end user) to the AVS contracts.
-2) Offchain by the Consumer directly to the Operators. 
+2) Offchain by the Consumer directly to the Operators.
 
 
 ### BLS and ECDSA Signature Types
@@ -31,11 +39,7 @@ In the EigenLayer ecosystem, signatures play a crucial role in ensuring the inte
 
 Operator responses to tasks are often signed using the BLS or ECDSA algorithm. These signatures can be aggregated by any entity at any time, but they are often aggregated by an entity run by the AVS (the "aggregator"). A common AVS design involves combining multiple Operator BLS signatures into a single aggregate signature and written on chain ([example here](https://github.com/Layr-Labs/eigensdk-go/blob/dev/services/bls_aggregation/blsagg.go) written in Go). The aggregate signature can then be verified to confirm whether any of the individual Operators were included in the aggregate.
 
-### Design Your AVS Security (Trust Model)
-Consider the following requirements for your AVS:
-- Which portion of your project needs to be proven on chain?
-- Which Operator behaviors should be rewarded, and which behaviors are malicious and should be slashed or penalized?”
-- How do you envision Operators fulfilling this purpose as a network of Actively Validated Operators in your AVS?
+
 
 
       
