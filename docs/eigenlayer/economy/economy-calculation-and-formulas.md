@@ -141,7 +141,7 @@ Definition: US Dollar value of all AVS Token FDVs
 
 Formula: 
 
-- Retrieve the tokens of all AVS assets.
+- Retrieve tokens from all Mainnet AVSs that have an associated token.
 - For each token, obtain its FDV (Fully Diluted Valuation) from Coingecko.
 - Sum up the FDVs of all tokens to get the total AVS FDV.
 
