@@ -154,7 +154,7 @@ Definition: The funnel of restakers in EigenLayer, which includes the number of 
 Formula:
 
 - Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from the `DelegationManager` contract.
-- For each restaker, get their delegated shares amount to date, convert shares to underlying tokens by strategy's ratio of shares to underlying token, then convert to tokens amount via token decimals, then to USD amount by multiplying with the corresponding token pricing from Coingecko.
+- For each restaker, get their delegated shares amount to date, convert shares to underlying tokens by strategy's ratio of shares to underlying token, then convert to tokens amount via token decimals, then convert to USD amount by multiplying with the corresponding token pricing from Coingecko.
 - Sum up all USD value of delegated tokens for each restaker, count them by $1M, $50M, and $100M thresholds.
 - Cumulate thresholds, meaning the number of restakers who delegated more than $1M includes that of who delegated more than $50M and $100M, the number of restakers who delegated more than $50M includes that of who delegated more than $100M.
 
