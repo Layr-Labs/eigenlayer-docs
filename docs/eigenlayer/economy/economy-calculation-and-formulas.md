@@ -38,8 +38,12 @@ Formula:
 - For each EigenPod, query the beacon chain to check which validators have pointed their withdrawal credentials to the pod.
     - Withdrawal credentials will be of the format: `0x010000000000000000000000 + <eigen_pod_address>`
     - Note: Multiple validator withdrawal credentials can point to a single EigenPod.
-- For each EigenPod, get its ETH balance on the execution layer
+- For each EigenPod, get all its validators' ETH balance
 - Sum up all validators balance, multiply by ETH pricing from Coingecko
+
+- Note:
+    - This approach is also [adopted by defillama](https://github.com/DefiLlama/DefiLlama-Adapters/blob/1e921c7ab6684500cfd73b6890713f495ba28f2a/projects/eigenlayer/index.js#L13)     
+    - We will consider in the future to switch to use [EigenPod Upgrade](https://www.blog.eigenlayer.xyz/introducing-the-eigenpod-upgrade/) native data, to remove dependency on beacon chain data and be more close to rest strategies
 
 
 3. For EIGEN strategy:
