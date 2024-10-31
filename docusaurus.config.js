@@ -278,7 +278,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["bash"],
+        additionalLanguages: ["bash","solidity"],
       },
     }),
   scripts: [
@@ -300,7 +300,6 @@ const config = {
     [
       // @ts-ignore
       require.resolve("@easyops-cn/docusaurus-search-local"),
-      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       // @ts-ignore
       ({
         // `hashed` is recommended as long-term-cache of index file is possible
