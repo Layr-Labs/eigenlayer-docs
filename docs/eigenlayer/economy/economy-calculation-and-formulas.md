@@ -60,7 +60,7 @@ Data Fresh Frequency: Every 1 hour
 
 
 
-### # of Restakers
+### # of Restakers¹
 
 Definition: Number of addresses staked/restaked in EigenLayer
 
@@ -204,3 +204,6 @@ Formula:
 
 Data Sources: Ethereum events from testnet and mainnet, private data.
 Data Fresh Frequency: Every 1 hour.
+
+
+ ¹ _The number of restakers reflects the various ways LRT holders create EigenPods. As a result, many users of LRT platforms may appear as one or a few wallets in the data. This metric aims to provide insight into the LRT-holders' participation._
