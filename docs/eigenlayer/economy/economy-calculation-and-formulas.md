@@ -11,8 +11,6 @@ As a foundation to showcase EigenLayer's economy, we provide the best data quali
 
 ## Data Freshness
 
-Some data is updated every minute, while others are updated every hour.
-
 Please refer to each metric below for their data freshness.
 
 
