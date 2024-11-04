@@ -106,15 +106,15 @@ Data Fresh Frequency: Every 1 hour
 
 
 
-### % of EIGEN Staked
+### % of circulating EIGEN staked
 
-Definition: Percentage of total EIGEN that is staked, excluding EIGEN staked by investors, out of EIGEN circulating supply.
+Definition: Percentage of circulating supply of EIGEN that is staked. This excludes locked tokens that are staked.
 
 Formula:
 
  Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from `DelegationManager` contract.
 - Calculate total delegated EIGEN amount for EIGEN strategy, by converting shares amount to underlying tokens amount as 1:1, then convert underlying tokens amount to tokens amount with token decimals `token amount = underlying token / 1e18`.
-- Subtract the amount of EIGEN staked by investors from the total delegated EIGEN amount.
+- Subtract the amount of locked tokens that are staked from the total delegated EIGEN amount.
 - Divide the adjusted EIGEN amount by EIGEN circulating supply from Coingecko.
 
 Data Sources: Ethereum events, Coingecko
@@ -140,6 +140,8 @@ Data Fresh Frequency: Every 1 hour
 ### Total AVS FDV
 
 Definition: US Dollar value of all AVS Token FDVs
+
+Note: EIGEN is not counted in the AVS FDV calculation.
 
 Formula: 
 
