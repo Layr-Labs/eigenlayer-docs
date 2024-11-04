@@ -10,10 +10,11 @@ title: APIs, Dashboards, and Tooling
 
 ### Dashboards
 
+- [EigenExplorer Dashboard](https://dashboard.eigenexplorer.com/)
 - [The Ultimate Restaking Dashboard](https://dune.com/hahahash/eigenlayer)
 - [AVS Dune Dashboard](https://dune.com/hahahash/avs)
-- [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
 - [EigenLayer Dune dashboard by dyorcrypto](https://dune.com/dyorcrypto/eigenlayer)
 - [Validator Info - In-depth real-time EigenLayer Analytics](https://validator.info/eigenlayer)
 - [Restaking Info by Nethermind](https://restaking.info/)
-
+- [OpenBlock EigenLayer Restaking Dashboard](https://app.openblocklabs.com/app/restaking/eigenlayer)
+- [EigenLayer Dashboard](https://daic.capital/projects/eigenlayer)
