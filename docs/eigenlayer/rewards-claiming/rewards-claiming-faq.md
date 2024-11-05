@@ -21,8 +21,21 @@ To accumulate rewards on testnet for testing purposes you must be an operator (o
 
 The current rewards calculation assumes that work done is directly proportional to stake; therefore, rewards are distributed proportional to stake. If an operator does not perform the tasks expected of it, the AVS should eject or "churn" the operator (which we have examples for in our middleware contracts).
 
-### Will the AVS Rewards be distributed using the same ERC20 token used to Stake / Operate (opt-in) to the AVS?
+### Will the AVS Rewards be distributed using the same ERC20 token used to Stake / Operate (opt-in to) the AVS?
 
-An AVS can distribute any token it chooses for each week's [RewardSubmission](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createavsrewardssubmission). These Reward Token(s) can be different from the list of Strategies (assets) that were originally staked, delegated and opted into the Restaker, Operator, and AVS.
+An AVS can distribute any ERC-20 token it chooses in a [RewardSubmission](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createavsrewardssubmission). These reward token(s) can be different from the list of Strategies (assets) that were originally staked, delegated and opted into by the Restaker, Operator, and AVS.
 
-For examples Restakers could delegate stETH (lido eth) to an Operator. The Operator could opt in to the AVS quorum with stETH strategy. Then a week later the AVS could pay rewards in rETH (rocketpool) eth. The decision is entirely up to to the AVS to determine.
+For example, Restakers could delegate stETH (lido eth) to an Operator. The Operator could opt in to an AVS with the stETH strategy. Then a week later the AVS could pay rewards in USDC. The decision of which ERC20 token to reward to a Strategy is entirely up to the AVS to determine.
+
+### How is the APR calculated?
+
+The UI shows up to a 7-day averaged APR for a given strategy. Due to the 2 day calculation delay, neither APR nor accrual of rewards can be observed until 2 days after a user has restaked and delegated qualifying assets to an Operator that is earning rewards. The APR is given by the following equation:
+
+$$
+\frac{E_{\text{earned}, s}}{\sum_{7 \ \text{days}}E_{\text staked, s}}*365\ \text{days}
+$$
+
+That is, $$ E_{\text{earned}, s} $$ is the ETH value of all reward tokens earned over the past 7 days from restaking strategy $$ s $$. 
+$$ E_{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day, excluding any days in which no reward is earned.
+
+ETH values are calculated using the latest price feeds sourced from Coingecko. Reward tokens that do not have a public price available from Coingecko are not included in the calculation. APR is not calculated for staked tokens that do not have a public price available from Coingecko.
