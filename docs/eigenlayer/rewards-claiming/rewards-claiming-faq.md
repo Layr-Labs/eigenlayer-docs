@@ -29,13 +29,13 @@ For example, Restakers could delegate stETH (lido eth) to an Operator. The Opera
 
 ### How is the APR calculated?
 
-The UI shows a 7-day APR for a given strategy. Due to the 2 day calculation delay, neither APR nor accrual of rewards can be observed until 2 days after a user has restaked and delegated qualifying assets to an Operator that is earning rewards. The APR is given by the following equation:
+The UI shows up to a 7-day averaged APR for a given strategy. Due to the 2 day calculation delay, neither APR nor accrual of rewards can be observed until 2 days after a user has restaked and delegated qualifying assets to an Operator that is earning rewards. The APR is given by the following equation:
 
 $$
 \frac{E_{\text{earned}, s}}{\sum_{7 \ \text{days}}E_{\text staked, s}}*365\ \text{days}
 $$
 
 That is, $$ E_{\text{earned}, s} $$ is the ETH value of all reward tokens earned over the past 7 days from restaking strategy $$ s $$. 
-$$ E_{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day.
+$$ E_{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day, excluding any days in which no reward is earned.
 
 ETH values are calculated using the latest price feeds sourced from Coingecko. Reward tokens that do not have a public price available from Coingecko are not included in the calculation. APR is not calculated for staked tokens that do not have a public price available from Coingecko.
