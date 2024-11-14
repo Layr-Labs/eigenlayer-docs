@@ -156,14 +156,14 @@ Data Fresh Frequency: Every 1 hour
 
 ### Restakers Funnel
 
-Definition: The funnel of restakers in EigenLayer, which includes the number of restakers who restaked (delegated) more than $1M, $50M, and $100M cumulatively.
+Definition: The funnel of restakers in EigenLayer, which includes the number of restakers who restaked (delegated) more than \$1M, \$50M, and \$100M cumulatively.
 
 Formula:
 
 - Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from the `DelegationManager` contract.
 - For each restaker, get their delegated shares amount to date, convert shares to underlying tokens by strategy's ratio of shares to underlying token, then convert to tokens amount via token decimals, then convert to USD amount by multiplying with the corresponding token pricing from Coingecko.
-- Sum up all USD value of delegated tokens for each restaker, count them by $1M, $50M, and $100M thresholds.
-- Cumulate thresholds, meaning the number of restakers who delegated more than $1M includes that of who delegated more than $50M and $100M, the number of restakers who delegated more than $50M includes that of who delegated more than $100M.
+- Sum up all USD value of delegated tokens for each restaker, count them by \$1M, \$50M, and \$100M thresholds.
+- Cumulate thresholds, meaning the number of restakers who delegated more than \$1M includes that of who delegated more than \$50M and \$100M, the number of restakers who delegated more than \$50M includes that of who delegated more than \$100M.
 
 Data Sources: Ethereum events, ERC20 contracts, Coingecko.
 Data Fresh Frequency: Every 1 hour.
