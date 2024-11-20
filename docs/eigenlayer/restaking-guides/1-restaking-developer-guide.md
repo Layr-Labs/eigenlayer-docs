@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Restaking Developer Guide
+title: Restaking Smart Contract Developer
 ---
 
 
