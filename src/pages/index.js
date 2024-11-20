@@ -40,7 +40,7 @@ function Home() {
                 <Card
                   to="eigenlayer/restaking-guides/restaking-user-guide/"
                   header={{
-                    label:"Guides for Restakers"
+                    label:"Restakers"
                   }}
                   body={{
                     label:"Understand the different ways to restake, including with LSTs (liquid) and EigenPods (natively)."
@@ -50,7 +50,7 @@ function Home() {
                 <Card
                   to="eigenlayer/operator-guides/operator-introduction"
                   header={{
-                    label:"Guides for Node Operators"
+                    label:"Node Operators"
                   }}
                   body={{
                     label:"Learn how to run an EigenLayer node and set up to operate for AVSs."
@@ -61,7 +61,7 @@ function Home() {
                 <Card
                   to="developers/avs-developer-guide"
                   header={{
-                    label:"Guides for AVS Developers"
+                    label:"AVS Developers"
                   }}
                   body={{
                     label:"Learn how to design, build, and launch an AVS (Actively Validated Service)."
