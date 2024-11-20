@@ -86,7 +86,7 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
-            to: "/eigenlayer/restaking-guides/restaking-user-guide/",
+            to: "/eigenlayer/restaking-guides/overview",
           },
           
           {
@@ -116,6 +116,10 @@ const config = {
           {
             from: "/overview/eigenlayer-privacy-policy",
             to: "/eigenlayer/legal/privacy-policy",
+          },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/",
+            to: "/eigenlayer/restaking-guides/overview",
           },
         ],
         createRedirects(existingPath) {

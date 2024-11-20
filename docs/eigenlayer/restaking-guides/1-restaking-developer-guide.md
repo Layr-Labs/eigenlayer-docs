@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 title: Restaking Smart Contract Developer
 ---
 
@@ -75,25 +75,15 @@ The following steps are necessary for a Restaker to **move** their Delegated bal
 
 The following instructions describe how to Restake validator ETH. This mechanism is referred to as "Native Restaking".
 
-For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
-
 Native Restaking consists of the following actions:
 * [Restake New Validator Native Beacon Chain ETH](#restake-new-validator-native-beacon-chain-eth)
 * [Convert Consensus Rewards to Restaked Shares](#convert-consensus-rewards-to-restaked-shares)
 * [Withdraw Validator Restaked Balance](#withdraw-validator-restaked-balance)
 * [Withdraw Yield Only](#withdraw-yield-only)
 
+### Gas Cost Planning
 
-
-### PEPE Release
-
-EigenLayer core contracts have had two previous major releases: M1 and M2. PEPE (Protocol: EigenPod Enhancement upgrade) is the current major release that focuses primarily on enhancements to Native Restaking and EigenPod design. The PEPE release will result in significantly lower gas fees and great compatibility with future scheduled Ethereum network upgrades.
-
-The PEPE release takes advantage of a new [Checkpoint Proof](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/EigenPod.md#checkpointing-validators) system to convert native validator ETH and validator yield to actively restaked shares. These proofs are initiated prior to any Restaking or Withdrawal action and are necessary to prove the expected funds are deposited in the EigenPod and/or validator. Checkpoint proofs are a two step process consisting of:
-1. Staring a Checkpoint: this step occurs once.
-1. Verify (and Completing) a Checkpoint: this step occurs multiple times until all of the remaining unproven ETH balance in the EigenPod has been proven.
-
-Please see the [this document](https://hackmd.io/@-HV50kYcRqOjl_7du8m1AA/SkJPfqBeC) and [PR #515](https://github.com/Layr-Labs/eigenlayer-contracts/pull/515) for a design history and motivation for the PEPE Release.
+For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce gas cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
 
 
 ### EigenPod Upgrades and Pending Consensus Rewards

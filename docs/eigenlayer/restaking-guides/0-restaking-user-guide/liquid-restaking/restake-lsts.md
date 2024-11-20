@@ -5,9 +5,9 @@ sidebar_position: 1
 
 # Restake and Delegate
 
-Restake your liquid tokens by following the steps below.
+The following instructions will walk you through how tokens can be restaked on the [EigenLayer Web App](https://app.eigenlayer.xyz/).
 
-**Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit EigenLayer on the Ethereum Mainnet at app.eigenlayer.xyz.
+**Step 1:** Open the EigenLayer App and connect your Web3 wallet. Visit EigenLayer on the Ethereum Mainnet at [app.eigenlayer.xyz](https://app.eigenlayer.xyz/).
 
 
 ![](/img/restake-guides/lst-restake-1.png)

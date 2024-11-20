@@ -38,7 +38,7 @@ function Home() {
                 />
   
                 <Card
-                  to="eigenlayer/restaking-guides/restaking-user-guide/"
+                  to="eigenlayer/restaking-guides/overview"
                   header={{
                     label:"Restakers"
                   }}
