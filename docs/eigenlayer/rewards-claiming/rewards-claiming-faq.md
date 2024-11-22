@@ -13,9 +13,11 @@ After a root is posted, rewards are claimable after an activation delay. On main
 
 Operators get a fixed 10% portion rewards, though this is subject to change in a future release to be variable.
 
-### How can I receive rewards on testnet?
+### How can I test reward distributions and claiming on testnet?
 
-To accumulate rewards on testnet for testing purposes you must be an operator (or delegate to one) who has opted into an AVS with active rewards. EigenDA is one such AVS.
+To accumulate rewards on testnet for testing purposes you must be an operator (or delegate to one) who has opted into an AVS with active rewards. AVSs that currently distribute rewards on testnet include:
+- EigenDA.
+- [Faucet AVS](https://holesky.etherscan.io/address/0xfd942824562d21b372926fCbe8D67189A812099a).
 
 ### Are reward distributions based on the amount of work performed by an operator, the Operator's total delegated stake or both?
 

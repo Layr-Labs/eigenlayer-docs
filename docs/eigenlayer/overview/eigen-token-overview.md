@@ -75,7 +75,3 @@ With these foundational modules, one can build a plethora of new services:
 - Gaming Virtual Machines: Securing the execution of gaming environments on the blockchain.
 - Databases: Such execution environments have complex dispute resolution which can be substituted with the intermediate step of being secured by EIGEN staking.
 
-
-### EIGEN Token Restaking FAQ
-
-Please see the [EIGEN Token Restaking FAQ page](../restaking-guides/0-restaking-user-guide/EIGEN-faq.md) for more information.
