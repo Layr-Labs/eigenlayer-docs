@@ -117,6 +117,11 @@ const config = {
             from: "/overview/eigenlayer-privacy-policy",
             to: "/eigenlayer/legal/privacy-policy",
           },
+
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/EIGEN-faq",
+            to: "/eigenlayer/overview/eigen-token-overview",
+          },
         ],
         createRedirects(existingPath) {
 
