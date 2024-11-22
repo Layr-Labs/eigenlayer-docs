@@ -75,3 +75,7 @@ With these foundational modules, one can build a plethora of new services:
 - Gaming Virtual Machines: Securing the execution of gaming environments on the blockchain.
 - Databases: Such execution environments have complex dispute resolution which can be substituted with the intermediate step of being secured by EIGEN staking.
 
+
+### EigenFoundation Token Docs
+
+Please see the [EigenFoundation documentation site](https://docs.eigenfoundation.org/) for more information on the EIGEN token.
