@@ -76,6 +76,6 @@ With these foundational modules, one can build a plethora of new services:
 - Databases: Such execution environments have complex dispute resolution which can be substituted with the intermediate step of being secured by EIGEN staking.
 
 
-### EIGEN Token Restaking FAQ
+### EigenFoundation Token Docs
 
-Please see the [EIGEN Token Restaking FAQ page](../restaking-guides/0-restaking-user-guide/EIGEN-faq.md) for more information.
+Please see the [EigenFoundation documentation site](https://docs.eigenfoundation.org/) for more information on the EIGEN token.
