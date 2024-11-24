@@ -15,9 +15,20 @@ Operators get a fixed 10% portion rewards, though this is subject to change in a
 
 ### How can I test reward distributions and claiming on testnet?
 
-To accumulate rewards on testnet for testing purposes you must be an operator (or delegate to one) who has opted into an AVS with active rewards. AVSs that currently distribute rewards on testnet include:
-- EigenDA.
-- [Faucet AVS](https://holesky.etherscan.io/address/0xfd942824562d21b372926fCbe8D67189A812099a).
+#### 1. Programmatic incentives.
+To accumulate programmatic incentives, you must be delegeted to an operator that is registered to at least one AVS of any type. Programmatic incentives are payed in Testnet EIGEN. Assets that earn programmatic incentives are limited to: EIGEN, LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH.
+
+#### 2. Rewards from AVSs
+To accumulate testnet rewards from AVSs, you must be delegated to an Operator that is registered to at least one AVS with active rewards.
+
+**Faucet AVS:**
+FaucetAVS is designed purely to distribute WETH to staked WETH with no requirements beyond operator registration.
+
+**EigenDA:**
+EigenDA distributes rewards to operators actively participating in EigenDA. Operators may be ejected if they fail to sign batches or fall below the threshold requirements. Rewards are earned for:
+- EIGEN Quorum participaton
+- ETH Quorum participation including LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH and Beacon Chain ETH in EigenPods.
+
 
 ### Are reward distributions based on the amount of work performed by an operator, the Operator's total delegated stake or both?
 
