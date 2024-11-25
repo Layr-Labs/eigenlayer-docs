@@ -121,6 +121,10 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/",
             to: "/eigenlayer/restaking-guides/overview",
           },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/EIGEN-faq",
+            to: "/eigenlayer/overview/eigen-token-overview",
+          },
         ],
         createRedirects(existingPath) {
 

@@ -182,7 +182,7 @@ Formula:
 
 - `Registered Operators`: Index `OperatorMetadataURIUpdated` event from the `AVSDirectory` contract, count the number of unique operator addresses registered
 - `Active Operators`:
-    - Index `OperatorAVSRegisterationStatus` event from the `AVSDirectory` contract, count the number of unique operator addresses who are registered to at least 1 AVS.
+    - Index `OperatorAVSRegistrationStatus` event from the `AVSDirectory` contract, count the number of unique operator addresses who are registered to at least 1 AVS.
     - Index `OperatorSharesIncreased` and `OperatorSharesDecreased` events from `DelegationManager` contract, count the number of operators who have shares larger than 0 in any of ETH and EIGEN strategies, and also registered to at least 1 AVS, as "number of active operators".
 - `Operators that have earned rewards`: Count number of operators above who have earned rewards, by querying rewards data published (see `rewards` section for details).
 
