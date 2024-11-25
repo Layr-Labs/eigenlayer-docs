@@ -5,7 +5,6 @@ title: Native Restaking
 
 # Native Restaking
 
-Native restaking describes the process of changing an Ethereum validator's[ withdrawal credentials](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-withdrawals) to EigenLayer's smart contracts. You must operate an Ethereum Validator node in order to participate in Native Restaking. To learn more or set up your Ethereum Validator please follow this link from the[ Ethereum Foundation](https://launchpad.ethereum.org/).
 
 :::warning
 Please read this entire guide before launching your new validator or integrating your existing validator. Before you deploy a new validator you must plan to either:
@@ -13,29 +12,14 @@ Please read this entire guide before launching your new validator or integrating
 - Initially provision the withdrawal credentials to an 0x00 address. You can then later modify your withdrawal credentials to your EigenPod address.
 :::
 
-Native Restaking on EigenLayer consists of the following actions:
+Native Restaking via the EigenLayer Web App consists of the following actions:
 1. [Restake New Validator Native Beacon Chain ETH](#restake-new-validator-native-beacon-chain-eth)
 2. [Restake Validator Yield (Rewards, Fees, and ETH)](#restake-validator-yield-rewards-fees-and-eth)
 3. [Withdraw Native ETH or Validator Yield](#withdraw-native-eth-or-validator-yield)
 4. [Delegate and Undelegate](#delegate-and-undelegate)
 
-## EigenPod Overview
 
-An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs/core/EigenPodManager.md) is a smart contract managed by users, designed to facilitate the EigenLayer protocol in monitoring and managing balance and withdrawal statuses. Please review the following considerations when planning your EigenPod and validator operations:
-
-- You may repoint any number of validators to a single EigenPod.
-- An Ethereum address (wallet) can only deploy a single EigenPod instance.
-- The address that deploys an EigenPod becomes the owner of the contract (EigenPod Owner) and gains permission for restaking and withdrawal operations.
-- Ownership of an EigenPod cannot be transferred.
-
-
-## PEPE Release and CheckPoint Proofs
-
-EigenLayer core contracts have had two previous major releases: M1 and M2. The "PEPE" release (Protocol: EigenPod Enhancement upgrade) is the current major release that focuses primarily on enhancements to Native Restaking and EigenPod design. The PEPE release will result in significantly lower gas fees and great compatibility with future scheduled Ethereum network upgrades.
-
-The PEPE release takes advantage of a new [Checkpoint Proof](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/EigenPod.md#checkpointing-validators) system to convert native validator ETH and validator yield to actively restaked shares. These proofs are initiated prior to any Restaking or Withdrawal action and are necessary to prove the expected funds are deposited in the EigenPod and/or validator. Checkpoint proofs are a two step process consisting of:
-1. Starting a Checkpoint: this step occurs once.
-1. Verify (and Completing) a Checkpoint: this step occurs multiple times until all of the remaining unproven ETH balance in the EigenPod has been proven.
+## Gas Cost Planning
 
 We recommend users connect many validators to a single EigenPod in order to reduce cost and complexity where practical. For each of the actions below that require a checkpoint proof, the web app will batch up to 80 validators per proof transaction batch. Users with more validators will require additional transactions to complete each checkpoint proof. Please plan your gas costs accordingly.
 
@@ -108,7 +92,7 @@ Queue the Withdrawal:
 1. Click **Queue Withdrawal** in the web app.
 1. Choose the amount you wish to queue for withdrawal and continue
 1. A checkpoint proof is initiated. **Sign** the associated transaction with your web3 wallet.
-1. Wait for the [Escrow Period](../README.md#escrow-period-withdrawal-delay) to complete.
+1. Wait for the [Escrow Period](../testnet/README.md#testnet-vs-mainnet-differences) to complete.
 
 
 Redeposit or Complete Withdrawal:
@@ -123,7 +107,7 @@ Undelegate and/or Change Delegation
 1. Click Undelegate
 1. **Sign** the transaction using your web3 wallet. Note: a queue withdrawal event occurs via the smart contracts at this time, because Undelegate and Queue Withdrawal actions are linked at the smart contract level. This information is not presented to the user in order simplify the user flow and focus on the change delegation action.
 1. User is now Undelegated from the Operator.
-1. Wait for the [Escrow Period](../README.md#escrow-period-withdrawal-delay) to complete.
+1. Wait for the [Escrow Period](../testnet/README.md#testnet-vs-mainnet-differences) to complete.
 
 Delegate to a New Operator
 1. Navigate to an Operator you wish to delegate your assets to.
