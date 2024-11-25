@@ -25,7 +25,7 @@ To accumulate testnet rewards from AVSs, you must be delegated to an Operator th
 FaucetAVS is designed purely to distribute WETH to staked WETH with no requirements beyond operator registration.
 
 **EigenDA:**
-EigenDA distributes rewards to operators actively participating in EigenDA. Operators may be ejected if they fail to sign batches or fall below the threshold requirements. Rewards are earned for:
+EigenDA distributes rewards to [operators actively participating in EigenDA](https://docs.eigenda.xyz/operator-guides/requirements/). Operators may be ejected if they fail to sign batches or fall below the threshold requirements. Rewards are earned for:
 - EIGEN Quorum participaton
 - ETH Quorum participation including LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH and Beacon Chain ETH in EigenPods.
 
