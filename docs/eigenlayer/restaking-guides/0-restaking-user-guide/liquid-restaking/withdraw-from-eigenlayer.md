@@ -6,7 +6,7 @@ sidebar_position: 2
 # Unstake and Withdraw
 
 :::info
-All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn. Please see the [Escrow Period](../testnet/README.md#testnet-vs-mainnet-differences) section for more detail.
+All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn. Please see the [Escrow Period](/docs/eigenlayer/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences) section for more detail.
 :::
 
 **Step 1:** Navigate to the token asset you wish to unstake. Click **Unstake** to continue.

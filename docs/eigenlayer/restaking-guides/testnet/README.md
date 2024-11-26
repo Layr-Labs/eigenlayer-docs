@@ -7,9 +7,8 @@ title: Testnet Restaking
 
 Users are encouraged to first test their staking approach on the Holesky Testnet prior to restaking on ETH Mainnet.
 
-* Follow the instructions in [obtaining-testnet-eth-and-liquid-staking-tokens-lsts.md](obtaining-testnet-eth-and-liquid-staking-tokens-lsts.md "mention") to fund your Testnet wallet.
-* Visit [**holesky.eigenlayer.xyz**](https://holesky.eigenlayer.xyz/) for the most recent EigenLayer Testnet app.
-* Users should only use the native restaking path if they already have their own validators on Holesky or know how to set one up. Otherwise, please go down the Liquid Restaking path.
+* Follow the instructions in [Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)](obtaining-testnet-eth-and-liquid-staking-tokens-lsts.md) to fund your Testnet wallet.
+* Visit [holesky.eigenlayer.xyz](https://holesky.eigenlayer.xyz/) for the most recent EigenLayer Testnet web app.
 
 
 
