@@ -22,7 +22,7 @@ Initiating an Undelegate transaction will also **automatically queue a withdrawa
 
 **Step 3:** Observe that your Restaked balances are now 0.0 TVL.
 
-**Step 4:** Wait for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/0-restaking-user-guide/testnet/README.md#testnet-vs-mainnet-differences).
+**Step 4:** Wait for the escrow period to end before continuing. Please see [Testnet vs Mainnet differences for detail](/docs/eigenlayer/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences).
 
 **Step 5:** Visit any individual page for your unstaked assets and observe your **Unstaked** balance has increased by the corresponding amount.
 
