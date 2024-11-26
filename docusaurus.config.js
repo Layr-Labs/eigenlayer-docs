@@ -125,6 +125,15 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/EIGEN-faq",
             to: "/eigenlayer/overview/eigen-token-overview",
           },
+
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/",
+            to: "/eigenlayer/restaking-guides/testnet/",
+          },
+          {
+            from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
+            to: "/eigenlayer/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
+          },
         ],
         createRedirects(existingPath) {
 
