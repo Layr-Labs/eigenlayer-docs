@@ -58,7 +58,7 @@ function respondToTask(
     uint32 referenceTaskIndex,
     bytes memory signature
 ) external {
-    // check that the task is valid, hasn't been responsed yet, and is being responded in time
+    // check that the task is valid, hasn't been responded to yet, and is being responded in time
     require(
         keccak256(abi.encode(task)) == allTaskHashes[referenceTaskIndex],
         "supplied task does not match the one recorded in the contract"
