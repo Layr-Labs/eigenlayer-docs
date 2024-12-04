@@ -4,7 +4,14 @@ sidebar_position: 1
 
 # Using WebApp
 
-Follow the instructions below step by step in order to claim your currently available rewards in the EigenLayer web app. Rewards can be claimed by a Staker or Operator. EIGEN token rewards are included in the displayed reward rates.
+Follow the instructions below step by step in order to claim your currently available rewards in the EigenLayer web app. Rewards can be claimed by a Staker or Operator as a claimer or earner. An earner is any address that receives rewards distributions. A claimer is any address that has been given permission to claim rewards on behalf of another earner address.
+
+
+
+:::note
+EIGEN token rewards are included in the displayed reward rates.
+When you login with a Claimer address, loading more than 100 associated Earner address profiles may cause delays up to 10 seconds.
+:::
 
 **Step 1**: Navigate to EigenLayer web app **Dashboard**.
 
