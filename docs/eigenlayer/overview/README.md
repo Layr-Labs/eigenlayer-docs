@@ -10,7 +10,7 @@ sidebar_position: 1
 
 Building a new Web3 service comes with significant challenges: bootstrapping crypto-economic security and assembling a reliable network of Operators. Meanwhile, the Web3 ecosystem is rich with opportunities, including a surplus of asset holders eager to earn rewards and skilled Operators seeking to expand into new, value-driven services. EigenLayer bridges this gap, aligning incentives and unlocking untapped potential for both builders and the broader community.
 
-EigenLayer is a protocol built on Ethereum that introduces Restaking, a new primitive for Web3 builders that provides a “marketplace for trust” bringing together Restakers, Operators, and Services. It allows users to stake assets such as Native ETH, Liquid Staking Tokens (LSTs), EIGEN token or any ERC20 token into EigenLayer smart contracts, thereby extending Ethereum's cryptoeconomic security to additional applications on the network.It fosters innovation by enabling newer projects to benefit from Ethereum’s robust security guarantees without the need to replicate the costly process of securing their own network.
+EigenLayer is a protocol built on Ethereum that introduces Restaking, a new primitive for Web3 builders that provides a "marketplace for trust" bringing together Restakers, Operators, and Services. It allows users to stake assets such as Native ETH, Liquid Staking Tokens (LSTs), EIGEN token, or any ERC20 token into EigenLayer smart contracts, thereby extending Ethereum's cryptoeconomic security to additional applications on the network. It fosters innovation by enabling newer projects to benefit from Ethereum’s robust security guarantees without the need to replicate the costly process of securing their own network.
 
 
 ## Why Build with EigenLayer?
@@ -24,7 +24,7 @@ The key benefits of building an AVS on EigenLayer include:
 - Security via Restaking: leverage Ethereum’s staking mechanism to secure your service.
 - Focus on your project's unique value: spend less time and resources accumulating economic security from scratch.
 - Bootstrap your Operator network: quickly access a large network of experienced Operators.
-- Decentralization and Trust: build on trust-minimized, decentralized infrastructure.
+- Decentralization and Trust: build on trust minimized, decentralized infrastructure.
 - Composability: seamlessly integrate with the broader Ethereum ecosystem.
 
 
@@ -47,7 +47,7 @@ The core components of the EigenLayer protocol include:
 To learn more about EigenLayer please read the [**Whitepaper**](/pdf/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
 
 Get started with EigenLayer:
-- [Restake on EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/overview).
-- [Register as an Operator](https://docs.eigenlayer.xyz/eigenlayer/operator-guides/operator-installation).
-- [Build an AVS](https://docs.eigenlayer.xyz/developers/avs-developer-guide).
-- Join our Ecosystem: [Discord](https://discord.com/invite/eigenlayer), [Twitter](https://twitter.com/eigenlayer).
+- [Restake on EigenLayer](/eigenlayer/restaking-guides/overview)
+- [Register as an Operator](/eigenlayer/operator-guides/operator-installation)
+- [Build an AVS](/developers/avs-developer-guide)
+- Join our Ecosystem: [Discord](https://discord.com/invite/eigenlayer), [Twitter](https://twitter.com/eigenlayer)
