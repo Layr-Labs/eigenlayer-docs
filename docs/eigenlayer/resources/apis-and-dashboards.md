@@ -10,6 +10,7 @@ title: APIs, Dashboards, and Tooling
 
 ### Dashboards
 
+- [Eigen Economy (maintained by Eigen Labs)](https://economy.eigenlayer.xyz/)
 - [EigenExplorer Dashboard](https://dashboard.eigenexplorer.com/)
 - [The Ultimate Restaking Dashboard](https://dune.com/hahahash/eigenlayer)
 - [AVS Dune Dashboard](https://dune.com/hahahash/avs)
