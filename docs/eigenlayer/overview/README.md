@@ -31,7 +31,9 @@ The core components of the EigenLayer protocol include:
 - **Delegation** is the process where stakers delegate their restaked ETH or LSTs to Operators or run validation services themselves, effectively becoming an Operator. This process involves a double opt-in between both parties, ensuring mutual agreement. Restakers retain agency over their stake and choose which AVSs they opt-in to validate for.
 - EigenLayer **Rewards** enables AVSs to make rewards distributions to stakers and operators that opt-in to support the AVS. AVSs make RewardsSubmissions to the RewardsCoordinator, a core protocol contract.
 
-![EigenLayer Architecture](/img/overview/eigenlayer-arch-v2.png)
+<img src="/img/overview/eigenlayer-arch-v2.png" width="75%"
+    style={{ margin: '50px'}}>
+</img>
 
 ## Next Steps
 To learn more about EigenLayer please read the [**Whitepaper**](/pdf/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
