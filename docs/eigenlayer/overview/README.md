@@ -3,6 +3,8 @@ title: Intro to EigenLayer
 sidebar_position: 1
 ---
 
+Just a test text change
+
 # Intro to EigenLayer
 
 ## What is EigenLayer?
