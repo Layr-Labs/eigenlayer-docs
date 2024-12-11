@@ -25,8 +25,10 @@ Please see [ELIP-001 Variable Operator Fees](https://github.com/eigenfoundation/
 
 Eigen Foundation Programmatic Incentives have a default Operator split of 10% with a variable split to ensure operators of all sizes and stakes are rewarded for their participation. It’s valid after a 7-day activation delay. It can be set independently of other AVSs, with the same reward distribution dynamics for operator-delegated stakers as v2 rewards.
 
-Please see [ELIP-001 Operator Splits for Programmatic Incentives](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#operator-splits-for-programmatic-incentives) for more information.
-
+The Operators can set their Programmatic Incentive split via the EigenLayer CLI with the following commands:
 ```
 // todo add George's code or instructions here
 ```
+
+Please see [ELIP-001 Operator Splits for Programmatic Incentives](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#operator-splits-for-programmatic-incentives) for more information.
+
