@@ -8,7 +8,6 @@ sidebar_position: 1
 
 Operators, who can be either individuals or organizations, play an active role in the EigenLayer protocol. By registering within EigenLayer, they enable ETH stakers to delegate their staked assets, whether in the form of native ETH or LSTs. The Node Operators then opt-in to provide a range of services to AVSs, enhancing the overall security and functionality of their networks.
 
-***
 
 ## Operator Eligibility and Restaking Criteria
 
