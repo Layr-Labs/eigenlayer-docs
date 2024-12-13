@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Installation
+# Installation and Registration
 
 ## Node Operator Checklist
 
