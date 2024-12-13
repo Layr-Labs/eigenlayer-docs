@@ -9,7 +9,7 @@ title: Rewards Claiming Overview
 
 The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`,  an AVS can specify a time range for which the reward will be distributed, a list of weights for each `Strategy` for the reward, and an ERC20 token to make rewards in.
 
-By default, Operators will earn a flat 10% split on rewards. The rest of the reward is claimable bythe operator's delegated Stakers. Rewards are proportional to:
+By default, Operators will earn a flat 10% split on rewards. The rest of the reward is claimable by the operator's delegated Stakers. Rewards are proportional to:
 - The amount of stake.
 - The AVS's relative weighting of strategies in a rewards submission.
 
