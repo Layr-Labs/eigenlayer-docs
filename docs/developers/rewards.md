@@ -28,10 +28,9 @@ Integration Notes:
 - Reward roots are posted **weekly** on Mainnet and **daily** on Testnet.
 - Reward roots are on a 7-day activation delay (ie. when it is claimable against) on Mainnet and 2-hour activation delay on Testnet.
 - Reward amounts are calculated based on activity across a 24 hour window. Each window's amounts are cumulative and include `day + (day - 1)`. Reward roots are posted weekly on Mainnet based on that day's snapshot date which will correlate to a 24 hour window. Mainnet and Testnet are functionally equivalent in their calculations, however the reward roots are only posted weekly for Mainnet.
-- If the AVS does not have any operators opted into the AVS on a day of an active reward, those tokens are not distributed pro-rata to future days. There are two cases where this may happen:
+- Once a rewards submission is made by an AVS, the AVS is unable to retract those rewards. However, if the AVS does not have any operators opted into the AVS on a day of an active reward, those tokens are not distributed pro-rata to future days and are instead refunded to the AVS. There are two cases where this may happen:
     1. An operator is not registered for the entire duration of the submission. In this case the entire operator amount is refunded to the AVS.
     2. If an operator is only registered for m days out of n days duration. Then the operator is only paid amount/m on each of those m days.
-- Rewards cannot be clawed back by AVSs.
 - Operators will only be distributed rewards on days that they have opted into the AVS for the full day.
 - Due to the rounding in the off-chain process, we recommend not making range submission token amounts with more than 15 significant digits of precision. If more than 15 significant digits are provided, the extra precision will be truncated.
 - Rewards can be made in multiple ERC-20 tokens by calling `createAVSRewardsSubmission` for each ERC-20 token to reward in.  
