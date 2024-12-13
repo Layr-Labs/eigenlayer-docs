@@ -7,7 +7,7 @@ title: Operator Rewards Configuration
 
 Before proceeding, please review the [Rewards Overview](/docs/eigenlayer/rewards-claiming/rewards-claiming-overview.md) for background information on how Rewards distributions work.
 
-With the release of Rewards v2 (currently in Testnet), Operators have the ability to configure more aspects of the fees they earn. They can set a variable Operator fee rate on rewards (called a "split") that will determine the percentage of rewards they retain and that goes to their delegated stakers. They can set unique fee rates per AVS and independently for [Programmatic Incentives](https://docs.eigenfoundation.org/programmatic-incentives/programmatic-incentives-faq).
+With the release of Rewards v2 (currently in Testnet), Operators have the ability to configure more aspects of the fees distributed from AVSs. They can set a variable Operator fee rate on rewards (called a "split") that will determine the percentage of rewards they receive vs what goes to the applicable stakers. They can set unique fee rates per AVS and independently for [Programmatic Incentives](https://docs.eigenfoundation.org/programmatic-incentives/programmatic-incentives-faq).
 
 
 ## Variable Operator Split for AVS Rewards
