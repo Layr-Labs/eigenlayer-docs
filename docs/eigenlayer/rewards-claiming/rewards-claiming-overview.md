@@ -7,9 +7,9 @@ title: Rewards Claiming Overview
 
 ## Overview
 
-The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`, an AVS can specify a time range for which the reward will be distributed, a list of weights for each `Strategy` for the reward, and an ERC20 token to make rewards in.  
+The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`,  an AVS can specify a time range for which the reward will be distributed, a list of weights for each `Strategy` for the reward, and an ERC20 token to make rewards in.
 
-By default, Operators will earn a flat 10% commission on rewards. The rest of the reward is passed on to the operator's delegated Restakers. Rewards are proportional to:
+By default, Operators will earn a flat 10% split on rewards. The rest of the reward is claimable bythe operator's delegated Stakers. Rewards are proportional to:
 - The amount of stake.
 - The AVS's relative weighting of strategies in a rewards submission.
 
@@ -17,9 +17,9 @@ By default, Operators will earn a flat 10% commission on rewards. The rest of th
 ## Rewards v2 (currently in Tesnet)
 
 The EigenLayer Improvement Proposal (ELIP-001) outlines enhancements to the rewards system under the Rewards v2 framework. These enhancements focus on these key areas:
-1. Operator Directed Rewards: AVSs can now direct performance-based rewards to specific Operators using custom logic. This allows rewards to be distributed based on work completion, quality or other parameters, ensuring tailored incentives that promote operational efficiency and decentralization. Operators registered to AVSs for the specified duration are eligible. This approach enables customization and diverse reward mechanisms that can be attributed on-chain, aligning incentives with Operator contributions.
+1. Operator Directed Rewards: AVSs can now direct performance-based rewards to specific Operators using custom logic. This allows rewards to be distributed based on work completion, quality or other parameters determined by the AVS, allowing flexible and tailored incentives. Operators registered to AVSs for the specified duration are eligible. This approach enables customization and diverse reward mechanisms that can be attributed on chain, aligning incentives with Operator contributions.
 2. Variable Operator Fees for AVS Rewards: Operators can now set their per-AVS fee rate on AVS rewards to any amount from 0% to 100%, deviating from the 10% default split. Changes to this split take effect after a 7-day activation delay. The ability to set a variable split per-AVS allows Operators to align their fee structures with their economic needs and the complexity and diversity of AVS demands.
-3. Variable Operator Splits for Programmatic Incentives: Operators can set their split of Programmatic Incentives to any amount from 0% to 100% to ensure that Operators of all sizes and stakes are rewarded for their participation, deviating from the 10% default split. Changes to this split take effect after a 7-day activation delay. These splits integrate seamlessly with the existing reward distribution model, ensuring that stakers delegating to Operators benefit proportionately.
+3. Variable Operator Splits for Programmatic Incentives: Operators can set their split of Programmatic Incentives to any amount from 0% to 100%, so that Operatorators have flexibility in determining the appropriate take rate. Changes to this split take effect after a 7-day activation delay. These splits integrate seamlessly with the existing reward distribution model, ensuring that stakers delegating to Operators benefit proportionately.
 4. Batch rewards claiming for stakers and Operators, allowing a gas efficient way to claim on behalf of multiple earners in a single transaction.  
 
 Please see the [EigenLayer Improvement Proposal-001: Rewards v2](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#executive-summary) for more detail.
@@ -28,7 +28,7 @@ Please see the [EigenLayer Improvement Proposal-001: Rewards v2](https://github.
 ## Rewards Contract Configurations
 
 ### Earners 
-Operators and Stakers are both categorized as "Earners" when it comes to claiming and are distinct by their addresses. Actual reward calculations are explained further in the [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). To summarize, reward calculations are performed daily by snapshotting the on-chain state. Once a week on mainnet and daily on testnet, a Merkle root is posted to the contract that allows earners to claim their updated earnings.
+Operators and Stakers are both categorized as "Earners" when it comes to claiming and are distinct by their addresses. Actual reward calculations are explained further in the [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). To summarize, reward calculations are performed daily by snapshotting the on chain state. Once a week on mainnet and daily on testnet, a Merkle root is posted to the contract that allows earners to claim their updated earnings.
 
 
 
