@@ -1552,7 +1552,7 @@
     <p class="s4" style="padding-left: 30pt;text-indent: 0pt;text-align: justify;">(a) they are special-purpose: i.e.,
         they are created specifically for a particular enshrined digital task (as an example, the <span class="s5">ETH
         </span>token is used for validating Ethereum blocks), and (b) they are objective: enforceable only when the
-        violations of the digital worker are clearly attributable onchain (via a programmatic proof). Our earlier work
+        violations of the digital worker are clearly attributable on-chain (via a programmatic proof). Our earlier work
         created EigenLayer, a restaking (or more accurately, permissionless programmable staking) platform, which
         expanded the scope of the <span class="s5">ETH </span>to become a universal “objective” work token so that it
         can be staked to participate in all kinds of tasks. But the punitive slashing can only be applied for tasks that
@@ -1646,7 +1646,7 @@
                             class="p">from a single enshrined task of participating in consensus to a variety of digital
                             tasks that can be built permissionlessly on top of the common blockchain. However, restaking
                             provides cryptoeconomic security via slashing only for digital tasks whose faults are
-                            objectively attributable, i.e., clearly verifiable on- chain. Examples of such onchain
+                            objectively attributable, i.e., clearly verifiable on- chain. Examples of such on-chain
                             attributable faults include: double spending (the same coin should never be spent twice in a
                             payment chain), double signing (there can be no two blocks with the same block index),
                             invalidity (creating a new state of the system which is not correctly transitioned from the
@@ -1655,19 +1655,19 @@
                     <p style="text-indent: 0pt;text-align: left;"><br /></p>
                     <p style="padding-left: 5pt;text-indent: 0pt;line-height: 94%;text-align: justify;"><b>Limitations
                             of restaking: non-onchain attributable tasks exist. </b>There are many categories of faults
-                        that dig- ital workers can commit that do not have objective attribution on chain. For example,
-                        let us take the example of a price oracle required onchain, which brings the market price of a
-                        digital asset onchain. Price oracles are famously difficult to build slashing protocols for: if
+                        that dig- ital workers can commit that do not have objective attribution on-chain. For example,
+                        let us take the example of a price oracle required on-chain, which brings the market price of a
+                        digital asset on-chain. Price oracles are famously difficult to build slashing protocols for: if
                         a digital worker performing an oracle task reports that 1<span class="s8">BTC </span><span
                             class="s10">= </span>1<span class="s8">USD </span>(which is wrong by several orders of
                         magnitude), the blockchain by itself has no locus to verify the correctness or otherwise of this
                         assertion. This is because blockchains are purely deterministic state machines and to preserve
                         the determinism and objectivity these subjective claims are excluded from intrinsic verification
-                        in the blockchain. There are other examples of claims that are not verifiable onchain: bridges
+                        in the blockchain. There are other examples of claims that are not verifiable on-chain: bridges
                         (claims about the state of a different blockchain on another blockchain), data availability
                         (i.e, verify- ing whether a data item has been published in public), censorship (not
                         incorporating some transactions into a ledger). Another major problem with enforcing slashing
-                        onchain is that immutable code for slashing is difficult to get right - if there is any error in
+                        on-chain is that immutable code for slashing is difficult to get right - if there is any error in
                         the code, then honest nodes may get slashed.</p>
                     <h3 style="padding-top: 12pt;padding-left: 5pt;text-indent: 0pt;text-align: justify;">Current
                         state-of-the-art mechanisms to resolve non-onchain attributable frauds. <span class="p">There
@@ -1702,15 +1702,15 @@
                             name="bookmark3">&zwnj;</a></h2>
                     <p style="padding-top: 6pt;padding-left: 5pt;text-indent: 0pt;text-align: justify;">We can
                         categorize faults made while performing digital tasks into three categories based on the ability
-                        to attribute them: (i) onchain attributable fault, (ii) intersubjectively attributable faults
+                        to attribute them: (i) on-chain attributable fault, (ii) intersubjectively attributable faults
                         and (iii) non-observable faults.</p>
                     <p style="padding-top: 12pt;padding-left: 5pt;text-indent: 0pt;text-align: justify;">The first
                         category is <i>objectively attributable faults </i>- which are attributable purely
                         mathematically and hence cryptographically. A clear example is execution validity: if a node
                         runs a piece of code on a deterministic virtual machine, and certifies the input and output,
-                        then it can be verified onchain later. A second example of this is double-signing: in a
+                        then it can be verified on-chain later. A second example of this is double-signing: in a
                         consensus protocol, if a node is not supposed to sign two conflicting blocks but it does, then
-                        it can be proven onchain that the node has committed an onchain attributable fault. We
+                        it can be proven on-chain that the node has committed an on-chain attributable fault. We
                         furthermore note that the former fault (validity) is <i>proactively attributable </i>- for
                         example, the chain can run a verifier for a ZK proof and ensure the correctness, whereas the
                         latter (double-signing) is only <i>retroactively attributable</i>: you can prove that a node
@@ -1719,8 +1719,8 @@
                     <p style="padding-top: 12pt;padding-left: 5pt;text-indent: 0pt;text-align: justify;">The second
                         category is <i>intersubjectively attributable faults</i>: the set of faults which can be
                         attributed with broad agreement by all observant outside observers. This set is a superset of
-                        purely onchain attributable faults, since anything that is attributable on chain can also be
-                        attributed offchain. We can further subdivide this category of faults into (i) retroactively
+                        purely on-chain attributable faults, since anything that is attributable on-chain can also be
+                        attributed off-chain. We can further subdivide this category of faults into (i) retroactively
                         attributable, which can be attributed at any point in time, vs, (ii) concurrently attributable
                         faults, which need the observer to be online and observing at the time of the fault in order to
                         be at- tributed. Some examples of retroactively observable intersubjective faults: (a) oracle
@@ -3746,9 +3746,9 @@
         </li>
         <li data-list-text="•">
             <h3 style="padding-top: 7pt;padding-left: 30pt;text-indent: -11pt;text-align: justify;">Intents, Order
-                Matching and MEV Engines. <span class="p">Intent and order matching engines have complex offchain
+                Matching and MEV Engines. <span class="p">Intent and order matching engines have complex off-chain
                     software for compiling from intents to transactions. An intent engine may require validation
-                    checking for which present techniques for validation may prove difficult to write onchain slashing
+                    checking for which present techniques for validation may prove difficult to write on-chain slashing
                     contracts for. Intersubjective staking and slashing provide a great opportunity for open innovation
                     here.</span></h3>
         </li>
@@ -3783,7 +3783,7 @@
             <h3 style="padding-top: 7pt;padding-left: 30pt;text-indent: -11pt;text-align: justify;">Storage services.
                 <span class="p">One can create new storage services with a proof-of-replication or a proof-of-custody
                     protocol, where, if the nodes do not custody distinct units of data, the nodes can be slashed. The
-                    slashing protocol can be intersubjective rather than fully onchain.</span></h3>
+                    slashing protocol can be intersubjective rather than fully on-chain.</span></h3>
         </li>
         <li data-list-text="•">
             <h3 style="padding-top: 7pt;padding-left: 30pt;text-indent: -11pt;text-align: justify;">Migrate Cloud

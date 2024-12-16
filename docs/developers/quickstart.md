@@ -45,7 +45,7 @@ function createNewTask(
     newTask.name = name;
     newTask.taskCreatedBlock = uint32(block.number);
 
-    // store hash of task onchain, emit event, and increase taskNum
+    // store hash of task on-chain, emit event, and increase taskNum
     allTaskHashes[latestTaskNum] = keccak256(abi.encode(newTask));
     emit NewTaskCreated(latestTaskNum, newTask);
     latestTaskNum = latestTaskNum + 1;
@@ -101,7 +101,7 @@ quorum.strategies.push(
 );
 ```
 
-### Offchain Operator Code
+### Off-chain Operator Code
 
 
 **[index.ts](https://github.com/Layr-Labs/hello-world-avs/blob/master/operator/index.ts)**
@@ -134,7 +134,7 @@ const registerOperator = async () => {
     console.log("Operator registered on AVS successfully");
 };
 
-// Listen for new task events on chain
+// Listen for new task events on-chain
 const monitorNewTasks = async () => {
 
     helloWorldServiceManager.on("NewTaskCreated", async (taskIndex: number, task: any) => {
@@ -175,7 +175,7 @@ const signAndRespondToTask = async (taskIndex: number, taskCreatedBlock: number,
 ```
 
 
-### Offchain Task Generator
+### Off-chain Task Generator
 
 **[createNewTasks.ts](https://github.com/Layr-Labs/hello-world-avs/blob/master/operator/createNewTasks.ts)**
 
