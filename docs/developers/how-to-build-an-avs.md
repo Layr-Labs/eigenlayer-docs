@@ -12,32 +12,32 @@ Before proceeding, please review the previous sections on [AVS Overview](./avs-d
 
 ### Design Your AVS Security (Trust Model)
 
-The first step toward designing your AVS is to determine how its offchain operations will be validated onchain. Consider which Operator behaviors should be rewarded and which behaviors are malicious and should be slashed or penalized. Determine which data (or evidence) of their operations can be written on chain to validate their behavior.
+The first step toward designing your AVS is to determine how its off-chain operations will be validated on-chain. Consider which Operator behaviors should be rewarded and which behaviors are malicious and should be slashed or penalized. Determine which data (or evidence) of their operations can be written on-chain to validate their behavior.
 
-Operators are most often expected to **run the same workload** among all Operators in the AVS's quorum. This ensures that malicious behaviors can be easily validated onchain. When designing your Operator workload, consider a task that can be easily scaled to run among all Operators in the quorum.
+Operators are most often expected to **run the same workload** among all Operators in the AVS's quorum. This ensures that malicious behaviors can be easily validated on-chain. When designing your Operator workload, consider a task that can be easily scaled to run among all Operators in the quorum.
 
 
 
 ### Task Design
 
-Tasks are a common design model used for AVS operations. This design model is not required by the protocol, but it is a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators offchain, which are later validated onchain. A Task can be any unit of work written in any language as needed by the AVS designer.
+Tasks are a common design model used for AVS operations. This design model is not required by the protocol, but it is a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators off-chain, which are later validated on-chain. A Task can be any unit of work written in any language as needed by the AVS designer.
 
 Tasks can be submitted either:
-1) Onchain by the Consumer (end user) to the AVS contracts.
-2) Offchain by the Consumer directly to the Operators.
+1) On-chain by the Consumer (end user) to the AVS contracts.
+2) Off-chain by the Consumer directly to the Operators.
 
 
 ### BLS and ECDSA Signature Types
 
 In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. Signatures cryptographically confirm that a specific wallet address has signed a given message (e.g., a string value) with its private key. Currently, there are two primary types of signatures used within EigenLayer:
-- BLS (Boneh-Lynn-Shacham) signatures offer native aggregation, combining multiple operator signatures to be combined into one, reducing on chain storage needs, verification time and gas costs. However, they require a slightly more complex implementation that includes an aggregator entity.
+- BLS (Boneh-Lynn-Shacham) signatures offer native aggregation, combining multiple operator signatures to be combined into one, reducing on-chain storage needs, verification time and gas costs. However, they require a slightly more complex implementation that includes an aggregator entity.
 - ECDSA signatures are simpler to impelement, because ECDSA does not support aggregation and so ECDSA services do not require an aggregator entity. However, this lack of aggregation support requires each ECDSA signature to be stored and verified individually, which increases both storage and gas costs as the number of signatures grows.
 - Please note: as of [eigenlayer-middleware v0.2.1](https://github.com/Layr-Labs/eigenlayer-middleware/releases/tag/v0.2.1-mainnet-rewards) the [ECDSAServiceManagerBase contract](https://github.com/Layr-Labs/eigenlayer-middleware/blob/v0.2.1-mainnet-rewards/src/unaudited/ECDSAServiceManagerBase.sol) was not yet fully audited. Please check the most recent release as this is expected to change.
 
 
 ### Task and Signature Aggregation
 
-Operator responses to tasks are often signed using the BLS or ECDSA algorithm. These signatures can be aggregated by any entity at any time, but they are often aggregated by an entity run by the AVS (the "aggregator"). A common AVS design involves combining multiple Operator BLS signatures into a single aggregate signature and written on chain ([example here](https://github.com/Layr-Labs/eigensdk-go/blob/dev/services/bls_aggregation/blsagg.go) written in Go). The aggregate signature can then be verified to confirm whether any of the individual Operators were included in the aggregate.
+Operator responses to tasks are often signed using the BLS or ECDSA algorithm. These signatures can be aggregated by any entity at any time, but they are often aggregated by an entity run by the AVS (the "aggregator"). A common AVS design involves combining multiple Operator BLS signatures into a single aggregate signature and written on-chain ([example here](https://github.com/Layr-Labs/eigensdk-go/blob/dev/services/bls_aggregation/blsagg.go) written in Go). The aggregate signature can then be verified to confirm whether any of the individual Operators were included in the aggregate.
 
 
 
@@ -62,7 +62,7 @@ To begin the process below, fork the example repo here [hello-world-avs](https:/
 Implement an instance of ECDSAServiceManagerBase or ServiceManagerBase (BLS).  
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/master/contracts/src/HelloWorldServiceManager.sol) and incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/master/contracts/src/IncredibleSquaringServiceManager.sol).
 
-**2: On Chain Verification**  
+**2: on-chain Verification**  
 Implement at least one on-chain provable event. The most common approach is to write an ECDSA or BLS aggregate signature on-chain.
 Please see the example from incredible-squaring-avs [here](https://github.com/Layr-Labs/incredible-squaring-avs/blob/8bd0ac663dcc2289cad02af4a7f0002ea07bc1d8/contracts/src/IncredibleSquaringTaskManager.sol#L102) and from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L130).
 
@@ -86,8 +86,8 @@ Provide a mechanism for the Operator register to the AVS.
 
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L41). 
 
-**2: At least one event written to your AVSs on chain contracts**  
-The Operator binary (or off chain aggregation service code) must write at least one event to the AVSs on chain contracts to be used for future on-chain verification, rewards, and slashing purposes.  
+**2: At least one event written to your AVSs on-chain contracts**  
+The Operator binary (or off-chain aggregation service code) must write at least one event to the AVSs on-chain contracts to be used for future on-chain verification, rewards, and slashing purposes.  
 
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L25).
 

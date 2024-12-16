@@ -7,11 +7,11 @@ title: AVS Overview
 ## What is an Actively Validated Service (AVS)?
 
 
-An Actively Validated Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom validation mechanisms of offchain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
+An Actively Validated Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom validation mechanisms of off-chain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
 
-An AVS is composed of onchain contracts for validation and an offchain network of Operators. Operators execute the service on behalf of the AVS and then post evidence of their execution onchain to the AVS contracts. Tasks can be initiated via onchain contracts, offchain via direct communication with the Operators, or via a task aggregator entity.
+An AVS is composed of on-chain contracts for validation and an off-chain network of Operators. Operators execute the service on behalf of the AVS and then post evidence of their execution on-chain to the AVS contracts. Tasks can be initiated via on-chain contracts, off-chain via direct communication with the Operators, or via a task aggregator entity.
 
-The design of the offchain execution and onchain validation is entirely flexible based on the needs of the AVS developer. 
+The design of the off-chain execution and on-chain validation is entirely flexible based on the needs of the AVS developer. 
 - If the Operators perform tasks properly, the AVS can distribute rewards.
 - If the Operators perform tasks maliciously, their delegate stake can be slashed by the AVS, and the Operator can be removed from the Operator set. 
 
@@ -34,7 +34,7 @@ The key benefits of building an AVS on EigenLayer include:
 
 ## What Can You Build as an AVS?
 
-The scope of AVS design is broad. It includes **any offchain service** that can be validated onchain. This flexibility allows AVS developers to design custom validation mechanisms suited to the unique requirements of their service. The only requirement is that some evidence for the offchain service’s execution is posted onchain to enable validation of the service.
+The scope of AVS design is broad. It includes **any off-chain service** that can be validated on-chain. This flexibility allows AVS developers to design custom validation mechanisms suited to the unique requirements of their service. The only requirement is that some evidence for the off-chain service’s execution is posted on-chain to enable validation of the service.
 
 Examples of these services include rollup services, co-processors, cryptography services, zk Proof services, and more.
 

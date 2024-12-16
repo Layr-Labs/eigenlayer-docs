@@ -17,7 +17,7 @@ By default, Operators will earn a flat 10% split on rewards. The rest of the rew
 ## Rewards v2 (currently in Tesnet)
 
 The EigenLayer Improvement Proposal (ELIP-001) outlines enhancements to the rewards system under the Rewards v2 framework. These enhancements focus on these key areas:
-1. Operator Directed Rewards: AVSs can now direct performance-based rewards to specific Operators using custom logic. This allows rewards to be distributed based on work completion, quality or other parameters determined by the AVS, allowing flexible and tailored incentives. Operators registered to AVSs for the specified duration are eligible. This approach enables customization and diverse reward mechanisms that can be attributed on chain, aligning incentives with Operator contributions.
+1. Operator Directed Rewards: AVSs can now direct performance-based rewards to specific Operators using custom logic. This allows rewards to be distributed based on work completion, quality or other parameters determined by the AVS, allowing flexible and tailored incentives. Operators registered to AVSs for the specified duration are eligible. This approach enables customization and diverse reward mechanisms that can be attributed on-chain, aligning incentives with Operator contributions.
 2. Variable Operator Fees for AVS Rewards: Operators can now set their per-AVS fee rate on AVS rewards to any amount from 0% to 100%, deviating from the 10% default split. Changes to this split take effect after a 7-day activation delay. The ability to set a variable split per-AVS allows Operators to align their fee structures with their economic needs and the complexity and diversity of AVS demands.
 3. Variable Operator Splits for Programmatic Incentives: Operators can set their split of Programmatic Incentives to any amount from 0% to 100%, so that Operators have flexibility in determining the appropriate take rate. Changes to this split take effect after a 7-day activation delay. These splits integrate seamlessly with the existing reward distribution model, ensuring that stakers delegating to Operators benefit proportionately.
 4. Batch rewards claiming for stakers and Operators, allowing a gas efficient way to claim on behalf of multiple earners in a single transaction.  
@@ -28,7 +28,7 @@ Please see the [EigenLayer Improvement Proposal-001: Rewards v2](https://github.
 ## Rewards Contract Configurations
 
 ### Earners 
-Operators and Stakers are both categorized as "Earners" when it comes to claiming and are distinct by their addresses. Actual reward calculations are explained further in the [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). To summarize, reward calculations are performed daily by snapshotting the on chain state. Once a week on mainnet and daily on testnet, a Merkle root is posted to the contract that allows earners to claim their updated earnings.
+Operators and Stakers are both categorized as "Earners" when it comes to claiming and are distinct by their addresses. Actual reward calculations are explained further in the [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). To summarize, reward calculations are performed daily by snapshotting the on-chain state. Once a week on mainnet and daily on testnet, a Merkle root is posted to the contract that allows earners to claim their updated earnings.
 
 
 
@@ -42,7 +42,7 @@ Not to be confused with the designated claimer address specified above, the reci
 
 ## Reward Calculations
 
-Rewards are calculated via an offchain process. A Merkle root is posted which represents the cumulative rewards across all earners weekly on Mainnet and daily on Testnet. There is an additional 2 hour delay on testnet and 1 week delay on mainnet after posting in order for the root to be claimable against with a valid Merkle proof. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). 
+Rewards are calculated via an off-chain process. A Merkle root is posted which represents the cumulative rewards across all earners weekly on Mainnet and daily on Testnet. There is an additional 2 hour delay on testnet and 1 week delay on mainnet after posting in order for the root to be claimable against with a valid Merkle proof. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). 
 
 
 

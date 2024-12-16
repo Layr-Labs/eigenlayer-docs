@@ -145,7 +145,7 @@ Invoke `EigenPodManager.createPod()`.
 1. Run the `credentials` command via the [EigenPod Proofs Generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#proof-generation).
     
 
-2. Invoke the `credentials` command with the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act onchain for you. This is the private key of the wallet that was used to create the EigenPod. Example here:
+2. Invoke the `credentials` command with the `--sender $EIGENPOD_OWNER_PK` argument so that CLI will submit proofs and act on-chain for you. This is the private key of the wallet that was used to create the EigenPod. Example here:
 ```bash
 ./cli credentials --execNode $NODE_ETH --beaconNode $NODE_BEACON --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
 ```
