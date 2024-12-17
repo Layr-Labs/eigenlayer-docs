@@ -14,7 +14,7 @@ The following instructions will walk you through how tokens can be restaked on t
 
 **Step 2:** Click **Restake**.
 
-**Step 3:** Click on the asset you wish to restake. Choose the the amount of the asset you wish to restake. Click **Submit** to continue.
+**Step 3:** Click on the asset you wish to restake. Choose the amount of the asset you wish to restake. Click **Submit** to continue.
 
 ![](/img/restake-guides/lst-restake-2.png)
 
