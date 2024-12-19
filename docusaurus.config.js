@@ -121,10 +121,7 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/",
             to: "/eigenlayer/restaking-guides/overview",
           },
-          {
-            from: "/eigenlayer/restaking-guides/restaking-user-guide/EIGEN-faq",
-            to: "/eigenlayer/overview/eigen-token-overview",
-          },
+          
 
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/",
@@ -310,6 +307,10 @@ const config = {
     },
     {
       src: '/js/avs-guide-redirects.js',
+      async: false,
+    },
+    {
+      src: '/js/eigen-token-redirect.js',
       async: false,
     }
   ],
