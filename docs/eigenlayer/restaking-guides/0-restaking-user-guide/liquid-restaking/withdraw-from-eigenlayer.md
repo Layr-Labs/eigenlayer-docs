@@ -14,7 +14,7 @@ All funds unstaked from EigenLayer will go through an escrow period before being
 ![](/img/restake-guides/lst-unstake-1.png)
 
 
-**Step 2:** Choose the the amount of the asset you wish to restake. Click **Submit** to continue.
+**Step 2:** Choose the amount of the asset you wish to restake. Click **Submit** to continue.
 
 ![](/img/restake-guides/lst-unstake-2.png)
 
