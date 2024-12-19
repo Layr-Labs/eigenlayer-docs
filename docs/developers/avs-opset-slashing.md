@@ -81,7 +81,7 @@ Now, `AVS_1` slashes the Operator for a 50% reduction (`5e17` in `wads`) in the 
 Note, slashing by one Operator Set does not affect the magnitudes of EIGEN allocated to other Operator Sets. The interactions between Staker, Operator, AVS, and core contracts are represented visually in the sequence diagram below:
 
 ![Sequence Representation of a Slashing](/img/operator-guides/operator-sets-figure-5.png)  
-***Figure 5: Sequence Representation of a Slashing***
+***Figure: Sequence Representation of a Slashing***
 
 ### Burning of Slashed Funds
 
