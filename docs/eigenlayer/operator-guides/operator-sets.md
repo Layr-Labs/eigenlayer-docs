@@ -359,12 +359,23 @@ eigenlayer operator allocations show
 
 ```
 
-Register and Deregister from Operator Set
+Register to Operator Set
 
 ```
-eigenlayer operator register-operator-sets --operator-address <operator-address> --avs-address <avs-service-manager-address> --operator-set-ids <comma-seperated-list-of-operator-set-ids>
+eigenlayer operator register-operator-sets 
+	--operator-address <operator-address> 
+	--avs-address <avs-service-manager-address> 
+	--operator-set-ids <comma-seperated-list-of-operator-set-ids>
+	--caller-address <address-of-caller>
+```
 
-eigenlayer operator deregister-operator-sets --operator-address <operator-address> --avs-address <avs-address> --operator-set-ids <comma-seperated-list-of-operator-set-ids>
+De-register from Operator Sets
+```
+eigenlayer operator deregister-operator-sets 
+	--operator-address <operator-address> 
+	--avs-address <avs-address> 
+	--operator-set-ids <comma-seperated-list-of-operator-set-ids>
+	--caller-address <address-of-caller>
 ```
 
 Note: If you are deregistering from an operator set which has some active allocation bips, you will have to explicitly deallocate from that operator set using the \`eigenlayer operator allocations update\` command specified above. If you don’t do this, that amount of stake would be unavailable until it is deallocated. Once you deallocate then after deallocation delay it will be available.
