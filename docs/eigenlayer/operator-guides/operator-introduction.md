@@ -15,9 +15,16 @@ Becoming an Operator in the EigenLayer ecosystem does not require a specific amo
 
 Most Operators will receive token delegations sourced from other Restakers within the network, otherwise Operators can choose to self-delegate by allocating their restaked token balance.
 
-## Quorums
 
-Quorums are a grouping of Strategies (Restaked Assets) to be used by an AVS for shared security measures. An Operator can opt into as many quorums as they like as long as they have sufficient TVL for those quorums.
+
+## Staker and Operator Roles Clarification
+
+Operators are not required to be Restakers. An Ethereum address can be both a Restaker (via liquid or native restaking) and simultaneously an Operator, however this is not a requirement. An Operator can have zero restaked tokens in EigenLayer.
+
+For Operators who self delegate as Restakers we recommend the Operator use **separate addresses** for Restaking and Operating activities. A single address that is used for both Restaking and Operators cannot undelegate from itself, it can only withdraw restaked funds. For this reason we recommend Operators use separate Restaking addresses if they wish avoid this limitation.
+
+An Operator is required to have tokens delegated to their address. The delegation can come from other Restakers or they can self-delegate their restaked token balance.
+
 
 ## Rewards
-Head over to the [rewards claiming](../rewards-claiming/rewards-claiming-overview.md) documentation on how to claim rewards.
+Please see the [rewards claiming](../rewards-claiming/rewards-claiming-overview.md) documentation on how to claim rewards.
