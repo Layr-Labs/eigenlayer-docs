@@ -14,7 +14,7 @@ By default, Operators will earn a flat 10% split on rewards. The rest of the rew
 - The AVS's relative weighting of strategies in a rewards submission.
 
 
-## Rewards v2 (currently in Tesnet)
+## Rewards v2 (currently in Testnet)
 
 The EigenLayer Improvement Proposal (ELIP-001) outlines enhancements to the rewards system under the Rewards v2 framework. These enhancements focus on these key areas:
 1. Operator Directed Rewards: AVSs can now direct performance-based rewards to specific Operators using custom logic. This allows rewards to be distributed based on work completion, quality or other parameters determined by the AVS, allowing flexible and tailored incentives. Operators registered to AVSs for the specified duration are eligible. This approach enables customization and diverse reward mechanisms that can be attributed on-chain, aligning incentives with Operator contributions.
