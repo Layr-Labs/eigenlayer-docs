@@ -12,6 +12,7 @@ const katex = require("rehype-katex");
 const config = {
   title: "EigenLayer",
   favicon: "img/favicon.ico",
+  trailingSlash: false,
 
   // Set the production url of your site here
   url: "https://docs.eigenlayer.xyz/",
