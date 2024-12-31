@@ -332,7 +332,7 @@ eigenlayer operator update operator.yaml
 ```
 
 ### Update metadata URI (Post v0.9.0)
-In [v0.9.0](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.9.0), we have introduced a new comamnd to update metadata uri.
+In [v0.9.0](https://github.com/Layr-Labs/eigenlayer-cli/releases/tag/v0.9.0), we have introduced a new command to update metadata uri.
 
 ```
 eigenlayer operator update-metadata-uri operator.yaml
