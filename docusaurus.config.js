@@ -131,6 +131,11 @@ const config = {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
             to: "/eigenlayer/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
           },
+          {
+            from: "/eigenlayer/economy/economy-overview",
+            to: "/eigenlayer/economy/economy-calculation-and-formulas",
+          },
+
         ],
         createRedirects(existingPath) {
 

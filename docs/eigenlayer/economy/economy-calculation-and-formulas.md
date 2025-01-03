@@ -1,7 +1,14 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 title: Economy Calculation and Formulas
 ---
+
+## Overview
+
+EigenLayer strives to do its best and provide legibility and transparency to users.
+
+Therefore, we built a website to show the critical metrics of the network, metrics that we deem
+important for users to understand the protocol and its performance. Please see the Eigen Economy site at **[economy.eigenlayer.xyz](https://economy.eigenlayer.xyz/)**.
 
 
 ## Data Quality and Reconciliation
