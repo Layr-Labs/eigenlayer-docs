@@ -282,7 +282,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Layr Labs`,
+        copyright: `Copyright © ${new Date().getFullYear()} Eigen Labs, Inc.`,
       },
       docs: {
         sidebar: {
