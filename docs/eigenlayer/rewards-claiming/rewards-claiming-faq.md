@@ -16,7 +16,7 @@ Operators get a fixed 10% portion rewards, though this is subject to change in a
 ### How can I test reward distributions and claiming on testnet?
 
 #### 1. Programmatic incentives.
-To accumulate programmatic incentives, you must be delegeted to an operator that is registered to at least one AVS of any type. Programmatic incentives are payed in Testnet EIGEN. Assets that earn programmatic incentives are limited to: EIGEN, LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH.
+To accumulate programmatic incentives, you must be delegated to an operator that is registered to at least one AVS of any type. Programmatic incentives are payed in Testnet EIGEN. Assets that earn programmatic incentives are limited to: EIGEN, LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH.
 
 #### 2. Rewards from AVSs
 To accumulate testnet rewards from AVSs, you must be delegated to an Operator that is registered to at least one AVS with active rewards.
@@ -26,7 +26,7 @@ FaucetAVS is designed purely to distribute WETH to staked WETH with no requireme
 
 **EigenDA:**
 EigenDA distributes rewards to [operators actively participating in EigenDA](https://docs.eigenda.xyz/operator-guides/requirements/). Operators may be ejected if they fail to sign batches or fall below the threshold requirements. Rewards are earned for:
-- EIGEN Quorum participaton
+- EIGEN Quorum participation
 - ETH Quorum participation including LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH and Beacon Chain ETH in EigenPods.
 
 
