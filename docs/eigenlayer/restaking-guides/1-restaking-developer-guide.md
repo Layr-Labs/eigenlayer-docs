@@ -61,7 +61,7 @@ The following steps are necessary for a Restaker to **move** their Delegated bal
 - **Delegate** to the new Operator.
 
 1. Undelegate: invoke `DelegationManager.undelegate()`.
-   * Note: this action automatically **queues a withdrawal for all restaked assets**. The Undelegate and Queue Withdrawal transactions are intensionally combined due to the security architecture of EigenLayer smart contracts.
+   * Note: this action automatically **queues a withdrawal for all restaked assets**. The Undelegate and Queue Withdrawal transactions are intentionally combined due to the security architecture of EigenLayer smart contracts.
 2. Wait for the Escrow Period to complete.
 3. Invoke DelegationManager.completeQueuedWithdrawal(). **Important:** you will choose to complete the withdrawal as shares, which is effectively a **redeposit** action.
    * `receiveAsTokens` should be set to _false_.
