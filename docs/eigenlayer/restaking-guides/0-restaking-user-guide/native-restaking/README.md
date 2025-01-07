@@ -13,10 +13,13 @@ Please read this entire guide before launching your new validator or integrating
 :::
 
 Native Restaking via the EigenLayer Web App consists of the following actions:
-1. [Restake New Validator Native Beacon Chain ETH](#restake-new-validator-native-beacon-chain-eth)
-2. [Restake Validator Yield (Rewards, Fees, and ETH)](#restake-validator-yield-rewards-fees-and-eth)
-3. [Withdraw Native ETH or Validator Yield](#withdraw-native-eth-or-validator-yield)
-4. [Delegate and Undelegate](#delegate-and-undelegate)
+- [Native Restaking](#native-restaking)
+  - [Gas Cost Planning](#gas-cost-planning)
+  - [Restake New Validator (Native Beacon Chain ETH)](#restake-new-validator-native-beacon-chain-eth)
+  - [Restake Validator Yield (Rewards, Fees, and ETH)](#restake-validator-yield-rewards-fees-and-eth)
+    - [Checkpoint Frequency](#checkpoint-frequency)
+  - [Withdraw Native ETH or Validator Yield](#withdraw-native-eth-or-validator-yield)
+  - [Delegate and Undelegate](#delegate-and-undelegate)
 
 
 ## Gas Cost Planning
@@ -97,7 +100,7 @@ Queue the Withdrawal:
 
 Redeposit or Complete Withdrawal:
 Redeposit or Complete Withdrawal: Redepositing is available at this step for users who accidentally queued a withdrawal, but would like to resume staking and delegation.
-1. Choose to either **Restake** (to Redposit the assets) or **Withdraw** (to complete the withdrawal).
+1. Choose to either **Restake** (to Redeposit the assets) or **Withdraw** (to complete the withdrawal).
 1. **Sign** the transaction using your web3 wallet.
 
 

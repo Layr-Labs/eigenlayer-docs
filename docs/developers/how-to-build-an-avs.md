@@ -31,7 +31,7 @@ Tasks can be submitted either:
 
 In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. Signatures cryptographically confirm that a specific wallet address has signed a given message (e.g., a string value) with its private key. Currently, there are two primary types of signatures used within EigenLayer:
 - BLS (Boneh-Lynn-Shacham) signatures offer native aggregation, combining multiple operator signatures to be combined into one, reducing on-chain storage needs, verification time and gas costs. However, they require a slightly more complex implementation that includes an aggregator entity.
-- ECDSA signatures are simpler to impelement, because ECDSA does not support aggregation and so ECDSA services do not require an aggregator entity. However, this lack of aggregation support requires each ECDSA signature to be stored and verified individually, which increases both storage and gas costs as the number of signatures grows.
+- ECDSA signatures are simpler to implement, because ECDSA does not support aggregation and so ECDSA services do not require an aggregator entity. However, this lack of aggregation support requires each ECDSA signature to be stored and verified individually, which increases both storage and gas costs as the number of signatures grows.
 - Please note: as of [eigenlayer-middleware v0.2.1](https://github.com/Layr-Labs/eigenlayer-middleware/releases/tag/v0.2.1-mainnet-rewards) the [ECDSAServiceManagerBase contract](https://github.com/Layr-Labs/eigenlayer-middleware/blob/v0.2.1-mainnet-rewards/src/unaudited/ECDSAServiceManagerBase.sol) was not yet fully audited. Please check the most recent release as this is expected to change.
 
 

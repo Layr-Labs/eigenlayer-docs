@@ -61,7 +61,7 @@ The following steps are necessary for a Restaker to **move** their Delegated bal
 - **Delegate** to the new Operator.
 
 1. Undelegate: invoke `DelegationManager.undelegate()`.
-   * Note: this action automatically **queues a withdrawal for all restaked assets**. The Undelegate and Queue Withdrawal transactions are intenionally combined due to the security architecture of EigenLayer smart contracts.
+   * Note: this action automatically **queues a withdrawal for all restaked assets**. The Undelegate and Queue Withdrawal transactions are intentionally combined due to the security architecture of EigenLayer smart contracts.
 2. Wait for the Escrow Period to complete.
 3. Invoke DelegationManager.completeQueuedWithdrawal(). **Important:** you will choose to complete the withdrawal as shares, which is effectively a **redeposit** action.
    * `receiveAsTokens` should be set to _false_.
@@ -197,7 +197,7 @@ This process is intended to allow users to withdraw yield (beacon chain consensu
 
 
 Determine the number of shares available to withdraw. This step is an _optional_ convenience to avoid attempting to queue a withdrawal for more shares than allowed.
-1. Invoke `EigenPod.withdrawableRestakedExecutionLayerGwei()`. Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the deafult measure used by the Beacon chain to store balances.
+1. Invoke `EigenPod.withdrawableRestakedExecutionLayerGwei()`. Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the default measure used by the Beacon chain to store balances.
 1. Convert the resulting Gwi to Wei. Multiple the amount in Gwei * 1 billion (1e9). 
 1. The amount in Wei represents the number of shares available to withdraw.
 
