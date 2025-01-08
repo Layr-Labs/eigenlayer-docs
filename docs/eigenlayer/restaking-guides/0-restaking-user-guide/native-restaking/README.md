@@ -97,7 +97,7 @@ Queue the Withdrawal:
 
 Redeposit or Complete Withdrawal:
 Redeposit or Complete Withdrawal: Redepositing is available at this step for users who accidentally queued a withdrawal, but would like to resume staking and delegation.
-1. Choose to either **Restake** (to Redposit the assets) or **Withdraw** (to complete the withdrawal).
+1. Choose to either **Restake** (to Redeposit the assets) or **Withdraw** (to complete the withdrawal).
 1. **Sign** the transaction using your web3 wallet.
 
 
