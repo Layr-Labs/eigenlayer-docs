@@ -5,7 +5,7 @@ title: Incredible Squaring
 
 ## What is Incredible Squaring?
 
-[Incredible Squaring](https://github.com/Layr-Labs/incredible-squaring-avs) is a demo of a minimum viable AVS with full Eigenlayer integration. The purpose of this demo is to illustrate how a value computed off-chain (in this case, the square of a number) can be constructed as part of the work operators have signed up to perform as well as how this business logic relates to the AVS contracts. We take the offchan computation, have it signed by multiple Operators, then aggregate the Operators signatures, before finally validating and writing the value on-chain. For a video walkthrough please see:
+[Incredible Squaring](https://github.com/Layr-Labs/incredible-squaring-avs) is a demo of a minimum viable AVS with full Eigenlayer integration. The purpose of this demo is to illustrate how a value computed off-chain (in this case, the square of a number) can be constructed as part of the work operators have signed up to perform as well as how this business logic relates to the AVS contracts. We take the offchain computation, have it signed by multiple Operators, then aggregate the Operators signatures, before finally validating and writing the value on-chain. For a video walkthrough please see:
 Incredible Squaring [Overall 5 min Walk-Through](https://www.loom.com/share/50314b3ec0f34e2ba386d45724602d76?sid=cf176400-fdbb-4bdc-8563-22a68414985d)
 Incredible Squaring [TaskManager 5 min Walk-Through](https://www.loom.com/share/5f3f2a447bc54ffa9d37d203c32088de?sid=0f5c2c07-82c5-4640-bc6f-6e4327bb3d81)
 

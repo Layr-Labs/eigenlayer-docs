@@ -355,7 +355,7 @@ View all your allocations with show command as below
 eigenlayer operator allocations show 
 	--network holesky 
 	--operator-address <operator-address> 
-	--strategy-addresses <comma-seperated-strategy-addresses>
+	--strategy-addresses <comma-separated-strategy-addresses>
 
 ```
 
@@ -365,7 +365,7 @@ Register to Operator Set
 eigenlayer operator register-operator-sets 
 	--operator-address <operator-address> 
 	--avs-address <avs-service-manager-address> 
-	--operator-set-ids <comma-seperated-list-of-operator-set-ids>
+	--operator-set-ids <comma-separated-list-of-operator-set-ids>
 	--caller-address <address-of-caller>
 ```
 
@@ -374,7 +374,7 @@ De-register from Operator Sets
 eigenlayer operator deregister-operator-sets 
 	--operator-address <operator-address> 
 	--avs-address <avs-address> 
-	--operator-set-ids <comma-seperated-list-of-operator-set-ids>
+	--operator-set-ids <comma-separated-list-of-operator-set-ids>
 	--caller-address <address-of-caller>
 ```
 

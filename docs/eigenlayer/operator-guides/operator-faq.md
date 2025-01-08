@@ -21,7 +21,7 @@ Yes. We only support `.png` format and we strictly check the content of image. I
 
 When you [create/import](../operator-guides/operator-installation#create-and-list-keys) keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can run the [export](../operator-guides/operator-installation.md#export-keys) command to get your plaintext private key.
 
-#### What is my operator addresss?
+#### What is my operator address?
 
 After you [create/import](../operator-guides/operator-installation#create-and-list-keys) ecdsa key you will be shown below log message
 
