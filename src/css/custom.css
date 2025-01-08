@@ -3,8 +3,11 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 .menu__link--active {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .header--github-link {
@@ -122,11 +125,9 @@ html[data-theme="dark"] .header--github-link:before {
 .card__header h3 {
   color: #1A0C6D;
   padding-top: 20px;
+  font-family: "ABC Repro";
 }
 
-.docs-landing {
-  border: 1px solid #1a0c6d;
-}
 
 [data-theme="dark"] .docs-landing {
   border-color: white;
@@ -143,14 +144,32 @@ html[data-theme="dark"] .header--github-link:before {
 .link-body-header {
   padding-left: 27px;
   padding-right: 20px;
+  color: var(--Content-Text-Headline, #000);
+  /* Content/Card/Label */
+  font-family: "ABC Repro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
 }
 
 .link-body-container {
   padding-left: 27px;
   padding-right: 20px;
   padding-top: 10px;
-  color: black;
+
   padding-bottom: 40px;
+
+  color: var(--Content-Text-Body, #7C7B89);
+  leading-trim: both;
+  text-edge: cap;
+
+  /* Content/Card/Body */
+  font-family: "DM Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 153.846% */
 }
 
 .landing-link-container {
@@ -225,3 +244,73 @@ html[data-theme="dark"] .header--github-link:before {
 .button1-container-heading {
   margin-top: 25px;
 }
+
+
+.navbar__title{
+  font-family: "ABC Repro";
+  color: var(--Brand-Prim, #1A0C6D);
+  /* NavBar/Logo Text */
+  font-family: "ABC Repro";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 14px */
+}
+
+.navbar__link{
+  color: var(--NavBar-Text-Color, #313131);
+  text-align: center;
+  /* NavBar/Label Text */
+  font-family: "ABC Repro";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: -0.32px;
+}
+
+.navbar__link--active{
+  border-bottom: 2px solid var(--NavBar-Selected-Stroke, #04020F);
+}
+
+.footer_title{
+  align-self: stretch; 
+  color: var(--Footer-Text-Sec, rgba(255, 255, 255, 0.40));
+  /* Footer/Header */
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 14px */
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.footer_item{
+  color: var(--Footer-Text-Prim, #FFF);
+  /* Footer/Body-Content */
+  font-family: "ABC Repro";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 19.6px */
+}
+
+
+
+.landing-link-container{
+  display: flex;
+  height: 243px;
+  padding: 10px;
+  align-items: center;
+  gap: 20%;
+  flex: 1 1 0;
+  border-radius: 12px;
+  border: 1px solid var(--Content-Card-Stroke, #F3F3F3);
+  background: var(--Content-Card-Bg-fill, #FFF);
+
+  /* Card Shadow */
+  box-shadow: 11px 22px 7px 0px rgba(0, 0, 0, 0.00), 7px 14px 6px 0px rgba(0, 0, 0, 0.01), 4px 8px 5px 0px rgba(0, 0, 0, 0.03), 2px 3px 4px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+

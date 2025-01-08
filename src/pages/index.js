@@ -17,11 +17,13 @@ function Home() {
               title="tagline"
               className="landing-tagline"
               style={{
-                fontWeight: "700",
-                marginBottom: "0px",
-                fontSize: "x-large",
-                paddingTop: "55px",
-                paddingBottom: "10px",
+        
+                fontSize: "32px",
+                fontStyle: "normal",
+                fontWeight: "500",
+                lineHeight: "110%",
+                letterSpacing: "-0.64px",
+                color: "#000000",
               }}
             >
               Welcome to the EigenLayer Documentation Site
