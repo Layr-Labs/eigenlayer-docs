@@ -90,9 +90,8 @@ html[data-theme="dark"] .header--github-link:before {
   margin: 3em 0;
 }
 
-.cards__container .col {
-  margin-bottom: 3em;
-}
+
+
 
 .card {
   padding: 1rem;
@@ -178,27 +177,6 @@ html[data-theme="dark"] .header--github-link:before {
   padding-right: 0px;
 }
 
-.landing-link-container:nth-child(1) {
-  border-bottom: 1px solid #1a0c6d;
-  border-right: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(2) {
-  border-bottom: 1px solid #1a0c6d;
-  border-right: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(3) {
-  border-bottom: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(4) {
-  border-right: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(5) {
-  border-right: 1px solid #1a0c6d;
-}
 
 [data-theme="dark"] .landing-link-container {
   border-color: white;
@@ -301,7 +279,7 @@ html[data-theme="dark"] .header--github-link:before {
 .landing-link-container{
   display: flex;
   height: 243px;
-  padding: 10px;
+  padding: 25px;
   align-items: center;
   gap: 20%;
   flex: 1 1 0;
@@ -310,7 +288,12 @@ html[data-theme="dark"] .header--github-link:before {
   background: var(--Content-Card-Bg-fill, #FFF);
 
   /* Card Shadow */
-  box-shadow: 11px 22px 7px 0px rgba(0, 0, 0, 0.00), 7px 14px 6px 0px rgba(0, 0, 0, 0.01), 4px 8px 5px 0px rgba(0, 0, 0, 0.03), 2px 3px 4px 0px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-
+.col--4{
+  flex: 1 0 0;
+  max-width: 310px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
