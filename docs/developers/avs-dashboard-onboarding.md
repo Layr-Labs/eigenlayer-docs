@@ -138,4 +138,5 @@ Note that for proper rendering of your logo on the UI, the logo _must_ be hosted
 Once you've gone through the above steps and you've called the `updateAVSMetadataURI` function, your AVS will be reflected on the Holesky dashboard in about 10 minutes.
 
 ## Mainnet Dashboard onboarding
-Prior to planning your Mainnet onboarding, please test first on testnet. If not already connected to the Eigen Labs team regarding any onboarding questions, you can get in touch with the team by filling out [this form](https://forms.gle/8BJSntA3eYUnZZgs8).
+To complete the process of onboarding your AVS on to the mainnet marketplace dashboard, please submit this form: [EigenLayer Mainnet Dashboard Onboarding Form](https://forms.gle/8BJSntA3eYUnZZgs8).
+
