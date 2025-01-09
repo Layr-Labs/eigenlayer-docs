@@ -129,10 +129,6 @@ html[data-theme="dark"] .header--github-link:before {
   color:  white;
 }
 
-.link-body-header h3 {
-  color: var(--Content-Text-Headline, #000);
-  font-family: "ABC Repro";
-}
 
 
 [data-theme="dark"] .docs-landing {
@@ -147,42 +143,7 @@ html[data-theme="dark"] .header--github-link:before {
   text-decoration: underline;
 }
 
-.link-body-icon{
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-}
 
-.link-body-header {
-  padding-left: 20px;
-  padding-right: 20px;
-
-  color: var(--Content-Text-Headline, #000);
-  /* Content/Card/Label */
-  font-family: "ABC Repro";
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 120% */
-}
-
-.link-body-container {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
-  
-
-  color: var(--Content-Text-Body, #7C7B89);
-  leading-trim: both;
-  text-edge: cap;
-
-  /* Content/Card/Body */
-  font-family: "DM Sans";
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 153.846% */
-}
 
 
 
@@ -214,6 +175,60 @@ html[data-theme="dark"] .header--github-link:before {
 }
 
 
+
+
+.link-body-header {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  color: var(--Content-Text-Headline, #000);
+  /* Content/Card/Label */
+  font-family: "ABC Repro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+
+
+
+.link-body-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  color: var(--Content-Text-Body, #7C7B89);
+  /* Content/Card/Body */
+  font-family: "DM Sans";
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 153.846% */
+}
+
+[data-theme="dark"] .link-body-header {
+  color: white;
+}
+
+[data-theme="dark"] .link-body-container {
+  color: white;
+}
+
+
+.link-body-icon{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.link-body-header h3 {
+  color: var(--Content-Text-Headline, #000);
+  font-family: "ABC Repro";
+}
+
+[data-theme="dark"] .link-body-header h3 {
+  color: white;
+}
+
 .navbar__title{
   font-family: "ABC Repro";
   color: var(--Brand-Prim, #1A0C6D);
@@ -223,6 +238,10 @@ html[data-theme="dark"] .header--github-link:before {
   font-style: normal;
   font-weight: 500;
   line-height: 100%; /* 14px */
+}
+
+[data-theme="dark"] .navbar__title{
+  color: white;
 }
 
 .navbar__link{
@@ -237,8 +256,16 @@ html[data-theme="dark"] .header--github-link:before {
   letter-spacing: -0.32px;
 }
 
+[data-theme="dark"] .navbar__link{
+  color: white;
+}
+
 .navbar__link--active{
   border-bottom: 2px solid var(--NavBar-Selected-Stroke, #04020F);
+}
+
+[data-theme="dark"] .navbar__link--active{
+  border-bottom: 2px solid white;
 }
 
 .footer__title{
@@ -282,6 +309,10 @@ html[data-theme="dark"] .header--github-link:before {
   min-width: 0;
 }
 
+[data-theme="dark"] .grid-item {
+  background-color: #1a1a1a;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 1024px) {
   .grid-container {
@@ -314,6 +345,19 @@ html[data-theme="dark"] .header--github-link:before {
 
 .landing-tagline{
   font-family: "DM Sans";
+  margin-left: 40px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.64px;
+  color: #000000;
+}
+
+[data-theme="dark"] .landing-tagline{
+  color: white;
 }
 
 :root{
@@ -321,7 +365,7 @@ html[data-theme="dark"] .header--github-link:before {
 }
 
 .markdown{
-  color: var(--Content-Text-Body, #7C7B89);
+  color: var(--Content-Text-Body, #494952);
 
   /* Content/Body */
   font-family: "DM Sans";
@@ -329,6 +373,10 @@ html[data-theme="dark"] .header--github-link:before {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 24px */
+}
+
+[data-theme="dark"] .markdown{
+  color: white;
 }
 
 .theme-doc-markdown.markdown h1,
@@ -342,6 +390,15 @@ html[data-theme="dark"] .header--github-link:before {
   font-family: "DM Sans";
 }
 
+[data-theme="dark"] .theme-doc-markdown.markdown h1,
+[data-theme="dark"] .theme-doc-markdown.markdown h2,
+[data-theme="dark"] .theme-doc-markdown.markdown h3,
+[data-theme="dark"] .theme-doc-markdown.markdown h4,
+[data-theme="dark"] .theme-doc-markdown.markdown h5,
+[data-theme="dark"] .theme-doc-markdown.markdown h6 {
+  color: white;
+}
+
 .menu__link{
   color: var(--Side-Nav-Text-Prim, #000);
   /* Side Nav/Label-Selected */
@@ -351,6 +408,14 @@ html[data-theme="dark"] .header--github-link:before {
   line-height: 20px; /* 125% */
 }
 
+[data-theme="dark"] .menu__link{
+  color: white;
+}
+
 .menu__link--active{
   font-weight: 600;
+}
+
+[data-theme="dark"] .menu__link--active{
+  color:rgb(100, 143, 228);
 }

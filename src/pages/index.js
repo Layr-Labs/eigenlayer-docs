@@ -16,17 +16,6 @@ function Home() {
               <h1
               title="tagline"
               className="landing-tagline"
-              style={{
-                marginLeft: "40px",
-                marginBottom: "40px",
-                marginTop: "10px",
-                fontSize: "32px",
-                fontStyle: "normal",
-                fontWeight: "500",
-                lineHeight: "110%",
-                letterSpacing: "-0.64px",
-                color: "#000000",
-              }}
             >
               Welcome to the EigenLayer Documentation Site
             </h1>

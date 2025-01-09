@@ -199,6 +199,7 @@ const config = {
         logo: {
           alt: "EigenLayer Logo",
           src: "img/eigenlayer-logo.png",
+          srcDark: "img/eigenlayer-logo-dark.png",
         },
         items: [
           {
