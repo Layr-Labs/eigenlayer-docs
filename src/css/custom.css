@@ -5,6 +5,14 @@
  */
 
  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+ 
+ @font-face {
+  font-family: 'ABC Repro';
+  src: url('/font/ABCReproVariable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 .menu__link--active {
   font-weight: 600;
@@ -121,9 +129,8 @@ html[data-theme="dark"] .header--github-link:before {
   color:  white;
 }
 
-.card__header h3 {
-  color: #1A0C6D;
-  padding-top: 20px;
+.link-body-header h3 {
+  color: var(--Content-Text-Headline, #000);
   font-family: "ABC Repro";
 }
 
@@ -140,9 +147,16 @@ html[data-theme="dark"] .header--github-link:before {
   text-decoration: underline;
 }
 
-.link-body-header {
-  padding-left: 27px;
+.link-body-icon{
+  padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.link-body-header {
+  padding-left: 20px;
+  padding-right: 20px;
+
   color: var(--Content-Text-Headline, #000);
   /* Content/Card/Label */
   font-family: "ABC Repro";
@@ -153,11 +167,10 @@ html[data-theme="dark"] .header--github-link:before {
 }
 
 .link-body-container {
-  padding-left: 27px;
+  padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
-
-  padding-bottom: 40px;
+  
 
   color: var(--Content-Text-Body, #7C7B89);
   leading-trim: both;
@@ -171,29 +184,6 @@ html[data-theme="dark"] .header--github-link:before {
   line-height: 20px; /* 153.846% */
 }
 
-.landing-link-container {
-  margin-bottom: 0px !important;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-
-[data-theme="dark"] .landing-link-container {
-  border-color: white;
-}
-
-@media screen and (max-width: 996px) {
-  .landing-link-container {
-    border-right: 0px !important;
-  }
-  .landing-link-container:nth-child(4) {
-    border-bottom: 1px solid #1a0c6d;
-  }
-  
-  .landing-link-container:nth-child(5) {
-    border-bottom: 1px solid #1a0c6d;
-  }
-}
 
 
 .button1 {
@@ -251,11 +241,11 @@ html[data-theme="dark"] .header--github-link:before {
   border-bottom: 2px solid var(--NavBar-Selected-Stroke, #04020F);
 }
 
-.footer_title{
+.footer__title{
   align-self: stretch; 
   color: var(--Footer-Text-Sec, rgba(255, 255, 255, 0.40));
   /* Footer/Header */
-  font-family: Inter;
+  font-family: "ABC Repro";
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
@@ -264,36 +254,103 @@ html[data-theme="dark"] .header--github-link:before {
   text-transform: uppercase;
 }
 
-.footer_item{
+.footer__item{
   color: var(--Footer-Text-Prim, #FFF);
   /* Footer/Body-Content */
-  font-family: "ABC Repro";
+  font-family: "ABC Repro" ;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 140%; /* 19.6px */
 }
 
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-auto-rows: minmax(180px, auto);
+  gap: 32px 50px;
+  padding: 20px;
+}
 
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .grid-container {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .grid-container {
+      grid-template-columns: minmax(300px, 1fr);
+      margin: 0 10px;
+  }
+}
 
 .landing-link-container{
-  display: flex;
-  height: 243px;
-  padding: 25px;
-  align-items: center;
-  gap: 20%;
-  flex: 1 1 0;
-  border-radius: 12px;
   border: 1px solid var(--Content-Card-Stroke, #F3F3F3);
   background: var(--Content-Card-Bg-fill, #FFF);
-
   /* Card Shadow */
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
-.col--4{
-  flex: 1 0 0;
-  max-width: 310px;
-  margin-right: 20px;
-  margin-bottom: 30px;
+[data-theme="dark"] .landing-link-container {
+  border-color: white;
+}
+
+.container{
+  margin: 40px;
+}
+
+
+.landing-tagline{
+  font-family: "DM Sans";
+}
+
+:root{
+  font-family: "DM Sans";  
+}
+
+.markdown{
+  color: var(--Content-Text-Body, #7C7B89);
+
+  /* Content/Body */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+
+.theme-doc-markdown.markdown h1,
+.theme-doc-markdown.markdown h2,
+.theme-doc-markdown.markdown h3,
+.theme-doc-markdown.markdown h4,
+.theme-doc-markdown.markdown h5,
+.theme-doc-markdown.markdown h6 {
+  color: var(--Content-Text-Headline, #000);
+  /* Content/Headline */
+  font-family: "DM Sans";
+}
+
+.menu__link{
+  color: var(--Side-Nav-Text-Prim, #000);
+  /* Side Nav/Label-Selected */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  line-height: 20px; /* 125% */
+}
+
+.menu__link--active{
+  font-weight: 600;
 }
