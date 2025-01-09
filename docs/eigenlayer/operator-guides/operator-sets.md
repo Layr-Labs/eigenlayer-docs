@@ -1,10 +1,10 @@
 ---
 sidebar_position: 3
-title: Operator Sets, Allocation, and Registration (Testnet)
+title: Operator Sets, Allocation, and Registration
 ---
 
 
-## Operator Sets
+## Operator Sets (Currently in Testnet)
 
 Operator Sets bring the guarantees of Unique Stake to the protocol and commitment-based slashing to AVSs. AVSs may use them to differentiate Operators based on unique business logic, hardware profiles, liveness guarantees, or composition of stake.
 

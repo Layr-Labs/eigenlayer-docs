@@ -3,11 +3,10 @@ sidebar_position: 4
 title: AVS Operator Set and Slashing of Unique Stake
 ---
 
+
+## Slashing of Unique Stake (Currently in Testnet)
+
 Please review the entire [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) in detail before proceeding with Testnet. 
-
-
-
-## Slashing of Unique Stake
 
 With Unique Stake allocated to Operator Sets, AVSs can begin assigning slashable tasks with economic commitments from their Operators. It is key to AVS designs to consider what is a slashable offense and to effectively communicate these conditions with Operators and Stakers. 
 
