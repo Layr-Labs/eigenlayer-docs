@@ -199,7 +199,7 @@ html[data-theme="dark"] .header--github-link:before {
   color: var(--Content-Text-Body, #7C7B89);
   /* Content/Card/Body */
   font-family: "DM Sans";
-  font-size: 13px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 153.846% */
