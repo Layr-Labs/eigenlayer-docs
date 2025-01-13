@@ -16,17 +16,10 @@ function Home() {
               <h1
               title="tagline"
               className="landing-tagline"
-              style={{
-                fontWeight: "700",
-                marginBottom: "0px",
-                fontSize: "x-large",
-                paddingTop: "55px",
-                paddingBottom: "10px",
-              }}
             >
               Welcome to the EigenLayer Documentation Site
             </h1>
-              <div className="row cards__container docs-landing">
+              <div className="grid-container">
                 <Card
                   to="eigenlayer/overview"
                   header={{
