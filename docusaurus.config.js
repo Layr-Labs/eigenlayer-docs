@@ -195,7 +195,7 @@ const config = {
       image: 'img/eigenlayer-logo.png',
 
       navbar: {
-        title: "EigenLayer Docs",
+        title: "EigenLayer",
         logo: {
           alt: "EigenLayer Logo",
           src: "img/eigenlayer-logo.png",
