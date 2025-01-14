@@ -320,7 +320,7 @@ const config = {
     },
     {
       src: '/js/userback.js',
-      async: false,
+      async: true,
     },
   ],
   themes: [
