@@ -3,8 +3,19 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+ 
+ @font-face {
+  font-family: 'ABC Repro';
+  src: url('/font/ABCReproVariable.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .menu__link--active {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .header--github-link {
@@ -87,9 +98,8 @@ html[data-theme="dark"] .header--github-link:before {
   margin: 3em 0;
 }
 
-.cards__container .col {
-  margin-bottom: 3em;
-}
+
+
 
 .card {
   padding: 1rem;
@@ -119,14 +129,7 @@ html[data-theme="dark"] .header--github-link:before {
   color:  white;
 }
 
-.card__header h3 {
-  color: #1A0C6D;
-  padding-top: 20px;
-}
 
-.docs-landing {
-  border: 1px solid #1a0c6d;
-}
 
 [data-theme="dark"] .docs-landing {
   border-color: white;
@@ -140,63 +143,8 @@ html[data-theme="dark"] .header--github-link:before {
   text-decoration: underline;
 }
 
-.link-body-header {
-  padding-left: 27px;
-  padding-right: 20px;
-}
 
-.link-body-container {
-  padding-left: 27px;
-  padding-right: 20px;
-  padding-top: 10px;
-  color: black;
-  padding-bottom: 40px;
-}
 
-.landing-link-container {
-  margin-bottom: 0px !important;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.landing-link-container:nth-child(1) {
-  border-bottom: 1px solid #1a0c6d;
-  border-right: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(2) {
-  border-bottom: 1px solid #1a0c6d;
-  border-right: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(3) {
-  border-bottom: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(4) {
-  border-right: 1px solid #1a0c6d;
-}
-
-.landing-link-container:nth-child(5) {
-  border-right: 1px solid #1a0c6d;
-}
-
-[data-theme="dark"] .landing-link-container {
-  border-color: white;
-}
-
-@media screen and (max-width: 996px) {
-  .landing-link-container {
-    border-right: 0px !important;
-  }
-  .landing-link-container:nth-child(4) {
-    border-bottom: 1px solid #1a0c6d;
-  }
-  
-  .landing-link-container:nth-child(5) {
-    border-bottom: 1px solid #1a0c6d;
-  }
-}
 
 
 .button1 {
@@ -224,4 +172,248 @@ html[data-theme="dark"] .header--github-link:before {
 
 .button1-container-heading {
   margin-top: 25px;
+}
+
+
+
+
+.link-body-header {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  color: var(--Content-Text-Headline, #000);
+  /* Content/Card/Label */
+  font-family: "ABC Repro";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
+}
+
+
+
+.link-body-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  color: var(--Content-Text-Body, #7C7B89);
+  /* Content/Card/Body */
+  font-family: "DM Sans";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 153.846% */
+}
+
+[data-theme="dark"] .link-body-header {
+  color: white;
+}
+
+[data-theme="dark"] .link-body-container {
+  color: white;
+}
+
+
+.link-body-icon{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.link-body-header h3 {
+  color: var(--Content-Text-Headline, #000);
+  font-family: "ABC Repro";
+}
+
+[data-theme="dark"] .link-body-header h3 {
+  color: white;
+}
+
+.navbar__title{
+  font-family: "ABC Repro";
+  color: var(--Brand-Prim, #1A0C6D);
+  /* NavBar/Logo Text */
+  font-family: "ABC Repro";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600 !important;
+  line-height: 100%; /* 14px */
+}
+
+[data-theme="dark"] .navbar__title{
+  color: white;
+}
+
+.navbar__link{
+  color: var(--NavBar-Text-Color, #313131);
+  text-align: center;
+  /* NavBar/Label Text */
+  font-family: "ABC Repro";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 171.429% */
+  letter-spacing: -0.32px;
+}
+
+[data-theme="dark"] .navbar__link{
+  color: white;
+}
+
+.navbar__link--active{
+  border-bottom: 2px solid var(--NavBar-Selected-Stroke, #04020F);
+}
+
+[data-theme="dark"] .navbar__link--active{
+  border-bottom: 2px solid white;
+}
+
+.footer__title{
+  align-self: stretch; 
+  color: var(--Footer-Text-Sec, rgba(255, 255, 255, 0.40));
+  /* Footer/Header */
+  font-family: "ABC Repro";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 14px */
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.footer__item{
+  color: var(--Footer-Text-Prim, #FFF);
+  /* Footer/Body-Content */
+  font-family: "ABC Repro" ;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%; /* 19.6px */
+}
+
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  grid-auto-rows: minmax(180px, auto);
+  gap: 32px 50px;
+  padding: 20px;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding-top: 35px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 8px;
+  min-width: 0;
+}
+
+[data-theme="dark"] .grid-item {
+  background-color: #1a1a1a;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+  .grid-container {
+      grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .grid-container {
+      grid-template-columns: minmax(300px, 1fr);
+      margin: 0 10px;
+  }
+}
+
+.landing-link-container{
+  border: 1px solid var(--Content-Card-Stroke, #F3F3F3);
+  background: var(--Content-Card-Bg-fill, #FFF);
+  /* Card Shadow */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .landing-link-container {
+  border-color: white;
+}
+
+.landing-tagline{
+  font-family: "DM Sans";
+  margin-left: 40px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.64px;
+  color: #000000;
+}
+
+[data-theme="dark"] .landing-tagline{
+  color: white;
+}
+
+:root{
+  font-family: "DM Sans";  
+}
+
+.markdown{
+  color: var(--Content-Text-Body, #494952);
+
+  /* Content/Body */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+
+[data-theme="dark"] .markdown{
+  color: white;
+}
+
+.theme-doc-markdown.markdown h1,
+.theme-doc-markdown.markdown h2,
+.theme-doc-markdown.markdown h3,
+.theme-doc-markdown.markdown h4,
+.theme-doc-markdown.markdown h5,
+.theme-doc-markdown.markdown h6 {
+  color: var(--Content-Text-Headline, #000);
+  /* Content/Headline */
+  font-family: "DM Sans";
+}
+
+[data-theme="dark"] .theme-doc-markdown.markdown h1,
+[data-theme="dark"] .theme-doc-markdown.markdown h2,
+[data-theme="dark"] .theme-doc-markdown.markdown h3,
+[data-theme="dark"] .theme-doc-markdown.markdown h4,
+[data-theme="dark"] .theme-doc-markdown.markdown h5,
+[data-theme="dark"] .theme-doc-markdown.markdown h6 {
+  color: white;
+}
+
+.menu__link{
+  color: var(--Side-Nav-Text-Prim, #000);
+  /* Side Nav/Label-Selected */
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  line-height: 20px; /* 125% */
+}
+
+[data-theme="dark"] .menu__link{
+  color: white;
+}
+
+.menu__link--active{
+  font-weight: 600;
+}
+
+[data-theme="dark"] .menu__link--active{
+  color:rgb(100, 143, 228);
 }
