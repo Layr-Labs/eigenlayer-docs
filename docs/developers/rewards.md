@@ -8,16 +8,16 @@ title: AVS Rewards
 Before proceeding, please review the [Rewards Overview](/docs/eigenlayer/rewards-claiming/rewards-claiming-overview.md) for background information on how Rewards distributions work.
 
 
-## Rewards v2 (currently in Testnet)
+## Operator Directed Rewards
 
-With the release of Rewards v2 (currently in Testnet), AVSs have the flexibility to set custom logic for rewards to individual Operators, based on work completed or anything else they may design or desire (e.g., more equal distribution of operator support for decentralization or security reasons). Variable Operator fees per AVS, set by Operators, allows Operators to take less or more than the 10% default fee on rewards. This keeps EigenLayer fee-agnostic as a protocol and unlocks flexibility via a variable take rate for operators in choosing which AVS to run and in attracting new stake.
+With the release of Rewards v2, AVSs have the flexibility to set custom logic for rewards to individual Operators, based on work completed or anything else they may design or desire (e.g., more equal distribution of operator support for decentralization or security reasons). Variable Operator fees per AVS, set by Operators, allows Operators to take less or more than the 10% default fee on rewards. This keeps EigenLayer fee-agnostic as a protocol and unlocks flexibility via a variable take rate for operators in choosing which AVS to run and in attracting new stake.
 
 Please see [ELIP-001 Operator Directed Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#distribution-of-operator-directed-rewards) for more information.
 
 
 ## AVS Integration
 
-AVSs can make rewards submissions via calling `createAVSRewardsSubmission` or `createOperatorDirectedAVSRewardsSubmission()` (per Rewards v2, currently in Testnet) on the `RewardsCoordinator` contract. Each rewards submission specifies:  
+AVSs can make rewards submissions via calling `createAVSRewardsSubmission` or `createOperatorDirectedAVSRewardsSubmission()` on the `RewardsCoordinator` contract. Each rewards submission specifies:  
 
 1. A time range for which the rewards submission is valid. Rewards submissions can be retroactive from the M2 upgrade and last up to 30 days in the future.
 2. A list of strategies and multipliers, which enables the AVS to weigh the relative payout to each strategy within a single rewards submission.
