@@ -47,7 +47,7 @@ Operator responses to tasks are often signed using the BLS or ECDSA algorithm. T
 
 The following section covers the minimum set of smart contract integrations and deployment scripts that an AVS needs to build in order to:
 1. Be considered a fully functional AVS for demo and proof of concept purposes.
-2. Prepare your AVS to integrate Slashing functionality, which will be release soon.
+2. Prepare your AVS to integrate Slashing functionality. Slashing is [live on Holesky Testnet](https://www.blog.eigenlayer.xyz/introducing-slashing/) and Mainnet deployment is proposed for late Q1 2025.
 
 
 :::info
