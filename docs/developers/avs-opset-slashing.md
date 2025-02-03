@@ -113,10 +113,9 @@ To ensure community and incentive alignment, it is generally expected that AVSs 
 
 An Operator Set is a grouping of different types of work within a single AVS. Each AVS will have at least one Operator Set. The EigenLayer protocol does not enforce criteria for Operator Sets, however there are a few best practices to consider.
 
-Plan to logically group your AVS tasks (and verification) into separate Operator Sets. Each Operator Set can have its own design for:
+Plan to logically group your AVS tasks (and verification) into separate Operator Sets. First organize your Operator Sets according to which conditions you wish to distribute Rewards for. These conditions could include:
 * Unique business logic.
 * Unique Stake (cryptoeconomic security) amount and types of token required to be allocated from Operators.
-* Rewards distribution.
 * Slashing conditions.
 * Ejection criteria.
 * Quantity of Operators and criteria for operators allowed.
@@ -128,7 +127,6 @@ More detail on Operator Sets are available [here](https://docs.eigenlayer.xyz/ei
 
 
 ### Slashing Design and Veto Committees
-
 
 The EigenLayer protocol allows each AVS builder to design their own slashing conditions. One popular design is to utilize a governance mechanism with slashing such that a committee can review a proposed (or queued) slashing request. That slashing request can then be either fulfilled or vetoed by a committee of domain experts, governance council or multisig address for the AVS. Please see the [vetoable slasher example implementation](https://github.com/Layr-Labs/eigenlayer-middleware/blob/feat/slashing-release-branch/src/slashers/VetoableSlasher.sol) for reference.
 
