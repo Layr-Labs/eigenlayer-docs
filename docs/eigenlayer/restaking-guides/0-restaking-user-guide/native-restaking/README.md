@@ -28,9 +28,10 @@ We recommend users connect many validators to a single EigenPod in order to redu
 
 Create EigenPod:
 1. Visit the [EigenLayer App](https://app.eigenlayer.xyz/).
-1. Click Create EigenPod.
-1. Sign transaction.
-2. Observe the new EigenPod contract address is displayed.
+1. Click **Natively Staked Ether** via the Dashboard or Token tab.
+1. Click **Create EigenPod**.
+1. **Sign** the transaction via your Web3 wallet when prompted.
+1. Observe the new EigenPod contract address is displayed.
 
 :::info
 This address is responsible for all subsequent restaking and withdrawal activities associated with that EigenPod.
