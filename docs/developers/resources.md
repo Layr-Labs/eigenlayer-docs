@@ -24,7 +24,7 @@ These SDKs are wrappers on top of common EigenLayer AVS operations designed to s
 
 ### Developer Tooling
 - [Othentic](https://www.othentic.xyz) - Library of components for AVS builders.
-- [Layer](https://www.layer.xyz/) - Containerized Actively Validated Services (CAVS) via Web Assembly.
+- [Layer](https://www.layer.xyz/) - Containerized Autonomous Verifiable Services (CAVS) via Web Assembly.
 - [AltLayer Wizard](https://wizard.altlayer.io/) - AVS-as-a-Service platform.
 - [Gadget](https://github.com/webb-tools/gadget) - A framework for building modular AVS and Tangle Blueprints.
 

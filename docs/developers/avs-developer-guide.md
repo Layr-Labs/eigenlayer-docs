@@ -4,10 +4,10 @@ title: AVS Overview
 ---
 
 
-## What is an Actively Validated Service (AVS)?
+## What is an Autonomous Verifiable Service (AVS)?
 
 
-An Actively Validated Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom validation mechanisms of off-chain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
+An Autonomous Verifiable Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom validation mechanisms of off-chain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
 
 An AVS is composed of on-chain contracts for validation and an off-chain network of Operators. Operators execute the service on behalf of the AVS and then post evidence of their execution on-chain to the AVS contracts. Tasks can be initiated via on-chain contracts, off-chain via direct communication with the Operators, or via a task aggregator entity.
 
@@ -22,7 +22,7 @@ The design of the off-chain execution and on-chain validation is entirely flexib
 
 ## Why Build an AVS?
 
-Launching new Web3 projects requires substantial time and effort to bootstrap capital and operators. Builders should focus on their core product differentiators rather than bootstrapping economic security. Building an Actively Validated Service (AVS) on EigenLayer offers enhanced security, decentralization, and cost efficiency by utilizing Ethereum’s staking mechanism through restaking. This allows developers to focus more on their product’s core value and innovation without the significant overhead of setting up a new consensus mechanism or validator networks from scratch.
+Launching new Web3 projects requires substantial time and effort to bootstrap capital and operators. Builders should focus on their core product differentiators rather than bootstrapping economic security. Building an Autonomous Verifiable Service (AVS) on EigenLayer offers enhanced security, decentralization, and cost efficiency by utilizing Ethereum’s staking mechanism through restaking. This allows developers to focus more on their product’s core value and innovation without the significant overhead of setting up a new consensus mechanism or validator networks from scratch.
 
 The key benefits of building an AVS on EigenLayer include:
 - Security via Restaking: leverage Ethereum’s staking mechanism to secure your service.
