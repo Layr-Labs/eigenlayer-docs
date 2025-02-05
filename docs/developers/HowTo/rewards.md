@@ -1,6 +1,6 @@
 ---
-sidebar_position: 8
-title: AVS Rewards
+sidebar_position: 2
+title: Implement Rewards
 ---
 
 ## Overview

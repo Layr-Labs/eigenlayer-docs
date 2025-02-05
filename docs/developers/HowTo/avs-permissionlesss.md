@@ -1,6 +1,6 @@
 ---
-sidebar_position: 8
-title: Permissionless Token Strategies
+sidebar_position: 6
+title: Add ERC-20 Tokens as Restakable Asset
 ---
 
 # Permissionless Token Strategies

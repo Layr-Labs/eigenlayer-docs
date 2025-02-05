@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: AVS Operator Set and Slashing of Unique Stake
+sidebar_position: 3
+title: Implement Slashing of Unique Stake
 ---
 
 
