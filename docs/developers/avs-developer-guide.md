@@ -6,14 +6,13 @@ title: AVS Overview
 
 ## What is an Autonomous Verifiable Service (AVS)?
 
+An Autonomous Verifiable Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom verification mechanisms of off-chain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
 
-An Autonomous Verifiable Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom validation mechanisms of off-chain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
+An AVS is composed of on-chain contracts for verification and an off-chain network of Operators. Operators execute the service on behalf of the AVS and then post evidence of their execution on-chain to the AVS contracts. Tasks can be initiated via on-chain contracts, off-chain via direct communication with the Operators, or via a task aggregator entity.
 
-An AVS is composed of on-chain contracts for validation and an off-chain network of Operators. Operators execute the service on behalf of the AVS and then post evidence of their execution on-chain to the AVS contracts. Tasks can be initiated via on-chain contracts, off-chain via direct communication with the Operators, or via a task aggregator entity.
-
-The design of the off-chain execution and on-chain validation is entirely flexible based on the needs of the AVS developer. 
-- If the Operators perform tasks properly, the AVS can distribute rewards.
-- If the Operators perform tasks maliciously, their delegate stake can be slashed by the AVS, and the Operator can be removed from the Operator set. 
+The design of the off-chain execution and on-chain verification is entirely flexible based on the needs of the AVS developer. 
+- If the Operators perform tasks properly, the AVS can autonomously distribute rewards.
+- If the Operators perform tasks maliciously, their delegate stake can be slashed autonomously by the AVS, and the Operator can be removed from the Operator set. 
 
  Please see the original EigenLayer whitepaper [EigenLayer: The Restaking Collective](/docs/eigenlayer/overview/whitepaper.md) for further background on AVS design.
 
@@ -34,7 +33,7 @@ The key benefits of building an AVS on EigenLayer include:
 
 ## What Can You Build as an AVS?
 
-The scope of AVS design is broad. It includes **any off-chain service** that can be validated on-chain. This flexibility allows AVS developers to design custom validation mechanisms suited to the unique requirements of their service. The only requirement is that some evidence for the off-chain service’s execution is posted on-chain to enable validation of the service.
+The scope of AVS design is broad. It includes **any off-chain service** that can be verified on-chain. This flexibility allows AVS developers to design custom verification mechanisms suited to the unique requirements of their service. The only requirement is that some evidence for the off-chain service’s execution is posted on-chain to enable verification of the service.
 
 Examples of these services include rollup services, co-processors, cryptography services, zk Proof services, and more.
 

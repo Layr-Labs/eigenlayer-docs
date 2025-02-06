@@ -5,7 +5,7 @@ sidebar_position: 2
 
 
 
-- **Autonomous Verifiable Services (AVS):**  a service built externally to EigenLayer that requires active validation by a set of Operators. An AVS deploys its service manager to interact with EigenLayer core contracts that allow for Operator registration to Operator Sets, slashing, and rewards distribution. Once registered, an Operator agrees to run the AVS’s off-chain code.
+- **Autonomous Verifiable Services (AVS):**  a service built externally to EigenLayer that requires active verification by a set of Operators. An AVS deploys its service manager to interact with EigenLayer core contracts that allow for Operator registration to Operator Sets, slashing, and rewards distribution. Once registered, an Operator agrees to run the AVS’s off-chain code.
 
 - **Allocation / Deallocation:** an in-protocol commitment of security to an AVS’s Operator Set by an Operator. The act of allocating demarcates portions of an Operator’s delegated stake as Unique Stake, making it slashable by a single AVS. Deallocation is the same process in reverse, subject to additional time delays that ensure AVSs can appropriately slash for tasks that have occurred in the past.
 
