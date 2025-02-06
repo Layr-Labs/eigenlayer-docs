@@ -17,7 +17,7 @@ title: Preparing for Testnet and Mainnet Deployment
 
 3. Follow the [AVS Developer Security Best Practices](./avs-developer-best-practices.md) and [Key Manage Considerations for Developers](./avs-developer-best-practices.md#key-management-recommendation-for-developers).
 
-4. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
+4. Implement the [Node Specification](https://docs.eigenlayer.xyz/developers/avs-dashboard-onboarding) for your Operator executable package.
 
 5.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
 
