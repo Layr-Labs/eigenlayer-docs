@@ -178,7 +178,7 @@ const config = {
           },
           {
             from: "/developers/quickstart",
-            to: "/developers/Tutorials/quickstart",
+            to: "/developers/HowTo/quickstart",
           },
         ],
         createRedirects(existingPath) {
