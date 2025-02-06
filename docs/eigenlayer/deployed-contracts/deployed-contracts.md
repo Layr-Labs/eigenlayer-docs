@@ -5,7 +5,7 @@ title: Contract Addresses and Docs
 
 ## EigenLayer Core Restaking Contracts
 
-The EigenLayer core contracts are located in this repo: [`Layr-Labs/eigenlayer-contracts`](https://github.com/Layr-Labs/eigenlayer-contracts). They enable restaking of liquid staking tokens (LSTs) and beacon chain ETH to secure new services, called AVSs (actively validated services).
+The EigenLayer core contracts are located in this repo: [`Layr-Labs/eigenlayer-contracts`](https://github.com/Layr-Labs/eigenlayer-contracts). They enable restaking of liquid staking tokens (LSTs) and beacon chain ETH to secure new services, called AVSs (Autonomous Verifiable Services).
 
 ### Deployment Addresses
 

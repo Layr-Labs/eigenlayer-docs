@@ -6,7 +6,6 @@ title: AVS Overview
 
 ## What is an Autonomous Verifiable Service (AVS)?
 
-
 An Autonomous Verifiable Service (AVS) on EigenLayer is a decentralized service built on Ethereum that provides custom verification mechanisms of off-chain operations. Please see the [Intro to EigenLayer](https://docs.eigenlayer.xyz/eigenlayer/overview/) for background context on the broader EigenLayer ecosystem.
 
 An AVS is composed of on-chain contracts for verification and an off-chain network of Operators. Operators execute the service on behalf of the AVS and then post evidence of their execution on-chain to the AVS contracts. Tasks can be initiated via on-chain contracts, off-chain via direct communication with the Operators, or via a task aggregator entity.
