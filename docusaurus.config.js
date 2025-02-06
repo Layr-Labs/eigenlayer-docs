@@ -136,7 +136,50 @@ const config = {
             from: "/eigenlayer/economy/economy-overview",
             to: "/eigenlayer/economy/economy-calculation-and-formulas",
           },
-
+          {
+            from: "/developers/avs-developer-guide.md",
+            to: "/developers/Concepts/avs-developer-guide.md",
+          },
+          {
+            from: "/developers/avs-developer-best-practices.md",
+            to: "/developers/Reference/avs-developer-best-practices.md",
+          },
+          {
+            from: "/developers/avs-opset-slashing.md",
+            to: "/developers/HowTo/avs-opset-slashing.md",
+          },
+          {
+            from: "/developers/avs-permissionlesss.md",
+            to: "/developers/HowTo/avs-permissionlesss.md.md",
+          },
+          {
+            from: "/developers/deployment-testnet-mainnet.md",
+            to: "/developers/HowTo/deployment-testnet-mainnet.md",
+          },
+          {
+            from: "/developers/how-to-build-an-avs.md",
+            to: "/developers/HowTo/how-to-build-an-avs.md",
+          },
+          {
+            from: "/developers/avs-dashboard-onboarding.md",
+            to: "/developers/HowTo/onboard-avs-dashboard.md",
+          },
+          {
+            from: "/developers/rewards.md",
+            to: "/developers/HowTo/rewards.md",
+          },
+          {
+            from: "/developers/support.md",
+            to: "/developers/HowTo/support.md",
+          },
+          {
+            from: "/developers/resources.md",
+            to: "/developers/Reference/resources.md",
+          },
+          {
+            from: "/developers/quickstart.md",
+            to: "/developers/Tutorials/quickstart.md",
+          },
         ],
         createRedirects(existingPath) {
 
