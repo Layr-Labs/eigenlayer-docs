@@ -75,10 +75,7 @@ const config = {
             to: "/eigenlayer/operator-guides/operator-faq",
           },
           
-          {
-            from: "/eigenlayer/avs-guides/avs-development-guide",
-            to: "/developers/how-to-build-an-avs",
-          },
+          
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
@@ -213,7 +210,7 @@ const config = {
             activeBasePath: 'eigenlayer/',
           },
           {
-            to: "developers/avs-developer-guide",
+            to: "developers/Concepts/avs-developer-guide",
             label: "Developers",
             position: "left",
             activeBasePath: 'developer/',
