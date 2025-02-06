@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Implement AVS Marketplace Interfaces
+sidebar_position: 5
+title: Onboard to AVS Dashboard
 ---
 
 

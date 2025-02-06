@@ -132,6 +132,10 @@ const config = {
             to: "/eigenlayer/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
           },
           {
+            from: "/developers",
+            to: "/developers/Concepts/avs-developer-guide",
+          },
+          {
             from: "/eigenlayer/economy/economy-overview",
             to: "/eigenlayer/economy/economy-calculation-and-formulas",
           },

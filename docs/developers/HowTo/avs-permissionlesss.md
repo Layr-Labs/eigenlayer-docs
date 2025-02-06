@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 title: Add ERC-20 Tokens as Restakable Asset
 ---
 

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-title: Quick Start Example
+sidebar_position: 1
+title: Get started
 ---
 
 ## Hello World AVS: Local Deployment
