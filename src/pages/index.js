@@ -52,7 +52,7 @@ function Home() {
   
 
                 <Card
-                  to="developers/avs-developer-guide"
+                  to="developers/Concepts/avs-developer-guide"
                   header={{
                     label:"AVS Developers"
                   }}

@@ -75,10 +75,7 @@ const config = {
             to: "/eigenlayer/operator-guides/operator-faq",
           },
           
-          {
-            from: "/eigenlayer/avs-guides/avs-development-guide",
-            to: "/developers/how-to-build-an-avs",
-          },
+          
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
@@ -132,10 +129,57 @@ const config = {
             to: "/eigenlayer/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
           },
           {
+            from: "/developers",
+            to: "/developers/Concepts/avs-developer-guide",
+          },
+          {
             from: "/eigenlayer/economy/economy-overview",
             to: "/eigenlayer/economy/economy-calculation-and-formulas",
           },
-
+          {
+            from: "/developers/avs-developer-guide",
+            to: "/developers/Concepts/avs-developer-guide",
+          },
+          {
+            from: "/developers/avs-developer-best-practices",
+            to: "/developers/Reference/avs-developer-best-practices",
+          },
+          {
+            from: "/developers/avs-opset-slashing",
+            to: "/developers/HowTo/avs-opset-slashing",
+          },
+          {
+            from: "/developers/avs-permissionlesss",
+            to: "/developers/HowTo/avs-permissionlesss",
+          },
+          {
+            from: "/developers/deployment-testnet-mainnet",
+            to: "/developers/HowTo/deployment-testnet-mainnet",
+          },
+          {
+            from: "/developers/how-to-build-an-avs",
+            to: "/developers/HowTo/how-to-build-an-avs",
+          },
+          {
+            from: "/developers/avs-dashboard-onboarding",
+            to: "/developers/HowTo/onboard-avs-dashboard",
+          },
+          {
+            from: "/developers/rewards",
+            to: "/developers/HowTo/rewards",
+          },
+          {
+            from: "/developers/support",
+            to: "/developers/HowTo/support",
+          },
+          {
+            from: "/developers/resources",
+            to: "/developers/Reference/resources",
+          },
+          {
+            from: "/developers/quickstart",
+            to: "/developers/HowTo/quickstart",
+          },
         ],
         createRedirects(existingPath) {
 
@@ -209,7 +253,7 @@ const config = {
             activeBasePath: 'eigenlayer/',
           },
           {
-            to: "developers/avs-developer-guide",
+            to: "developers/Concepts/avs-developer-guide",
             label: "Developers",
             position: "left",
             activeBasePath: 'developer/',
