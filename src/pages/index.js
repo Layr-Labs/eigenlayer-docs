@@ -52,12 +52,12 @@ function Home() {
   
 
                 <Card
-                  to="developers/avs-developer-guide"
+                  to="developers/Concepts/avs-developer-guide"
                   header={{
                     label:"AVS Developers"
                   }}
                   body={{
-                    label:"Learn how to design, build, and launch an AVS (Actively Validated Service)."
+                    label:"Learn how to design, build, and launch an AVS (Autonomous Verifiable Service)."
                   }}
                 />
 

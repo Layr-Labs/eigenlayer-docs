@@ -28,9 +28,10 @@ We recommend users connect many validators to a single EigenPod in order to redu
 
 Create EigenPod:
 1. Visit the [EigenLayer App](https://app.eigenlayer.xyz/).
-1. Click Create EigenPod.
-1. Sign transaction.
-2. Observe the new EigenPod contract address is displayed.
+1. Click **Natively Staked Ether** via the Dashboard or Token tab.
+1. Click **Create EigenPod**.
+1. **Sign** the transaction via your Web3 wallet when prompted.
+1. Observe the new EigenPod contract address is displayed.
 
 :::info
 This address is responsible for all subsequent restaking and withdrawal activities associated with that EigenPod.
@@ -40,7 +41,7 @@ Repoint Validator:
 1. Configure the validator(s) credentials to point to the EigenPod address when the validator is created. Please see [Ethereum Launchpad](https://launchpad.ethereum.org/en/withdrawals#enabling-withdrawals) for more information. 
     * Confirming Withdrawal Address: you can confirm your withdrawal credentials (which should match your EigenPod), via the following URL: https://beaconcha.in/validator/[validator_index]#deposits
     * Optional: as of the PEPE release you may choose to set the FEE_RECIPIENT to your EigenPod address if you wish to Restake those fees.
-1. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/[validator_index] to follow your validator status. Please note: this process could take up to 7 days depending on the Beacon Chain deposit queue.
+1. Wait for the validator(s) to become active on-chain. Please see https://beaconcha.in/[validator_index] to follow your validator status. Please note: this process could take up to 10 days depending on the Beacon Chain deposit queue.
 1. The validator's state will transition to `Awaiting Restake` in the web app.
 
 Activate Restaking:

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: AVS Operator Set and Slashing of Unique Stake
+title: Implement Slashing of Unique Stake
 ---
 
 
@@ -106,3 +106,28 @@ AVS may integrate the AllocationManager via:
 * Specify an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
 
 To ensure community and incentive alignment, it is generally expected that AVSs will conduct off-chain outreach to communicate the purpose and task/security makeup of their Operator Sets with their Operators and Stakers prior to beginning registration.  This likely would include any potential hardware, software, or stake requirements. It is up to the AVS to decide task distribution within an Operator Set.
+
+##  Best Practices
+
+### Operator Set Design
+
+An Operator Set is a grouping of different types of work within a single AVS. Each AVS will have at least one Operator Set. The EigenLayer protocol does not enforce criteria for Operator Sets, however there are a few best practices to consider.
+
+Plan to logically group your AVS tasks (and verification) into separate Operator Sets. First organize your Operator Sets according to which conditions you wish to distribute Rewards for. These conditions could include:
+* Unique business logic.
+* Unique Stake (cryptoeconomic security) amount and types of token required to be allocated from Operators.
+* Slashing conditions.
+* Ejection criteria.
+* Quantity of Operators and criteria for operators allowed.
+* Hardware profiles.
+* Liveness guarantees.
+
+More detail on Operator Sets are available [here](https://docs.eigenlayer.xyz/eigenlayer/operator-guides/operator-sets#operator-sets-currently-in-testnet) and implementation details are available [here](https://docs.eigenlayer.xyz/developers/avs-opset-slashing).
+
+
+
+### Slashing Design and Veto Committees
+
+The EigenLayer protocol allows each AVS builder to design their own slashing conditions. One popular design is to utilize a governance mechanism with slashing such that a committee can review a proposed (or queued) slashing request. That slashing request can then be either fulfilled or vetoed by a committee of domain experts, governance council or multisig address for the AVS. Please see the [vetoable slasher example implementation](https://github.com/Layr-Labs/eigenlayer-middleware/blob/feat/slashing-release-branch/src/slashers/VetoableSlasher.sol) for reference.
+
+Please be sure that your slashing process can be resolved within the DEALLOCATION_DELAY time window. This is the amount of blocks between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. This will ensure that the slashing event is carried out for the Operator before their stake is deallocated.
