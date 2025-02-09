@@ -57,7 +57,7 @@ function Home() {
                     label:"AVS Developers"
                   }}
                   body={{
-                    label:"Learn how to design, build, and launch an AVS (Actively Validated Service)."
+                    label:"Learn how to design, build, and launch an AVS (Autonomous Verifiable Service)."
                   }}
                 />
 
