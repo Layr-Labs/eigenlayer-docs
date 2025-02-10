@@ -5,28 +5,44 @@ title: Migrate to Operator Sets
 
 **We strongly recommend existing AVSs migrate to using Operator Sets on Testnet. The AVSDirectory method will be deprecated in a future upgrade.**
 
-Operator Sets are required to slash.
-To migrate to Operator Sets, we recommend AVSs:
+Operator Sets are required to [slash](../../Concepts/slashing/slashing-overview.md). To migrate to, and start using, Operator Sets: 
+1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
+2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
+3. [Communicate to Operators](#communicate-to-operators)
 
-1. Upgrade AVS contracts to handle the callback from the AllocationManager via the ServiceManagerBase ([example](https://github.com/Layr-Labs/eigenlayer-middleware/blob/feat/slashing-release-branch/src/ServiceManagerBase.sol)).
-2. Communicate to Operators how to:
-   1. Register for Operator Sets using the new registration pathway. 
-   2. Allocate slashable stake for slashable Operator Sets.
-3. Consider requirements for the AVSRegistrar contract.
-4. Migrate to distribution of tasks based on the delegated and slashable stake of Operators registered to the AVS’s Operator Sets.
-
-Migrating now gives time to switch existing quorums over to Operator Sets in the core protocol. After the migration has occurred,
+Migrating now gives time to switch existing quorums over to Operator Sets. After the migration has occurred,
 integrations with slashing can go live on Testnet. M2 registration and Operator Set registration can operate in parallel.
 
+## Upgrade middleware contracts
 
+To migrate to Operator Sets:
+
+1. Upgrade middleware contracts to handle the callback from the AllocationManager. The upgrade provides the RegistryCoordinator
+the hooks to handle the callback from the AllocationManager. 
+2. From the ServiceManager call, add an account to update the AVSRegistrar:
+      * With setAppointee where the target is the AllocationManager.
+      * The selector is the setAVSRegistrar selector.
+3. Call setAVSRegistrar on the AllocationManager from the appointee account and set the RegistryCoordinator as your AVSRegistrar
+so that it becomes the destination for registration and deregistration hooks
+
+See example [RegistryCoordinator implementation with the new hooks](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/src/SlashingRegistryCoordinator.sol).
+
+## Integrate the AllocationManager
 
 Integrate the AllocationManager by:
 
-* Creating Operator Sets through the AllocationManager.
-* Adding (or later removing) specific Strategies to that Operator Set to enable Operators to secure the AVS.
-* Specifying an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
+1. Creating Operator Sets through the AllocationManager.
+2. Adding (or later removing) specific Strategies to that Operator Set to enable Operators to secure the AVS.
+3. Specifying an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
 
-To ensure community and incentive alignment, it is expected that AVSs conduct off-chain outreach to communicate
-the purpose and task/security makeup of their Operator Sets with their Operators and Stakers before beginning registration. The
-communication would include any potential hardware, software, or stake requirements. The AVS decides task distribution
+## Communicate to Operators
+
+1. Communicate to Operators how to:
+   1. Register for Operator Sets using the new registration pathway. 
+   2. Allocate slashable stake for slashable Operator Sets.
+2. Migrate to distribution of tasks based on the delegated and slashable stake of Operators registered to the AVS’s Operator Sets.
+
+To ensure community and incentive alignment, AVSs need to conduct offchain outreach to communicate
+the purpose and task/security makeup of their Operator Sets with their Operators and Stakers before beginning registration.
+Include any potential hardware, software, or stake requirements in the communication. The AVS decides task distribution
 within an Operator Set.

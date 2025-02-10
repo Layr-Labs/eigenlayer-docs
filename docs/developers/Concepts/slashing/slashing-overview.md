@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Overview
 ---
 
-**Slashing is currently available on Holesky testnet. Mainnet release is scheduled for late Q1, 2025**
+**Slashing is currently available on Holesky testnet.**
 
 Slashing is a penalty for improperly or inaccurately completing tasks assigned in Operator Sets by an AVS. A slashing results
 in burned (that is, lost) funds. AVSs assign slashable tasks with economic commitments from their Operators. AVSs must
