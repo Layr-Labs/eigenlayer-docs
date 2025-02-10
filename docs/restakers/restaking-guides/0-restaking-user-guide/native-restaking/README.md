@@ -93,7 +93,7 @@ Queue the Withdrawal:
 1. Click **Queue Withdrawal** in the web app.
 1. Choose the amount you wish to queue for withdrawal and continue
 1. A checkpoint proof is initiated. **Sign** the associated transaction with your web3 wallet.
-1. Wait for the [Escrow Period](/docs/eigenlayer/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences) to complete.
+1. Wait for the [Escrow Period](/docs/restakers/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences) to complete.
 
 
 Redeposit or Complete Withdrawal:
@@ -108,7 +108,7 @@ Undelegate and/or Change Delegation
 1. Click Undelegate
 1. **Sign** the transaction using your web3 wallet. Note: a queue withdrawal event occurs via the smart contracts at this time, because Undelegate and Queue Withdrawal actions are linked at the smart contract level. This information is not presented to the user in order simplify the user flow and focus on the change delegation action.
 1. User is now Undelegated from the Operator.
-1. Wait for the [Escrow Period](/docs/eigenlayer/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences) to complete.
+1. Wait for the [Escrow Period](/docs/restakers/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences) to complete.
 
 Delegate to a New Operator
 1. Navigate to an Operator you wish to delegate your assets to.

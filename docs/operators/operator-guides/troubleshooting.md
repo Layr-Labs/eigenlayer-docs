@@ -12,11 +12,11 @@ If you are getting this issue then either you are using a wrong rpc in your [ope
 
 * Please make sure you have correct rpc node chosen for your network and that it is also reachable via your machine.
 
-* Please find the correct smart contract addresses listed in the [Operator Installation](./operator-installation.md) section.
+* Please find the correct smart contract addresses listed in the [Operator Installation](operator-installation.md) section.
 
 #### How to resolve the error "No contract code at given address" imply?
 
 Ensure that your operator is pointing to the correct RPC service and that it is accessible from your operator ([example](https://chainlist.org/)).
 
 #### My operator's metadata (name, description, logo) is not showing up in the webapp
-Please make sure to comply with our metadata [guidelines](./operator-installation.md#operator-configuration-and-registration)
+Please make sure to comply with our metadata [guidelines](operator-installation.md#operator-configuration-and-registration)
