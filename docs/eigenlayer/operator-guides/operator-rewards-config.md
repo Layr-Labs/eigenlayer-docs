@@ -9,6 +9,9 @@ Before proceeding, please review the [Rewards Overview](/docs/eigenlayer/rewards
 
 With the release of Rewards v2 (currently in Testnet), Operators have the ability to configure more aspects of the fees distributed from AVSs. They can set a variable Operator fee rate on rewards (called a "split") that will determine the percentage of rewards they receive vs what goes to the applicable stakers. They can set unique fee rates per AVS and independently for [Programmatic Incentives](https://docs.eigenfoundation.org/programmatic-incentives/programmatic-incentives-faq).
 
+Variable Operator fees per AVS, set by Operators, allows Operators to take less or more than the 10% default fee on rewards.
+This keeps EigenLayer fee-agnostic as a protocol and unlocks flexibility via a variable take rate for operators in choosing
+which AVS to run and in attracting new stake.
 
 ## Variable Operator Split for AVS Rewards
 
