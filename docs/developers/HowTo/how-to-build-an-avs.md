@@ -16,17 +16,6 @@ The first step toward designing your AVS is to determine how its off-chain opera
 
 Operators are most often expected to **run the same workload** among all Operators in the AVS's quorum. This ensures that malicious behaviors can be easily validated on-chain. When designing your Operator workload, consider a task that can be easily scaled to run among all Operators in the quorum.
 
-
-
-### Task Design
-
-Tasks are a common design model used for AVS operations. This design model is not required by the protocol, but it is a common mechanism used by AVS designers. Tasks enable the AVS to organize discrete units of work performed by Operators off-chain, which are later validated on-chain. A Task can be any unit of work written in any language as needed by the AVS designer.
-
-Tasks can be submitted either:
-1) On-chain by the Consumer (end user) to the AVS contracts.
-2) Off-chain by the Consumer directly to the Operators.
-
-
 ### BLS and ECDSA Signature Types
 
 In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. Signatures cryptographically confirm that a specific wallet address has signed a given message (e.g., a string value) with its private key. Currently, there are two primary types of signatures used within EigenLayer:
