@@ -258,12 +258,21 @@ const config = {
             position: "left",
             activeBasePath: 'developer/',
           },
-          
+
           {
-            href: 'https://docs.eigenda.xyz/',
-            label: 'EigenDA',
+            to: "operators/operator-guides/operator-introduction",
+            label: "Operators",
             position: "left",
+            activeBasePath: 'operators/',
           },
+
+          {
+            to: "restakers/restaking-guides/overview",
+            label: "Restakers",
+            position: "left",
+            activeBasePath: 'restakers/',
+          },
+
 
           {
             href: "https://github.com/Layr-Labs",

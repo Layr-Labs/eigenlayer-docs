@@ -19,11 +19,11 @@ Yes. We only support `.png` format and we strictly check the content of image. I
 
 #### What if I lose access to my keys?
 
-When you [create/import](../operator-guides/operator-installation#create-and-list-keys) keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can run the [export](../operator-guides/operator-installation.md#export-keys) command to get your plaintext private key.
+When you [create/import](/operator-installation#create-and-list-keys) keys for the first time, it will ask a password to encrypt keys and once created, it will also show plaintext private key. Please make sure to backup the private key and the password. If you lose both you won't be able to get your keys back. If you lose the plaintext private key and still have your password you can run the export command to get your plaintext private key.
 
 #### What is my operator address?
 
-After you [create/import](../operator-guides/operator-installation#create-and-list-keys) ecdsa key you will be shown below log message
+After you [create/import](/operator-installation#create-and-list-keys) ecdsa key you will be shown below log message
 
 ```
 ? Enter password to encrypt the ecdsa private key:
@@ -41,8 +41,8 @@ Your operator address is the `Ethereum Address` in the logs.
 
 If you want to change the password of your encrypted keys, you have two options based on what information you have readily available:
 
-1. If you know your private keys then you can just [re-import](../operator-guides/operator-installation.md#import-keys) and when importing, choose a different name and the new password.
-2. If you don't know your private keys, you can get them using [export](../operator-guides/operator-installation.md#export-keys). Once you have the private keys you can use option 1 to re-import.
+1. If you know your private keys then you can just re-import and when importing, choose a different name and the new password.
+2. If you don't know your private keys, you can get them using export. Once you have the private keys you can use option 1 to re-import.
 
 #### What if I want to deactivate/deregister my operator from EigenLayer?
 
