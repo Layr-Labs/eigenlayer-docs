@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Rewards Overview
+title: Rewards
 ---
 
 Rewards enable AVSs to make rewards to Stakers and Operators. AVSs have the flexibility to set custom logic for rewards 
@@ -8,6 +8,6 @@ to individual Operators. Examples of custom logic for rewards include:
 * Work completed.
 * More equal distribution of Operator support for decentralization or security reasons.
 
-For more information, see:
+For more information, refer to:
+* [Rewards concept content](../../eigenlayer/concepts/rewards.md).
 * [ELIP-001 Operator Directed Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#distribution-of-operator-directed-rewards).
-* [Rewards for Operators](../../operators/operator-guides/operator-rewards-config.md).

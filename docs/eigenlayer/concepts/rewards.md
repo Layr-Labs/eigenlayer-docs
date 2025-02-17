@@ -1,14 +1,18 @@
 ---
 sidebar_position: 1
-title: Rewards Claiming Overview
+title: Rewards
 ---
+
+:::important
+The following is not a complete description of the Rewards protocol and is qualified in its entirety by reference to 
+the [EigenLayer Improvement Proposal-001: Rewards v2](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#executive-summary).
+:::
 
 The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`,  an AVS can specify a time range for which the reward will be distributed, a list of weights for each `Strategy` for the reward, and an ERC20 token to make rewards in.
 
 By default, Operators will earn a flat 10% split on rewards. The rest of the reward is claimable by the operator's delegated Stakers. Rewards are proportional to:
 - The amount of stake.
 - The AVS's relative weighting of strategies in a rewards submission.
-
 
 ## Rewards Flexibility
 
@@ -17,14 +21,10 @@ The protocol also includes the following features to enable additional flexibili
 - Variable Operator Fees for AVS Rewards: Operators can now set their per-AVS fee rate on AVS rewards to any amount from 0% to 100%, deviating from the 10% default split. Changes to this split take effect after a 7-day activation delay. The ability to set a variable split per-AVS allows Operators to align their fee structures with their economic needs and the complexity and diversity of AVS demands.
 - Variable Operator Splits for Programmatic Incentives: Operators can set their split of Programmatic Incentives to any amount from 0% to 100%, so that Operators have flexibility in determining the appropriate take rate. Changes to this split take effect after a 7-day activation delay. These splits integrate seamlessly with the existing reward distribution model, ensuring that stakers delegating to Operators benefit proportionately.
 
-Please see the [EigenLayer Improvement Proposal-001: Rewards v2](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#executive-summary) for more detail.
-
-
 ## Rewards Contract Configurations
 
 ### Earners 
 Operators and Stakers are both categorized as "Earners" when it comes to claiming and are distinct by their addresses. Actual reward calculations are explained further in the [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). To summarize, reward calculations are performed daily by snapshotting the on-chain state. Once a week on mainnet and daily on testnet, a Merkle root is posted to the contract that allows earners to claim their updated earnings.
-
 
 ### Setting Designated Claimers
 Earners (Stakers and Operators) can set a claimer address that can claim rewards for the tokens they've earned. An Earner is its own claimer by default and only the claimer address can claim rewards. If a new claimer is set, the new address can claim all of the previously unclaimed rewards. The Earner can always change their designated claimer address.  
@@ -35,5 +35,8 @@ Note: Earners or their designated claimers do not have to claim weekly against e
 Not to be confused with the designated claimer address specified above, the recipient address is the address that will receive the ERC20 token rewards. The designated claimer (or the Earner themselves) has the ability to call `RewardsCoordinator.processClaim` for the Earner while also specifying a recipient address to receive all the rewards.
 
 ## Reward Calculations
-
 Rewards are calculated via an off-chain process. A Merkle root is posted which represents the cumulative rewards across all earners weekly on Mainnet and daily on Testnet. There is an additional 2 hour delay on testnet and 1 week delay on mainnet after posting in order for the root to be claimable against with a valid Merkle proof. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md).
+
+For information, refer to:
+* [Configuring rewards for Operators](../../operators/operator-guides/operator-rewards-config.md)
+* [Implementing rewards for AVSs](../../developers/HowTo/rewards.md)

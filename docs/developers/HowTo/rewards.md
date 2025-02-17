@@ -2,9 +2,12 @@
 sidebar_position: 3
 title: Implement Rewards
 ---
-Before implementing rewards, we recommend reading:
-* [ELIP-001 Operator Directed Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#distribution-of-operator-directed-rewards).
-* [Rewards for Operators](../../operators/operator-guides/operator-rewards-config.md).
+
+:::important
+Before proceeding, review:
+* [Rewards concept content](../../eigenlayer/concepts/rewards.md).
+* [How operators configure rewards distribution](../../operators/operator-guides/operator-rewards-config.md).
+:::
 
 AVSs make rewards submissions by calling `createAVSRewardsSubmission` or `createOperatorDirectedAVSRewardsSubmission()` on 
 the `RewardsCoordinator` contract. Rewards must come from an AVSs ServiceManager contract. Each rewards submission specifies:  
