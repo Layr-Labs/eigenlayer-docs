@@ -26,7 +26,7 @@ An Operator is required to have tokens delegated to their address. The delegatio
 
 
 ## Rewards
-Please see the [rewards claiming](../../eigenlayer/rewards-claiming/rewards-claiming-overview.md) documentation on how to claim rewards.
+Please see the [rewards claiming](../../eigenlayer/concepts/rewards) documentation on how to claim rewards.
 
 
 

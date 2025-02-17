@@ -3,10 +3,6 @@ sidebar_position: 1
 title: Rewards Claiming Overview
 ---
 
-# Rewards Overview
-
-## Overview
-
 The EigenLayer Rewards protocol enables AVSs to make rewards to stakers and operators. Operators earn rewards by opting in to AVSs that make `RewardsSubmissions` to the `RewardsCoordinator`, a core protocol contract. Within a single `RewardsSubmission`,  an AVS can specify a time range for which the reward will be distributed, a list of weights for each `Strategy` for the reward, and an ERC20 token to make rewards in.
 
 By default, Operators will earn a flat 10% split on rewards. The rest of the reward is claimable by the operator's delegated Stakers. Rewards are proportional to:
@@ -40,9 +36,4 @@ Not to be confused with the designated claimer address specified above, the reci
 
 ## Reward Calculations
 
-Rewards are calculated via an off-chain process. A Merkle root is posted which represents the cumulative rewards across all earners weekly on Mainnet and daily on Testnet. There is an additional 2 hour delay on testnet and 1 week delay on mainnet after posting in order for the root to be claimable against with a valid Merkle proof. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md). 
-
-
-
-## AVS Integrations
-Please refer to [AVS Guide: AVS Rewards](/docs/developers/HowTo/rewards.md) for complete instructions.
+Rewards are calculated via an off-chain process. A Merkle root is posted which represents the cumulative rewards across all earners weekly on Mainnet and daily on Testnet. There is an additional 2 hour delay on testnet and 1 week delay on mainnet after posting in order for the root to be claimable against with a valid Merkle proof. The deterministic calculation of the distribution of rewards is specified in our [technical docs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md).
