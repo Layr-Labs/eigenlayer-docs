@@ -3,7 +3,31 @@ sidebar_position: 1
 title: Slashing
 ---
 
-## Operator Sets (Currently in Testnet)
+:::note 
+Slashing is currently available on the Holesky testnet.
+:::
+
+The following is not a complete description of the Slashing and Operator Sets upgrade and is qualified in its entirety by reference to the [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
+
+The Slashing & Operator Set update adds new protocol interfaces and primitives for Operator Sets, Unique Stake Allocations, and Slashing to provide:
+
+* A new, iterative rewards mechanism for AVSs to reward Operators based on tasks tied to Operator Sets and slashable Unique Stake.
+* A mechanism for Operators to allocate and deallocate Unique Stake to and from Operator Sets.
+* A slasher function for AVSs to slash an Operator’s Unique Stake allocated to a single Operator Set.
+
+An Operator Set is a logical and segmented set of Operators created by the AVS. These groups of Operators may be split up for whatever reason an AVS can think of. AVSs may assign arbitrary “tasks” to Operator Sets that can represent anything Operators may be asked to do.
+
+Unique Stake is an accounting tool defined on the level of Operator Sets that ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. Unique Stake is allocated to different Operator Sets on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, and it represents proportions of the Operator’s delegated stake from Stakers.
+
+When Stakers deposit assets on EigenLayer, they are stored in accounting contracts known as Strategies. Strategies are different expressions of security on EigenLayer that may represent different tokens, for example. In order to make delegations slashable, Operators must allocate individual proportions of their delegated stake as Unique Stake to Operator Sets. Allocations are exclusively slashable by the AVS that created that Operator Set.
+
+## Slashable Stake Risks
+
+Once the Slashing and Operator Sets upgrade is live on mainnet, AVSs may create Operator Sets (which may include slashable Unique Stake) and Operators may allocate their delegated stake to any created Operator Sets. If a Staker is already delegated to an Operator, its stake can become slashable as soon as the Operator opts-in to an Operator Set and allocates Unique Stake. While the allocation of delegated stake to an Operator Set may be subject to the Allocation Config Delay and Allocation Delay, Stakers should consider the increased risk posed by allocation of their delegated stake as slashable Unique Stake to an AVS. To better understand the safety delays for Stakers, please see the Allocation Config Delay and Allocation Delay described in further detail in the [Allocating and Deallocating to Operator Sets section of ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
+
+Stakers should review and confirm their risk tolerances for existing and future delegations to Operators and that Operator’s slashable allocations. Stakers will be able to monitor available on-chain data on app.eigenlayer.xyz, such as the creation of Operator Sets, Operator allocations to Operator Sets, the applicable Allocation Delay set by an Operator and the history of slashing activity on app.eigenlayer.xyz.
+
+## Operator Sets
 
 Operator Sets bring the guarantees of Unique Stake to the protocol and commitment-based slashing to AVSs. AVSs may use them to differentiate Operators based on unique business logic, hardware profiles, liveness guarantees, or composition of stake.
 
@@ -17,14 +41,9 @@ The registration flow follows the pattern illustrated below and is completed in 
 
 ![](/img/operator-guides/operator-registration-allocation.png)
 
-
-
-
 ##  Unique Stake Allocation & Deallocation
 
 Note: Please review the entire [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) in detail. The following is not a complete description of the Slashing and Operator Sets upgrade and is qualified in its entirety by reference to the [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
-
-
 
 Unique Stake is a mechanism to guarantee slashable stake can only be allocated to one Operator Set at a time. Unique Stake benefits both Operators and AVSs with certain properties when reasoning about EigenLayer slashing:
 
@@ -305,3 +324,4 @@ Note, slashing by one Operator Set does not affect the magnitudes of EIGEN alloc
 ### Burning of Slashed Funds
 
 In this release, when funds are slashed by an AVS, the EigenLayer core contracts will make slashed funds permanently inaccessible (“burned”). ERC-20s have this done by sending them to the dead `0x00...00e16e4` address. This is done to ensure proper accounting with various LRT protocols. Natively Restaked ETH will be locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead of permanently locking it within EigenPod contracts as planned in this release.
+
