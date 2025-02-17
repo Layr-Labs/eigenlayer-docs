@@ -79,7 +79,7 @@ const config = {
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
@@ -88,7 +88,7 @@ const config = {
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-ui",

@@ -63,7 +63,7 @@ function Home() {
 
 
                 <Card
-                  to="eigenlayer/rewards-claiming/rewards-claiming-overview"
+                  to="eigenlayer/concepts/rewards"
                   header={{
                     label:"Claim AVS Rewards"
                   }}
