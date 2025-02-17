@@ -252,12 +252,7 @@ const config = {
             position: "left",
             activeBasePath: 'eigenlayer/',
           },
-          {
-            to: "developers/Concepts/avs-developer-guide",
-            label: "Developers",
-            position: "left",
-            activeBasePath: 'developer/',
-          },
+
 
           {
             to: "operators/operator-guides/operator-introduction",
@@ -272,7 +267,12 @@ const config = {
             position: "left",
             activeBasePath: 'restakers/',
           },
-
+          {
+            to: "developers/Concepts/avs-developer-guide",
+            label: "Developers",
+            position: "left",
+            activeBasePath: 'developer/',
+          },
 
           {
             href: "https://github.com/Layr-Labs",
@@ -366,6 +366,14 @@ const config = {
     },
     {
       src: '/js/avs-guide-redirects.js',
+      async: false,
+    },
+    {
+      src: '/js/restakers-redirects.js',
+      async: false,
+    },
+    {
+      src: '/js/operators-redirects.js',
       async: false,
     },
     {
