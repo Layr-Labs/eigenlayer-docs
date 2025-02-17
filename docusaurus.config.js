@@ -145,6 +145,10 @@ const config = {
             to: "/developers/Reference/avs-developer-best-practices",
           },
           {
+            from: "/eigenlayer/rewards-claiming/rewards-claming-overview",
+            to: "/eigenlayer/concepts/rewards",
+          },
+          {
             from: "/developers/avs-opset-slashing",
             to: "/developers/HowTo/avs-opset-slashing",
           },
