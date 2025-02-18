@@ -3,9 +3,18 @@ sidebar_position: 4
 title: Developer Resources
 ---
 
+:::note
 
+We are in the process of updating our samples, SDKs, and the EigenLayer CLI to include Rewards and Slashing capabilities. The samples, SDKs, and CLI will be
+updated as soon as possible. Use the samples now to get familiar with EigenLayer.
+For more information on Rewards and Slashing, refer to the [Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md) and [Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) ELIPs,
+and [Rewards](../Concepts/rewards.md) and [Slashing](../Concepts/slashing/slashing-overview.md) documentation.
+For questions or support, reach out to us using the Intercom button on the bottom right side of this page or <a href="javascript:void(0)"  id="intercom_trigger_eldocs" >here</a>.
+We will promptly follow up with support!
 
-### Developer Learning Resources
+:::
+
+### Developer Samples
 * [Awesome AVS](https://github.com/Layr-Labs/awesome-avs)
 * [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs)
 * [Incredible Squaring AVS](https://github.com/Layr-Labs/incredible-squaring-avs)
