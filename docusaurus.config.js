@@ -72,7 +72,7 @@ const config = {
           
           {
             from: "/faqs/operator-general-faq",
-            to: "/eigenlayer/operator-guides/operator-faq",
+            to: "/operators/operator-guides/operator-faq",
           },
           
           
@@ -83,7 +83,7 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
-            to: "/eigenlayer/restaking-guides/overview",
+            to: "/restakers/restaking-guides/overview",
           },
           
           {
@@ -104,11 +104,11 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
-            to: "/eigenlayer/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
+            to: "/restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/create-eigenpod-and-set-withdrawal-credentials/repointing-a-validators-withdrawal-credentials",
-            to: "/eigenlayer/restaking-guides/restaking-user-guide/native-restaking/#restake-new-validator-native-beacon-chain-eth",
+            to: "/restakers/restaking-guides/restaking-user-guide/native-restaking/#restake-new-validator-native-beacon-chain-eth",
           },
           {
             from: "/overview/eigenlayer-privacy-policy",
@@ -116,17 +116,17 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/",
-            to: "/eigenlayer/restaking-guides/overview",
+            to: "/restakers/restaking-guides/overview",
           },
           
 
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/",
-            to: "/eigenlayer/restaking-guides/testnet/",
+            to: "/restakers/restaking-guides/testnet/",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
-            to: "/eigenlayer/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
+            to: "/restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
           },
           {
             from: "/developers",
@@ -146,7 +146,7 @@ const config = {
           },
           {
             from: "/developers/avs-opset-slashing",
-            to: "/developers/HowTo/avs-opset-slashing",
+            to: "/developers/HowTo/slashing/avs-opset-slashing",
           },
           {
             from: "/developers/avs-permissionlesss",
@@ -252,17 +252,26 @@ const config = {
             position: "left",
             activeBasePath: 'eigenlayer/',
           },
+
+
+          {
+            to: "operators/operator-guides/operator-introduction",
+            label: "Operators",
+            position: "left",
+            activeBasePath: 'operators/',
+          },
+
+          {
+            to: "restakers/restaking-guides/overview",
+            label: "Restakers",
+            position: "left",
+            activeBasePath: 'restakers/',
+          },
           {
             to: "developers/Concepts/avs-developer-guide",
             label: "Developers",
             position: "left",
             activeBasePath: 'developer/',
-          },
-          
-          {
-            href: 'https://docs.eigenda.xyz/',
-            label: 'EigenDA',
-            position: "left",
           },
 
           {
@@ -357,6 +366,14 @@ const config = {
     },
     {
       src: '/js/avs-guide-redirects.js',
+      async: false,
+    },
+    {
+      src: '/js/restakers-redirects.js',
+      async: false,
+    },
+    {
+      src: '/js/operators-redirects.js',
       async: false,
     },
     {

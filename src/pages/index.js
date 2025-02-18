@@ -31,7 +31,7 @@ function Home() {
                 />
   
                 <Card
-                  to="eigenlayer/restaking-guides/overview"
+                  to="restakers/restaking-guides/overview"
                   header={{
                     label:"Restakers"
                   }}
@@ -41,7 +41,7 @@ function Home() {
                 />
   
                 <Card
-                  to="eigenlayer/operator-guides/operator-introduction"
+                  to="operators/operator-guides/operator-introduction"
                   header={{
                     label:"Node Operators"
                   }}
