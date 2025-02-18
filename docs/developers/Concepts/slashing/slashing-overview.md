@@ -3,6 +3,11 @@ sidebar_position: 1
 title: Overview
 ---
 
+:::important
+Before proceeding, review the [Slashing Concept](../../../eigenlayer/concepts/slashing.md) content for detailed information
+on how Operator Sets and Allocations work.
+:::
+
 **Slashing is currently available on Holesky testnet.**
 
 Slashing is a penalty for improperly or inaccurately completing tasks assigned in Operator Sets by an AVS. A slashing results
