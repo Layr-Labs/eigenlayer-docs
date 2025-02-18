@@ -80,16 +80,9 @@ The Operator binary (or off-chain aggregation service code) must write at least 
 
 Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/hello-world-avs/blob/84ae1974c212c193a3992467f7d431bad39f74a3/src/index.ts#L25).
 
-
 ## Step 3: Deploy and Test Locally
 
-Follow the existing pattern in the Hello World [Local Devnet Deployment](https://github.com/Layr-Labs/hello-world-avs?tab=readme-ov-file#local-devnet-deployment) steps. Modify your steps as needed.
-
-
-
-
-
-
+Use [AVS Devnet](test-avs.md) to deploy and test the AVS locally.
 
 ## Get in Touch
 
