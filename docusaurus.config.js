@@ -69,14 +69,13 @@ const config = {
             from: "/overview/intro/",
             to: "/eigenlayer/overview/",
           },
-          
           {
             from: "/faqs/operator-general-faq",
             to: "/operators/reference/operator-faq",
           },
           {
-            from: "operators/operator-guides/operator-sets",
-            to: "operators/howto/operator-sets",
+            from: "/operators/operator-guides/operator-sets",
+            to: "/operators/howto/operator-sets",
           },
           {
             from: "/operators/operator-guides/key-management/intro-key-management",
@@ -85,9 +84,10 @@ const config = {
           {
             from: "/operators/operator-guides/operator-introduction",
             to: "/operators/concepts/operator-introduction",
+          },
           {
-            from: "operators/operator-guides/avs-operator-risks-mitigations",
-            to: "operators/howto/avs-operator-risks-mitigations",
+            from: "/operators/operator-guides/avs-operator-risks-mitigations",
+            to: "/operators/howto/avs-operator-risks-mitigations",
           },
           {
             from: "/operators/operator-guides/key-management/institutional-operators",
