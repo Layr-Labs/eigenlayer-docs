@@ -18,6 +18,7 @@ We will promptly follow up with support!
 * [Awesome AVS](https://github.com/Layr-Labs/awesome-avs)
 * [Hello World AVS](https://github.com/Layr-Labs/hello-world-avs)
 * [Incredible Squaring AVS](https://github.com/Layr-Labs/incredible-squaring-avs)
+* [devQuickstart](https://github.com/Layr-Labs/devQuickstart)
 
 ### SDKs
 These SDKs are wrappers on top of common EigenLayer AVS operations designed to save you time as an AVS builder:
