@@ -79,23 +79,23 @@ const config = {
           },
           {
             from: "/operators/operator-guides/key-management/intro-key-management",
-            to: "/operators/operator-guides/concepts/intro-key-management",
+            to: "/operators/concepts/intro-key-management",
           },
           {
             from: "/operators/operator-guides/operator-introduction",
             to: "/operators/concepts/operator-introduction",
           },
           {
-            from: "/operators/operator-guides/avs-operator-risks-mitigations",
-            to: "/operators/howto/avs-operator-risks-mitigations",
+            from: "/operators/operator-guides/avs-operator-risks-mitigations-bp",
+            to: "/operators/howto/avs-operator-risks-mitigations-bp",
           },
           {
             from: "/operators/operator-guides/key-management/institutional-operators",
             to: "/operators/howto/managekeys/institutional-operators",
           },
           {
-            from: "/operators/operator-guides/key-management/solo-operators",
-            to: "/operators/howto/managekeys/solo-operators",
+            from: "/operators/operator-guides/key-management/solo-stakers",
+            to: "/operators/howto/managekeys/solo-stakers",
           },
           {
             from: "/operators/operator-guides/operator-content-guidelines",
