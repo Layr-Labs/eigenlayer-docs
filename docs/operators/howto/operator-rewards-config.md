@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Operator Rewards Configuration
+sidebar_position: 3
+title: Configure Operator Rewards
 ---
 
 # Overview

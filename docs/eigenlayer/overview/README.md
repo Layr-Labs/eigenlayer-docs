@@ -47,7 +47,7 @@ To learn more about EigenLayer please read the [**Whitepaper**](/pdf/EigenLayer_
 
 Get started with EigenLayer:
 - [Restake on EigenLayer](/restakers/restaking-guides/overview)
-- [Register as an Operator](/operators/operator-guides/operator-installation)
+- [Register as an Operator](/operators/howto/operator-installation)
 - [Build an AVS](/developers/Concepts/avs-developer-guide)
 - Join our Ecosystem: [Discord](https://discord.com/invite/eigenlayer), [Twitter](https://twitter.com/eigenlayer)
 

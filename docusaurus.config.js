@@ -69,14 +69,54 @@ const config = {
             from: "/overview/intro/",
             to: "/eigenlayer/overview/",
           },
-          
           {
             from: "/faqs/operator-general-faq",
-            to: "/operators/operator-guides/operator-faq",
+            to: "/operators/reference/operator-faq",
           },
-          
-          
-          
+          {
+            from: "/operators/operator-guides/operator-sets",
+            to: "/operators/howto/operator-sets",
+          },
+          {
+            from: "/operators/operator-guides/key-management/intro-key-management",
+            to: "/operators/concepts/intro-key-management",
+          },
+          {
+            from: "/operators/operator-guides/operator-introduction",
+            to: "/operators/concepts/operator-introduction",
+          },
+          {
+            from: "/operators/operator-guides/avs-operator-risks-mitigations-bp",
+            to: "/operators/howto/avs-operator-risks-mitigations-bp",
+          },
+          {
+            from: "/operators/operator-guides/key-management/institutional-operators",
+            to: "/operators/howto/managekeys/institutional-operators",
+          },
+          {
+            from: "/operators/operator-guides/key-management/solo-stakers",
+            to: "/operators/howto/managekeys/solo-stakers",
+          },
+          {
+            from: "/operators/operator-guides/operator-content-guidelines",
+            to: "/operators/howto/operator-content-guidelines",
+          },
+          {
+            from: "/operators/operator-guides/operator-installation",
+            to: "/operators/howto/operator-installation",
+          },
+          {
+            from: "/operators/operator-guides/operator-rewards-config",
+            to: "/operators/howto/operator-rewards-config",
+          },
+          {
+            from: "/operators/operator-guides/troubleshooting",
+            to: "/operators/howto/troubleshooting",
+          },
+          {
+            from: "/operators/operator-guides/operator-faq",
+            to: "/operators/reference/operator-faq",
+          },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
             to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
@@ -255,7 +295,7 @@ const config = {
 
 
           {
-            to: "operators/operator-guides/operator-introduction",
+            to: "operators/concepts/operator-introduction",
             label: "Operators",
             position: "left",
             activeBasePath: 'operators/',

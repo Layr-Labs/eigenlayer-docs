@@ -3,7 +3,10 @@ sidebar_position: 1
 title: Implement Slashing
 ---
 
-Review the details of [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) before implementing slashing.
+:::important
+Before proceeding, review the [Slashing Concept](../../../eigenlayer/concepts/slashing.md) content and [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
+for detailed information on slashing.
+:::
 
 The `AllocationManager` provides the interface for the slashing function.
 

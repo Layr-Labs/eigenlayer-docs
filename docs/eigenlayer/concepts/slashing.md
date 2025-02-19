@@ -1,10 +1,33 @@
 ---
-sidebar_position: 3
-title: Operator Sets, Allocation, and Registration
+sidebar_position: 1
+title: Slashing
 ---
 
+:::note 
+Slashing is currently available on the Holesky testnet.
+:::
 
-## Operator Sets (Currently in Testnet)
+The following is not a complete description of the Slashing and Operator Sets upgrade and is qualified in its entirety by reference to the [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
+
+The Slashing & Operator Set update adds new protocol interfaces and primitives for Operator Sets, Unique Stake Allocations, and Slashing to provide:
+
+* A new, iterative rewards mechanism for AVSs to reward Operators based on tasks tied to Operator Sets and slashable Unique Stake.
+* A mechanism for Operators to allocate and deallocate Unique Stake to and from Operator Sets.
+* A slasher function for AVSs to slash an Operator’s Unique Stake allocated to a single Operator Set.
+
+An Operator Set is a logical and segmented set of Operators created by the AVS. These groups of Operators may be split up for whatever reason an AVS can think of. AVSs may assign arbitrary “tasks” to Operator Sets that can represent anything Operators may be asked to do.
+
+Unique Stake is an accounting tool defined on the level of Operator Sets that ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. Unique Stake is allocated to different Operator Sets on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, and it represents proportions of the Operator’s delegated stake from Stakers.
+
+When Stakers deposit assets on EigenLayer, they are stored in accounting contracts known as Strategies. Strategies are different expressions of security on EigenLayer that may represent different tokens, for example. In order to make delegations slashable, Operators must allocate individual proportions of their delegated stake as Unique Stake to Operator Sets. Allocations are exclusively slashable by the AVS that created that Operator Set.
+
+## Slashable Stake Risks
+
+Once the Slashing and Operator Sets upgrade is live on mainnet, AVSs may create Operator Sets (which may include slashable Unique Stake) and Operators may allocate their delegated stake to any created Operator Sets. If a Staker is already delegated to an Operator, its stake can become slashable as soon as the Operator opts-in to an Operator Set and allocates Unique Stake. While the allocation of delegated stake to an Operator Set may be subject to the Allocation Config Delay and Allocation Delay, Stakers should consider the increased risk posed by allocation of their delegated stake as slashable Unique Stake to an AVS. To better understand the safety delays for Stakers, please see the Allocation Config Delay and Allocation Delay described in further detail in the [Allocating and Deallocating to Operator Sets section of ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
+
+Stakers should review and confirm their risk tolerances for existing and future delegations to Operators and that Operator’s slashable allocations. Stakers will be able to monitor available on-chain data on app.eigenlayer.xyz, such as the creation of Operator Sets, Operator allocations to Operator Sets, the applicable Allocation Delay set by an Operator and the history of slashing activity on app.eigenlayer.xyz.
+
+## Operator Sets
 
 Operator Sets bring the guarantees of Unique Stake to the protocol and commitment-based slashing to AVSs. AVSs may use them to differentiate Operators based on unique business logic, hardware profiles, liveness guarantees, or composition of stake.
 
@@ -18,48 +41,43 @@ The registration flow follows the pattern illustrated below and is completed in 
 
 ![](/img/operator-guides/operator-registration-allocation.png)
 
-
-
-
 ##  Unique Stake Allocation & Deallocation
 
 Note: Please review the entire [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) in detail. The following is not a complete description of the Slashing and Operator Sets upgrade and is qualified in its entirety by reference to the [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
 
+Unique Stake is a mechanism to guarantee slashable stake can only be allocated to one Operator Set at a time. Unique Stake benefits both Operators and AVSs with certain properties when reasoning about EigenLayer slashing:
 
-
-Unique Stake is a mechanism to guarantee slashable stake can only be allocated to one Operator Set at a time. Unique Stake benefits both Operators and AVSs with certain properties when reasoning about EigenLayer slashing: 
-
-* **Greater control over slashing risk:** With Unique Stake, the risk of slashing is isolated to the individual AVS and Operator Set, and Operators can control how much of their stake any AVS can slash. AVSs are not exposed to risk from any other AVS or their slashings.  
-* **Guaranteed slashable stake:** AVSs have the tools they need to understand the amount of Unique Stake that can be slashed at a given time across their Operator Sets.   
+* **Greater control over slashing risk:** With Unique Stake, the risk of slashing is isolated to the individual AVS and Operator Set, and Operators can control how much of their stake any AVS can slash. AVSs are not exposed to risk from any other AVS or their slashings.
+* **Guaranteed slashable stake:** AVSs have the tools they need to understand the amount of Unique Stake that can be slashed at a given time across their Operator Sets.
 * **Permissionless onboarding of AVSs:** Since slashing is localized to individual AVSs, there is no need for a common veto committee which means launching an AVS on EigenLayer remains permissionless.
 
 When Stakers deposit assets on EigenLayer, they are stored in accounting contracts known as Strategies. Strategies are different expressions of security on EigenLayer. Today, they represent different types of restaked assets (e.g., tokens) delegated to Operators that AVSs can leverage for securing their services and upholding cryptoeconomic guarantees. In order to make delegations slashable, Operators must allocate individual proportions of them as Unique Stake to Operator Sets. Allocations are exclusively slashable by the AVS that created that Operator Set.
 
-In figure 1, Operator 1 has a delegation of 100 staked ETH for the ETH Strategy. Operator 1 then allocates proportions of that ETH as Unique Stake in Operator Sets across several AVSs. 
+In figure 1, Operator 1 has a delegation of 100 staked ETH for the ETH Strategy. Operator 1 then allocates proportions of that ETH as Unique Stake in Operator Sets across several AVSs.
 
 
 
 ![Operator Allocations to Operator Sets](/img/operator-guides/operator-sets-figure-3.png)  
 ***Figure 1: Operator Allocations to Operator Sets***
 
-The 85 allocated ETH is slashable exclusively by the AVS originating each Operator Set. In this case, AVS 2, 3, and 4 can slash their associated Operator Sets 2, 3, and 4, respectively. 
+The 85 allocated ETH is slashable exclusively by the AVS originating each Operator Set. In this case, AVS 2, 3, and 4 can slash their associated Operator Sets 2, 3, and 4, respectively.
 
-Let’s consider another example with three Operators. Figure 2 illustrates two Operator Sets instantiated by AVS 1. AVS 1 has created two Operator Sets for different tasks. For example, this AVS may use Operator Set 1 for assigning generation of ZK proofs to Operators, an expensive computation, and Operator Set 2 for verification of those proofs, a cheaper computation. 
+Let’s consider another example with three Operators. Figure 2 illustrates two Operator Sets instantiated by AVS 1. AVS 1 has created two Operator Sets for different tasks. For example, this AVS may use Operator Set 1 for assigning generation of ZK proofs to Operators, an expensive computation, and Operator Set 2 for verification of those proofs, a cheaper computation.
 
 ![Example of an AVS's Unique Stake](/img/operator-guides/operator-sets-figure-4.png)  
 ***Figure 2: Example of an AVS’s Unique Stake***
 
-Operator 1 is registered to Operator Set 1 but has not yet allocated any Unique Stake. Operator 2 has allocated 10% of its ETH delegation to Operator Set 1 (amounting to a nominal allocation of 10 ETH). This is exclusively slashable by AVS 1 in Operator Set 1. Operator 2 has also allocated 5% (5 ETH) to Operator Set 2, which is exclusively slashable by AVS 1 in Operator Set 2. 
+Operator 1 is registered to Operator Set 1 but has not yet allocated any Unique Stake. Operator 2 has allocated 10% of its ETH delegation to Operator Set 1 (amounting to a nominal allocation of 10 ETH). This is exclusively slashable by AVS 1 in Operator Set 1. Operator 2 has also allocated 5% (5 ETH) to Operator Set 2, which is exclusively slashable by AVS 1 in Operator Set 2.
 
 Along with Operator 3’s 20% allocation (20 ETH), Operator Set 1 has a total Unique Stake of 30 ETH available to slash, with the certainty it cannot be slashed elsewhere. Operator Set 2 has allocations totalling 15 ETH of Unique Stake. AVS 1 may distribute more valuable tasks against which to slash and reward to Operator Set 1 in order to take advantage of the greater amount of Unique Stake.
 
 ### Allocating and Deallocating to Operator Sets
 
-Unique Stake is allocated to Operator Sets in the protocol via a function provided in the `AllocationManger`. In the `AllocationManager`, these allocations are tracked using an accounting tool known as magnitudes. 
+Unique Stake is allocated to Operator Sets in the protocol via a function provided in the `AllocationManger`. In the `AllocationManager`, these allocations are tracked using an accounting tool known as magnitudes.
 
-For each Strategy, an Operator starts with a protocol-defined Total Magnitude of 1x10^18 (`INITIAL_TOTAL_MAGNITUDE`). This Total Magnitude can never increase; to account for slashing events originated by an AVS, the protocol *monotonically decreases* the Strategy’s total magnitude for the slashed Operator. Operators can allocate magnitudes to Operator Sets using the `modifyAllocations` function. The proportion of an Operator’s delegation assigned as Unique Stake to an Operator Set is equal to the magnitude allocated to that Operator Set divided by the Operator’s Total Magnitude. For a given strategy, the sum of all magnitude allocations can never be greater than the Total Magnitude (the sum of the proportions cannot exceed 100%), ensuring the property of Unique Stake that no two Operator Sets can slash the same stake. 
+For each Strategy, an Operator starts with a protocol-defined Total Magnitude of 1x10^18 (`INITIAL_TOTAL_MAGNITUDE`). This Total Magnitude can never increase; to account for slashing events originated by an AVS, the protocol *monotonically decreases* the Strategy’s total magnitude for the slashed Operator. Operators can allocate magnitudes to Operator Sets using the `modifyAllocations` function. The proportion of an Operator’s delegation assigned as Unique Stake to an Operator Set is equal to the magnitude allocated to that Operator Set divided by the Operator’s Total Magnitude. For a given strategy, the sum of all magnitude allocations can never be greater than the Total Magnitude (the sum of the proportions cannot exceed 100%), ensuring the property of Unique Stake that no two Operator Sets can slash the same stake.
 
-Below is an example of an Operator Magnitude allocation for the EIGEN Strategy. This will be expanded upon in the next section. 
+Below is an example of an Operator Magnitude allocation for the EIGEN Strategy. This will be expanded upon in the next section.
 
 |  | Magnitude | Proportion | EIGEN |
 | :---- | :---- | :---- | :---- |
@@ -71,7 +89,7 @@ Below is an example of an Operator Magnitude allocation for the EIGEN Strategy. 
 
 In this example, the Operator submitted one transaction to allocate to three Operator Sets simultaneously for the Eigen strategy using the `modifyAllocations` function. It allocated various magnitudes across AVSs in the Operator’s EIGEN Strategy and uses a total magnitude of 10,000 as opposed to 1x1018 for legibility.
 
-Allocations and deallocations are subject to some safety delays in the protocol. The delays vary from protocol-configured constants to custom constraints that Operators can add for additional safety. They are instantiated in the `AllocationManager` alongside the other constants:  
+Allocations and deallocations are subject to some safety delays in the protocol. The delays vary from protocol-configured constants to custom constraints that Operators can add for additional safety. They are instantiated in the `AllocationManager` alongside the other constants:
 
 | Parameter | Description | Value | Setter & Configuration |
 | :---- | :---- | :---- | :---- |
@@ -81,7 +99,7 @@ Allocations and deallocations are subject to some safety delays in the protocol.
 | `INITIAL_TOTAL_MAGNITUDE` | The initial value of the monotonically decreasing total magnitude for every Operator for every strategy. This is set high enough to start out with a large level of precision in magnitude allocations and slashings. | 1e18 | Core Protocol: Constant, unlikely to change |
 | `WITHDRAWAL_DELAY` | The amount of blocks between a Staker queueing a withdrawal and the withdrawal becoming non-slashable and completable. | 100800 blocks (~14 days) | Core Protocol: Set via governance |
 
-Before allocating for their first Operator Set, an Operator is required to set an `ALLOCATION_DELAY` in the `AllocationManager`. If an Operator is registering with EigenLayer for the first time, they will be required to provide an `ALLOCATION_DELAY` during registration. It takes the amount of time specified in the `ALLOCATION_CONFIG_DELAY` for the Operator's `ALLOCATION_DELAY` to be set initially or updated. This delay is to ensure Stakers have time to adjust to changes in their delegated Operator’s stake allocations. Stakers can withdraw their funds if an allocation is viewed as undesirable, subject to the `WITHDRAWAL_DELAY`. 
+Before allocating for their first Operator Set, an Operator is required to set an `ALLOCATION_DELAY` in the `AllocationManager`. If an Operator is registering with EigenLayer for the first time, they will be required to provide an `ALLOCATION_DELAY` during registration. It takes the amount of time specified in the `ALLOCATION_CONFIG_DELAY` for the Operator's `ALLOCATION_DELAY` to be set initially or updated. This delay is to ensure Stakers have time to adjust to changes in their delegated Operator’s stake allocations. Stakers can withdraw their funds if an allocation is viewed as undesirable, subject to the `WITHDRAWAL_DELAY`.
 
 The `AllocationManager` interface handles all allocation and deallocation signals:
 
@@ -161,21 +179,21 @@ Magnitude allocations can only be made to valid Operator Sets and only from non-
 
 ***An AVS may slash an Operator up to the total allocated amount of Unique Stake per Strategy under the following conditions:***
 
-* ***The Operator is registered to the Operator Set the AVS wishes to slash.***  
+* ***The Operator is registered to the Operator Set the AVS wishes to slash.***
 * ***The Operator Set is configured to include the allocated strategy.***
 
 ***Deallocations are the primary means of making Unique Stake non-slashable.*** ***Operators should handle allocations to registered Operator Sets as if they can be slashed at any time.*** For example, AVSs may add or remove Strategies to Operator Sets at will, which may instantly make any allocated strategy slashable. Deregistration from an Operator Set is another such case. An Operator is slashable by that Operator Set for the duration of the `DEALLOCATION_DELAY` after a deregistration, but the allocations to that Operator Set _will still exist._ If the Operator re-registers after the delays have elapsed, those Operator Set allocations immediately become slashable again.
 
-Deallocations act similarly to allocations and are queued in the `AllocationManager` and take effect automatically after the `DEALLOCATION_DELAY`. This is a globally set constant across all Operators and Operator Sets. This delay allows AVSs to update their view of Unique Stake to reflect the Operator’s reduced allocation and guarantees appropriate delays for tasks to remain slashable. Queued deallocations *cannot* be canceled. After the delay, this stake is considered non-slashable. 
+Deallocations act similarly to allocations and are queued in the `AllocationManager` and take effect automatically after the `DEALLOCATION_DELAY`. This is a globally set constant across all Operators and Operator Sets. This delay allows AVSs to update their view of Unique Stake to reflect the Operator’s reduced allocation and guarantees appropriate delays for tasks to remain slashable. Queued deallocations *cannot* be canceled. After the delay, this stake is considered non-slashable.
 
 Some notes and caveats impacting UX:
 
-* If an allocation to an Operator Set is made non-slashable by no longer meeting the criteria above, a deallocation does not go through the 14 day `DEALLOCATION_DELAY` and instead takes effect immediately.   
-* A given (Operator, Strategy) pair can only have one pending allocation *OR* deallocation transaction per Operator Set at a given time.   
-* A single transaction can modify multiple allocations.  
+* If an allocation to an Operator Set is made non-slashable by no longer meeting the criteria above, a deallocation does not go through the 14 day `DEALLOCATION_DELAY` and instead takes effect immediately.
+* A given (Operator, Strategy) pair can only have one pending allocation *OR* deallocation transaction per Operator Set at a given time.
+* A single transaction can modify multiple allocations.
 * An Operator Set deregistration ***does not*** also queue a deallocation. They have to be queued separately, as a deregistration may be used to signal other states, like a period of Operator inactivity. Previously allocated magnitude that has not been deallocated becomes instantly slashable upon re-registration.
 
-### Magnitude Allocation Flow 
+### Magnitude Allocation Flow
 
 An illustrative example of these magnitudes is useful in showing the allocation flow. Suppose, after initial delays, the Operator’s queued allocations are applied for delegated tokens in the EIGEN strategy according to the following magnitudes:
 
@@ -207,7 +225,7 @@ The 10 EIGEN in reduced magnitude is still considered slashable until the deallo
 | `Non-slashable` | 3,500 | 35% | 35 |
 | `Total`  | 10,000 | 100% | 100 |
 
-Now, a deposit occurs for an additional 100 EIGEN by a Staker who has delegated to the Operator. Instantly, that deposit is applied, following the proportions laid out in the allocation magnitudes. 
+Now, a deposit occurs for an additional 100 EIGEN by a Staker who has delegated to the Operator. Instantly, that deposit is applied, following the proportions laid out in the allocation magnitudes.
 
 |  | Magnitude | Proportion | EIGEN |
 | :---- | :---- | :---- | :---- |
@@ -217,23 +235,23 @@ Now, a deposit occurs for an additional 100 EIGEN by a Staker who has delegated 
 | `Non-slashable` | 3,500 | 35% | 70 |
 | `Total`  | 10,000 | 100% | 200 |
 
-Each Operator Set’s slashable stake and the overall non-slashable stake increase commensurately. This example is expanded in [this forum post](https://forum.eigenlayer.xyz/t/the-mechanics-of-allocating-and-slashing-unique-stake/13870#p-143651-allocation-3) with more details. We will reference this example again later in the context of slashing. 
+Each Operator Set’s slashable stake and the overall non-slashable stake increase commensurately. This example is expanded in [this forum post](https://forum.eigenlayer.xyz/t/the-mechanics-of-allocating-and-slashing-unique-stake/13870#p-143651-allocation-3) with more details. We will reference this example again later in the context of slashing.
 
 ### Deposits, Delegations, & Withdrawals
 
-Magnitude allocations make a proportion of an Operator’s delegated stake slashable by an AVS. As a result, new delegations and deposits are immediately slashable by the same proportion. There is no "activation delay". There is no change in the deposit and delegation interface. 
+Magnitude allocations make a proportion of an Operator’s delegated stake slashable by an AVS. As a result, new delegations and deposits are immediately slashable by the same proportion. There is no "activation delay". There is no change in the deposit and delegation interface.
 
-Withdrawals and undelegation, like deallocations and deregistrations, are slashable for the `WITHDRAWAL_DELAY` after they are queued and automatically become unslashable after the delay has passed. The escrow process remains unchanged: withdrawals must be queued and completed in separate transactions. When the withdrawal is completed, slashings are applied to the stake received. 
+Withdrawals and undelegation, like deallocations and deregistrations, are slashable for the `WITHDRAWAL_DELAY` after they are queued and automatically become unslashable after the delay has passed. The escrow process remains unchanged: withdrawals must be queued and completed in separate transactions. When the withdrawal is completed, slashings are applied to the stake received.
 
 
 
 ## Slashing of Unique Stake
 
-With Unique Stake allocated to Operator Sets, AVSs can begin assigning slashable tasks with economic commitments from their Operators. It is key to AVS designs to consider what is a slashable offense and to effectively communicate these conditions with Operators and Stakers. 
+With Unique Stake allocated to Operator Sets, AVSs can begin assigning slashable tasks with economic commitments from their Operators. It is key to AVS designs to consider what is a slashable offense and to effectively communicate these conditions with Operators and Stakers.
 
 **The protocol provides a slashing function that is maximally flexible; an AVSs may slash any Operator within any of their Operator Sets for any reason.**  Slashing does not have to be objectively attributable (i.e., provable on-chain), but AVSs are encouraged to create robust legibility and process around individual slashings. It is expected that governance, fraud proofs, decentralization, and more shall be considered in AVS slashing designs. Other delays and veto periods may be included in AVS designs to avoid or cancel slashing in cases of AVS implementation bugs, improper slashing, or fraud, but **no vetoes** are provided by the EigenLayer protocol.
 
-The `AllocationManager` provides the interface for the slashing function: 
+The `AllocationManager` provides the interface for the slashing function:
 
 ```solidity
     /**
@@ -263,7 +281,7 @@ The `AllocationManager` provides the interface for the slashing function:
     }
 ```
 
-To slash, AVSs specify the individual Operator that will be slashed, the Operator Set, the list of Strategies that will be slashed, the list of proportions to slash (as `wads` or “parts per `1e18`”), and a description for legibility. For example, an 8% slash would be represented as `8e16`, or `80000000000000000` as expected in the `wadsToSlash` parameter. A 25% slash, or `2.5e17`, the contract will expect `250000000000000000` as `wadsToSlash`. The indexes in the two arrays should match across `strategies` and `wadsToSlash`. 
+To slash, AVSs specify the individual Operator that will be slashed, the Operator Set, the list of Strategies that will be slashed, the list of proportions to slash (as `wads` or “parts per `1e18`”), and a description for legibility. For example, an 8% slash would be represented as `8e16`, or `80000000000000000` as expected in the `wadsToSlash` parameter. A 25% slash, or `2.5e17`, the contract will expect `250000000000000000` as `wadsToSlash`. The indexes in the two arrays should match across `strategies` and `wadsToSlash`.
 
 All Strategies supplied must be configured as part of the Operator Set. For all Strategies specified, the Operator’s allocations to that Operator Set will be slashed by the corresponding proportion while maintaining their nominal allocations to all other Operator Sets. Under the hood this is accomplished by subtracting allocated magnitude from both the specified Operator Set, and the Operator’s Total Magnitude. This is illustrated in the example below.
 
@@ -307,75 +325,3 @@ Note, slashing by one Operator Set does not affect the magnitudes of EIGEN alloc
 
 In this release, when funds are slashed by an AVS, the EigenLayer core contracts will make slashed funds permanently inaccessible (“burned”). ERC-20s have this done by sending them to the dead `0x00...00e16e4` address. This is done to ensure proper accounting with various LRT protocols. Natively Restaked ETH will be locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead of permanently locking it within EigenPod contracts as planned in this release.
 
-
-
-
-
-
-##  Allocate and Register to Operator Set via CLI
-
-Set Allocation Delay:
-
-```
-eigenlayer operator allocations set-delay <flags> <allocation-delay>
-```
-
-Before allocating for their first Operator Set, an Operator is required to set an `ALLOCATION_DELAY` in the `AllocationManager`. If an Operator is registering with EigenLayer for the first time, they will be required to provide an `ALLOCATION_DELAY` during registration. It takes the amount of time specified in the `ALLOCATION_CONFIG_DELAY` for the Operator's `ALLOCATION_DELAY` to be set initially or updated. This delay is to ensure Stakers have time to adjust to changes in their delegated Operator’s stake allocations. Stakers can withdraw their funds if an allocation is viewed as undesirable, subject to the `WITHDRAWAL_DELAY`
-
-Set Allocations per Operator Set and Strategy
-
-```
-eigenlayer operator allocations update 
-	--network holesky 
-	--operator-address <operator-address> 
-	--csv-file updates.csv 
-	--caller-address <address-of-caller>
-```
-
-We recommend using the csv in the below format to set multiple allocations in one transaction, where update.csv will look like:
-
-```
-avs_address,operator_set_id,strategy_address,bips
-0x2222AAC0C980Cc029624b7ff55B88Bc6F63C538f,2,0x4936BA8f0a04CcC2e49b8C9E42448c5cD04bF3f5,1200
-0x2222AAC0C980Cc029624b7ff55B88Bc6F63C538f,1,0x4936BA8f0a04CcC2e49b8C9E42448c5cD04bF3f5,165
-```
-
-The bips you provide here will be the final bips of your total stake.
-
-* If the bips is more than what is currently slashable, it will take effect after allocation delay time which you have set in Step 1  
-* If the bips is less than what is currently slashable, it will take effect after a deallocation delay which is set by protocol and can’t be changed per operator.  
-  * Mainnet \- 14 days in blocks.  
-  * Testnet \- 10 min in blocks.
-
-There can only be one allocation or deallocation per (operator, strategy, operator set) at a time. Once the pending allocations/deallocation completes then you can start another if you would like. 
-
-View all your allocations with show command as below
-
-```
-eigenlayer operator allocations show 
-	--network holesky 
-	--operator-address <operator-address> 
-	--strategy-addresses <comma-separated-strategy-addresses>
-
-```
-
-Register to Operator Set
-
-```
-eigenlayer operator register-operator-sets 
-	--operator-address <operator-address> 
-	--avs-address <avs-service-manager-address> 
-	--operator-set-ids <comma-separated-list-of-operator-set-ids>
-	--caller-address <address-of-caller>
-```
-
-De-register from Operator Sets
-```
-eigenlayer operator deregister-operator-sets 
-	--operator-address <operator-address> 
-	--avs-address <avs-address> 
-	--operator-set-ids <comma-separated-list-of-operator-set-ids>
-	--caller-address <address-of-caller>
-```
-
-Note: If you are deregistering from an operator set which has some active allocation bips, you will have to explicitly deallocate from that operator set using the \`eigenlayer operator allocations update\` command specified above. If you don’t do this, that amount of stake would be unavailable until it is deallocated. Once you deallocate then after deallocation delay it will be available.
