@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-id: intro
+id: intro-key-management
 title: Key management
 ---
 
