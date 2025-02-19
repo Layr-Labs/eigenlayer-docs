@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 id: solo-stakers
+title: Solo stakers
 ---
 
 # Key Management Best Practices for Solo Stakers

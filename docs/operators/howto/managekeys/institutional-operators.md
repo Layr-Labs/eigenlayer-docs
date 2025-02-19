@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+title: Node and Smart Contract Operators
 ---
 
 # Key Management Best Practices for Node Operators

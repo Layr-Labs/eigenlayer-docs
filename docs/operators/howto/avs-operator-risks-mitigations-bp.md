@@ -1,6 +1,6 @@
 ---
-sidebar_position: 8
-title: Operator Security Best Practices
+sidebar_position: 3
+title: Implement Security Best Practices
 ---
 
 # Operator Security Risks

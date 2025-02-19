@@ -1,6 +1,6 @@
 ---
-sidebar_position: 10
-title: Webapp Content Guidelines
+sidebar_position: 4
+title: Follow Webapp Content Guidelines
 ---
 
 # Webapp Content Guidelines

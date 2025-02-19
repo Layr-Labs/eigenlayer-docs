@@ -41,7 +41,7 @@ function Home() {
                 />
   
                 <Card
-                  to="operators/operator-guides/operator-introduction"
+                  to="operators/concepts/operator-introduction"
                   header={{
                     label:"Node Operators"
                   }}

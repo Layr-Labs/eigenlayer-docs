@@ -10,4 +10,4 @@ to individual Operators. Examples of custom logic for rewards include:
 
 For more information, see:
 * [ELIP-001 Operator Directed Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md#distribution-of-operator-directed-rewards).
-* [Rewards for Operators](../../operators/operator-guides/operator-rewards-config.md).
+* [Rewards for Operators](../../operators/howto/operator-rewards-config.md).

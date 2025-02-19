@@ -255,7 +255,7 @@ const config = {
 
 
           {
-            to: "operators/operator-guides/operator-introduction",
+            to: "operators/concepts/operator-introduction",
             label: "Operators",
             position: "left",
             activeBasePath: 'operators/',
