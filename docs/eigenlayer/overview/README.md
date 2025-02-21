@@ -43,7 +43,7 @@ The core components of the EigenLayer protocol include:
 </img>
 
 ## Next Steps
-To learn more about EigenLayer please read the [**Whitepaper**](/pdf/EigenLayer_WhitePaper.pdf) or visit the [**Learn**](https://www.eigenlayer.xyz/learn) section of the EigenLayer website.
+To learn more about EigenLayer, refer to the [Whitepapers](whitepaper.md) or explore the [Learning Resources](../resources/learning-resources.md).
 
 Get started with EigenLayer:
 - [Restake on EigenLayer](/restakers/restaking-guides/overview)
