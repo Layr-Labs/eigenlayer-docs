@@ -292,8 +292,12 @@ const config = {
             position: "left",
             activeBasePath: 'eigenlayer/',
           },
-
-
+          {
+            to: "developers/Concepts/avs-developer-guide",
+            label: "Developers",
+            position: "left",
+            activeBasePath: 'developer/',
+          },
           {
             to: "operators/concepts/operator-introduction",
             label: "Operators",
@@ -306,12 +310,6 @@ const config = {
             label: "Restakers",
             position: "left",
             activeBasePath: 'restakers/',
-          },
-          {
-            to: "developers/Concepts/avs-developer-guide",
-            label: "Developers",
-            position: "left",
-            activeBasePath: 'developer/',
           },
 
           {
