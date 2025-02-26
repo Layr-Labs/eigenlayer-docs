@@ -123,7 +123,7 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
-            to: "/restakers/restaking-guides/overview",
+            to: "/restakers/concepts/overview",
           },
           
           {
