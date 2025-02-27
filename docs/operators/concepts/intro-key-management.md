@@ -10,23 +10,31 @@ This section presents key management suggestions for operators. Within the conte
 
 ## Keys
 
-Central to every Proof of Stake mechanism lies a signature scheme. Signatures serve to authenticate the identity of every validator, enabling the attribution of their actions, whether positive or negative, to them. A validator's honesty can be confirmed by examining their signed messages, while malicious behavior can be demonstrated through messages that contravene consensus rules.
+Central to every Proof of Stake mechanism lies a signature scheme. Signatures serve to authenticate the identity of every validator, 
+enabling the attribution of their actions, whether positive or negative, to them. A validator's honesty can be confirmed by 
+examining their signed messages, while malicious behavior can be demonstrated through messages that contravene consensus rules.
 
 ### Ethereum
 
-Focusing on Ethereum validator keys exemplifies keys necessitating optimal security and accessibility measures, as they may maintain a robust connection with Nodes, further underlining their importance. Indeed, in Ethereum, a validator's identity is synonymous with their public key. To be precise, each validator possesses two sets: a signing and withdrawal keys.
+Focusing on Ethereum validator keys exemplifies keys necessitating optimal security and accessibility measures, as they may maintain
+a robust connection with Nodes, further underlining their importance. Indeed, in Ethereum, a validator's identity is synonymous with
+their public key. To be precise, each validator possesses two sets: a signing and withdrawal keys.
 
 #### Signing keys
 
-A *signing key* is the key a validator needs to sign attestations and propose blocks. Because a validator needs to sign a message at least once per epoch, the client software must have custody of the key.
+A *signing key* is the key a validator needs to sign attestations and propose blocks. Because a validator needs to sign
+a message at least once per epoch, the client software must have custody of the key.
 
 #### Withdrawal keys
 
-Because the client software is always connected to the internet, there is a chance that one’s signing key is compromised. To reduce the impact of such a breach, the actions a validator can perform are split between two keys.
+Because the client software is always connected to the internet, there is a chance that one’s signing key is compromised. 
+To reduce the impact of such a breach, the actions a validator can perform are split between two keys.
 
-The signing key, as explained above, is used for the validator to perform their duties. On the other hand, the *withdrawal key* has the power to control a validator's funds (transferring and withdrawing ETH).
+The signing key, as explained above, is used for the validator to perform their duties. On the other hand, the *withdrawal key* has 
+the power to control a validator's funds (transferring and withdrawing ETH).
 
-A validator should only need to use their withdrawal keys a few times over the lifetime of being a validator. This means they can be put into cold storage and stored with high security (offline).
+A validator should only need to use their withdrawal keys a few times over the lifetime of being a validator. This means they can 
+be put into cold storage and stored with high security (offline).
 
 ### EigenLayer
 
