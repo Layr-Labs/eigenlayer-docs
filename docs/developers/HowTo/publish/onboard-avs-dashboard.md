@@ -1,8 +1,7 @@
 ---
-sidebar_position: 5
+sidebar_position: 1
 title: Onboard to AVS Dashboard
 ---
-
 
 This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
 
