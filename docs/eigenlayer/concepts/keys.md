@@ -31,26 +31,32 @@ We strongly recommend Operators:
 The Operator key must be an ECDSA key and is used for actions including registering to EigenLayer, changing Operator parameters,
 and force undelagating a staker. 
 
-Always interact with with the EigenLayer core contracts using the [eigenlayer-cli](https://github.com/Layr-Labs/eigenlayer-cli) or other operator-built tools. Do not
-load a Operator key into any AVS software. Authorize any action that needs to be programmatically triggered on the AVS contracts 
-with an AVS key, not the Operator key.
+Always interact with with the EigenLayer core contracts using the [eigenlayer-cli](https://github.com/Layr-Labs/eigenlayer-cli) or other operator-built tools. 
+
+Do not load a Operator key into any AVS software. If authorizing any action programmatically triggered on the AVS contracts 
+use an AVS key, not the Operator key.
+
+For information on key management best practices, refer to [Key Management Best Practices for Node Operators](../../operators/howto/managekeys/institutional-operators.md).
 
 ### AVS signing keys
 
 AVS keys are used by AVS software run by Operators to sign messages for AVSs. The required AVS key type is specified by the AVS, and is most
-commonly BLS. 
+commonly BN254. 
 
 ### BLS and ECDSA Signature Types
 
-The two primary signatures types used in EigenLayer are BLS (Boneh-Lynn-Shacham) and ECDSA (Elliptic Curve Digital Signature Algorithm).
+The primary signatures types used in EigenLayer are BLS12-381 (Boneh-Lynn-Shacham), BN254 (Barreto-Naehrig), and ECDSA (Elliptic Curve Digital Signature Algorithm).
 
-| Feature                   | BLS                                                                    | ECDSA                                                                 |
-|:--------------------------|:-----------------------------------------------------------------------|:----------------------------------------------------------------------|
-| **Signature Size**        | 48 bytes (BLS12-381 curve)                                             | ~64 bytes (secp256k1)                                                 |
-| **Key Size**              | 32 bytes                                                               | 32 bytes                                                              |
-| **Signature Aggregation** | Supports native aggregation.  Single operation for multiple signatures | Not natively aggregatable. Each signature must be verified separately |
-| **Gas Cost in Ethereum**  | Higher for single signatures, lower for aggregated                     | Lower initially but increases with more signatures                    |
+| Feature                   | BLS12-381                                                              | BN254                                                                 | ECDSA                                                                 |
+|:--------------------------|:-----------------------------------------------------------------------|:----------------------------------------------------------------------|:----------------------------------------------------------------------|
+| **Signature Size**        | 48 bytes (BLS12-381 curve)                                             | 32 bytes (BN254 curve)                                                | ~64 bytes (secp256k1)                                                 |
+| **Key Size**              | 32 bytes                                                               | 32 bytes                                                              | 32 bytes                                                              |
+| **Signature Aggregation** | Supports native aggregation.  Single operation for multiple signatures | Supports native aggregation. Single operation for multiple signatures | Not natively aggregatable. Each signature must be verified separately |
+| **Gas Cost in Ethereum**  | Higher for single signatures, lower for aggregated                     | Lower than BLS12-381                                                  | Lower initially but increases with more signatures                    |
 
+
+Until the Pectra upgrade occurs, BN254 is cheaper.  Post Pectra upgrade, the cost of the more secure BLS12-381 signature will
+reduce, enabling migration to a cheaper and more secure signature type. 
 
 The native aggregation offered by BLS, combining multiple operator signatures into one, reduces onchain storage needs, 
 verification time, and gas costs. BLS signatures require a slightly more complex implementation that includes an aggregator entity.

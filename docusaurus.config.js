@@ -102,6 +102,10 @@ const config = {
             to: "/operators/howto/operator-content-guidelines",
           },
           {
+            from: "/operators/concepts/intro-key-management",
+            to: "/eigenlayer/concepts/keys",
+          },
+          {
             from: "/operators/operator-guides/operator-installation",
             to: "/operators/howto/operator-installation",
           },
