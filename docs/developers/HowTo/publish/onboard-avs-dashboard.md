@@ -3,45 +3,39 @@ sidebar_position: 1
 title: Onboard to AVS Dashboard
 ---
 
-This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
+<img src="/img/avs-marketplace.png" width="75%" style={{ margin: '50px'}}>
+</img>
 
-New AVS Listings: in order for an AVS to have its name, information, and logo indexed, it must invoke `updateAVSMetadataURI()` on the [AVSDirectory contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/core/AVSDirectory.sol).
-It currently takes about 10 minutes for it to be indexed and the metadata to be updated on the dashboard.
+## Adding a listing
 
-Updating AVS Listings:  if you deploy a new contract for a new version of your AVS, please be sure to remove the previous listing. Invoke the update metadata function with value of null, such as `updateAVSMetadataURI("")` to remove the previous listing. Your listing will then be removed from the application cache within one hour.
+To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/AllocationManager.md).
 
-## Interface
+The expected format fo the metadataURI is:
 
-```javascript
-interface IServiceManager {
-// Below 3 functions are just proxies to the same-named functions in the AVSDirectory
-function registerOperatorToAVS(address operator, Signature memory signature);
-
-function deregisterOperatorFromAVS(address operator);
-
-function updateAVSMetadataURI(string calldata metadataURI);
-	
-// Below 2 functions are needed for your AVS to appear correctly on the UI
-function getOperatorRestakedStrategies(address operator) returns (address[] memory)
-
-function getRestakeableStrategies() returns (address[] memory);
+```json
+{
+    "name": "EigenLabs AVS 1",
+    "website": "https://www.eigenlayer.xyz/",
+    "description": "This is my 1st AVS",
+    "logo": "https://raw.githubusercontent.com/layr-labs/eigendata/master/avs/eigenlabs/logo.png",
+    "twitter": "https://twitter.com/eigenlayer"
 }
 ```
+The logo must be in PNG format.
 
-### registerOperatorToAVS and deregisterOperatorFromAVS
-In order to have its list of operators displayed on the UI, an AVS MUST handle operator registration/deregistration by calling `registerOperatorToAVS()` and `deregisterOperatorFromAVS()` on EigenLayer’s AVSDirectory.  Primarily, these functions serve to forward calls to the `AVSDirectory.sol` contract to confirm an operator's registration with the AVS.
-```solidity
-function registerOperatorToAVS(
-        address operator,
-        ISignatureUtils.SignatureWithSaltAndExpiry memory operatorSignature
-    ) public virtual onlyRegistryCoordinator {
-        avsDirectory.registerOperatorToAVS(operator, operatorSignature);
-    }
+Once invoked, the data is indexed within about 10 minutes, and the metadata is displayed on the AVS Dashboard.
 
-function deregisterOperatorFromAVS(address operator) public virtual onlyRegistryCoordinator {
-        avsDirectory.deregisterOperatorFromAVS(operator);
-    }
-```
+## Updating a listing 
+
+If you deploy a new contract for your AVS, remove the previous listing by invoking `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/AllocationManager.md)
+value of null. For example, `updateAVSMetadataURI("")`.
+
+The listing will be removed from the AVS Marketplace cache within one hour.
+
+### registerForOperatorSets and deregisterFromOperatorSets
+
+To have the list of operators displayed on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), an AVS must register and deregister Operators by
+using `registerForOperatorSets` and `deregisterFromOperatorSets` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/5635ba536c19e3fc256e6478ce6500380995789e/docs/core/AllocationManager.md).
 
 ### getOperatorRestakedStrategies
 This function must be implemented in order to provide the list of strategies that an operator has restaked with the AVS. This allows the AVS to have its total restaked value displayed on the UI.  Given an operator, this function should:
@@ -117,19 +111,7 @@ Proxy and Implementation addresses for AVSDirectory contract are available at Ei
 
 To look at EigenDA's AVS-specific deployment -> [Deployments](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev?tab=readme-ov-file#deployments)
 
-## MetadataURI Format
 
-The metadataURI should follow the format outlined in this [example](https://holesky-operator-metadata.s3.amazonaws.com/avs_1.json). The logo MUST be in PNG format. 
-
-```json
-{
-    "name": "EigenLabs AVS 1",
-    "website": "https://www.eigenlayer.xyz/",
-    "description": "This is my 1st AVS",
-    "logo": "https://raw.githubusercontent.com/layr-labs/eigendata/master/avs/eigenlabs/logo.png",
-    "twitter": "https://twitter.com/eigenlayer"
-}
-```
 
 Note that for proper rendering of your logo on the UI, the logo _must_ be hosted on GitHub and its reference must point to the raw file as the example above shows. If you need a repo for your logo to be hosted publicly, you can make a PR to the `eigendata` repo and have your logo added: https://github.com/Layr-Labs/eigendata.
 

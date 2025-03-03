@@ -5,7 +5,7 @@ title: Onboard to AVS Dashboard
 
 :::important
 This topic describes how to onboard to the AVS Marketplace prior to the Slashing release. If you are looking for the
-latest documetation, refer to [Onboard to AVS Marketplace](../HowTo/publish/onboard-avs-dashboard.md).
+latest documentation, refer to [Onboard to AVS Marketplace](../HowTo/publish/onboard-avs-dashboard.md).
 :::
 
 This document defines interfaces that AVSs must implement for us to be able to index their data for the V1 [AVS Marketplace](https://app.eigenlayer.xyz/avs).
