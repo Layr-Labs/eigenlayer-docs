@@ -79,7 +79,7 @@ const config = {
           },
           {
             from: "/operators/operator-guides/key-management/intro-key-management",
-            to: "/operators/concepts/intro-key-management",
+            to: "/eigenlayer/concepts/keys",
           },
           {
             from: "/operators/operator-guides/operator-introduction",
