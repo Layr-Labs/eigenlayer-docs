@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Slashing
+title: Slashing Overview
 ---
 
 :::note
@@ -8,7 +8,7 @@ Slashing is currently available on the Holesky testnet. The Slashing release imp
 :::
 
 Slashing is a type of penalty determined by an AVS as a deterrent for broken commitments by Operators. Broken commitments
-may include improperly or inaccurately completing tasks assigned in [Operator Sets](../operator-sets/operator-sets.md) by an AVS. 
+may include improperly or inaccurately completing tasks assigned in [Operator Sets](../operator-sets/operator-sets-concept) by an AVS. 
 Slashing results in a burning/loss of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
 
 An AVS may slash an Operator up to the total allocated amount of Unique Stake per [Strategy](../operator-sets/magnitudes.md) under the following conditions:

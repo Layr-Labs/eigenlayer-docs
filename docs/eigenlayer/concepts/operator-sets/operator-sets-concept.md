@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Operator Sets
+sidebar_position: 1
+title: Operator Sets Overview
 ---
 
 :::note

@@ -7,7 +7,7 @@ title: Magnitudes
 Operator Sets are currently available on the Holesky testnet.
 :::
 
-Magnitudes are the accounting tool used to track Operator allocations to [Operator Sets](operator-sets.md). Magnitudes represent proportions 
+Magnitudes are the accounting tool used to track Operator allocations to [Operator Sets](operator-sets-concept). Magnitudes represent proportions 
 of an Operator’s delegations for a specific Strategy.
 
 Strategies are the accounting tool used to track Stakers deposited assets. Strategies are expressions of security on EigenLayer. 

@@ -8,7 +8,7 @@ Operator Sets and Slashing are currently available on the Holesky testnet.
 :::
 
 Unique Stake ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. 
-Unique Stake is allocated to different [Operator Sets](../operator-sets/operator-sets.md) on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, 
+Unique Stake is allocated to different [Operator Sets](../operator-sets/operator-sets-concept) on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, 
 and the Unique Stake represents proportions of the Operator’s delegated stake from Stakers. Unique Stake allocations are 
 exclusive to one Operator Set and solely slashable by the AVS that created that Operator Set.
 

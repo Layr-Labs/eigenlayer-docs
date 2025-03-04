@@ -194,7 +194,7 @@ const config = {
           },
           {
             from: "/developers/avs-opset-slashing",
-            to: "/developers/HowTo/slashing/avs-opset-slashing",
+            to: "/developers/HowTo/slashing/implement-slashing",
           },
           {
             from: "/developers/avs-permissionlesss",
