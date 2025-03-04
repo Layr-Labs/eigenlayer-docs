@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
-title: Slashing
+title: (Archived) Slashing
 ---
+
+For the latest documentation on slashing, refer to [Slashing](../concepts/slashing/slashing-concept.md).
 
 :::note 
 Slashing is currently available on the Holesky testnet.
