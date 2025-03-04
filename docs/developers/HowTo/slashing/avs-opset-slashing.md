@@ -4,7 +4,7 @@ title: Implement Slashing
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../../eigenlayer/concepts/slashing.md) content and [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
+Before proceeding, review the [Slashing Concept](../../../eigenlayer/archived/arhived-slashing.md) content and [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
 for detailed information on slashing.
 :::
 

@@ -4,7 +4,7 @@ title: Overview
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../../eigenlayer/concepts/slashing.md) content for detailed information
+Before proceeding, review the [Slashing Concept](../../../eigenlayer/archived/arhived-slashing.md) content for detailed information
 on how Operator Sets and Allocations work.
 :::
 

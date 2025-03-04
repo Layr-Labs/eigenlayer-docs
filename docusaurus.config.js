@@ -78,6 +78,10 @@ const config = {
             to: "/operators/howto/operator-sets",
           },
           {
+            from: "/eigenlayer/concepts/slashing",
+            to: "/eigenlayer/concepts/slashing/slashing-concept",
+          },
+          {
             from: "/operators/operator-guides/key-management/intro-key-management",
             to: "/eigenlayer/concepts/keys-and-signatures",
           },
