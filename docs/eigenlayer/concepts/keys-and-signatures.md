@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
-title: Keys
----
+title: Keys and Signatures
+--- 
 
 In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations. 
 Signatures cryptographically confirm that a specific address has signed a given message (for example, a string value)
@@ -13,11 +13,11 @@ Practices are outlined for [Institutional Operators](../../operators/howto/manag
 [Solo Stakers](../../operators/howto/managekeys/solo-operators.md).
 :::
 
-## EigenLayer keys
+## Operator Keys
 
-An EigenLayer Operator has two types of keys: 
-* A single Operator key used to authenticate to the EigenLayer core contracts.  
-* Multiple AVS keys used to sign messages for AVSs. 
+An Operator has two types of keys:
+* A single Operator key used to authenticate to the EigenLayer core contracts.
+* Multiple AVS keys used to sign messages for AVSs.
 
 :::warning
 We strongly recommend Operators:
@@ -25,8 +25,6 @@ We strongly recommend Operators:
 * That are also Ethereum stakers, do not reuse their Ethereum key for EigenLayer operations.
 * Use a different key for every AVS.
 :::
-
-### Operator keys
 
 The Operator key must be an ECDSA key and is used for actions including registering to EigenLayer, changing Operator parameters,
 and force undelagating a staker. 
@@ -38,12 +36,12 @@ use an AVS key, not the Operator key.
 
 For information on key management best practices, refer to [Key Management Best Practices for Node Operators](../../operators/howto/managekeys/institutional-operators.md).
 
-### AVS signing keys
+## AVS Signing Keys
 
 AVS keys are used by AVS software run by Operators to sign messages for AVSs. The required AVS key type is specified by the AVS, and is most
 commonly BN254. 
 
-### BLS and ECDSA Signature Types
+## BLS and ECDSA Signature Types
 
 The primary signatures types used in EigenLayer are BLS12-381 (Boneh-Lynn-Shacham), BN254 (Barreto-Naehrig), and ECDSA (Elliptic Curve Digital Signature Algorithm).
 
@@ -54,9 +52,8 @@ The primary signatures types used in EigenLayer are BLS12-381 (Boneh-Lynn-Shacha
 | **Signature Aggregation** | Supports native aggregation.  Single operation for multiple signatures | Supports native aggregation. Single operation for multiple signatures | Not natively aggregatable. Each signature must be verified separately |
 | **Gas Cost in Ethereum**  | Higher for single signatures, lower for aggregated                     | Lower than BLS12-381                                                  | Lower initially but increases with more signatures                    |
 
-
-Until the Pectra upgrade occurs, BN254 is cheaper.  Post Pectra upgrade, the cost of the more secure BLS12-381 signature will
-reduce, enabling migration to a cheaper and more secure signature type. 
+Until the Pectra upgrade, BN254 remains the cheaper option. After the upgrade, the cost of verifying the more secure BLS12-381
+signature will decrease, making migration to this cheaper and more secure signature type viable for developers.
 
 The native aggregation offered by BLS, combining multiple operator signatures into one, reduces onchain storage needs, 
 verification time, and gas costs. BLS signatures require a slightly more complex implementation that includes an aggregator entity.
