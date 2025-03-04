@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: AVS security models
+title: AVS Security Models
 ---
 
 The security model of an AVS defines who or what is trusted in an AVS, and under what conditions that trust holds. AVSs may 
@@ -16,3 +16,9 @@ Security models available to AVSs in order of decentralization include:
   * Subjective. Governance based. For example, token holders in a DAO vote to slash, or vote to veto slashing.
   * Intersubjective Slashing Conditions. Broad-based agreement among all reasonable active observers. For example, data
     withholding.
+
+:::note 
+The list of security models is not exhaustive. The EigenLayer protocol provides a slashing function that is maximally flexible.
+AVSs have flexibility to design their protocols to slash for any reason. AVSs are encouraged to create robust legibility 
+and process around how their slashing is designed and individual slashing events.
+:::
