@@ -131,7 +131,7 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
-            to: "/restakers/restaking-guides/overview",
+            to: "/restakers/concepts/overview",
           },
           
           {
@@ -164,9 +164,12 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/",
-            to: "/restakers/restaking-guides/overview",
+            to: "/restakers/concepts/overview",
           },
-          
+         {
+           from: "/restakers/restaking-guides/overview",
+           to: "/restakers/concepts/overview",
+         },
 
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/",
@@ -314,10 +317,10 @@ const config = {
           },
 
           {
-            to: "restakers/restaking-guides/overview",
+            to: "restakers/concepts/overview",
             label: "Restakers",
             position: "left",
-            activeBasePath: 'restakers/',
+            activeBasePath: 'restakers/concepts',
           },
 
           {
