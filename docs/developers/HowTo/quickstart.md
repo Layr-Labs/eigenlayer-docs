@@ -95,7 +95,7 @@ function respondToTask(
 }
 ```
 
-Please find a complete list of the requirements to implement an AVS at [Build Your Own AVS: Step 2 Idea to Code](/docs/developers/HowTo/how-to-build-an-avs.md#step-2-idea-to-code-building-and-deploying-your-avs-locally).
+Please find a complete list of the requirements to implement an AVS at [Build Your Own AVS: Step 2 Idea to Code](/docs/developers/HowTo/build/how-to-build-an-avs.md#step-2-idea-to-code-building-and-deploying-your-avs-locally).
 
 ### Contract Deployment Scripts
 
