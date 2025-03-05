@@ -41,7 +41,7 @@ Please note the following conditions:
 
 ## Slashing 
 
-Review the [Slashing Concept](../../eigenlayer/concepts/slashing.md) content for information on risks related to Slashable Stake.
+Review the [Slashing Concept](../../eigenlayer/archived/arhived-slashing.md) content for information on risks related to Slashable Stake.
 
 ## Escrow Period (Withdrawal Delay)
 
