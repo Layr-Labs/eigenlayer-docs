@@ -19,6 +19,7 @@ Security models available to AVSs in order of decentralization include:
 
 :::note 
 The list of security models is not exhaustive. The EigenLayer protocol provides a slashing function that is maximally flexible.
-AVSs have flexibility to design their protocols to slash for any reason. AVSs are encouraged to create robust legibility 
-and process around how their slashing is designed and individual slashing events.
+AVSs have flexibility to design their protocols to slash for any reason. AVSs are encouraged to:
+* Create robust legibility and process around how their slashing is designed and individual slashing events. 
+* Clearly communicate slashing design and individual slashing events to their Operator and Staker communities. 
 :::
