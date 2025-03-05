@@ -167,17 +167,19 @@ As of the PEPE release, users can now convert consensus rewards and validator ex
 
 #### Checkpoint Frequency
 
-Users should not initiate a checkpoint more frequently than once every two weeks (approximately). 
-The longer you wait before performing a checkpoint, the more gas users will save. The gas cost of a checkpoint is the same, regardless of how many consensus rewards will be proven. Each user should determine the best interval to fit their gas cost and restaking benefit needs.
+To optimize gas costs, initiating a checkpoint no more than once every two weeks is generally recommended. Waiting longer 
+before performing a checkpoint can lead to greater gas savings, as the gas cost remains the same regardless of the number of 
+consensus rewards being proven. Users should choose a checkpoint interval that aligns with their gas cost considerations and restaking benefits.
 
-Consensus rewards are moved from the beacon chain to your EigenPod once every approximately 8 days per the Ethereum protocol. Checkpoint intervals more frequently than 8 days would result in no benefit for the user.
-
+Consensus rewards are transferred from the beacon chain to your EigenPod approximately every 9 days, according to the Ethereum protocol. 
+Creating checkpoints more than once per sweep provides no additional benefit.
 
 ### Withdraw Validator Restaked Balance
 
 1. Validator Exit
    * Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
-   * Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There can be a lag of up to 24 hours to 7 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.  Please see the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
+   * Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There is a lag of 24 hours up to 9 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.
+     See the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
 2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
 3. Determine the number of shares available to withdraw.
    * Invoke `[YourEigenPodContract].withdrawableRestakedExecutionLayerGwei()` to get the number amount of withdrawable execution layer ETH in Gwei.
@@ -195,14 +197,14 @@ Consensus rewards are moved from the beacon chain to your EigenPod once every ap
 
 This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
 
-
 Determine the number of shares available to withdraw. This step is an _optional_ convenience to avoid attempting to queue a withdrawal for more shares than allowed.
-1. Invoke `EigenPod.withdrawableRestakedExecutionLayerGwei()`. Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the default measure used by the Beacon chain to store balances.
-1. Convert the resulting Gwi to Wei. Multiple the amount in Gwei * 1 billion (1e9). 
-1. The amount in Wei represents the number of shares available to withdraw.
+1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
+2. Invoke `EigenPod.withdrawableRestakedExecutionLayerGwei()`. Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the default measure used by the Beacon chain to store balances.
+3. Convert the resulting Gwi to Wei. Multiple the amount in Gwei * 1 billion (1e9). 
+4. The amount in Wei represents the number of shares available to withdraw.
 
 Withdraw yield shares amount:
-1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
+1. If not done in the optional step above, generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
 2. Invoke the `DelegationManager.queueWithdrawal()` function with the amount of the yield to be withdrawn. This function can only be invoked by the **EigenPod Owner wallet**. 
    * This function can only be invoked by the **EigenPod Owner wallet**. 
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
@@ -214,8 +216,13 @@ Withdraw yield shares amount:
 
 ### Queue withdrawal takes an `amount` as input, what will that value be?
 
-The input amount for `DelegationManager.queueWithdrawal()` can be any amount you like. However, it must be less than or equal to `withdrawableRestakedExecutionLayerGwei`. The value of `withdrawableRestakedExecutionLayerGwei` will equal any checkpointed yield (consensus rewards, fees, ETH) and any checkpointed exited validator native eth that has been withdrawn to the EigenPod.
+The input amount for `DelegationManager.queueWithdrawal()` can be any amount you like. However, it must be less than or 
+equal to `withdrawableRestakedExecutionLayerGwei` when the withdrawal is completed.
 
-### How to account for the exchange rates between Strategy token `amounts` and `shares`?
+The value of `withdrawableRestakedExecutionLayerGwei` is any withdrawable (that is, has not been slashed in EigenLayer) ETH
+in the EigenPod contract address after a checkpoint, independent of its source. Sources of withdrawable ETH include consensus 
+rewards, exited validators, direct transfers of ETH, and ETH from self-destructed contracts.
+
+### How do you account for the exchange rates between Strategy token `amounts` and `shares`?
 
 Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between shares and underlying token amounts.
