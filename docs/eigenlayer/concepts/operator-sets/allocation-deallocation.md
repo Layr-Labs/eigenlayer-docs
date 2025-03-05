@@ -7,7 +7,7 @@ title: Allocation and Deallocation
 
 Allocations are made by magnitude and can only be made:
 * To valid [Operator Sets](operator-sets-concept).
-* From non-slashable [magnitude](magnitudes.md).
+* From non-slashable [magnitude](strategies-and-magnitudes).
 
 Allocations are not made until the Operator [`ALLOCATION_DELAY`](../../reference/safety-delays-reference.md) has passed (that is, the allocation is not pending). Allocations
 cannot be made from an of:
