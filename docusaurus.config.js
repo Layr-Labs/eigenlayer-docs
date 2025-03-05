@@ -209,7 +209,7 @@ const config = {
           },
           {
             from: "/developers/how-to-build-an-avs",
-            to: "/developers/HowTo/how-to-build-an-avs",
+            to: "/developers/HowTo/build/how-to-build-an-avs",
           },
           {
             from: "/developers/avs-dashboard-onboarding",
