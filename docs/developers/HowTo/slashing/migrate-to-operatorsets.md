@@ -3,9 +3,9 @@ sidebar_position: 2
 title: Migrate to Operator Sets
 ---
 
-**We strongly recommend existing AVSs migrate to using Operator Sets on Testnet. The AVSDirectory method will be deprecated in a future upgrade.**
+**We strongly recommend existing AVSs migrate to using [Operator Sets](../../../eigenlayer/concepts/operator-sets/operator-sets-concept) on Testnet. The AVSDirectory method will be deprecated in a future upgrade.**
 
-Operator Sets are required to [slash](../../Concepts/slashing/slashing-overview.md). To migrate to, and start using, Operator Sets: 
+Operator Sets are required to [slash](../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
 1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
 2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
 3. [Communicate to Operators](#communicate-to-operators)
