@@ -3,7 +3,13 @@ sidebar_position: 4
 title: Restaking Smart Contract Developer (Testnet)
 ---
 
+:::important
+While the Holesky network instability continues:
+* EigenPods and native ETH restaking are not available on Holesky.
+* AVS developers can use Sepolia for development and testing.
 
+For more information, refer to the [EigenLayer blog](https://www.blog.eigenlayer.xyz/).
+:::
 
 The following instructions include an overview of the changes to Smart Contract Restaking per the Slashing and Operator Set release (Currently in Testnet). All existing instructions on [Restaking Smart Contract Developer](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-developer-guide) remain unchanged for this update, except where noted below.
 
