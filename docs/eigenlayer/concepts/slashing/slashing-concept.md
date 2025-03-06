@@ -11,7 +11,7 @@ Slashing is a type of penalty determined by an AVS as a deterrent for broken com
 may include improperly or inaccurately completing tasks assigned in [Operator Sets](../operator-sets/operator-sets-concept) by an AVS. 
 Slashing results in a burning/loss of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
 
-An AVS may slash an Operator up to the total allocated amount of Unique Stake per [Strategy](../operator-sets/magnitudes.md) under the following conditions:
+An AVS may slash an Operator up to the total allocated amount of Unique Stake per [Strategy](../operator-sets/strategies-and-magnitudes) under the following conditions:
 * The Operator is registered to the Operator Set the AVS wishes to slash.
 * The Operator Set is configured to include the allocated strategy.
 * All applicable safety and time delays have passed.

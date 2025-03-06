@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: Magnitudes
+title: Strategies and Magnitudes
 ---
 
 :::note
