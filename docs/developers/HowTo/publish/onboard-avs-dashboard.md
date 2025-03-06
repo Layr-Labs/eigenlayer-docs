@@ -3,6 +3,8 @@ sidebar_position: 1
 title: Onboard to AVS Dashboard
 ---
 
+The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs. 
+
 <img src="/img/avs-marketplace.png" width="75%" style={{ margin: '50px'}}>
 </img>
 
@@ -34,15 +36,19 @@ The listing will be removed from the AVS Marketplace cache within one hour.
 
 ### registerForOperatorSets and deregisterFromOperatorSets
 
-To have the list of operators displayed on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), an AVS must register and deregister Operators by
+To have the list of Operators displayed on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), an AVS must register and deregister Operators by
 using `registerForOperatorSets` and `deregisterFromOperatorSets` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/5635ba536c19e3fc256e6478ce6500380995789e/docs/core/AllocationManager.md).
 
 ### getOperatorRestakedStrategies
-This function must be implemented in order to provide the list of strategies that an operator has restaked with the AVS. This allows the AVS to have its total restaked value displayed on the UI.  Given an operator, this function should:
-- Retrieve the operator's quorum bitmap from the `RegistryCoordinator.sol` contract.
+
+To provide the list of Strategies that an Operator has restaked with a AVS, the [`getOperatorRestakedStrategies`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/RewardsCoordinator.md#createavsrewardssubmission) function must
+be implemented. Implementing `getOperatorRestakedStrategies` enables the AVS to have its total restaked value displayed on the UI.
+Given an operator, the function:
+- Retrieve the Operator's quorum bitmap from the `RegistryCoordinator.sol` contract.
 - Retrieve the addresses of the strategies for each quorum in the quorum bitmap
 
-Note that there is no guarantee is made on whether the operator has shares for a strategy in a quorum or uniqueness of each element in the returned array. The off-chain service should do that validation separately
+`getOperatorRestakedStrategies` makes no guarantee on whether the Operator has shares for a strategy in an Operator Set
+or the uniqueness of each element in the returned array. The offchain service is responsible for that validation. 
 
 ```solidity
 function getOperatorRestakedStrategies(address operator) external view returns (address[] memory) {
@@ -75,7 +81,8 @@ function getOperatorRestakedStrategies(address operator) external view returns (
     }
 ```
 ### getRestakeableStrategies
-This function must be implemented in order to have all possible restakeable strategies for that AVS displayed on the UI correctly.  These are the strategies that the AVS supports for restaking.  
+
+To list all supported restakeable Strategies for the AVS on the UI, the [`getRestakeableStrategies`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/RewardsCoordinator.md#createavsrewardssubmission) function must be implemented.
 
 ```solidity
 function getRestakeableStrategies() external view returns (address[] memory) {
@@ -104,20 +111,20 @@ function getRestakeableStrategies() external view returns (address[] memory) {
 
 ```
 
+For a reference implemetation, refer to [ServiceManagerBase.sol](https://github.com/Layr-Labs/eigenlayer-middleware/blob/mainnet/src/ServiceManagerBase.sol).
 
-Refer to [ServiceManagerBase.sol](https://github.com/Layr-Labs/eigenlayer-middleware/blob/mainnet/src/ServiceManagerBase.sol) for a reference implementation of the interface.
+## Rendering Logo
 
-Proxy and Implementation addresses for AVSDirectory contract are available at EigenLayer Contracts -> [Deployments](https://github.com/Layr-Labs/eigenlayer-contracts/?tab=readme-ov-file#deployments).
-
-To look at EigenDA's AVS-specific deployment -> [Deployments](https://github.com/Layr-Labs/eigenlayer-middleware/tree/dev?tab=readme-ov-file#deployments)
-
-
-
-Note that for proper rendering of your logo on the UI, the logo _must_ be hosted on GitHub and its reference must point to the raw file as the example above shows. If you need a repo for your logo to be hosted publicly, you can make a PR to the `eigendata` repo and have your logo added: https://github.com/Layr-Labs/eigendata.
-
-## Holesky Dashboard onboarding
-Once you've gone through the above steps and you've called the `updateAVSMetadataURI` function, your AVS will be reflected on the Holesky dashboard in about 10 minutes.
+For proper rendering of the AVS logo on the UI, the logo must be hosted on GitHub and its reference must point to the raw 
+file as the example above shows. If you need a repository for your logo to be hosted publicly, make a PR to the [`eigendata`](https://github.com/Layr-Labs/eigendata)
+repository to add your logo.
 
 ## Mainnet Dashboard onboarding
-To complete the process of onboarding your AVS on to the mainnet marketplace dashboard, please submit this form: [EigenLayer Mainnet Dashboard Onboarding Form](https://forms.gle/8BJSntA3eYUnZZgs8).
+To complete the process of onboarding your AVS to mainnet AVS Marketplace Dashboard, submit the [EigenLayer Mainnet Dashboard Onboarding Form](https://forms.gle/8BJSntA3eYUnZZgs8).
 
+## Testnet Dashboard Onboarding
+While the Holesky network instability continues, AVS developers are using Sepolia for development and testing. The
+AVS Marketplace is not deployed on Sepolia. EigenLayer will continue to support Holesky as
+it stabilizes for end to end protocol testing.
+
+For more information, refer to the [EigenLayer blog](https://www.blog.eigenlayer.xyz/).
