@@ -19,7 +19,7 @@ Set Allocations per Operator Set and Strategy
 
 ```
 eigenlayer operator allocations update 
-	--network holesky 
+	--network sepolia 
 	--operator-address <operator-address> 
 	--csv-file updates.csv 
 	--caller-address <address-of-caller>
@@ -46,7 +46,7 @@ View all your allocations with show command as below
 
 ```
 eigenlayer operator allocations show 
-	--network holesky 
+	--network sepolia 
 	--operator-address <operator-address> 
 	--strategy-addresses <comma-separated-strategy-addresses>
 

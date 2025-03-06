@@ -23,10 +23,10 @@ Rewards snapshot distribution data is available via a public S3 bucket. Users ma
 `<bucket url>/<environment>/<network>/<snapshot date>/claim-amounts.json`
 
 * bucket_url: 
-  * [https://eigenlabs-rewards-testnet-holesky.s3.amazonaws.com](https://eigenlabs-rewards-testnet-holesky.s3.amazonaws.com)
+  * [https://eigenlabs-rewards-testnet-sepolia.s3.amazonaws.com](https://eigenlabs-rewards-testnet-sepolia.s3.amazonaws.com)
   * [https://eigenlabs-rewards-mainnet-ethereum.s3.amazonaws.com](https://eigenlabs-rewards-mainnet-ethereum.s3.amazonaws.com)
 * environment: testnet or mainnet
-* network: holesky or ethereum
+* network: sepolia or ethereum
 
 Example:
 
