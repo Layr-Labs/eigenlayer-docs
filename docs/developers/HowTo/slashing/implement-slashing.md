@@ -41,8 +41,8 @@ The `AllocationManager` provides the interface for the slashing function.
 To implement slashing, AVSs specify:
 * Individual Operator
 * [Operator Set](../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md)
-* [List of Strategies](../../../eigenlayer/concepts/operator-sets/magnitudes.md)
-* [List of proportions (as `wads` or “parts per `1e18`”)](../../../eigenlayer/concepts/operator-sets/magnitudes.md)
+* [List of Strategies](../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
+* [List of proportions (as `wads` or “parts per `1e18`”)](../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
 * Description. 
 
 For example, in the `wadsToSlash` parameter: 
