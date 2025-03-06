@@ -202,7 +202,7 @@ const config = {
           },
           {
             from: "/developers/avs-dashboard-onboarding",
-            to: "/developers/HowTo/onboard-avs-dashboard",
+            to: "/developers/HowTo/publish/onboard-avs-dashboard",
           },
           {
             from: "/developers/rewards",
