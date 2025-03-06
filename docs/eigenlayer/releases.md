@@ -12,7 +12,7 @@ in each repository.
 
 The [Slashing](https://www.blog.eigenlayer.xyz/introducing-slashing/) and Rewards v2.1 releases are available on the Sepolia testnet. 
 The [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts) and [eigenlayer-middleware](https://github.com/Layr-Labs/eigenlayer-middleware)
-include the Slashing release on the `testnet-sepolia` branch. (todo-confirm)
+include the Slashing release on the `testnet-sepolia` branch.
 
 :::important 
 Unless specified otherwise, this documentation matches the functionality available on the Sepolia testnet. For mainnet 
