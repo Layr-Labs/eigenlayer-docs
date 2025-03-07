@@ -78,8 +78,7 @@ The following instructions describe how to Restake validator ETH. This mechanism
 Native Restaking consists of the following actions:
 * [Restake New Validator Native Beacon Chain ETH](#restake-new-validator-native-beacon-chain-eth)
 * [Convert Consensus Rewards to Restaked Shares](#convert-consensus-rewards-to-restaked-shares)
-* [Withdraw Validator Restaked Balance](#withdraw-validator-restaked-balance)
-* [Withdraw Yield Only](#withdraw-yield-only)
+* [Withdraw](#withdraw)
 
 ### Gas Cost Planning
 
@@ -174,43 +173,59 @@ consensus rewards being proven. Users should choose a checkpoint interval that a
 Consensus rewards are transferred from the beacon chain to your EigenPod approximately every 9 days, according to the Ethereum protocol. 
 Creating checkpoints more than once per sweep provides no additional benefit.
 
-### Withdraw Validator Restaked Balance
+### Withdraw 
 
-1. Validator Exit
-   * Fully exit the Validator. You may monitor its activity via [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\] .
-   * Wait for the final beacon chain withdrawal to be deposited to your EigenPod. There is a lag of 24 hours up to 9 days between the validator appearing as "exited" and the withdrawal amount deposited to EigenPod.
-     See the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/\[yourvalidatorid\]#withdrawals . The ETH will then be recognized in the EigenPod.
-2. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-3. Determine the number of shares available to withdraw.
-   * Invoke `[YourEigenPodContract].withdrawableRestakedExecutionLayerGwei()` to get the number amount of withdrawable execution layer ETH in Gwei.
-   * Convert the Gwei to Wei (multiply by  by 10^9 or 1,000,000,000).
-4. Invoke the `DelegationManager.queueWithdrawal()` function. 
-   * This function can only be invoked by the **EigenPod Owner wallet**. 
-   * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
-   * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
-   * shares - use the amount of withdrawableRestakedExecutionLayerGwei converted to Wei in the steps above.
-5. Wait for the Escrow Period to complete.
-6. Invoke `DelegationManager.completeQueuedWithdrawal()`.
+There are two options when withdrawing restaked validator ETH:
+* Exit validator and withdraw restaked balance.
+* Continue as a validator and withdraw yield only.
 
+With the exception of stopping and exiting the validator, the two processes are the same. The process to withdraw restaked validator ETH is:
 
-### Withdraw Yield Only
+1. [If exiting the validator, stop the validator and wait for the validator to go through the exit queue.](#step-1-stopping-validator)
+2. [Generate a checkpoint proof to bring the balance in your EigenPod up to date.](#step-2-generate-checkpoint-proof)
+3. [Determine the number of shares available to withdraw.](#step-3-determine-the-number-of-withdrawable-shares)
+4. [Queue a withdrawal, and wait for EigenLayer escrow period.](#step-4-queue-withdrawal)
+5. [Complete withdrawal.](#step-5-complete-withdrawal)
 
-This process is intended to allow users to withdraw yield (beacon chain consensus rewards, execution fees, and ETH) from the EigenPod.
+#### Step 1 Stopping Validator
 
-Determine the number of shares available to withdraw. This step is an _optional_ convenience to avoid attempting to queue a withdrawal for more shares than allowed.
-1. Generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. Invoke `EigenPod.withdrawableRestakedExecutionLayerGwei()`. Note: the resulting number of shares returned are in units of [Gwei](https://ethereum.org/en/developers/docs/gas/#what-is-gas). Gwei is the default measure used by the Beacon chain to store balances.
-3. Convert the resulting Gwi to Wei. Multiple the amount in Gwei * 1 billion (1e9). 
-4. The amount in Wei represents the number of shares available to withdraw.
+If exiting validator and withdrawing restaked balance, fully exit the validator:
+1. Monitor the validator activity at [beaconcha.in/validator/\[yourvalidatorid](http://beaconcha.in/validator/\[yourvalidatorid)\].
+2. Wait for the final beacon chain withdrawal to be deposited to your EigenPod.
 
-Withdraw yield shares amount:
-1. If not done in the optional step above, generate [checkpoint proof ](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs)via eigenpod-proofs-generation CLI in order to initiate and complete a checkpoint.
-2. Invoke the `DelegationManager.queueWithdrawal()` function with the amount of the yield to be withdrawn. This function can only be invoked by the **EigenPod Owner wallet**. 
-   * This function can only be invoked by the **EigenPod Owner wallet**. 
-   * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
-   * strategies - use the Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
-3. Wait for the Escrow Period to complete.
-4. Invoke `DelegationManager.completeQueuedWithdrawal()`. This function can only be invoked by the **EigenPod Owner wallet**.
+After a validator's status changes to "exited", it can take between 24 hours and 10 days for its ETH to be transferred to
+the EigenPod. See the "Withdrawals" tab and "Time" column for your validator via beaconcha.in/validator/[yourvalidatorid]#withdrawals .
+The ETH will then be viewable in the EigenPod's address on the Execution Layer.
+
+#### Step 2 Generate Checkpoint Proof
+
+Generate checkpoint proof using [eigenpod-proofs-generation CLI](https://github.com/Layr-Labs/eigenpod-proofs-generation/tree/master/cli#checkpoint-proofs) to account for any ETH that has accumulated in the EigenPod. 
+Once completed, the balance in your EigenPod is up to date.
+
+#### Step 3 Determine the Number of Withdrawable Shares
+
+To determine the number of withdrawable shares:
+1. Invoke `[YourEigenPodContract].withdrawableRestakedExecutionLayerGwei()` to get the amount of withdrawable execution layer ETH in Gwei.
+2. Convert the Gwei to Wei (multiply Gwei by 10^9 or 1,000,000,000).
+
+#### Step 4 Queue Withdrawal
+
+To queue withdrawal:
+
+1. As the EigenPod Owner wallet, invoke the `DelegationManager.queueWithdrawal()` function with:
+   * [`QueuedWithdrawalParams`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/interfaces/IDelegationManager.sol#L116)
+   * Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
+   * Amount of withdrawable shares in Wei.
+2. Wait for the EigenLayer escrow period.
+
+:::note
+If you queue a withdrawal with an amount of shares higher than the withdrawable shares, you may have to exit validators and complete 
+a checkpoint or restart the escrow process before the withdrawal can be completed.
+:::
+
+#### Step 5 Complete withdrawal
+
+As the EigenPod Owner Wallet, invoke the DelegationManager.completeQueuedWithdrawal().
 
 ## FAQ
 
