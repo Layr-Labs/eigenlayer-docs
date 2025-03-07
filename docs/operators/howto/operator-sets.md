@@ -25,7 +25,7 @@ eigenlayer operator allocations update
 	--caller-address <address-of-caller>
 ```
 
-We recommend using the csv in the below format to set multiple allocations in one transaction, where update.csv will look like:
+Use the csv in the below format to set multiple allocations in one transaction, where update.csv will look like:
 
 ```
 avs_address,operator_set_id,strategy_address,bips

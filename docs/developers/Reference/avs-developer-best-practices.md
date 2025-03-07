@@ -6,7 +6,8 @@ title: AVS Developer Security Best Practices
 ## AVS Developer Security Best Practices
 
 
-- Containers should be able to run with least privilege. Least privilege is AVS-dependent. AVS team should outline these privileges as part of the operator onboarding docs. In the case these privileges are not specified, it’s recommended the operators ask the AVS team directly.
+- Containers should be able to run with least privilege. Least privilege is AVS-dependent. AVS team should outline these 
+privileges as part of the operator onboarding docs. If privileges are not specified, operators need to ask the AVS team directly.
 - Emit runtime (logs) including security events
 - Use Minimal Base Images
     - Use [ko Go containers](https://ko.build/) or similar to build distro-less minimal images. This reduces the attack surface significantly!
@@ -48,7 +49,7 @@ When working with keys for nodes in an AVS, it is essential to consider the secu
 
 Supporting both local and remote signer methods is a good practice. 
 
-A good choice for a remote signer is [Web3signer](https://docs.web3signer.consensys.net/):
+[Web3signer](https://docs.web3signer.consensys.net/) is a remote signer that includes the following features:
 
 - Open-source signing service developed under the Apache 2.0 license, developed by Consensys, and written in Java. 
 - Capable of signing on multiple platforms using private keys stored in an external vault, or encrypted on a disk.

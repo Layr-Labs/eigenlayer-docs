@@ -83,8 +83,8 @@ Native Restaking consists of the following actions:
 
 ### Gas Cost Planning
 
-For users planning to restake multiple validators, we recommend they connect many validators to a single EigenPod in order to reduce gas cost and complexity where possible. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
-
+For users planning to restake multiple validators, connecting many validators to a single EigenPod where possible reduces 
+gas cost and complexity. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
 
 ### EigenPod Upgrades and Pending Consensus Rewards
 
@@ -110,11 +110,13 @@ Use the following command to assign a submitter for your EigenPod:
 /cli assign-submitter --execNode $NODE_ETH --podAddress $EIGENPOD_ADDRESS --sender $EIGENPOD_OWNER_PK
 ```
 
-Consider using a cold key for the EigenPod Owner role. This key should be stored securely and used infrequently. For cold keys, we recommend using hardware wallets (e.g., Ledger, HSMSs) or smart contract multisigs (e.g., Safe). 
+Consider using a cold key for the EigenPod Owner role. This key should be stored securely and used infrequently. 
+For cold keys, best practice is using hardware wallets (e.g., Ledger, HSMSs) or smart contract multisigs (e.g., Safe). 
 
-We strongly recommend using a seperate key for the Proof Submitter, which can be considered a hot key. The Proof Submitter is any other address approved to submit proofs on behalf of the EigenPod owner. This separation allows the EigenPod owner key to remain secure and cold. Hot keys, while less secure, can be managed with solutions like Vault (Hashicorp) or environment variables. It is crucial not to store any meaningful value in your hot keys as operational keys are considered less secure. 
-
-
+Best practice is using a seperate key for the Proof Submitter, which can be considered a hot key. The Proof Submitter 
+is any other address approved to submit proofs on behalf of the EigenPod owner. This separation allows the EigenPod owner 
+key to remain secure and cold. Hot keys, while less secure, can be managed with solutions like Vault (Hashicorp) or environment 
+variables. It is crucial not to store any meaningful value in your hot keys as operational keys are considered less secure. 
 
 ### Restake New Validator Native Beacon Chain ETH
 
