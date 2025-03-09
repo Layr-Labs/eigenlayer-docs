@@ -41,10 +41,10 @@ eigenlayer version v<X.X.X>
     ```
 
   </TabItem>
-  <TabItem value="holesky" label="Holesky">
+  <TabItem value="sepolia" label="Sepolia">
     ```bash
     ./bin/eigenlayer rewards show \
-      --network holesky \
+      --network sepolia \
       --earner-address <earner-address> \
       --claim-type unclaimed
     ```
@@ -98,13 +98,13 @@ Make sure the keys you are using to claim is the claimer you have set.
     `comma-separated-list-of-token-addresses` - You can get this from output of [Step 3](#step-3-check-if-rewards-are-available-to-claim)
 
   </TabItem>
-  <TabItem value="holesky" label="Holesky">
+  <TabItem value="sepolia" label="Sepolia">
     If you are using local keystore file, use the following command to claim rewards
     
     ```bash
     ./bin/eigenlayer rewards claim \
-      --network holesky \
-      --eth-rpc-url <holesky-eth-rpc-url> \
+      --network sepolia \
+      --eth-rpc-url <sepolia-eth-rpc-url> \
       --earner-address <earner-address> \
       --recipient-address <address-to-send-rewards-to> \
       --path-to-key-store /path/to/key/store-json \
@@ -128,7 +128,7 @@ If you want to see the rewards parameters before claiming, you can use the follo
     
     ```bash
     ./bin/eigenlayer rewards claim \
-      --network holesky \
+      --network mainnet \
       --eth-rpc-url <mainnet-eth-rpc-url> \
       --earner-address <earner-address> \
       --token-addresses <comma-separated-list-of-token-addresses>
@@ -136,13 +136,13 @@ If you want to see the rewards parameters before claiming, you can use the follo
     `comma-separated-list-of-token-addresses` - You can get this from output of [Step 3](#step-3-check-if-rewards-are-available-to-claim)
 
   </TabItem>
-  <TabItem value="holesky" label="Holesky">
+  <TabItem value="sepolia" label="Sepolia">
     If you are using local keystore file, use the following command to claim rewards
     
     ```bash
     ./bin/eigenlayer rewards claim \
-      --network holesky \
-      --eth-rpc-url <holesky-eth-rpc-url> \
+      --network sepolia \
+      --eth-rpc-url <sepolia-eth-rpc-url> \
       --earner-address <earner-address> \
       --token-addresses <comma-separated-list-of-token-addresses>
     ```
