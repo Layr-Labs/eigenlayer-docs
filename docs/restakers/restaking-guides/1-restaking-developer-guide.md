@@ -212,7 +212,7 @@ To determine the number of withdrawable shares:
 
 To queue withdrawal:
 
-1. As the EigenPod Owner wallet, invoke the `DelegationManager.queueWithdrawal()` function with:
+1. As the EigenPod Owner wallet, invoke the [`DelegationManager.queueWithdrawals()`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/DelegationManager.md#queuewithdrawals) function with:
    * [`QueuedWithdrawalParams`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/src/contracts/interfaces/IDelegationManager.sol#L116)
    * Beacon chain ETH strategy (`0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0`).
    * Amount of withdrawable shares in Wei.
@@ -225,7 +225,12 @@ a checkpoint or restart the escrow process before the withdrawal can be complete
 
 #### Step 5 Complete withdrawal
 
-As the EigenPod Owner Wallet, invoke the DelegationManager.completeQueuedWithdrawal().
+As the EigenPod Owner Wallet, invoke the [`DelegationManager.completeQueuedWithdrawal()`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/DelegationManager.md#completequeuedwithdrawal) function.
+
+:::note
+Withdrawals can only be cancelled after waiting the full escrow period. To cancel a withdrawal, invoke the [`DelegationManager.completeQueuedWithdrawal()`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/DelegationManager.md#completequeuedwithdrawal)
+function with the parameter `receiveAsTokens` set to `FALSE`.
+:::
 
 ## FAQ
 
