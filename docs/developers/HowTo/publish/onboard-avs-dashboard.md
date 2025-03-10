@@ -17,7 +17,7 @@ Initially, the AVS Marketplace will not be available on Sepolia. For more inform
 
 ## Adding a listing
 
-To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/AllocationManager.md).
+To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md).
 
 The expected format fo the metadataURI is:
 
@@ -37,14 +37,14 @@ Once invoked, the data is indexed within about 20 minutes, and the metadata is d
 
 ## Updating a listing 
 
-If you deploy a new contract for your AVS, remove the previous listing by invoking `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/AllocationManager.md)
+If you deploy a new contract for your AVS, remove the previous listing by invoking `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md)
 value of null. For example, `updateAVSMetadataURI("")`.
 
 The listing will be removed from the AVS Marketplace cache within one hour.
 
 ### getOperatorRestakedStrategies
 
-To provide the list of Strategies that an Operator has restaked with a AVS, the [`getOperatorRestakedStrategies`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/RewardsCoordinator.md#createavsrewardssubmission) function must
+To provide the list of Strategies that an Operator has restaked with a AVS, the [`getOperatorRestakedStrategies`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-sepolia/docs/core/RewardsCoordinator.md#createavsrewardssubmission) function must
 be implemented. Implementing `getOperatorRestakedStrategies` enables the AVS to have its total restaked value displayed on the UI.
 Given an operator, the function:
 - Retrieve the Operator's quorum bitmap from the `RegistryCoordinator.sol` contract.
@@ -85,7 +85,7 @@ function getOperatorRestakedStrategies(address operator) external view returns (
 ```
 ### getRestakeableStrategies
 
-To list all supported restakeable Strategies for the AVS on the UI, the [`getRestakeableStrategies`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/RewardsCoordinator.md#createavsrewardssubmission) function must be implemented.
+To list all supported restakeable Strategies for the AVS on the UI, the [`getRestakeableStrategies`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-sepolia/docs/core/RewardsCoordinator.md#createavsrewardssubmission) function must be implemented.
 
 ```solidity
 function getRestakeableStrategies() external view returns (address[] memory) {
