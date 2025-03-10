@@ -19,12 +19,17 @@ Most Operators will receive token delegations sourced from other Restakers withi
 
 ## Staker and Operator Roles Clarification
 
-Operators are not required to be Restakers. An Ethereum address can be both a Restaker (via liquid or native restaking) and simultaneously an Operator, however this is not a requirement. An Operator can have zero restaked tokens in EigenLayer.
+Operators are not required to be Restakers. An Ethereum address can be both a Restaker (via liquid or native restaking) and 
+simultaneously an Operator, however this is not a requirement. An Operator can have zero restaked tokens in EigenLayer.
 
-For Operators who self delegate as Restakers we recommend the Operator use **separate addresses** for Restaking and Operating activities. A single address that is used for both Restaking and Operators cannot undelegate from itself, it can only withdraw restaked funds. For this reason we recommend Operators use separate Restaking addresses if they wish avoid this limitation.
+An Operator is required to have tokens delegated to their address. The delegation can come from other Restakers or they 
+can self-delegate their restaked token balance.
 
-An Operator is required to have tokens delegated to their address. The delegation can come from other Restakers or they can self-delegate their restaked token balance.
-
+:::important
+If a single address is used for Restaking and Operating activities when an Operator self delegates as a Restaker, the Operator
+cannot undelegate from itself, and the Operator can only withdraw restaked funds. To avoid this limitation, use separate addresses
+for Restaking and Operating activities when self delegating as a Restaker.
+:::
 
 ## Rewards
 Please see the [rewards claiming](../../eigenlayer/rewards-claiming/rewards-claiming-overview.md) documentation on how to claim rewards.

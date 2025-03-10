@@ -212,6 +212,10 @@ const config = {
             to: "/developers/HowTo/build/how-to-build-an-avs",
           },
           {
+            from: "/developers/HowTo/how-to-build-an-avs",
+            to: "/developers/HowTo/build/how-to-build-an-avs",
+          },
+          {
             from: "/developers/avs-dashboard-onboarding",
             to: "/developers/HowTo/onboard-avs-dashboard",
           },

@@ -20,9 +20,9 @@ An Operator has two types of keys:
 * Multiple AVS keys used to sign messages for AVSs.
 
 :::warning
-We strongly recommend Operators:
-* Do not reuse their Operator key as an AVS signing key.
-* That are also Ethereum stakers, do not reuse their Ethereum key for EigenLayer operations.
+As security best practice, Operators should:
+* Not reuse their Operator key as an AVS signing key.
+* Not reuse their Ethereum key for EigenLayer operations if they are also Ethereum stakers.
 * Use a different key for every AVS.
 :::
 
