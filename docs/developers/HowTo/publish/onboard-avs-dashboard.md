@@ -8,6 +8,13 @@ The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
 <img src="/img/avs-marketplace.png" width="75%" style={{ margin: '50px'}}>
 </img>
 
+:::important
+While the Holesky network instability continues, AVS developers can use Sepolia for development and testing.
+
+Initially, the AVS Marketplace will not be available on Sepolia. For more information, refer to the 
+[EigenLayer blog](https://www.blog.eigenlayer.xyz/eigenlayer-update-holesky-network-instability-and-upcoming-sepolia-support/).
+:::
+
 ## Adding a listing
 
 To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/testnet-holesky/docs/core/AllocationManager.md).
@@ -25,7 +32,8 @@ The expected format fo the metadataURI is:
 ```
 The logo must be in PNG format.
 
-Once invoked, the data is indexed within about 10 minutes, and the metadata is displayed on the AVS Dashboard.
+Once invoked, the data is indexed within about 20 minutes, and the metadata is displayed on the AVS Dashboard for Holesky.
+[The EigenLayer Mainnet Dashboard Onboarding Form is required to display on the AVS Dashboard for mainnet](#mainnet-dashboard-onboarding). 
 
 ## Updating a listing 
 
@@ -33,11 +41,6 @@ If you deploy a new contract for your AVS, remove the previous listing by invoki
 value of null. For example, `updateAVSMetadataURI("")`.
 
 The listing will be removed from the AVS Marketplace cache within one hour.
-
-### registerForOperatorSets and deregisterFromOperatorSets
-
-To have the list of Operators displayed on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), an AVS must register and deregister Operators by
-using `registerForOperatorSets` and `deregisterFromOperatorSets` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/5635ba536c19e3fc256e6478ce6500380995789e/docs/core/AllocationManager.md).
 
 ### getOperatorRestakedStrategies
 
@@ -121,10 +124,3 @@ repository to add your logo.
 
 ## Mainnet Dashboard onboarding
 To complete the process of onboarding your AVS to mainnet AVS Marketplace Dashboard, submit the [EigenLayer Mainnet Dashboard Onboarding Form](https://forms.gle/8BJSntA3eYUnZZgs8).
-
-## Testnet Dashboard Onboarding
-While the Holesky network instability continues, AVS developers are using Sepolia for development and testing. The
-AVS Marketplace is not deployed on Sepolia. EigenLayer will continue to support Holesky as
-it stabilizes for end to end protocol testing.
-
-For more information, refer to the [EigenLayer blog](https://www.blog.eigenlayer.xyz/).
