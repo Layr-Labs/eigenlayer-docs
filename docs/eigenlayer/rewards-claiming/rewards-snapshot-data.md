@@ -24,7 +24,7 @@ Refer to the [sidecar](https://github.com/Layr-Labs/sidecar) repository for [exa
 
 To obtain rewards snapshot distribution data using a EigenLayer Sidecar:
 
-1. List distibution roots. 
+1. List distribution roots. 
    ``` 
    # grpcurl
    grpcurl -plaintext -d '{ }' localhost:7100 eigenlayer.sidecar.v1.rewards.Rewards/ListDistributionRoots | jq '.distributionRoots[0]'
