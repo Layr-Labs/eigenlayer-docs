@@ -21,10 +21,10 @@ Operators can set their per-AVS fee rate via the EigenLayer CLI with the followi
 
 ```
 # Get the current per-AVS fee rate
-eigenlayer-cli operator get-rewards-split --operator-address [operator_address] --avs-address [avs_address] --eth-rpc-url [rpc_endpoint] --network holesky
+eigenlayer-cli operator get-rewards-split --operator-address [operator_address] --avs-address [avs_address] --eth-rpc-url [rpc_endpoint] --network sepolia
 
 # Set the current per-AVS fee rate
-eigenlayer-cli operator set-rewards-split --operator-address [operator_address] --avs-address [avs_address] --eth-rpc-url [rpc_endpoint] --network holesky --path-to-key-store [path_to_local_operator_ecdsa_keystore.ecdsa.key.json] --operator-split [split in bips] --broadcast
+eigenlayer-cli operator set-rewards-split --operator-address [operator_address] --avs-address [avs_address] --eth-rpc-url [rpc_endpoint] --network sepolia --path-to-key-store [path_to_local_operator_ecdsa_keystore.ecdsa.key.json] --operator-split [split in bips] --broadcast
 ```
 Please note the Operator split is denoted in units of bips (basis points). E.g. 1000 = 10%.
 
