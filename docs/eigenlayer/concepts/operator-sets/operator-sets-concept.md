@@ -7,7 +7,7 @@ title: Operator Sets Overview
 Operator Sets are currently available on the Holesky testnet. [ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
 introduced Operator Sets.
 
-Currently, Operators register to an AVS to earn rewards in the AVSDirectory. We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/slashing/migrate-to-operatorsets.md). 
+Currently, Operators register to an AVS to earn rewards in the AVSDirectory. We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/build/slashing/migrate-to-operatorsets.md). 
 :::
 
 Operator Sets determine which Operators secure an AVS and earn rewards. Each AVS defines one or more Operator Sets that

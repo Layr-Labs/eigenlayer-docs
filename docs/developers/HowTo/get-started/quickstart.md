@@ -8,7 +8,7 @@ title: Get started
 We are in the process of updating our samples to include Rewards and Slashing capabilities. The Hello World AVS example will be
 updated as soon as possible. Use Hello World AVS now to get familiar with EigenLayer. 
 For more information on Rewards and Slashing, refer to the [Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md) and [Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) ELIPs,
-and [Rewards](../Concepts/rewards.md) and [Slashing](../Concepts/slashing/slashing-concept-developers) documentation. 
+and [Rewards](../../Concepts/rewards.md) and [Slashing](../Concepts/slashing/slashing-concept-developers) documentation. 
 For questions or support, reach out to us using the Intercom button on the bottom right side of this page or <a href="javascript:void(0)"  id="intercom_trigger_eldocs" >here</a>. 
 We will promptly follow up with support!
 

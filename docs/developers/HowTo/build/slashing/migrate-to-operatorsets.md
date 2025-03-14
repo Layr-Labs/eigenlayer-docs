@@ -6,7 +6,7 @@ title: Migrate to Operator Sets
 **The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
 upcoming deprecation of AVSDirectory.**
 
-Operator Sets are required to [slash](../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
+Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
 1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
 2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
 3. [Communicate to Operators](#communicate-to-operators)

@@ -4,7 +4,7 @@ title: Implement Slashing
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../../eigenlayer/concepts/slashing/slashing-concept.md) content and [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
+Before proceeding, review the [Slashing Concept](../../../../eigenlayer/concepts/slashing/slashing-concept.md) content and [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
 for detailed information on slashing.
 :::
 
@@ -40,7 +40,7 @@ The `AllocationManager` provides the interface for the slashing function.
 
 To implement slashing, AVSs specify:
 * Individual Operator
-* [Operator Set](../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md)
+* [Operator Set](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md)
 * [List of Strategies](../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
 * [List of proportions (as `wads` or “parts per `1e18`”)](../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
 * Description. 

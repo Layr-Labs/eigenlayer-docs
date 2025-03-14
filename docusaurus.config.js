@@ -197,15 +197,15 @@ const config = {
           },
           {
             from: "/developers/avs-opset-slashing",
-            to: "/developers/HowTo/slashing/implement-slashing",
+            to: "/developers/HowTo/build/slashing/implement-slashing",
           },
           {
             from: "/developers/avs-permissionlesss",
-            to: "/developers/HowTo/avs-permissionlesss",
+            to: "/developers/HowTo/build/avs-permissionlesss",
           },
           {
             from: "/developers/deployment-testnet-mainnet",
-            to: "/developers/HowTo/deployment-testnet-mainnet",
+            to: "/developers/HowTo/deploy/deployment-testnet-mainnet",
           },
           {
             from: "/developers/how-to-build-an-avs",
@@ -217,11 +217,11 @@ const config = {
           },
           {
             from: "/developers/avs-dashboard-onboarding",
-            to: "/developers/HowTo/onboard-avs-dashboard",
+            to: "/developers/HowTo/publish/onboard-avs-dashboard",
           },
           {
             from: "/developers/rewards",
-            to: "/developers/HowTo/rewards",
+            to: "/developers/HowTo/build/rewards",
           },
           {
             from: "/developers/support",
@@ -232,8 +232,24 @@ const config = {
             to: "/developers/Reference/resources",
           },
           {
+            from: "/developers/HowTo/slashing/design-operator-set",
+            to: "/developers/HowTo/build/slashing/design-operator-set",
+          },
+          {
+            from: "/developers/HowTo/slashing/migrate-to-operatorsets",
+            to: "/developers/HowTo/slashing/build/migrate-to-operatorsets",
+          },
+          {
+            from: "/developers/HowTo/slashing/slashing-veto-committee-design",
+            to: "/developers/HowTo/build/slashing/slashing-veto-committee-design",
+          },
+          {
+            from: "/developers/HowTo/build/implement-minimum-onchain-components",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
+          },
+          {
             from: "/developers/quickstart",
-            to: "/developers/HowTo/quickstart",
+            to: "/developers/HowTo/get-started/quickstart",
           },
         ],
         createRedirects(existingPath) {
