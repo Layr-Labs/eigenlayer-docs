@@ -45,4 +45,4 @@ Rewards are calculated via an off-chain process. A Merkle root is posted which r
 
 
 ## AVS Integrations
-Please refer to [AVS Guide: AVS Rewards](/docs/developers/HowTo/rewards.md) for complete instructions.
+Please refer to [AVS Guide: AVS Rewards](/docs/developers/HowTo/build/rewards.md) for complete instructions.

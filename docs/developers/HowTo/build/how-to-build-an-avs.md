@@ -5,7 +5,7 @@ title: Build Your Own AVS
 
 This section will walk you through the process of designing and building your own AVS from scratch. It is intended to take you from an idea to a working local prototype.
 
-Before proceeding, please review the previous sections on [AVS Overview](../../Concepts/avs-developer-guide.md), [EigenLayer Overview](/docs/eigenlayer/overview/README.md) and the [Quick Start example](../quickstart.md) to become familiar with the basic concepts.
+Before proceeding, please review the previous sections on [AVS Overview](../../Concepts/avs-developer-guide.md), [EigenLayer Overview](/docs/eigenlayer/overview/README.md) and the [Quick Start example](../get-started/quickstart.md) to become familiar with the basic concepts.
 
 
 ## Step 1: AVS Design
@@ -70,7 +70,7 @@ Please see the example from hello-world-avs [here](https://github.com/Layr-Labs/
 
 ## Step 3: Deploy and Test Locally
 
-Use [AVS Devnet](../test-avs.md) to deploy and test the AVS locally.
+Use [AVS Devnet](../test/test-avs.md) to deploy and test the AVS locally.
 
 ## Get in Touch
 

@@ -25,6 +25,6 @@ specific documentation, refer to the `/docs` repository on the `mainnet` branch 
 repository.
 
 :::important
-AVSDirectory will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/slashing/migrate-to-operatorsets.md)
+AVSDirectory will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
 on Testnet.
 :::
