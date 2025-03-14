@@ -225,7 +225,7 @@ const config = {
           },
           {
             from: "/developers/support",
-            to: "/developers/HowTo/support",
+            to: "/developers/HowTo/get-started/support",
           },
           {
             from: "/developers/resources",
@@ -237,7 +237,7 @@ const config = {
           },
           {
             from: "/developers/HowTo/slashing/migrate-to-operatorsets",
-            to: "/developers/HowTo/slashing/build/migrate-to-operatorsets",
+            to: "/developers/HowTo/build/slashing/migrate-to-operatorsets",
           },
           {
             from: "/developers/HowTo/slashing/slashing-veto-committee-design",
@@ -380,7 +380,7 @@ const config = {
             items: [
               {
                 label: "Support",
-                href: "https://docs.eigenlayer.xyz/eigenlayer/overview/support",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/developers/HowTo/get-started/support",
               },
               {
                 label: "Forum",
