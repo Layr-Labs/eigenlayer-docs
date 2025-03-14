@@ -3,7 +3,7 @@ sidebar_position: 2
 title: Migrate to Operator Sets
 ---
 
-**The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
+**The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
 upcoming deprecation of AVSDirectory.**
 
 Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
