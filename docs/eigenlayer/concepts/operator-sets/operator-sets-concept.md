@@ -21,3 +21,11 @@ Sets to perform the service provided by the AVS.
 Operators are responsible for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before 
 opting into an Operator Set and allocating  stake to the Operator Set, as once allocated, those funds may be slashable 
 according to any conditions set by that AVS. 
+
+## For AVS Developers
+
+For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/slashing/design-operator-set.md).
+
+## For Operators
+
+For information on allocating to Operator Sets, refer to [Allocate and Register to Operator Set](../../../operators/howto/operator-sets.md).
