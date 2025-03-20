@@ -32,6 +32,13 @@ the AVSDirectory for registering Operators to an AVS. [The AVSDirectory will be 
 Rewards v2.1 on the Holesky testnet introduced Operator directed rewards for Operator sets. For AVSs using Operator Sets, use `createOperatorDirectedOperatorSetRewardsSubmission`. 
 `createAVSRewardsSubmission` and `createOperatorDirectedAVSRewardsSubmission` remain available for use by AVSs that have not yet [migrated to Operator Sets](https://docs.eigenlayer.xyz/developers/HowTo/slashing/migrate-to-operatorsets).
 
+### User Access Management
+
+The Slashing release includes [User Access Management (UAM)](concepts/uam/user-access-management.md). The following interfaces of 
+have a breaking change to add the OperatorID as an input:
+* [`DelegationManager.modifyOperatorDetails`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/DelegationManager.md#modifyoperatordetails)
+* [`DelegationManager.updateOperatorMetadataURI`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/DelegationManager.md#updateoperatormetadatauri)
+
 ### Release notes 
 
 For complete release notes, refer to the [`eigenlayer-contracts` repository](https://github.com/Layr-Labs/eigenlayer-contracts/releases).
