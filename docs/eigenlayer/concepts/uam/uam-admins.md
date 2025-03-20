@@ -12,6 +12,7 @@ style={{ margin: '50px'}}>
 </img>
 
 There must always be at least one admin for the account. If no admins have ever been set, the initial account address acts as the admin.
+There is no superadmin role.
 
 Admins cannot be given access to a subset of functions or contracts. Admins always have full access unless removed as an admin.
 Specific function or contract access cannot be removed for a given admin.

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Add and remove appointees
+title: Add and Remove Appointees
 ---
 
 Only admins (or the account if no admin has been set) can add appointees. Unlike adding an admin, there is no requirement

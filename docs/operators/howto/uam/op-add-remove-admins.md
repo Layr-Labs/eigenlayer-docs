@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: Add and remove admins
+title: Add and Remove Admins
 ---
 
 :::caution
@@ -10,6 +10,7 @@ destroyed. For more information on key management best practices, refer to [AVS 
 After an account has added an admin and the pending admin has accepted, the account address no
 longer has default admin privileges. That is, the original account key of the Operator or AVS cannot be
 used for write operations to the protocol, unless previously added as an admin, or is added back as admin in the future.
+There is no superadmin role.
 
 The removal of default admin privileges upon adding additional admins enables accounts
 to perform a key rotation to remove permissions from a potentially compromised original key.
