@@ -45,8 +45,8 @@ of permanently locking it within EigenPod contracts as planned in this release.
 
 For information on:
 * AVS security models and slashing, refer to [AVS Security Models](../../../developers/Concepts/avs-security-models.md). 
-* Design considerations for slashing, refer to [Design Operator Sets](../../../developers/HowTo/slashing/design-operator-set.md) and [Design Slashing Conditions](../../../developers/HowTo/slashing/slashing-veto-committee-design.md).
-* Implementing slashing, refer to [Implement Slashing](../../../developers/HowTo/slashing/implement-slashing.md).
+* Design considerations for slashing, refer to [Design Operator Sets](../../../developers/HowTo/build/slashing/design-operator-set.md) and [Design Slashing Conditions](../../../developers/HowTo/build/slashing/slashing-veto-committee-design.md).
+* Implementing slashing, refer to [Implement Slashing](../../../developers/HowTo/build/slashing/implement-slashing.md).
 
 ## For Operators
 
