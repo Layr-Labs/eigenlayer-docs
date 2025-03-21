@@ -10,4 +10,4 @@ To build an AVS, the minimum set of functionality to be defined in the [AVS cont
 * [Managing registered Operators](../build/manage-registered-operators.md)
     * [Responding to Operator registrations](../build/manage-registered-operators.md#respond-to-operator-registrations-to-operator-sets)
     * [Deregistering Operators](../build/manage-registered-operators.md#deregister-operators-from-or-respond-to-operator-deregistrations-from-operator-sets)
-* [Distributing Rewards](../build/configure-rewards.md) 
+* [Distributing Rewards](../build/submit-rewards-submissions) 

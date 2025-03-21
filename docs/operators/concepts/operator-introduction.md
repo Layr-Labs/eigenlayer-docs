@@ -32,7 +32,7 @@ for Restaking and Operating activities when self delegating as a Restaker.
 :::
 
 ## Rewards
-Please see the [rewards claiming](../../eigenlayer/rewards-claiming/rewards-claiming-overview.md) documentation on how to claim rewards.
+Please see the [rewards claiming](../howto/claimrewards/claim-rewards-cli.mdx) documentation on how to claim rewards.
 
 
 
