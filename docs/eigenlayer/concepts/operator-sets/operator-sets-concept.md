@@ -24,7 +24,7 @@ according to any conditions set by that AVS.
 
 ## For AVS Developers
 
-For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/slashing/design-operator-set.md).
+For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/slashing/design-operator-set.md).
 
 ## For Operators
 
