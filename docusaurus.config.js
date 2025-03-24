@@ -209,11 +209,11 @@ const config = {
           },
           {
             from: "/developers/how-to-build-an-avs",
-            to: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
           },
           {
             from: "/developers/HowTo/how-to-build-an-avs",
-            to: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
           },
           {
             from: "/developers/avs-dashboard-onboarding",
