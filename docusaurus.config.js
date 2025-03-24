@@ -236,6 +236,10 @@ const config = {
             to: "/developers/HowTo/build/slashing/design-operator-set",
           },
           {
+            from: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
+          },
+          {
             from: "/developers/HowTo/slashing/migrate-to-operatorsets",
             to: "/developers/HowTo/build/slashing/migrate-to-operatorsets",
           },

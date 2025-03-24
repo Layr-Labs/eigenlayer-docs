@@ -9,6 +9,7 @@ We are in the process of updating our samples to include Rewards and Slashing ca
 updated as soon as possible. Use Hello World AVS now to get familiar with EigenLayer. 
 For more information on Rewards and Slashing, refer to the [Rewards](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-001.md) and [Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) ELIPs,
 and [Rewards](../../Concepts/rewards.md) and [Slashing](../../Concepts/slashing/slashing-concept-developers) documentation. 
+and [Rewards](../../Concepts/rewards.md) and [Slashing](../../Concepts/slashing/slashing-concept-developers) documentation. 
 For questions or support, reach out to us using the Intercom button on the bottom right side of this page or <a href="javascript:void(0)"  id="intercom_trigger_eldocs" >here</a>. 
 We will promptly follow up with support!
 
@@ -94,8 +95,6 @@ function respondToTask(
     emit TaskResponded(referenceTaskIndex, task, msg.sender);
 }
 ```
-
-Please find a complete list of the requirements to implement an AVS at [Build Your Own AVS: Step 2 Idea to Code](/docs/developers/HowTo/build/how-to-build-an-avs.md#step-2-idea-to-code-building-and-deploying-your-avs-locally).
 
 ### Contract Deployment Scripts
 
