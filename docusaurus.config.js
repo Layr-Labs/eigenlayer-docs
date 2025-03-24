@@ -232,6 +232,18 @@ const config = {
             to: "/developers/Reference/resources",
           },
           {
+            from: "/eigenlayer/rewards-claiming/claim-rewards/via-cli",
+            to: "/operators/howto/claimrewards/claim-rewards-cli",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/claim-rewards/via-ui",
+            to: "/restakers/restaking-guides/claim-rewards-app",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-claiming",
+          },
+          {
             from: "/developers/HowTo/slashing/design-operator-set",
             to: "/developers/HowTo/build/slashing/design-operator-set",
           },
