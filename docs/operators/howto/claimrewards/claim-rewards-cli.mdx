@@ -1,0 +1,98 @@
+---
+sidebar_position: 1
+title: Claim Rewards
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Prerequisites
+* EigenLayer CLI installed.
+* Wallet keys for the Earner or Claimer address accessible to the CLI.
+
+### Earner
+
+To claim rewards using the EigenLayer CLI as an [Earner](../../../eigenlayer/concepts/rewards/earners-claimers-recipients.md):
+
+1. Check if rewards are available to claim.
+
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+    ```bash
+    ./bin/eigenlayer rewards show \
+      --network mainnet \
+      --earner-address <earner-address> \
+      --claim-type unclaimed
+
+    ```
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+    ```bash
+    ./bin/eigenlayer rewards show \
+      --network holesky \
+      --earner-address <earner-address> \
+      --claim-type unclaimed
+    ```
+  </TabItem>
+</Tabs>
+
+The token addresses and associated unclaimed rewards are displayed.
+
+```bash
+---------------------------------------------------------------------------------------
+Token Address                              | Wei Amount
+---------------------------------------------------------------------------------------
+0x554c393923c753d146aa34608523ad7946b61662 | 6324648267039518
+0xdf3b00151bf851e8c4036ceda284d38a2f1d09df | 132817613607829878
+---------------------------------------------------------------------------------------
+```
+
+2. If using a local keystore file:
+
+<Tabs groupId="network">
+  <TabItem value="mainnet" label="Mainnet">
+
+    ```bash
+    ./bin/eigenlayer rewards claim \
+      --network mainnet \
+      --eth-rpc-url <mainnet-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --recipient-address <address-to-send-rewards-to> \
+      --path-to-key-store /path/to/key/store-json \
+      --token-addresses <comma-separated-list-of-token-addresses> \
+      --broadcast
+    ```
+
+  </TabItem>
+  <TabItem value="holesky" label="Holesky">
+
+    ```bash
+    ./bin/eigenlayer rewards claim \
+      --network holesky \
+      --eth-rpc-url <holesky-eth-rpc-url> \
+      --earner-address <earner-address> \
+      --recipient-address <address-to-send-rewards-to> \
+      --path-to-key-store /path/to/key/store-json \
+      --token-addresses <comma-separated-list-of-token-addresses> \
+      --broadcast
+    ```
+    `comma-separated-list-of-token-addresses` - You can get this from output of Step 3
+  </TabItem>
+</Tabs>
+
+Where: 
+* `earner-address` - [Earner](../../../eigenlayer/concepts/rewards/earners-claimers-recipients.md) with wallet keys accessible to the CLI. 
+* `token-addresses` - Token addresses from output of previous step. 
+* `recipient-address` - Address to receive the Rewards. The default is the [Earner](../../../eigenlayer/concepts/rewards/earners-claimers-recipients.md).
+
+If you are using private key hex, Fireblocks or Web3Signer for key management, refer to the CLI help for the respective key manager.
+
+```bash
+./bin/eigenlayer rewards claim --help
+```
+
+### Claimer
+
+To claim rewards using the EigenLayer CLI as a [Claimer](../../../eigenlayer/concepts/rewards/earners-claimers-recipients.md),
+use the same commands as for Earner except specify the `claimer-address` option instead of the `earner-address` option.

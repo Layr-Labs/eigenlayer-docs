@@ -21,7 +21,7 @@ title: Prepare for and Deploy to Testnet and Mainnet
 
 5.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
 
-6. Implement Rewards distributions per the instructions [here](../build/rewards.md).
+6. Implement Rewards distributions per the instructions [here](../build/submit-rewards-submissions.md).
 
 
 ## Preparing and Deploying to Mainnet

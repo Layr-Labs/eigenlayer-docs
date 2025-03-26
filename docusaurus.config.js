@@ -115,7 +115,7 @@ const config = {
           },
           {
             from: "/operators/operator-guides/operator-rewards-config",
-            to: "/operators/howto/operator-rewards-config",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/operators/operator-guides/troubleshooting",
@@ -127,7 +127,7 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
@@ -136,19 +136,19 @@ const config = {
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-ui",
-            to: "/eigenlayer/rewards-claiming/claim-rewards/via-ui",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-cli",
-            to: "/eigenlayer/rewards-claiming/claim-rewards/via-cli",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-faq",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-faq",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
@@ -221,7 +221,7 @@ const config = {
           },
           {
             from: "/developers/rewards",
-            to: "/developers/HowTo/build/rewards",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/developers/support",
@@ -230,6 +230,18 @@ const config = {
           {
             from: "/developers/resources",
             to: "/developers/Reference/resources",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/claim-rewards/via-cli",
+            to: "/operators/howto/claimrewards/claim-rewards-cli",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/claim-rewards/via-ui",
+            to: "/restakers/restaking-guides/claim-rewards-app",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-claiming",
           },
           {
             from: "/developers/HowTo/slashing/design-operator-set",
