@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 title: EigenLayer Middleware Contracts
 ---
 
@@ -9,8 +9,7 @@ The middleware contracts can be:
 * Modified to implement logic specific to the AVS before deploying 
 * Not used. In this case, the interfaces present in the middleware contracts must be implemented in the AVS contracts.
 
-We recommend new AVS developers use the middleware contracts as the higher level interface
-to the core contracts. 
+New AVS developers can use the middleware contracts as the higher level interface to the core contracts.
 
 The middleware contracts are documented in the [eigenlayer-middleware](https://github.com/Layr-Labs/eigenlayer-middleware) repository.
 The ServiceManagerBase contract is the reference implementation for the onchain registration and deregistration that each AVS must have.
