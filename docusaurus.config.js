@@ -209,11 +209,11 @@ const config = {
           },
           {
             from: "/developers/how-to-build-an-avs",
-            to: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
           },
           {
             from: "/developers/HowTo/how-to-build-an-avs",
-            to: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
           },
           {
             from: "/developers/avs-dashboard-onboarding",
@@ -234,6 +234,10 @@ const config = {
           {
             from: "/developers/HowTo/slashing/design-operator-set",
             to: "/developers/HowTo/build/slashing/design-operator-set",
+          },
+          {
+            from: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
           },
           {
             from: "/developers/HowTo/slashing/migrate-to-operatorsets",
