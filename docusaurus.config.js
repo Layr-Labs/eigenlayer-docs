@@ -337,26 +337,26 @@ const config = {
             to: "eigenlayer/overview",
             label: "EigenLayer",
             position: "left",
-            activeBaseRegex: `^/eigenlayer/`,
+            activeBasePath: 'eigenlayer/',
           },
           {
             to: "developers/Concepts/avs-developer-guide",
             label: "Developers",
             position: "left",
-            activeBaseRegex: '^/developers/',
+            activeBasePath: 'developers/',
           },
           {
             to: "operators/concepts/operator-introduction",
             label: "Operators",
             position: "left",
-            activeBaseRegex: '^/operators/',
+            activeBasePath: 'operators/',
           },
 
           {
             to: "restakers/concepts/overview",
             label: "Restakers",
             position: "left",
-            activeBaseRegex: '^/restakers/concepts',
+            activeBasePath: 'restakers/concepts',
           },
 
           {
