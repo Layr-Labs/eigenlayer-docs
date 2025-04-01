@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Test AVS
+sidebar_position: 1
+title: Locally
 ---
 :::note 
 AVS Devnet is currently in Public Alpha and is rapidly being upgraded. Features may be added, removed or otherwise improved or modified,
