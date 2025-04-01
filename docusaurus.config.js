@@ -343,7 +343,7 @@ const config = {
             to: "developers/Concepts/avs-developer-guide",
             label: "Developers",
             position: "left",
-            activeBasePath: 'developer/',
+            activeBasePath: 'developers/',
           },
           {
             to: "operators/concepts/operator-introduction",
