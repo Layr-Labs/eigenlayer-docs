@@ -17,7 +17,7 @@ in cases of AVS implementation bugs, improper slashing, or fraud.
 
 One popular AVS design is to utilize a governance mechanism with slashing such that a committee can review a proposed (or queued) 
 slashing request. That slashing request can then be either fulfilled or vetoed by a committee of domain experts, governance 
-council or multisig address for the AVS. Please see the [vetoable slasher example implementation](https://github.com/Layr-Labs/eigenlayer-middleware/blob/feat/slashing-release-branch/src/slashers/VetoableSlasher.sol) for reference.
+council or multisig address for the AVS. Please see the [vetoable slasher example implementation](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/src/slashers/VetoableSlasher.sol) for reference.
 
 Ensure that your slashing process can be resolved within the `DEALLOCATION_DELAY` time window. This is the amount of blocks
 between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. 
