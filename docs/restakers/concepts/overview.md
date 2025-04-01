@@ -3,6 +3,13 @@ sidebar_position: 1
 title: Restaking Overview
 ---
 
+:::important 
+While the Holesky network instability continues:
+* EigenPods and native ETH restaking are not available on Holesky. 
+* AVS developers can use Sepolia for development and testing.
+
+For more information, refer to the [EigenLayer blog](https://www.blog.eigenlayer.xyz/).
+:::
 
 ## **Liquid & Native Restaking**
 

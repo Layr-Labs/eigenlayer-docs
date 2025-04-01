@@ -1,8 +1,15 @@
 ---
 sidebar_position: 2
+title: Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)
 ---
 
-# Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)
+:::important
+While the Holesky network instability continues:
+* EigenPods and native ETH restaking are not available on Holesky.
+* AVS developers can use Sepolia for development and testing.
+
+For more information, refer to the [EigenLayer blog](https://www.blog.eigenlayer.xyz/).
+:::
 
 In this guide, we will show you how to use a Holesky faucet to load your wallet with [testnet ETH](https://ethereum.org/en/developers/docs/networks/#ethereum-testnets) and how to obtain Holesky Liquid Staking Tokens so you can start testing liquid restaking.
 

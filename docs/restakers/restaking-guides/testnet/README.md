@@ -3,6 +3,14 @@ sidebar_position: 4
 title: Testnet Restaking
 ---
 
+:::important
+While the Holesky network instability continues:
+* EigenPods and native ETH restaking are not available on Holesky.
+* AVS developers can use Sepolia for development and testing.
+
+For more information, refer to the [EigenLayer blog](https://www.blog.eigenlayer.xyz/).
+:::
+
 ## Testing Restaking on the Holesky Testnet
 
 Users are encouraged to first test their staking approach on the Holesky Testnet prior to restaking on ETH Mainnet.
