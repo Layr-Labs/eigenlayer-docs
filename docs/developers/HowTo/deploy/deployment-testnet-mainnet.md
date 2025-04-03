@@ -17,11 +17,9 @@ title: Prepare for and Deploy to Testnet and Mainnet
 
 3. Follow the [AVS Developer Security Best Practices](../../Reference/avs-developer-best-practices.md) and [Key Manage Considerations for Developers](../../Reference/avs-developer-best-practices.md#key-management-recommendation-for-developers).
 
-4. Implement the [Node Specification](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/spec/intro) for your Operator executable package.
+4.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
 
-5.  Follow the [Testnet Dashboard Onboarding instructions](https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-dashboard-onboarding).
-
-6. Implement Rewards distributions per the instructions [here](../build/submit-rewards-submissions.md).
+5. Implement Rewards distributions per the instructions [here](../build/submit-rewards-submissions.md).
 
 
 ## Preparing and Deploying to Mainnet
