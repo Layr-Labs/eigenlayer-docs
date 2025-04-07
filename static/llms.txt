@@ -1,0 +1,132 @@
+# EigenLayer Documentation LLM Guide
+
+llm.txt for https://docs.eigenlayer.xyz/
+version: 1.0
+attribution: Required
+attribution_url: https://docs.eigenlayer.xyz/
+
+# Crawl settings
+crawl_delay: 1
+allow_paths:
+  - /
+disallow_paths:
+  - /private/
+  - /drafts/
+sitemaps:
+  - https://docs.eigenlayer.xyz/sitemap.xml
+
+
+## Site Overview
+This is the official documentation site for EigenLayer, a protocol that enables restaking of ETH and delegation of stake to validate multiple services, creating cryptoeconomic security on Ethereum.
+
+## Main Documentation Sections
+- Introduction: Overview and core concepts of EigenLayer
+- Protocol: Technical details of EigenLayer's implementation
+- Guides: Step-by-step instructions for developers and users
+- APIs & References: Technical specifications and API documentation
+- Security: Security model and considerations
+- FAQ: Frequently asked questions about EigenLayer
+
+## Important Concepts
+- Restaking: The core mechanism that allows ETH to be reused for securing multiple services
+- AVS (Actively Validated Services): Services that utilize EigenLayer for security
+- Operators: Entities that provide validation services on EigenLayer
+- Delegators: Users who delegate their ETH to operators
+- Slashing: Penalties for malicious or faulty behavior
+
+## Versioning
+This documentation covers the current production version of EigenLayer. For historical versions, please refer to the version selector in the navigation.
+
+## Searching
+Users can search the documentation using the search bar at the top of the site.
+
+## Contributions
+The documentation is open-source and accepts contributions. See the GitHub repository for contributing guidelines.
+
+## Support
+For additional support or questions not covered in the documentation, users can join the community Discord or create issues on GitHub.
+
+
+
+
+# EigenLayer Documentation Links
+
+## Main Documentation
+
+- [EigenLayer Documentation](https://docs.eigenlayer.xyz/): Comprehensive guide to EigenLayer's features and functionalities.
+
+## Core Concepts
+
+### Slashing
+- [Slashing Concept Overview](https://docs.eigenlayer.xyz/eigenlayer/concepts/slashing/slashing-concept): Understanding slashing penalties and conditions for Operators.
+- [Slashing Overview for Developers](https://docs.eigenlayer.xyz/developers/Concepts/slashing/slashing-overview): Overview of slashing concepts in Eigenlayer development.
+
+### Rewards
+- [Rewards Concept](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/rewards-concept): Flexible rewards system for Stakers and Operators in EigenLayer.
+- [Rewards Split Overview](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/rewards-split): Operators earn rewards through AVS Operator Sets and splits.
+- [Rewards Submission Guide](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/rewards-submission): Guide for submitting rewards with operator sets and tokens.
+- [Programmatic Incentives (PI) Split](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/pi-split): Learn about Programmatic Incentives and their distribution.
+- [Rewards Recipients](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/earners-claimers-recipients): Understanding earners, claimers, and reward recipients in EigenLayer.
+
+### Operator Sets
+- [Operator Sets Overview](https://docs.eigenlayer.xyz/eigenlayer/concepts/operator-sets/operator-sets-concept): Learn about Operator Sets for AVS and Operators.
+
+## Guides
+
+### Restaking Guides
+- [Holesky Testnet Restaking](https://docs.eigenlayer.xyz/restakers/restaking-guides/testnet): Guide for testing restaking on Holesky Testnet before mainnet.
+- [Native Restaking Guide](https://docs.eigenlayer.xyz/restakers/restaking-guides/restaking-user-guide/native-restaking): Comprehensive guide for native restaking on EigenLayer.
+- [EigenLayer Restaking Overview](https://docs.eigenlayer.xyz/restakers/concepts/overview): Overview of EigenLayer's liquid and native restaking processes.
+- [Liquid Restaking Guide](https://docs.eigenlayer.xyz/restakers/restaking-guides/restaking-user-guide/liquid-restaking/restake-lsts): Step-by-step guide for restaking tokens on EigenLayer.
+- [Withdrawal Guide](https://docs.eigenlayer.xyz/restakers/concepts/native-restaking-withdrawal-delays): Detailed guide on EigenLayer withdrawal processes and optimizations.
+
+### Operator Guides
+- [Node Operators Introduction](https://docs.eigenlayer.xyz/operators/concepts/operator-introduction): Overview of Node Operators and their roles in EigenLayer.
+- [Validator Key Management](https://docs.eigenlayer.xyz/operators/howto/managekeys/solo-stakers): Guidelines for securely managing validator keys and backups.
+- [Institutional Operators Key Management](https://docs.eigenlayer.xyz/operators/howto/managekeys/institutional-operators): Securely manage keys and secrets for institutional operators.
+- [Set Rewards Split Guide](https://docs.eigenlayer.xyz/operators/howto/confirgurerewards/set-rewards-split): Learn how to set and manage rewards splits effectively.
+- [Manage PI Splits](https://docs.eigenlayer.xyz/operators/howto/confirgurerewards/set-pi-split): Learn how to manage Programmatic Incentives splits effectively.
+- [Claim Rewards Guide](https://docs.eigenlayer.xyz/operators/howto/claimrewards/claim-rewards-smart-contract): Instructions to claim rewards using smart contracts effectively.
+- [Claim Rewards CLI](https://docs.eigenlayer.xyz/operators/howto/claimrewards/claim-rewards-cli): Guide to claim rewards using EigenLayer CLI commands.
+- [Operator Installation](https://docs.eigenlayer.xyz/operators/howto/operator-installation): Comprehensive guide for installing EigenLayer operator software.
+- [Operator Content Guidelines](https://docs.eigenlayer.xyz/operators/howto/operator-content-guidelines): Guidelines for Operators on content and compliance standards.
+- [AVS Operator Risks](https://docs.eigenlayer.xyz/operators/howto/avs-operator-risks-mitigations-bp): Explore risks and mitigations for AVS operators effectively.
+
+### Developer Guides
+- [Hello World AVS Quickstart](https://docs.eigenlayer.xyz/developers/HowTo/get-started/quickstart): Quickstart guide for deploying Hello World AVS on EigenLayer.
+- [Autonomous Verifiable Services Guide](https://docs.eigenlayer.xyz/developers/Concepts/avs-developer-guide): Learn about Autonomous Verifiable Services on EigenLayer.
+- [Permissionless Token Support](https://docs.eigenlayer.xyz/developers/HowTo/build/avs-permissionlesss): Learn to add ERC-20 tokens as restakable assets.
+- [Configure Rewards](https://docs.eigenlayer.xyz/developers/HowTo/build/configure-rewards): Instructions for configuring rewards in Eigenlayer development.
+- [Submitting Rewards in AVS](https://docs.eigenlayer.xyz/developers/HowTo/build/submit-rewards-submissions): Guide for submitting rewards in Eigenlayer's AVS system.
+- [Implement Slashing](https://docs.eigenlayer.xyz/developers/HowTo/build/slashing/implement-slashing): Learn how to implement slashing in Eigenlayer effectively.
+- [Migrate to Operator Sets](https://docs.eigenlayer.xyz/developers/HowTo/build/slashing/migrate-to-operatorsets): Migrate AVSs to Operator Sets for slashing integration.
+- [Slashing Veto Committee](https://docs.eigenlayer.xyz/developers/HowTo/build/slashing/slashing-veto-committee-design): Explore EigenLayer's flexible slashing and veto committee design.
+- [Deployment Guide](https://docs.eigenlayer.xyz/developers/HowTo/deployment-testnet-mainnet): Instructions for deploying on testnet and mainnet environments.
+- [AVS Developer Best Practices](https://docs.eigenlayer.xyz/developers/Reference/avs-developer-best-practices): Essential security practices for AVS developers and key management.
+
+## Resources
+- [EigenLayer Developer Resources](https://docs.eigenlayer.xyz/developers/Reference/resources): Explore EigenLayer resources, SDKs, and developer samples.
+- [EigenLayer Learning Resources](https://docs.eigenlayer.xyz/eigenlayer/resources/learning-resources): Explore various resources to learn about EigenLayer.
+- [EigenLayer APIs and Dashboards](https://docs.eigenlayer.xyz/eigenlayer/resources/apis-and-dashboards): Explore APIs and dashboards for EigenLayer resources.
+- [EigenLayer Economy Metrics](https://docs.eigenlayer.xyz/eigenlayer/economy/economy-calculation-and-formulas): Explore EigenLayer's economy metrics, calculations, and data sources.
+- [EigenLayer Sidecar](https://docs.eigenlayer.xyz/eigenlayer/economy/sidecar): Open source indexer for real-time EigenLayer protocol access.
+
+## Security & Legal
+- [EigenLayer Security Audits](https://docs.eigenlayer.xyz/eigenlayer/security/audits): Recent audits assessing the robustness of EigenLayer systems.
+- [Eigen Labs Legal Disclaimers](https://docs.eigenlayer.xyz/eigenlayer/legal/disclaimers): Legal disclaimers regarding Eigen Labs' content and advice.
+- [EigenLayer Terms of Service](https://docs.eigenlayer.xyz/eigenlayer/legal/terms-of-service): Terms of Service for accessing EigenLayer's decentralized services.
+
+## Whitepapers & Technical Documentation
+- [EigenLayer Whitepaper Overview](https://docs.eigenlayer.xyz/eigenlayer/overview/whitepaper): Overview of EigenLayer's whitepaper and token structure.
+- [EigenLayer Restaking Collective](https://docs.eigenlayer.xyz/html/EigenLayer_WhitePaper-converted-xodo.html): EigenLayer enables Ethereum stakers to provide pooled security for decentralized applications through restaking.
+- [EigenLayer: Pooled Security (PDF)](https://docs.eigenlayer.xyz/assets/files/EigenLayer_WhitePaper-88c47923ca0319870c611decd6e562ad.pdf): EigenLayer enables Ethereum stakers to provide pooled security for various modules, enhancing decentralized applications.
+- [EIGEN Token Overview (HTML)](https://docs.eigenlayer.xyz/html/EIGEN_Token_Whitepaper-converted-xodo.html): EIGEN token whitepaper outlines a universal work token model for digital tasks.
+- [EIGEN Token Overview (PDF)](https://docs.eigenlayer.xyz/assets/files/EIGEN_Token_Whitepaper-0df8e17b7efa052fd2a22e1ade9c6f69.pdf): EIGEN token enables universal intersubjective work with cryptoeconomic security.
+
+## Contracts & Technical Implementation
+- [EigenLayer Restaking Contracts](https://docs.eigenlayer.xyz/eigenlayer/deployed-contracts): Explore EigenLayer's restaking contracts and deployment details.
+- [EigenLayer Middleware Contracts](https://docs.eigenlayer.xyz/developers/Concepts/eigenlayer-contracts/middleware-contracts): Middleware contracts for EigenLayer provide higher-level interfaces.
+
+## FAQ & Support
+- [EigenLayer FAQ](https://docs.eigenlayer.xyz/eigenlayer/information-and-transparency/faq): EigenLayer FAQ on staking, security, and decentralized services.
+- [Testnet ETH and Staking](https://docs.eigenlayer.xyz/restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts): Learn to obtain testnet ETH and liquid staking tokens.
