@@ -28,7 +28,11 @@ To remove Strategies from an Operator Set, call the [`removeStrategiesFromOperat
 
 ## Update AVS Metadata
 
-Once Operator Sets have been created, the AVS metadata must be updated to include the Operator Sets. 
+:::tip
+The AVS metadata is used to provide information on the [EigenLayer App](https://app.eigenlayer.xyz/) for Stakers and Operators.
+:::
+
+Once Operator Sets have been created, the AVS metadata can be updated to include the Operator Sets. 
 
 To update metadata, call the [`updateAVSMetadataURI`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#avs-metadata) function. Use the following format. 
 
