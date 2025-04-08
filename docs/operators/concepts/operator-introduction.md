@@ -35,19 +35,8 @@ for Restaking and Operating activities when self delegating as a Restaker.
 Please see the [rewards claiming](../howto/claimrewards/claim-rewards-cli.mdx) documentation on how to claim rewards.
 
 
+### Operator Sets
 
-### Operator Set Allocation (Currently in Testnet)
-
-The following is not a complete description of the Slashing and Operator Sets upgrade and is qualified in its entirety by reference to the [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
-
-The Slashing & Operator Set release adds new protocol interfaces and primitives for Operator Sets, Unique Stake Allocations, and Slashing to provide:
-
-* A new, iterative rewards mechanism for AVSs to reward Operators based on tasks tied to Operator Sets and slashable Unique Stake.  
-* A mechanism for Operators to allocate and deallocate Unique Stake to and from Operator Sets.  
-* A slasher function for AVSs to slash an Operator’s Unique Stake allocated to a single Operator Set.
-
-An Operator Set is a logical and segmented set of Operators created by the AVS. These groups of Operators may be split up for whatever reason an AVS can think of. AVSs may assign arbitrary “tasks” to Operator Sets that can represent anything Operators may be asked to do.
-
-[Unique Stake](https://www.blog.eigenlayer.xyz/introducing-the-eigenlayer-security-model/) is an accounting tool defined on the level of Operator Sets that ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. Unique Stake is allocated to different Operator Sets on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, and it represents proportions of the Operator’s delegated stake from Stakers.
+For information on Operator Sets, refer to [Operator Sets concept](../../eigenlayer/concepts/operator-sets/operator-sets-concept.md).
 
 

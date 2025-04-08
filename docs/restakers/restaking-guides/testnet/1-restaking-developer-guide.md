@@ -3,9 +3,7 @@ sidebar_position: 4
 title: Restaking Smart Contract Developer (Testnet)
 ---
 
-
-
-The following instructions include an overview of the changes to Smart Contract Restaking per the Slashing and Operator Set release (Currently in Testnet). All existing instructions on [Restaking Smart Contract Developer](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-developer-guide) remain unchanged for this update, except where noted below.
+The following instructions include an overview of the changes to Smart Contract Restaking per the Slashing and Operator Set release. All existing instructions on [Restaking Smart Contract Developer](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-developer-guide) remain unchanged for this update, except where noted below.
 
 The following is not a complete description of the Slashing and Operator Sets upgrade and is qualified in its entirety by reference to the [Unique Stake Allocation & Deallocation ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
 

@@ -4,8 +4,7 @@ title: User Access Management
 ---
 
 :::note
-UAM is currently available on the Holesky testnet. UAM implements [ELIP-003: User Access Management (UAM)](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-003.md) and will be released on
-mainnet with the Slashing release.
+UAM implements [ELIP-003: User Access Management (UAM)](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-003.md).
 :::
 
 User Access Management (UAM) is an EigenLayer protocol feature for Operators and AVS Developers that enables secure key rotation,

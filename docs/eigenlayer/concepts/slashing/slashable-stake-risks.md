@@ -4,13 +4,13 @@ title: Slashable Stake Risks
 ---
 
 :::important
-When the Slashing and Operator Set upgrade is live on mainnet, stake can become slashable for a Staker that has previously 
+With Slashing, stake can become slashable for a Staker that has previously 
 delegated stake to an Operator. Stakers are responsible for ensuring that they fully understand and confirm their risk tolerances 
 for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, stakers are responsible 
 for continuing to monitor the allocations of their chosen Operators as they update allocations across various Operator Sets.
 :::
 
-When the Slashing and Operator Sets upgrade is live on mainnet, AVSs can create [Operator Sets](../operator-sets/operator-sets-concept) that may include slashable 
+AVSs can create [Operator Sets](../operator-sets/operator-sets-concept) that may include slashable 
 [Unique Stake](unique-stake.md), and Operators can allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake 
 to an Operator, the delegated stake becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake.
 
