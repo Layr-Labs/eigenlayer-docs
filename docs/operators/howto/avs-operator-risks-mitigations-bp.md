@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 8
 title: Implement Security Best Practices
 ---
 
