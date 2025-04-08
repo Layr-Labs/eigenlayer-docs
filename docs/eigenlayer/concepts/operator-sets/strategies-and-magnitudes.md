@@ -4,8 +4,7 @@ title: Strategies and Magnitudes
 ---
 
 :::note
-Operator Sets are currently available on the Holesky testnet. [ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
-introduced Operator Sets.
+[ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) introduced Operator Sets.
 :::
 
 Magnitudes are the accounting tool used to track Operator allocations to [Operator Sets](operator-sets-concept). Magnitudes represent proportions 

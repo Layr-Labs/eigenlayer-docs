@@ -4,7 +4,7 @@ title: Allocate and Register to Operator Set
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../eigenlayer/archived/arhived-slashing.md) content for information on how Operator Sets and Allocations work.
+Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets and Allocations work.
 :::
 
 Set Allocation Delay:
