@@ -6,7 +6,7 @@ title: Release AVS
 To sign a release and update the AVS metadata to enable Operators to verify the container was signed by the specified public key
 using the [Release Management Service (RMS)](../../Concepts/avs-release-management.md):
 
-1. Add valid keys for container signatures to AVS metadata using the `updateAVSMetadataURI` function. The format is:
+1. Add valid keys for container signatures to AVS metadata. The format is:
 
     ```
     {
