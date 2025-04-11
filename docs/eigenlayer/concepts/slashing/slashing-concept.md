@@ -4,7 +4,7 @@ title: Slashing Overview
 ---
 
 :::note
-Slashing is currently available on the Holesky testnet. The Slashing release implements [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
+Slashing is currently available on the [Sepolia testnet](https://www.blog.eigenlayer.xyz/the-future-of-eigenlayer-testing-new-and-improved-testnets-tooling-coming-soon/). The Slashing release implements [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
 :::
 
 Slashing is a type of penalty determined by an AVS as a deterrent for broken commitments by Operators. Broken commitments
