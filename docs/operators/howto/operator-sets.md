@@ -4,7 +4,7 @@ title: Allocate and Register to Operator Set
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing.md) content for information on how Operator Sets and Allocations work.
+Before proceeding, review the [Slashing Concept](../../eigenlayer/archived/arhived-slashing.md) content for information on how Operator Sets and Allocations work.
 :::
 
 Set Allocation Delay:
@@ -13,19 +13,19 @@ Set Allocation Delay:
 eigenlayer operator allocations set-delay <flags> <allocation-delay>
 ```
 
-Before allocating for their first Operator Set, an Operator is required to set an `ALLOCATION_DELAY` in the `AllocationManager`. If an Operator is registering with EigenLayer for the first time, they will be required to provide an `ALLOCATION_DELAY` during registration. It takes the amount of time specified in the `ALLOCATION_CONFIG_DELAY` for the Operator's `ALLOCATION_DELAY` to be set initially or updated. This delay is to ensure Stakers have time to adjust to changes in their delegated Operator’s stake allocations. Stakers can withdraw their funds if an allocation is viewed as undesirable, subject to the `WITHDRAWAL_DELAY`
+Before allocating for their first Operator Set, an Operator is required to set an `ALLOCATION_DELAY` in the `AllocationManager`. If an Operator is registering with EigenLayer for the first time, they will be required to provide an `ALLOCATION_DELAY` during registration. It takes the amount of time specified in the `ALLOCATION_CONFIGURATION_DELAY` for the Operator's `ALLOCATION_DELAY` to be set initially or updated. This delay is to ensure Stakers have time to adjust to changes in their delegated Operator’s stake allocations. Stakers can withdraw their funds if an allocation is viewed as undesirable, subject to the `WITHDRAWAL_DELAY`
 
 Set Allocations per Operator Set and Strategy
 
 ```
 eigenlayer operator allocations update 
-	--network holesky 
+	--network sepolia
 	--operator-address <operator-address> 
 	--csv-file updates.csv 
 	--caller-address <address-of-caller>
 ```
 
-We recommend using the csv in the below format to set multiple allocations in one transaction, where update.csv will look like:
+Use the csv in the below format to set multiple allocations in one transaction, where update.csv will look like:
 
 ```
 avs_address,operator_set_id,strategy_address,bips
@@ -46,7 +46,7 @@ View all your allocations with show command as below
 
 ```
 eigenlayer operator allocations show 
-	--network holesky 
+	--network sepolia
 	--operator-address <operator-address> 
 	--strategy-addresses <comma-separated-strategy-addresses>
 

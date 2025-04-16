@@ -22,6 +22,7 @@ sidebar_position: 2
 - **Operator:** An entity that registers an Operator address on Eigenlayer to receive delegations from Stakers and run AVS infrastructure. Operators allocate their delegated stake to Operator Sets created by an AVS.
 - **Operator Set:** a segmentation of Operators created by an AVS that secures a specific set of tasks for the AVS with staked assets that may be reserved for securing that set.
 - **Pooled security via restaking:** when multiple parties combine their resources to provide greater security for a system. In EigenLayer, Ethereum stakers can “restake” their ETH or Liquid Staking Tokens (LST) by opting into new services built on EigenLayer.
+- **Programmatic Incentives** are EIGEN tokens minted by the EigenLayer protocol to Stakers and Operators.
 - **Restaker**: a person who restakes Native or LST ETH to the EigenLayer protocol.
 - **Rewards**: Tokens sent by AVSs to Stakers and/or Operators to compensate participation.
 - **Slashing:** A penalty for improperly or inaccurately completing tasks assigned in Operator Sets by an AVS. A slashing results in a burning/loss of funds.

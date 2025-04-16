@@ -310,7 +310,11 @@ This is the command you can use to register your operator.
 eigenlayer operator register operator.yaml
 ```
 
-> _Note: ECDSA key is required for operator registration. You may choose to either_ [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) _your own set of keys using the EigenLayer CLI (recommended for first time users) or_ [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) _your existing keys (recommended for advanced users who already have keys created) as outlined in the previous section._
+:::note
+ECDSA key is required for operator registration. You may choose to either: 
+* [_create_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#create-keys) your own set of keys using the EigenLayer CLI (if you have not previously created keys).
+* [_import_](https://github.com/Layr-Labs/eigenlayer-cli/blob/master/README.md#import-keys) your existing keys (if you have previously created keys).
+:::
 
 ---
 

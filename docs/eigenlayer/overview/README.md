@@ -34,7 +34,7 @@ The core components of the EigenLayer protocol include:
 - **Restaking** enables stakers to restake their Native ETH or Liquid Staking Tokens (LST) to provide security for services in the EigenLayer ecosystem, known as Autonomous Verifiable Services (AVSs).
 - **Autonomous Verifiable Services (AVSs)** are services built on the EigenLayer protocol that leverage Ethereum's shared security. AVSs deliver services to users and the broader Web3 ecosystem. 
 - **Operators** are entities that run AVS software and perform validation tasks for AVSs built on EigenLayer. They register in EigenLayer and allow stakers to delegate to them, then opt in to provide various services (AVSs) built on top of EigenLayer.
-- **Delegation** is the process where stakers delegate their restaked ETH or LSTs to Operators or run validation services themselves, effectively becoming an Operator. This process involves a double opt-in between both parties, ensuring mutual agreement. Restakers retain agency over their stake and choose which AVSs they opt-in to validate for.
+- **Delegation** is the process where stakers delegate their restaked ETH or LSTs to Operators or run validation services themselves, effectively becoming an Operator. This process involves a double opt-in between both parties, ensuring mutual agreement.
 - EigenLayer **Rewards** enables AVSs to make rewards distributions to stakers and operators that opt-in to support the AVS. AVSs make RewardsSubmissions to the RewardsCoordinator, a core protocol contract.
 - **Slashing** is a penalty for improperly or inaccurately completing tasks assigned in Operator Sets by an AVS. A slashing results in a burning/loss of funds.
 
@@ -46,7 +46,7 @@ The core components of the EigenLayer protocol include:
 To learn more about EigenLayer, refer to the [Whitepapers](whitepaper.md) or explore the [Learning Resources](../resources/learning-resources.md).
 
 Get started with EigenLayer:
-- [Restake on EigenLayer](/restakers/restaking-guides/overview)
+- [Restake on EigenLayer](/restakers/concepts/overview)
 - [Register as an Operator](/operators/howto/operator-installation)
 - [Build an AVS](/developers/Concepts/avs-developer-guide)
 - Join our Ecosystem: [Discord](https://discord.com/invite/eigenlayer), [Twitter](https://twitter.com/eigenlayer)

@@ -11,7 +11,7 @@ The following steps are necessary for a Restaker to **move** their Delegated bal
 - **Delegate** to the new Operator.
 
 :::warning
-Please follow the recommended steps below carefully to avoid a "partially delegated state". A partially delegated state is when some portion of your assets in Delegated state and other assets in a "queued for withdrawal" or "withdrawal ready for completion" state.
+Follow the steps below carefully to avoid a "partially delegated state". A partially delegated state is when some portion of your assets in Delegated state and other assets in a "queued for withdrawal" or "withdrawal ready for completion" state.
 :::
 
 ## Process to Change Your Delegation to a New Operator

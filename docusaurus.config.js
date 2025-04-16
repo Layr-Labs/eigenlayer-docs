@@ -78,8 +78,12 @@ const config = {
             to: "/operators/howto/operator-sets",
           },
           {
+            from: "/eigenlayer/concepts/slashing",
+            to: "/eigenlayer/concepts/slashing/slashing-concept",
+          },
+          {
             from: "/operators/operator-guides/key-management/intro-key-management",
-            to: "/operators/concepts/intro-key-management",
+            to: "/eigenlayer/concepts/keys-and-signatures",
           },
           {
             from: "/operators/operator-guides/operator-introduction",
@@ -102,12 +106,16 @@ const config = {
             to: "/operators/howto/operator-content-guidelines",
           },
           {
+            from: "/operators/concepts/intro-key-management",
+            to: "/eigenlayer/concepts/keys-and-signatures",
+          },
+          {
             from: "/operators/operator-guides/operator-installation",
             to: "/operators/howto/operator-installation",
           },
           {
             from: "/operators/operator-guides/operator-rewards-config",
-            to: "/operators/howto/operator-rewards-config",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/operators/operator-guides/troubleshooting",
@@ -119,28 +127,28 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-instructions",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/restaker-delegation/stake-and-delegate-eigen",
-            to: "/restakers/restaking-guides/overview",
+            to: "/restakers/concepts/overview",
           },
           
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-overview",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-ui",
-            to: "/eigenlayer/rewards-claiming/claim-rewards/via-ui",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/claim-rewards/via-cli",
-            to: "/eigenlayer/rewards-claiming/claim-rewards/via-cli",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/rewards-claiming/rewards-claiming-faq",
-            to: "/eigenlayer/rewards-claiming/rewards-claiming-faq",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/stage-2-testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts",
@@ -156,9 +164,12 @@ const config = {
           },
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/",
-            to: "/restakers/restaking-guides/overview",
+            to: "/restakers/concepts/overview",
           },
-          
+         {
+           from: "/restakers/restaking-guides/overview",
+           to: "/restakers/concepts/overview",
+         },
 
           {
             from: "/eigenlayer/restaking-guides/restaking-user-guide/testnet/",
@@ -186,19 +197,23 @@ const config = {
           },
           {
             from: "/developers/avs-opset-slashing",
-            to: "/developers/HowTo/slashing/avs-opset-slashing",
+            to: "/developers/HowTo/build/slashing/implement-slashing",
           },
           {
             from: "/developers/avs-permissionlesss",
-            to: "/developers/HowTo/avs-permissionlesss",
+            to: "/developers/HowTo/build/avs-permissionlesss",
           },
           {
             from: "/developers/deployment-testnet-mainnet",
-            to: "/developers/HowTo/deployment-testnet-mainnet",
+            to: "/developers/HowTo/deploy/deployment-testnet-mainnet",
           },
           {
             from: "/developers/how-to-build-an-avs",
-            to: "/developers/HowTo/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
+          },
+          {
+            from: "/developers/HowTo/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
           },
           {
             from: "/developers/avs-dashboard-onboarding",
@@ -206,19 +221,51 @@ const config = {
           },
           {
             from: "/developers/rewards",
-            to: "/developers/HowTo/rewards",
+            to: "/eigenlayer/concepts/rewards/rewards-concept",
           },
           {
             from: "/developers/support",
-            to: "/developers/HowTo/support",
+            to: "/developers/HowTo/get-started/support",
           },
           {
             from: "/developers/resources",
             to: "/developers/Reference/resources",
           },
           {
+            from: "/eigenlayer/rewards-claiming/claim-rewards/via-cli",
+            to: "/operators/howto/claimrewards/claim-rewards-cli",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/claim-rewards/via-ui",
+            to: "/restakers/restaking-guides/claim-rewards-app",
+          },
+          {
+            from: "/eigenlayer/rewards-claiming/rewards-claiming-overview",
+            to: "/eigenlayer/concepts/rewards/rewards-claiming",
+          },
+          {
+            from: "/developers/HowTo/slashing/design-operator-set",
+            to: "/developers/HowTo/build/slashing/design-operator-set",
+          },
+          {
+            from: "/developers/HowTo/build/how-to-build-an-avs",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
+          },
+          {
+            from: "/developers/HowTo/slashing/migrate-to-operatorsets",
+            to: "/developers/HowTo/build/slashing/migrate-to-operatorsets",
+          },
+          {
+            from: "/developers/HowTo/slashing/slashing-veto-committee-design",
+            to: "/developers/HowTo/build/slashing/slashing-veto-committee-design",
+          },
+          {
+            from: "/developers/HowTo/build/implement-minimum-onchain-components",
+            to: "/developers/HowTo/get-started/implement-minimum-onchain-components",
+          },
+          {
             from: "/developers/quickstart",
-            to: "/developers/HowTo/quickstart",
+            to: "/developers/HowTo/get-started/quickstart",
           },
         ],
         createRedirects(existingPath) {
@@ -296,7 +343,7 @@ const config = {
             to: "developers/Concepts/avs-developer-guide",
             label: "Developers",
             position: "left",
-            activeBasePath: 'developer/',
+            activeBasePath: 'developers/',
           },
           {
             to: "operators/concepts/operator-introduction",
@@ -306,10 +353,10 @@ const config = {
           },
 
           {
-            to: "restakers/restaking-guides/overview",
+            to: "restakers/concepts/overview",
             label: "Restakers",
             position: "left",
-            activeBasePath: 'restakers/',
+            activeBasePath: 'restakers/concepts',
           },
 
           {
@@ -349,7 +396,7 @@ const config = {
             items: [
               {
                 label: "Support",
-                href: "https://docs.eigenlayer.xyz/eigenlayer/overview/support",
+                href: "https://docs.eigenlayer.xyz/eigenlayer/developers/HowTo/get-started/support",
               },
               {
                 label: "Forum",

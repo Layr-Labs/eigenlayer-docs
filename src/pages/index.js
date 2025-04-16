@@ -31,7 +31,7 @@ function Home() {
                 />
   
                 <Card
-                  to="restakers/restaking-guides/overview"
+                  to="restakers/concepts/overview"
                   header={{
                     label:"Restakers"
                   }}
@@ -63,12 +63,12 @@ function Home() {
 
 
                 <Card
-                  to="eigenlayer/rewards-claiming/rewards-claiming-overview"
+                  to="eigenlayer/concepts/rewards/rewards-concept"
                   header={{
-                    label:"Claim AVS Rewards"
+                    label:"Rewards"
                   }}
                   body={{
-                    label:"Instructions for Stakers and Operators to claim rewards from AVS submissions."
+                    label:"Learn about how to configure and claim Rewards."
                   }}
                 />
 
