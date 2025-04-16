@@ -10,12 +10,12 @@ in each repository.
 
 # Testnet 
 
-The [Slashing](https://www.blog.eigenlayer.xyz/introducing-slashing/) and Rewards v2.1 releases are available on the Holesky testnet. 
+The [Slashing](https://www.blog.eigenlayer.xyz/introducing-slashing/) and Rewards v2.1 releases are available on the [Sepolia testnet](https://www.blog.eigenlayer.xyz/the-future-of-eigenlayer-testing-new-and-improved-testnets-tooling-coming-soon/). 
 The [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts) and [eigenlayer-middleware](https://github.com/Layr-Labs/eigenlayer-middleware)
-include the Slashing release on the `testnet-holesky` branch.
+include the Slashing release on the `testnet-sepolia` branch.
 
 :::important 
-Unless specified otherwise, this documentation matches the functionality available on the Holesky testnet. For mainnet 
+Unless specified otherwise, this documentation matches the functionality available on the Sepolia testnet. For mainnet 
 specific documentation, refer to the `/docs` repository on the `mainnet` branch in the [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
 and [eigenlayer-middleware](https://github.com/Layr-Labs/eigenlayer-middleware) repositories.
 :::
@@ -24,12 +24,12 @@ and [eigenlayer-middleware](https://github.com/Layr-Labs/eigenlayer-middleware) 
 
 ### Operator Sets
 
-The Slashing release on the Holesky testnet introduced Operator Sets. The AllocationManager core contract manages Operator Sets and replaces
+The Slashing release introduced Operator Sets. The AllocationManager core contract manages Operator Sets and replaces
 the AVSDirectory for registering Operators to an AVS. [The AVSDirectory will be deprecated in a future upgrade](https://docs.eigenlayer.xyz/developers/HowTo/slashing/migrate-to-operatorsets).
 
 ### Rewards v2.1
 
-Rewards v2.1 on the Holesky testnet introduced Operator directed rewards for Operator sets. For AVSs using Operator Sets, use `createOperatorDirectedOperatorSetRewardsSubmission`. 
+Rewards v2.1 introduced Operator directed rewards for Operator sets. For AVSs using Operator Sets, use `createOperatorDirectedOperatorSetRewardsSubmission`. 
 `createAVSRewardsSubmission` and `createOperatorDirectedAVSRewardsSubmission` remain available for use by AVSs that have not yet [migrated to Operator Sets](https://docs.eigenlayer.xyz/developers/HowTo/slashing/migrate-to-operatorsets).
 
 ### User Access Management
