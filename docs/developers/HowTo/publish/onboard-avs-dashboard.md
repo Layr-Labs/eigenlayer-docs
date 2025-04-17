@@ -3,7 +3,7 @@ sidebar_position: 1
 title: Onboard to AVS Dashboard
 ---
 
-The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
+The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs. 
 
 <img src="/img/avs-marketplace.png" width="75%" style={{ margin: '50px'}}>
 </img>
@@ -11,8 +11,8 @@ The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
 :::important
 While the Holesky network instability continues, AVS developers can use Sepolia for development and testing.
 
-The AVS Marketplace will not be available on Sepolia. For more information on the future of EigenLayer testing, refer to the
-[EigenLayer blog](https://www.blog.eigenlayer.xyz/the-future-of-eigenlayer-testing-new-and-improved-testnets-tooling-coming-soon/).
+Initially, the AVS Marketplace will not be available on Sepolia. For more information, refer to the 
+[EigenLayer blog](https://www.blog.eigenlayer.xyz/eigenlayer-update-holesky-network-instability-and-upcoming-sepolia-support/).
 :::
 
 ## Adding a listing
@@ -33,9 +33,9 @@ The expected format fo the metadataURI is:
 The logo must be in PNG format.
 
 Once invoked, the data is indexed within about 20 minutes, and the metadata is displayed on the AVS Dashboard for Holesky.
-[The EigenLayer Mainnet Dashboard Onboarding Form is required to display on the AVS Dashboard for mainnet](#mainnet-dashboard-onboarding).
+[The EigenLayer Mainnet Dashboard Onboarding Form is required to display on the AVS Dashboard for mainnet](#mainnet-dashboard-onboarding). 
 
-## Updating a listing
+## Updating a listing 
 
 If you deploy a new contract for your AVS, remove the previous listing by invoking `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md)
 value of null. For example, `updateAVSMetadataURI("")`.
@@ -51,21 +51,24 @@ Given an operator, the function:
 - Retrieve the addresses of the strategies for each quorum in the quorum bitmap
 
 `getOperatorRestakedStrategies` makes no guarantee on whether the Operator has shares for a strategy in an Operator Set
-or the uniqueness of each element in the returned array. The offchain service is responsible for that validation.
+or the uniqueness of each element in the returned array. The offchain service is responsible for that validation. 
 
 ```solidity
 function getOperatorRestakedStrategies(address operator) external view returns (address[] memory) {
         bytes32 operatorId = registryCoordinator.getOperatorId(operator);
         uint192 operatorBitmap = registryCoordinator.getCurrentQuorumBitmap(operatorId);
+
         if (operatorBitmap == 0 || registryCoordinator.quorumCount() == 0) {
             return new address[](0);
         }
+
         // Get number of strategies for each quorum in operator bitmap
         bytes memory operatorRestakedQuorums = BitmapUtils.bitmapToBytesArray(operatorBitmap);
         uint256 strategyCount;
         for(uint256 i = 0; i < operatorRestakedQuorums.length; i++) {
             strategyCount += stakeRegistry.strategyParamsLength(uint8(operatorRestakedQuorums[i]));
         }
+
         // Get strategies for each quorum in operator bitmap
         address[] memory restakedStrategies = new address[](strategyCount);
         uint256 index = 0;
@@ -87,6 +90,7 @@ To list all supported restakeable Strategies for the AVS on the UI, the [`getRes
 ```solidity
 function getRestakeableStrategies() external view returns (address[] memory) {
         uint256 quorumCount = registryCoordinator.quorumCount();
+
         if (quorumCount == 0) {
             return new address[](0);
         }
@@ -95,6 +99,7 @@ function getRestakeableStrategies() external view returns (address[] memory) {
         for(uint256 i = 0; i < quorumCount; i++) {
             strategyCount += stakeRegistry.strategyParamsLength(uint8(i));
         }
+
         address[] memory restakedStrategies = new address[](strategyCount);
         uint256 index = 0;
         for(uint256 i = 0; i < _registryCoordinator.quorumCount(); i++) {
@@ -106,13 +111,14 @@ function getRestakeableStrategies() external view returns (address[] memory) {
         }
         return restakedStrategies;
     }
+
 ```
 
 For a reference implemetation, refer to [ServiceManagerBase.sol](https://github.com/Layr-Labs/eigenlayer-middleware/blob/mainnet/src/ServiceManagerBase.sol).
 
 ## Rendering Logo
 
-For proper rendering of the AVS logo on the UI, the logo must be hosted on GitHub and its reference must point to the raw
+For proper rendering of the AVS logo on the UI, the logo must be hosted on GitHub and its reference must point to the raw 
 file as the example above shows. If you need a repository for your logo to be hosted publicly, make a PR to the [`eigendata`](https://github.com/Layr-Labs/eigendata)
 repository to add your logo.
 
