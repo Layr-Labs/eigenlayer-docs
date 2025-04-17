@@ -20,11 +20,9 @@ The EigenLayer core contracts are documented in the [eigenlayer-contracts](https
 | [PermissionController](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#permissioncontroller) | Enables AVSs and operators to delegate the ability to call certain core contract functions to other addresses. For more information, refer to [User Access Management](../../../eigenlayer/concepts/uam/user-access-management.md).          |
 | [AVSDirectory](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#avsdirectory)                 | Has been replaced by AllocationManager and will be deprecated in a future release.                                                                                                                                                           | 
 
+AVSDirectory will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
+on Testnet.
+
 This documentation matches the functionality available on the [Sepolia testnet](https://www.blog.eigenlayer.xyz/the-future-of-eigenlayer-testing-new-and-improved-testnets-tooling-coming-soon/). For mainnet
 specific documentation, refer to the `/docs` repository on the `mainnet` branch in the [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
 repository.
-
-:::important
-AVSDirectory will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
-on Testnet.
-:::
