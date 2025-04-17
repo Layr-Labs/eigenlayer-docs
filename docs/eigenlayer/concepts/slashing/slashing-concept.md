@@ -4,7 +4,9 @@ title: Slashing Overview
 ---
 
 :::note
+
 Slashing implements [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
+
 :::
 
 Slashing is a type of penalty determined by an AVS as a deterrent for broken commitments by Operators. Broken commitments
