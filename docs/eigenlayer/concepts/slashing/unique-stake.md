@@ -4,8 +4,9 @@ title: Unique Stake
 ---
 
 :::note
-Operator Sets and Slashing are currently available on the Holesky testnet. [ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md)
-introduced Operator Sets and Slashing.
+
+[ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) introduced Operator Sets and Slashing.
+
 :::
 
 Unique Stake ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. 

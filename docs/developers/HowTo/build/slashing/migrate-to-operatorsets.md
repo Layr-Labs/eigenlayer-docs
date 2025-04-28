@@ -12,7 +12,7 @@ Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/s
 3. [Communicate to Operators](#communicate-to-operators)
 
 Migrating now gives time to switch existing quorums over to Operator Sets. After the migration has occurred,
-integrations with slashing can go live on Testnet. M2 registration and Operator Set registration can operate in parallel.
+integrations with slashing can go live on Testnet, followed by Mainnet. M2 registration and Operator Set registration can operate in parallel.
 
 ## Upgrade middleware contracts
 

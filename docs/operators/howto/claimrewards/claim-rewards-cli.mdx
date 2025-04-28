@@ -27,10 +27,10 @@ To claim rewards using the EigenLayer CLI as an [Earner](../../../eigenlayer/con
     ```
 
   </TabItem>
-  <TabItem value="holesky" label="Holesky">
+  <TabItem value="sepolia" label="Sepolia">
     ```bash
     ./bin/eigenlayer rewards show \
-      --network holesky \
+      --network sepolia \
       --earner-address <earner-address> \
       --claim-type unclaimed
     ```
@@ -65,12 +65,12 @@ Token Address                              | Wei Amount
     ```
 
   </TabItem>
-  <TabItem value="holesky" label="Holesky">
+  <TabItem value="sepolia" label="Sepolia">
 
     ```bash
     ./bin/eigenlayer rewards claim \
-      --network holesky \
-      --eth-rpc-url <holesky-eth-rpc-url> \
+      --network sepolia \
+      --eth-rpc-url <sepolia-eth-rpc-url> \
       --earner-address <earner-address> \
       --recipient-address <address-to-send-rewards-to> \
       --path-to-key-store /path/to/key/store-json \
