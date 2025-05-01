@@ -38,7 +38,7 @@ The bips you provide here will be the final bips of your total stake.
 * If the bips is more than what is currently slashable, it will take effect after allocation delay time which you have set in Step 1  
 * If the bips is less than what is currently slashable, it will take effect after a deallocation delay which is set by protocol and can’t be changed per operator.  
   * Mainnet \- 14 days in blocks.  
-  * Testnet \- 10 min in blocks.
+  * Testnet \- 5 min in blocks.
 
 There can only be one allocation or deallocation per (operator, strategy, operator set) at a time. Once the pending allocations/deallocation completes then you can start another if you would like. 
 
