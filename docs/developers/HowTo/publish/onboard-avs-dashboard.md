@@ -19,18 +19,7 @@ Initially, the AVS Marketplace will not be available on Sepolia. For more inform
 
 To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md).
 
-The expected format fo the metadataURI is:
-
-```json
-{
-    "name": "EigenLabs AVS 1",
-    "website": "https://www.eigenlayer.xyz/",
-    "description": "This is my 1st AVS",
-    "logo": "https://raw.githubusercontent.com/layr-labs/eigendata/master/avs/eigenlabs/logo.png",
-    "twitter": "https://twitter.com/eigenlayer"
-}
-```
-The logo must be in PNG format.
+For information on the expected format and metadata requirements, refer to [Register AVS Metadata](../build/register-avs-metadata.md).
 
 Once invoked, the data is indexed within about 20 minutes, and the metadata is displayed on the AVS Dashboard for Holesky.
 [The EigenLayer Mainnet Dashboard Onboarding Form is required to display on the AVS Dashboard for mainnet](#mainnet-dashboard-onboarding). 
@@ -115,12 +104,6 @@ function getRestakeableStrategies() external view returns (address[] memory) {
 ```
 
 For a reference implemetation, refer to [ServiceManagerBase.sol](https://github.com/Layr-Labs/eigenlayer-middleware/blob/mainnet/src/ServiceManagerBase.sol).
-
-## Rendering Logo
-
-For proper rendering of the AVS logo on the UI, the logo must be hosted on GitHub and its reference must point to the raw 
-file as the example above shows. If you need a repository for your logo to be hosted publicly, make a PR to the [`eigendata`](https://github.com/Layr-Labs/eigendata)
-repository to add your logo.
 
 ## Mainnet Dashboard onboarding
 To complete the process of onboarding your AVS to mainnet AVS Marketplace Dashboard, submit the [EigenLayer Mainnet Dashboard Onboarding Form](https://forms.gle/8BJSntA3eYUnZZgs8).
