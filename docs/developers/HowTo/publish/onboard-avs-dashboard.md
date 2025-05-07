@@ -17,7 +17,7 @@ Initially, the AVS Marketplace will not be available on Sepolia. For more inform
 
 ## Adding a listing
 
-To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md).
+To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md).
 
 For information on the expected format and metadata requirements, refer to [Register AVS Metadata](../build/register-avs-metadata.md).
 
