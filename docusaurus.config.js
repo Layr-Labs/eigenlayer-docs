@@ -396,7 +396,7 @@ const config = {
             items: [
               {
                 label: "Support",
-                href: "https://docs.eigenlayer.xyz/eigenlayer/developers/HowTo/get-started/support",
+                href: "https://docs.eigenlayer.xyz/developers/HowTo/get-started/support",
               },
               {
                 label: "Forum",
