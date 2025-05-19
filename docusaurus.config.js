@@ -5,8 +5,10 @@ require("dotenv").config();
 const { themes } = require("prism-react-renderer");
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
-const math = require("remark-math");
-const katex = require("rehype-katex");
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -295,15 +297,15 @@ const config = {
 
   presets: [
     [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      "@docusaurus/preset-classic",
+      
+      {
         docs: {
           breadcrumbs: true,
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
           showLastUpdateTime: false
         },
         
@@ -316,7 +318,7 @@ const config = {
           trackingID: 'G-GN5RBJ9VRL',
           anonymizeIP: true,
         },
-      }),
+      },
     ],
   ],
 
@@ -396,7 +398,7 @@ const config = {
             items: [
               {
                 label: "Support",
-                href: "https://docs.eigenlayer.xyz/eigenlayer/developers/HowTo/get-started/support",
+                href: "https://docs.eigenlayer.xyz/developers/HowTo/get-started/support",
               },
               {
                 label: "Forum",
