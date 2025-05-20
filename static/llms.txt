@@ -1,132 +1,109 @@
-# EigenLayer Documentation LLM Guide
+# EigenLayer
 
-llm.txt for https://docs.eigenlayer.xyz/
-version: 1.0
-attribution: Required
-attribution_url: https://docs.eigenlayer.xyz/
+## Docs
 
-# Crawl settings
-crawl_delay: 1
-allow_paths:
-  - /
-disallow_paths:
-  - /private/
-  - /drafts/
-sitemaps:
-  - https://docs.eigenlayer.xyz/sitemap.xml
-
-
-## Site Overview
-This is the official documentation site for EigenLayer, a protocol that enables restaking of ETH and delegation of stake to validate multiple services, creating cryptoeconomic security on Ethereum.
-
-## Main Documentation Sections
-- Introduction: Overview and core concepts of EigenLayer
-- Protocol: Technical details of EigenLayer's implementation
-- Guides: Step-by-step instructions for developers and users
-- APIs & References: Technical specifications and API documentation
-- Security: Security model and considerations
-- FAQ: Frequently asked questions about EigenLayer
-
-## Important Concepts
-- Restaking: The core mechanism that allows ETH to be reused for securing multiple services
-- AVS (Actively Validated Services): Services that utilize EigenLayer for security
-- Operators: Entities that provide validation services on EigenLayer
-- Delegators: Users who delegate their ETH to operators
-- Slashing: Penalties for malicious or faulty behavior
-
-## Versioning
-This documentation covers the current production version of EigenLayer. For historical versions, please refer to the version selector in the navigation.
-
-## Searching
-Users can search the documentation using the search bar at the top of the site.
-
-## Contributions
-The documentation is open-source and accepts contributions. See the GitHub repository for contributing guidelines.
-
-## Support
-For additional support or questions not covered in the documentation, users can join the community Discord or create issues on GitHub.
-
-
-
-
-# EigenLayer Documentation Links
-
-## Main Documentation
-
-- [EigenLayer Documentation](https://docs.eigenlayer.xyz/): Comprehensive guide to EigenLayer's features and functionalities.
-
-## Core Concepts
-
-### Slashing
-- [Slashing Concept Overview](https://docs.eigenlayer.xyz/eigenlayer/concepts/slashing/slashing-concept): Understanding slashing penalties and conditions for Operators.
-- [Slashing Overview for Developers](https://docs.eigenlayer.xyz/developers/Concepts/slashing/slashing-overview): Overview of slashing concepts in Eigenlayer development.
-
-### Rewards
-- [Rewards Concept](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/rewards-concept): Flexible rewards system for Stakers and Operators in EigenLayer.
-- [Rewards Split Overview](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/rewards-split): Operators earn rewards through AVS Operator Sets and splits.
-- [Rewards Submission Guide](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/rewards-submission): Guide for submitting rewards with operator sets and tokens.
-- [Programmatic Incentives (PI) Split](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/pi-split): Learn about Programmatic Incentives and their distribution.
-- [Rewards Recipients](https://docs.eigenlayer.xyz/eigenlayer/concepts/rewards/earners-claimers-recipients): Understanding earners, claimers, and reward recipients in EigenLayer.
-
-### Operator Sets
-- [Operator Sets Overview](https://docs.eigenlayer.xyz/eigenlayer/concepts/operator-sets/operator-sets-concept): Learn about Operator Sets for AVS and Operators.
-
-## Guides
-
-### Restaking Guides
-- [Holesky Testnet Restaking](https://docs.eigenlayer.xyz/restakers/restaking-guides/testnet): Guide for testing restaking on Holesky Testnet before mainnet.
-- [Native Restaking Guide](https://docs.eigenlayer.xyz/restakers/restaking-guides/restaking-user-guide/native-restaking): Comprehensive guide for native restaking on EigenLayer.
-- [EigenLayer Restaking Overview](https://docs.eigenlayer.xyz/restakers/concepts/overview): Overview of EigenLayer's liquid and native restaking processes.
-- [Liquid Restaking Guide](https://docs.eigenlayer.xyz/restakers/restaking-guides/restaking-user-guide/liquid-restaking/restake-lsts): Step-by-step guide for restaking tokens on EigenLayer.
-- [Withdrawal Guide](https://docs.eigenlayer.xyz/restakers/concepts/native-restaking-withdrawal-delays): Detailed guide on EigenLayer withdrawal processes and optimizations.
-
-### Operator Guides
-- [Node Operators Introduction](https://docs.eigenlayer.xyz/operators/concepts/operator-introduction): Overview of Node Operators and their roles in EigenLayer.
-- [Validator Key Management](https://docs.eigenlayer.xyz/operators/howto/managekeys/solo-stakers): Guidelines for securely managing validator keys and backups.
-- [Institutional Operators Key Management](https://docs.eigenlayer.xyz/operators/howto/managekeys/institutional-operators): Securely manage keys and secrets for institutional operators.
-- [Set Rewards Split Guide](https://docs.eigenlayer.xyz/operators/howto/confirgurerewards/set-rewards-split): Learn how to set and manage rewards splits effectively.
-- [Manage PI Splits](https://docs.eigenlayer.xyz/operators/howto/confirgurerewards/set-pi-split): Learn how to manage Programmatic Incentives splits effectively.
-- [Claim Rewards Guide](https://docs.eigenlayer.xyz/operators/howto/claimrewards/claim-rewards-smart-contract): Instructions to claim rewards using smart contracts effectively.
-- [Claim Rewards CLI](https://docs.eigenlayer.xyz/operators/howto/claimrewards/claim-rewards-cli): Guide to claim rewards using EigenLayer CLI commands.
-- [Operator Installation](https://docs.eigenlayer.xyz/operators/howto/operator-installation): Comprehensive guide for installing EigenLayer operator software.
-- [Operator Content Guidelines](https://docs.eigenlayer.xyz/operators/howto/operator-content-guidelines): Guidelines for Operators on content and compliance standards.
-- [AVS Operator Risks](https://docs.eigenlayer.xyz/operators/howto/avs-operator-risks-mitigations-bp): Explore risks and mitigations for AVS operators effectively.
-
-### Developer Guides
-- [Hello World AVS Quickstart](https://docs.eigenlayer.xyz/developers/HowTo/get-started/quickstart): Quickstart guide for deploying Hello World AVS on EigenLayer.
-- [Autonomous Verifiable Services Guide](https://docs.eigenlayer.xyz/developers/Concepts/avs-developer-guide): Learn about Autonomous Verifiable Services on EigenLayer.
-- [Permissionless Token Support](https://docs.eigenlayer.xyz/developers/HowTo/build/avs-permissionlesss): Learn to add ERC-20 tokens as restakable assets.
-- [Configure Rewards](https://docs.eigenlayer.xyz/developers/HowTo/build/configure-rewards): Instructions for configuring rewards in Eigenlayer development.
-- [Submitting Rewards in AVS](https://docs.eigenlayer.xyz/developers/HowTo/build/submit-rewards-submissions): Guide for submitting rewards in Eigenlayer's AVS system.
-- [Implement Slashing](https://docs.eigenlayer.xyz/developers/HowTo/build/slashing/implement-slashing): Learn how to implement slashing in Eigenlayer effectively.
-- [Migrate to Operator Sets](https://docs.eigenlayer.xyz/developers/HowTo/build/slashing/migrate-to-operatorsets): Migrate AVSs to Operator Sets for slashing integration.
-- [Slashing Veto Committee](https://docs.eigenlayer.xyz/developers/HowTo/build/slashing/slashing-veto-committee-design): Explore EigenLayer's flexible slashing and veto committee design.
-- [Deployment Guide](https://docs.eigenlayer.xyz/developers/HowTo/deployment-testnet-mainnet): Instructions for deploying on testnet and mainnet environments.
-- [AVS Developer Best Practices](https://docs.eigenlayer.xyz/developers/Reference/avs-developer-best-practices): Essential security practices for AVS developers and key management.
-
-## Resources
-- [EigenLayer Developer Resources](https://docs.eigenlayer.xyz/developers/Reference/resources): Explore EigenLayer resources, SDKs, and developer samples.
-- [EigenLayer Learning Resources](https://docs.eigenlayer.xyz/eigenlayer/resources/learning-resources): Explore various resources to learn about EigenLayer.
-- [EigenLayer APIs and Dashboards](https://docs.eigenlayer.xyz/eigenlayer/resources/apis-and-dashboards): Explore APIs and dashboards for EigenLayer resources.
-- [EigenLayer Economy Metrics](https://docs.eigenlayer.xyz/eigenlayer/economy/economy-calculation-and-formulas): Explore EigenLayer's economy metrics, calculations, and data sources.
-- [EigenLayer Sidecar](https://docs.eigenlayer.xyz/eigenlayer/economy/sidecar): Open source indexer for real-time EigenLayer protocol access.
-
-## Security & Legal
-- [EigenLayer Security Audits](https://docs.eigenlayer.xyz/eigenlayer/security/audits): Recent audits assessing the robustness of EigenLayer systems.
-- [Eigen Labs Legal Disclaimers](https://docs.eigenlayer.xyz/eigenlayer/legal/disclaimers): Legal disclaimers regarding Eigen Labs' content and advice.
-- [EigenLayer Terms of Service](https://docs.eigenlayer.xyz/eigenlayer/legal/terms-of-service): Terms of Service for accessing EigenLayer's decentralized services.
-
-## Whitepapers & Technical Documentation
-- [EigenLayer Whitepaper Overview](https://docs.eigenlayer.xyz/eigenlayer/overview/whitepaper): Overview of EigenLayer's whitepaper and token structure.
-- [EigenLayer Restaking Collective](https://docs.eigenlayer.xyz/html/EigenLayer_WhitePaper-converted-xodo.html): EigenLayer enables Ethereum stakers to provide pooled security for decentralized applications through restaking.
-- [EigenLayer: Pooled Security (PDF)](https://docs.eigenlayer.xyz/assets/files/EigenLayer_WhitePaper-88c47923ca0319870c611decd6e562ad.pdf): EigenLayer enables Ethereum stakers to provide pooled security for various modules, enhancing decentralized applications.
-- [EIGEN Token Overview (HTML)](https://docs.eigenlayer.xyz/html/EIGEN_Token_Whitepaper-converted-xodo.html): EIGEN token whitepaper outlines a universal work token model for digital tasks.
-- [EIGEN Token Overview (PDF)](https://docs.eigenlayer.xyz/assets/files/EIGEN_Token_Whitepaper-0df8e17b7efa052fd2a22e1ade9c6f69.pdf): EIGEN token enables universal intersubjective work with cryptoeconomic security.
-
-## Contracts & Technical Implementation
-- [EigenLayer Restaking Contracts](https://docs.eigenlayer.xyz/eigenlayer/deployed-contracts): Explore EigenLayer's restaking contracts and deployment details.
-- [EigenLayer Middleware Contracts](https://docs.eigenlayer.xyz/developers/Concepts/eigenlayer-contracts/middleware-contracts): Middleware contracts for EigenLayer provide higher-level interfaces.
-
-## FAQ & Support
-- [EigenLayer FAQ](https://docs.eigenlayer.xyz/eigenlayer/information-and-transparency/faq): EigenLayer FAQ on staking, security, and decentralized services.
-- [Testnet ETH and Staking](https://docs.eigenlayer.xyz/restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts): Learn to obtain testnet ETH and liquid staking tokens.
+- [Onboard to AVS Dashboard](developers/archived/archive-onboard-avs-dashboard): This topic describes how to onboard to the AVS Marketplace prior to the Slashing release. If you are looking for the
+- [AVS Contracts](developers/Concepts/avs-contracts): The AVS contracts are the contracts that call the EigenLayer contacts. An AVS can split onchain components across
+- [AVS Overview](developers/Concepts/avs-developer-guide): What is an Autonomous Verifiable Service (AVS)?
+- [AVS Keys](developers/Concepts/avs-keys): For information on AVS key types, refer to Keys.
+- [AVS Security Models](developers/Concepts/avs-security-models): The security model of an AVS defines who or what is trusted in an AVS, and under what conditions that trust holds. AVSs may
+- [EigenLayer Core Contracts](developers/Concepts/eigenlayer-contracts/core-contracts): The EigenLayer core contracts are the set of contracts that implement the EigenLayer protocol. The EigenLayer protocol includes
+- [EigenLayer Middleware Contracts](developers/Concepts/eigenlayer-contracts/middleware-contracts): The EigenLayer middleware contracts are higher level interfaces to the EigenLayer core contracts.
+- [Slashing](developers/Concepts/slashing/slashing-concept-developers): For information on how slashing works, refer to concept content on Slashing and
+- [Tasks](developers/Concepts/task): Tasks are a common design model used for AVS operations. The task design model is not required by the EigenLayer protocol but
+- [User Access Management](developers/Concepts/uam-for-avs): There is no support for setting appointees for AVSDirectory functions. The AVSDirectory method will be deprecated in a future upgrade.
+- [Add ERC-20 Tokens as Restakable Asset](developers/HowTo/build/avs-permissionlesss): Permissionless token support enables any ERC-20 token to be permissionlessly added as a restakable asset, significantly broadening
+- [Manage Operator Sets](developers/HowTo/build/manage-operator-sets): To manage Operator Sets for an AVS:
+- [Manage Registered Operators](developers/HowTo/build/manage-registered-operators): AVSRegistrar
+- [Register AVS Metadata](developers/HowTo/build/register-avs-metadata): Metadata must be registered:
+- [Design Operator Sets](developers/HowTo/build/slashing/design-operator-set): An Operator Set is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The
+- [Implement Slashing](developers/HowTo/build/slashing/implement-slashing): Before proceeding, review the Slashing Concept content and Unique Stake Allocation & Deallocation ELIP-002
+- [Migrate to Operator Sets](developers/HowTo/build/slashing/migrate-to-operatorsets): The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to Operator Sets before the
+- [Design Slashing Conditions](developers/HowTo/build/slashing/slashing-veto-committee-design): Slashing Vetoes
+- [Submit Rewards Submissions](developers/HowTo/build/submit-rewards-submissions): RewardsCoordinator.createAVSRewardsSubmission and RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission use AVSDirectory.
+- [Add and Remove Admins](developers/HowTo/build/uam/dev-add-remove-admins): Security of admin keys is critical. UAM enables appointees with lessened permissions, and use of keys that can be rotated or
+- [Add and Remove Appointees](developers/HowTo/build/uam/dev-add-remove-appointees): Only admins (or the account if no admin has been set) can add appointees. Unlike adding an admin, there is no requirement
+- [Prepare for and Deploy to Testnet and Mainnet](developers/HowTo/deploy/deployment-testnet-mainnet): Preparing and Deploying to Testnet
+- [Implement onchain components](developers/HowTo/get-started/implement-minimum-onchain-components): To build an AVS, the minimum set of functionality to be defined in the AVS contracts is:
+- [Get started](developers/HowTo/get-started/quickstart): We are in the process of updating our samples to include Rewards and Slashing capabilities. The Hello World AVS example will be
+- [Get Support](developers/HowTo/get-started/support): If you have any questions or comments throughout the AVS development process, you can get support by reaching out to us using the Intercom button on the bottom right side of this page or clicking here. We will promptly follow up with support!
+- [Onboard to AVS Dashboard](developers/HowTo/publish/onboard-avs-dashboard): The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
+- [Test AVS](developers/HowTo/test/test-avs): AVS Devnet is currently in Public Alpha and is rapidly being upgraded. Features may be added, removed or otherwise improved or modified,
+- [AVS Developer Security Best Practices](developers/Reference/avs-developer-best-practices): AVS Developer Security Best Practices
+- [EigenLayer SDKs](developers/Reference/eigenlayer-sdks): The EigenLayer SDKs wrap common EigenLayer AVS operations and are designed for AVS developers.
+- [Developer Resources](developers/Reference/resources): We are in the process of updating our samples, SDKs, and the EigenLayer CLI to include Rewards and Slashing capabilities. The samples, SDKs, and CLI will be
+- [Keys and Signatures](eigenlayer/concepts/keys-and-signatures): In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations.
+- [Allocation and Deallocation](eigenlayer/concepts/operator-sets/allocation-deallocation): Allocations
+- [Operator Sets Overview](eigenlayer/concepts/operator-sets/operator-sets-concept): ELIP-002 Slashing via Unique Stake & Operator Sets introduced Operator Sets.
+- [Strategies and Magnitudes](eigenlayer/concepts/operator-sets/strategies-and-magnitudes): ELIP-002 Slashing via Unique Stake & Operator Sets introduced Operator Sets.
+- [Earners, Claimers, and Reward Recipients](eigenlayer/concepts/rewards/earners-claimers-recipients): Earners are addresses that accrue Rewards within the EigenLayer ecosystem and are Stakers, Operators, or in the case of refunds,
+- [Programmatic Incentives Split](eigenlayer/concepts/rewards/pi-split): Programmatic Incentives are EIGEN tokens minted by the EigenLayer protocol to Stakers and Operators.
+- [Rewards Claiming](eigenlayer/concepts/rewards/rewards-claiming): The process to claim rewards is the same for AVS Rewards and Programmatic Incentives. That is, both AVS Rewards and Programmatic
+- [Rewards Claiming FAQ](eigenlayer/concepts/rewards/rewards-claiming-faq): When can I claim my rewards?
+- [Overview](eigenlayer/concepts/rewards/rewards-concept): Rewards are tokens distributed to Stakers and Operators by an AVS to reward Stakers and Operators for participation in securing AVSs.
+- [Rewards Split](eigenlayer/concepts/rewards/rewards-split): Operators earn rewards by opting into the Operator Sets of AVSs that implement Rewards. By default, Operators earn a 10% split
+- [Rewards Submission](eigenlayer/concepts/rewards/rewards-submission): AVSs make rewards submissions specifying:
+- [Safety Delays](eigenlayer/concepts/slashing/safety-delays-concept): When the Slashing and Operator Set upgrade is live on mainnet, stake can become slashable for a Staker that has previously
+- [Slashable Stake Risks](eigenlayer/concepts/slashing/slashable-stake-risks): With Slashing, stake can become slashable for a Staker that has previously
+- [Slashing Overview](eigenlayer/concepts/slashing/slashing-concept): Slashing implements ELIP-002: Slashing via Unique Stake & Operator Sets.
+- [Unique Stake](eigenlayer/concepts/slashing/unique-stake): ELIP-002 Slashing via Unique Stake & Operator Sets introduced Operator Sets and Slashing.
+- [Accounts](eigenlayer/concepts/uam/uam-accounts): The account is the Ethereum address that interacts with the EigenLayer core contracts if no appointees are set.
+- [Admins](eigenlayer/concepts/uam/uam-admins): Admins can take any action on behalf of the original account that appointed them including adding or removing admins. Creating
+- [Appointees](eigenlayer/concepts/uam/uam-appointees): Appointees act as another account for a specific function for a specific contract, granting accounts granular access control.
+- [User Access Management](eigenlayer/concepts/uam/user-access-management): UAM implements ELIP-003: User Access Management (UAM).
+- [Contract Addresses and Docs](eigenlayer/deployed-contracts/deployed-contracts): EigenLayer Core Restaking Contracts
+- [Economy Calculation and Formulas](eigenlayer/economy/economy-calculation-and-formulas): Overview
+- [Sidecar](eigenlayer/economy/sidecar): Overview
+- [Disclosures Related to Employee and Investor Staking](eigenlayer/information-and-transparency/disclosures): Last Revised on September 30, 2024
+- [Disclaimers](eigenlayer/legal/disclaimers): Last Revised on September 30, 2024
+- [Privacy Policy](eigenlayer/legal/privacy-policy): Last Revised on March 20, 2024
+- [Terms of Service](eigenlayer/legal/terms-of-service): Last Revised on August 29, 2024
+- [Key Terms](eigenlayer/overview/key-terms): - Autonomous Verifiable Services (AVS):  a service built externally to EigenLayer that requires active verification by a set of Operators. An AVS deploys its service manager to interact with EigenLayer core contracts that allow for Operator registration to Operator Sets, slashing, and rewards distribution. Once registered, an Operator agrees to run the AVS’s off-chain code.
+- [Intro to EigenLayer](eigenlayer/overview/README): What is EigenLayer?
+- [Community and EIGEN Claim Support](eigenlayer/overview/support): For any discussion, engagement, and learning about EigenLayer, please join the EigenLayer Community Discord.
+- [Whitepapers](eigenlayer/overview/whitepaper): EigenLayer the research paper that formed the basis of the EigenLayer protocol development. The document discusses the original architecture of EigenLayer, the Restaking primitive, and the concept of AVSs. Please note that some components of the design have changed since the original conception of the protocol. Use this document for high level guidance. For specific implementation details, please see the respective protocol implementation source code repositories.
+- [Allocation Manager Interface](eigenlayer/reference/allocation-manager-interface): The AllocationManager interface handles all allocation and deallocation signals.
+- [Safety Delays](eigenlayer/reference/safety-delays-reference): Safety delays for allocations and deallocations are included in the table.
+- [Releases](eigenlayer/releases): The Slashing and Rewards v2.1 releases are available on mainnet.
+- [APIs, Dashboards, and Tooling](eigenlayer/resources/apis-and-dashboards): APIs
+- [EigenLayer Infinite Hackathon](eigenlayer/resources/infinite-hackathon): The EigenLayer Infinite Hackathon encourages submissions from developers building on EigenLayer, EigenLayer AVSs, EigenDA, and rollups built on EigenDA at any hackathon happening anywhere at any time now and in the future, both in-person and online.
+- [Learning Resources](eigenlayer/resources/learning-resources): Start here
+- [EigenLayer Roadmap](eigenlayer/roadmap): EigenLayer is a protocol and developer platform for building, operating, and securing verifiable applications and services
+- [Audits](eigenlayer/security/audits): As a key component of our development process, please see the most recent audits that help assess the robustness and reliability of our systems:
+- [Bug Bounty](eigenlayer/security/bug-bounty): Check out the official bug bounty program for EigenLayer on Immunefi
+- [Guardrails](eigenlayer/security/guardrails): There will be a 7-day withdrawal delay that will serve as a security measure during the early stages of the EigenLayer mainnet, to optimize for the safety of assets. This withdrawal lag, which is common in staking protocols, is required when AVSs go live, as there is a lag to verify that activity associated with any AVS was completed successfully.
+- [Governance](eigenlayer/security/multisig-governance): Please see EigenFoundation Governance for latest information.
+- [Withdrawal Delay](eigenlayer/security/withdrawal-delay): EigenLayer contracts feature a withdrawal delay for LST tokens, EIGEN token, and Native Restaking, a critical security measure for instances of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. The delays serve as a preventive mechanism and also allows, in certain cases, to help mitigate protocol attacks. When contracts are paused and withdrawals disabled, the system enables arbitrary state or code changes to the contracts through upgrades. While technically feasible, such interventions are not a routine practice and should be approached with caution.
+- [Overview](operators/concepts/operator-introduction): What is a Node Operator within EigenLayer?
+- [Operator Keys](operators/concepts/operator-keys): For information on Operator keys, refer to Keys.
+- [User Access Management](operators/concepts/uam-for-operators): For concept material on User Access Management (UAM) and roles, refer to:
+- [Implement Security Best Practices](operators/howto/avs-operator-risks-mitigations-bp): Malicious AVS
+- [Batch Claim Rewards](operators/howto/claimrewards/batch-claim-rewards): Batch rewards claiming for Stakers and Operators using the EigenLayer CLI is a gas efficient way to claim on behalf
+- [Claim Rewards](operators/howto/claimrewards/claim-rewards-cli): Prerequisites
+- [Claim Rewards as a Smart Contract](operators/howto/claimrewards/claim-rewards-smart-contract): To claim rewards when the Earner is a smart contract,
+- [Rewards Distribution Data](operators/howto/confirgurerewards/rewards-snapshot-data): Rewards snapshot distribution data is available:
+- [Set Programmatic Incentives Split](operators/howto/confirgurerewards/set-pi-split): The default Operator split for Programmatic Incentives (PI) is 10%.
+- [Set Rewards Claimer](operators/howto/confirgurerewards/set-rewards-claimer): Prerequisites
+- [Set Rewards Split](operators/howto/confirgurerewards/set-rewards-split): The default Operator split for rewards is 10%. The Operator split can be varied by AVS or by Operator Set.
+- [Node and Smart Contract Operators](operators/howto/managekeys/institutional-operators): - Secure keys, including secrets such as passphrases or mnemonics, using services like AWS Secrets Manager or Hashicorp Vault. These services can be seamlessly integrated with automated mechanisms that safely retrieve secrets or keys (e.g., remote signers). If resources permit, consider running your own Hashicorp Vault instance, which grants full custody of keys and secrets while sacrificing the service provider's availability and security guarantees.
+- [Solo stakers](operators/howto/managekeys/solo-stakers): Individuals managing a limited number of validator keys typically do not require intricate distributed infrastructure for running nodes or employing remote signers. For these individuals, extensive staking services may be excessive and unnecessary. This means they will often store the keys with the decryption keys locally with the validator client or Node (which they maintain), which increases the vulnerability of the secrets, but, while stakers must safeguard validator keys against attacks, most key losses typically result from mundane reasons, such as losing the hardware containing the key. Users necessitate a backup strategy, mindful that if an attacker accesses the backed-up keys, they can sign any message deemed valid against the validator's public key. Appropriate precautions should be implemented to guarantee that backed-up validator keys are as inaccessible as feasible, ideally being completely offline and physically secure. Some of these precautions can be listed:
+- [Follow Webapp Content Guidelines](operators/howto/operator-content-guidelines): Operator Page
+- [Install and register Operators](operators/howto/operator-installation): Node Operator Checklist
+- [Allocate and Register to Operator Set](operators/howto/operator-sets): Before proceeding, review the Slashing Concept content for information on how Operator Sets and Allocations work.
+- [Troubleshoot](operators/howto/troubleshooting): Before creating an issue with EigenLayer support please check this page to see if you can resolve your issues. If you are still stuck, please create a support ticket
+- [Add and Remove Admins](operators/howto/uam/op-add-remove-admins): Security of admin keys is critical. UAM enables appointees with lessened permissions, and use of keys that can be rotated or
+- [Add and Remove Appointees](operators/howto/uam/op-add-remove-appointees): Only admins (or the account if no admin has been set) can add appointees. Unlike adding an admin, there is no requirement
+- [Operator FAQ](operators/reference/operator-faq): Am I required to publicly host metadata url?
+- [Native ETH Restaking Withdrawal Delays](restakers/concepts/native-restaking-withdrawal-delays): Withdrawing funds from BeaconChain to an EigenPod and ultimately to a user’s wallet involves multiple sequential steps with
+- [Restaking Overview](restakers/concepts/overview): Liquid & Native Restaking
+- [Claim Rewards using EigenLayer App](restakers/restaking-guides/claim-rewards-app): For information on Rewards concepts, refer to Rewards Overview.
+- [Restaking Smart Contract Developer](restakers/restaking-guides/restaking-developer-guide): Smart Contract Restaking allows the user to interact directly with the EigenLayer core contracts. The following sections describe how to setup your Restaking integration with the EigenLayer contracts directly with no reliance on the EigenLayer Web App.
+- [Restake and Delegate](restakers/restaking-guides/restaking-user-guide/liquid-restaking/restake-lsts): The following instructions will walk you through how tokens can be restaked on the EigenLayer Web App.
+- [Unstake and Withdraw](restakers/restaking-guides/restaking-user-guide/liquid-restaking/withdraw-from-eigenlayer): All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn. Please see the Escrow Period section for more detail.
+- [Native Restaking](restakers/restaking-guides/restaking-user-guide/native-restaking/README): Please read this entire guide before launching your new validator or integrating your existing validator. Before you deploy a new validator you must plan to either:
+- [Delegate to an Operator](restakers/restaking-guides/restaking-user-guide/restaker-delegation/delegate-to-an-operator): Follow the steps below to initiate delegation of your Restaked balance to an Operator of your choice. This Restaked balance includes EIGEN tokens, LST tokens, and Native Restaked TVL.
+- [Change Your Delegation](restakers/restaking-guides/restaking-user-guide/restaker-delegation/redelegation-process): The following steps are necessary for a Restaker to move their Delegated balance to a New Operator. The process below requires users to perform each of the following steps in order:
+- [Undelegate and Initiate Withdrawal](restakers/restaking-guides/restaking-user-guide/restaker-delegation/undelegate-from-an-operator-and-initiate-withdrawal): Restakers can Undelegate their balance from an Operator at any time. Undelegation flows are the same for both Native and LST Restakers.
+- [Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)](restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts): In this guide, we will show you how to use a Holesky faucet to load your wallet with testnet ETH and how to obtain Holesky Liquid Staking Tokens so you can start testing liquid restaking.
+- [Testnet Restaking](restakers/restaking-guides/testnet/README): Testing Restaking on the Holesky Testnet
+- [Restaking Smart Contract Developer (Testnet)](restakers/restaking-guides/testnet/restaking-developer-guide): The following instructions include an overview of the changes to Smart Contract Restaking per the Slashing and Operator Set release. All existing instructions on Restaking Smart Contract Developer remain unchanged for this update, except where noted below.
