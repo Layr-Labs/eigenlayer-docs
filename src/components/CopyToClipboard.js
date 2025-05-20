@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 export default function CopyButton({ title, text, filePath }) {
-  const [copied, setCopied] = useState(false);
   const [showToast, setShowToast] = useState(false);
 
   const copyText = async () => {
@@ -21,10 +20,8 @@ export default function CopyButton({ title, text, filePath }) {
       }
     }
     await navigator.clipboard.writeText(contentToCopy);
-    setCopied(true);
     setShowToast(true);
     setTimeout(() => {
-      setCopied(false);
       setShowToast(false);
     }, 1000);
   };
@@ -68,11 +65,11 @@ export default function CopyButton({ title, text, filePath }) {
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke={copied ? '#88abef' : '#346ddb'}
+          stroke="#346ddb"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ cursor: 'pointer', verticalAlign: 'middle', transition: 'stroke 0.3s' }}
+          style={{ marginLeft: '4px', cursor: 'pointer', verticalAlign: 'middle', transition: 'stroke 0.3s' }}
         >
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
           <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
