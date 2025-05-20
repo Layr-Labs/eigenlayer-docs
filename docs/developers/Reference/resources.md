@@ -31,6 +31,14 @@ These SDKs are wrappers on top of common EigenLayer AVS operations designed to s
 * [EigenLayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
 * [EigenDA](https://github.com/Layr-Labs/eigenda)
 
+### AI Resources
+
+These .txt and .md files contain documentation and code optimized for use with LLMs and AI tools.
+
+* <a href="../../llms.txt" target="_blank">llms.txt</a>
+* <a href="../../llms-full.txt" target="_blank">llms-full.txt</a>
+* <a href="../../eigenlayer-contracts.md" target="_blank">EigenLayer Contracts</a>
+* <a href="../../hello-world-avs.md" target="_blank">Hello World AVS</a>
 
 ### Developer Tooling
 - [Othentic](https://www.othentic.xyz) - Library of components for AVS builders.

@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // Note: type annotations allow type checking and IDEs autocompletion
 require("dotenv").config();
 
@@ -73,8 +73,7 @@ const config = {
           const { siteDir } = context;
 
           // Write concatenated Markdown content
-          const concatenatedPath = path.join(outDir, "llms-full.txt");
-          await fs.promises.writeFile(concatenatedPath, allMdx.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "llms-full.txt"), allMdx.join("\n\n---\n\n"));
 
           // we need to dig down several layers:
           // find PluginRouteConfig marked by plugin.name === "docusaurus-plugin-content-docs"
@@ -106,9 +105,7 @@ const config = {
           const llmsTxt = `# ${context.siteConfig.title}\n\n## Docs\n\n${docsRecords.join("\n")}`;
 
           // Write llms.txt file
-          const llmsTxtPath = path.join(outDir, "llms.txt");
           try {
-            fs.writeFileSync(llmsTxtPath, llmsTxt);
             fs.writeFileSync(path.join(siteDir, "static", "llms.txt"), llmsTxt);
           } catch (err) {
             throw err;
