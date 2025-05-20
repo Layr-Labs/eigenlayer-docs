@@ -56,9 +56,9 @@ export default function CopyButton({ title, text, filePath }) {
         onClick={copyText}
         style={{
           margin: 0,
+          padding: 0,
           display: 'inline-block',
           borderRadius: 4,
-          padding: '2px 6px',
         }}
       >
         {title}{' '}
