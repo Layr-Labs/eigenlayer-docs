@@ -1,0 +1,3 @@
+{
+  "installCommand": "npm install -g yarn@1.22.22 && yarn install"
+}
