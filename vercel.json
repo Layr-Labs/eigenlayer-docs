@@ -1,3 +1,0 @@
-{
-"installCommand": "npm install -g yarn@1.22.22 && export PATH=\"/vercel/.npm-global/bin:$PATH\" && yarn install"
-}
