@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build && npm run repomix",
+    "build": "docusaurus build",
     "repomix": "node run-repomix.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
