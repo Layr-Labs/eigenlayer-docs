@@ -15,6 +15,13 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc"
   },
+  "resolutions": {
+    "repomix": {
+      "engines": {
+        "yarn": ">=1.22.22"
+      }
+    }
+  },
   "dependencies": {
     "@docusaurus/core": "3.7.0",
     "@docusaurus/plugin-client-redirects": "3.7.0",
