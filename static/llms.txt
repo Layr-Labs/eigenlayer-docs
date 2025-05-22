@@ -29,6 +29,7 @@
 - [Get Support](developers/HowTo/get-started/support): If you have any questions or comments throughout the AVS development process, you can get support by reaching out to us using the Intercom button on the bottom right side of this page or clicking here. We will promptly follow up with support!
 - [Onboard to AVS Dashboard](developers/HowTo/publish/onboard-avs-dashboard): The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
 - [Test AVS](developers/HowTo/test/test-avs): AVS Devnet is currently in Public Alpha and is rapidly being upgraded. Features may be added, removed or otherwise improved or modified,
+- [AI Resources](developers/Reference/ai-resources): These text and markdown files contain documentation and code optimized for use with LLMs and AI tools.
 - [AVS Developer Security Best Practices](developers/Reference/avs-developer-best-practices): AVS Developer Security Best Practices
 - [EigenLayer SDKs](developers/Reference/eigenlayer-sdks): The EigenLayer SDKs wrap common EigenLayer AVS operations and are designed for AVS developers.
 - [Developer Resources](developers/Reference/resources): We are in the process of updating our samples, SDKs, and the EigenLayer CLI to include Rewards and Slashing capabilities. The samples, SDKs, and CLI will be

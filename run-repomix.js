@@ -11,5 +11,22 @@ async function processRemoteRepo(repoUrl, fileName) {
   return await runCli(['.'], process.cwd(), options);
 }
 
-processRemoteRepo("https://github.com/Layr-Labs/eigenlayer-contracts", "eigenlayer-contracts.md")
-processRemoteRepo("https://github.com/Layr-Labs/hello-world-avs", "hello-world-avs.md")
+// const repos = [
+//   {
+//     url: 'https://github.com/Layr-Labs/eigenlayer-contracts',
+//     fileName: "eigenlayer-contracts.md",
+//   },
+//   {
+//     url: 'https://github.com/Layr-Labs/eigensdk-go',
+//     fileName: 'eigenlayer-go-sdk.md'
+//   },
+//   {
+//     url: 'https://github.com/Layr-Labs/hello-world-avs',
+//     fileName: 'hello-world-avs.md'
+//   }
+// ] 
+
+// for (const repo of repos) {
+//   await processRemoteRepo(repo.url, repo.fileName);
+// }
+  

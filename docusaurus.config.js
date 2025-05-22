@@ -48,32 +48,39 @@ const config = {
         loadContent: async () => {
           const { siteDir } = context;
           const contentDir = path.join(siteDir, "docs");
-          const allMdx = [];
+          const developersDir = path.join(siteDir, "docs", "developers")
+          const operatorsDir = path.join(siteDir, "docs", "operators")
+          const allMd = [];
+          const developersMd = []
+          const operatorsMd = []
 
           // recursive function to get all mdx files
-          const getMdxFiles = async (dir) => {
-            const entries = await fs.promises.readdir(dir, { withFileTypes: true });
-
+          const getMdxFiles = async (baseDir, writeDir) => {
+            const entries = await fs.promises.readdir(baseDir, { withFileTypes: true });
             for (const entry of entries) {
-              const fullPath = path.join(dir, entry.name);
+              const fullPath = path.join(baseDir, entry.name);
               if (entry.isDirectory()) {
-                await getMdxFiles(fullPath);
+                await getMdxFiles(fullPath, writeDir);
               } else if (entry.name.endsWith(".mdx") || entry.name.endsWith(".md")) {
                 const content = await fs.promises.readFile(fullPath, "utf8");
-                allMdx.push(content);
+                writeDir.push(content);
               }
             }
           };
 
-          await getMdxFiles(contentDir);
-          return { allMdx };
+          await getMdxFiles(developersDir, developersMd)
+          await getMdxFiles(contentDir, allMd);
+          await getMdxFiles(operatorsDir, operatorsMd);
+          return { allMd , developersMd, operatorsMd};
         },
         postBuild: async ({ content, routes, outDir }) => {
-          const { allMdx } = content;
+          const { allMd, developersMd, operatorsMd } = content;
           const { siteDir } = context;
 
           // Write concatenated Markdown content
-          await fs.promises.writeFile(path.join(siteDir, "static", "llms-full.txt"), allMdx.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "llms-full.txt"), allMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "avs-developer-docs.txt"), developersMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "operators-developer-docs.txt"), operatorsMd.join("\n\n---\n\n"));
 
           // we need to dig down several layers:
           // find PluginRouteConfig marked by plugin.name === "docusaurus-plugin-content-docs"
