@@ -5,7 +5,9 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "docusaurus build && npm run repomix",
+    "build-docusaurus": "docusaurus build",
+    "repomix": "node run-repomix.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -32,7 +34,8 @@
     "react-markdown": "^9.0.1",
     "rehype-katex": "^7.0.1",
     "remark-gfm": "^4.0.0",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "repomix": "^0.3.6"
   },
   "devDependencies": {
     "@docusaurus/eslint-plugin": "3.7.0",
@@ -42,6 +45,9 @@
     "@types/react": "^18.2.29",
     "dotenv": "^16.3.1",
     "typescript": "~5.2.2"
+  },
+  "engines": {
+    "yarn": ">=1.22.22"
   },
   "browserslist": {
     "production": [
