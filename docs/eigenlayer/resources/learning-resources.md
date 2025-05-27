@@ -31,7 +31,7 @@ title: Learning Resources
 
 ### Developer resources
 
-Please see Developer Learning Resources [here](/docs/developers/Reference/resources.md).
+Please see Developer Learning Resources [here](/docs/developers/Reference/resources.mdx).
 
 ### Community
 
