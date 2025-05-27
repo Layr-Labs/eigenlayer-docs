@@ -59,3 +59,5 @@ stay the same and the EIGEN for each Operator Set increases.
 | `EigenDA_EIGEN` | 2,000 | 20% | 40 |
 | `Non-slashable` | 3,500 | 35% | 70 |
 | `Total`  | 10,000 | 100% | 200 |
+
+For information on how magnitudes are reduced when slashed, refer to [Magnitudes when Slashed](../slashing/magnitudes-when-slashed.md).
