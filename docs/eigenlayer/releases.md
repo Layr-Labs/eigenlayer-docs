@@ -66,7 +66,7 @@ Refer to:
 
 Refer to: 
 * [Operator Sets concept](concepts/operator-sets/operator-sets-concept)
-* For developers, [Manage Operator Sets](../developers/HowTo/build/manage-operator-sets) and [Migrate to Operator Sets](../developers/HowTo/build/slashing/migrate-to-operatorsets)
+* For developers, [Create Operator Sets](../developers/HowTo/build/operator-sets/create-operator-sets.md) and [Migrate to Operator Sets](../developers/HowTo/build/slashing/migrate-to-operatorsets)
 * For Operators, [Allocate and Register to Operator Sets](../operators/howto/operator-sets)
 
 #### User Access Management (UAM)
