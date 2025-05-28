@@ -1,24 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function CopyButton({ title, description, text, filePath }) {
   const [showToast, setShowToast] = useState(false);
+  const [fileContent, setFileContent] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Prefetch file content when component mounts
+  useEffect(() => {
+    if (filePath) {
+      setIsLoading(true);
+      fetch(filePath)
+        .then(response => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            console.error('Failed to prefetch file contents.');
+            return null;
+          }
+        })
+        .then(content => {
+          if (content) {
+            setFileContent(content);
+          }
+          setIsLoading(false);
+        })
+        .catch(e => {
+          console.error('Error prefetching file contents:', e);
+          setIsLoading(false);
+        });
+    }
+  }, [filePath]);
 
   const copyText = async () => {
     let contentToCopy = text;
+    
     if (filePath) {
-      try {
-        const response = await fetch(filePath);
-        if (response.ok) {
-          contentToCopy = await response.text();
-        } else {
-          alert('Failed to fetch file contents.');
+      // If we already have the file content, use it
+      if (fileContent) {
+        contentToCopy = fileContent;
+      } else if (!isLoading) {
+        // If we don't have it and it's not currently loading, fetch it
+        try {
+          const response = await fetch(filePath);
+          if (response.ok) {
+            contentToCopy = await response.text();
+            setFileContent(contentToCopy); // Save for future use
+          } else {
+            alert('Failed to fetch file contents.');
+            return;
+          }
+        } catch (e) {
+          alert('Error fetching file contents.');
           return;
         }
-      } catch (e) {
-        alert('Error fetching file contents.');
+      } else {
+        // If it's still loading, inform the user
+        alert('File content is still loading. Please try again in a moment.');
         return;
       }
     }
+    
     await navigator.clipboard.writeText(contentToCopy);
     setShowToast(true);
     setTimeout(() => {
