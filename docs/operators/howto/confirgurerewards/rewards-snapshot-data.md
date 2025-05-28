@@ -1,9 +1,7 @@
 ---
 sidebar_position: 4
-
+title: Rewards Distribution Data
 ---
-
-# Rewards Distribution Data
 
 Rewards snapshot distribution data is available:
 * From an [EigenLayer Sidecar](#using-eigenlayer-sidecar).
