@@ -8,46 +8,50 @@ import CopyButton from '@site/src/components/CopyToClipboard';
 
 These text and markdown files contain documentation and code optimized for use with LLMs and AI tools.
 
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-<CopyButton
-  title="llms.txt"
-  filePath="../../llms.txt"
-  description="Navigation index of all EigenLayer documentation pages."
-/>
-
-<CopyButton
-  title="llms-full.txt"
-  filePath="../../llms-full.txt"
-  description="Complete EigenLayer documentation."
-/>
-
-<CopyButton
-  title="avs-developer-docs.txt"
-  filePath="../../avs-developer-docs.txt"
-  description="AVS Developers documentation."
-/>
-
-<CopyButton
-  title="operators-developer-docs.tx"
-  filePath="../../operators-developer-docs.txt"
-  description="Operators documentation."
-/>
-
-<CopyButton
-  title="eigenlayer-contracts.md"
-  filePath="../../eigenlayer-contracts.md"
-  description="Complete EigenLayer contracts."
-/>
-
-<CopyButton
-  title="hello-world-avs.md"
-  filePath="../../hello-world-avs.md"
-  description="Complete Hello World AVS."
-/>
-
-<CopyButton
-  title="eigenlayer-go-sdk.md"
-  filePath="../../eigenlayer-go-sdk.md"
-  description="EigenLayer Go SDK."
-/>
-</div>
+<table style={{ width: '100%', borderCollapse: 'collapse' }}>
+  <thead>
+    <tr>
+      <th style={{ textAlign: 'left', padding: '10px' }}>Description</th>
+      <th style={{ textAlign: 'left', padding: '10px' }}>File</th>
+      <th style={{ textAlign: 'left', padding: '10px' }}>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <CopyButton
+      title="llms.txt"
+      filePath="../../llms.txt"
+      description="Navigation index of all EigenLayer documentation pages."
+    />
+    <CopyButton
+      title="llms-full.txt"
+      filePath="../../llms-full.txt"
+      description="Complete EigenLayer documentation."
+    />
+    <CopyButton
+      title="avs-developer-docs.txt"
+      filePath="../../avs-developer-docs.txt"
+      description="AVS Developers documentation."
+    />
+    <CopyButton
+      title="operators-developer-docs.tx"
+      filePath="../../operators-developer-docs.txt"
+      description="Operators documentation."
+    />
+    <CopyButton
+      title="eigenlayer-contracts.md"
+      filePath="../../eigenlayer-contracts.md"
+      description="Complete EigenLayer contracts."
+    />
+    <CopyButton
+      title="hello-world-avs.md"
+      filePath="../../hello-world-avs.md"
+      description="Complete Hello World AVS."
+    />
+    <CopyButton
+      title="eigenlayer-go-sdk.md"
+      filePath="../../eigenlayer-go-sdk.md"
+      description="EigenLayer Go SDK."
+      isLastRow={true}
+    />
+  </tbody>
+</table>
