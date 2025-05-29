@@ -78,9 +78,9 @@ const config = {
           const { siteDir } = context;
 
           // Write concatenated Markdown content
-          await fs.promises.writeFile(path.join(siteDir, "static", "llms-full.txt"), allMd.join("\n\n---\n\n"));
-          await fs.promises.writeFile(path.join(siteDir, "static", "avs-developer-docs.txt"), developersMd.join("\n\n---\n\n"));
-          await fs.promises.writeFile(path.join(siteDir, "static", "operators-developer-docs.txt"), operatorsMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "llms-full.md"), allMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "avs-developer-docs.md"), developersMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(siteDir, "static", "operators-developer-docs.md"), operatorsMd.join("\n\n---\n\n"));
 
           // we need to dig down several layers:
           // find PluginRouteConfig marked by plugin.name === "docusaurus-plugin-content-docs"
@@ -113,7 +113,7 @@ const config = {
 
           // Write llms.txt file
           try {
-            fs.writeFileSync(path.join(siteDir, "static", "llms.txt"), llmsTxt);
+            fs.writeFileSync(path.join(siteDir, "static", "llms.md"), llmsTxt);
           } catch (err) {
             throw err;
           }
