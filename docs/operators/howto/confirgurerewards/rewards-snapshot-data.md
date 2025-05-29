@@ -3,6 +3,11 @@ sidebar_position: 4
 title: Rewards Distribution Data
 ---
 
+:::important
+After June 30, Rewards snapshot distribution data will no longer be updated in the [public S3 bucket](#via-s3-bucket). To continue getting updated rewards data,
+users of the S3 bucket must migrate to the EigenLayer Sidecar by June 30.
+:::
+
 Rewards snapshot distribution data is available:
 * From an [EigenLayer Sidecar](#using-eigenlayer-sidecar).
 * Via a [public S3 bucket](#via-s3-bucket). Users may access this data for their own analytics purposes.
@@ -65,6 +70,11 @@ To obtain rewards snapshot distribution data using a EigenLayer Sidecar:
    ```
 
 ## Via S3 Bucket
+
+:::important
+After June 30, Rewards snapshot distribution data will no longer be updated in the [public S3 bucket](#via-s3-bucket). To continue getting updated rewards data,
+users of the S3 bucket must migrate to the EigenLayer Sidecar by June 30.
+:::
 
 To obtain rewards snapshot distribution data from the S3 bucket: 
 
