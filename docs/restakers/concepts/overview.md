@@ -47,26 +47,49 @@ the option to Redelegate their TVL balance to another Operator.
 ## Slashing 
 
 :::important
-When the Slashing and Operator Set upgrade is live on mainnet, stake can become slashable for a Staker that has previously
-delegated stake to an Operator. Stakers are responsible for ensuring that they fully understand and confirm their risk tolerances
-for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, stakers are responsible
-for continuing to monitor the allocations of their chosen Operators as they update allocations across various Operator Sets.
+Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+stake can become redistributable. Stakers are responsible for ensuring that they fully understand and confirm 
+their risk tolerances for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, 
+stakers are responsible for continuing to monitor the allocations of their chosen Operators as they update allocations across 
+various Operator Sets.
 :::
 
-When the Slashing and Operator Sets upgrade is live on mainnet, AVSs can create [Operator Sets](../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) that may include slashable
-[Unique Stake](../../eigenlayer/concepts/slashing/unique-stake.md), and Operators can allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake
-to an Operator, the delegated stake becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake.
+:::note
+[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets. 
+Redistibutable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
+
+AVSs create [Operator Sets](../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) that may include slashable
+[Unique Stake](../../eigenlayer/concepts/slashing/unique-stake.md), or be Redistributable Operator Sets, and Operators can 
+allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake to an Operator, the delegated stake 
+becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake. Slashed funds can be burnt or
+redistributed.
 
 Stakers are responsible for understanding the increased risk posed by allocation of their delegated stake as slashable
 Unique Stake to an AVS. While the allocation of delegated stake to an Operator Set may be subject to the [Allocation Config
 Delay and Allocation Delay](../../eigenlayer/reference/safety-delays-reference.md), it is important to understand the increased risk.
 
-For more information on the safety delays for Stakers, refer to the :
-* [Safety Delays reference](../../eigenlayer/reference/safety-delays-reference.md)
-* [Allocating and Deallocating to Operator Sets section of ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
+For more information on the safety delays for Stakers, refer to the [Safety Delays reference](../../eigenlayer/reference/safety-delays-reference.md).
 
-## Escrow Period (Withdrawal Delay)
+### Redistributable Operator Sets
+
+With Redistributable Operator Sets, Stakers should carefully consider the protocols that their delegated Operators are running, 
+and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
+against the increased slashing risks. 
+
+Security implications for Redistributable Operator Sets mean Stakers are potentially at risk from malicious AVSs and Operators. 
+If the AVS’s governance or its slashing functionality is corrupted, an attacker may be able to drain Operator-delegated funds. 
+If an Operator itself is compromised, it may stand up its own AVS to steal user funds. Stakers should carefully consider the 
+reputation and legitimacy of Operators when making delegations. For more information on these attack scenarios, refer to 
+[this forum post](https://forum.eigenlayer.xyz/t/risks-of-an-in-protocol-redistribution-design/14458).
+
+## Withdrawal Delay (Withdrawal Escrow)
 
 EigenLayer contracts feature a withdrawal delay for all Liquid and Native restaking, a critical security measure for instances 
 of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. Please see [Withdrawal Delay](/docs/eigenlayer/security/withdrawal-delay.md) 
 for more detail.
+
+## Slash Escrow 
+
+EigenLayer has a slashing delay, Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows. All slashed funds
+(burnt or redistributed) go through a 4-day escrow period. For more information, refer to [Slash Escrow](../../eigenlayer/security/slash-escrow.md)
