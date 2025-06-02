@@ -1,0 +1,30 @@
+---
+sidebar_position: 2
+title: Redistribution
+---
+
+:::note
+[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistibutable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
+
+Redistribution enables AVSs to repurpose slashed funds instead of burning them. In use cases such as lending and insurance protocols, 
+redistribution plays a key role. It enables the reallocation of funds when commitments are broken or conditions change. For example, 
+in the event of a liquidation or user reimbursement. Redistribution specifically benefits AVSs that need increased liquidity 
+and stronger risk management capabilities.
+
+Redistribution extends slashing, allowing AVSs to not only penalize Operators for missed commitments but also strategically 
+redirect those funds. Using redistribution, AVSs can design systems that potentially reward reliable Operators using funds 
+from those who underperform.
+
+Redistribution is opt-in only for AVSs, Operators, Stakers. AVSs choose whether to enable redistribution, Operators choose 
+whether to accept the redistribution conditions, and Stakers decide whether to delegate to Operators running redistribution.
+
+:::note
+All non-ETH assets, including Liquid Staking Tokens (LSTs), EIGEN, and AVS tokens, can be redistributed. ETH is not 
+yet eligible for redistribution.
+:::
+
+For information on: 
+* Implementing redistributable slashing, refer to Create Operator Sets in the Developer section.
+* Opting into redistributable Operator Sets, refer to Allocate and Register to Operator Set in the Operator section.

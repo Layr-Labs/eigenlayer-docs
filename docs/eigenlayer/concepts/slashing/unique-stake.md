@@ -3,12 +3,6 @@ sidebar_position: 2
 title: Unique Stake
 ---
 
-:::note
-
-[ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) introduced Operator Sets and Slashing.
-
-:::
-
 Unique Stake ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. 
 Unique Stake is allocated to different [Operator Sets](../operator-sets/operator-sets-concept) on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, 
 and the Unique Stake represents proportions of the Operator’s delegated stake from Stakers. Unique Stake allocations are 

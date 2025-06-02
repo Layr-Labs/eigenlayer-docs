@@ -1,17 +1,16 @@
 ---
 sidebar_position: 1
-title: Slashing Overview
+title: Overview
 ---
 
 :::note
-
-Slashing implements [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
-
+[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistibutable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
 :::
 
 Slashing is a type of penalty determined by an AVS as a deterrent for broken commitments by Operators. Broken commitments
 may include improperly or inaccurately completing tasks assigned in [Operator Sets](../operator-sets/operator-sets-concept) by an AVS. 
-Slashing results in a burning/loss of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
+Slashing results in a burning or redistribution of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
 
 An AVS may slash an Operator up to the total allocated amount of Unique Stake per [Strategy](../operator-sets/strategies-and-magnitudes) under the following conditions:
 * The Operator is registered to the Operator Set the AVS wishes to slash.
@@ -25,23 +24,37 @@ for any reason. Slashing does not have to be objectively attributable (that is, 
 create robust legibility and process around how their slashing is designed and individual slashing events. Operators are responsible
 for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before delegating stake to them, as once
 delegated, those funds may be slashable according to the conditions set by that AVS.
+
+With Redistributable Operator Sets, Stakers should carefully consider the protocols that their delegated Operators are running,
+and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
+against the increased slashing risks.
 :::
 
-## Slashing sequence
+## Slashing sequence 
 
 The interactions between Staker, Operator, AVS, and core contracts during a slashing are represented in the sequence diagram.
 
-![Sequence Representation of a Slashing](/img/operator-guides/operator-sets-figure-5.png)
+TODO - Add new diagram
 
-## Burning slashed funds
+## Burning or redistributing slashed funds
 
-When funds are slashed by an AVS, the EigenLayer core contracts make slashed funds permanently inaccessible (burned).
-ERC-20s have this done by sending them to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
+When funds are slashed by an AVS, they are either burnt (for non-redistributable Operator Sets) or redistributed
+(for redistributable Operator Sets). Before exiting the protocol, slashed funds (marked for burning or redistributing)
+are transferred to `SlashEscrow` contracts and held for the Slash Escrow period. For more information on the Slash Escrow,
+refer to Slash Escrow in the Security section. 
+
+Once the Slash Escrow period has passed, the slashed funds exit the EigenLayer protocol:
+* For burnt funds, ERC-20s this is done by sending them to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
 accounting with various LRT protocols.
+* For redistributed funds, they are transferred to the `redistributionRecipient` specified when the redistributable Operator Set is created.
 
-Natively Restaked ETH will be locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
+Burnt natively Restaked ETH is locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
 to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead
-of permanently locking it within EigenPod contracts as planned in this release.
+of permanently locking it within EigenPod contracts.
+
+:::note
+Native ETH cannot be redistributed.
+:::
 
 ## For AVS Developers 
 
