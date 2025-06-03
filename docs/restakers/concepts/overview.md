@@ -52,6 +52,9 @@ stake can become redistributable. Stakers are responsible for ensuring that they
 their risk tolerances for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, 
 stakers are responsible for continuing to monitor the allocations of their chosen Operators as they update allocations across 
 various Operator Sets.
+
+In general, there is a larger incentive to slash user funds when redistribution is enabled. Redistributable Operator Sets
+may offer higher rewards, but these should be considered against the increased slashing risks.
 :::
 
 :::note
@@ -75,7 +78,11 @@ For more information on the safety delays for Stakers, refer to the [Safety Dela
 
 With Redistributable Operator Sets, Stakers should carefully consider the protocols that their delegated Operators are running, 
 and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
-against the increased slashing risks. 
+against the increased slashing risks.
+
+The redistribution recipient for an Operator Set is an immutable address set when the Operator Set is created. While an AVS
+may use an upstream proxy or pass-through contract, the immutability of this address in EigenLayer means an AVS can layer 
+additional guarantees by guarding the upgradability of the upstream contract via controls such as governance, and timelocks.
 
 Security implications for Redistributable Operator Sets mean Stakers are potentially at risk from malicious AVSs and Operators. 
 If the AVS’s governance or its slashing functionality is corrupted, an attacker may be able to drain Operator-delegated funds. 
@@ -93,3 +100,8 @@ for more detail.
 
 EigenLayer has a slashing delay, Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows. All slashed funds
 (burnt or redistributed) go through a 4-day escrow period. For more information, refer to [Slash Escrow](../../eigenlayer/security/slash-escrow.md)
+
+:::note
+In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow
+delay is reserved for future protocol use, need, and compatibility.
+:::

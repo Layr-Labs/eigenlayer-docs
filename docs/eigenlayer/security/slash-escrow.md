@@ -13,6 +13,11 @@ EigenLayer has a slashing delay, Slash Escrow, which is a critical security meas
 slash beyond its allocated unique stake (for example, a total protocol TVL drain), the Slash Escrow enables a governance 
 pause and intervention.
 
+:::note
+In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow 
+delay is reserved for future protocol use, need, and compatibility.
+:::
+
 Pausing for catastrophic slashing bugs is gated to the Pauser multisig, as outlined in [Eigen Foundation governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture).
 The Pauser multisig can only pause (or later unpause) outflows if there are still pending blocks (time) between slash initiation and the end of the Slash Escrow period. 
 During a pause, governance and social consensus are the adjudication mechanism to determine if a rescue is needed 
