@@ -5,7 +5,7 @@ title: Submit Rewards Submissions
 
 :::important
 `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` use AVSDirectory. 
-The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](slashing/migrate-to-operatorsets.md).
+The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](operator-sets/migrate-to-operatorsets.md).
 
 If you are currently using AVSDirectory, `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` can continue to be used while AVSDirectory is being used.
 :::

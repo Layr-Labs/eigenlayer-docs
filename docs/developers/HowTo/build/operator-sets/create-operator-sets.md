@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Create Operator Sets
 ---
 
@@ -14,7 +14,7 @@ Creating Operator Sets for an AVS is managed by the [AllocationManager core cont
 
 Operator Sets are either: 
 * [Non-redistributing](#create-operator-set). Slashed funds are burnt.
-* [Redistributing](#create-redistributing-operator-set). Slashed funds are sent to the `redistributionRecipient`.
+* [Redistributing](#create-redistributing-operator-set). Slashed funds are sent to the [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient).
 
 The Operator Set type cannot be changed.
 

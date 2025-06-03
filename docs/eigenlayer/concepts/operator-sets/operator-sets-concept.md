@@ -8,7 +8,7 @@ title: Operator Sets Overview
 [ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) introduced Operator Sets.
 
 
-Currently, Operators register to an AVS to earn rewards in the AVSDirectory. We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/build/slashing/migrate-to-operatorsets.md). 
+Currently, Operators register to an AVS to earn rewards in the AVSDirectory. We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/build/operator-sets/migrate-to-operatorsets.md). 
 :::
 
 Operator Sets determine which Operators secure an AVS and earn rewards. Each AVS defines one or more Operator Sets that
@@ -25,7 +25,7 @@ according to any conditions set by that AVS.
 
 ## For AVS Developers
 
-For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/slashing/design-operator-set.md).
+For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/operator-sets/design-operator-set.md).
 
 ## For Operators
 

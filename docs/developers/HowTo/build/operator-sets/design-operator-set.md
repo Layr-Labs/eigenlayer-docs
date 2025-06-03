@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 title: Design Operator Sets
 ---
 
@@ -9,8 +9,8 @@ EigenLayer protocol does not enforce criteria for Operator Sets.
 ## Operator Set Types
 
 Operator Sets are either:
-* [Non-redistributing](../operator-sets/create-operator-sets.md#create-operator-set). Slashed funds are burnt.
-* [Redistributing](../operator-sets/create-operator-sets.md#create-redistributing-operator-set). Slashed funds are sent to the `redistributionRecipient`.
+* [Non-redistributing](create-operator-sets.md#create-operator-set). Slashed funds are burnt.
+* [Redistributing](create-operator-sets.md#create-redistributing-operator-set). Slashed funds are sent to the [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient).
 
 The Operator Set type cannot be changed.
 

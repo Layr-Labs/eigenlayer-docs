@@ -5,7 +5,7 @@ title: User Access Management
 
 :::note
 There is no support for setting appointees for AVSDirectory functions. The AVSDirectory method will be deprecated in a future upgrade.
-[All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](../HowTo/build/slashing/migrate-to-operatorsets.md).
+[All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](../HowTo/build/operator-sets/migrate-to-operatorsets.md).
 :::
 
 For concept material on User Access Management (UAM) and roles, refer to:

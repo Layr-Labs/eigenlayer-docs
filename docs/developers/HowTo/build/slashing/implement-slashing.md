@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Implement Slashing
 ---
 
@@ -33,10 +33,15 @@ as part of the Operator Set.
 
 For more information on how magnitudes are reduced when slashed, refer to [Magnitudes when Slashed](../../../../eigenlayer/concepts/slashing/magnitudes-when-slashed.md).
 
+## Define Upstream Redistribution Contracts 
+
+For redistributable Operator Sets, implement upstream contracts for [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient)
+to redistribute slashed funds once they have exited the protocol.
+
 ## Returned by `slashOperator`
 
 The `slashOperator` function returns the `slashId` and number of shares slashed for each strategy. The `slashId` is 
-incremented for an OperatorSet each time an Operator Set is slashed.
+incremented for an OperatorSet each time an Operator Set is slashed. Use the `slashID` to programmatically handle slashings.
 
 ## Slashing Event Emission
 
