@@ -98,7 +98,7 @@ for more detail.
 
 ## Slash Escrow 
 
-EigenLayer has a slashing delay, Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows. All slashed funds
+EigenLayer has a slashing delay, Slash Escrow Delay, which is a critical security measure to bring guarantees to protocol outflows. All slashed funds
 (burnt or redistributed) go through a 4-day escrow period. For more information, refer to [Slash Escrow](../../eigenlayer/security/slash-escrow.md)
 
 :::note
