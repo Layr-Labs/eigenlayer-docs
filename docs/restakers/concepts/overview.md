@@ -76,7 +76,7 @@ For more information on the safety delays for Stakers, refer to the [Safety Dela
 
 ### Redistributable Operator Sets
 
-With Redistributable Operator Sets, Stakers should carefully consider the protocols that their delegated Operators are running, 
+With Redistributable Operator Sets, Stakers should carefully consider the AVSs that their delegated Operators are running, 
 and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
 against the increased slashing risks.
 
@@ -99,7 +99,7 @@ for more detail.
 ## Slash Escrow 
 
 EigenLayer has a slashing delay, Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows. All slashed funds
-(burnt or redistributed) go through a 4-day escrow period. For more information, refer to [Slash Escrow](../../eigenlayer/security/slash-escrow.md)
+(burnt or redistributed) go through a 4-day escrow period. For more information, refer to [Slash Escrow](../../eigenlayer/security/slashing-delay)
 
 :::note
 In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow
