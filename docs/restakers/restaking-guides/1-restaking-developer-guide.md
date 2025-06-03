@@ -13,10 +13,6 @@ Key EigenLayer Protocol references for this guide:
 * [Deployed Contract Addresses](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments): deployed contract addresses for Mainnet and Testnet.
 * [Integration Tests](https://github.com/Layr-Labs/eigenlayer-contracts/tree/dev/src/test/integration): tests that serve as examples on how to interact with the EigenLayer core contracts.
 
-
-
-
-
 ## Liquid Restaking Guide
 
 The following sections describe the steps to Restake "liquid" tokens (including LSTs EIGEN token, and any ERC20 token).

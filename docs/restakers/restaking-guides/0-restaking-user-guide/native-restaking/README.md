@@ -18,6 +18,13 @@ Native Restaking via the EigenLayer Web App consists of the following actions:
 3. [Withdraw Native ETH or Validator Yield](#withdraw-native-eth-or-validator-yield)
 4. [Delegate and Undelegate](#delegate-and-undelegate)
 
+The diagram below outlines the operational flow of native restaking including:
+* Delegation
+* Redelegation (switching to a new Operator without exiting the validator)
+* Yield handling options
+* Exiting restaking.
+
+![native-restaking-processes.png](../../../../../static/img/native-restaking-processes.png)
 
 ## Gas Cost Planning
 
@@ -25,6 +32,12 @@ We recommend users connect many validators to a single EigenPod in order to redu
 
 
 ## Restake New Validator (Native Beacon Chain ETH)
+
+:::important
+Running your own EigenPod for native restaking is an advanced task that requires operating and maintaining Ethereum validator infrastructure.
+It involves managing validator keys and associated risks including slashing, downtime penalties, or loss of access to
+restaked funds if keys are lost or compromised. For more information, refer to [Ethereum Launchpad](https://launchpad.ethereum.org/en/).
+:::
 
 Create EigenPod:
 1. Visit the [EigenLayer App](https://app.eigenlayer.xyz/).
@@ -103,6 +116,11 @@ Redeposit or Complete Withdrawal: Redepositing is available at this step for use
 
 
 ## Delegate and Undelegate
+
+:::important
+Undelegating is not required to [exit and withdraw your validator](#withdraw-native-eth-or-validator-yield). Only undelegate if you intend to redelegate to a different
+Operator.
+:::
 
 Undelegate and/or Change Delegation
 1. Click Undelegate
