@@ -14,7 +14,7 @@ slash beyond its allocated unique stake (for example, a total protocol TVL drain
 pause and intervention.
 
 :::note
-In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow 
+In the protocol, the Slash Escrow Delay exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow 
 delay is reserved for future protocol use, need, and compatibility.
 :::
 
