@@ -9,6 +9,8 @@ stake can become redistributable. Stakers are responsible for ensuring that they
 their risk tolerances for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally,
 Stakers are responsible for continuing to monitor the allocations of their chosen Operators as they update allocations across
 various Operator Sets.
+
+AVSs using redistribution, and Operators running those AVSs, will be marked with appropriate metadata onchain and in the EigenLayer app.
 :::
 
 Safety delays are applied when allocating or deallocating to prevent rapid stake movements. Safety delays:

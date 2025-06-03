@@ -10,8 +10,7 @@ Redistibutable Slashing is available in v1.5 on testnets and will be available o
 
 Redistribution enables AVSs to repurpose slashed funds instead of burning them. In use cases such as lending and insurance protocols, 
 redistribution plays a key role. It enables the reallocation of funds when commitments are broken or conditions change. For example, 
-in the event of a liquidation or user reimbursement. Redistribution specifically benefits AVSs that need increased liquidity 
-and stronger risk management capabilities.
+in the event of a liquidation or user reimbursement.
 
 Redistribution extends slashing, allowing AVSs to not only penalize Operators for missed commitments but also strategically 
 redirect those funds. Using redistribution, AVSs can design systems that potentially reward reliable Operators using funds 
@@ -20,8 +19,11 @@ from those who underperform.
 Redistribution is opt-in only for AVSs, Operators, Stakers. AVSs choose whether to enable redistribution, Operators choose 
 whether to accept the redistribution conditions, and Stakers decide whether to delegate to Operators running redistribution.
 
+In general, there is a larger incentive to slash user funds when redistribution is enabled. Redistributable Operator Sets 
+may offer higher rewards, but these should be considered against the increased slashing risks.
+
 :::note
-All non-ETH assets, including Liquid Staking Tokens (LSTs), EIGEN, and AVS tokens, can be redistributed. ETH is not 
+All ERC-20 assets other than ETH, including Liquid Staking Tokens (LSTs), EIGEN, and AVS tokens, can be redistributed. ETH is not 
 yet eligible for redistribution.
 :::
 

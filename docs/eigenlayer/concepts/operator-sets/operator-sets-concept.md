@@ -18,6 +18,7 @@ By opting into the Operator Set for an AVS, Operators gain access to the AVS rew
 AVSs group Operators into Operator Sets based on unique business logic, hardware profiles, liveness guarantees, or composition 
 of stake. Operators use Operator Sets to allocate and deallocate [Unique Stake](../slashing/unique-stake.md). AVSs use Operator Sets to assign tasks to Operator 
 Sets to perform the service provided by the AVS, and for redistributable Operator Sets, specify the redistribution recipient.
+The redistribution recipient is an AVS-controlled role and cannot be changed after an Operator Set has been created.
 
 Operators are responsible for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before 
 opting into an Operator Set and allocating  stake to the Operator Set, as once allocated, those funds may be slashable 

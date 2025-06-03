@@ -34,7 +34,38 @@ against the increased slashing risks.
 
 The interactions between Staker, Operator, AVS, and core contracts during a slashing are represented in the sequence diagram.
 
-TODO - Add new diagram
+```mermaid
+sequenceDiagram
+    participant Staker as Staker
+    participant DelegationManager as DelegationManager Core Contract
+    participant Operator as Operator
+    participant AVS as AVS
+    participant AllocationManager as AllocationManager Core Contract
+    participant StrategyManager as Strategy Manager
+    participant SlashEscrow as SlashEscrowFactory Core Contract
+    participant EscrowClone as Slash Escrow Clone
+    participant BR as Burn Address or Redistribution Recipient
+
+    Note left of Staker: Staker deposits funds
+    Staker ->> DelegationManager: Delegate funds to an Operator
+    Staker -->> DelegationManager: Staker initiates withdrawal
+    Operator ->> AVS: Commit slashable offense
+    AVS ->> AVS: AVS verifies the slashable offence has occurred
+    Note right of AVS: (Optional) AVS-designed slashing governance
+    AVS ->> AllocationManager: Initiate operator slashing (slashOperator)
+    AllocationManager -->> AllocationManager: Update max magnitudes
+    AllocationManager -->> DelegationManager: Slash operator shares
+    DelegationManager -->> StrategyManager: Mark burnable shares for slashed operator
+    StrategyManager -->> SlashEscrow: Start 4-day escrow for redistribution or burn
+    StrategyManager ->> EscrowClone: Transfer underlying stake
+    Note over SlashEscrow: Wait for slash escrow delay to expire
+    BR ->> SlashEscrow: Redistribution only: Release tokens from escrow (releaseSlashEscrow)
+    Note over SlashEscrow: Burn only: Tokens released from escrow
+    SlashEscrow -->> EscrowClone: Release tokens for slash
+    EscrowClone -->>BR: Burn or redistribute tokens
+    Note right of BR: Final protocol fund outflow
+    DelegationManager-->>Staker: Receives decremented amount of stake
+```
 
 ## Burning or redistributing slashed funds
 
@@ -45,8 +76,9 @@ refer to Slash Escrow in the Security section.
 
 Once the Slash Escrow period has passed, the slashed funds exit the EigenLayer protocol:
 * For burnt funds, ERC-20s this is done by sending them to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
-accounting with various LRT protocols.
-* For redistributed funds, they are transferred to the `redistributionRecipient` specified when the redistributable Operator Set is created.
+accounting with various LRT protocols. No action is required by the AVS to burn the slashed funds.
+* For redistributed funds, the `redistributionRecipient` calls `releaseSlashEscrow` and the slashed funds
+are transferred to the `redistributionRecipient` specified when the redistributable Operator Set is created.
 
 Burnt natively Restaked ETH is locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
 to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead
