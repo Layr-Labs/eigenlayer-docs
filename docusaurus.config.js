@@ -325,7 +325,7 @@ const config = {
           },
           {
             from: "/developers/HowTo/slashing/design-operator-set",
-            to: "/developers/HowTo/build/slashing/design-operator-set",
+            to: "/developers/HowTo/build/operator-sets/design-operator-set",
           },
           {
             from: "/developers/HowTo/build/how-to-build-an-avs",
@@ -333,7 +333,7 @@ const config = {
           },
           {
             from: "/developers/HowTo/slashing/migrate-to-operatorsets",
-            to: "/developers/HowTo/build/slashing/migrate-to-operatorsets",
+            to: "/developers/HowTo/build/operator-sets/migrate-to-operatorsets",
           },
           {
             from: "/developers/HowTo/slashing/slashing-veto-committee-design",
