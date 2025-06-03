@@ -18,6 +18,13 @@ Native Restaking via the EigenLayer Web App consists of the following actions:
 3. [Withdraw Native ETH or Validator Yield](#withdraw-native-eth-or-validator-yield)
 4. [Delegate and Undelegate](#delegate-and-undelegate)
 
+The diagram below outlines the operational flow of native restaking including:
+* Delegation
+* Redelegation (switching to a new Operator without exiting the validator)
+* Yield handling options
+* Exiting restaking.
+
+![native-restaking-processes.png](../../../../../static/img/native-restaking-processes.png)
 
 ## Gas Cost Planning
 
