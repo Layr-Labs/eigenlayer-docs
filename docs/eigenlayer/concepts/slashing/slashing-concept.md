@@ -25,7 +25,7 @@ create robust legibility and process around how their slashing is designed and i
 for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before delegating stake to them, as once
 delegated, those funds may be slashable according to the conditions set by that AVS.
 
-With Redistributable Operator Sets, Stakers should carefully consider the protocols that their delegated Operators are running,
+With Redistributable Operator Sets, Stakers should carefully consider the AVSs that their delegated Operators are running,
 and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
 against the increased slashing risks.
 :::
