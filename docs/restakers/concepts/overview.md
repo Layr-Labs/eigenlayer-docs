@@ -57,8 +57,8 @@ may offer higher rewards, but these should be considered against the increased s
 :::
 
 :::note
-[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets. 
-Redistibutable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets. 
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
 :::
 
 AVSs create [Operator Sets](../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) that may include slashable
@@ -81,7 +81,7 @@ against the increased slashing risks.
 
 The redistribution recipient for an Operator Set is an immutable address set when the Operator Set is created. While an AVS
 may use an upstream proxy or pass-through contract, the immutability of this address in EigenLayer means an AVS can layer 
-additional guarantees by guarding the upgradability of the upstream contract via controls such as governance, and timelocks.
+additional guarantees by guarding the upgradability of the upstream contract via controls such as governance and timelocks.
 
 Security implications for Redistributable Operator Sets mean Stakers are potentially at risk from malicious AVSs and Operators. 
 If the AVS’s governance or its slashing functionality is corrupted, an attacker may be able to drain Operator-delegated funds. 

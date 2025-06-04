@@ -4,7 +4,7 @@ title: Slashing Delay
 ---
 
 :::note
-[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced the Slash Escrow. Redistibutable Slashing is available in v1.5 on testnets and will be
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced the Slash Escrow. Redistibutable Slashing is available in v1.5 on testnets and will be
 available on mainnet in Q3.
 ::: 
 
