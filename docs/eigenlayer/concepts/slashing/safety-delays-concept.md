@@ -19,13 +19,13 @@ Safety delays are applied when allocating or deallocating to prevent rapid stake
 * Preventing stake cycling to collect rewards. Delays ensure commitment periods to securing an AVS.
 
 :::note
-[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced the Slash Escrow. Redistibutable Slashing is available in v1.5 on testnets and will be
+[ELIP-006 Redistibutable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced the Slash Escrow. Redistributable Slashing is available in v1.5 on testnets and will be
 available on mainnet in Q3.
 :::
 
 EigenLayer has a slashing delay, known as Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows.
 All slashed funds (burnt or redistributed) go through a 4-day escrow period. The intention of the protocol design is to permit
-[Eigen Foundation governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) to interface with 
+[EigenLayer governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) to interface with 
 the slash escrow contracts in the case of a catastrophic slashing bug. An example of a catastrophic slashing bug is an implementation 
 bug in the protocol where an AVS could slash beyond its allocated unique stake (for example, a total protocol TVL drain). 
 For more information, refer to Slash Escrow in the Security section. 
