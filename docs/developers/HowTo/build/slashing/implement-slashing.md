@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Implement Slashing
 ---
 
@@ -8,35 +8,12 @@ If you're new to slashing in EigenLayer, make sure you're familiar with [Operato
 and [Slashing](../../../../eigenlayer/concepts/slashing/slashing-concept.md) before implementing slashing.
 :::
 
-The `AllocationManager` provides the interface for the slashing function.
+:::caution
+The v1.5.0 Redistribution release introduced the Slash Escrow Delay. All slashed funds are held in the `SlashEscrow` contracts
+for the Slash Escrow Delay before being burnt or redistributed.
+:::
 
-```solidity
-    /**
-     * @notice Called by an AVS to slash an operator in a given operator set
-     */
-
-    function slashOperator(
-        address avs,
-        SlashingParams calldata params
-    ) external;
-
-    /**
-     * @notice Struct containing parameters to slashing
-     * @param operator the address to slash
-     * @param operatorSetId the ID of the operatorSet the operator is being slashed on behalf of
-     * @param strategies the set of strategies to slash
-     * @param wadsToSlash the parts in 1e18 to slash, this will be proportional to the operator's
-     * slashable stake allocation for the operatorSet
-     * @param description the description of the slashing provided by the AVS for legibility
-     */
-    struct SlashingParams {
-        address operator;
-        uint32 operatorSetId;
-        IStrategy[] strategies;
-        uint256[] wadsToSlash;
-        string description;
-    }
-```
+The [`AllocationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/src/contracts/interfaces/IAllocationManager.sol) provides the interface for the `slashOperator` function.
 
 To implement slashing, AVSs specify:
 * Individual Operator
@@ -45,12 +22,28 @@ To implement slashing, AVSs specify:
 * [List of proportions (as `wads` or “parts per `1e18`”)](../../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
 * Description. 
 
-For example, in the `wadsToSlash` parameter: 
+## Define Slashing Proportions
+
+In the `wadsToSlash` parameter: 
 * 8% slash is represented as `8e16`, or `80000000000000000`. 
 * 25% slash is represented as `2.5e17` or `250000000000000000`. 
 
 The indexes in the two arrays must match across `strategies` and `wadsToSlash`. All Strategies supplied must be configured 
 as part of the Operator Set.
+
+For more information on how magnitudes are reduced when slashed, refer to [Magnitudes when Slashed](../../../../eigenlayer/concepts/slashing/magnitudes-when-slashed.md).
+
+## Define Upstream Redistribution Contracts 
+
+For redistributable Operator Sets, implement upstream contracts for [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient)
+to redistribute slashed funds once they have exited the protocol.
+
+## Returned by `slashOperator`
+
+The `slashOperator` function returns the `slashId` and number of shares slashed for each strategy. The `slashId` is 
+incremented for an OperatorSet each time an Operator Set is slashed. Use the `slashID` to programmatically handle slashings.
+
+## Slashing Event Emission
 
 When a slashing occurs, one event is emitted onchain for each slashing. Emitted details identify the Operator
 slashed, in what Operator Set, and across which Strategies, with fields for the proportion slashed and meta-data.
