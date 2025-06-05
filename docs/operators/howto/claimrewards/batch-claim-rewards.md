@@ -8,7 +8,7 @@ of multiple Earners in a single transaction.
 
 To batch claim rewards, use the `-–batch-claim-file` option:
 
-`eigenlayer rewards claim --earner-address 0x025246421e7247a729bbcff652c5cc1815ac6373 --eth-rpc-url http://rpc-url --network holesky --batch-claim-file samples/batch-claim.yaml`
+`eigenlayer rewards claim --earner-address 0x025246421e7247a729bbcff652c5cc1815ac6373 --eth-rpc-url http://rpc-url --network hoodi --batch-claim-file samples/batch-claim.yaml`
 
 The batch claim yaml file includes the Earner addresses, and token addresses for which to claim. For example:
 

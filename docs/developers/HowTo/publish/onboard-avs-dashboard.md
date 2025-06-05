@@ -9,10 +9,7 @@ The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
 </img>
 
 :::important
-While the Holesky network instability continues, AVS developers can use Sepolia for development and testing.
-
-Initially, the AVS Marketplace will not be available on Sepolia. For more information, refer to the 
-[EigenLayer blog](https://www.blog.eigenlayer.xyz/eigenlayer-update-holesky-network-instability-and-upcoming-sepolia-support/).
+The AVS Marketplace is not yet available on Sepolia or Hoodi testnets. 
 :::
 
 ## Adding a listing
