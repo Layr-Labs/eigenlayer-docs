@@ -13,10 +13,6 @@ Key EigenLayer Protocol references for this guide:
 * [Deployed Contract Addresses](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments): deployed contract addresses for Mainnet and Testnet.
 * [Integration Tests](https://github.com/Layr-Labs/eigenlayer-contracts/tree/dev/src/test/integration): tests that serve as examples on how to interact with the EigenLayer core contracts.
 
-
-
-
-
 ## Liquid Restaking Guide
 
 The following sections describe the steps to Restake "liquid" tokens (including LSTs EIGEN token, and any ERC20 token).
@@ -32,7 +28,7 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 
 ### Withdraw (Unstake) Liquid Tokens
 
-1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
+1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 14 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * `strategy` - use the address of the deployed strategy ([example list here](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments)).
    * `shares` - the number of shares in the given strategy. Note this parameter is not meant to reference the amount of the underlying token. Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between strategy shares and underlying token amounts.

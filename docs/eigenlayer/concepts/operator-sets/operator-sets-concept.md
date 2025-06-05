@@ -9,6 +9,7 @@ Redistributable Slashing is available in v1.5 on testnets and will be available 
 
 Before the Slashing and Operator Sets release, Operators registered to an AVS to earn rewards in the AVSDirectory. 
 We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/build/slashing/migrate-to-operatorsets.md). 
+
 :::
 
 Operator Sets determine which Operators secure an AVS and earn rewards. Each AVS defines one or more Operator Sets that
@@ -27,7 +28,7 @@ Redistributable Operator Sets may offer higher rewards, but these should be cons
 
 ## For AVS Developers
 
-For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/slashing/design-operator-set.md).
+For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/operator-sets/design-operator-set.md).
 
 ## For Operators
 
