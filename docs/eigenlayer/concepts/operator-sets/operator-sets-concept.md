@@ -13,7 +13,7 @@ We recommend existing AVSs [migrate to Operator Sets on testnet](../../../develo
 
 Operator Sets determine which Operators secure an AVS and earn rewards. Each AVS defines one or more Operator Sets that
 Operators may opt into. The opted in Operators are the set of Operators that are responsible for securing that service.
-By opting into the Operator Set for an AVS, Operators gain access to the AVS rewards, and the AVS slashing risks.
+By opting into the Operator Set for an AVS, Operators gain access to potential AVS rewards and are exposed to AVS slashing risks.
 
 AVSs group Operators into Operator Sets based on unique business logic, hardware profiles, liveness guarantees, or composition 
 of stake. Operators use Operator Sets to allocate and deallocate [Unique Stake](../slashing/unique-stake.md). AVSs use Operator Sets to assign tasks to Operator 

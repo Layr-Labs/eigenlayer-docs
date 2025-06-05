@@ -69,19 +69,19 @@ sequenceDiagram
 
 ## Burning or redistributing slashed funds
 
-When funds are slashed by an AVS, they are either burnt (for non-redistributable Operator Sets) or redistributed
+When funds are slashed by an AVS, they are either burned (for non-redistributable Operator Sets) or redistributed
 (for redistributable Operator Sets). Before exiting the protocol, slashed funds (marked for burning or redistributing)
 are transferred to `SlashEscrow` contracts and held for the Slash Escrow period. For more information on the Slash Escrow,
 refer to Slash Escrow in the Security section. 
 
 Once the Slash Escrow period has passed, the slashed funds exit the EigenLayer protocol:
-* For burnt funds, ERC-20s this is done by sending them to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
+* When burned, ERC-20s are sent to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
 accounting with various LRT protocols. No action is required by the AVS to burn the slashed funds.
 * For redistributed funds, the `redistributionRecipient` calls `releaseSlashEscrow` and the slashed funds
 are transferred to the `redistributionRecipient` specified when the redistributable Operator Set is created.
 
-Burnt natively Restaked ETH is locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
-to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead
+Burned natively restaked ETH is locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
+to unblock development of an EigenLayer upgrade which would burn natively restaked ETH by sending it to a dead address, instead
 of permanently locking it within EigenPod contracts.
 
 :::note

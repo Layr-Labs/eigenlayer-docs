@@ -19,15 +19,18 @@ Safety delays are applied when allocating or deallocating to prevent rapid stake
 * Preventing stake cycling to collect rewards. Delays ensure commitment periods to securing an AVS.
 
 :::note
-[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced the Slash Escrow. Redistributable Slashing is available in v1.5 on testnets and will be
-available on mainnet in Q3.
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduces a new core contract, the `SlashEscrowFactory`. Redistributable Slashing is 
+available in v1.5 on testnets and will be available on mainnet in Q3.
 :::
 
-EigenLayer has a slashing delay, known as Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows.
-All slashed funds (burnt or redistributed) go through a 4-day escrow period. The intention of the protocol design is to permit
-[EigenLayer governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) to interface with 
-the slash escrow contracts in the case of a catastrophic slashing bug. An example of a catastrophic slashing bug is an implementation 
-bug in the protocol where an AVS could slash beyond its allocated unique stake (for example, a total protocol TVL drain). 
-For more information, refer to Slash Escrow in the Security section. 
+The `SlashEscrowFactory` creates child contracts that hold and apply a delay on all slashed funds exiting the protocol 
+(whether burnable or redistributable). This design is intended to permit EigenLayer governance to interface with the slash 
+escrow contracts in the case of an EigenLayer protocol implementation bug. During the period between slash initiation and the 
+end of the delay, the [Pauser multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may 
+implement a pause per slash preventing the slashed funds from being released from a 
+child `SlashEscrow` contract. Prior to the release of slashed funds from a child SlashEscrow contract, the [Community multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may upgrade 
+the `SlashEscrowFactory` to return funds to the protocol. As of the date of release of v1.5 which includes Redistribution on testnet, the [Protocol Council](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) 
+is considering this security and governance design and what recommendations to make to the Community multisig. For more information, 
+refer to Slash Escrow in the Security section.
 
 For more information on provided safety delays, refer to the [Safety Delays reference](../../reference/safety-delays-reference).

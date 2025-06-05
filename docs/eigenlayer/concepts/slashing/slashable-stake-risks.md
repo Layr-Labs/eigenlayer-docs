@@ -19,7 +19,7 @@ Redistributable Slashing is available in v1.5 on testnets and will be available 
 AVSs create [Operator Sets](../operator-sets/operator-sets-concept.md) that may include slashable
 [Unique Stake](unique-stake.md), or be Redistributable Operator Sets, and Operators can
 allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake to an Operator, the delegated stake
-becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake. Slashed funds can be burnt or
+becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake. Slashed funds can be burned or
 redistributed.
 
 For more information on the safety delays for Stakers, refer to the [Safety Delays reference](../../reference/safety-delays-reference.md)
