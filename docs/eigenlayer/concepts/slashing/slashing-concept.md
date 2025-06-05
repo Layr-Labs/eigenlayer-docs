@@ -1,17 +1,16 @@
 ---
 sidebar_position: 1
-title: Slashing Overview
+title: Overview
 ---
 
 :::note
-
-Slashing implements [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
-
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
 :::
 
 Slashing is a type of penalty determined by an AVS as a deterrent for broken commitments by Operators. Broken commitments
 may include improperly or inaccurately completing tasks assigned in [Operator Sets](../operator-sets/operator-sets-concept) by an AVS. 
-Slashing results in a burning/loss of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
+Slashing results in a burning or redistribution of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
 
 An AVS may slash an Operator up to the total allocated amount of Unique Stake per [Strategy](../operator-sets/strategies-and-magnitudes) under the following conditions:
 * The Operator is registered to the Operator Set the AVS wishes to slash.
@@ -25,23 +24,69 @@ for any reason. Slashing does not have to be objectively attributable (that is, 
 create robust legibility and process around how their slashing is designed and individual slashing events. Operators are responsible
 for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before delegating stake to them, as once
 delegated, those funds may be slashable according to the conditions set by that AVS.
+
+With Redistributable Operator Sets, Stakers should carefully consider the AVSs that their delegated Operators are running,
+and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
+against the increased slashing risks.
 :::
 
-## Slashing sequence
+## Slashing sequence 
 
 The interactions between Staker, Operator, AVS, and core contracts during a slashing are represented in the sequence diagram.
 
-![Sequence Representation of a Slashing](/img/operator-guides/operator-sets-figure-5.png)
+```mermaid
+sequenceDiagram
+    participant Staker as Staker
+    participant DelegationManager as DelegationManager Core Contract
+    participant Operator as Operator
+    participant AVS as AVS
+    participant AllocationManager as AllocationManager Core Contract
+    participant StrategyManager as Strategy Manager
+    participant SlashEscrow as SlashEscrowFactory Core Contract
+    participant EscrowClone as Slash Escrow Clone
+    participant BR as Burn Address or Redistribution Recipient
 
-## Burning slashed funds
+    Note left of Staker: Staker deposits funds
+    Staker ->> DelegationManager: Delegate funds to an Operator
+    Staker -->> DelegationManager: Staker initiates withdrawal
+    Operator ->> AVS: Commit slashable offense
+    AVS ->> AVS: AVS verifies the slashable offence has occurred
+    Note right of AVS: (Optional) AVS-designed slashing governance
+    AVS ->> AllocationManager: Initiate operator slashing (slashOperator)
+    AllocationManager -->> AllocationManager: Update max magnitudes
+    AllocationManager -->> DelegationManager: Slash operator shares
+    DelegationManager -->> StrategyManager: Mark burnable shares for slashed operator
+    StrategyManager -->> SlashEscrow: Start 4-day escrow for redistribution or burn
+    StrategyManager ->> EscrowClone: Transfer underlying stake
+    Note over SlashEscrow: Wait for slash escrow delay to expire
+    BR ->> SlashEscrow: Redistribution only: Release tokens from escrow (releaseSlashEscrow)
+    Note over SlashEscrow: Burn only: Tokens released from escrow
+    SlashEscrow -->> EscrowClone: Release tokens for slash
+    EscrowClone -->>BR: Burn or redistribute tokens
+    Note right of BR: Final protocol fund outflow
+    DelegationManager-->>Staker: Receives decremented amount of stake
+```
 
-When funds are slashed by an AVS, the EigenLayer core contracts make slashed funds permanently inaccessible (burned).
-ERC-20s have this done by sending them to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
-accounting with various LRT protocols.
+## Burning or redistributing slashed funds
 
-Natively Restaked ETH will be locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
-to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead
-of permanently locking it within EigenPod contracts as planned in this release.
+When funds are slashed by an AVS, they are either burned (for non-redistributable Operator Sets) or redistributed
+(for redistributable Operator Sets). Before exiting the protocol, slashed funds (marked for burning or redistributing)
+are transferred to `SlashEscrow` contracts and held for the Slash Escrow period. For more information on the Slash Escrow,
+refer to Slash Escrow in the Security section. 
+
+Once the Slash Escrow period has passed, the slashed funds exit the EigenLayer protocol:
+* When burned, ERC-20s are sent to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
+accounting with various LRT protocols. No action is required by the AVS to burn the slashed funds.
+* For redistributed funds, the `redistributionRecipient` calls `releaseSlashEscrow` and the slashed funds
+are transferred to the `redistributionRecipient` specified when the redistributable Operator Set is created.
+
+Burned natively restaked ETH is locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
+to unblock development of an EigenLayer upgrade which would burn natively restaked ETH by sending it to a dead address, instead
+of permanently locking it within EigenPod contracts.
+
+:::note
+Native ETH cannot be redistributed.
+:::
 
 ## For AVS Developers 
 
