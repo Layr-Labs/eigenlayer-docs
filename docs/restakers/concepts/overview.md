@@ -97,8 +97,14 @@ for more detail.
 
 ## Slash Escrow 
 
-EigenLayer has a slashing delay, Slash Escrow, which is a critical security measure to bring guarantees to protocol outflows. All slashed funds
-(burnt or redistributed) go through a 4-day escrow period. For more information, refer to [Slash Escrow](../../eigenlayer/security/slashing-delay)
+The `SlashEscrowFactory` core contract creates child contracts that hold and apply a delay on all slashed funds exiting the protocol
+(whether burnable or redistributable). This design is intended to permit [EigenLayer governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) to interface with the slash
+escrow contracts in the case of an EigenLayer protocol implementation bug. During the period between slash initiation and the
+end of the delay, the [Pauser multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may implement a pause per slash preventing the slashed funds from being released from a
+child `SlashEscrow` contract. Prior to the release of slashed funds from a child `SlashEscrow` contract, the [Community multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may
+upgrade the `SlashEscrowFactory` to return funds to the protocol. As of the date of the v1.5 release which includes Redistribution on testnet, the
+[Protocol Council](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) is considering this security and governance design and what recommendations to make to the Community multisig.
+For more information, refer to Slash Escrow in the Security section.
 
 :::note
 In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow
