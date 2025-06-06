@@ -51,6 +51,12 @@ title: Operator Keys
 
 For information on Operator keys, refer to [Keys](../../eigenlayer/concepts/keys-and-signatures).
 
+:::important
+When running Redistributable Operator Sets, Operators must ensure sufficient focus is given to key management and opsec. 
+A compromise in an Operator key could enable a malicious actor to register for a malicious AVS, and slash and redistribute
+allocated Staker funds to a specified address.
+:::
+
 For information on key management best practices, refer to: 
 * [Node Operators](../howto/managekeys/institutional-operators.md)
 * [Solo Stakers](../howto/managekeys/solo-operators.md).
@@ -329,10 +335,13 @@ To generate the calldata, use:
 
 ---
 sidebar_position: 4
-
+title: Rewards Distribution Data
 ---
 
-# Rewards Distribution Data
+:::important
+After June 30, Rewards snapshot distribution data will no longer be updated in the [public S3 bucket](#via-s3-bucket). To continue getting updated rewards data,
+users of the S3 bucket must migrate to the EigenLayer Sidecar by June 30.
+:::
 
 Rewards snapshot distribution data is available:
 * From an [EigenLayer Sidecar](#using-eigenlayer-sidecar).
@@ -396,6 +405,11 @@ To obtain rewards snapshot distribution data using a EigenLayer Sidecar:
    ```
 
 ## Via S3 Bucket
+
+:::important
+After June 30, Rewards snapshot distribution data will no longer be updated in the [public S3 bucket](#via-s3-bucket). To continue getting updated rewards data,
+users of the S3 bucket must migrate to the EigenLayer Sidecar by June 30.
+:::
 
 To obtain rewards snapshot distribution data from the S3 bucket: 
 
@@ -592,6 +606,14 @@ title: Node and Smart Contract Operators
 # Smart Contract Operators
 
 We encourage institutional operators to register with EigenLayer using an [erc-1271](https://eips.ethereum.org/EIPS/eip-1271) smart contract wallet. This allows a lot more fine-grained control, such as multisig authorization and key rotation, which is currently not possible for EOA operators.
+
+# Redistributable Operator Sets
+
+When running Redistributable Operator Sets, Operators must ensure sufficient focus is given to key management and opsec.
+A compromise in an Operator key could enable a malicious actor to register for a malicious AVS, and slash and redistribute
+allocated Staker funds to a specified address.
+
+Redistributable Operators Sets are identifiable by onchain metadata ([`AllcationManager.isRedistributingOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.5.0-rc.0/src/contracts/interfaces/IAllocationManager.sol)). 
 
 ---
 
@@ -1078,7 +1100,14 @@ title: Allocate and Register to Operator Set
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets and Allocations work.
+Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets, Allocations, and Redistribution work.
+
+When participating in Redistributable Operator Sets, Operator metadata identifies an Operator as `Redistributable`. 
+The metedata helps Stakers to assess risk, but might affect an Operator's staking appeal. Operators should weigh this profile
+change against the potential for higher rewards from protocols with different risk and reward structures. 
+
+In general, there is a larger incentive to slash when redistribution is enabled. Redistributable Operator Sets may offer higher rewards, 
+but these should be considered against the increased slashing risks.
 :::
 
 Set Allocation Delay:

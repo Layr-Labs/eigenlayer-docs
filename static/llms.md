@@ -15,13 +15,13 @@
 - [Add ERC-20 Tokens as Restakable Asset](developers/HowTo/build/avs-permissionlesss): Permissionless token support enables any ERC-20 token to be permissionlessly added as a restakable asset, significantly broadening
 - [Manage Registered Operators](developers/HowTo/build/manage-registered-operators): AVSRegistrar
 - [Create Operator Sets](developers/HowTo/build/operator-sets/create-operator-sets): If you're new to Operator Sets in EigenLayer, review the Operator Sets concepts before continuing with this topic.
+- [Design Operator Sets](developers/HowTo/build/operator-sets/design-operator-set): An Operator Set is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The
+- [Migrate to Operator Sets](developers/HowTo/build/operator-sets/migrate-to-operatorsets): The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to Operator Sets before the
 - [Modify Strategy Composition](developers/HowTo/build/operator-sets/modify-strategy-composition): An Operator Set requires at least one Strategy.
 - [Update AVS Metadata](developers/HowTo/build/operator-sets/update-avs-metadata): The AVS metadata is used to provide information on the EigenLayer App for Stakers and Operators.
 - [Register AVS Metadata](developers/HowTo/build/register-avs-metadata): Metadata must be registered:
-- [Design Operator Sets](developers/HowTo/build/slashing/design-operator-set): An Operator Set is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The
 - [Implement Slashing](developers/HowTo/build/slashing/implement-slashing): If you're new to slashing in EigenLayer, make sure you're familiar with Operator Sets
-- [Migrate to Operator Sets](developers/HowTo/build/slashing/migrate-to-operatorsets): The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to Operator Sets before the
-- [Design Slashing Conditions](developers/HowTo/build/slashing/slashing-veto-committee-design): Slashing Vetoes
+- [Design Slashing](developers/HowTo/build/slashing/slashing-veto-committee-design): Slashing Vetoes
 - [Submit Rewards Submissions](developers/HowTo/build/submit-rewards-submissions): RewardsCoordinator.createAVSRewardsSubmission and RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission use AVSDirectory.
 - [Add and Remove Admins](developers/HowTo/build/uam/dev-add-remove-admins): Security of admin keys is critical. UAM enables appointees with lessened permissions, and use of keys that can be rotated or
 - [Add and Remove Appointees](developers/HowTo/build/uam/dev-add-remove-appointees): Only admins (or the account if no admin has been set) can add appointees. Unlike adding an admin, there is no requirement
@@ -30,6 +30,7 @@
 - [Get started](developers/HowTo/get-started/quickstart): We are in the process of updating our samples to include Rewards and Slashing capabilities. The Hello World AVS example will be
 - [Get Support](developers/HowTo/get-started/support): If you have any questions or comments throughout the AVS development process, you can get support by reaching out to us using the Intercom button on the bottom right side of this page or clicking here. We will promptly follow up with support!
 - [Onboard to AVS Dashboard](developers/HowTo/publish/onboard-avs-dashboard): The AVS Dashboard (also known as AVS Marketplace) lists registered AVSs.
+- [Obtain Testnet ETH](developers/HowTo/test/obtain-testnet-eth): The Obtaining testnet ETH and liquid staking tokens (LSTs) topic describes how to obtain testnet ETH and LSTs for
 - [Test AVS](developers/HowTo/test/test-avs): AVS Devnet is currently in Public Alpha and is rapidly being upgraded. Features may be added, removed or otherwise improved or modified,
 - [AI Resources](developers/Reference/ai-resources): These text and markdown files contain documentation and code optimized for use with LLMs and AI tools.
 - [AVS Developer Security Best Practices](developers/Reference/avs-developer-best-practices): AVS Developer Security Best Practices
@@ -37,7 +38,7 @@
 - [Developer Resources](developers/Reference/resources): We are in the process of updating our samples, SDKs, and the EigenLayer CLI to include Rewards and Slashing capabilities. The samples, SDKs, and CLI will be
 - [Keys and Signatures](eigenlayer/concepts/keys-and-signatures): In the EigenLayer ecosystem, signatures play a crucial role in ensuring the integrity and authenticity of operations.
 - [Allocation and Deallocation](eigenlayer/concepts/operator-sets/allocation-deallocation): Allocations
-- [Operator Sets Overview](eigenlayer/concepts/operator-sets/operator-sets-concept): ELIP-002 Slashing via Unique Stake & Operator Sets introduced Operator Sets.
+- [Operator Sets Overview](eigenlayer/concepts/operator-sets/operator-sets-concept): ELIP-006 Redistributable Slashing introduced Redistributable Operator Sets.
 - [Strategies and Magnitudes](eigenlayer/concepts/operator-sets/strategies-and-magnitudes): ELIP-002 Slashing via Unique Stake & Operator Sets introduced Operator Sets.
 - [Earners, Claimers, and Reward Recipients](eigenlayer/concepts/rewards/earners-claimers-recipients): Earners are addresses that accrue Rewards within the EigenLayer ecosystem and are Stakers, Operators, or in the case of refunds,
 - [Programmatic Incentives Split](eigenlayer/concepts/rewards/pi-split): Programmatic Incentives are EIGEN tokens minted by the EigenLayer protocol to Stakers and Operators.
@@ -47,10 +48,11 @@
 - [Rewards Split](eigenlayer/concepts/rewards/rewards-split): Operators earn rewards by opting into the Operator Sets of AVSs that implement Rewards. By default, Operators earn a 10% split
 - [Rewards Submission](eigenlayer/concepts/rewards/rewards-submission): AVSs make rewards submissions specifying:
 - [Magnitudes when Slashed](eigenlayer/concepts/slashing/magnitudes-when-slashed): If you're new to slashing in EigenLayer, make sure you're familiar with Operator Sets
-- [Safety Delays](eigenlayer/concepts/slashing/safety-delays-concept): When the Slashing and Operator Set upgrade is live on mainnet, stake can become slashable for a Staker that has previously
-- [Slashable Stake Risks](eigenlayer/concepts/slashing/slashable-stake-risks): With Slashing, stake can become slashable for a Staker that has previously
-- [Slashing Overview](eigenlayer/concepts/slashing/slashing-concept): Slashing implements ELIP-002: Slashing via Unique Stake & Operator Sets.
-- [Unique Stake](eigenlayer/concepts/slashing/unique-stake): ELIP-002 Slashing via Unique Stake & Operator Sets introduced Operator Sets and Slashing.
+- [Redistribution](eigenlayer/concepts/slashing/redistribution): ELIP-006 Redistributable Slashing introduced Redistributable Operator Sets.
+- [Safety Delays](eigenlayer/concepts/slashing/safety-delays-concept): Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+- [Slashable Stake Risks](eigenlayer/concepts/slashing/slashable-stake-risks): Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+- [Overview](eigenlayer/concepts/slashing/slashing-concept): ELIP-006 Redistributable Slashing introduced Redistributable Operator Sets.
+- [Unique Stake](eigenlayer/concepts/slashing/unique-stake): Unique Stake ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer.
 - [Accounts](eigenlayer/concepts/uam/uam-accounts): The account is the Ethereum address that interacts with the EigenLayer core contracts if no appointees are set.
 - [Admins](eigenlayer/concepts/uam/uam-admins): Admins can take any action on behalf of the original account that appointed them including adding or removing admins. Creating
 - [Appointees](eigenlayer/concepts/uam/uam-appointees): Appointees act as another account for a specific function for a specific contract, granting accounts granular access control.
@@ -67,7 +69,7 @@
 - [Community and EIGEN Claim Support](eigenlayer/overview/support): For any discussion, engagement, and learning about EigenLayer, please join the EigenLayer Community Discord.
 - [Whitepapers](eigenlayer/overview/whitepaper): EigenLayer the research paper that formed the basis of the EigenLayer protocol development. The document discusses the original architecture of EigenLayer, the Restaking primitive, and the concept of AVSs. Please note that some components of the design have changed since the original conception of the protocol. Use this document for high level guidance. For specific implementation details, please see the respective protocol implementation source code repositories.
 - [Allocation Manager Interface](eigenlayer/reference/allocation-manager-interface): The AllocationManager interface handles all allocation and deallocation signals.
-- [Safety Delays](eigenlayer/reference/safety-delays-reference): Safety delays for allocations and deallocations are included in the table.
+- [Safety Delays](eigenlayer/reference/safety-delays-reference): ELIP-006 Redistributable Slashing introduced Redistributable Operator Sets.
 - [Releases and Compatibility Matrix](eigenlayer/releases): The table displays:
 - [APIs, Dashboards, and Tooling](eigenlayer/resources/apis-and-dashboards): APIs
 - [EigenLayer Infinite Hackathon](eigenlayer/resources/infinite-hackathon): The EigenLayer Infinite Hackathon encourages submissions from developers building on EigenLayer, EigenLayer AVSs, EigenDA, and rollups built on EigenDA at any hackathon happening anywhere at any time now and in the future, both in-person and online.
@@ -75,8 +77,9 @@
 - [EigenLayer Roadmap](eigenlayer/roadmap): EigenLayer is a protocol and developer platform for building, operating, and securing verifiable applications and services
 - [Audits](eigenlayer/security/audits): As a key component of our development process, please see the most recent audits that help assess the robustness and reliability of our systems:
 - [Bug Bounty](eigenlayer/security/bug-bounty): Check out the official bug bounty program for EigenLayer on Immunefi
-- [Guardrails](eigenlayer/security/guardrails): There will be a 7-day withdrawal delay that will serve as a security measure during the early stages of the EigenLayer mainnet, to optimize for the safety of assets. This withdrawal lag, which is common in staking protocols, is required when AVSs go live, as there is a lag to verify that activity associated with any AVS was completed successfully.
+- [Guardrails](eigenlayer/security/guardrails): There will be a 14-day withdrawal delay that will serve as a security measure during the early stages of the EigenLayer mainnet, to optimize for the safety of assets. This withdrawal lag, which is common in staking protocols, is required when AVSs go live, as there is a lag to verify that activity associated with any AVS was completed successfully.
 - [Governance](eigenlayer/security/multisig-governance): Please see EigenFoundation Governance for latest information.
+- [Slashing Delay](eigenlayer/security/slashing-delay): ELIP-006 Redistributable Slashing introduced the SlashEscrowFactory core contract. Redistributable Slashing is available in v1.5 on testnets and will be
 - [Withdrawal Delay](eigenlayer/security/withdrawal-delay): EigenLayer contracts feature a withdrawal delay for LST tokens, EIGEN token, and Native Restaking, a critical security measure for instances of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. The delays serve as a preventive mechanism and also allows, in certain cases, to help mitigate protocol attacks. When contracts are paused and withdrawals disabled, the system enables arbitrary state or code changes to the contracts through upgrades. While technically feasible, such interventions are not a routine practice and should be approached with caution.
 - [Overview](operators/concepts/operator-introduction): What is a Node Operator within EigenLayer?
 - [Operator Keys](operators/concepts/operator-keys): For information on Operator keys, refer to Keys.
@@ -85,7 +88,7 @@
 - [Batch Claim Rewards](operators/howto/claimrewards/batch-claim-rewards): Batch rewards claiming for Stakers and Operators using the EigenLayer CLI is a gas efficient way to claim on behalf
 - [Claim Rewards](operators/howto/claimrewards/claim-rewards-cli): Prerequisites
 - [Claim Rewards as a Smart Contract](operators/howto/claimrewards/claim-rewards-smart-contract): To claim rewards when the Earner is a smart contract,
-- [Rewards Distribution Data](operators/howto/confirgurerewards/rewards-snapshot-data): Rewards snapshot distribution data is available:
+- [Rewards Distribution Data](operators/howto/confirgurerewards/rewards-snapshot-data): After June 30, Rewards snapshot distribution data will no longer be updated in the public S3 bucket. To continue getting updated rewards data,
 - [Set Programmatic Incentives Split](operators/howto/confirgurerewards/set-pi-split): The default Operator split for Programmatic Incentives (PI) is 10%.
 - [Set Rewards Claimer](operators/howto/confirgurerewards/set-rewards-claimer): Prerequisites
 - [Set Rewards Split](operators/howto/confirgurerewards/set-rewards-split): The default Operator split for rewards is 10%. The Operator split can be varied by AVS or by Operator Set.
@@ -93,7 +96,7 @@
 - [Solo stakers](operators/howto/managekeys/solo-stakers): Individuals managing a limited number of validator keys typically do not require intricate distributed infrastructure for running nodes or employing remote signers. For these individuals, extensive staking services may be excessive and unnecessary. This means they will often store the keys with the decryption keys locally with the validator client or Node (which they maintain), which increases the vulnerability of the secrets, but, while stakers must safeguard validator keys against attacks, most key losses typically result from mundane reasons, such as losing the hardware containing the key. Users necessitate a backup strategy, mindful that if an attacker accesses the backed-up keys, they can sign any message deemed valid against the validator's public key. Appropriate precautions should be implemented to guarantee that backed-up validator keys are as inaccessible as feasible, ideally being completely offline and physically secure. Some of these precautions can be listed:
 - [Follow Webapp Content Guidelines](operators/howto/operator-content-guidelines): Operator Page
 - [Install and register Operators](operators/howto/operator-installation): Node Operator Checklist
-- [Allocate and Register to Operator Set](operators/howto/operator-sets): Before proceeding, review the Slashing Concept content for information on how Operator Sets and Allocations work.
+- [Allocate and Register to Operator Set](operators/howto/operator-sets): Before proceeding, review the Slashing Concept content for information on how Operator Sets, Allocations, and Redistribution work.
 - [Troubleshoot](operators/howto/troubleshooting): Before creating an issue with EigenLayer support please check this page to see if you can resolve your issues. If you are still stuck, please create a support ticket
 - [Add and Remove Admins](operators/howto/uam/op-add-remove-admins): Security of admin keys is critical. UAM enables appointees with lessened permissions, and use of keys that can be rotated or
 - [Add and Remove Appointees](operators/howto/uam/op-add-remove-appointees): Only admins (or the account if no admin has been set) can add appointees. Unlike adding an admin, there is no requirement
@@ -103,11 +106,11 @@
 - [Claim Rewards using EigenLayer App](restakers/restaking-guides/claim-rewards-app): For information on Rewards concepts, refer to Rewards Overview.
 - [Restaking Smart Contract Developer](restakers/restaking-guides/restaking-developer-guide): Smart Contract Restaking allows the user to interact directly with the EigenLayer core contracts. The following sections describe how to setup your Restaking integration with the EigenLayer contracts directly with no reliance on the EigenLayer Web App.
 - [Restake and Delegate](restakers/restaking-guides/restaking-user-guide/liquid-restaking/restake-lsts): The following instructions will walk you through how tokens can be restaked on the EigenLayer Web App.
-- [Unstake and Withdraw](restakers/restaking-guides/restaking-user-guide/liquid-restaking/withdraw-from-eigenlayer): All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn. Please see the Escrow Period section for more detail.
+- [Unstake and Withdraw](restakers/restaking-guides/restaking-user-guide/liquid-restaking/withdraw-from-eigenlayer): Unstaking is the first step in the process of exiting restaked assets from EigenLayer. Unstaked tokens enter the withdrawal
 - [Native Restaking](restakers/restaking-guides/restaking-user-guide/native-restaking/README): Please read this entire guide before launching your new validator or integrating your existing validator. Before you deploy a new validator you must plan to either:
 - [Delegate to an Operator](restakers/restaking-guides/restaking-user-guide/restaker-delegation/delegate-to-an-operator): Follow the steps below to initiate delegation of your Restaked balance to an Operator of your choice. This Restaked balance includes EIGEN tokens, LST tokens, and Native Restaked TVL.
 - [Change Your Delegation](restakers/restaking-guides/restaking-user-guide/restaker-delegation/redelegation-process): The following steps are necessary for a Restaker to move their Delegated balance to a New Operator. The process below requires users to perform each of the following steps in order:
 - [Undelegate and Initiate Withdrawal](restakers/restaking-guides/restaking-user-guide/restaker-delegation/undelegate-from-an-operator-and-initiate-withdrawal): Restakers can Undelegate their balance from an Operator at any time. Undelegation flows are the same for both Native and LST Restakers.
-- [Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)](restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts): In this guide, we will show you how to use a Holesky faucet to load your wallet with testnet ETH and how to obtain Holesky Liquid Staking Tokens so you can start testing liquid restaking.
+- [Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)](restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts): To obtain testnet ETH, use a faucet to load your wallet with testnet ETH.
 - [Testnet Restaking](restakers/restaking-guides/testnet/README): Testing Restaking on the Holesky Testnet
 - [Restaking Smart Contract Developer (Testnet)](restakers/restaking-guides/testnet/restaking-developer-guide): The following instructions include an overview of the changes to Smart Contract Restaking per the Slashing and Operator Set release. All existing instructions on Restaking Smart Contract Developer remain unchanged for this update, except where noted below.

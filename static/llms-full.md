@@ -72,6 +72,13 @@ title: AVS Keys
 
 For information on AVS key types, refer to [Keys](../../eigenlayer/concepts/keys-and-signatures).
 
+:::important
+When using Redistribution, an attacker that gains access to AVS keys for the slasher and `redistributionRecipient` can drain
+the entirety of Operator and Staker allocated stake for a given Operator Set. 
+:::
+
+
+
 ---
 
 ---
@@ -98,6 +105,7 @@ The list of security models is not exhaustive. The EigenLayer protocol provides 
 AVSs have flexibility to design their protocols to slash for any reason. AVSs are encouraged to:
 * Create robust legibility and process around how their slashing is designed and individual slashing events. 
 * Clearly communicate slashing design and individual slashing events to their Operator and Staker communities. 
+* Make strong guarantees about how upstream contracts function for Redistributing Operator Sets to their Operator and Staker communities.
 :::
 
 ---
@@ -122,14 +130,11 @@ The EigenLayer core contracts are documented in the [eigenlayer-contracts](https
 | [AllocationManager](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#allocationmanager)       | Responsible for creating Operator Sets, and Operator registrations to Operator Sets. The Allocation Manager also tracks allocation of stake to a Operator Set, and enables AVSs to slash that stake.                                         
 | [RewardsCoordinator](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#allocationmanager)      | Enables AVSs to distribute ERC20 tokens to Operators and Restakers who delegated assets to Operators. The RewardsCoordinator tracks the rewards and enables Operators and Restakers to claim them.                                           
 | [PermissionController](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#permissioncontroller) | Enables AVSs and operators to delegate the ability to call certain core contract functions to other addresses. For more information, refer to [User Access Management](../../../eigenlayer/concepts/uam/user-access-management.md).          |
-| [AVSDirectory](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#avsdirectory)                 | Has been replaced by AllocationManager and will be deprecated in a future release.                                                                                                                                                           | 
+| [SlashEscrowFactory](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.5.0-rc.0/docs/core/SlashEscrowFactory.md)                                                                                                   | Responsible for burning or redistribution of slashed funds. The SlashEscrowFactory enforces the Slash Escrow Delay, deploys the Slash Escrow clone for each slash, and releases funds from the Slash Escrow contract. For redistributed funds, called by the [`redistributionRecipient`](../slashing/slashing-concept-developers.md#redistribution-recipient) to release funds.                              
+| [AVSDirectory](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#avsdirectory)                 | Has been replaced by AllocationManager and will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/operator-sets/migrate-to-operatorsets.md) on Testnet.                   | 
 
-AVSDirectory will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
-on Testnet.
-
-This documentation matches the functionality available on the [Sepolia testnet](https://www.blog.eigenlayer.xyz/the-future-of-eigenlayer-testing-new-and-improved-testnets-tooling-coming-soon/). For mainnet
-specific documentation, refer to the `/docs` repository on the `mainnet` branch in the [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
-repository.
+This documentation matches the functionality available in [v1.5.0 of the core contracts](../../../eigenlayer/releases.md). For release specific
+documentation for other releases, refer to the `/docs` repository on the branch for that release in the [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts) repository.
 
 ---
 
@@ -160,10 +165,26 @@ title: Slashing
 For information on how slashing works, refer to concept content on [Slashing](../../../eigenlayer/concepts/slashing/slashing-concept.md) and
 [Operator Sets](../../../eigenlayer/concepts/operator-sets/operator-sets-concept).
 
+## Redistribution Recipient
+
+:::important
+When using Redistribution, an attacker that gains access to AVS keys for the slasher and `redistributionRecipient` can drain
+the entirety of Operator and Staker allocated stake for a given Operator Set.
+:::
+
+When creating a redistributable Operator Set, an immutable `redistributionRecipient` is specified. The `redistributionRecipient`
+should be:
+* An AVS-controlled role and signing key.
+* A smart contract wallet or mulit-sig to ensure enhanced security and programmability.
+
+The `redistributionRecipient` address cannot be changed. While an AVS may use an upstream proxy or pass-through contract, 
+the immutability of this address in EigenLayer means an AVS can layer additional guarantees by guarding the upgradability 
+of the upstream contract via controls such as governance, and timelocks.
+
 For information on how to implement slashing, refer to: 
 * [Implement Slashing](../../HowTo/build/slashing/implement-slashing)
-* [Design Operator Sets](../../HowTo/build/slashing/design-operator-set.md)
-* [Migrate to Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
+* [Design Operator Sets](../../HowTo/build/operator-sets/design-operator-set.md)
+* [Migrate to Operator Sets](../../HowTo/build/operator-sets/migrate-to-operatorsets.md)
 * [Veto Committee Design](../../HowTo/build/slashing/slashing-veto-committee-design.md)
 
 ---
@@ -190,7 +211,7 @@ title: User Access Management
 
 :::note
 There is no support for setting appointees for AVSDirectory functions. The AVSDirectory method will be deprecated in a future upgrade.
-[All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](../HowTo/build/slashing/migrate-to-operatorsets.md).
+[All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](../HowTo/build/operator-sets/migrate-to-operatorsets.md).
 :::
 
 For concept material on User Access Management (UAM) and roles, refer to:
@@ -206,6 +227,7 @@ The protocol functions that an AVS can set appointees for are:
 * [`AllocationManager.setAVSRegistrar`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#setavsregistrar)
 * [`AllocationManager.updateAVSMetadataURI`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#updateavsmetadatauri)
 * [`AllocationManager.createOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#createoperatorsets)
+* `AllocationManager.createRedistributingOperatorSets`
 * [`AllocationManager.addStrategiesToOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#addstrategiestooperatorset)
 * [`AllocationManager.removeStrategiesFromOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#removestrategiesfromoperatorset)
 * [`RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createoperatordirectedavsrewardssubmission)
@@ -289,7 +311,7 @@ deregistration also reverts and does not occur.
 ---
 
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Create Operator Sets
 ---
 
@@ -297,22 +319,132 @@ title: Create Operator Sets
 If you're new to Operator Sets in EigenLayer, review the [Operator Sets concepts](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) before continuing with this topic.
 :::
 
-Creating Operator Sets for an AVS is managed by the [AllocationManager core contract](../../../Concepts/eigenlayer-contracts/core-contracts.md).
+Creating Operator Sets for an AVS is managed by the [AllocationManager core contract](../../../Concepts/eigenlayer-contracts/core-contracts.md). Before Operator Sets can be created,
+[AVS metadata must be registered](../register-avs-metadata.md).
+
 [Strategies](../../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes) can be added to Operator Sets when the Operator is created, or Strategies can be added to an existing Operator Set.
+
+Operator Sets are either: 
+* [Non-redistributing](#create-operator-set). Slashed funds are burnt.
+* [Redistributing](#create-redistributing-operator-set). Slashed funds are sent to the [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient).
+
+The Operator Set type cannot be changed.
+
+## Create Operator Set
 
 To create an Operator Set, call the [`createOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#createoperatorsets) function.
 To add strategies when creating an Operator Set, specify a `params` array containing the strategies.
 
-On creation, an `id` is assigned to the Operator Set. Together the AVS `address` and `id` are a unique identifier for the Operator Set. 
+On creation, an `id` is assigned to the Operator Set. Together the AVS `address` and `id` are a unique identifier for the Operator Set.
+For non-redistributing Operator Sets, the `redistributionRecipient` is the `DEFAULT_BURN_ADDRESS`.
 
-Once created, [update the AVS metadata](update-avs-metadata.md) to provide information on the Operator Set to Stakers and Operators.
+## Create Redistributing Operator Set
 
-For information on adding Strategies to an Operator Set after creation, refer to [Modify Strategy Composition](modify-strategy-composition.md).
+To create a redistributing Operator Set, call the `createRedistributingOperatorSets` function.
+
+To add strategies when creating an Operator Set, specify a `params` array containing the strategies.
+Native ETH cannot be added as a strategy for redistributing Operator Sets because redistribution of native ETH is not supported.
+
+Specify the address to receive slashed funds in `redistributionRecipients`.  The `redistributionRecipient` can only be set 
+when creating the Operator Set and cannot be changed. 
+
+On creation, an `id` is assigned to the Operator Set. Together the AVS `address` and `id` are a unique identifier for the Operator Set.
+
+## Complete Operator Set Configuration
+
+Once created:
+1. [Update the AVS metadata](update-avs-metadata.md) to provide information on the Operator Set to Stakers and Operators.
+2. If required, [add additional Strategies](modify-strategy-composition.md) to the Operator Set.
 
 ---
 
 ---
-sidebar_position: 2
+sidebar_position: 1
+title: Design Operator Sets
+---
+
+An [Operator Set](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The 
+EigenLayer protocol does not enforce criteria for Operator Sets.
+
+## Operator Set Types
+
+Operator Sets are either:
+* [Non-redistributing](create-operator-sets.md#create-operator-set). Slashed funds are burnt.
+* [Redistributing](create-operator-sets.md#create-redistributing-operator-set). Slashed funds are sent to the [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient).
+
+The Operator Set type cannot be changed.
+
+## Operator Set Groupings
+
+Best practices for Operator Set design are to logically group AVS tasks (and verification) into separate Operator Sets. 
+Organize your Operator Sets according to conditions for which you wish to distribute Rewards. Potential conditions include:
+* Unique business logic.
+* Unique Stake (cryptoeconomic security) amount and types of token required to be allocated from Operators.
+* Slashing conditions.
+* Ejection criteria.
+* Quantity of Operators and criteria for operators allowed.
+* Hardware profiles.
+* Liveness guarantees.
+
+For more information on Operator Sets, refer to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept).
+
+---
+
+---
+sidebar_position: 5
+title: Migrate to Operator Sets
+---
+
+**The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
+upcoming deprecation of AVSDirectory.**
+
+Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
+1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
+2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
+3. [Communicate to Operators](#communicate-to-operators)
+
+Migrating now gives time to switch existing quorums over to Operator Sets. After the migration has occurred,
+integrations with slashing can go live on Testnet, followed by Mainnet. M2 registration and Operator Set registration can operate in parallel.
+
+## Upgrade middleware contracts
+
+To migrate to Operator Sets:
+
+1. Upgrade middleware contracts to handle the callback from the AllocationManager. The upgrade provides the RegistryCoordinator
+the hooks to handle the callback from the AllocationManager. 
+2. From the ServiceManager call, add an account to update the AVSRegistrar:
+      * With setAppointee where the target is the AllocationManager.
+      * The selector is the setAVSRegistrar selector.
+3. Call setAVSRegistrar on the AllocationManager from the appointee account and set the RegistryCoordinator as your AVSRegistrar
+so that it becomes the destination for registration and deregistration hooks
+
+See example [RegistryCoordinator implementation with the new hooks](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/src/SlashingRegistryCoordinator.sol).
+
+## Integrate the AllocationManager
+
+Integrate the AllocationManager by:
+
+1. Creating Operator Sets through the AllocationManager.
+2. Adding (or later removing) specific Strategies to that Operator Set to enable Operators to secure the AVS.
+3. Specifying an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
+
+## Communicate to Operators
+
+1. Communicate to Operators how to:
+   1. Register for Operator Sets using the new registration pathway. 
+   2. Allocate slashable stake for slashable Operator Sets.
+2. Migrate to distribution of tasks based on the delegated and slashable stake of Operators registered to the AVS’s Operator Sets.
+
+To ensure community and incentive alignment, AVSs need to conduct offchain outreach to communicate
+the purpose and task/security makeup of their Operator Sets with their Operators and Stakers before beginning registration.
+Include any potential hardware, software, or stake requirements in the communication. The AVS decides task distribution
+within an Operator Set.
+
+
+---
+
+---
+sidebar_position: 4
 title: Modify Strategy Composition
 ---
 
@@ -321,6 +453,10 @@ An Operator Set requires at least one [Strategy](../../../../eigenlayer/concepts
 To add Strategies to an existing Operator Set, call the [`addStrategiesToOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#addstrategiestooperatorset) function.
 
 To remove Strategies from an Operator Set, call the [`removeStrategiesFromOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#removestrategiesfromoperatorset) function.
+
+:::note
+The Native Eth strategy cannot be added to Redistributing Operator Sets.
+:::
 
 ---
 
@@ -432,29 +568,7 @@ repository to add your logo.
 ---
 
 ---
-sidebar_position: 3
-title: Design Operator Sets
----
-
-An [Operator Set](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The 
-EigenLayer protocol does not enforce criteria for Operator Sets.
-
-Best practices for Operator Set design are to logically group AVS tasks (and verification) into separate Operator Sets. 
-Organize your Operator Sets according to conditions for which you wish to distribute Rewards. Potential conditions include:
-* Unique business logic.
-* Unique Stake (cryptoeconomic security) amount and types of token required to be allocated from Operators.
-* Slashing conditions.
-* Ejection criteria.
-* Quantity of Operators and criteria for operators allowed.
-* Hardware profiles.
-* Liveness guarantees.
-
-For more information on Operator Sets, refer to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept).
-
----
-
----
-sidebar_position: 1
+sidebar_position: 2
 title: Implement Slashing
 ---
 
@@ -463,35 +577,12 @@ If you're new to slashing in EigenLayer, make sure you're familiar with [Operato
 and [Slashing](../../../../eigenlayer/concepts/slashing/slashing-concept.md) before implementing slashing.
 :::
 
-The `AllocationManager` provides the interface for the slashing function.
+:::caution
+The v1.5.0 Redistribution release introduced the Slash Escrow Delay. All slashed funds are held in the `SlashEscrow` contracts
+for the Slash Escrow Delay before being burnt or redistributed.
+:::
 
-```solidity
-    /**
-     * @notice Called by an AVS to slash an operator in a given operator set
-     */
-
-    function slashOperator(
-        address avs,
-        SlashingParams calldata params
-    ) external;
-
-    /**
-     * @notice Struct containing parameters to slashing
-     * @param operator the address to slash
-     * @param operatorSetId the ID of the operatorSet the operator is being slashed on behalf of
-     * @param strategies the set of strategies to slash
-     * @param wadsToSlash the parts in 1e18 to slash, this will be proportional to the operator's
-     * slashable stake allocation for the operatorSet
-     * @param description the description of the slashing provided by the AVS for legibility
-     */
-    struct SlashingParams {
-        address operator;
-        uint32 operatorSetId;
-        IStrategy[] strategies;
-        uint256[] wadsToSlash;
-        string description;
-    }
-```
+The [`AllocationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/src/contracts/interfaces/IAllocationManager.sol) provides the interface for the `slashOperator` function.
 
 To implement slashing, AVSs specify:
 * Individual Operator
@@ -500,12 +591,28 @@ To implement slashing, AVSs specify:
 * [List of proportions (as `wads` or “parts per `1e18`”)](../../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
 * Description. 
 
-For example, in the `wadsToSlash` parameter: 
+## Define Slashing Proportions
+
+In the `wadsToSlash` parameter: 
 * 8% slash is represented as `8e16`, or `80000000000000000`. 
 * 25% slash is represented as `2.5e17` or `250000000000000000`. 
 
 The indexes in the two arrays must match across `strategies` and `wadsToSlash`. All Strategies supplied must be configured 
 as part of the Operator Set.
+
+For more information on how magnitudes are reduced when slashed, refer to [Magnitudes when Slashed](../../../../eigenlayer/concepts/slashing/magnitudes-when-slashed.md).
+
+## Define Upstream Redistribution Contracts 
+
+For redistributable Operator Sets, implement upstream contracts for [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient)
+to redistribute slashed funds once they have exited the protocol.
+
+## Returned by `slashOperator`
+
+The `slashOperator` function returns the `slashId` and number of shares slashed for each strategy. The `slashId` is 
+incremented for an OperatorSet each time an Operator Set is slashed. Use the `slashID` to programmatically handle slashings.
+
+## Slashing Event Emission
 
 When a slashing occurs, one event is emitted onchain for each slashing. Emitted details identify the Operator
 slashed, in what Operator Set, and across which Strategies, with fields for the proportion slashed and meta-data.
@@ -520,61 +627,8 @@ event OperatorSlashed(
 ---
 
 ---
-sidebar_position: 2
-title: Migrate to Operator Sets
----
-
-**The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
-upcoming deprecation of AVSDirectory.**
-
-Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
-1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
-2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
-3. [Communicate to Operators](#communicate-to-operators)
-
-Migrating now gives time to switch existing quorums over to Operator Sets. After the migration has occurred,
-integrations with slashing can go live on Testnet, followed by Mainnet. M2 registration and Operator Set registration can operate in parallel.
-
-## Upgrade middleware contracts
-
-To migrate to Operator Sets:
-
-1. Upgrade middleware contracts to handle the callback from the AllocationManager. The upgrade provides the RegistryCoordinator
-the hooks to handle the callback from the AllocationManager. 
-2. From the ServiceManager call, add an account to update the AVSRegistrar:
-      * With setAppointee where the target is the AllocationManager.
-      * The selector is the setAVSRegistrar selector.
-3. Call setAVSRegistrar on the AllocationManager from the appointee account and set the RegistryCoordinator as your AVSRegistrar
-so that it becomes the destination for registration and deregistration hooks
-
-See example [RegistryCoordinator implementation with the new hooks](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/src/SlashingRegistryCoordinator.sol).
-
-## Integrate the AllocationManager
-
-Integrate the AllocationManager by:
-
-1. Creating Operator Sets through the AllocationManager.
-2. Adding (or later removing) specific Strategies to that Operator Set to enable Operators to secure the AVS.
-3. Specifying an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
-
-## Communicate to Operators
-
-1. Communicate to Operators how to:
-   1. Register for Operator Sets using the new registration pathway. 
-   2. Allocate slashable stake for slashable Operator Sets.
-2. Migrate to distribution of tasks based on the delegated and slashable stake of Operators registered to the AVS’s Operator Sets.
-
-To ensure community and incentive alignment, AVSs need to conduct offchain outreach to communicate
-the purpose and task/security makeup of their Operator Sets with their Operators and Stakers before beginning registration.
-Include any potential hardware, software, or stake requirements in the communication. The AVS decides task distribution
-within an Operator Set.
-
-
----
-
----
-sidebar_position: 4
-title: Design Slashing Conditions
+sidebar_position: 1
+title: Design Slashing
 ---
 
 ## Slashing Vetoes
@@ -597,6 +651,11 @@ Ensure that your slashing process can be resolved within the `DEALLOCATION_DELAY
 between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. 
 This will ensure that the slashing event is carried out for the Operator before their stake is deallocated.
 
+## Redistribution
+
+Redistribution may enable AVSs to benefit from a theft related to slashing so additional design care must be taken to consider
+the incentives of all parties interacting with the redistribution. Redistribution enables more use-case opportunities 
+but the higher risk and slash incentive must be considered for the participants running the AVS code.
 
 ---
 
@@ -607,7 +666,7 @@ title: Submit Rewards Submissions
 
 :::important
 `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` use AVSDirectory. 
-The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](slashing/migrate-to-operatorsets.md).
+The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](operator-sets/migrate-to-operatorsets.md).
 
 If you are currently using AVSDirectory, `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` can continue to be used while AVSDirectory is being used.
 :::
@@ -1121,6 +1180,16 @@ To complete the process of onboarding your AVS to mainnet AVS Marketplace Dashbo
 ---
 
 ---
+sidebar_position: 1
+title: Obtain Testnet ETH
+---
+
+The [Obtaining testnet ETH and liquid staking tokens (LSTs)](../../../restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts.md) topic describes how to obtain testnet ETH and LSTs for
+testing AVSs.
+
+---
+
+---
 sidebar_position: 4
 title: Test AVS
 ---
@@ -1161,23 +1230,23 @@ These text and markdown files contain documentation and code optimized for use w
   </thead>
   <tbody>
     <CopyButton
-      title="llms.txt"
-      filePath="../../llms.txt"
+      title="llms.md"
+      filePath="../../llms.md"
       description="Navigation index of all EigenLayer documentation pages."
     />
     <CopyButton
-      title="llms-full.txt"
-      filePath="../../llms-full.txt"
+      title="llms-full.md"
+      filePath="../../llms-full.md"
       description="Complete EigenLayer documentation."
     />
     <CopyButton
-      title="avs-developer-docs.txt"
-      filePath="../../avs-developer-docs.txt"
+      title="avs-developer-docs.md"
+      filePath="../../avs-developer-docs.md"
       description="AVS Developers documentation."
     />
     <CopyButton
-      title="operators-developer-docs.tx"
-      filePath="../../operators-developer-docs.txt"
+      title="operators-developer-docs.md"
+      filePath="../../operators-developer-docs.md"
       description="Operators documentation."
     />
     <CopyButton
@@ -1585,28 +1654,31 @@ title: Operator Sets Overview
 ---
 
 :::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets. 
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
 
-[ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) introduced Operator Sets.
+Before the Slashing and Operator Sets release, Operators registered to an AVS to earn rewards in the AVSDirectory. 
+We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/build/operator-sets/migrate-to-operatorsets.md). 
 
-
-Currently, Operators register to an AVS to earn rewards in the AVSDirectory. We recommend existing AVSs [migrate to Operator Sets on testnet](../../../developers/HowTo/build/slashing/migrate-to-operatorsets.md). 
 :::
 
 Operator Sets determine which Operators secure an AVS and earn rewards. Each AVS defines one or more Operator Sets that
 Operators may opt into. The opted in Operators are the set of Operators that are responsible for securing that service.
-By opting into the Operator Set for an AVS, Operators gain access to the AVS rewards, and the AVS slashing risks.
+By opting into the Operator Set for an AVS, Operators gain access to potential AVS rewards and are exposed to AVS slashing risks.
 
 AVSs group Operators into Operator Sets based on unique business logic, hardware profiles, liveness guarantees, or composition 
 of stake. Operators use Operator Sets to allocate and deallocate [Unique Stake](../slashing/unique-stake.md). AVSs use Operator Sets to assign tasks to Operator 
-Sets to perform the service provided by the AVS.
+Sets to perform the service provided by the AVS, and for redistributable Operator Sets, specify the redistribution recipient.
+The redistribution recipient is an AVS-controlled role and cannot be changed after an Operator Set has been created.
 
 Operators are responsible for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before 
 opting into an Operator Set and allocating  stake to the Operator Set, as once allocated, those funds may be slashable 
-according to any conditions set by that AVS. 
+according to any conditions set by that AVS. In general, there is a larger incentive to slash when redistribution is enabled. 
+Redistributable Operator Sets may offer higher rewards, but these should be considered against the increased slashing risks.
 
 ## For AVS Developers
 
-For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/slashing/design-operator-set.md).
+For information on designing Operator Sets, refer to [Design Operator Sets](../../../developers/HowTo/build/operator-sets/design-operator-set.md).
 
 ## For Operators
 
@@ -1934,21 +2006,75 @@ Slashing by one Operator Set does not affect the magnitudes of EIGEN allocated t
 ---
 
 ---
+sidebar_position: 2
+title: Redistribution
+---
+
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
+
+Redistribution enables AVSs to repurpose slashed funds instead of burning them. In use cases such as lending and insurance protocols, 
+redistribution plays a key role. It enables the reallocation of funds when commitments are broken or conditions change, for example, 
+in the event of a liquidation or user reimbursement. Redistribution may be particularly beneficial for AVS use-cases that involve 
+lending, insurance, risk hedging, or, broadly, commitments with a need to compensate harmed parties or amortize risk.
+
+Redistribution extends slashing, allowing AVSs to not only penalize Operators for missed commitments but also strategically 
+redirect slashed funds for their use-case, which could include compensating harmed parties or potentially rewarding reliable Operators.
+
+Redistribution is opt-in only for AVSs, Operators, and Stakers. AVSs choose whether to enable redistribution by creating
+redistributable Operator Sets, Operators choose whether to accept the redistribution conditions, and Stakers decide whether 
+to delegate to Operators allocated to redistributable Operator Sets.
+
+In general, there is a larger incentive to slash user funds when redistribution is enabled. Redistributable Operator Sets 
+may offer higher rewards, but these should be considered against the increased slashing risks.
+
+:::note
+All ERC-20 assets staked on EigenLayer, including Liquid Staking Tokens (LSTs), EIGEN, and AVS tokens, can be redistributed. Native ETH is not 
+yet eligible for redistribution.
+:::
+
+For information on: 
+* Implementing redistributable slashing, refer to Create Operator Sets in the Developer section.
+* Opting into redistributable Operator Sets, refer to Allocate and Register to Operator Set in the Operator section.
+
+---
+
+---
 sidebar_position: 4
 title: Safety Delays
 ---
 
 :::important
-When the Slashing and Operator Set upgrade is live on mainnet, stake can become slashable for a Staker that has previously 
-delegated stake to an Operator. Stakers are responsible for ensuring that they fully understand and confirm their risk tolerances 
-for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, stakers are responsible 
-for continuing to monitor the allocations of their chosen Operators as they update allocations across various Operator Sets.
+Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+stake can become redistributable if an Operator allocates to a redistributable Operator Set. Stakers are responsible for 
+ensuring that they fully understand and confirm their risk tolerances for existing and future delegations to Operators and the 
+Operator’s slashable allocations. Additionally, Stakers are responsible for continuing to monitor the allocations of their 
+chosen Operators as they update allocations across various Operator Sets.
+
+AVSs using redistribution, and Operators running those AVSs, will be marked with appropriate metadata onchain and in the EigenLayer app.
 :::
 
 Safety delays are applied when allocating or deallocating to prevent rapid stake movements. Safety delays:
 * Ensure stability. Delays ensure gradual transitions when stake is being allocated or dellocated enabling AVSs to adjust to changes in Operator security.
 * Reduce risks from slashing. Delays ensure that staked assets remain at risk for a period after deallocation preventing the withdrawal of stake immediately before a slashing event to avoid slashing penalties.
 * Preventing stake cycling to collect rewards. Delays ensure commitment periods to securing an AVS.
+
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduces a new core contract, the `SlashEscrowFactory`. Redistributable Slashing is 
+available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
+
+The `SlashEscrowFactory` creates child contracts that hold and apply a delay on all slashed funds exiting the protocol 
+(whether burnable or redistributable). This design is intended to permit EigenLayer governance to interface with the slash 
+escrow contracts in the case of an EigenLayer protocol implementation bug. During the period between slash initiation and the 
+end of the delay, the [Pauser multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may 
+implement a pause per slash preventing the slashed funds from being released from a 
+child `SlashEscrow` contract. Prior to the release of slashed funds from a child SlashEscrow contract, the [Community multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may upgrade 
+the `SlashEscrowFactory` to return funds to the protocol. As of the date of release of v1.5 which includes Redistribution on testnet, the [Protocol Council](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) 
+is considering this security and governance design and what recommendations to make to the Community multisig. For more information, 
+refer to Slash Escrow in the Security section.
 
 For more information on provided safety delays, refer to the [Safety Delays reference](../../reference/safety-delays-reference).
 
@@ -1961,41 +2087,42 @@ title: Slashable Stake Risks
 ---
 
 :::important
-With Slashing, stake can become slashable for a Staker that has previously 
-delegated stake to an Operator. Stakers are responsible for ensuring that they fully understand and confirm their risk tolerances 
-for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, stakers are responsible 
-for continuing to monitor the allocations of their chosen Operators as they update allocations across various Operator Sets.
+Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+stake can become redistributable. Stakers are responsible for ensuring that they fully understand and confirm
+their risk tolerances for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally,
+Stakers are responsible for continuing to monitor the allocations of their chosen Operators as they update allocations across
+various Operator Sets.
 :::
 
-AVSs can create [Operator Sets](../operator-sets/operator-sets-concept) that may include slashable 
-[Unique Stake](unique-stake.md), and Operators can allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake 
-to an Operator, the delegated stake becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake.
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
 
-Stakers are responsible for understanding the increased risk posed by allocation of their delegated stake as slashable 
-Unique Stake to an AVS. While the allocation of delegated stake to an Operator Set may be subject to the [Allocation Config 
-Delay and Allocation Delay](../../reference/safety-delays-reference.md), it is important to understand the increased risk.
+AVSs create [Operator Sets](../operator-sets/operator-sets-concept.md) that may include slashable
+[Unique Stake](unique-stake.md), or be Redistributable Operator Sets, and Operators can
+allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake to an Operator, the delegated stake
+becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake. Slashed funds can be burned or
+redistributed.
 
-For more information on the safety delays for Stakers, refer to the :
-* [Safety Delays reference](../../reference/safety-delays-reference.md)
-* [Allocating and Deallocating to Operator Sets section of ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
+For more information on the safety delays for Stakers, refer to the [Safety Delays reference](../../reference/safety-delays-reference.md)
 
 
 ---
 
 ---
 sidebar_position: 1
-title: Slashing Overview
+title: Overview
 ---
 
 :::note
-
-Slashing implements [ELIP-002: Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md).
-
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
 :::
 
 Slashing is a type of penalty determined by an AVS as a deterrent for broken commitments by Operators. Broken commitments
 may include improperly or inaccurately completing tasks assigned in [Operator Sets](../operator-sets/operator-sets-concept) by an AVS. 
-Slashing results in a burning/loss of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
+Slashing results in a burning or redistribution of funds. AVSs can only slash an Operator’s [Unique Stake](unique-stake.md) allocated to a single Operator Set.
 
 An AVS may slash an Operator up to the total allocated amount of Unique Stake per [Strategy](../operator-sets/strategies-and-magnitudes) under the following conditions:
 * The Operator is registered to the Operator Set the AVS wishes to slash.
@@ -2009,29 +2136,75 @@ for any reason. Slashing does not have to be objectively attributable (that is, 
 create robust legibility and process around how their slashing is designed and individual slashing events. Operators are responsible
 for ensuring that they fully understand the slashing conditions and slashing risks of AVSs before delegating stake to them, as once
 delegated, those funds may be slashable according to the conditions set by that AVS.
+
+With Redistributable Operator Sets, Stakers should carefully consider the AVSs that their delegated Operators are running,
+and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
+against the increased slashing risks.
 :::
 
-## Slashing sequence
+## Slashing sequence 
 
 The interactions between Staker, Operator, AVS, and core contracts during a slashing are represented in the sequence diagram.
 
-![Sequence Representation of a Slashing](/img/operator-guides/operator-sets-figure-5.png)
+```mermaid
+sequenceDiagram
+    participant Staker as Staker
+    participant DelegationManager as DelegationManager Core Contract
+    participant Operator as Operator
+    participant AVS as AVS
+    participant AllocationManager as AllocationManager Core Contract
+    participant StrategyManager as Strategy Manager
+    participant SlashEscrow as SlashEscrowFactory Core Contract
+    participant EscrowClone as Slash Escrow Clone
+    participant BR as Burn Address or Redistribution Recipient
 
-## Burning slashed funds
+    Note left of Staker: Staker deposits funds
+    Staker ->> DelegationManager: Delegate funds to an Operator
+    Staker -->> DelegationManager: Staker initiates withdrawal
+    Operator ->> AVS: Commit slashable offense
+    AVS ->> AVS: AVS verifies the slashable offence has occurred
+    Note right of AVS: (Optional) AVS-designed slashing governance
+    AVS ->> AllocationManager: Initiate operator slashing (slashOperator)
+    AllocationManager -->> AllocationManager: Update max magnitudes
+    AllocationManager -->> DelegationManager: Slash operator shares
+    DelegationManager -->> StrategyManager: Mark burnable shares for slashed operator
+    StrategyManager -->> SlashEscrow: Start 4-day escrow for redistribution or burn
+    StrategyManager ->> EscrowClone: Transfer underlying stake
+    Note over SlashEscrow: Wait for slash escrow delay to expire
+    BR ->> SlashEscrow: Redistribution only: Release tokens from escrow (releaseSlashEscrow)
+    Note over SlashEscrow: Burn only: Tokens released from escrow
+    SlashEscrow -->> EscrowClone: Release tokens for slash
+    EscrowClone -->>BR: Burn or redistribute tokens
+    Note right of BR: Final protocol fund outflow
+    DelegationManager-->>Staker: Receives decremented amount of stake
+```
 
-When funds are slashed by an AVS, the EigenLayer core contracts make slashed funds permanently inaccessible (burned).
-ERC-20s have this done by sending them to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
-accounting with various LRT protocols.
+## Burning or redistributing slashed funds
 
-Natively Restaked ETH will be locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
-to unblock development of an EigenLayer upgrade which would burn Natively Restaked ETH by sending it to a dead address, instead
-of permanently locking it within EigenPod contracts as planned in this release.
+When funds are slashed by an AVS, they are either burned (for non-redistributable Operator Sets) or redistributed
+(for redistributable Operator Sets). Before exiting the protocol, slashed funds (marked for burning or redistributing)
+are transferred to `SlashEscrow` contracts and held for the Slash Escrow period. For more information on the Slash Escrow,
+refer to Slash Escrow in the Security section. 
+
+Once the Slash Escrow period has passed, the slashed funds exit the EigenLayer protocol:
+* When burned, ERC-20s are sent to the dead 0x00...00e16e4 address. The dead address is used to ensure proper
+accounting with various LRT protocols. No action is required by the AVS to burn the slashed funds.
+* For redistributed funds, the `redistributionRecipient` calls `releaseSlashEscrow` and the slashed funds
+are transferred to the `redistributionRecipient` specified when the redistributable Operator Set is created.
+
+Burned natively restaked ETH is locked in EigenPod contracts, permanently inaccessible. The Ethereum Pectra upgrade is anticipated
+to unblock development of an EigenLayer upgrade which would burn natively restaked ETH by sending it to a dead address, instead
+of permanently locking it within EigenPod contracts.
+
+:::note
+Native ETH cannot be redistributed.
+:::
 
 ## For AVS Developers 
 
 For information on:
 * AVS security models and slashing, refer to [AVS Security Models](../../../developers/Concepts/avs-security-models.md). 
-* Design considerations for slashing, refer to [Design Operator Sets](../../../developers/HowTo/build/slashing/design-operator-set.md) and [Design Slashing Conditions](../../../developers/HowTo/build/slashing/slashing-veto-committee-design.md).
+* Design considerations for slashing, refer to [Design Operator Sets](../../../developers/HowTo/build/operator-sets/design-operator-set.md) and [Design Slashing Conditions](../../../developers/HowTo/build/slashing/slashing-veto-committee-design.md).
 * Implementing slashing, refer to [Implement Slashing](../../../developers/HowTo/build/slashing/implement-slashing.md).
 
 ## For Operators
@@ -2044,12 +2217,6 @@ For information on allocating to Operator Sets, refer to [Allocate and Register 
 sidebar_position: 2
 title: Unique Stake
 ---
-
-:::note
-
-[ELIP-002 Slashing via Unique Stake & Operator Sets](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md) introduced Operator Sets and Slashing.
-
-:::
 
 Unique Stake ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. 
 Unique Stake is allocated to different [Operator Sets](../operator-sets/operator-sets-concept) on an opt-in basis by Operators. Only Unique Stake is slashable by AVSs, 
@@ -2789,27 +2956,28 @@ sidebar_position: 2
 
 - **Allocation / Deallocation:** an in-protocol commitment of security to an AVS’s Operator Set by an Operator. The act of allocating demarcates portions of an Operator’s delegated stake as Unique Stake, making it slashable by a single AVS. Deallocation is the same process in reverse, subject to additional time delays that ensure AVSs can appropriately slash for tasks that have occurred in the past.
 
-- **AVS Developer**: development team that builds an AVS service.
+- **AVS Developer:** development team that builds an AVS service.
 - **Cryptoeconomic security:** security model that uses economic incentives and cryptography to ensure the proper functioning and security of a network.
 - **Delegation:** the process by which a Staker assigns their staked tokens to a chosen Operator, granting the Operator the authority to use the value of those tokens for validating AVSs. The Operator cannot directly access the delegated tokens, but can subject any delegated tokens to slashing by an AVS. Delegations themselves are the sum of a given Operator’s delegated stake from Stakers.
 - **EigenPod:** contract that is deployed on a per-user basis that facilitates native restaking.
 - **Free-market governance:** EigenLayer provides an open market mechanism that allows stakers to choose which services to opt into, based on their own risk and reward analysis.
 - **Liquid Staking:** a service that enables users to deposit their ETH into a staking pool and receive a liquid staking token. This token represents a claim on their ETH and its staking yield. Liquid staking tokens can be traded in the DeFi ecosystem and redeemed for their underlying ETH value after a waiting period.
 - **LST Restaking:** a method where LST holders restake their Liquid Staking Tokens (LSTs) by transferring them into the EigenLayer smart contracts.
-- **Magnitude**: The accounting tool used to track Operator allocations to Operator Sets. Represented as \`wads\` in the AllocationManager and \`bips\` in the CLI. Magnitudes represent proportions of an Operator’s delegations for a specific Strategy. The sum of all of an Operator’s Magnitudes cannot exceed the INITIAL\_TOTAL\_MAGNITUDE.
+- **Magnitude:** The accounting tool used to track Operator allocations to Operator Sets. Represented as \`wads\` in the AllocationManager and \`bips\` in the CLI. Magnitudes represent proportions of an Operator’s delegations for a specific Strategy. The sum of all of an Operator’s Magnitudes cannot exceed the INITIAL\_TOTAL\_MAGNITUDE.
 - **Native Restaking:** a method where Ethereum stakers restake their staked ETH natively by pointing their withdrawal credentials to the EigenLayer contracts.
 - **On-chain slashing contract:** a smart contract deployed by service modules on EigenLayer that enforces slashing, specifying and penalizing any misbehavior.
 - **Operator:** An entity that registers an Operator address on Eigenlayer to receive delegations from Stakers and run AVS infrastructure. Operators allocate their delegated stake to Operator Sets created by an AVS.
 - **Operator Set:** a segmentation of Operators created by an AVS that secures a specific set of tasks for the AVS with staked assets that may be reserved for securing that set.
 - **Pooled security via restaking:** when multiple parties combine their resources to provide greater security for a system. In EigenLayer, Ethereum stakers can “restake” their ETH or Liquid Staking Tokens (LST) by opting into new services built on EigenLayer.
-- **Programmatic Incentives** are EIGEN tokens minted by the EigenLayer protocol to Stakers and Operators.
-- **Restaker**: a person who restakes Native or LST ETH to the EigenLayer protocol.
-- **Rewards**: Tokens sent by AVSs to Stakers and/or Operators to compensate participation.
+- **Programmatic Incentives:** are EIGEN tokens minted by the EigenLayer protocol to Stakers and Operators.
+- **Restaker:** a person who restakes Native or LST ETH to the EigenLayer protocol.
+- **Rewards:** Tokens sent by AVSs to Stakers and/or Operators to compensate participation.
 - **Slashing:** A penalty for improperly or inaccurately completing tasks assigned in Operator Sets by an AVS. A slashing results in a burning/loss of funds.
 - **Staker:** An individual address that directly supplies assets to Eigenlayer. Such an address could be an EOA wallet or a smart contract controlled by an individual or institution.
-- **Strategies**: assets that are restaked into the platform.
+- **Strategies:** assets that are restaked into the platform.
 - **Unique Stake:** Assets made slashable exclusively by one Operator Set. Unique Stake is an accounting tool defined on the level of Operator Sets that ensures AVSs and Operators maintain key safety properties when handling staked security and slashing on EigenLayer. Unique Stake is allocated to different Operator Sets on an opt-in basis by Operators. Unique Stake represents the proportion of an Operator’s delegated stake from Stakers that an AVS can slash.
 - **Withdrawal:** The process through which assets are moved out of the EigenLayer protocol after safety delays and with applied slashings to the nominal amounts. 
+
 
 ---
 
@@ -2938,18 +3106,27 @@ sidebar_position: 4
 title: Safety Delays
 ---
 
-Safety delays for allocations and deallocations are included in the table.
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
 
-| Parameter | Description                                                                                                                                                                                                                                                                                                                                           | Value | Setter & Configuration |
-| :---- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| :---- | :---- |
-| `ALLOCATION_CONFIGURATION_DELAY` | Amount of blocks between an Operator queuing an `ALLOCATION_DELAY` change and the change taking effect.                                                                                                                                                                                                                                               | 126000 blocks (~17.5 days) | Core Protocol: Set via governance |
-| `ALLOCATION_DELAY` | Amount of blocks it takes for an Operator’s allocation to be live in an Operator Set for a given Strategy. Must be set by the Operator before any allocations and applies globally to all Operator Sets and Strategies.  The protocol provides no constraints on this value. It can be any unsigned integer value and can be changed by the Operator. | Unsigned integer value representing a number of blocks  | Operator: Set via `AllocationManager` Must be set in order to allocate |
-| `DEALLOCATION_DELAY` | Amount of blocks between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. This delay also applies to an Operator *deregistering* from an Operator Set, either by their own action or that of the AVS.                                                                              | 100800 blocks (~14 days) | Core Protocol: Set via governance |
-| `INITIAL_TOTAL_MAGNITUDE` | Initial value of the monotonically decreasing total magnitude for every Operator for every strategy. Initially set high enough to start out with a large level of precision in magnitude allocations and slashings.                                                                                                                                   | 1e18 | Core Protocol: Constant, unlikely to change |
-| `WITHDRAWAL_DELAY` | Amount of blocks between a Staker queueing a withdrawal and the withdrawal becoming non-slashable and completable.                                                                                                                                                                                                                                    | 100800 blocks (~14 days) | Core Protocol: Set via governance |
+EigenLayer Safety Delays are included in the following table.
+
+| Parameter                        | Description                                                                                                                                                                                                                                                                                                                                                                                    | Value                                                  | Setter & Configuration |
+|:---------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------| :---- |
+| `ALLOCATION_CONFIGURATION_DELAY` | Amount of blocks between an Operator queuing an `ALLOCATION_DELAY` change and the change taking effect.                                                                                                                                                                                                                                                                                        | 126000 blocks (~17.5 days)                             | Core Protocol: Set via governance |
+| `ALLOCATION_DELAY`               | Amount of blocks it takes for an Operator’s allocation to be live in an Operator Set for a given Strategy. Must be set by the Operator before any allocations and applies globally to all Operator Sets and Strategies.  The protocol provides no constraints on this value. It can be any unsigned integer value and can be changed by the Operator.                                          | Unsigned integer value representing a number of blocks | Operator: Set via `AllocationManager` Must be set in order to allocate |
+| `DEALLOCATION_DELAY`             | Amount of blocks between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. This delay also applies to an Operator *deregistering* from an Operator Set, either by their own action or that of the AVS.                                                                                                                       | 100800 blocks (~14 days)                               | Core Protocol: Set via governance |
+| `INITIAL_TOTAL_MAGNITUDE`        | Initial value of the monotonically decreasing total magnitude for every Operator for every strategy. Initially set high enough to start out with a large level of precision in magnitude allocations and slashings.                                                                                                                                                                            | 1e18                                                   | Core Protocol: Constant, unlikely to change |
+| `WITHDRAWAL_DELAY`               | Amount of blocks between a Staker queueing a withdrawal and the withdrawal becoming non-slashable and completable.                                                                                                                                                                                                                                                                             | 100800 blocks (~14 days)                               | Core Protocol: Set via governance |
+| `SLASH_ESCROW_DELAY`             | Amount of blocks between a slashing event and the slashing becoming non-pausable and the slashed funds being burnable or redistributable. In the protocol, the delay exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of this delay is reserved for future protocol use, need, and compatibility. | 28800 blocks (~4 days)                                 | Core Protocol: Set via governance
 
 :::note 
-On EigenLayer testnet deployments, the `ALLOCATION_CONFIGURATION_DELAY` is set to 75 blocks (~15 mins), and the `DEALLOCATION_DELAY` and `WITHDRAWAL_DELAY` is set to 25 blocks (~5 mins) for ease of use.
+For ease of use on EigenLayer testnet deployments:
+* `ALLOCATION_CONFIGURATION_DELAY` is set to 75 blocks (~15 mins)
+* `DEALLOCATION_DELAY` and `WITHDRAWAL_DELAY` are set to 25 blocks (~5 mins)
+* `SLASH_ESCROW_DELAY` is set to 5 blocks (~1 min).
 :::
 
 ---
@@ -3022,7 +3199,7 @@ Refer to:
 
 Refer to: 
 * [Operator Sets concept](concepts/operator-sets/operator-sets-concept)
-* For developers, [Create Operator Sets](../developers/HowTo/build/operator-sets/create-operator-sets.md) and [Migrate to Operator Sets](../developers/HowTo/build/slashing/migrate-to-operatorsets)
+* For developers, [Create Operator Sets](../developers/HowTo/build/operator-sets/create-operator-sets.md) and [Migrate to Operator Sets](../developers/HowTo/build/operator-sets/migrate-to-operatorsets.md)
 * For Operators, [Allocate and Register to Operator Sets](../operators/howto/operator-sets)
 
 #### User Access Management (UAM)
@@ -3342,7 +3519,7 @@ sidebar_position: 4
 
 # Guardrails
 
-There will be a 7-day [withdrawal delay](withdrawal-delay.md) that will serve as a security measure during the early stages of the EigenLayer mainnet, to optimize for the safety of assets. This withdrawal lag, which is common in staking protocols, is required when AVSs go live, as there is a lag to verify that activity associated with any AVS was completed successfully.
+There will be a 14-day [withdrawal delay](withdrawal-delay.md) that will serve as a security measure during the early stages of the EigenLayer mainnet, to optimize for the safety of assets. This withdrawal lag, which is common in staking protocols, is required when AVSs go live, as there is a lag to verify that activity associated with any AVS was completed successfully.
 
 ---
 
@@ -3353,6 +3530,36 @@ sidebar_position: 1
 # Governance
 
 Please see [EigenFoundation Governance](https://docs.eigenfoundation.org/category/protocol-governance) for latest information.
+
+---
+
+---
+sidebar_position: 6
+title: Slashing Delay
+---
+
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced the `SlashEscrowFactory` core contract. Redistributable Slashing is available in v1.5 on testnets and will be
+available on mainnet in Q3.
+::: 
+
+The `SlashEscrowFactory` core contract creates child contracts that hold and apply a delay on all slashed funds exiting the protocol 
+(whether burnable or redistributable). This design is intended to permit [EigenLayer governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) to interface with the slash 
+escrow contracts in the case of an EigenLayer protocol implementation bug. During the period between slash initiation and the
+end of the delay, the [Pauser multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may implement a pause per slash preventing the slashed funds from being released from a 
+child `SlashEscrow` contract. Prior to the release of slashed funds from a child `SlashEscrow` contract, the [Community multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may 
+upgrade the `SlashEscrowFactory` to return funds to the protocol. As of the date of the v1.5 release which includes Redistribution on testnet, the 
+[Protocol Council](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) is considering this security and governance design and what recommendations to make to the Community multisig.
+For more information, refer to Slash Escrow in the Security section.
+
+
+As at the testnet release for Redistribution, the [Protocol Council](https://github.com/eigenfoundation/ELIPs/blob/main/protocol-council-charter.md) are currently considering the
+slashing governance design and definition of catastrophic bugs where [Governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) will interface with the slash escrow contracts.
+
+:::note
+In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow 
+delay is reserved for future protocol use, need, and compatibility.
+:::
 
 ---
 
@@ -3425,6 +3632,12 @@ title: Operator Keys
 ---
 
 For information on Operator keys, refer to [Keys](../../eigenlayer/concepts/keys-and-signatures).
+
+:::important
+When running Redistributable Operator Sets, Operators must ensure sufficient focus is given to key management and opsec. 
+A compromise in an Operator key could enable a malicious actor to register for a malicious AVS, and slash and redistribute
+allocated Staker funds to a specified address.
+:::
 
 For information on key management best practices, refer to: 
 * [Node Operators](../howto/managekeys/institutional-operators.md)
@@ -3704,10 +3917,13 @@ To generate the calldata, use:
 
 ---
 sidebar_position: 4
-
+title: Rewards Distribution Data
 ---
 
-# Rewards Distribution Data
+:::important
+After June 30, Rewards snapshot distribution data will no longer be updated in the [public S3 bucket](#via-s3-bucket). To continue getting updated rewards data,
+users of the S3 bucket must migrate to the EigenLayer Sidecar by June 30.
+:::
 
 Rewards snapshot distribution data is available:
 * From an [EigenLayer Sidecar](#using-eigenlayer-sidecar).
@@ -3771,6 +3987,11 @@ To obtain rewards snapshot distribution data using a EigenLayer Sidecar:
    ```
 
 ## Via S3 Bucket
+
+:::important
+After June 30, Rewards snapshot distribution data will no longer be updated in the [public S3 bucket](#via-s3-bucket). To continue getting updated rewards data,
+users of the S3 bucket must migrate to the EigenLayer Sidecar by June 30.
+:::
 
 To obtain rewards snapshot distribution data from the S3 bucket: 
 
@@ -3967,6 +4188,14 @@ title: Node and Smart Contract Operators
 # Smart Contract Operators
 
 We encourage institutional operators to register with EigenLayer using an [erc-1271](https://eips.ethereum.org/EIPS/eip-1271) smart contract wallet. This allows a lot more fine-grained control, such as multisig authorization and key rotation, which is currently not possible for EOA operators.
+
+# Redistributable Operator Sets
+
+When running Redistributable Operator Sets, Operators must ensure sufficient focus is given to key management and opsec.
+A compromise in an Operator key could enable a malicious actor to register for a malicious AVS, and slash and redistribute
+allocated Staker funds to a specified address.
+
+Redistributable Operators Sets are identifiable by onchain metadata ([`AllcationManager.isRedistributingOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.5.0-rc.0/src/contracts/interfaces/IAllocationManager.sol)). 
 
 ---
 
@@ -4453,7 +4682,14 @@ title: Allocate and Register to Operator Set
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets and Allocations work.
+Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets, Allocations, and Redistribution work.
+
+When participating in Redistributable Operator Sets, Operator metadata identifies an Operator as `Redistributable`. 
+The metedata helps Stakers to assess risk, but might affect an Operator's staking appeal. Operators should weigh this profile
+change against the potential for higher rewards from protocols with different risk and reward structures. 
+
+In general, there is a larger incentive to slash when redistribution is enabled. Redistributable Operator Sets may offer higher rewards, 
+but these should be considered against the increased slashing risks.
 :::
 
 Set Allocation Delay:
@@ -4796,7 +5032,6 @@ title: Restaking Overview
 
 **Liquid restaking** is the process of depositing "liquid" tokens, including LSTs, EIGEN token, and any ERC20 token into the EigenLayer smart contracts. For more information about adding new ERC20 tokens, please see [Permissionless Token Strategies](/docs/developers/HowTo/build/avs-permissionlesss.md).
 
-
 **Native restaking** is the process of changing an Ethereum validator's[ withdrawal credentials](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-withdrawals) to EigenLayer's smart contracts. You must operate an Ethereum Validator node in order to participate in Native Restaking. To learn more or set up your Ethereum Validator please follow this link from the[ Ethereum Foundation](https://launchpad.ethereum.org/).
 
 ### EigenPod Overview 
@@ -4835,30 +5070,70 @@ the option to Redelegate their TVL balance to another Operator.
 ## Slashing 
 
 :::important
-When the Slashing and Operator Set upgrade is live on mainnet, stake can become slashable for a Staker that has previously
-delegated stake to an Operator. Stakers are responsible for ensuring that they fully understand and confirm their risk tolerances
-for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, stakers are responsible
-for continuing to monitor the allocations of their chosen Operators as they update allocations across various Operator Sets.
+Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+stake can become redistributable. Stakers are responsible for ensuring that they fully understand and confirm 
+their risk tolerances for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, 
+stakers are responsible for continuing to monitor the allocations of their chosen Operators as they update allocations across 
+various Operator Sets.
+
+In general, there is a larger incentive to slash user funds when redistribution is enabled. Redistributable Operator Sets
+may offer higher rewards, but these should be considered against the increased slashing risks.
 :::
 
-When the Slashing and Operator Sets upgrade is live on mainnet, AVSs can create [Operator Sets](../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) that may include slashable
-[Unique Stake](../../eigenlayer/concepts/slashing/unique-stake.md), and Operators can allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake
-to an Operator, the delegated stake becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake.
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets. 
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
+
+AVSs create [Operator Sets](../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) that may include slashable
+[Unique Stake](../../eigenlayer/concepts/slashing/unique-stake.md), or be Redistributable Operator Sets, and Operators can 
+allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake to an Operator, the delegated stake 
+becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake. Slashed funds can be burnt or
+redistributed.
 
 Stakers are responsible for understanding the increased risk posed by allocation of their delegated stake as slashable
 Unique Stake to an AVS. While the allocation of delegated stake to an Operator Set may be subject to the [Allocation Config
 Delay and Allocation Delay](../../eigenlayer/reference/safety-delays-reference.md), it is important to understand the increased risk.
 
-For more information on the safety delays for Stakers, refer to the :
-* [Safety Delays reference](../../eigenlayer/reference/safety-delays-reference.md)
-* [Allocating and Deallocating to Operator Sets section of ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
+For more information on the safety delays for Stakers, refer to the [Safety Delays reference](../../eigenlayer/reference/safety-delays-reference.md).
 
-## Escrow Period (Withdrawal Delay)
+### Redistributable Operator Sets
+
+With Redistributable Operator Sets, Stakers should carefully consider the AVSs that their delegated Operators are running, 
+and consider the risk and reward trade-offs. Redistributable Operator Sets may offer higher rewards, but these should be considered
+against the increased slashing risks.
+
+The redistribution recipient for an Operator Set is an immutable address set when the Operator Set is created. While an AVS
+may use an upstream proxy or pass-through contract, the immutability of this address in EigenLayer means an AVS can layer 
+additional guarantees by guarding the upgradability of the upstream contract via controls such as governance and timelocks.
+
+Security implications for Redistributable Operator Sets mean Stakers are potentially at risk from malicious AVSs and Operators. 
+If the AVS’s governance or its slashing functionality is corrupted, an attacker may be able to drain Operator-delegated funds. 
+If an Operator itself is compromised, it may stand up its own AVS to steal user funds. Stakers should carefully consider the 
+reputation and legitimacy of Operators when making delegations. For more information on these attack scenarios, refer to 
+[this forum post](https://forum.eigenlayer.xyz/t/risks-of-an-in-protocol-redistribution-design/14458).
+
+## Withdrawal Delay (Withdrawal Escrow)
 
 EigenLayer contracts feature a withdrawal delay for all Liquid and Native restaking, a critical security measure for instances 
 of vulnerability disclosure or when anomalous behavior is detected by monitoring systems. Please see [Withdrawal Delay](/docs/eigenlayer/security/withdrawal-delay.md) 
 for more detail.
 
+## Slash Escrow 
+
+The `SlashEscrowFactory` core contract creates child contracts that hold and apply a delay on all slashed funds exiting the protocol
+(whether burnable or redistributable). This design is intended to permit [EigenLayer governance](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) to interface with the slash
+escrow contracts in the case of an EigenLayer protocol implementation bug. During the period between slash initiation and the
+end of the delay, the [Pauser multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may implement a pause per slash preventing the slashed funds from being released from a
+child `SlashEscrow` contract. Prior to the release of slashed funds from a child `SlashEscrow` contract, the [Community multisig](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) may
+upgrade the `SlashEscrowFactory` to return funds to the protocol. As of the date of the v1.5 release which includes Redistribution on testnet, the
+[Protocol Council](https://docs.eigenfoundation.org/protocol-governance/technical-architecture) is considering this security and governance design and what recommendations to make to the Community multisig.
+For more information, refer to Slash Escrow in the Security section.
+
+:::note
+In the protocol, the Slash Escrow exists per Strategy, and EIGEN will have a larger delay. Per-Strategy configuration of the Slash Escrow
+delay is reserved for future protocol use, need, and compatibility.
+:::
 
 ---
 
@@ -4914,31 +5189,27 @@ sidebar_position: 2
 # Unstake and Withdraw
 
 :::info
-All funds unstaked from EigenLayer will go through an escrow period before being eligible to be fully withdrawn. Please see the [Escrow Period](/docs/restakers/restaking-guides/testnet/README.md#testnet-vs-mainnet-differences) section for more detail.
+Unstaking is the first step in the process of exiting restaked assets from EigenLayer. Unstaked tokens enter the withdrawal
+queue for the [Escrow Period](../../testnet/README.md#testnet-vs-mainnet-differences). Withdrawing is the final step to move the tokens back to your wallet.
 :::
 
-**Step 1:** Navigate to the token asset you wish to unstake. Click **Unstake** to continue.
+To unstake and withdraw tokens:
 
-![](/img/restake-guides/lst-unstake-1.png)
+1. In the [EigenLayer app](https://app.eigenlayer.xyz/), navigate to the token you wish to unstake. Click **Unstake** to continue.
+2. Choose the amount of the asset you wish to unstake. Click **Submit** to continue.
+3. When prompted by your wallet, click **Confirm** to sign the queue withdrawal transaction.
+4. Observe the Unstake confirmation page. Your withdrawal is now in escrow.
+5. Wait for the escrow period to complete. The [Withdraw queue](#view-remaining-time-in-withdrawal-queue) displays the approximate amount of time remaining in escrow.
+6. Once the escrow completes, you'll see the withdrawable balance under Available to Withdraw. Click **Withdraw** to complete the withdrawal.
+7. When prompted by your Web3 wallet, sign the transaction. After the transaction is completed the withdrawn assets are visible in your Web3 wallet.
 
+## View Remaining Time in Withdrawal Queue
 
-**Step 2:** Choose the amount of the asset you wish to restake. Click **Submit** to continue.
+On the Dashboard tab in the EigenLayer app, the *Withdraw queue* field displays the total value currently in the withdrawal
+queue.
 
-![](/img/restake-guides/lst-unstake-2.png)
-
-**Step 3:** Click **Confirm** to sign the queue withdrawal transaction when prompted by your wallet.
-
-**Step 4:** Observe the Unstake confirmation page. Your withdrawal is now in escrow. **Wait** for the escrow period to complete.
-
-![](/img/restake-guides/lst-unstake-3.png)
-
-
-**Step 5:** Once the escrow completes, you'll see the withdrawable balance under Available to Withdraw. Click **Withdraw** to complete the withdrawal. **Sign** the transaction when prompted by your Web3 wallet.
-
-![](/img/restake-guides/lst-unstake-4.png)
-
-
-After the transaction is completed your withdrawn assets will be visible in your Web3 wallet.
+To view the remaining time in the withdrawal queue for an specific token, navigate to that token. The **Withdraw Queue** field
+displays the approximate amount of time remaining until the token is withdrawable.
 
 ---
 
@@ -4962,6 +5233,13 @@ Native Restaking via the EigenLayer Web App consists of the following actions:
 3. [Withdraw Native ETH or Validator Yield](#withdraw-native-eth-or-validator-yield)
 4. [Delegate and Undelegate](#delegate-and-undelegate)
 
+The diagram below outlines the operational flow of native restaking including:
+* Delegation
+* Redelegation (switching to a new Operator without exiting the validator)
+* Yield handling options
+* Exiting restaking.
+
+![native-restaking-processes.png](../../../../../static/img/native-restaking-processes.png)
 
 ## Gas Cost Planning
 
@@ -4969,6 +5247,12 @@ We recommend users connect many validators to a single EigenPod in order to redu
 
 
 ## Restake New Validator (Native Beacon Chain ETH)
+
+:::important
+Running your own EigenPod for native restaking is an advanced task that requires operating and maintaining Ethereum validator infrastructure.
+It involves managing validator keys and associated risks including slashing, downtime penalties, or loss of access to
+restaked funds if keys are lost or compromised. For more information, refer to [Ethereum Launchpad](https://launchpad.ethereum.org/en/).
+:::
 
 Create EigenPod:
 1. Visit the [EigenLayer App](https://app.eigenlayer.xyz/).
@@ -5047,6 +5331,11 @@ Redeposit or Complete Withdrawal: Redepositing is available at this step for use
 
 
 ## Delegate and Undelegate
+
+:::important
+Undelegating is not required to [exit and withdraw your validator](#withdraw-native-eth-or-validator-yield). Only undelegate if you intend to redelegate to a different
+Operator.
+:::
 
 Undelegate and/or Change Delegation
 1. Click Undelegate
@@ -5198,10 +5487,6 @@ Key EigenLayer Protocol references for this guide:
 * [Deployed Contract Addresses](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments): deployed contract addresses for Mainnet and Testnet.
 * [Integration Tests](https://github.com/Layr-Labs/eigenlayer-contracts/tree/dev/src/test/integration): tests that serve as examples on how to interact with the EigenLayer core contracts.
 
-
-
-
-
 ## Liquid Restaking Guide
 
 The following sections describe the steps to Restake "liquid" tokens (including LSTs EIGEN token, and any ERC20 token).
@@ -5217,7 +5502,7 @@ The following sections describe the steps to Restake "liquid" tokens (including 
 
 ### Withdraw (Unstake) Liquid Tokens
 
-1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 7 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
+1. Queue Withdrawal: invoke `DelegationManager.queueWithdrawal()` to trigger the escrow period. Wait for Escrow Period: 14 days. Please see further detail [here](https://docs.eigenlayer.xyz/eigenlayer/restaking-guides/restaking-user-guide/#escrow-period-withdrawal-delay).
    * Parameters: please see the [QueuedWithdrawalParams](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v0.3.2-mainnet-rewards/src/contracts/interfaces/IDelegationManager.sol#L93)
    * `strategy` - use the address of the deployed strategy ([example list here](https://github.com/Layr-Labs/eigenlayer-contracts?tab=readme-ov-file#deployments)).
    * `shares` - the number of shares in the given strategy. Note this parameter is not meant to reference the amount of the underlying token. Invoke `[Strategy].underlyingToShares()` and `[Strategy].sharesToUnderlying()` as needed to convert their current balances between strategy shares and underlying token amounts.
@@ -5582,20 +5867,27 @@ Users are encouraged to first test their staking approach on the Holesky Testnet
 
 ---
 sidebar_position: 2
+title: Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)
 ---
 
-# Obtaining Testnet ETH & Liquid Staking Tokens (LSTs)
-
-In this guide, we will show you how to use a Holesky faucet to load your wallet with [testnet ETH](https://ethereum.org/en/developers/docs/networks/#ethereum-testnets) and how to obtain Holesky Liquid Staking Tokens so you can start testing liquid restaking.
+To obtain testnet ETH, use a faucet to load your wallet with [testnet ETH](https://ethereum.org/en/developers/docs/networks/#ethereum-testnets).
 
 ### Prerequisites
 
-Before you can use a faucet to load your wallet with testnet ETH, you will need:
+Before you can use a faucet to load your wallet with testnet ETH, you need:
 
 - An Ethereum-compatible wallet (e.g. MetaMask). Take note of its public address.
-- Add Holesky network to your Web3 wallet (example instructions [here](https://www.coingecko.com/learn/holesky-testnet-eth#add-the-holesky-testnet-to-metamask)) if it does not automatically appear.
+- [Add the Sepolia or Holesky network to your Web3 wallet](https://support.metamask.io/more-web3/learn/eth-on-testnets/) if it does not automatically appear.
 
-## Obtain Holesky ETH (aka holETH) via a Faucet
+### Obtain Sepolia ETH (sepETH) via a Faucet
+
+Once you have a Sepolia compatible wallet and a Sepolia ETH address, you can use a faucet to load your wallet with testnet ETH. Here are options available to obtain sepETH:
+- [Sepolia PoW Faucet](https://sepolia-faucet.pk910.de/)
+- [Quicknode Faucet](https://faucet.quicknode.com/ethereum/sepolia)
+- [Automata Faucet](https://www.sepoliafaucet.io/)
+- [Google Cloud Faucet](https://cloud.google.com/application/web3/faucet/ethereum/sepolia)
+
+### Obtain Holesky ETH (aka holETH) via a Faucet
 
 Once you have a Holesky compatible wallet and a Holesky ETH address, you can use a faucet to load your wallet with testnet ETH. Here are options available to obtain holETH:
 - [Holešky PoW Faucet](https://holesky-faucet.pk910.de)
@@ -5603,17 +5895,29 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - [Automata Faucet](https://www.holeskyfaucet.io/)
 - [Google Cloud Faucet](https://cloud.google.com/application/web3/faucet/ethereum/holesky)
 
-## Swap holETH for wETH (Wrapped ETH)​
+## Obtain Holesky Liquid Staking Tokens
+
+Swap holETH for:
+
+* [wETH](#swap-holeth-for-weth-wrapped-eth)
+* [stETH](#swap-holeth-for-steth-lido)
+* [ETHx](#swap-holeth-for-ethx-stader)
+* [ankrETH](#stake-holeth-for-ankreth-ankr)
+* [osETH](#mint-oseth-stakewise)
+* [sfrxETH](#mint-and-stake-to-swap-holeth-for-sfrxeth)
+* [mETH](#swap-holeth-for-meth-mantle-eth)
+
+### Swap holETH for wETH (Wrapped ETH)​
 - Send holETH to address 0x94373a4919B3240D86eA41593D5eBa789FEF3848.
 - Import the WETH token address (0x94373a4919B3240D86eA41593D5eBa789FEF3848) to your web3 wallet to view your token balance.
 
-## Swap holETH for stETH (Lido)​
+### Swap holETH for stETH (Lido)​
 - Visit: https://stake-holesky.testnet.fi/
 - Connect your web3 wallet, choose the amount and click **Stake**.
 - Import the [Lido and stETH token (proxy)](https://docs.lido.fi/deployed-contracts/holesky/) address for Holesky stETH token to your web3 wallet to view your token balance.
 - Note: Lido on Holesky staking is rate-limited to 1500 holETH per rolling 24hr window.
 
-## Swap holETH for ETHx (Stader)​
+### Swap holETH for ETHx (Stader)​
 - Visit the Stader Holesky proxy contract’s Write as Proxy contract in Etherscan here: [0x7F09ceb3874F5E35Cd2135F56fd4329b88c5d119](https://holesky.etherscan.io/address/0x7F09ceb3874F5E35Cd2135F56fd4329b88c5d119#writeProxyContract).
 - Click *Connect to Web3* to connect your web3 wallet.
 - Click either of the **1.deposit()** or **2.deposit()** functions to expand their section:
@@ -5623,12 +5927,12 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - Click *Write* to initiate the transaction. Approve the transaction in your web3 wallet.
 - Import the Holesky ETHx token address (0xB4F5fc289a778B80392b86fa70A7111E5bE0F859) to your web3 wallet to view your token balance.
 
-## Stake holETH for ankrETH (Ankr)​
+### Stake holETH for ankrETH (Ankr)​
 - Visit [testnet.ankr.com/staking/stake/ethereum](https://testnet.ankr.com/staking/stake/ethereum/).
 - Follow the instructions on screen to stake (convert) your desired amount of Holesky ETH for Holesky ankrETH.
 - Click “Add ankrETH to wallet” to add the ankrETH token to your web3 wallet and view your available balance.
 
-## Mint osETH (Stakewise)
+### Mint osETH (Stakewise)
 - Visit the [Stakewise Holesky Vault Marketplace](https://app.stakewise.io/vaults?networkId=holesky).
 - Select a vault to mint osETH.
 - Input the amount you wish to stake and click **Stake** and verify the transaction in your Web3 wallet.
@@ -5636,17 +5940,14 @@ Once you have a Holesky compatible wallet and a Holesky ETH address, you can use
 - Click “Add osETH to your Wallet” 
 - Or import the osETH address (0xF603c5A3F774F05d4D848A9bB139809790890864) for Holesky stETH token to your web3 wallet to view your token balance.
 
-
-## Mint and Stake to Swap holETH for sfrxETH
+### Mint and Stake to Swap holETH for sfrxETH
 - Add Holesky to your Web3 wallet (example instructions [here](https://www.coingecko.com/learn/holesky-testnet-eth#add-the-holesky-testnet-to-metamask)).
 - Manually switch your wallet to the Holesky network. The Frax Finance app does not allow the user to choose Holesky directly. 
 - Open the Frax Finance Mint app: [app.frax.finance/frxeth/mint](https://app.frax.finance/frxeth/mint) .
 - Enter the amount you wish to mint and click **Mint & Stake**.
 - Import the Holesky sfrxETH token address (0xa63f56985F9C7F3bc9fFc5685535649e0C1a55f3) to your web3 wallet to view your token balance.
 
-
-## Swap holETH for mETH (Mantle ETH)​
-
+### Swap holETH for mETH (Mantle ETH)​
 
 - Visit the MantleETH proxy contract’s Write as Proxy contract in Etherscan here: [0xbe16244EAe9837219147384c8A7560BA14946262](https://holesky.etherscan.io/address/0xbe16244EAe9837219147384c8A7560BA14946262#writeProxyContract).
 - Click **Connect to Web3** to connect your web3 wallet.

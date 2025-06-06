@@ -72,6 +72,13 @@ title: AVS Keys
 
 For information on AVS key types, refer to [Keys](../../eigenlayer/concepts/keys-and-signatures).
 
+:::important
+When using Redistribution, an attacker that gains access to AVS keys for the slasher and `redistributionRecipient` can drain
+the entirety of Operator and Staker allocated stake for a given Operator Set. 
+:::
+
+
+
 ---
 
 ---
@@ -98,6 +105,7 @@ The list of security models is not exhaustive. The EigenLayer protocol provides 
 AVSs have flexibility to design their protocols to slash for any reason. AVSs are encouraged to:
 * Create robust legibility and process around how their slashing is designed and individual slashing events. 
 * Clearly communicate slashing design and individual slashing events to their Operator and Staker communities. 
+* Make strong guarantees about how upstream contracts function for Redistributing Operator Sets to their Operator and Staker communities.
 :::
 
 ---
@@ -122,14 +130,11 @@ The EigenLayer core contracts are documented in the [eigenlayer-contracts](https
 | [AllocationManager](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#allocationmanager)       | Responsible for creating Operator Sets, and Operator registrations to Operator Sets. The Allocation Manager also tracks allocation of stake to a Operator Set, and enables AVSs to slash that stake.                                         
 | [RewardsCoordinator](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#allocationmanager)      | Enables AVSs to distribute ERC20 tokens to Operators and Restakers who delegated assets to Operators. The RewardsCoordinator tracks the rewards and enables Operators and Restakers to claim them.                                           
 | [PermissionController](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#permissioncontroller) | Enables AVSs and operators to delegate the ability to call certain core contract functions to other addresses. For more information, refer to [User Access Management](../../../eigenlayer/concepts/uam/user-access-management.md).          |
-| [AVSDirectory](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#avsdirectory)                 | Has been replaced by AllocationManager and will be deprecated in a future release.                                                                                                                                                           | 
+| [SlashEscrowFactory](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.5.0-rc.0/docs/core/SlashEscrowFactory.md)                                                                                                   | Responsible for burning or redistribution of slashed funds. The SlashEscrowFactory enforces the Slash Escrow Delay, deploys the Slash Escrow clone for each slash, and releases funds from the Slash Escrow contract. For redistributed funds, called by the [`redistributionRecipient`](../slashing/slashing-concept-developers.md#redistribution-recipient) to release funds.                              
+| [AVSDirectory](https://github.com/Layr-Labs/eigenlayer-contracts/tree/testnet-sepolia/docs#avsdirectory)                 | Has been replaced by AllocationManager and will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/operator-sets/migrate-to-operatorsets.md) on Testnet.                   | 
 
-AVSDirectory will be deprecated in a future release. We strongly recommend existing AVSs [migrate to using Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
-on Testnet.
-
-This documentation matches the functionality available on the [Sepolia testnet](https://www.blog.eigenlayer.xyz/the-future-of-eigenlayer-testing-new-and-improved-testnets-tooling-coming-soon/). For mainnet
-specific documentation, refer to the `/docs` repository on the `mainnet` branch in the [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts)
-repository.
+This documentation matches the functionality available in [v1.5.0 of the core contracts](../../../eigenlayer/releases.md). For release specific
+documentation for other releases, refer to the `/docs` repository on the branch for that release in the [eigenlayer-contracts](https://github.com/Layr-Labs/eigenlayer-contracts) repository.
 
 ---
 
@@ -160,10 +165,26 @@ title: Slashing
 For information on how slashing works, refer to concept content on [Slashing](../../../eigenlayer/concepts/slashing/slashing-concept.md) and
 [Operator Sets](../../../eigenlayer/concepts/operator-sets/operator-sets-concept).
 
+## Redistribution Recipient
+
+:::important
+When using Redistribution, an attacker that gains access to AVS keys for the slasher and `redistributionRecipient` can drain
+the entirety of Operator and Staker allocated stake for a given Operator Set.
+:::
+
+When creating a redistributable Operator Set, an immutable `redistributionRecipient` is specified. The `redistributionRecipient`
+should be:
+* An AVS-controlled role and signing key.
+* A smart contract wallet or mulit-sig to ensure enhanced security and programmability.
+
+The `redistributionRecipient` address cannot be changed. While an AVS may use an upstream proxy or pass-through contract, 
+the immutability of this address in EigenLayer means an AVS can layer additional guarantees by guarding the upgradability 
+of the upstream contract via controls such as governance, and timelocks.
+
 For information on how to implement slashing, refer to: 
 * [Implement Slashing](../../HowTo/build/slashing/implement-slashing)
-* [Design Operator Sets](../../HowTo/build/slashing/design-operator-set.md)
-* [Migrate to Operator Sets](../../HowTo/build/slashing/migrate-to-operatorsets.md)
+* [Design Operator Sets](../../HowTo/build/operator-sets/design-operator-set.md)
+* [Migrate to Operator Sets](../../HowTo/build/operator-sets/migrate-to-operatorsets.md)
 * [Veto Committee Design](../../HowTo/build/slashing/slashing-veto-committee-design.md)
 
 ---
@@ -190,7 +211,7 @@ title: User Access Management
 
 :::note
 There is no support for setting appointees for AVSDirectory functions. The AVSDirectory method will be deprecated in a future upgrade.
-[All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](../HowTo/build/slashing/migrate-to-operatorsets.md).
+[All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](../HowTo/build/operator-sets/migrate-to-operatorsets.md).
 :::
 
 For concept material on User Access Management (UAM) and roles, refer to:
@@ -206,6 +227,7 @@ The protocol functions that an AVS can set appointees for are:
 * [`AllocationManager.setAVSRegistrar`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#setavsregistrar)
 * [`AllocationManager.updateAVSMetadataURI`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#updateavsmetadatauri)
 * [`AllocationManager.createOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#createoperatorsets)
+* `AllocationManager.createRedistributingOperatorSets`
 * [`AllocationManager.addStrategiesToOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#addstrategiestooperatorset)
 * [`AllocationManager.removeStrategiesFromOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#removestrategiesfromoperatorset)
 * [`RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createoperatordirectedavsrewardssubmission)
@@ -289,7 +311,7 @@ deregistration also reverts and does not occur.
 ---
 
 ---
-sidebar_position: 1
+sidebar_position: 2
 title: Create Operator Sets
 ---
 
@@ -297,22 +319,132 @@ title: Create Operator Sets
 If you're new to Operator Sets in EigenLayer, review the [Operator Sets concepts](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) before continuing with this topic.
 :::
 
-Creating Operator Sets for an AVS is managed by the [AllocationManager core contract](../../../Concepts/eigenlayer-contracts/core-contracts.md).
+Creating Operator Sets for an AVS is managed by the [AllocationManager core contract](../../../Concepts/eigenlayer-contracts/core-contracts.md). Before Operator Sets can be created,
+[AVS metadata must be registered](../register-avs-metadata.md).
+
 [Strategies](../../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes) can be added to Operator Sets when the Operator is created, or Strategies can be added to an existing Operator Set.
+
+Operator Sets are either: 
+* [Non-redistributing](#create-operator-set). Slashed funds are burnt.
+* [Redistributing](#create-redistributing-operator-set). Slashed funds are sent to the [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient).
+
+The Operator Set type cannot be changed.
+
+## Create Operator Set
 
 To create an Operator Set, call the [`createOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#createoperatorsets) function.
 To add strategies when creating an Operator Set, specify a `params` array containing the strategies.
 
-On creation, an `id` is assigned to the Operator Set. Together the AVS `address` and `id` are a unique identifier for the Operator Set. 
+On creation, an `id` is assigned to the Operator Set. Together the AVS `address` and `id` are a unique identifier for the Operator Set.
+For non-redistributing Operator Sets, the `redistributionRecipient` is the `DEFAULT_BURN_ADDRESS`.
 
-Once created, [update the AVS metadata](update-avs-metadata.md) to provide information on the Operator Set to Stakers and Operators.
+## Create Redistributing Operator Set
 
-For information on adding Strategies to an Operator Set after creation, refer to [Modify Strategy Composition](modify-strategy-composition.md).
+To create a redistributing Operator Set, call the `createRedistributingOperatorSets` function.
+
+To add strategies when creating an Operator Set, specify a `params` array containing the strategies.
+Native ETH cannot be added as a strategy for redistributing Operator Sets because redistribution of native ETH is not supported.
+
+Specify the address to receive slashed funds in `redistributionRecipients`.  The `redistributionRecipient` can only be set 
+when creating the Operator Set and cannot be changed. 
+
+On creation, an `id` is assigned to the Operator Set. Together the AVS `address` and `id` are a unique identifier for the Operator Set.
+
+## Complete Operator Set Configuration
+
+Once created:
+1. [Update the AVS metadata](update-avs-metadata.md) to provide information on the Operator Set to Stakers and Operators.
+2. If required, [add additional Strategies](modify-strategy-composition.md) to the Operator Set.
 
 ---
 
 ---
-sidebar_position: 2
+sidebar_position: 1
+title: Design Operator Sets
+---
+
+An [Operator Set](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The 
+EigenLayer protocol does not enforce criteria for Operator Sets.
+
+## Operator Set Types
+
+Operator Sets are either:
+* [Non-redistributing](create-operator-sets.md#create-operator-set). Slashed funds are burnt.
+* [Redistributing](create-operator-sets.md#create-redistributing-operator-set). Slashed funds are sent to the [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient).
+
+The Operator Set type cannot be changed.
+
+## Operator Set Groupings
+
+Best practices for Operator Set design are to logically group AVS tasks (and verification) into separate Operator Sets. 
+Organize your Operator Sets according to conditions for which you wish to distribute Rewards. Potential conditions include:
+* Unique business logic.
+* Unique Stake (cryptoeconomic security) amount and types of token required to be allocated from Operators.
+* Slashing conditions.
+* Ejection criteria.
+* Quantity of Operators and criteria for operators allowed.
+* Hardware profiles.
+* Liveness guarantees.
+
+For more information on Operator Sets, refer to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept).
+
+---
+
+---
+sidebar_position: 5
+title: Migrate to Operator Sets
+---
+
+**The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
+upcoming deprecation of AVSDirectory.**
+
+Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
+1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
+2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
+3. [Communicate to Operators](#communicate-to-operators)
+
+Migrating now gives time to switch existing quorums over to Operator Sets. After the migration has occurred,
+integrations with slashing can go live on Testnet, followed by Mainnet. M2 registration and Operator Set registration can operate in parallel.
+
+## Upgrade middleware contracts
+
+To migrate to Operator Sets:
+
+1. Upgrade middleware contracts to handle the callback from the AllocationManager. The upgrade provides the RegistryCoordinator
+the hooks to handle the callback from the AllocationManager. 
+2. From the ServiceManager call, add an account to update the AVSRegistrar:
+      * With setAppointee where the target is the AllocationManager.
+      * The selector is the setAVSRegistrar selector.
+3. Call setAVSRegistrar on the AllocationManager from the appointee account and set the RegistryCoordinator as your AVSRegistrar
+so that it becomes the destination for registration and deregistration hooks
+
+See example [RegistryCoordinator implementation with the new hooks](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/src/SlashingRegistryCoordinator.sol).
+
+## Integrate the AllocationManager
+
+Integrate the AllocationManager by:
+
+1. Creating Operator Sets through the AllocationManager.
+2. Adding (or later removing) specific Strategies to that Operator Set to enable Operators to secure the AVS.
+3. Specifying an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
+
+## Communicate to Operators
+
+1. Communicate to Operators how to:
+   1. Register for Operator Sets using the new registration pathway. 
+   2. Allocate slashable stake for slashable Operator Sets.
+2. Migrate to distribution of tasks based on the delegated and slashable stake of Operators registered to the AVS’s Operator Sets.
+
+To ensure community and incentive alignment, AVSs need to conduct offchain outreach to communicate
+the purpose and task/security makeup of their Operator Sets with their Operators and Stakers before beginning registration.
+Include any potential hardware, software, or stake requirements in the communication. The AVS decides task distribution
+within an Operator Set.
+
+
+---
+
+---
+sidebar_position: 4
 title: Modify Strategy Composition
 ---
 
@@ -321,6 +453,10 @@ An Operator Set requires at least one [Strategy](../../../../eigenlayer/concepts
 To add Strategies to an existing Operator Set, call the [`addStrategiesToOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#addstrategiestooperatorset) function.
 
 To remove Strategies from an Operator Set, call the [`removeStrategiesFromOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/9a19503e2a4467f0be938f72e80b11768b2e47f9/docs/core/AllocationManager.md#removestrategiesfromoperatorset) function.
+
+:::note
+The Native Eth strategy cannot be added to Redistributing Operator Sets.
+:::
 
 ---
 
@@ -432,29 +568,7 @@ repository to add your logo.
 ---
 
 ---
-sidebar_position: 3
-title: Design Operator Sets
----
-
-An [Operator Set](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept.md) is a grouping of different types of work within a single AVS. Each AVS has at least one Operator Set. The 
-EigenLayer protocol does not enforce criteria for Operator Sets.
-
-Best practices for Operator Set design are to logically group AVS tasks (and verification) into separate Operator Sets. 
-Organize your Operator Sets according to conditions for which you wish to distribute Rewards. Potential conditions include:
-* Unique business logic.
-* Unique Stake (cryptoeconomic security) amount and types of token required to be allocated from Operators.
-* Slashing conditions.
-* Ejection criteria.
-* Quantity of Operators and criteria for operators allowed.
-* Hardware profiles.
-* Liveness guarantees.
-
-For more information on Operator Sets, refer to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept).
-
----
-
----
-sidebar_position: 1
+sidebar_position: 2
 title: Implement Slashing
 ---
 
@@ -463,35 +577,12 @@ If you're new to slashing in EigenLayer, make sure you're familiar with [Operato
 and [Slashing](../../../../eigenlayer/concepts/slashing/slashing-concept.md) before implementing slashing.
 :::
 
-The `AllocationManager` provides the interface for the slashing function.
+:::caution
+The v1.5.0 Redistribution release introduced the Slash Escrow Delay. All slashed funds are held in the `SlashEscrow` contracts
+for the Slash Escrow Delay before being burnt or redistributed.
+:::
 
-```solidity
-    /**
-     * @notice Called by an AVS to slash an operator in a given operator set
-     */
-
-    function slashOperator(
-        address avs,
-        SlashingParams calldata params
-    ) external;
-
-    /**
-     * @notice Struct containing parameters to slashing
-     * @param operator the address to slash
-     * @param operatorSetId the ID of the operatorSet the operator is being slashed on behalf of
-     * @param strategies the set of strategies to slash
-     * @param wadsToSlash the parts in 1e18 to slash, this will be proportional to the operator's
-     * slashable stake allocation for the operatorSet
-     * @param description the description of the slashing provided by the AVS for legibility
-     */
-    struct SlashingParams {
-        address operator;
-        uint32 operatorSetId;
-        IStrategy[] strategies;
-        uint256[] wadsToSlash;
-        string description;
-    }
-```
+The [`AllocationManager`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/src/contracts/interfaces/IAllocationManager.sol) provides the interface for the `slashOperator` function.
 
 To implement slashing, AVSs specify:
 * Individual Operator
@@ -500,12 +591,28 @@ To implement slashing, AVSs specify:
 * [List of proportions (as `wads` or “parts per `1e18`”)](../../../../eigenlayer/concepts/operator-sets/strategies-and-magnitudes)
 * Description. 
 
-For example, in the `wadsToSlash` parameter: 
+## Define Slashing Proportions
+
+In the `wadsToSlash` parameter: 
 * 8% slash is represented as `8e16`, or `80000000000000000`. 
 * 25% slash is represented as `2.5e17` or `250000000000000000`. 
 
 The indexes in the two arrays must match across `strategies` and `wadsToSlash`. All Strategies supplied must be configured 
 as part of the Operator Set.
+
+For more information on how magnitudes are reduced when slashed, refer to [Magnitudes when Slashed](../../../../eigenlayer/concepts/slashing/magnitudes-when-slashed.md).
+
+## Define Upstream Redistribution Contracts 
+
+For redistributable Operator Sets, implement upstream contracts for [`redistributionRecipient`](../../../Concepts/slashing/slashing-concept-developers.md#redistribution-recipient)
+to redistribute slashed funds once they have exited the protocol.
+
+## Returned by `slashOperator`
+
+The `slashOperator` function returns the `slashId` and number of shares slashed for each strategy. The `slashId` is 
+incremented for an OperatorSet each time an Operator Set is slashed. Use the `slashID` to programmatically handle slashings.
+
+## Slashing Event Emission
 
 When a slashing occurs, one event is emitted onchain for each slashing. Emitted details identify the Operator
 slashed, in what Operator Set, and across which Strategies, with fields for the proportion slashed and meta-data.
@@ -520,61 +627,8 @@ event OperatorSlashed(
 ---
 
 ---
-sidebar_position: 2
-title: Migrate to Operator Sets
----
-
-**The AVSDirectory method will be deprecated in a future upgrade. All AVSs will need to migrate to [Operator Sets](../../../../eigenlayer/concepts/operator-sets/operator-sets-concept) before the
-upcoming deprecation of AVSDirectory.**
-
-Operator Sets are required to [slash](../../../../eigenlayer/concepts/slashing/slashing-concept.md). To migrate to, and start using, Operator Sets: 
-1. [Upgrade middleware contracts](#upgrade-middleware-contracts) 
-2. [Integrate the AllocationManager](#upgrade-middleware-contracts)
-3. [Communicate to Operators](#communicate-to-operators)
-
-Migrating now gives time to switch existing quorums over to Operator Sets. After the migration has occurred,
-integrations with slashing can go live on Testnet, followed by Mainnet. M2 registration and Operator Set registration can operate in parallel.
-
-## Upgrade middleware contracts
-
-To migrate to Operator Sets:
-
-1. Upgrade middleware contracts to handle the callback from the AllocationManager. The upgrade provides the RegistryCoordinator
-the hooks to handle the callback from the AllocationManager. 
-2. From the ServiceManager call, add an account to update the AVSRegistrar:
-      * With setAppointee where the target is the AllocationManager.
-      * The selector is the setAVSRegistrar selector.
-3. Call setAVSRegistrar on the AllocationManager from the appointee account and set the RegistryCoordinator as your AVSRegistrar
-so that it becomes the destination for registration and deregistration hooks
-
-See example [RegistryCoordinator implementation with the new hooks](https://github.com/Layr-Labs/eigenlayer-middleware/blob/dev/src/SlashingRegistryCoordinator.sol).
-
-## Integrate the AllocationManager
-
-Integrate the AllocationManager by:
-
-1. Creating Operator Sets through the AllocationManager.
-2. Adding (or later removing) specific Strategies to that Operator Set to enable Operators to secure the AVS.
-3. Specifying an additional AVSRegistrar contract that applies business logic to gate Operator registration to an Operator Set.
-
-## Communicate to Operators
-
-1. Communicate to Operators how to:
-   1. Register for Operator Sets using the new registration pathway. 
-   2. Allocate slashable stake for slashable Operator Sets.
-2. Migrate to distribution of tasks based on the delegated and slashable stake of Operators registered to the AVS’s Operator Sets.
-
-To ensure community and incentive alignment, AVSs need to conduct offchain outreach to communicate
-the purpose and task/security makeup of their Operator Sets with their Operators and Stakers before beginning registration.
-Include any potential hardware, software, or stake requirements in the communication. The AVS decides task distribution
-within an Operator Set.
-
-
----
-
----
-sidebar_position: 4
-title: Design Slashing Conditions
+sidebar_position: 1
+title: Design Slashing
 ---
 
 ## Slashing Vetoes
@@ -597,6 +651,11 @@ Ensure that your slashing process can be resolved within the `DEALLOCATION_DELAY
 between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. 
 This will ensure that the slashing event is carried out for the Operator before their stake is deallocated.
 
+## Redistribution
+
+Redistribution may enable AVSs to benefit from a theft related to slashing so additional design care must be taken to consider
+the incentives of all parties interacting with the redistribution. Redistribution enables more use-case opportunities 
+but the higher risk and slash incentive must be considered for the participants running the AVS code.
 
 ---
 
@@ -607,7 +666,7 @@ title: Submit Rewards Submissions
 
 :::important
 `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` use AVSDirectory. 
-The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](slashing/migrate-to-operatorsets.md).
+The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](operator-sets/migrate-to-operatorsets.md).
 
 If you are currently using AVSDirectory, `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` can continue to be used while AVSDirectory is being used.
 :::
@@ -1121,6 +1180,16 @@ To complete the process of onboarding your AVS to mainnet AVS Marketplace Dashbo
 ---
 
 ---
+sidebar_position: 1
+title: Obtain Testnet ETH
+---
+
+The [Obtaining testnet ETH and liquid staking tokens (LSTs)](../../../restakers/restaking-guides/testnet/obtaining-testnet-eth-and-liquid-staking-tokens-lsts.md) topic describes how to obtain testnet ETH and LSTs for
+testing AVSs.
+
+---
+
+---
 sidebar_position: 4
 title: Test AVS
 ---
@@ -1161,23 +1230,23 @@ These text and markdown files contain documentation and code optimized for use w
   </thead>
   <tbody>
     <CopyButton
-      title="llms.txt"
-      filePath="../../llms.txt"
+      title="llms.md"
+      filePath="../../llms.md"
       description="Navigation index of all EigenLayer documentation pages."
     />
     <CopyButton
-      title="llms-full.txt"
-      filePath="../../llms-full.txt"
+      title="llms-full.md"
+      filePath="../../llms-full.md"
       description="Complete EigenLayer documentation."
     />
     <CopyButton
-      title="avs-developer-docs.txt"
-      filePath="../../avs-developer-docs.txt"
+      title="avs-developer-docs.md"
+      filePath="../../avs-developer-docs.md"
       description="AVS Developers documentation."
     />
     <CopyButton
-      title="operators-developer-docs.tx"
-      filePath="../../operators-developer-docs.txt"
+      title="operators-developer-docs.md"
+      filePath="../../operators-developer-docs.md"
       description="Operators documentation."
     />
     <CopyButton
