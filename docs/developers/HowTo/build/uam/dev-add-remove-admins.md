@@ -22,13 +22,13 @@ privileges for its own address, add the account first as an admin. After the acc
 ## Add an Admin Using the Core Contracts
 
 Admins are added via a 2-step handshake. To add an admin:
-1. As the account or admin adding the admin, call the [`PermissionController.addPendingAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md#addpendingadmin) function to set the pending admin.
-2. As the pending admin, call the [`PermissionController.acceptAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md#acceptadmin) function. Once accepted, the added admin has full admin authority.
+1. As the account or admin adding the admin, call the [`PermissionController.addPendingAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md#addpendingadmin) function to set the pending admin.
+2. As the pending admin, call the [`PermissionController.acceptAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md#acceptadmin) function. Once accepted, the added admin has full admin authority.
 
 ## Remove an Admin Using the Core Contracts
 
 The caller must be an admin. Once an account has added an admin, there must always be at least one admin for the account. 
 
-To remove a pending admin before they have called acceptAdmin, call the [`PermissionController.removePendingAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md#removependingadmin) function.
+To remove a pending admin before they have called acceptAdmin, call the [`PermissionController.removePendingAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md#removependingadmin) function.
 
-To remove an admin, call the [`PermissionController.removeAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md#removeadmin) function.
+To remove an admin, call the [`PermissionController.removeAdmin`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md#removeadmin) function.

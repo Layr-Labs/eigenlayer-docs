@@ -17,7 +17,7 @@ Initially, the AVS Marketplace will not be available on Sepolia. For more inform
 
 ## Adding a listing
 
-To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md).
+To display an AVS on the [AVS Marketplace](https://app.eigenlayer.xyz/avs), invoke `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md).
 
 For information on the expected format and metadata requirements, refer to [Register AVS Metadata](../build/register-avs-metadata.md).
 
@@ -26,7 +26,7 @@ Once invoked, the data is indexed within about 20 minutes, and the metadata is d
 
 ## Updating a listing 
 
-If you deploy a new contract for your AVS, remove the previous listing by invoking `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md)
+If you deploy a new contract for your AVS, remove the previous listing by invoking `updateAVSMetadataURI` on the [AllocationManager core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md)
 value of null. For example, `updateAVSMetadataURI("")`.
 
 The listing will be removed from the AVS Marketplace cache within one hour.

@@ -12,7 +12,7 @@ revocation, and recovery. UAM enables admin keys to:
 * Delegate specific functions to new addresses (EOAs or smart contracts).
 * Be assigned or rotated as needed.
 
-The [PermissionController core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md) implements UAM and defines three roles:
+The [PermissionController core contract](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md) implements UAM and defines three roles:
 * [Accounts](uam-accounts.md)
 * [Admins](uam-admins.md)
 * [Appointees](uam-appointees.md)

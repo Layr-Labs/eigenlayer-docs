@@ -16,17 +16,17 @@ For concept material on User Access Management (UAM) and roles, refer to:
 
 UAM enables an AVS to split onchain components across multiple contracts to enable a modular design. 
 The protocol functions that an AVS can set appointees for are:
-* [`AllocationManager.slashOperator`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#slashoperator)
-* [`AllocationManager.deregisterFromOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#deregisterfromoperatorsets)
-* [`AllocationManager.setAVSRegistrar`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#setavsregistrar)
-* [`AllocationManager.updateAVSMetadataURI`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#updateavsmetadatauri)
-* [`AllocationManager.createOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#createoperatorsets)
+* [`AllocationManager.slashOperator`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#slashoperator)
+* [`AllocationManager.deregisterFromOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#deregisterfromoperatorsets)
+* [`AllocationManager.setAVSRegistrar`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#setavsregistrar)
+* [`AllocationManager.updateAVSMetadataURI`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#updateavsmetadatauri)
+* [`AllocationManager.createOperatorSets`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#createoperatorsets)
 * `AllocationManager.createRedistributingOperatorSets`
-* [`AllocationManager.addStrategiesToOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#addstrategiestooperatorset)
-* [`AllocationManager.removeStrategiesFromOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/AllocationManager.md#removestrategiesfromoperatorset)
-* [`RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createoperatordirectedavsrewardssubmission)
-* [`RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createoperatordirectedoperatorsetrewardssubmission)
-* [`RewardsCoordinator.setClaimerFor`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#setclaimerfor)
+* [`AllocationManager.addStrategiesToOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#addstrategiestooperatorset)
+* [`AllocationManager.removeStrategiesFromOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/AllocationManager.md#removestrategiesfromoperatorset)
+* [`RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#createoperatordirectedavsrewardssubmission)
+* [`RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#createoperatordirectedoperatorsetrewardssubmission)
+* [`RewardsCoordinator.setClaimerFor`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#setclaimerfor)
 
 For information on how to set admins and appointees for an AVS, refer to:
 * [Add and Remove Admins](../HowTo/build/uam/dev-add-remove-admins.md)
