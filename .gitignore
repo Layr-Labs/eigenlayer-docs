@@ -19,6 +19,12 @@
 .env.test.local
 .env.production.local
 
+# CI Scripts output
+ci-scripts/broken-links-report.csv
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+yarn.lock
+.yarn/install-state.gz
+.yarnrc.yml

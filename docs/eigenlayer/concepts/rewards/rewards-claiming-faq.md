@@ -36,7 +36,7 @@ The current rewards calculation assumes that work done is directly proportional 
 
 ### Will the AVS Rewards be distributed using the same ERC20 token used to Stake / Operate (opt-in to) the AVS?
 
-An AVS can distribute any ERC-20 token it chooses in a [RewardSubmission](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createavsrewardssubmission). These reward token(s) can be different from the list of Strategies (assets) that were originally staked, delegated and opted into by the Restaker, Operator, and AVS.
+An AVS can distribute any ERC-20 token it chooses in a [RewardSubmission](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#createavsrewardssubmission). These reward token(s) can be different from the list of Strategies (assets) that were originally staked, delegated and opted into by the Restaker, Operator, and AVS.
 
 For example, Restakers could delegate stETH (lido eth) to an Operator. The Operator could opt in to an AVS with the stETH strategy. Then a week later the AVS could pay rewards in USDC. The decision of which ERC20 token to reward to a Strategy is entirely up to the AVS to determine.
 

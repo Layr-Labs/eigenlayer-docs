@@ -1,6 +1,6 @@
 ---
-sidebar_position: 4
-title: Design Slashing Conditions
+sidebar_position: 1
+title: Design Slashing
 ---
 
 ## Slashing Vetoes
@@ -22,3 +22,9 @@ council or multisig address for the AVS. Please see the [vetoable slasher exampl
 Ensure that your slashing process can be resolved within the `DEALLOCATION_DELAY` time window. This is the amount of blocks
 between an Operator queuing a deallocation of stake from an Operator Set for a strategy and the deallocation taking effect. 
 This will ensure that the slashing event is carried out for the Operator before their stake is deallocated.
+
+## Redistribution
+
+Redistribution may enable AVSs to benefit from a theft related to slashing so additional design care must be taken to consider
+the incentives of all parties interacting with the redistribution. Redistribution enables more use-case opportunities 
+but the higher risk and slash incentive must be considered for the participants running the AVS code.

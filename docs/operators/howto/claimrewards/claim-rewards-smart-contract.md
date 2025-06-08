@@ -5,7 +5,7 @@ title: Claim Rewards as a Smart Contract
 
 To claim rewards when the [Earner](../../../eigenlayer/concepts/rewards/earners-claimers-recipients.md) is a smart contract, 
 generate either:
-* JSON object with the arguments to call [`RewardsCoorinator.processClaim`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#processclaim).
+* JSON object with the arguments to call [`RewardsCoorinator.processClaim`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#processclaim).
 * Calldata that can be signed and broadcast.
 
 ## JSON Object

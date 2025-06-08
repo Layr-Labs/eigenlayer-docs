@@ -5,7 +5,7 @@ title: Submit Rewards Submissions
 
 :::important
 `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` use AVSDirectory. 
-The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](slashing/migrate-to-operatorsets.md).
+The AVSDirectory method will be deprecated in a future upgrade. [All AVSs will need to migrate to Operator Sets before the upcoming deprecation of AVSDirectory](operator-sets/migrate-to-operatorsets.md).
 
 If you are currently using AVSDirectory, `RewardsCoordinator.createAVSRewardsSubmission` and `RewardsCoordinator.createOperatorDirectedAVSRewardsSubmission` can continue to be used while AVSDirectory is being used.
 :::
@@ -14,7 +14,7 @@ For information on Rewards concepts, refer to [Rewards Overview](../../../eigenl
 
 Submitting rewards for an AVS is handled by the [RewardsCoorinator core contract](../../Concepts/eigenlayer-contracts/core-contracts.md).
 
-To submit rewards submissions, use [`RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createoperatordirectedoperatorsetrewardssubmission).
+To submit rewards submissions, use [`RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#createoperatordirectedoperatorsetrewardssubmission).
 
 An AVS can use onchain or offchain data in rewards logic to determine the reward amount per Operator. The rewards can be calculated 
 based on the work performed by Operators during a certain period of time, can be a flat reward rate, or another structure based on 

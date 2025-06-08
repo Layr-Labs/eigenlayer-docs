@@ -14,3 +14,11 @@ title: Node and Smart Contract Operators
 # Smart Contract Operators
 
 We encourage institutional operators to register with EigenLayer using an [erc-1271](https://eips.ethereum.org/EIPS/eip-1271) smart contract wallet. This allows a lot more fine-grained control, such as multisig authorization and key rotation, which is currently not possible for EOA operators.
+
+# Redistributable Operator Sets
+
+When running Redistributable Operator Sets, Operators must ensure sufficient focus is given to key management and opsec.
+A compromise in an Operator key could enable a malicious actor to register for a malicious AVS, and slash and redistribute
+allocated Staker funds to a specified address.
+
+Redistributable Operators Sets are identifiable by onchain metadata ([`AllcationManager.isRedistributingOperatorSet`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.5.0-rc.0/src/contracts/interfaces/IAllocationManager.sol)). 

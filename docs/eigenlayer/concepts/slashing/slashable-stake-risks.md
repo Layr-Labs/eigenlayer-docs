@@ -4,20 +4,22 @@ title: Slashable Stake Risks
 ---
 
 :::important
-With Slashing, stake can become slashable for a Staker that has previously 
-delegated stake to an Operator. Stakers are responsible for ensuring that they fully understand and confirm their risk tolerances 
-for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally, stakers are responsible 
-for continuing to monitor the allocations of their chosen Operators as they update allocations across various Operator Sets.
+Stake delegated to an Operator can become slashable, and when redistributable slashing is live on mainnet, previously delegated
+stake can become redistributable. Stakers are responsible for ensuring that they fully understand and confirm
+their risk tolerances for existing and future delegations to Operators and the Operator’s slashable allocations. Additionally,
+Stakers are responsible for continuing to monitor the allocations of their chosen Operators as they update allocations across
+various Operator Sets.
 :::
 
-AVSs can create [Operator Sets](../operator-sets/operator-sets-concept) that may include slashable 
-[Unique Stake](unique-stake.md), and Operators can allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake 
-to an Operator, the delegated stake becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake.
+:::note
+[ELIP-006 Redistributable Slashing](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-006.md) introduced Redistributable Operator Sets.
+Redistributable Slashing is available in v1.5 on testnets and will be available on mainnet in Q3.
+:::
 
-Stakers are responsible for understanding the increased risk posed by allocation of their delegated stake as slashable 
-Unique Stake to an AVS. While the allocation of delegated stake to an Operator Set may be subject to the [Allocation Config 
-Delay and Allocation Delay](../../reference/safety-delays-reference.md), it is important to understand the increased risk.
+AVSs create [Operator Sets](../operator-sets/operator-sets-concept.md) that may include slashable
+[Unique Stake](unique-stake.md), or be Redistributable Operator Sets, and Operators can
+allocate their delegated stake to Operator Sets. If a Staker has previously delegated stake to an Operator, the delegated stake
+becomes slashable when the Operator opts into an Operator Set and allocates Unique Stake. Slashed funds can be burned or
+redistributed.
 
-For more information on the safety delays for Stakers, refer to the :
-* [Safety Delays reference](../../reference/safety-delays-reference.md)
-* [Allocating and Deallocating to Operator Sets section of ELIP-002](https://github.com/eigenfoundation/ELIPs/blob/main/ELIPs/ELIP-002.md#unique-stake-allocation--deallocation).
+For more information on the safety delays for Stakers, refer to the [Safety Delays reference](../../reference/safety-delays-reference.md)

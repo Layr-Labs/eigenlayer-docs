@@ -12,6 +12,6 @@ For the list of contracts and functions that can have appointees set, refer to:
 
 ## Add an Admin using Core Contracts 
 
-To add an appointee, call the [PermissionController.setAppointee](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md#setappointee) function.
+To add an appointee, call the [PermissionController.setAppointee](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md#setappointee) function.
 
-To remove an appointee, call the [PermissionController.removeAppointee](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/permissions/PermissionController.md#removeappointee) function.
+To remove an appointee, call the [PermissionController.removeAppointee](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/permissions/PermissionController.md#removeappointee) function.

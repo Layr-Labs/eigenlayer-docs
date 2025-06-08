@@ -4,7 +4,14 @@ title: Allocate and Register to Operator Set
 ---
 
 :::important
-Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets and Allocations work.
+Before proceeding, review the [Slashing Concept](../../eigenlayer/concepts/slashing/slashing-concept.md) content for information on how Operator Sets, Allocations, and Redistribution work.
+
+When participating in Redistributable Operator Sets, Operator metadata identifies an Operator as `Redistributable`. 
+The metedata helps Stakers to assess risk, but might affect an Operator's staking appeal. Operators should weigh this profile
+change against the potential for higher rewards from protocols with different risk and reward structures. 
+
+In general, there is a larger incentive to slash when redistribution is enabled. Redistributable Operator Sets may offer higher rewards, 
+but these should be considered against the increased slashing risks.
 :::
 
 Set Allocation Delay:
