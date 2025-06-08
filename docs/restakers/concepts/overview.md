@@ -21,7 +21,7 @@ An [EigenPod](https://github.com/Layr-Labs/eigenlayer-contracts/blob/master/docs
 
 ### Checkpoint Proofs
 
-[Checkpoint Proofs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/EigenPod.md#checkpointing-validators) convert native validator ETH and validator yield to actively restaked shares. These proofs are initiated 
+[Checkpoint Proofs](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/EigenPod.md#checkpointing-validators) convert native validator ETH and validator yield to actively restaked shares. These proofs are initiated 
 before any Restaking or Withdrawal action and are necessary to prove the expected funds are deposited in the EigenPod and/or validator. 
 Checkpoint proofs are a two step process:
 1. Starting a Checkpoint: this step occurs once.

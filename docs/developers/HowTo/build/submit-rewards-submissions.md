@@ -14,7 +14,7 @@ For information on Rewards concepts, refer to [Rewards Overview](../../../eigenl
 
 Submitting rewards for an AVS is handled by the [RewardsCoorinator core contract](../../Concepts/eigenlayer-contracts/core-contracts.md).
 
-To submit rewards submissions, use [`RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/RewardsCoordinator.md#createoperatordirectedoperatorsetrewardssubmission).
+To submit rewards submissions, use [`RewardsCoordinator.createOperatorDirectedOperatorSetRewardsSubmission`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/RewardsCoordinator.md#createoperatordirectedoperatorsetrewardssubmission).
 
 An AVS can use onchain or offchain data in rewards logic to determine the reward amount per Operator. The rewards can be calculated 
 based on the work performed by Operators during a certain period of time, can be a flat reward rate, or another structure based on 

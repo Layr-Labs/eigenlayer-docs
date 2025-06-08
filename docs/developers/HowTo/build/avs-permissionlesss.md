@@ -20,11 +20,11 @@ To add a new Strategy to the EigenLayer protocol:
 * Invoke `StrategyFactory.deployNewStrategy()`.
 * Your Strategy is now available to associate with your AVS.
 
-Please see the contract documentation [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/StrategyManager.md#strategyfactorydeploynewstrategy) for further detail.
+Please see the contract documentation [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/StrategyManager.md#strategyfactorydeploynewstrategy) for further detail.
 
 :::note
 Custom Strategies are strategies that are not deployed via `StrategyFactory.deployNewStrategy()` and require whitelisting via 
-`StrategyFactory.whitelistStrategies` (see [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/dev/docs/core/StrategyManager.md#strategyfactorywhiteliststrategies)). Custom Strategies have custom bytecode and do not implement `StrategyBase`. 
+`StrategyFactory.whitelistStrategies` (see [here](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/StrategyManager.md#strategyfactorywhiteliststrategies)). Custom Strategies have custom bytecode and do not implement `StrategyBase`. 
 
 Custom Strategies are not yet supported because the Strategies specification is still evolving alongside the EigenLayer
 protocol. AVS developers should build their AVS using the `StrategyBase` interface and functionality, which provides a
