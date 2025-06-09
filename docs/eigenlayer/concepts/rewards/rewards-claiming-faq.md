@@ -52,3 +52,7 @@ That is, $$ E_{\text{earned}, s} $$ is the ETH value of all reward tokens earned
 $$ E_{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day, excluding any days in which no reward is earned.
 
 ETH values are calculated using the latest price feeds sourced from Coingecko. Reward tokens that do not have a public price available from Coingecko are not included in the calculation. APR is not calculated for staked tokens that do not have a public price available from Coingecko.
+
+### Why are there no claimable rewards for an Operator?
+
+In order for an Operator to be eligble for a reward submission they must been registered to the AVS for at least a portion of the reward duration. If an Operator does not meet this condition but has rewards submitted to them, the rewards will be refunded back to the AVS address.
