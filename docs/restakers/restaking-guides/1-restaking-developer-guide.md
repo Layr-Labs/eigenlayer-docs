@@ -244,6 +244,10 @@ For more information on Pectra and 0x02 withdrawal credentials, refer to [ethere
 
 #### Consolidating Validators Pointing to EigenPod
 
+:::note
+The [`requestConsolidation` method](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.6.0-rc.0/docs/core/EigenPod.md#requestconsolidation) is available in v1.6 which is [currently available on testnets](https://github.com/Layr-Labs/eigenlayer-contracts/releases).
+:::
+
 For restakers with multiple validators, consolidation offers up to a [64x proof size and cost reduction](https://hackmd.io/uijo9RSnSMOmejK1aKH0vw?view#64x-Holy-cow). 
 
 To consolidate validators pointing to an EigenPod: 
