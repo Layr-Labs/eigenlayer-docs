@@ -55,4 +55,7 @@ ETH values are calculated using the latest price feeds sourced from Coingecko. R
 
 ### Why are there no claimable rewards for an Operator?
 
-In order for an Operator to be eligble for a reward submission they must been registered to the AVS for at least a portion of the reward duration. If an Operator does not meet this condition but has rewards submitted to them, the rewards will be refunded back to the AVS address. To claim rewards as an AVS, you will need to set a claimer for the AVS, which can be done via [`setClaimerFor`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/5e2056601c69f39f29c3fe39edf9013852e83bf3/src/ServiceManagerBase.sol#L216) on the [`ServiceManagerBase`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/2afed9dd5bdd874d8c41604453efceca93abbfbc/docs/ServiceManagerBase.md#L1) contract.
+In order for an Operator to be eligible for a reward submission they must been registered to the AVS for at least a portion
+of the reward duration. If an Operator does not meet this condition but has rewards submitted to them, the rewards are
+refunded back to the AVS address. To claim rewards as an AVS, you must set a claimer for the AVS, which can be done 
+using [`setClaimerFor`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/5e2056601c69f39f29c3fe39edf9013852e83bf3/src/ServiceManagerBase.sol#L216) on the [`ServiceManagerBase`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/2afed9dd5bdd874d8c41604453efceca93abbfbc/docs/ServiceManagerBase.md#L1) contract or [using the EigenLayer CLI](../../../operators/howto/confirgurerewards/set-rewards-claimer.md).
