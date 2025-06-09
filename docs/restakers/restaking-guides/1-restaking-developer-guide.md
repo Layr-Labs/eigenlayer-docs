@@ -63,10 +63,6 @@ The following steps are necessary for a Restaker to **move** their Delegated bal
    * `receiveAsTokens` should be set to _false_.
 4. Invoke `DelegationManager.delegateTo()` to delegate your restaked assets to the new Operator.
 
-
-
-
-
 ## Native Restaking Guide
 
 The following instructions describe how to Restake validator ETH. This mechanism is referred to as "Native Restaking".
@@ -76,10 +72,18 @@ Native Restaking consists of the following actions:
 * [Convert Consensus Rewards to Restaked Shares](#convert-consensus-rewards-to-restaked-shares)
 * [Withdraw](#withdraw)
 
+The Pectra upgrade enables the consolidation of validators to reduce operational costs and includes: 
+* [Consoliating Validators Pointing to an EigenPod](#consolidating-validators-pointing-to-eigenpod)
+* [Consolidating New Validators to Restake on EigenLayer](#consolidating-new-validators-to-restake-on-eigenlayer).
+
 ### Gas Cost Planning
 
 For users planning to restake multiple validators, connecting many validators to a single EigenPod where possible reduces 
 gas cost and complexity. "Generate Proof Via eigenpod-proofs-generation CLI" will prove all connected validators.
+
+:::tip
+[Consolidate existing validators](#consolidate-validators) to reduce gas costs.
+:::
 
 ### EigenPod Upgrades and Pending Consensus Rewards
 
@@ -150,9 +154,6 @@ Invoke `EigenPodManager.createPod()`.
 3. Invoke the `status` command to confirm restaked shares increased by the anticipated amount.
 
 4. Your validator ETH balance is now Restaked.
-
-
-
 
 ### Convert Consensus Rewards to Restaked Shares
 
@@ -229,6 +230,48 @@ As the EigenPod Owner Wallet, invoke the [`DelegationManager.completeQueuedWithd
 Withdrawals can only be cancelled after waiting the full escrow period. To cancel a withdrawal, invoke the [`DelegationManager.completeQueuedWithdrawal()`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/DelegationManager.md#completequeuedwithdrawal)
 function with the parameter `receiveAsTokens` set to `FALSE`.
 :::
+
+### Consolidate Validators
+
+The Pectra upgrade introduces a new withdrawal credential of 0x02. Updating from a 0x00 or 0x01 withdrawal credential to a 
+0x02 withdrawal credential enables an increase in max effective balance from 32 ETH to 2048 ETH. The increased effective balance 
+enables:
+* Consolidation of up to 64 validators into a single validator reducing operational costs.
+* Staking rewards in excess of the original 32 ETH deposit contribute to total stake and earn additional rewards. That is, 
+staking rewards become compounding.
+
+For more information on Pectra and 0x02 withdrawal credentials, refer to [ethereum.org](https://ethereum.org/en/).
+
+#### Consolidating Validators Pointing to EigenPod
+
+For restakers with multiple validators, consolidation offers up to a [64x proof size and cost reduction](https://hackmd.io/uijo9RSnSMOmejK1aKH0vw?view#64x-Holy-cow). 
+
+To consolidate validators pointing to an EigenPod: 
+
+1. Submit a request to consolidate using [`requestConsolidation`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/v1.6.0-rc.0/docs/core/EigenPod.md#requestconsolidation).
+Additional details [here](https://hackmd.io/uijo9RSnSMOmejK1aKH0vw?view#Technical-Details).
+2. Monitor the Beacon chain (https://beaconcha.in/validator/[yourvalidatorid]) and checkpoint when all consolidations are complete.
+Additional details [here](https://hackmd.io/uijo9RSnSMOmejK1aKH0vw?view#Technical-Details).
+
+#### Consolidating New Validators to Restake on EigenLayer
+
+Consolidating validators without exiting the Beacon chain reduces costs and time taken compared to exiting and funding new
+validators.
+
+To consolidate existing validators and restake on EigenLayer without exiting the Beacon chain:
+
+1. [Create an EigenPod](#restake-new-validator-native-beacon-chain-eth).
+2. [Create the number of validators you need after consolidating with 0x02 withdrawal credentials. Point all validators at 
+the EigenPod created in 1](#restake-new-validator-native-beacon-chain-eth).
+3. Consolidate the existing validators into the new validators created in 2. For information on how to consolidate, refer to [ethereum.org](https://ethereum.org/en/).
+4. Prove new validators are connected to EigenLayer by completing a withdrawal credential proof using [`verifyWithdrawalCredentials`](https://github.com/Layr-Labs/eigenlayer-contracts/blob/main/docs/core/EigenPod.md#restaking-beacon-chain-eth).
+
+For example, to consolidate 1M ETH in 31250 validators and restake on EigenLayer:
+
+1. Create an EigenPod.
+2. Create 495 validators with 0x02 withdrawal credentials. Point all validators at the EigenPod created in 1.
+3. Consolidate the existing 31250 validators in the new 495 validators.
+4. Prove the 495 new validators are connected to EigenLayer.
 
 ## FAQ
 
