@@ -3,8 +3,6 @@ sidebar_position: 7
 title: Rewards Claiming FAQ
 ---
 
-
-
 ### When can I claim my rewards?
 
 After a root is posted, rewards are claimable after an activation delay. On mainnet this delay is 1 week and on testnet it is 2 hours.
@@ -16,9 +14,11 @@ Operators get a fixed 10% portion rewards, though this is subject to change in a
 ### How can I test reward distributions and claiming on testnet?
 
 #### 1. Programmatic incentives.
+
 To accumulate programmatic incentives, you must be delegated to an operator that is registered to at least one AVS of any type. Programmatic incentives are payed in Testnet EIGEN. Assets that earn programmatic incentives are limited to: EIGEN, LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH.
 
 #### 2. Rewards from AVSs
+
 To accumulate testnet rewards from AVSs, you must be delegated to an Operator that is registered to at least one AVS with active rewards.
 
 **Faucet AVS:**
@@ -26,9 +26,9 @@ FaucetAVS is designed purely to distribute WETH to staked WETH with no requireme
 
 **EigenDA:**
 EigenDA distributes rewards to [operators actively participating in EigenDA](https://docs.eigenda.xyz/operator-guides/requirements/). Operators may be ejected if they fail to sign batches or fall below the threshold requirements. Rewards are earned for:
+
 - EIGEN Quorum participation
 - ETH Quorum participation including LsETH, ETHx, rETH, osETH, cbETH, ankrETH, stETH, WETH, sfrxETH, mETH and Beacon Chain ETH in EigenPods.
-
 
 ### Are reward distributions based on the amount of work performed by an operator, the Operator's total delegated stake or both?
 
@@ -48,11 +48,11 @@ $$
 \frac{E_{\text{earned}, s}}{\sum_{7 \ \text{days}}E_{\text staked, s}}*365\ \text{days}
 $$
 
-That is, $$ E_{\text{earned}, s} $$ is the ETH value of all reward tokens earned over the past 7 days from restaking strategy $$ s $$. 
-$$ E_{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day, excluding any days in which no reward is earned.
+That is, $$ E*{\text{earned}, s} $$ is the ETH value of all reward tokens earned over the past 7 days from restaking strategy $$ s $$.
+$$ E*{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day, excluding any days in which no reward is earned.
 
 ETH values are calculated using the latest price feeds sourced from Coingecko. Reward tokens that do not have a public price available from Coingecko are not included in the calculation. APR is not calculated for staked tokens that do not have a public price available from Coingecko.
 
 ### Why are there no claimable rewards for an Operator?
 
-In order for an Operator to be eligble for a reward submission they must been registered to the AVS for at least a portion of the reward duration. If an Operator does not meet this condition but has rewards submitted to them, the rewards will be refunded back to the AVS address.
+In order for an Operator to be eligble for a reward submission they must been registered to the AVS for at least a portion of the reward duration. If an Operator does not meet this condition but has rewards submitted to them, the rewards will be refunded back to the AVS address. To claim rewards as an AVS, you will need to set a claimer for the AVS, which can be done via [`setClaimerFor`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/5e2056601c69f39f29c3fe39edf9013852e83bf3/src/ServiceManagerBase.sol#L216) on the [`ServiceManagerBase`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/2afed9dd5bdd874d8c41604453efceca93abbfbc/docs/ServiceManagerBase.md#L1) contract.
