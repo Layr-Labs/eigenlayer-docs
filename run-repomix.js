@@ -4,7 +4,7 @@ import path from "node:path";
 async function processRemoteRepo(repoUrl, fileName) {
   const options = {
     remote: repoUrl,
-    output: path.join(process.cwd(), 'static', fileName),
+    output: path.join(process.cwd(), 'build', fileName),
     compress: true,
     style: 'markdown'
   }

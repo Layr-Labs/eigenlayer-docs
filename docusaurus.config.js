@@ -75,12 +75,11 @@ const config = {
         },
         postBuild: async ({ content, routes, outDir }) => {
           const { allMd, developersMd, operatorsMd } = content;
-          const { siteDir } = context;
 
-          // Write concatenated Markdown content
-          await fs.promises.writeFile(path.join(siteDir, "static", "llms-full.md"), allMd.join("\n\n---\n\n"));
-          await fs.promises.writeFile(path.join(siteDir, "static", "avs-developer-docs.md"), developersMd.join("\n\n---\n\n"));
-          await fs.promises.writeFile(path.join(siteDir, "static", "operators-developer-docs.md"), operatorsMd.join("\n\n---\n\n"));
+          // Write concatenated Markdown content to build directory
+          await fs.promises.writeFile(path.join(outDir, "llms-full.md"), allMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(outDir, "avs-developer-docs.md"), developersMd.join("\n\n---\n\n"));
+          await fs.promises.writeFile(path.join(outDir, "operators-developer-docs.md"), operatorsMd.join("\n\n---\n\n"));
 
           // we need to dig down several layers:
           // find PluginRouteConfig marked by plugin.name === "docusaurus-plugin-content-docs"
@@ -111,9 +110,9 @@ const config = {
           // Build up llms.txt file
           const llmsTxt = `# ${context.siteConfig.title}\n\n## Docs\n\n${docsRecords.join("\n")}`;
 
-          // Write llms.txt file
+          // Write llms.txt file to build directory
           try {
-            fs.writeFileSync(path.join(siteDir, "static", "llms.md"), llmsTxt);
+            fs.writeFileSync(path.join(outDir, "llms.md"), llmsTxt);
           } catch (err) {
             throw err;
           }
