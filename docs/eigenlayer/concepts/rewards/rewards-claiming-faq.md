@@ -52,3 +52,10 @@ That is, $$ E_{\text{earned}, s} $$ is the ETH value of all reward tokens earned
 $$ E_{\text staked, s} $$ is the ETH value of tokens staked in restaked strategy $$ s $$ on a given day, excluding any days in which no reward is earned.
 
 ETH values are calculated using the latest price feeds sourced from Coingecko. Reward tokens that do not have a public price available from Coingecko are not included in the calculation. APR is not calculated for staked tokens that do not have a public price available from Coingecko.
+
+### Why are there no claimable rewards for an Operator?
+
+In order for an Operator to be eligible for a reward submission they must been registered to the AVS for at least a portion
+of the reward duration. If an Operator does not meet this condition but has rewards submitted to them, the rewards are
+refunded back to the AVS address. To claim rewards as an AVS, you must set a claimer for the AVS, which can be done 
+using [`setClaimerFor`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/5e2056601c69f39f29c3fe39edf9013852e83bf3/src/ServiceManagerBase.sol#L216) on the [`ServiceManagerBase`](https://github.com/Layr-Labs/eigenlayer-middleware/blob/2afed9dd5bdd874d8c41604453efceca93abbfbc/docs/ServiceManagerBase.md#L1) contract or [using the EigenLayer CLI](../../../operators/howto/confirgurerewards/set-rewards-claimer.md).
