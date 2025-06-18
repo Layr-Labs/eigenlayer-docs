@@ -6,7 +6,7 @@ As of June 17 2025, this project is considered **deprecated** and is no longer r
 
 ## 📚 Documentation & Migration
 
-The contents of this repository have been migrated to a new location:
+The EigenLayer documentation has been migrated to the EigenCloud documentation:
 
 👉 [EigenCloud Docs repo](https://github.com/Layr-Labs/eigencloud-docs)  
 or  
